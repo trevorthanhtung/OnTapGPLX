@@ -685,7 +685,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
             <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
               {mode === 'exam' && !isSubmitted && (
                 <div
-                  className={`px-3 py-1.5 landscape-mobile:px-2 landscape-mobile:py-1 rounded-xl border font-mono font-bold text-sm landscape-mobile:text-xs tracking-wide ${
+                  className={`h-9 sm:h-10 px-3 sm:px-3.5 rounded-xl border font-mono font-bold text-sm tracking-wide flex items-center justify-center shrink-0 ${
                     timeLeftSeconds < 180
                       ? 'bg-rose-50 border-rose-300 text-rose-700 animate-pulse'
                       : 'bg-slate-100 border-slate-200 text-slate-800'
@@ -698,7 +698,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
               {mode === 'exam' && !isSubmitted && (
                 <button
                   onClick={() => setShowSubmitConfirm(true)}
-                  className="lg:hidden px-3.5 sm:px-4 py-1.5 sm:py-2 landscape-mobile:px-2.5 landscape-mobile:py-1 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm landscape-mobile:text-xs font-semibold shadow-xs transition-colors cursor-pointer"
+                  className="lg:hidden h-9 sm:h-10 px-3.5 sm:px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold shadow-xs transition-colors cursor-pointer flex items-center justify-center shrink-0"
                 >
                   Nộp bài
                 </button>
@@ -707,7 +707,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
               {isSubmitted && (
                 <button
                   onClick={startExam}
-                  className="px-3.5 sm:px-4 py-1.5 sm:py-2 landscape-mobile:px-2.5 landscape-mobile:py-1 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm landscape-mobile:text-xs font-semibold shadow-xs transition-colors cursor-pointer"
+                  className="h-9 sm:h-10 px-3.5 sm:px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold shadow-xs transition-colors cursor-pointer flex items-center justify-center shrink-0"
                 >
                   <span className="hidden sm:inline">Thi đề mới</span>
                   <span className="sm:hidden">Đề mới</span>
@@ -717,7 +717,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
               <button
                 type="button"
                 onClick={() => currentQ && toggleBookmark(currentQ.id)}
-                className={`p-2 sm:p-2.5 landscape-mobile:p-1.5 rounded-xl border transition-all cursor-pointer flex items-center justify-center ${
+                className={`h-9 w-9 sm:h-10 sm:w-10 rounded-xl border transition-all cursor-pointer flex items-center justify-center shrink-0 ${
                   currentQ && bookmarks.includes(currentQ.id)
                     ? 'bg-amber-50 border-amber-300 text-amber-600 shadow-xs'
                     : 'border-slate-200 text-slate-500 hover:text-slate-900 hover:bg-slate-50'
