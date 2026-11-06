@@ -155,7 +155,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
           </p>
           <span className="hidden landscape-mobile:inline text-slate-300">•</span>
           <span className="text-[11px] landscape-mobile:text-[10px] text-slate-400 font-mono">
-            version 1.0.0
+            Phiên bản 1.0.1
           </span>
         </div>
       </footer>
