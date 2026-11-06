@@ -19,7 +19,9 @@ const VIDEO_CDN = (import.meta.env.VITE_VIDEO_CDN_URL || '').replace(/\/$/, '');
 const getVideoSrc = (url?: string) => {
   if (!url) return undefined;
   if (url.startsWith('http://') || url.startsWith('https://')) return `${url}?v=2026.2`;
-  return `${VIDEO_CDN}${url}?v=2026.2`;
+  if (!VIDEO_CDN) return `${url}?v=2026.2`;
+  const cleanUrl = VIDEO_CDN.endsWith('/videos') ? url.replace(/^\/videos/, '') : url;
+  return `${VIDEO_CDN}${cleanUrl}?v=2026.2`;
 };
 
 export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateChange }) => {
