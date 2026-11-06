@@ -82,8 +82,8 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Ban đêm xe ô tô tải ngược chiều bật đèn chiếu xa làm 2 xe máy phía trước giảm tốc độ",
-          "Xe 16 chỗ rẽ không quan sát, không làm chủ tốc độ đâm vào xe bán tải đang lùiFu",
-          "Tài xế giật mình đánh lái gấp đâm xe vào dải phân cách, xe đổ vào đám đông làm 5 người thiệt mạngD",
+          "Xe 16 chỗ rẽ không quan sát, không làm chủ tốc độ đâm vào xe bán tải đang lùi",
+          "Tài xế giật mình đánh lái gấp đâm xe vào dải phân cách, xe đổ vào đám đông làm 5 người thiệt mạng",
           "Người đi bộ vượt đèn đỏ sang đường"
         ],
         "correctIndex": 3,
@@ -148,7 +148,7 @@
           "Trẻ em đột ngột lao ra để nhặt quả bóng bị lăn ra đường",
           "Xe ô tô làn đường đối diện lấn làn vượt xe tải đang dừng đỗ tại khu vực đông đúc",
           "Xe phía trước phanh gấp để tránh xe buýt đang dừng tại bến xe buýt",
-          "Đèn vừa chuyển xanh, đột ngột xe mô-tô làn trái phía trước cố vượt đèn đỏ cắt qua trước đầu"
+          "Đèn vừa chuyển xanh, đột ngột xe mô-tô làn trái phía trước cố vượt đèn đỏ cắt qua trước đầu xe bạn"
         ],
         "correctIndex": 2,
         "explanation": "Tình huống mô phỏng kịch bản: Xe phía trước phanh gấp để tránh xe buýt đang dừng tại bến xe buýt. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
@@ -211,7 +211,7 @@
         "options": [
           "Đường núi, sương mù, có đàn bò đứng sát đường ngay sau đoạn đường cong",
           "Xe con từ đường nhánh đi nhanh ra tại ngã ba không có đèn tín hiệu giao thông",
-          "Xe khách vào cua với tốc độ cao, lấn sang đường ngược chiều va chạm với xe đi chiều ngược lại4F",
+          "Xe khách vào cua với tốc độ cao, lấn sang đường ngược chiều va chạm với xe đi chiều ngược lại",
           "Xe ô tô từ đường nhánh bên trái bất ngờ đi nhanh ra có nguy cơ va chạm với xe bạn"
         ],
         "correctIndex": 1,
@@ -321,14 +321,14 @@
   },
   {
     "id": 6,
-    "title": "Tình huống 6: Xe buýt lấn làn để vượt tại ngã",
-    "name": "Xe buýt lấn làn để vượt tại ngã",
+    "title": "Tình huống 6: Xe buýt lấn làn để vượt tại ngã ba",
+    "name": "Xe buýt lấn làn để vượt tại ngã ba",
     "chapter": 1,
     "chapterName": "Giao thông trong đô thị",
     "videoUrl": "/videos/6.mp4",
     "timeIndirect": 6.5,
     "timeDirect": 9.7,
-    "part1_name": "Xe buýt lấn làn để vượt tại ngã",
+    "part1_name": "Xe buýt lấn làn để vượt tại ngã ba",
     "part2_indirect": "Phương tiện ở làn đường đối diện có xu hướng lấn sang phần đường của xe bạn để vượt chướng ngại vật hoặc tránh xe khác.",
     "part3_direct": "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
     "part4_action": "Rà phanh giảm tốc độ, chủ động điều khiển xe nép sát về phía bên phải làn đường của mình để nhường đường.",
@@ -338,12 +338,12 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Xe ô tô 16 chỗ chở khách rẽ trái qua đường sắt không chú ý va chạm với tàu hỏa",
-          "Xe buýt lấn làn để vượt tại ngã",
+          "Xe buýt lấn làn để vượt tại ngã ba",
           "Xe phía trước phanh gấp để tránh xe buýt đang dừng tại bến xe buýt",
           "Xe bán tải từ đường bên kia quay đầu đột ngột lấn làn xe bạn"
         ],
         "correctIndex": 1,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe buýt lấn làn để vượt tại ngã. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe buýt lấn làn để vượt tại ngã ba. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -401,7 +401,7 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Đàn gia súc từ bên đường đi ra cắt qua làn đường xe bạn tại khu vực cao tốc bị hỏng hộ lans",
+          "Đàn gia súc từ bên đường đi ra cắt qua làn đường xe bạn tại khu vực cao tốc bị hỏng hộ lan",
           "Xe phía trước phanh gấp tránh người đi bộ vượt đèn đỏ sang đường",
           "Xe máy đang đi thẳng, đột ngột rẽ trái sang đường trước đầu xe bạn",
           "Xe tải lớn ở làn đối diện lấn làn vượt xe đang thu gom rác"
@@ -449,14 +449,14 @@
   },
   {
     "id": 8,
-    "title": "Tình huống 8: Xe đạp bất ngờ đi ra từ đường nhánh tại ngã",
-    "name": "Xe đạp bất ngờ đi ra từ đường nhánh tại ngã",
+    "title": "Tình huống 8: Xe đạp bất ngờ đi ra từ đường nhánh tại ngã ba",
+    "name": "Xe đạp bất ngờ đi ra từ đường nhánh tại ngã ba",
     "chapter": 1,
     "chapterName": "Giao thông trong đô thị",
     "videoUrl": "/videos/8.mp4",
-    "timeIndirect": 4.0,
+    "timeIndirect": 4,
     "timeDirect": 7.17,
-    "part1_name": "Xe đạp bất ngờ đi ra từ đường nhánh tại ngã",
+    "part1_name": "Xe đạp bất ngờ đi ra từ đường nhánh tại ngã ba",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
     "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
@@ -466,12 +466,12 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Xe ô tô 16 chỗ chở khách rẽ trái qua đường sắt không chú ý va chạm với tàu hỏa",
-          "Xe khách vào cua với tốc độ cao, lấn sang đường ngược chiều va chạm với xe đi chiều ngược lại4F",
-          "Xe đạp bất ngờ đi ra từ đường nhánh tại ngã",
+          "Xe khách vào cua với tốc độ cao, lấn sang đường ngược chiều va chạm với xe đi chiều ngược lại",
+          "Xe đạp bất ngờ đi ra từ đường nhánh tại ngã ba",
           "Người đi bộ sang đường bị khuất sau xe tải"
         ],
         "correctIndex": 2,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe đạp bất ngờ đi ra từ đường nhánh tại ngã. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe đạp bất ngờ đi ra từ đường nhánh tại ngã ba. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -577,14 +577,14 @@
   },
   {
     "id": 10,
-    "title": "Tình huống 10: Xe ô tô bất ngờ đi nhanh ra từ đường nhánh bên trái tại ngã",
-    "name": "Xe ô tô bất ngờ đi nhanh ra từ đường nhánh bên trái tại ngã",
+    "title": "Tình huống 10: Xe ô tô bất ngờ đi nhanh ra từ đường nhánh bên trái tại ngã ba",
+    "name": "Xe ô tô bất ngờ đi nhanh ra từ đường nhánh bên trái tại ngã ba",
     "chapter": 1,
     "chapterName": "Giao thông trong đô thị",
     "videoUrl": "/videos/10.mp4",
     "timeIndirect": 5.2,
     "timeDirect": 8.42,
-    "part1_name": "Xe ô tô bất ngờ đi nhanh ra từ đường nhánh bên trái tại ngã",
+    "part1_name": "Xe ô tô bất ngờ đi nhanh ra từ đường nhánh bên trái tại ngã ba",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
     "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
@@ -593,13 +593,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Xe ô tô bất ngờ đi nhanh ra từ đường nhánh bên trái tại ngã",
-          "Xe khách va chạm với xe cứu hỏa đi ngược chiều tại nút giao Pháp Vân aG>P\"*io@ρXҀO",
+          "Xe ô tô bất ngờ đi nhanh ra từ đường nhánh bên trái tại ngã ba",
+          "Xe khách va chạm với xe cứu hỏa đi ngược chiều tại nút giao Pháp Vân",
           "Xe con từ đường nhánh đi nhanh ra tại ngã ba không có đèn tín hiệu giao thông",
           "Xe mô-tô phanh và chuyển làn để tránh xe buýt vào trả khách"
         ],
         "correctIndex": 0,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe ô tô bất ngờ đi nhanh ra từ đường nhánh bên trái tại ngã. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe ô tô bất ngờ đi nhanh ra từ đường nhánh bên trái tại ngã ba. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -660,7 +660,7 @@
           "Xe con từ làn phải (khuất tầm nhìn) cắt ngang qua các xe đang đi thẳng để sang đường",
           "Xe bồn bê-tông từ đường nhánh lấn làn để rẽ tại ngã ba không có đèn giao thông có nhiều xe đang dừng đỗ",
           "Đi qua chỗ giao cắt với đường sắt ban đêm, không có đèn tín hiệu, phía sau xe con, đột nhiên có tàu đi tới",
-          "Xe ô tô bất ngờ đi nhanh ra từ đường nhánh bên trái tại ngã"
+          "Xe ô tô bất ngờ đi nhanh ra từ đường nhánh bên trái tại ngã ba"
         ],
         "correctIndex": 1,
         "explanation": "Tình huống mô phỏng kịch bản: Xe bồn bê-tông từ đường nhánh lấn làn để rẽ tại ngã ba không có đèn giao thông có nhiều xe đang dừng đỗ. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
@@ -711,7 +711,7 @@
     "chapterName": "Giao thông trong đô thị",
     "videoUrl": "/videos/12.mp4",
     "timeIndirect": 6.8,
-    "timeDirect": 10.0,
+    "timeDirect": 10,
     "part1_name": "Xe mô-tô lấn làn vượt ẩu nguy hiểm tại giao lộ",
     "part2_indirect": "Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
     "part3_direct": "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
@@ -721,10 +721,10 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Xe con từ đường nhánh nhập làn nguy hiểm cắt qua đầu xe bạntq",
+          "Xe con từ đường nhánh nhập làn nguy hiểm cắt qua đầu xe bạn",
           "Trẻ em đột ngột lao ra để nhặt quả bóng bị lăn ra đường",
           "Xe mô-tô lấn làn vượt ẩu nguy hiểm tại giao lộ",
-          "Xe khách chạy vượt xe tải, đâm trực diện vào xe khách đi chiều ngược lại gây tai nạn liên hoàn 3 xe4K"
+          "Xe khách chạy vượt xe tải, đâm trực diện vào xe khách đi chiều ngược lại gây tai nạn liên hoàn 3 xe"
         ],
         "correctIndex": 2,
         "explanation": "Tình huống mô phỏng kịch bản: Xe mô-tô lấn làn vượt ẩu nguy hiểm tại giao lộ. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
@@ -785,10 +785,10 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Đường nông thôn, nhóm xe đạp đi ra từ ngõ bên phảiw",
+          "Đường nông thôn, nhóm xe đạp đi ra từ ngõ bên phải",
           "Người đi bộ vượt đèn đỏ sang đường",
           "Người đi xe đạp từ vỉa hè bất ngờ đi xuống đường để sang đường",
-          "Qua đoạn đường cong đột nhiên có xe tải đi lùi trong làn khẩn cấpch"
+          "Qua đoạn đường cong đột nhiên có xe tải đi lùi trong làn khẩn cấp"
         ],
         "correctIndex": 2,
         "explanation": "Tình huống mô phỏng kịch bản: Người đi xe đạp từ vỉa hè bất ngờ đi xuống đường để sang đường. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
@@ -849,10 +849,10 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Phía trước có đá lở đột ngột và rơi xuống (tai nạn tại Đồng Văn, Hà Giang",
+          "Phía trước có đá lở đột ngột và rơi xuống (tai nạn tại Đồng Văn, Hà Giang)",
           "Tình huống nguy hiểm khi gặp xe tải lớn đi qua hầm chui dân sinh",
           "Tai nạn liên hoàn giữa 3 xe khách do đâm vào xe đang dừng đỗ để sửa chữa",
-          "Xe 16 chỗ rẽ không quan sát, không làm chủ tốc độ đâm vào xe bán tải đang lùiFu"
+          "Xe 16 chỗ rẽ không quan sát, không làm chủ tốc độ đâm vào xe bán tải đang lùi"
         ],
         "correctIndex": 1,
         "explanation": "Tình huống mô phỏng kịch bản: Tình huống nguy hiểm khi gặp xe tải lớn đi qua hầm chui dân sinh. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
@@ -897,14 +897,14 @@
   },
   {
     "id": 15,
-    "title": "Tình huống 15: Xe phía trước phanh gấp để tránh xe chuyển làn rẽ trái tại ngã",
-    "name": "Xe phía trước phanh gấp để tránh xe chuyển làn rẽ trái tại ngã",
+    "title": "Tình huống 15: Xe phía trước phanh gấp để tránh xe chuyển làn rẽ trái tại ngã ba",
+    "name": "Xe phía trước phanh gấp để tránh xe chuyển làn rẽ trái tại ngã ba",
     "chapter": 1,
     "chapterName": "Giao thông trong đô thị",
     "videoUrl": "/videos/15.mp4",
     "timeIndirect": 6.4,
     "timeDirect": 9.62,
-    "part1_name": "Xe phía trước phanh gấp để tránh xe chuyển làn rẽ trái tại ngã",
+    "part1_name": "Xe phía trước phanh gấp để tránh xe chuyển làn rẽ trái tại ngã ba",
     "part2_indirect": "Khoảng cách giữa xe bạn và phương tiện phía trước đang thu hẹp dần, phía trước có chướng ngại vật hoặc mật độ xe đông đúc.",
     "part3_direct": "Cụm đèn phanh màu đỏ phía sau phương tiện đi trước vừa bật sáng báo hiệu xe phanh dừng đột ngột.",
     "part4_action": "Đạp phanh giảm tốc độ kịp thời, giữ khoảng cách an toàn với xe đi trước, tuyệt đối không đánh lái gấp sang làn bên cạnh.",
@@ -913,13 +913,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Xe tải không làm chủ được tốc độ mất lái lao vào chợ dân sinh và va chạm với các xe đang đi phía trướcLU",
-          "Xe 16 chỗ từ làn đường khẩn cấp đi ra vào làn xe bạn9p",
-          "Xe ô tô phía dừng lại và lùi vào nơi đỗ tại khu vực đường hẹp",
-          "Xe phía trước phanh gấp để tránh xe chuyển làn rẽ trái tại ngã"
+          "Xe tải không làm chủ được tốc độ mất lái lao vào chợ dân sinh và va chạm với các xe đang đi phía trước",
+          "Xe 16 chỗ từ làn đường khẩn cấp đi ra vào làn xe bạn",
+          "Xe ô tô phía trước dừng lại và lùi vào nơi đỗ tại khu vực đường hẹp",
+          "Xe phía trước phanh gấp để tránh xe chuyển làn rẽ trái tại ngã ba"
         ],
         "correctIndex": 3,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe phía trước phanh gấp để tránh xe chuyển làn rẽ trái tại ngã. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe phía trước phanh gấp để tránh xe chuyển làn rẽ trái tại ngã ba. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -1044,7 +1044,7 @@
           "Xe ô tô làn đường đối diện lấn làn vượt xe tải đang dừng đỗ tại khu vực đông đúc",
           "Xe ô tô con chở người đi qua đường sắt tại Nam Định không chú ý va chạm với tàu hỏa",
           "Xe buýt lấn làn đường vượt ẩu tại ngã tư có đèn giao thông",
-          "Xe phía trước phanh gấp để tránh xe chuyển làn rẽ trái tại ngã"
+          "Xe phía trước phanh gấp để tránh xe chuyển làn rẽ trái tại ngã ba"
         ],
         "correctIndex": 2,
         "explanation": "Tình huống mô phỏng kịch bản: Xe buýt lấn làn đường vượt ẩu tại ngã tư có đèn giao thông. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
@@ -1089,14 +1089,14 @@
   },
   {
     "id": 18,
-    "title": "Tình huống 18: Gặp tài xế xe đang dừng đỗ ven đường đột ngột mở cửa",
-    "name": "Gặp tài xế xe đang dừng đỗ ven đường đột ngột mở cửa",
+    "title": "Tình huống 18: Gặp tài xế xe đang dừng đỗ ven đường đột ngột mở cửa xe",
+    "name": "Gặp tài xế xe đang dừng đỗ ven đường đột ngột mở cửa xe",
     "chapter": 1,
     "chapterName": "Giao thông trong đô thị",
     "videoUrl": "/videos/18.mp4",
     "timeIndirect": 4.6,
     "timeDirect": 7.83,
-    "part1_name": "Gặp tài xế xe đang dừng đỗ ven đường đột ngột mở cửa",
+    "part1_name": "Gặp tài xế xe đang dừng đỗ ven đường đột ngột mở cửa xe",
     "part2_indirect": "Phía trước bên phải lòng đường hẹp có hàng xe ô tô đang dừng đỗ sát mép đường.",
     "part3_direct": "Cánh cửa bên lái của xe ô tô đang đỗ ven đường đột ngột bật mở rộng ra lòng đường.",
     "part4_action": "Đạp phanh giảm tốc độ ngay lập tức, quan sát gương chiếu hậu, giữ vững tay lái và sẵn sàng dừng xe nhường đường.",
@@ -1105,13 +1105,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Xe 16 chỗ từ làn đường khẩn cấp đi ra vào làn xe bạn9p",
-          "Gặp tài xế xe đang dừng đỗ ven đường đột ngột mở cửa",
+          "Xe 16 chỗ từ làn đường khẩn cấp đi ra vào làn xe bạn",
+          "Gặp tài xế xe đang dừng đỗ ven đường đột ngột mở cửa xe",
           "Đường nông thôn, xuất hiện xe máy đi ra từ ngõ bên phải",
           "Khi đèn tín hiệu chuyển sang xanh, đột ngột có xe con cố vượt từ đường giao bên trái sang làm va chạm với xe con"
         ],
         "correctIndex": 1,
-        "explanation": "Tình huống mô phỏng kịch bản: Gặp tài xế xe đang dừng đỗ ven đường đột ngột mở cửa. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Gặp tài xế xe đang dừng đỗ ven đường đột ngột mở cửa xe. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -1153,14 +1153,14 @@
   },
   {
     "id": 19,
-    "title": "Tình huống 19: Tài xế xe dừng bên đường đang mở cửa",
-    "name": "Tài xế xe dừng bên đường đang mở cửa",
+    "title": "Tình huống 19: Tài xế xe dừng bên đường đang mở cửa xe",
+    "name": "Tài xế xe dừng bên đường đang mở cửa xe",
     "chapter": 1,
     "chapterName": "Giao thông trong đô thị",
     "videoUrl": "/videos/19.mp4",
     "timeIndirect": 5.9,
     "timeDirect": 9.08,
-    "part1_name": "Tài xế xe dừng bên đường đang mở cửa",
+    "part1_name": "Tài xế xe dừng bên đường đang mở cửa xe",
     "part2_indirect": "Phía trước bên phải lòng đường hẹp có hàng xe ô tô đang dừng đỗ sát mép đường.",
     "part3_direct": "Cánh cửa bên lái của xe ô tô đang đỗ ven đường đột ngột bật mở rộng ra lòng đường.",
     "part4_action": "Đạp phanh giảm tốc độ ngay lập tức, quan sát gương chiếu hậu, giữ vững tay lái và sẵn sàng dừng xe nhường đường.",
@@ -1169,13 +1169,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Đường nông thôn, nhóm xe đạp đi ra từ ngõ bên phảiw",
-          "Xe con đang dừng ở làn khẩn cấp xi nhan nhập làn trước xe bạnxa",
+          "Đường nông thôn, nhóm xe đạp đi ra từ ngõ bên phải",
+          "Xe con đang dừng ở làn khẩn cấp xi nhan nhập làn trước xe bạn",
           "Xe tải từ đường nhánh nhập vào cao tốc với tốc độ cao",
-          "Tài xế xe dừng bên đường đang mở cửa"
+          "Tài xế xe dừng bên đường đang mở cửa xe"
         ],
         "correctIndex": 3,
-        "explanation": "Tình huống mô phỏng kịch bản: Tài xế xe dừng bên đường đang mở cửa. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Tài xế xe dừng bên đường đang mở cửa xe. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -1217,14 +1217,14 @@
   },
   {
     "id": 20,
-    "title": "Tình huống 20: Tài xế xe đang đỗ ven đường đi ra mở cửa xe tại khu vực đường hẹp đường hẹp",
-    "name": "Tài xế xe đang đỗ ven đường đi ra mở cửa xe tại khu vực đường hẹp đường hẹp",
+    "title": "Tình huống 20: Tài xế xe đang đỗ ven đường đi ra mở cửa xe tại khu vực đường hẹp",
+    "name": "Tài xế xe đang đỗ ven đường đi ra mở cửa xe tại khu vực đường hẹp",
     "chapter": 1,
     "chapterName": "Giao thông trong đô thị",
     "videoUrl": "/videos/20.mp4",
     "timeIndirect": 11.9,
     "timeDirect": 15.13,
-    "part1_name": "Tài xế xe đang đỗ ven đường đi ra mở cửa xe tại khu vực đường hẹp đường hẹp",
+    "part1_name": "Tài xế xe đang đỗ ven đường đi ra mở cửa xe tại khu vực đường hẹp",
     "part2_indirect": "Phía trước bên phải lòng đường hẹp có hàng xe ô tô đang dừng đỗ sát mép đường.",
     "part3_direct": "Cánh cửa bên lái của xe ô tô đang đỗ ven đường đột ngột bật mở rộng ra lòng đường.",
     "part4_action": "Đạp phanh giảm tốc độ ngay lập tức, quan sát gương chiếu hậu, giữ vững tay lái và sẵn sàng dừng xe nhường đường.",
@@ -1233,13 +1233,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Tài xế xe đang đỗ ven đường đi ra mở cửa xe tại khu vực đường hẹp đường hẹp",
+          "Tài xế xe đang đỗ ven đường đi ra mở cửa xe tại khu vực đường hẹp",
           "Xe ô tô phía trước đang đi, đột ngột phanh gấp khi gặp vũng nước trên đường",
-          "Xe 16 chỗ rẽ không quan sát, không làm chủ tốc độ đâm vào xe bán tải đang lùiFu",
+          "Xe 16 chỗ rẽ không quan sát, không làm chủ tốc độ đâm vào xe bán tải đang lùi",
           "Xe tải từ đường nhánh nhập vào cao tốc với tốc độ cao"
         ],
         "correctIndex": 0,
-        "explanation": "Tình huống mô phỏng kịch bản: Tài xế xe đang đỗ ven đường đi ra mở cửa xe tại khu vực đường hẹp đường hẹp. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Tài xế xe đang đỗ ven đường đi ra mở cửa xe tại khu vực đường hẹp. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -1281,14 +1281,14 @@
   },
   {
     "id": 21,
-    "title": "Tình huống 21: Xe ô tô phía dừng lại và lùi vào nơi đỗ tại khu vực đường hẹp",
-    "name": "Xe ô tô phía dừng lại và lùi vào nơi đỗ tại khu vực đường hẹp",
+    "title": "Tình huống 21: Xe ô tô phía trước dừng lại và lùi vào nơi đỗ tại khu vực đường hẹp",
+    "name": "Xe ô tô phía trước dừng lại và lùi vào nơi đỗ tại khu vực đường hẹp",
     "chapter": 1,
     "chapterName": "Giao thông trong đô thị",
     "videoUrl": "/videos/21.mp4",
     "timeIndirect": 6.8,
-    "timeDirect": 10.0,
-    "part1_name": "Xe ô tô phía dừng lại và lùi vào nơi đỗ tại khu vực đường hẹp",
+    "timeDirect": 10,
+    "part1_name": "Xe ô tô phía trước dừng lại và lùi vào nơi đỗ tại khu vực đường hẹp",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
@@ -1299,11 +1299,11 @@
         "options": [
           "Xe con phía trước giảm tốc đột ngột và chuyển làn để tránh xe buýt đang dừng",
           "Người đi bộ vượt đèn đỏ sang đường",
-          "Xe ô tô phía dừng lại và lùi vào nơi đỗ tại khu vực đường hẹp",
+          "Xe ô tô phía trước dừng lại và lùi vào nơi đỗ tại khu vực đường hẹp",
           "Xe bán tải phía trước giảm tốc độ và chuyển làn khẩn cấp để tránh xe mô-tô đi ngược chiều"
         ],
         "correctIndex": 2,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe ô tô phía dừng lại và lùi vào nơi đỗ tại khu vực đường hẹp. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe ô tô phía trước dừng lại và lùi vào nơi đỗ tại khu vực đường hẹp. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -1362,7 +1362,7 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Hầm Hải Vân xe kéo rơ mooc mất lái lấn làn đâm trực diện vào xe tải đi chiều ngược lại gây tai nạn",
-          "Xe ô tô phía trước phanh gấp để tránh đoàn xe đạp từ đường nhánh đi",
+          "Xe ô tô phía trước phanh gấp để tránh đoàn xe đạp từ đường nhánh đi ra",
           "Gặp xe ô tô từ đường nhánh bên phải tại ngã ba đi ra với tốc độ nhanh",
           "Xe tải ở làn phải vượt lên và đột ngột chuyển làn sang làn giữa làm xe phía trước phải phanh gấp"
         ],
@@ -1428,7 +1428,7 @@
           "Xe ô tô đối diện lấn làn vượt xe đang có tín hiệu dừng khẩn cấp",
           "Phía sau làn phải có xe con vượt lên và chuyển làn cắt ngang nguy hiểm trước mặt xe bạn",
           "Xe máy đang đi thẳng, đột ngột rẽ trái sang đường trước đầu xe bạn",
-          "Xe con đi phía trước giảm tốc và chuyển làn đột ngột để tránh chướng ngại vậtz"
+          "Xe con đi phía trước giảm tốc và chuyển làn đột ngột để tránh chướng ngại vật"
         ],
         "correctIndex": 0,
         "explanation": "Tình huống mô phỏng kịch bản: Xe ô tô đối diện lấn làn vượt xe đang có tín hiệu dừng khẩn cấp. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
@@ -1478,7 +1478,7 @@
     "chapter": 1,
     "chapterName": "Giao thông trong đô thị",
     "videoUrl": "/videos/24.mp4",
-    "timeIndirect": 7.0,
+    "timeIndirect": 7,
     "timeDirect": 10.23,
     "part1_name": "Xe tải lớn ở làn đối diện lấn làn vượt xe đang thu gom rác",
     "part2_indirect": "Phương tiện ở làn đường đối diện có xu hướng lấn sang phần đường của xe bạn để vượt chướng ngại vật hoặc tránh xe khác.",
@@ -1491,7 +1491,7 @@
         "options": [
           "Đường núi, sương mù, có đàn bò đứng sát đường ngay sau đoạn đường cong",
           "Xe tải ở làn phải vượt lên và đột ngột chuyển làn sang làn giữa làm xe phía trước phải phanh gấp",
-          "Xe tải phía trước giảm tốc độ, chuyển sang làn giữa do gặp đoạn đường đang sửa chữa phía trước4k",
+          "Xe tải phía trước giảm tốc độ, chuyển sang làn giữa do gặp đoạn đường đang sửa chữa phía trước",
           "Xe tải lớn ở làn đối diện lấn làn vượt xe đang thu gom rác"
         ],
         "correctIndex": 3,
@@ -1555,7 +1555,7 @@
         "options": [
           "Xe ô tô khách bất ngờ đi ra từ nơi đỗ tại đường hẹp",
           "Ban đêm, xe con phanh gấp tránh xe máy từ ngõ lao ra, xe khách không làm chủ tốc độ đã đâm trực diện vào xe con",
-          "Trời mưa, xe con giảm nhanh tốc độ để tránh xe tải chuyển làn đột ngột tránh chướng ngại vật phía trướco",
+          "Trời mưa, xe con giảm nhanh tốc độ để tránh xe tải chuyển làn đột ngột tránh chướng ngại vật phía trước",
           "Xe mô tô vượt lên đột ngột giảm tốc và chuyển sang làn xe bạn để tránh chướng ngại vật trên đường"
         ],
         "correctIndex": 0,
@@ -1681,10 +1681,10 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Xe ô tô phía trước phanh gấp để tránh đoàn xe đạp từ đường nhánh đi",
+          "Xe ô tô phía trước phanh gấp để tránh đoàn xe đạp từ đường nhánh đi ra",
           "Xe khách bật đèn cảnh báo dừng giữa ngã tư để đón khách",
           "Xe khách 45 chỗ đâm vào xe đầu kéo kéo rơ moóc chở máy ủi đi từ đường tránh ra gây tai nạn thảm khốc",
-          "Xe buýt lấn làn để vượt tại ngã"
+          "Xe buýt lấn làn để vượt tại ngã ba"
         ],
         "correctIndex": 1,
         "explanation": "Tình huống mô phỏng kịch bản: Xe khách bật đèn cảnh báo dừng giữa ngã tư để đón khách. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
@@ -1745,10 +1745,10 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Đường nông thôn, gặp đàn bò đi từ dưới vệ đường băng qua",
+          "Đường nông thôn, gặp đàn bò đi từ dưới vệ đường băng qua đường",
           "Xe ô tô phía trước đang đi, đột ngột phanh gấp khi gặp vũng nước trên đường",
-          "Xe ô tô phía trước phanh gấp để tránh đoàn xe đạp từ đường nhánh đi",
-          "Xe khách va chạm với xe cứu hỏa đi ngược chiều tại nút giao Pháp Vân aG>P\"*io@ρXҀO"
+          "Xe ô tô phía trước phanh gấp để tránh đoàn xe đạp từ đường nhánh đi ra",
+          "Xe khách va chạm với xe cứu hỏa đi ngược chiều tại nút giao Pháp Vân"
         ],
         "correctIndex": 1,
         "explanation": "Tình huống mô phỏng kịch bản: Xe ô tô phía trước đang đi, đột ngột phanh gấp khi gặp vũng nước trên đường. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
@@ -1809,9 +1809,9 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Tài xế xe dừng bên đường đang mở cửa",
-          "Xe phía trước phanh gấp để tránh xe chuyển làn rẽ trái tại ngã",
-          "Đường núi, trời mưa, xe phía trước đột ngột dừng lại vì hỏng máyA",
+          "Tài xế xe dừng bên đường đang mở cửa xe",
+          "Xe phía trước phanh gấp để tránh xe chuyển làn rẽ trái tại ngã ba",
+          "Đường núi, trời mưa, xe phía trước đột ngột dừng lại vì hỏng máy",
           "Trời mưa, ô tô phía trước phanh gấp để tránh xe mô-tô tạt đầu khi gặp chướng ngại vật"
         ],
         "correctIndex": 3,
@@ -1874,9 +1874,9 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Gặp đàn bò đang đứng trên đường",
-          "Tài xế xe đang đỗ ven đường đi ra mở cửa xe tại khu vực đường hẹp đường hẹp",
+          "Tài xế xe đang đỗ ven đường đi ra mở cửa xe tại khu vực đường hẹp",
           "Xe mô-tô lấn làn vượt ẩu nguy hiểm tại giao lộ",
-          "Trời mưa, xe con giảm nhanh tốc độ để tránh xe tải chuyển làn đột ngột tránh chướng ngại vật phía trướco"
+          "Trời mưa, xe con giảm nhanh tốc độ để tránh xe tải chuyển làn đột ngột tránh chướng ngại vật phía trước"
         ],
         "correctIndex": 0,
         "explanation": "Tình huống mô phỏng kịch bản: Gặp đàn bò đang đứng trên đường. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
@@ -1921,14 +1921,14 @@
   },
   {
     "id": 31,
-    "title": "Tình huống 31: Đường nông thôn, gặp đàn bò đi từ dưới vệ đường băng qua",
-    "name": "Đường nông thôn, gặp đàn bò đi từ dưới vệ đường băng qua",
+    "title": "Tình huống 31: Đường nông thôn, gặp đàn bò đi từ dưới vệ đường băng qua đường",
+    "name": "Đường nông thôn, gặp đàn bò đi từ dưới vệ đường băng qua đường",
     "chapter": 2,
     "chapterName": "Giao thông nông thôn & Đèo dốc",
     "videoUrl": "/videos/31.mp4",
     "timeIndirect": 3.1,
     "timeDirect": 6.33,
-    "part1_name": "Đường nông thôn, gặp đàn bò đi từ dưới vệ đường băng qua",
+    "part1_name": "Đường nông thôn, gặp đàn bò đi từ dưới vệ đường băng qua đường",
     "part2_indirect": "Khu vực đường qua vùng nông thôn, hai bên đường có bãi cỏ và bụi rậm tiềm ẩn động vật nuôi thả rông.",
     "part3_direct": "Gia súc bước chân từ lề đường xuống chắn ngang phần đường lưu thông của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
@@ -1937,13 +1937,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Đàn gia súc từ bên đường đi ra cắt qua làn đường xe bạn tại khu vực cao tốc bị hỏng hộ lans",
-          "Đường nông thôn, gặp đàn bò đi từ dưới vệ đường băng qua",
-          "Xe 16 chỗ từ đường nhánh, khuất tầm nhìn rẽ vào đường chính không giảm tốc độ, bị xe sơ mi rơ moóc đâm vào (tại Ngã 3 Nà Phặc - Bắc Kạn)_C5jhlH",
+          "Đàn gia súc từ bên đường đi ra cắt qua làn đường xe bạn tại khu vực cao tốc bị hỏng hộ lan",
+          "Đường nông thôn, gặp đàn bò đi từ dưới vệ đường băng qua đường",
+          "Xe 16 chỗ từ đường nhánh, khuất tầm nhìn rẽ vào đường chính không giảm tốc độ, bị xe sơ mi rơ moóc đâm vào (tại Ngã 3 Nà Phặc - Bắc Kạn)",
           "Xe ô tô từ đường nhánh bên trái bất ngờ đi nhanh ra có nguy cơ va chạm với xe bạn"
         ],
         "correctIndex": 1,
-        "explanation": "Tình huống mô phỏng kịch bản: Đường nông thôn, gặp đàn bò đi từ dưới vệ đường băng qua. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Đường nông thôn, gặp đàn bò đi từ dưới vệ đường băng qua đường. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -2004,7 +2004,7 @@
           "Xe tải bật đèn cảnh báo đi ngược đường ở làn bên phải cao tốc",
           "Người đi bộ băng qua đường lúc chập tối ngay trước xe bạn",
           "Phía đường cong xuất hiện xe tải đi đối diện làm xe khách phía trước giảm tốc độ đột ngột",
-          "Cao tốc, xe tải đột ngột giảm tốc và chuyển sang làn xe bạn do gặp xe đang gặp sự cố trên đườngv"
+          "Cao tốc, xe tải đột ngột giảm tốc và chuyển sang làn xe bạn do gặp xe đang gặp sự cố trên đường"
         ],
         "correctIndex": 1,
         "explanation": "Tình huống mô phỏng kịch bản: Người đi bộ băng qua đường lúc chập tối ngay trước xe bạn. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
@@ -2113,14 +2113,14 @@
   },
   {
     "id": 34,
-    "title": "Tình huống 34: Gặp xe khách tại đoạn đường cong vào cua chiếm hết làn đường tại khu vực đường hẹpo",
-    "name": "Gặp xe khách tại đoạn đường cong vào cua chiếm hết làn đường tại khu vực đường hẹpo",
+    "title": "Tình huống 34: Gặp xe khách tại đoạn đường cong vào cua chiếm hết làn đường tại khu vực đường hẹp",
+    "name": "Gặp xe khách tại đoạn đường cong vào cua chiếm hết làn đường tại khu vực đường hẹp",
     "chapter": 2,
     "chapterName": "Giao thông nông thôn & Đèo dốc",
     "videoUrl": "/videos/34.mp4",
-    "timeIndirect": 2.0,
+    "timeIndirect": 2,
     "timeDirect": 5.17,
-    "part1_name": "Gặp xe khách tại đoạn đường cong vào cua chiếm hết làn đường tại khu vực đường hẹpo",
+    "part1_name": "Gặp xe khách tại đoạn đường cong vào cua chiếm hết làn đường tại khu vực đường hẹp",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
@@ -2131,11 +2131,11 @@
         "options": [
           "Xe ô tô phía trước phanh gấp do có động vật hoang dã đứng ven đường",
           "Khúc gỗ trên xe tải phía trước bị rơi xuống do xe phanh gấp",
-          "Gặp xe khách tại đoạn đường cong vào cua chiếm hết làn đường tại khu vực đường hẹpo",
+          "Gặp xe khách tại đoạn đường cong vào cua chiếm hết làn đường tại khu vực đường hẹp",
           "Đường núi, sương mù, có đàn bò đứng sát đường ngay sau đoạn đường cong"
         ],
         "correctIndex": 2,
-        "explanation": "Tình huống mô phỏng kịch bản: Gặp xe khách tại đoạn đường cong vào cua chiếm hết làn đường tại khu vực đường hẹpo. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Gặp xe khách tại đoạn đường cong vào cua chiếm hết làn đường tại khu vực đường hẹp. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -2182,8 +2182,8 @@
     "chapter": 2,
     "chapterName": "Giao thông nông thôn & Đèo dốc",
     "videoUrl": "/videos/35.mp4",
-    "timeIndirect": 1.0,
-    "timeDirect": 3.0,
+    "timeIndirect": 1,
+    "timeDirect": 3,
     "part1_name": "Xe khách phía trước đột ngột phanh giảm tốc độ tránh xe đối diện tại đoạn đường cong",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
@@ -2193,7 +2193,7 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Qua đoạn đường cong đột nhiên có xe tải đi lùi trong làn khẩn cấpch",
+          "Qua đoạn đường cong đột nhiên có xe tải đi lùi trong làn khẩn cấp",
           "Xe buýt lấn làn đường vượt ẩu tại ngã tư có đèn giao thông",
           "Xe khách phía trước đột ngột phanh giảm tốc độ tránh xe đối diện tại đoạn đường cong",
           "Khúc gỗ trên xe tải phía trước bị rơi xuống do xe phanh gấp"
@@ -2258,7 +2258,7 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Đường nông thôn, xuất hiện xe máy đi ra từ ngõ bên phải",
-          "Tài xế xe đang đỗ ven đường đi ra mở cửa xe tại khu vực đường hẹp đường hẹp",
+          "Tài xế xe đang đỗ ven đường đi ra mở cửa xe tại khu vực đường hẹp",
           "Em bé đột ngột chạy ra đường",
           "Xe con đi ngược chiều nguy hiểm tại làn đường tốc độ cao nhất trên cao tốc"
         ],
@@ -2305,14 +2305,14 @@
   },
   {
     "id": 37,
-    "title": "Tình huống 37: Đường nông thôn, nhóm xe đạp đi ra từ ngõ bên phảiw",
-    "name": "Đường nông thôn, nhóm xe đạp đi ra từ ngõ bên phảiw",
+    "title": "Tình huống 37: Đường nông thôn, nhóm xe đạp đi ra từ ngõ bên phải",
+    "name": "Đường nông thôn, nhóm xe đạp đi ra từ ngõ bên phải",
     "chapter": 2,
     "chapterName": "Giao thông nông thôn & Đèo dốc",
     "videoUrl": "/videos/37.mp4",
     "timeIndirect": 11.1,
     "timeDirect": 14.35,
-    "part1_name": "Đường nông thôn, nhóm xe đạp đi ra từ ngõ bên phảiw",
+    "part1_name": "Đường nông thôn, nhóm xe đạp đi ra từ ngõ bên phải",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
@@ -2321,13 +2321,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Cao tốc, xe tải đột ngột giảm tốc và chuyển sang làn xe bạn do gặp xe đang gặp sự cố trên đườngv",
+          "Cao tốc, xe tải đột ngột giảm tốc và chuyển sang làn xe bạn do gặp xe đang gặp sự cố trên đường",
           "Xe ô tô làn đường đối diện lấn làn vượt xe tải đang dừng đỗ tại khu vực đông đúc",
-          "Xe 16 chỗ từ đường nhánh, khuất tầm nhìn rẽ vào đường chính không giảm tốc độ, bị xe sơ mi rơ moóc đâm vào (tại Ngã 3 Nà Phặc - Bắc Kạn)_C5jhlH",
-          "Đường nông thôn, nhóm xe đạp đi ra từ ngõ bên phảiw"
+          "Xe 16 chỗ từ đường nhánh, khuất tầm nhìn rẽ vào đường chính không giảm tốc độ, bị xe sơ mi rơ moóc đâm vào (tại Ngã 3 Nà Phặc - Bắc Kạn)",
+          "Đường nông thôn, nhóm xe đạp đi ra từ ngõ bên phải"
         ],
         "correctIndex": 3,
-        "explanation": "Tình huống mô phỏng kịch bản: Đường nông thôn, nhóm xe đạp đi ra từ ngõ bên phảiw. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Đường nông thôn, nhóm xe đạp đi ra từ ngõ bên phải. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -2375,7 +2375,7 @@
     "chapterName": "Giao thông nông thôn & Đèo dốc",
     "videoUrl": "/videos/38.mp4",
     "timeIndirect": 4.8,
-    "timeDirect": 8.0,
+    "timeDirect": 8,
     "part1_name": "Ban đêm xe ô tô tải ngược chiều bật đèn chiếu xa làm 2 xe máy phía trước giảm tốc độ",
     "part2_indirect": "Phương tiện ở làn đường đối diện có xu hướng lấn sang phần đường của xe bạn để vượt chướng ngại vật hoặc tránh xe khác.",
     "part3_direct": "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
@@ -2385,10 +2385,10 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Xe phía trước phanh gấp để tránh xe chuyển làn rẽ trái tại ngã",
+          "Xe phía trước phanh gấp để tránh xe chuyển làn rẽ trái tại ngã ba",
           "Học sinh đi ra đường tại khu vực gần trường học",
           "Ban đêm xe ô tô tải ngược chiều bật đèn chiếu xa làm 2 xe máy phía trước giảm tốc độ",
-          "Xe ô tô phía trước phanh gấp để tránh đoàn xe đạp từ đường nhánh đi"
+          "Xe ô tô phía trước phanh gấp để tránh đoàn xe đạp từ đường nhánh đi ra"
         ],
         "correctIndex": 2,
         "explanation": "Tình huống mô phỏng kịch bản: Ban đêm xe ô tô tải ngược chiều bật đèn chiếu xa làm 2 xe máy phía trước giảm tốc độ. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
@@ -2451,7 +2451,7 @@
         "options": [
           "Xe tải từ đường nhánh nhập làn nguy hiểm",
           "Tai nạn xe container không làm chủ tốc độ đâm trực diện vào xe ô tô con đang dừng chờ đèn đỏ",
-          "Xe 16 chỗ từ làn đường khẩn cấp đi ra vào làn xe bạn9p",
+          "Xe 16 chỗ từ làn đường khẩn cấp đi ra vào làn xe bạn",
           "Xe khách 45 chỗ đâm vào xe đầu kéo kéo rơ moóc chở máy ủi đi từ đường tránh ra gây tai nạn thảm khốc"
         ],
         "correctIndex": 0,
@@ -2497,14 +2497,14 @@
   },
   {
     "id": 40,
-    "title": "Tình huống 40: Gần cổng làng, phía sau có xe mô-tô lấn làn để vượt xe ô tô đang dừng đỗe",
-    "name": "Gần cổng làng, phía sau có xe mô-tô lấn làn để vượt xe ô tô đang dừng đỗe",
+    "title": "Tình huống 40: Gần cổng làng, phía sau có xe mô-tô lấn làn để vượt xe ô tô đang dừng đỗ",
+    "name": "Gần cổng làng, phía sau có xe mô-tô lấn làn để vượt xe ô tô đang dừng đỗ",
     "chapter": 2,
     "chapterName": "Giao thông nông thôn & Đèo dốc",
     "videoUrl": "/videos/40.mp4",
     "timeIndirect": 3.1,
     "timeDirect": 6.3,
-    "part1_name": "Gần cổng làng, phía sau có xe mô-tô lấn làn để vượt xe ô tô đang dừng đỗe",
+    "part1_name": "Gần cổng làng, phía sau có xe mô-tô lấn làn để vượt xe ô tô đang dừng đỗ",
     "part2_indirect": "Phương tiện ở làn đường đối diện có xu hướng lấn sang phần đường của xe bạn để vượt chướng ngại vật hoặc tránh xe khác.",
     "part3_direct": "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
     "part4_action": "Rà phanh giảm tốc độ, chủ động điều khiển xe nép sát về phía bên phải làn đường của mình để nhường đường.",
@@ -2513,13 +2513,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Xe con làn đối diện rẽ nhanh cắt qua đầu xe bạn tại ngã baf",
+          "Xe con làn đối diện rẽ nhanh cắt qua đầu xe bạn tại ngã ba",
           "Ban đêm xe ô tô tải ngược chiều bật đèn chiếu xa làm 2 xe máy phía trước giảm tốc độ",
-          "Gần cổng làng, phía sau có xe mô-tô lấn làn để vượt xe ô tô đang dừng đỗe",
+          "Gần cổng làng, phía sau có xe mô-tô lấn làn để vượt xe ô tô đang dừng đỗ",
           "Gặp đàn bò đang đứng trên đường"
         ],
         "correctIndex": 2,
-        "explanation": "Tình huống mô phỏng kịch bản: Gần cổng làng, phía sau có xe mô-tô lấn làn để vượt xe ô tô đang dừng đỗe. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Gần cổng làng, phía sau có xe mô-tô lấn làn để vượt xe ô tô đang dừng đỗ. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -2561,14 +2561,14 @@
   },
   {
     "id": 41,
-    "title": "Tình huống 41: Xe con làn đối diện rẽ nhanh cắt qua đầu xe bạn tại ngã baf",
-    "name": "Xe con làn đối diện rẽ nhanh cắt qua đầu xe bạn tại ngã baf",
+    "title": "Tình huống 41: Xe con làn đối diện rẽ nhanh cắt qua đầu xe bạn tại ngã ba",
+    "name": "Xe con làn đối diện rẽ nhanh cắt qua đầu xe bạn tại ngã ba",
     "chapter": 2,
     "chapterName": "Giao thông nông thôn & Đèo dốc",
     "videoUrl": "/videos/41.mp4",
     "timeIndirect": 6.2,
     "timeDirect": 9.4,
-    "part1_name": "Xe con làn đối diện rẽ nhanh cắt qua đầu xe bạn tại ngã baf",
+    "part1_name": "Xe con làn đối diện rẽ nhanh cắt qua đầu xe bạn tại ngã ba",
     "part2_indirect": "Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
     "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
     "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
@@ -2577,13 +2577,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Trên đường cao tốc ban đêm, đột nhiên có xe tải đi chiều ngược lại ở làn khẩn cấpi",
-          "Xe con làn đối diện rẽ nhanh cắt qua đầu xe bạn tại ngã baf",
+          "Trên đường cao tốc ban đêm, đột nhiên có xe tải đi chiều ngược lại ở làn khẩn cấp",
+          "Xe con làn đối diện rẽ nhanh cắt qua đầu xe bạn tại ngã ba",
           "Khi đèn tín hiệu chuyển sang xanh, đột ngột có xe con cố vượt từ đường giao bên trái sang làm va chạm với xe con",
-          "Đàn gia súc từ bên đường đi ra cắt qua làn đường xe bạn tại khu vực cao tốc bị hỏng hộ lans"
+          "Đàn gia súc từ bên đường đi ra cắt qua làn đường xe bạn tại khu vực cao tốc bị hỏng hộ lan"
         ],
         "correctIndex": 1,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe con làn đối diện rẽ nhanh cắt qua đầu xe bạn tại ngã baf. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe con làn đối diện rẽ nhanh cắt qua đầu xe bạn tại ngã ba. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -2625,14 +2625,14 @@
   },
   {
     "id": 42,
-    "title": "Tình huống 42: Tại ngã tư, đèn xanh, xe bạn bắt đầu di chuyển có xe mô-tô rẽ cắt ngang qua đầu xe bạnn",
-    "name": "Tại ngã tư, đèn xanh, xe bạn bắt đầu di chuyển có xe mô-tô rẽ cắt ngang qua đầu xe bạnn",
+    "title": "Tình huống 42: Tại ngã tư, đèn xanh, xe bạn bắt đầu di chuyển có xe mô-tô rẽ cắt ngang qua đầu xe bạn",
+    "name": "Tại ngã tư, đèn xanh, xe bạn bắt đầu di chuyển có xe mô-tô rẽ cắt ngang qua đầu xe bạn",
     "chapter": 2,
     "chapterName": "Giao thông nông thôn & Đèo dốc",
     "videoUrl": "/videos/42.mp4",
     "timeIndirect": 3.8,
     "timeDirect": 7.02,
-    "part1_name": "Tại ngã tư, đèn xanh, xe bạn bắt đầu di chuyển có xe mô-tô rẽ cắt ngang qua đầu xe bạnn",
+    "part1_name": "Tại ngã tư, đèn xanh, xe bạn bắt đầu di chuyển có xe mô-tô rẽ cắt ngang qua đầu xe bạn",
     "part2_indirect": "Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
     "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
     "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
@@ -2641,13 +2641,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Tại ngã tư, đèn xanh, xe bạn bắt đầu di chuyển có xe mô-tô rẽ cắt ngang qua đầu xe bạnn",
+          "Tại ngã tư, đèn xanh, xe bạn bắt đầu di chuyển có xe mô-tô rẽ cắt ngang qua đầu xe bạn",
           "Xe bồn bê-tông từ đường nhánh lấn làn để rẽ tại ngã ba không có đèn giao thông có nhiều xe đang dừng đỗ",
-          "Phía trước có đá lở đột ngột và rơi xuống (tai nạn tại Đồng Văn, Hà Giang",
+          "Phía trước có đá lở đột ngột và rơi xuống (tai nạn tại Đồng Văn, Hà Giang)",
           "Tránh xe tại khu vực công trình sửa đường xuất hiện sau khúc cua"
         ],
         "correctIndex": 0,
-        "explanation": "Tình huống mô phỏng kịch bản: Tại ngã tư, đèn xanh, xe bạn bắt đầu di chuyển có xe mô-tô rẽ cắt ngang qua đầu xe bạnn. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Tại ngã tư, đèn xanh, xe bạn bắt đầu di chuyển có xe mô-tô rẽ cắt ngang qua đầu xe bạn. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -2689,14 +2689,14 @@
   },
   {
     "id": 43,
-    "title": "Tình huống 43: Trời mưa, xe con giảm nhanh tốc độ để tránh xe tải chuyển làn đột ngột tránh chướng ngại vật phía trướco",
-    "name": "Trời mưa, xe con giảm nhanh tốc độ để tránh xe tải chuyển làn đột ngột tránh chướng ngại vật phía trướco",
+    "title": "Tình huống 43: Trời mưa, xe con giảm nhanh tốc độ để tránh xe tải chuyển làn đột ngột tránh chướng ngại vật phía trước",
+    "name": "Trời mưa, xe con giảm nhanh tốc độ để tránh xe tải chuyển làn đột ngột tránh chướng ngại vật phía trước",
     "chapter": 2,
     "chapterName": "Giao thông nông thôn & Đèo dốc",
     "videoUrl": "/videos/43.mp4",
     "timeIndirect": 3.2,
     "timeDirect": 6.37,
-    "part1_name": "Trời mưa, xe con giảm nhanh tốc độ để tránh xe tải chuyển làn đột ngột tránh chướng ngại vật phía trướco",
+    "part1_name": "Trời mưa, xe con giảm nhanh tốc độ để tránh xe tải chuyển làn đột ngột tránh chướng ngại vật phía trước",
     "part2_indirect": "Phía trước bên phải có xe kích thước lớn đang đỗ làm khuất tầm nhìn, có vạch kẻ đường cho người đi bộ hoặc lối giao cắt.",
     "part3_direct": "Phương tiện bên cạnh bắt đầu đè vạch phân làn và chuyển hướng tạt ngang trước đầu xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
@@ -2705,13 +2705,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Gặp xe khách tại đoạn đường cong vào cua chiếm hết làn đường tại khu vực đường hẹpo",
+          "Gặp xe khách tại đoạn đường cong vào cua chiếm hết làn đường tại khu vực đường hẹp",
           "Xe ô tô làn đường đối diện lấn làn vượt xe tải đang dừng đỗ tại khu vực đông đúc",
-          "Trời mưa, xe con giảm nhanh tốc độ để tránh xe tải chuyển làn đột ngột tránh chướng ngại vật phía trướco",
+          "Trời mưa, xe con giảm nhanh tốc độ để tránh xe tải chuyển làn đột ngột tránh chướng ngại vật phía trước",
           "Xe ô tô phía trước phanh gấp do có động vật hoang dã đứng ven đường"
         ],
         "correctIndex": 2,
-        "explanation": "Tình huống mô phỏng kịch bản: Trời mưa, xe con giảm nhanh tốc độ để tránh xe tải chuyển làn đột ngột tránh chướng ngại vật phía trướco. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Trời mưa, xe con giảm nhanh tốc độ để tránh xe tải chuyển làn đột ngột tránh chướng ngại vật phía trước. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -2769,9 +2769,9 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Đàn gia súc từ bên đường đi ra cắt qua làn đường xe bạn tại khu vực cao tốc bị hỏng hộ lans",
-          "Xe khách chạy vượt xe tải, đâm trực diện vào xe khách đi chiều ngược lại gây tai nạn liên hoàn 3 xe4K",
-          "Ô tô 7 chỗ đi trên cầu treo hẹp ban đêm, tài xế lái xe va chạm với xe máy, xe đâm xuống sông tại cầu treo qua sông Giăng, Thanh Chương, Nghệ AnJQ",
+          "Đàn gia súc từ bên đường đi ra cắt qua làn đường xe bạn tại khu vực cao tốc bị hỏng hộ lan",
+          "Xe khách chạy vượt xe tải, đâm trực diện vào xe khách đi chiều ngược lại gây tai nạn liên hoàn 3 xe",
+          "Ô tô 7 chỗ đi trên cầu treo hẹp ban đêm, tài xế lái xe va chạm với xe máy, xe đâm xuống sông tại cầu treo qua sông Giăng, Thanh Chương, Nghệ An",
           "Phía sau làn phải có xe con vượt lên và chuyển làn cắt ngang nguy hiểm trước mặt xe bạn"
         ],
         "correctIndex": 3,
@@ -2833,7 +2833,7 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Xe tải không làm chủ được tốc độ mất lái lao vào chợ dân sinh và va chạm với các xe đang đi phía trướcLU",
+          "Xe tải không làm chủ được tốc độ mất lái lao vào chợ dân sinh và va chạm với các xe đang đi phía trước",
           "Xe tải ở làn phải vượt lên và đột ngột chuyển làn sang làn giữa làm xe phía trước phải phanh gấp",
           "Xe con vào cua lấn làn nguy hiểm va chạm với xe ngược chiều trên đường đồi núi",
           "Xe tải phía trước làn phải đột ngột tăng tốc và chuyển sang làn giữa làm xe con phía trước phanh gấp"
@@ -2897,7 +2897,7 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Trời mưa, xe con giảm nhanh tốc độ để tránh xe tải chuyển làn đột ngột tránh chướng ngại vật phía trướco",
+          "Trời mưa, xe con giảm nhanh tốc độ để tránh xe tải chuyển làn đột ngột tránh chướng ngại vật phía trước",
           "Xe ô tô con ở làn bên trái vượt lên và chuyển làn phải cắt qua nguy hiểm trước đầu xe bạn để rẽ ra đường gom",
           "Xe máy đang đi thẳng, đột ngột rẽ trái sang đường trước đầu xe bạn",
           "Xe mô-tô đi ra từ đường nhánh nguy hiểm phía sau xe buýt vừa đi qua"
@@ -3027,8 +3027,8 @@
         "options": [
           "Tai nạn xe container không làm chủ tốc độ đâm trực diện vào xe ô tô con đang dừng chờ đèn đỏ",
           "Xe bạn có tín hiệu để chuyển làn trái thì có xe phía sau nháy pha liên tục để vượt",
-          "Xe container đang đi từ làn trái chuyển ra đường nhánh cắt qua làn đường xe bạn1l",
-          "Xe khách 16 chỗ vượt ẩu qua xe đầu kéo va chạm với xe khách đang xuống dốc tốc độ cao, gây tai nạn liên hoàn giữa 3 xe tại km12+400 đoạn qua phường Hương Hồ, TP. Huếm"
+          "Xe container đang đi từ làn trái chuyển ra đường nhánh cắt qua làn đường xe bạn",
+          "Xe khách 16 chỗ vượt ẩu qua xe đầu kéo va chạm với xe khách đang xuống dốc tốc độ cao, gây tai nạn liên hoàn giữa 3 xe tại km12+400 đoạn qua phường Hương Hồ, TP. Huế"
         ],
         "correctIndex": 1,
         "explanation": "Tình huống mô phỏng kịch bản: Xe bạn có tín hiệu để chuyển làn trái thì có xe phía sau nháy pha liên tục để vượt. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
@@ -3089,10 +3089,10 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Tài xế xe đang đỗ ven đường đi ra mở cửa xe tại khu vực đường hẹp đường hẹp",
+          "Tài xế xe đang đỗ ven đường đi ra mở cửa xe tại khu vực đường hẹp",
           "Ô tô phía trước phanh gấp do có xe tải tạt sang đột ngột vì gặp chướng ngại vật",
-          "Xe đạp bất ngờ đi ra từ đường nhánh tại ngã",
-          "Xe phía trước phanh gấp để tránh xe chuyển làn rẽ trái tại ngã"
+          "Xe đạp bất ngờ đi ra từ đường nhánh tại ngã ba",
+          "Xe phía trước phanh gấp để tránh xe chuyển làn rẽ trái tại ngã ba"
         ],
         "correctIndex": 1,
         "explanation": "Tình huống mô phỏng kịch bản: Ô tô phía trước phanh gấp do có xe tải tạt sang đột ngột vì gặp chướng ngại vật. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
@@ -3207,7 +3207,7 @@
     "chapterName": "Giao thông trên cao tốc",
     "videoUrl": "/videos/51.mp4",
     "timeIndirect": 5.8,
-    "timeDirect": 9.0,
+    "timeDirect": 9,
     "part1_name": "Xe tải bật đèn cảnh báo đi ngược đường ở làn bên phải cao tốc",
     "part2_indirect": "Xe đang chạy với tốc độ cao trên đường cao tốc, phía trước có phương tiện đang giảm tốc độ hoặc chuyển hướng.",
     "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
@@ -3265,14 +3265,14 @@
   },
   {
     "id": 52,
-    "title": "Tình huống 52: Qua đoạn đường cong đột nhiên có xe tải đi lùi trong làn khẩn cấpch",
-    "name": "Qua đoạn đường cong đột nhiên có xe tải đi lùi trong làn khẩn cấpch",
+    "title": "Tình huống 52: Qua đoạn đường cong đột nhiên có xe tải đi lùi trong làn khẩn cấp",
+    "name": "Qua đoạn đường cong đột nhiên có xe tải đi lùi trong làn khẩn cấp",
     "chapter": 3,
     "chapterName": "Giao thông trên cao tốc",
     "videoUrl": "/videos/52.mp4",
     "timeIndirect": 9.3,
     "timeDirect": 12.5,
-    "part1_name": "Qua đoạn đường cong đột nhiên có xe tải đi lùi trong làn khẩn cấpch",
+    "part1_name": "Qua đoạn đường cong đột nhiên có xe tải đi lùi trong làn khẩn cấp",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
@@ -3281,13 +3281,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Xe tải không làm chủ được tốc độ mất lái lao vào chợ dân sinh và va chạm với các xe đang đi phía trướcLU",
+          "Xe tải không làm chủ được tốc độ mất lái lao vào chợ dân sinh và va chạm với các xe đang đi phía trước",
           "Xe ô tô khách bất ngờ đi ra từ nơi đỗ tại đường hẹp",
-          "Xe buýt lấn làn để vượt tại ngã",
-          "Qua đoạn đường cong đột nhiên có xe tải đi lùi trong làn khẩn cấpch"
+          "Xe buýt lấn làn để vượt tại ngã ba",
+          "Qua đoạn đường cong đột nhiên có xe tải đi lùi trong làn khẩn cấp"
         ],
         "correctIndex": 3,
-        "explanation": "Tình huống mô phỏng kịch bản: Qua đoạn đường cong đột nhiên có xe tải đi lùi trong làn khẩn cấpch. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Qua đoạn đường cong đột nhiên có xe tải đi lùi trong làn khẩn cấp. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -3329,14 +3329,14 @@
   },
   {
     "id": 53,
-    "title": "Tình huống 53: Trên đường cao tốc ban đêm, đột nhiên có xe tải đi chiều ngược lại ở làn khẩn cấpi",
-    "name": "Trên đường cao tốc ban đêm, đột nhiên có xe tải đi chiều ngược lại ở làn khẩn cấpi",
+    "title": "Tình huống 53: Trên đường cao tốc ban đêm, đột nhiên có xe tải đi chiều ngược lại ở làn khẩn cấp",
+    "name": "Trên đường cao tốc ban đêm, đột nhiên có xe tải đi chiều ngược lại ở làn khẩn cấp",
     "chapter": 3,
     "chapterName": "Giao thông trên cao tốc",
     "videoUrl": "/videos/53.mp4",
     "timeIndirect": 9.6,
     "timeDirect": 12.75,
-    "part1_name": "Trên đường cao tốc ban đêm, đột nhiên có xe tải đi chiều ngược lại ở làn khẩn cấpi",
+    "part1_name": "Trên đường cao tốc ban đêm, đột nhiên có xe tải đi chiều ngược lại ở làn khẩn cấp",
     "part2_indirect": "Xe đang chạy với tốc độ cao trên đường cao tốc, phía trước có phương tiện đang giảm tốc độ hoặc chuyển hướng.",
     "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
     "part4_action": "Rà phanh giảm tốc độ phù hợp, bật đèn cảnh báo nguy hiểm (hazard) để báo hiệu cho xe phía sau, tránh phanh gấp khóa bánh.",
@@ -3348,10 +3348,10 @@
           "Hầm Hải Vân xe kéo rơ mooc mất lái lấn làn đâm trực diện vào xe tải đi chiều ngược lại gây tai nạn",
           "Đường núi, sương mù, có đàn bò đứng sát đường ngay sau đoạn đường cong",
           "Xe bồn bê-tông từ đường nhánh lấn làn để rẽ tại ngã ba không có đèn giao thông có nhiều xe đang dừng đỗ",
-          "Trên đường cao tốc ban đêm, đột nhiên có xe tải đi chiều ngược lại ở làn khẩn cấpi"
+          "Trên đường cao tốc ban đêm, đột nhiên có xe tải đi chiều ngược lại ở làn khẩn cấp"
         ],
         "correctIndex": 3,
-        "explanation": "Tình huống mô phỏng kịch bản: Trên đường cao tốc ban đêm, đột nhiên có xe tải đi chiều ngược lại ở làn khẩn cấpi. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Trên đường cao tốc ban đêm, đột nhiên có xe tải đi chiều ngược lại ở làn khẩn cấp. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -3398,7 +3398,7 @@
     "chapter": 3,
     "chapterName": "Giao thông trên cao tốc",
     "videoUrl": "/videos/54.mp4",
-    "timeIndirect": 6.0,
+    "timeIndirect": 6,
     "timeDirect": 9.23,
     "part1_name": "Xe tải từ đường nhánh nhập vào cao tốc với tốc độ cao",
     "part2_indirect": "Xe đang chạy với tốc độ cao trên đường cao tốc, phía trước có phương tiện đang giảm tốc độ hoặc chuyển hướng.",
@@ -3457,14 +3457,14 @@
   },
   {
     "id": 55,
-    "title": "Tình huống 55: Cao tốc, xe tải đột ngột giảm tốc và chuyển sang làn xe bạn do gặp xe đang gặp sự cố trên đườngv",
-    "name": "Cao tốc, xe tải đột ngột giảm tốc và chuyển sang làn xe bạn do gặp xe đang gặp sự cố trên đườngv",
+    "title": "Tình huống 55: Cao tốc, xe tải đột ngột giảm tốc và chuyển sang làn xe bạn do gặp xe đang gặp sự cố trên đường",
+    "name": "Cao tốc, xe tải đột ngột giảm tốc và chuyển sang làn xe bạn do gặp xe đang gặp sự cố trên đường",
     "chapter": 3,
     "chapterName": "Giao thông trên cao tốc",
     "videoUrl": "/videos/55.mp4",
     "timeIndirect": 4.1,
     "timeDirect": 7.33,
-    "part1_name": "Cao tốc, xe tải đột ngột giảm tốc và chuyển sang làn xe bạn do gặp xe đang gặp sự cố trên đườngv",
+    "part1_name": "Cao tốc, xe tải đột ngột giảm tốc và chuyển sang làn xe bạn do gặp xe đang gặp sự cố trên đường",
     "part2_indirect": "Xe đang chạy với tốc độ cao trên đường cao tốc, phía trước có phương tiện đang giảm tốc độ hoặc chuyển hướng.",
     "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
     "part4_action": "Rà phanh giảm tốc độ phù hợp, bật đèn cảnh báo nguy hiểm (hazard) để báo hiệu cho xe phía sau, tránh phanh gấp khóa bánh.",
@@ -3474,12 +3474,12 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Xe mô-tô đi ra từ đường nhánh nguy hiểm phía sau xe buýt vừa đi qua",
-          "Cao tốc, xe tải đột ngột giảm tốc và chuyển sang làn xe bạn do gặp xe đang gặp sự cố trên đườngv",
+          "Cao tốc, xe tải đột ngột giảm tốc và chuyển sang làn xe bạn do gặp xe đang gặp sự cố trên đường",
           "Xe tải từ đường nhánh nhập làn nguy hiểm",
           "Xe ô tô phía trước phanh gấp do có động vật hoang dã đứng ven đường"
         ],
         "correctIndex": 1,
-        "explanation": "Tình huống mô phỏng kịch bản: Cao tốc, xe tải đột ngột giảm tốc và chuyển sang làn xe bạn do gặp xe đang gặp sự cố trên đườngv. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Cao tốc, xe tải đột ngột giảm tốc và chuyển sang làn xe bạn do gặp xe đang gặp sự cố trên đường. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -3521,14 +3521,14 @@
   },
   {
     "id": 56,
-    "title": "Tình huống 56: Xe con đang dừng ở làn khẩn cấp xi nhan nhập làn trước xe bạnxa",
-    "name": "Xe con đang dừng ở làn khẩn cấp xi nhan nhập làn trước xe bạnxa",
+    "title": "Tình huống 56: Xe con đang dừng ở làn khẩn cấp xi nhan nhập làn trước xe bạn",
+    "name": "Xe con đang dừng ở làn khẩn cấp xi nhan nhập làn trước xe bạn",
     "chapter": 3,
     "chapterName": "Giao thông trên cao tốc",
     "videoUrl": "/videos/56.mp4",
     "timeIndirect": 4.1,
     "timeDirect": 7.27,
-    "part1_name": "Xe con đang dừng ở làn khẩn cấp xi nhan nhập làn trước xe bạnxa",
+    "part1_name": "Xe con đang dừng ở làn khẩn cấp xi nhan nhập làn trước xe bạn",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
@@ -3537,13 +3537,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Xe con đang dừng ở làn khẩn cấp xi nhan nhập làn trước xe bạnxa",
+          "Xe con đang dừng ở làn khẩn cấp xi nhan nhập làn trước xe bạn",
           "Xe ô tô Innova lùi trên cao tốc Hà Nội - Thái Nguyên",
-          "Phía trước có đá lở đột ngột và rơi xuống (tai nạn tại Đồng Văn, Hà Giang",
-          "Trên đường cao tốc ban đêm, đột nhiên có xe tải đi chiều ngược lại ở làn khẩn cấpi"
+          "Phía trước có đá lở đột ngột và rơi xuống (tai nạn tại Đồng Văn, Hà Giang)",
+          "Trên đường cao tốc ban đêm, đột nhiên có xe tải đi chiều ngược lại ở làn khẩn cấp"
         ],
         "correctIndex": 0,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe con đang dừng ở làn khẩn cấp xi nhan nhập làn trước xe bạnxa. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe con đang dừng ở làn khẩn cấp xi nhan nhập làn trước xe bạn. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -3585,14 +3585,14 @@
   },
   {
     "id": 57,
-    "title": "Tình huống 57: Xe con phía trước giảm tốc độ và chuyển sang làn xe bạn do gặp đoạn đường đang sửa chữa phía trướcj",
-    "name": "Xe con phía trước giảm tốc độ và chuyển sang làn xe bạn do gặp đoạn đường đang sửa chữa phía trướcj",
+    "title": "Tình huống 57: Xe con phía trước giảm tốc độ và chuyển sang làn xe bạn do gặp đoạn đường đang sửa chữa phía trước",
+    "name": "Xe con phía trước giảm tốc độ và chuyển sang làn xe bạn do gặp đoạn đường đang sửa chữa phía trước",
     "chapter": 3,
     "chapterName": "Giao thông trên cao tốc",
     "videoUrl": "/videos/57.mp4",
     "timeIndirect": 17.3,
     "timeDirect": 20.48,
-    "part1_name": "Xe con phía trước giảm tốc độ và chuyển sang làn xe bạn do gặp đoạn đường đang sửa chữa phía trướcj",
+    "part1_name": "Xe con phía trước giảm tốc độ và chuyển sang làn xe bạn do gặp đoạn đường đang sửa chữa phía trước",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
@@ -3601,13 +3601,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Xe con phía trước giảm tốc độ và chuyển sang làn xe bạn do gặp đoạn đường đang sửa chữa phía trướcj",
-          "Qua đoạn đường cong đột nhiên có xe tải đi lùi trong làn khẩn cấpch",
-          "Trời mưa, xe con giảm nhanh tốc độ để tránh xe tải chuyển làn đột ngột tránh chướng ngại vật phía trướco",
-          "Xe container đang đi từ làn trái chuyển ra đường nhánh cắt qua làn đường xe bạn1l"
+          "Xe con phía trước giảm tốc độ và chuyển sang làn xe bạn do gặp đoạn đường đang sửa chữa phía trước",
+          "Qua đoạn đường cong đột nhiên có xe tải đi lùi trong làn khẩn cấp",
+          "Trời mưa, xe con giảm nhanh tốc độ để tránh xe tải chuyển làn đột ngột tránh chướng ngại vật phía trước",
+          "Xe container đang đi từ làn trái chuyển ra đường nhánh cắt qua làn đường xe bạn"
         ],
         "correctIndex": 0,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe con phía trước giảm tốc độ và chuyển sang làn xe bạn do gặp đoạn đường đang sửa chữa phía trướcj. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe con phía trước giảm tốc độ và chuyển sang làn xe bạn do gặp đoạn đường đang sửa chữa phía trước. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -3649,14 +3649,14 @@
   },
   {
     "id": 58,
-    "title": "Tình huống 58: Xe tải phía trước giảm tốc độ, chuyển sang làn giữa do gặp đoạn đường đang sửa chữa phía trước4k",
-    "name": "Xe tải phía trước giảm tốc độ, chuyển sang làn giữa do gặp đoạn đường đang sửa chữa phía trước4k",
+    "title": "Tình huống 58: Xe tải phía trước giảm tốc độ, chuyển sang làn giữa do gặp đoạn đường đang sửa chữa phía trước",
+    "name": "Xe tải phía trước giảm tốc độ, chuyển sang làn giữa do gặp đoạn đường đang sửa chữa phía trước",
     "chapter": 3,
     "chapterName": "Giao thông trên cao tốc",
     "videoUrl": "/videos/58.mp4",
     "timeIndirect": 11.1,
     "timeDirect": 14.25,
-    "part1_name": "Xe tải phía trước giảm tốc độ, chuyển sang làn giữa do gặp đoạn đường đang sửa chữa phía trước4k",
+    "part1_name": "Xe tải phía trước giảm tốc độ, chuyển sang làn giữa do gặp đoạn đường đang sửa chữa phía trước",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
@@ -3665,13 +3665,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Xe tải phía trước giảm tốc độ, chuyển sang làn giữa do gặp đoạn đường đang sửa chữa phía trước4k",
-          "Xe khách va chạm với xe cứu hỏa đi ngược chiều tại nút giao Pháp Vân aG>P\"*io@ρXҀO",
+          "Xe tải phía trước giảm tốc độ, chuyển sang làn giữa do gặp đoạn đường đang sửa chữa phía trước",
+          "Xe khách va chạm với xe cứu hỏa đi ngược chiều tại nút giao Pháp Vân",
           "Xe ô tô làn đường đối diện lấn làn vượt xe tải đang dừng đỗ tại khu vực đông đúc",
           "Xe tải từ đường nhánh nhập vào cao tốc với tốc độ cao"
         ],
         "correctIndex": 0,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe tải phía trước giảm tốc độ, chuyển sang làn giữa do gặp đoạn đường đang sửa chữa phía trước4k. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe tải phía trước giảm tốc độ, chuyển sang làn giữa do gặp đoạn đường đang sửa chữa phía trước. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -3713,14 +3713,14 @@
   },
   {
     "id": 59,
-    "title": "Tình huống 59: Xe container đang đi từ làn trái chuyển ra đường nhánh cắt qua làn đường xe bạn1l",
-    "name": "Xe container đang đi từ làn trái chuyển ra đường nhánh cắt qua làn đường xe bạn1l",
+    "title": "Tình huống 59: Xe container đang đi từ làn trái chuyển ra đường nhánh cắt qua làn đường xe bạn",
+    "name": "Xe container đang đi từ làn trái chuyển ra đường nhánh cắt qua làn đường xe bạn",
     "chapter": 3,
     "chapterName": "Giao thông trên cao tốc",
     "videoUrl": "/videos/59.mp4",
     "timeIndirect": 13.6,
     "timeDirect": 16.82,
-    "part1_name": "Xe container đang đi từ làn trái chuyển ra đường nhánh cắt qua làn đường xe bạn1l",
+    "part1_name": "Xe container đang đi từ làn trái chuyển ra đường nhánh cắt qua làn đường xe bạn",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
     "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
@@ -3729,13 +3729,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Xe container đang đi từ làn trái chuyển ra đường nhánh cắt qua làn đường xe bạn1l",
-          "Xe con từ làn trong cùng bên trái lấn làn vượt ẩu để đi ra đường nhánh, va chạm với xe tảiy",
+          "Xe container đang đi từ làn trái chuyển ra đường nhánh cắt qua làn đường xe bạn",
+          "Xe con từ làn trong cùng bên trái lấn làn vượt ẩu để đi ra đường nhánh, va chạm với xe tải",
           "Xe mô-tô lấn làn vượt ẩu trên đường núi, va chạm với xe khách đi ngược chiều",
           "Xe ô tô khách bất ngờ đi ra từ nơi đỗ tại đường hẹp"
         ],
         "correctIndex": 0,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe container đang đi từ làn trái chuyển ra đường nhánh cắt qua làn đường xe bạn1l. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe container đang đi từ làn trái chuyển ra đường nhánh cắt qua làn đường xe bạn. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -3777,14 +3777,14 @@
   },
   {
     "id": 60,
-    "title": "Tình huống 60: Xe 16 chỗ từ làn đường khẩn cấp đi ra vào làn xe bạn9p",
-    "name": "Xe 16 chỗ từ làn đường khẩn cấp đi ra vào làn xe bạn9p",
+    "title": "Tình huống 60: Xe 16 chỗ từ làn đường khẩn cấp đi ra vào làn xe bạn",
+    "name": "Xe 16 chỗ từ làn đường khẩn cấp đi ra vào làn xe bạn",
     "chapter": 3,
     "chapterName": "Giao thông trên cao tốc",
     "videoUrl": "/videos/60.mp4",
     "timeIndirect": 4.1,
     "timeDirect": 7.33,
-    "part1_name": "Xe 16 chỗ từ làn đường khẩn cấp đi ra vào làn xe bạn9p",
+    "part1_name": "Xe 16 chỗ từ làn đường khẩn cấp đi ra vào làn xe bạn",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
@@ -3793,13 +3793,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Đường núi, trời mưa, xe phía trước đột ngột dừng lại vì hỏng máyA",
-          "Xe con đang dừng ở làn khẩn cấp xi nhan nhập làn trước xe bạnxa",
+          "Đường núi, trời mưa, xe phía trước đột ngột dừng lại vì hỏng máy",
+          "Xe con đang dừng ở làn khẩn cấp xi nhan nhập làn trước xe bạn",
           "Tai nạn liên hoàn giữa 3 xe khách do đâm vào xe đang dừng đỗ để sửa chữa",
-          "Xe 16 chỗ từ làn đường khẩn cấp đi ra vào làn xe bạn9p"
+          "Xe 16 chỗ từ làn đường khẩn cấp đi ra vào làn xe bạn"
         ],
         "correctIndex": 3,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe 16 chỗ từ làn đường khẩn cấp đi ra vào làn xe bạn9p. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe 16 chỗ từ làn đường khẩn cấp đi ra vào làn xe bạn. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -3841,14 +3841,14 @@
   },
   {
     "id": 61,
-    "title": "Tình huống 61: Xe con từ đường nhánh nhập làn nguy hiểm cắt qua đầu xe bạntq",
-    "name": "Xe con từ đường nhánh nhập làn nguy hiểm cắt qua đầu xe bạntq",
+    "title": "Tình huống 61: Xe con từ đường nhánh nhập làn nguy hiểm cắt qua đầu xe bạn",
+    "name": "Xe con từ đường nhánh nhập làn nguy hiểm cắt qua đầu xe bạn",
     "chapter": 3,
     "chapterName": "Giao thông trên cao tốc",
     "videoUrl": "/videos/61.mp4",
     "timeIndirect": 13.4,
     "timeDirect": 16.63,
-    "part1_name": "Xe con từ đường nhánh nhập làn nguy hiểm cắt qua đầu xe bạntq",
+    "part1_name": "Xe con từ đường nhánh nhập làn nguy hiểm cắt qua đầu xe bạn",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
     "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
@@ -3857,13 +3857,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Gần cổng làng, phía sau có xe mô-tô lấn làn để vượt xe ô tô đang dừng đỗe",
-          "Xe con từ đường nhánh nhập làn nguy hiểm cắt qua đầu xe bạntq",
-          "Xe con phía trước giảm tốc độ và chuyển sang làn xe bạn do gặp đoạn đường đang sửa chữa phía trướcj",
+          "Gần cổng làng, phía sau có xe mô-tô lấn làn để vượt xe ô tô đang dừng đỗ",
+          "Xe con từ đường nhánh nhập làn nguy hiểm cắt qua đầu xe bạn",
+          "Xe con phía trước giảm tốc độ và chuyển sang làn xe bạn do gặp đoạn đường đang sửa chữa phía trước",
           "Xe bán tải phía trước giảm tốc độ và chuyển làn khẩn cấp để tránh xe mô-tô đi ngược chiều"
         ],
         "correctIndex": 1,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe con từ đường nhánh nhập làn nguy hiểm cắt qua đầu xe bạntq. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe con từ đường nhánh nhập làn nguy hiểm cắt qua đầu xe bạn. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -3923,7 +3923,7 @@
         "options": [
           "Người đi bộ sang đường bị khuất sau xe tải",
           "Xe con đi ngược chiều nguy hiểm tại làn đường tốc độ cao nhất trên cao tốc",
-          "Xe ô tô bất ngờ đi nhanh ra từ đường nhánh bên trái tại ngã",
+          "Xe ô tô bất ngờ đi nhanh ra từ đường nhánh bên trái tại ngã ba",
           "Học sinh đi ra đường tại khu vực gần trường học"
         ],
         "correctIndex": 1,
@@ -3969,14 +3969,14 @@
   },
   {
     "id": 63,
-    "title": "Tình huống 63: Đàn gia súc từ bên đường đi ra cắt qua làn đường xe bạn tại khu vực cao tốc bị hỏng hộ lans",
-    "name": "Đàn gia súc từ bên đường đi ra cắt qua làn đường xe bạn tại khu vực cao tốc bị hỏng hộ lans",
+    "title": "Tình huống 63: Đàn gia súc từ bên đường đi ra cắt qua làn đường xe bạn tại khu vực cao tốc bị hỏng hộ lan",
+    "name": "Đàn gia súc từ bên đường đi ra cắt qua làn đường xe bạn tại khu vực cao tốc bị hỏng hộ lan",
     "chapter": 3,
     "chapterName": "Giao thông trên cao tốc",
     "videoUrl": "/videos/63.mp4",
     "timeIndirect": 1.2,
     "timeDirect": 4.42,
-    "part1_name": "Đàn gia súc từ bên đường đi ra cắt qua làn đường xe bạn tại khu vực cao tốc bị hỏng hộ lans",
+    "part1_name": "Đàn gia súc từ bên đường đi ra cắt qua làn đường xe bạn tại khu vực cao tốc bị hỏng hộ lan",
     "part2_indirect": "Xe đang chạy với tốc độ cao trên đường cao tốc, phía trước có phương tiện đang giảm tốc độ hoặc chuyển hướng.",
     "part3_direct": "Gia súc bước chân từ lề đường xuống chắn ngang phần đường lưu thông của xe bạn.",
     "part4_action": "Rà phanh giảm tốc độ phù hợp, bật đèn cảnh báo nguy hiểm (hazard) để báo hiệu cho xe phía sau, tránh phanh gấp khóa bánh.",
@@ -3986,12 +3986,12 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Xe phía trước phanh gấp để tránh xe buýt đang dừng tại bến xe buýt",
-          "Xe phía trước phanh gấp để tránh xe chuyển làn rẽ trái tại ngã",
-          "Đàn gia súc từ bên đường đi ra cắt qua làn đường xe bạn tại khu vực cao tốc bị hỏng hộ lans",
+          "Xe phía trước phanh gấp để tránh xe chuyển làn rẽ trái tại ngã ba",
+          "Đàn gia súc từ bên đường đi ra cắt qua làn đường xe bạn tại khu vực cao tốc bị hỏng hộ lan",
           "Xe con vào cua lấn làn nguy hiểm va chạm với xe ngược chiều trên đường đồi núi"
         ],
         "correctIndex": 2,
-        "explanation": "Tình huống mô phỏng kịch bản: Đàn gia súc từ bên đường đi ra cắt qua làn đường xe bạn tại khu vực cao tốc bị hỏng hộ lans. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Đàn gia súc từ bên đường đi ra cắt qua làn đường xe bạn tại khu vực cao tốc bị hỏng hộ lan. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -4039,7 +4039,7 @@
     "chapterName": "Đường núi & Thời tiết xấu",
     "videoUrl": "/videos/64.mp4",
     "timeIndirect": 6.8,
-    "timeDirect": 10.0,
+    "timeDirect": 10,
     "part1_name": "Phía đường cong xuất hiện xe tải đi đối diện làm xe khách phía trước giảm tốc độ đột ngột",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
@@ -4050,7 +4050,7 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Xe tải lớn ở làn đường ngược chiều lấn làn xe bạn để vượt qua xe buýt",
-          "Đường nông thôn, gặp đàn bò đi từ dưới vệ đường băng qua",
+          "Đường nông thôn, gặp đàn bò đi từ dưới vệ đường băng qua đường",
           "Xe buýt lấn làn đường vượt ẩu tại ngã tư có đèn giao thông",
           "Phía đường cong xuất hiện xe tải đi đối diện làm xe khách phía trước giảm tốc độ đột ngột"
         ],
@@ -4114,7 +4114,7 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Xe con phanh gấp tránh xe máy từ ngõ lao ra, xe khách không làm chủ tốc độ đã đâm trực diện vào xe con",
-          "Trên đường cao tốc ban đêm, đột nhiên có xe tải đi chiều ngược lại ở làn khẩn cấpi",
+          "Trên đường cao tốc ban đêm, đột nhiên có xe tải đi chiều ngược lại ở làn khẩn cấp",
           "Đường đèo dốc ban đêm gần đoạn đường cong, đột ngột tại khúc cua có xe khách lấn làn vượt xe tải lớn",
           "Xe phía trước phanh gấp để tránh xe buýt đang dừng tại bến xe buýt"
         ],
@@ -4177,10 +4177,10 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Tại ngã tư, đèn xanh, xe bạn bắt đầu di chuyển có xe mô-tô rẽ cắt ngang qua đầu xe bạnn",
+          "Tại ngã tư, đèn xanh, xe bạn bắt đầu di chuyển có xe mô-tô rẽ cắt ngang qua đầu xe bạn",
           "Xe con phanh gấp tránh xe máy từ ngõ lao ra, xe khách không làm chủ tốc độ đã đâm trực diện vào xe con",
           "Đi phía sau xe tải chở vật liệu không được chằng buộc cẩn thận",
-          "Xe con phía trước giảm tốc độ và chuyển sang làn xe bạn do gặp đoạn đường đang sửa chữa phía trướcj"
+          "Xe con phía trước giảm tốc độ và chuyển sang làn xe bạn do gặp đoạn đường đang sửa chữa phía trước"
         ],
         "correctIndex": 2,
         "explanation": "Tình huống mô phỏng kịch bản: Đi phía sau xe tải chở vật liệu không được chằng buộc cẩn thận. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
@@ -4241,10 +4241,10 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Xe con lấn làn xe bạn để vượt xe tải trên đường núi ngay tại đoạn đường quanh",
-          "Xe ô tô phía trước phanh gấp để tránh đoàn xe đạp từ đường nhánh đi",
+          "Xe con lấn làn xe bạn để vượt xe tải trên đường núi ngay tại đoạn đường cong",
+          "Xe ô tô phía trước phanh gấp để tránh đoàn xe đạp từ đường nhánh đi ra",
           "Xe ô tô phía trước phanh gấp do có động vật hoang dã đứng ven đường",
-          "Xe con phía trước giảm tốc độ và chuyển sang làn xe bạn do gặp đoạn đường đang sửa chữa phía trướcj"
+          "Xe con phía trước giảm tốc độ và chuyển sang làn xe bạn do gặp đoạn đường đang sửa chữa phía trước"
         ],
         "correctIndex": 2,
         "explanation": "Tình huống mô phỏng kịch bản: Xe ô tô phía trước phanh gấp do có động vật hoang dã đứng ven đường. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
@@ -4307,7 +4307,7 @@
         "options": [
           "Xe mô tô vượt lên đột ngột giảm tốc và chuyển sang làn xe bạn để tránh chướng ngại vật trên đường",
           "Xe khách 45 chỗ đâm vào xe đầu kéo kéo rơ moóc chở máy ủi đi từ đường tránh ra gây tai nạn thảm khốc",
-          "Đường núi, trời mưa, xe phía trước đột ngột dừng lại vì hỏng máyA",
+          "Đường núi, trời mưa, xe phía trước đột ngột dừng lại vì hỏng máy",
           "Đường núi, sương mù, có đàn bò đứng sát đường ngay sau đoạn đường cong"
         ],
         "correctIndex": 3,
@@ -4370,7 +4370,7 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Xe tải lớn ở làn đối diện lấn làn vượt xe đang thu gom rác",
-          "Gặp xe khách tại đoạn đường cong vào cua chiếm hết làn đường tại khu vực đường hẹpo",
+          "Gặp xe khách tại đoạn đường cong vào cua chiếm hết làn đường tại khu vực đường hẹp",
           "Xe con vào cua lấn làn nguy hiểm va chạm với xe ngược chiều trên đường đồi núi",
           "Gặp xe ô tô từ đường nhánh bên phải tại ngã ba đi ra với tốc độ nhanh"
         ],
@@ -4481,14 +4481,14 @@
   },
   {
     "id": 71,
-    "title": "Tình huống 71: Đường núi, trời mưa, xe phía trước đột ngột dừng lại vì hỏng máyA",
-    "name": "Đường núi, trời mưa, xe phía trước đột ngột dừng lại vì hỏng máyA",
+    "title": "Tình huống 71: Đường núi, trời mưa, xe phía trước đột ngột dừng lại vì hỏng máy",
+    "name": "Đường núi, trời mưa, xe phía trước đột ngột dừng lại vì hỏng máy",
     "chapter": 4,
     "chapterName": "Đường núi & Thời tiết xấu",
     "videoUrl": "/videos/71.mp4",
     "timeIndirect": 8.6,
     "timeDirect": 11.82,
-    "part1_name": "Đường núi, trời mưa, xe phía trước đột ngột dừng lại vì hỏng máyA",
+    "part1_name": "Đường núi, trời mưa, xe phía trước đột ngột dừng lại vì hỏng máy",
     "part2_indirect": "Đoạn đường đèo dốc có khúc cua gấp, sương mù hoặc mưa gió làm giảm tầm nhìn của người lái xe.",
     "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
     "part4_action": "Chuyển về số thấp, rà phanh kiểm soát tốc độ, đi bám sát phần đường bên phải, không vượt xe tại đoạn đường cong cua.",
@@ -4497,13 +4497,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Xe con làn đối diện rẽ nhanh cắt qua đầu xe bạn tại ngã baf",
-          "Đường núi, trời mưa, xe phía trước đột ngột dừng lại vì hỏng máyA",
+          "Xe con làn đối diện rẽ nhanh cắt qua đầu xe bạn tại ngã ba",
+          "Đường núi, trời mưa, xe phía trước đột ngột dừng lại vì hỏng máy",
           "Đường đèo dốc ban đêm gần đoạn đường cong, đột ngột tại khúc cua có xe khách lấn làn vượt xe tải lớn",
           "Tai nạn liên hoàn giữa 3 xe khách do đâm vào xe đang dừng đỗ để sửa chữa"
         ],
         "correctIndex": 1,
-        "explanation": "Tình huống mô phỏng kịch bản: Đường núi, trời mưa, xe phía trước đột ngột dừng lại vì hỏng máyA. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Đường núi, trời mưa, xe phía trước đột ngột dừng lại vì hỏng máy. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -4545,14 +4545,14 @@
   },
   {
     "id": 72,
-    "title": "Tình huống 72: Xe tải lấn làn đường xe bạn để vượt các xe khác trên đường núi thời tiết sương mùB",
-    "name": "Xe tải lấn làn đường xe bạn để vượt các xe khác trên đường núi thời tiết sương mùB",
+    "title": "Tình huống 72: Xe tải lấn làn đường xe bạn để vượt các xe khác trên đường núi thời tiết sương mù",
+    "name": "Xe tải lấn làn đường xe bạn để vượt các xe khác trên đường núi thời tiết sương mù",
     "chapter": 4,
     "chapterName": "Đường núi & Thời tiết xấu",
     "videoUrl": "/videos/72.mp4",
     "timeIndirect": 11.7,
     "timeDirect": 14.87,
-    "part1_name": "Xe tải lấn làn đường xe bạn để vượt các xe khác trên đường núi thời tiết sương mùB",
+    "part1_name": "Xe tải lấn làn đường xe bạn để vượt các xe khác trên đường núi thời tiết sương mù",
     "part2_indirect": "Phương tiện ở làn đường đối diện có xu hướng lấn sang phần đường của xe bạn để vượt chướng ngại vật hoặc tránh xe khác.",
     "part3_direct": "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
     "part4_action": "Rà phanh giảm tốc độ, chủ động điều khiển xe nép sát về phía bên phải làn đường của mình để nhường đường.",
@@ -4562,12 +4562,12 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Tình huống nguy hiểm khi gặp xe tải lớn đi qua hầm chui dân sinh",
-          "Xe tải lấn làn đường xe bạn để vượt các xe khác trên đường núi thời tiết sương mùB",
-          "Tài xế xe dừng bên đường đang mở cửa",
+          "Xe tải lấn làn đường xe bạn để vượt các xe khác trên đường núi thời tiết sương mù",
+          "Tài xế xe dừng bên đường đang mở cửa xe",
           "Xuất hiện gia súc từ vệ đường đi ra đường quốc lộ ngay trước mặt xe bạn"
         ],
         "correctIndex": 1,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe tải lấn làn đường xe bạn để vượt các xe khác trên đường núi thời tiết sương mùB. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe tải lấn làn đường xe bạn để vượt các xe khác trên đường núi thời tiết sương mù. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -4609,14 +4609,14 @@
   },
   {
     "id": 73,
-    "title": "Tình huống 73: Xe con lấn làn xe bạn để vượt xe tải trên đường núi ngay tại đoạn đường quanh",
-    "name": "Xe con lấn làn xe bạn để vượt xe tải trên đường núi ngay tại đoạn đường quanh",
+    "title": "Tình huống 73: Xe con lấn làn xe bạn để vượt xe tải trên đường núi ngay tại đoạn đường cong",
+    "name": "Xe con lấn làn xe bạn để vượt xe tải trên đường núi ngay tại đoạn đường cong",
     "chapter": 4,
     "chapterName": "Đường núi & Thời tiết xấu",
     "videoUrl": "/videos/73.mp4",
     "timeIndirect": 11.8,
     "timeDirect": 15.03,
-    "part1_name": "Xe con lấn làn xe bạn để vượt xe tải trên đường núi ngay tại đoạn đường quanh",
+    "part1_name": "Xe con lấn làn xe bạn để vượt xe tải trên đường núi ngay tại đoạn đường cong",
     "part2_indirect": "Phía trước bên phải có xe kích thước lớn đang đỗ làm khuất tầm nhìn, có vạch kẻ đường cho người đi bộ hoặc lối giao cắt.",
     "part3_direct": "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
     "part4_action": "Rà phanh giảm tốc độ, chủ động điều khiển xe nép sát về phía bên phải làn đường của mình để nhường đường.",
@@ -4625,13 +4625,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Xe con lấn làn xe bạn để vượt xe tải trên đường núi ngay tại đoạn đường quanh",
-          "Xe đạp bất ngờ đi ra từ đường nhánh tại ngã",
+          "Xe con lấn làn xe bạn để vượt xe tải trên đường núi ngay tại đoạn đường cong",
+          "Xe đạp bất ngờ đi ra từ đường nhánh tại ngã ba",
           "Trời mưa, ô tô phía trước phanh gấp để tránh xe mô-tô tạt đầu khi gặp chướng ngại vật",
           "Xe tải phía trước làn phải đột ngột tăng tốc và chuyển sang làn giữa làm xe con phía trước phanh gấp"
         ],
         "correctIndex": 0,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe con lấn làn xe bạn để vượt xe tải trên đường núi ngay tại đoạn đường quanh. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe con lấn làn xe bạn để vượt xe tải trên đường núi ngay tại đoạn đường cong. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -4673,14 +4673,14 @@
   },
   {
     "id": 74,
-    "title": "Tình huống 74: Xe ô tô phía trước phanh gấp để tránh đoàn xe đạp từ đường nhánh đi",
-    "name": "Xe ô tô phía trước phanh gấp để tránh đoàn xe đạp từ đường nhánh đi",
+    "title": "Tình huống 74: Xe ô tô phía trước phanh gấp để tránh đoàn xe đạp từ đường nhánh đi ra",
+    "name": "Xe ô tô phía trước phanh gấp để tránh đoàn xe đạp từ đường nhánh đi ra",
     "chapter": 5,
     "chapterName": "Giao thông trên quốc lộ",
     "videoUrl": "/videos/74.mp4",
     "timeIndirect": 7.8,
-    "timeDirect": 11.0,
-    "part1_name": "Xe ô tô phía trước phanh gấp để tránh đoàn xe đạp từ đường nhánh đi",
+    "timeDirect": 11,
+    "part1_name": "Xe ô tô phía trước phanh gấp để tránh đoàn xe đạp từ đường nhánh đi ra",
     "part2_indirect": "Khoảng cách giữa xe bạn và phương tiện phía trước đang thu hẹp dần, phía trước có chướng ngại vật hoặc mật độ xe đông đúc.",
     "part3_direct": "Cụm đèn phanh màu đỏ phía sau phương tiện đi trước vừa bật sáng báo hiệu xe phanh dừng đột ngột.",
     "part4_action": "Đạp phanh giảm tốc độ kịp thời, giữ khoảng cách an toàn với xe đi trước, tuyệt đối không đánh lái gấp sang làn bên cạnh.",
@@ -4689,13 +4689,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Xe ô tô phía trước phanh gấp để tránh đoàn xe đạp từ đường nhánh đi",
-          "Gần cổng làng, phía sau có xe mô-tô lấn làn để vượt xe ô tô đang dừng đỗe",
-          "Xe 16 chỗ từ làn đường khẩn cấp đi ra vào làn xe bạn9p",
+          "Xe ô tô phía trước phanh gấp để tránh đoàn xe đạp từ đường nhánh đi ra",
+          "Gần cổng làng, phía sau có xe mô-tô lấn làn để vượt xe ô tô đang dừng đỗ",
+          "Xe 16 chỗ từ làn đường khẩn cấp đi ra vào làn xe bạn",
           "Ô tô phía trước phanh gấp do có xe tải tạt sang đột ngột vì gặp chướng ngại vật"
         ],
         "correctIndex": 0,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe ô tô phía trước phanh gấp để tránh đoàn xe đạp từ đường nhánh đi. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe ô tô phía trước phanh gấp để tránh đoàn xe đạp từ đường nhánh đi ra. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -4743,7 +4743,7 @@
     "chapterName": "Giao thông trên quốc lộ",
     "videoUrl": "/videos/75.mp4",
     "timeIndirect": 1.8,
-    "timeDirect": 5.0,
+    "timeDirect": 5,
     "part1_name": "Trẻ em đột ngột lao ra để nhặt quả bóng bị lăn ra đường",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
@@ -4755,7 +4755,7 @@
         "options": [
           "Xe tải lớn ở làn đường ngược chiều lấn làn xe bạn để vượt qua xe buýt",
           "Trẻ em đột ngột lao ra để nhặt quả bóng bị lăn ra đường",
-          "Xe con đi phía trước giảm tốc và chuyển làn đột ngột để tránh chướng ngại vậtz",
+          "Xe con đi phía trước giảm tốc và chuyển làn đột ngột để tránh chướng ngại vật",
           "Xe ô tô Innova lùi trên cao tốc Hà Nội - Thái Nguyên"
         ],
         "correctIndex": 1,
@@ -4806,7 +4806,7 @@
     "chapter": 5,
     "chapterName": "Giao thông trên quốc lộ",
     "videoUrl": "/videos/76.mp4",
-    "timeIndirect": 3.0,
+    "timeIndirect": 3,
     "timeDirect": 6.25,
     "part1_name": "Em bé đột ngột chạy ra đường",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
@@ -4870,7 +4870,7 @@
     "chapter": 5,
     "chapterName": "Giao thông trên quốc lộ",
     "videoUrl": "/videos/77.mp4",
-    "timeIndirect": 3.0,
+    "timeIndirect": 3,
     "timeDirect": 6.17,
     "part1_name": "Xe con từ làn phải (khuất tầm nhìn) cắt ngang qua các xe đang đi thẳng để sang đường",
     "part2_indirect": "Phía trước bên phải có xe kích thước lớn đang đỗ làm khuất tầm nhìn, có vạch kẻ đường cho người đi bộ hoặc lối giao cắt.",
@@ -4882,7 +4882,7 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Xe con từ làn phải (khuất tầm nhìn) cắt ngang qua các xe đang đi thẳng để sang đường",
-          "Xe ô tô phía trước phanh gấp để tránh đoàn xe đạp từ đường nhánh đi",
+          "Xe ô tô phía trước phanh gấp để tránh đoàn xe đạp từ đường nhánh đi ra",
           "Xe khách lấn làn vượt xe container ngay tại khúc cua trên đường núi",
           "Tránh xe tại khu vực công trình sửa đường xuất hiện sau khúc cua"
         ],
@@ -4929,14 +4929,14 @@
   },
   {
     "id": 78,
-    "title": "Tình huống 78: Đèn vừa chuyển xanh, đột ngột xe mô-tô làn trái phía trước cố vượt đèn đỏ cắt qua trước đầu",
-    "name": "Đèn vừa chuyển xanh, đột ngột xe mô-tô làn trái phía trước cố vượt đèn đỏ cắt qua trước đầu",
+    "title": "Tình huống 78: Đèn vừa chuyển xanh, đột ngột xe mô-tô làn trái phía trước cố vượt đèn đỏ cắt qua trước đầu xe bạn",
+    "name": "Đèn vừa chuyển xanh, đột ngột xe mô-tô làn trái phía trước cố vượt đèn đỏ cắt qua trước đầu xe bạn",
     "chapter": 5,
     "chapterName": "Giao thông trên quốc lộ",
     "videoUrl": "/videos/78.mp4",
     "timeIndirect": 8.1,
     "timeDirect": 11.27,
-    "part1_name": "Đèn vừa chuyển xanh, đột ngột xe mô-tô làn trái phía trước cố vượt đèn đỏ cắt qua trước đầu",
+    "part1_name": "Đèn vừa chuyển xanh, đột ngột xe mô-tô làn trái phía trước cố vượt đèn đỏ cắt qua trước đầu xe bạn",
     "part2_indirect": "Xe đang di chuyển qua nút giao cắt có vạch sang đường, tầm nhìn hai bên bị hạn chế.",
     "part3_direct": "Phương tiện bên cạnh bắt đầu đè vạch phân làn và chuyển hướng tạt ngang trước đầu xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
@@ -4946,12 +4946,12 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Phía đường cong xuất hiện xe tải đi đối diện làm xe khách phía trước giảm tốc độ đột ngột",
-          "Đèn vừa chuyển xanh, đột ngột xe mô-tô làn trái phía trước cố vượt đèn đỏ cắt qua trước đầu",
-          "Xe khách lấn làn vượt xe tải chỗ đường cong, đâm vào xe khách đi ngược chiều tại đường Hồ Chí Minh, đoạn qua thôn 7, xã Hoà Phú, TP.Buôn Ma Thuột (Đắk Lắk",
-          "Đàn gia súc từ bên đường đi ra cắt qua làn đường xe bạn tại khu vực cao tốc bị hỏng hộ lans"
+          "Đèn vừa chuyển xanh, đột ngột xe mô-tô làn trái phía trước cố vượt đèn đỏ cắt qua trước đầu xe bạn",
+          "Xe khách lấn làn vượt xe tải chỗ đường cong, đâm vào xe khách đi ngược chiều tại đường Hồ Chí Minh, đoạn qua thôn 7, xã Hoà Phú, TP. Buôn Ma Thuột (Đắk Lắk)",
+          "Đàn gia súc từ bên đường đi ra cắt qua làn đường xe bạn tại khu vực cao tốc bị hỏng hộ lan"
         ],
         "correctIndex": 1,
-        "explanation": "Tình huống mô phỏng kịch bản: Đèn vừa chuyển xanh, đột ngột xe mô-tô làn trái phía trước cố vượt đèn đỏ cắt qua trước đầu. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Đèn vừa chuyển xanh, đột ngột xe mô-tô làn trái phía trước cố vượt đèn đỏ cắt qua trước đầu xe bạn. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -5073,10 +5073,10 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Xe con lấn làn xe bạn để vượt xe tải trên đường núi ngay tại đoạn đường quanh",
+          "Xe con lấn làn xe bạn để vượt xe tải trên đường núi ngay tại đoạn đường cong",
           "Xe mô tô vượt lên đột ngột giảm tốc và chuyển sang làn xe bạn để tránh chướng ngại vật trên đường",
           "Xe ô tô con ở làn bên trái vượt lên và chuyển làn phải cắt qua nguy hiểm trước đầu xe bạn để rẽ ra đường gom",
-          "Cao tốc, xe tải đột ngột giảm tốc và chuyển sang làn xe bạn do gặp xe đang gặp sự cố trên đườngv"
+          "Cao tốc, xe tải đột ngột giảm tốc và chuyển sang làn xe bạn do gặp xe đang gặp sự cố trên đường"
         ],
         "correctIndex": 1,
         "explanation": "Tình huống mô phỏng kịch bản: Xe mô tô vượt lên đột ngột giảm tốc và chuyển sang làn xe bạn để tránh chướng ngại vật trên đường. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
@@ -5138,7 +5138,7 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Xe bán tải từ đường bên kia quay đầu đột ngột lấn làn xe bạn",
-          "Xe container bất ngờ tông vào hàng loạt phương tiện đang dừng đèn đỏ tại quốc lộ 1, đoạn nút giao Mỹ Phước - Tân Vạn, Bình DươngsN",
+          "Xe container bất ngờ tông vào hàng loạt phương tiện đang dừng đèn đỏ tại quốc lộ 1, đoạn nút giao Mỹ Phước - Tân Vạn, Bình Dương",
           "Xe ô tô con chở người đi qua đường sắt tại Nam Định không chú ý va chạm với tàu hỏa",
           "Xe tải ở làn phải vượt lên và đột ngột chuyển làn sang làn giữa làm xe phía trước phải phanh gấp"
         ],
@@ -5266,7 +5266,7 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Tránh xe tại khu vực công trình sửa đường xuất hiện sau khúc cua",
-          "Tài xế giật mình đánh lái gấp đâm xe vào dải phân cách, xe đổ vào đám đông làm 5 người thiệt mạngD",
+          "Tài xế giật mình đánh lái gấp đâm xe vào dải phân cách, xe đổ vào đám đông làm 5 người thiệt mạng",
           "Xuất hiện gia súc từ vệ đường đi ra đường quốc lộ ngay trước mặt xe bạn",
           "Xe mô tô vượt lên đột ngột giảm tốc và chuyển sang làn xe bạn để tránh chướng ngại vật trên đường"
         ],
@@ -5318,7 +5318,7 @@
     "chapter": 5,
     "chapterName": "Giao thông trên quốc lộ",
     "videoUrl": "/videos/84.mp4",
-    "timeIndirect": 6.0,
+    "timeIndirect": 6,
     "timeDirect": 9.23,
     "part1_name": "Xe con phía trước giảm tốc đột ngột và chuyển làn để tránh xe buýt đang dừng",
     "part2_indirect": "Phương tiện đi song song hoặc cùng chiều phía trước giảm tốc độ và bắt đầu đổi hướng chuyển làn.",
@@ -5396,7 +5396,7 @@
           "Xe đạp từ bên kia đường đối diện băng qua đường không quan sát trước mặt xe bạn",
           "Xe phía trước phanh gấp để tránh xe buýt đang dừng tại bến xe buýt",
           "Khúc gỗ trên xe tải phía trước bị rơi xuống do xe phanh gấp",
-          "Xe con làn đối diện rẽ nhanh cắt qua đầu xe bạn tại ngã baf"
+          "Xe con làn đối diện rẽ nhanh cắt qua đầu xe bạn tại ngã ba"
         ],
         "correctIndex": 2,
         "explanation": "Tình huống mô phỏng kịch bản: Khúc gỗ trên xe tải phía trước bị rơi xuống do xe phanh gấp. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
@@ -5441,14 +5441,14 @@
   },
   {
     "id": 86,
-    "title": "Tình huống 86: Xe con đi phía trước giảm tốc và chuyển làn đột ngột để tránh chướng ngại vậtz",
-    "name": "Xe con đi phía trước giảm tốc và chuyển làn đột ngột để tránh chướng ngại vậtz",
+    "title": "Tình huống 86: Xe con đi phía trước giảm tốc và chuyển làn đột ngột để tránh chướng ngại vật",
+    "name": "Xe con đi phía trước giảm tốc và chuyển làn đột ngột để tránh chướng ngại vật",
     "chapter": 5,
     "chapterName": "Giao thông trên quốc lộ",
     "videoUrl": "/videos/86.mp4",
     "timeIndirect": 1.1,
     "timeDirect": 4.27,
-    "part1_name": "Xe con đi phía trước giảm tốc và chuyển làn đột ngột để tránh chướng ngại vậtz",
+    "part1_name": "Xe con đi phía trước giảm tốc và chuyển làn đột ngột để tránh chướng ngại vật",
     "part2_indirect": "Phương tiện đi song song hoặc cùng chiều phía trước giảm tốc độ và bắt đầu đổi hướng chuyển làn.",
     "part3_direct": "Phương tiện bên cạnh bắt đầu đè vạch phân làn và chuyển hướng tạt ngang trước đầu xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
@@ -5458,12 +5458,12 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Xe ô tô khách bất ngờ đi ra từ nơi đỗ tại đường hẹp",
-          "Xe 16 chỗ từ đường nhánh, khuất tầm nhìn rẽ vào đường chính không giảm tốc độ, bị xe sơ mi rơ moóc đâm vào (tại Ngã 3 Nà Phặc - Bắc Kạn)_C5jhlH",
+          "Xe 16 chỗ từ đường nhánh, khuất tầm nhìn rẽ vào đường chính không giảm tốc độ, bị xe sơ mi rơ moóc đâm vào (tại Ngã 3 Nà Phặc - Bắc Kạn)",
           "Đi qua chỗ giao cắt với đường sắt ban đêm, không có đèn tín hiệu, phía sau xe con, đột nhiên có tàu đi tới",
-          "Xe con đi phía trước giảm tốc và chuyển làn đột ngột để tránh chướng ngại vậtz"
+          "Xe con đi phía trước giảm tốc và chuyển làn đột ngột để tránh chướng ngại vật"
         ],
         "correctIndex": 3,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe con đi phía trước giảm tốc và chuyển làn đột ngột để tránh chướng ngại vậtz. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe con đi phía trước giảm tốc và chuyển làn đột ngột để tránh chướng ngại vật. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -5510,7 +5510,7 @@
     "chapter": 5,
     "chapterName": "Giao thông trên quốc lộ",
     "videoUrl": "/videos/87.mp4",
-    "timeIndirect": 1.0,
+    "timeIndirect": 1,
     "timeDirect": 3.38,
     "part1_name": "Đi qua chỗ giao cắt với đường sắt ban đêm, không có đèn tín hiệu, phía sau xe con, đột nhiên có tàu đi tới",
     "part2_indirect": "Biển cảnh báo nơi đường sắt giao nhau với đường bộ, điều kiện ánh sáng hạn chế.",
@@ -5524,7 +5524,7 @@
           "Xe con phía trước giảm tốc đột ngột và chuyển làn để tránh xe buýt đang dừng",
           "Đi qua chỗ giao cắt với đường sắt ban đêm, không có đèn tín hiệu, phía sau xe con, đột nhiên có tàu đi tới",
           "Tai nạn liên hoàn giữa 3 xe khách do đâm vào xe đang dừng đỗ để sửa chữa",
-          "Xe con đi phía trước giảm tốc và chuyển làn đột ngột để tránh chướng ngại vậtz"
+          "Xe con đi phía trước giảm tốc và chuyển làn đột ngột để tránh chướng ngại vật"
         ],
         "correctIndex": 1,
         "explanation": "Tình huống mô phỏng kịch bản: Đi qua chỗ giao cắt với đường sắt ban đêm, không có đèn tín hiệu, phía sau xe con, đột nhiên có tàu đi tới. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
@@ -5574,7 +5574,7 @@
     "chapter": 5,
     "chapterName": "Giao thông trên quốc lộ",
     "videoUrl": "/videos/88.mp4",
-    "timeIndirect": 8.0,
+    "timeIndirect": 8,
     "timeDirect": 11.17,
     "part1_name": "Xe mô-tô phanh và chuyển làn để tránh xe buýt vào trả khách",
     "part2_indirect": "Phương tiện đi song song hoặc cùng chiều phía trước giảm tốc độ và bắt đầu đổi hướng chuyển làn.",
@@ -5586,7 +5586,7 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Xe ô tô con ở làn bên trái vượt lên và chuyển làn phải cắt qua nguy hiểm trước đầu xe bạn để rẽ ra đường gom",
-          "Gần cổng làng, phía sau có xe mô-tô lấn làn để vượt xe ô tô đang dừng đỗe",
+          "Gần cổng làng, phía sau có xe mô-tô lấn làn để vượt xe ô tô đang dừng đỗ",
           "Xe tải từ đường nhánh nhập làn nguy hiểm",
           "Xe mô-tô phanh và chuyển làn để tránh xe buýt vào trả khách"
         ],
@@ -5650,7 +5650,7 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Ban đêm xe ô tô tải ngược chiều bật đèn chiếu xa làm 2 xe máy phía trước giảm tốc độ",
-          "Xe ô tô phía dừng lại và lùi vào nơi đỗ tại khu vực đường hẹp",
+          "Xe ô tô phía trước dừng lại và lùi vào nơi đỗ tại khu vực đường hẹp",
           "Xe con đi ngược chiều nguy hiểm tại làn đường tốc độ cao nhất trên cao tốc",
           "Xe đạp từ bên kia đường đối diện băng qua đường không quan sát trước mặt xe bạn"
         ],
@@ -5713,7 +5713,7 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Cao tốc, xe tải đột ngột giảm tốc và chuyển sang làn xe bạn do gặp xe đang gặp sự cố trên đườngv",
+          "Cao tốc, xe tải đột ngột giảm tốc và chuyển sang làn xe bạn do gặp xe đang gặp sự cố trên đường",
           "Xe bán tải phía trước giảm tốc độ và chuyển làn khẩn cấp để tránh xe mô-tô đi ngược chiều",
           "Xe bồn bê-tông từ đường nhánh lấn làn để rẽ tại ngã ba không có đèn giao thông có nhiều xe đang dừng đỗ",
           "Khi đèn tín hiệu chuyển sang xanh, đột ngột có xe con cố vượt từ đường giao bên trái sang làm va chạm với xe con"
@@ -5831,7 +5831,7 @@
     "chapterName": "Tai nạn giao thông thực tế",
     "videoUrl": "/videos/92.mp4",
     "timeIndirect": 1.8,
-    "timeDirect": 5.0,
+    "timeDirect": 5,
     "part1_name": "Xe mô-tô lấn làn vượt ẩu trên đường núi, va chạm với xe khách đi ngược chiều",
     "part2_indirect": "Phương tiện ở làn đường đối diện có xu hướng lấn sang phần đường của xe bạn để vượt chướng ngại vật hoặc tránh xe khác.",
     "part3_direct": "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
@@ -5889,14 +5889,14 @@
   },
   {
     "id": 93,
-    "title": "Tình huống 93: Xe con từ làn trong cùng bên trái lấn làn vượt ẩu để đi ra đường nhánh, va chạm với xe tảiy",
-    "name": "Xe con từ làn trong cùng bên trái lấn làn vượt ẩu để đi ra đường nhánh, va chạm với xe tảiy",
+    "title": "Tình huống 93: Xe con từ làn trong cùng bên trái lấn làn vượt ẩu để đi ra đường nhánh, va chạm với xe tải",
+    "name": "Xe con từ làn trong cùng bên trái lấn làn vượt ẩu để đi ra đường nhánh, va chạm với xe tải",
     "chapter": 6,
     "chapterName": "Tai nạn giao thông thực tế",
     "videoUrl": "/videos/93.mp4",
     "timeIndirect": 9.8,
     "timeDirect": 12.98,
-    "part1_name": "Xe con từ làn trong cùng bên trái lấn làn vượt ẩu để đi ra đường nhánh, va chạm với xe tảiy",
+    "part1_name": "Xe con từ làn trong cùng bên trái lấn làn vượt ẩu để đi ra đường nhánh, va chạm với xe tải",
     "part2_indirect": "Phía trước bên phải có xe kích thước lớn đang đỗ làm khuất tầm nhìn, có vạch kẻ đường cho người đi bộ hoặc lối giao cắt.",
     "part3_direct": "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
     "part4_action": "Rà phanh giảm tốc độ, chủ động điều khiển xe nép sát về phía bên phải làn đường của mình để nhường đường.",
@@ -5905,13 +5905,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Xe tải phía trước giảm tốc độ, chuyển sang làn giữa do gặp đoạn đường đang sửa chữa phía trước4k",
-          "Xe 16 chỗ từ làn đường khẩn cấp đi ra vào làn xe bạn9p",
-          "Xe con từ làn trong cùng bên trái lấn làn vượt ẩu để đi ra đường nhánh, va chạm với xe tảiy",
+          "Xe tải phía trước giảm tốc độ, chuyển sang làn giữa do gặp đoạn đường đang sửa chữa phía trước",
+          "Xe 16 chỗ từ làn đường khẩn cấp đi ra vào làn xe bạn",
+          "Xe con từ làn trong cùng bên trái lấn làn vượt ẩu để đi ra đường nhánh, va chạm với xe tải",
           "Xe ô tô làn đường đối diện lấn làn vượt xe tải đang dừng đỗ tại khu vực đông đúc"
         ],
         "correctIndex": 2,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe con từ làn trong cùng bên trái lấn làn vượt ẩu để đi ra đường nhánh, va chạm với xe tảiy. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe con từ làn trong cùng bên trái lấn làn vượt ẩu để đi ra đường nhánh, va chạm với xe tải. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -5959,7 +5959,7 @@
     "chapterName": "Tai nạn giao thông thực tế",
     "videoUrl": "/videos/94.mp4",
     "timeIndirect": 13.8,
-    "timeDirect": 17.0,
+    "timeDirect": 17,
     "part1_name": "Tai nạn liên hoàn giữa 3 xe khách do đâm vào xe đang dừng đỗ để sửa chữa",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
@@ -6017,14 +6017,14 @@
   },
   {
     "id": 95,
-    "title": "Tình huống 95: Tài xế giật mình đánh lái gấp đâm xe vào dải phân cách, xe đổ vào đám đông làm 5 người thiệt mạngD",
-    "name": "Tài xế giật mình đánh lái gấp đâm xe vào dải phân cách, xe đổ vào đám đông làm 5 người thiệt mạngD",
+    "title": "Tình huống 95: Tài xế giật mình đánh lái gấp đâm xe vào dải phân cách, xe đổ vào đám đông làm 5 người thiệt mạng",
+    "name": "Tài xế giật mình đánh lái gấp đâm xe vào dải phân cách, xe đổ vào đám đông làm 5 người thiệt mạng",
     "chapter": 6,
     "chapterName": "Tai nạn giao thông thực tế",
     "videoUrl": "/videos/95.mp4",
     "timeIndirect": 2.1,
     "timeDirect": 5.33,
-    "part1_name": "Tài xế giật mình đánh lái gấp đâm xe vào dải phân cách, xe đổ vào đám đông làm 5 người thiệt mạngD",
+    "part1_name": "Tài xế giật mình đánh lái gấp đâm xe vào dải phân cách, xe đổ vào đám đông làm 5 người thiệt mạng",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
@@ -6033,13 +6033,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Tài xế giật mình đánh lái gấp đâm xe vào dải phân cách, xe đổ vào đám đông làm 5 người thiệt mạngD",
+          "Tài xế giật mình đánh lái gấp đâm xe vào dải phân cách, xe đổ vào đám đông làm 5 người thiệt mạng",
           "Phía sau làn phải có xe con vượt lên và chuyển làn cắt ngang nguy hiểm trước mặt xe bạn",
           "Xe tải lớn ở làn đối diện lấn làn vượt xe đang thu gom rác",
           "Người đi xe đạp từ vỉa hè bất ngờ đi xuống đường để sang đường"
         ],
         "correctIndex": 0,
-        "explanation": "Tình huống mô phỏng kịch bản: Tài xế giật mình đánh lái gấp đâm xe vào dải phân cách, xe đổ vào đám đông làm 5 người thiệt mạngD. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Tài xế giật mình đánh lái gấp đâm xe vào dải phân cách, xe đổ vào đám đông làm 5 người thiệt mạng. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -6086,7 +6086,7 @@
     "chapter": 6,
     "chapterName": "Tai nạn giao thông thực tế",
     "videoUrl": "/videos/96.mp4",
-    "timeIndirect": 14.0,
+    "timeIndirect": 14,
     "timeDirect": 17.18,
     "part1_name": "Tai nạn xe container không làm chủ tốc độ đâm trực diện vào xe ô tô con đang dừng chờ đèn đỏ",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
@@ -6100,7 +6100,7 @@
           "Xe mô tô vượt lên đột ngột giảm tốc và chuyển sang làn xe bạn để tránh chướng ngại vật trên đường",
           "Tai nạn xe container không làm chủ tốc độ đâm trực diện vào xe ô tô con đang dừng chờ đèn đỏ",
           "Xe ô tô phía trước phanh gấp do có động vật hoang dã đứng ven đường",
-          "Phía trước đột nhiên có xe ô tô từ làn đối diện đi ngược chiều va chạm với xe con8G"
+          "Phía trước đột nhiên có xe ô tô từ làn đối diện đi ngược chiều va chạm với xe con"
         ],
         "correctIndex": 1,
         "explanation": "Tình huống mô phỏng kịch bản: Tai nạn xe container không làm chủ tốc độ đâm trực diện vào xe ô tô con đang dừng chờ đèn đỏ. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
@@ -6145,14 +6145,14 @@
   },
   {
     "id": 97,
-    "title": "Tình huống 97: Xe khách vào cua với tốc độ cao, lấn sang đường ngược chiều va chạm với xe đi chiều ngược lại4F",
-    "name": "Xe khách vào cua với tốc độ cao, lấn sang đường ngược chiều va chạm với xe đi chiều ngược lại4F",
+    "title": "Tình huống 97: Xe khách vào cua với tốc độ cao, lấn sang đường ngược chiều va chạm với xe đi chiều ngược lại",
+    "name": "Xe khách vào cua với tốc độ cao, lấn sang đường ngược chiều va chạm với xe đi chiều ngược lại",
     "chapter": 6,
     "chapterName": "Tai nạn giao thông thực tế",
     "videoUrl": "/videos/97.mp4",
     "timeIndirect": 15.7,
     "timeDirect": 18.92,
-    "part1_name": "Xe khách vào cua với tốc độ cao, lấn sang đường ngược chiều va chạm với xe đi chiều ngược lại4F",
+    "part1_name": "Xe khách vào cua với tốc độ cao, lấn sang đường ngược chiều va chạm với xe đi chiều ngược lại",
     "part2_indirect": "Phương tiện ở làn đường đối diện có xu hướng lấn sang phần đường của xe bạn để vượt chướng ngại vật hoặc tránh xe khác.",
     "part3_direct": "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
     "part4_action": "Rà phanh giảm tốc độ, chủ động điều khiển xe nép sát về phía bên phải làn đường của mình để nhường đường.",
@@ -6162,12 +6162,12 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Xe mô-tô lấn làn vượt ẩu nguy hiểm tại giao lộ",
-          "Xe khách vào cua với tốc độ cao, lấn sang đường ngược chiều va chạm với xe đi chiều ngược lại4F",
-          "Xe 16 chỗ từ đường nhánh, khuất tầm nhìn rẽ vào đường chính không giảm tốc độ, bị xe sơ mi rơ moóc đâm vào (tại Ngã 3 Nà Phặc - Bắc Kạn)_C5jhlH",
+          "Xe khách vào cua với tốc độ cao, lấn sang đường ngược chiều va chạm với xe đi chiều ngược lại",
+          "Xe 16 chỗ từ đường nhánh, khuất tầm nhìn rẽ vào đường chính không giảm tốc độ, bị xe sơ mi rơ moóc đâm vào (tại Ngã 3 Nà Phặc - Bắc Kạn)",
           "Xe tải từ đường nhánh nhập vào cao tốc với tốc độ cao"
         ],
         "correctIndex": 1,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe khách vào cua với tốc độ cao, lấn sang đường ngược chiều va chạm với xe đi chiều ngược lại4F. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe khách vào cua với tốc độ cao, lấn sang đường ngược chiều va chạm với xe đi chiều ngược lại. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -6225,7 +6225,7 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Xe đạp bất ngờ đi ra từ đường nhánh tại ngã",
+          "Xe đạp bất ngờ đi ra từ đường nhánh tại ngã ba",
           "Xe con phanh gấp tránh xe máy từ ngõ lao ra, xe khách không làm chủ tốc độ đã đâm trực diện vào xe con",
           "Gặp đàn bò đang đứng trên đường",
           "Tai nạn đèo Prenn xe khách mất lái đâm vào người điều tiết giao thông và xe khách đi ngược chiều"
@@ -6292,7 +6292,7 @@
           "Trời mưa, đường trơn trượt xe tải khi vào cua không làm chủ tốc độ đã đâm vào xe ben đi ngược chiều",
           "Xe con từ làn phải (khuất tầm nhìn) cắt ngang qua các xe đang đi thẳng để sang đường",
           "Hầm Hải Vân xe kéo rơ mooc mất lái lấn làn đâm trực diện vào xe tải đi chiều ngược lại gây tai nạn",
-          "Xe phía trước phanh gấp để tránh xe chuyển làn rẽ trái tại ngã"
+          "Xe phía trước phanh gấp để tránh xe chuyển làn rẽ trái tại ngã ba"
         ],
         "correctIndex": 2,
         "explanation": "Tình huống mô phỏng kịch bản: Hầm Hải Vân xe kéo rơ mooc mất lái lấn làn đâm trực diện vào xe tải đi chiều ngược lại gây tai nạn. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
@@ -6354,7 +6354,7 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Ban đêm, xe con phanh gấp tránh xe máy từ ngõ lao ra, xe khách không làm chủ tốc độ đã đâm trực diện vào xe con",
-          "Đường núi, trời mưa, xe phía trước đột ngột dừng lại vì hỏng máyA",
+          "Đường núi, trời mưa, xe phía trước đột ngột dừng lại vì hỏng máy",
           "Xe ô tô con chở người đi qua đường sắt tại Nam Định không chú ý va chạm với tàu hỏa",
           "Tránh xe tại khu vực công trình sửa đường xuất hiện sau khúc cua"
         ],
@@ -6418,7 +6418,7 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Xe buýt lấn làn đường vượt ẩu tại ngã tư có đèn giao thông",
-          "Xe khách 16 chỗ vượt ẩu qua xe đầu kéo va chạm với xe khách đang xuống dốc tốc độ cao, gây tai nạn liên hoàn giữa 3 xe tại km12+400 đoạn qua phường Hương Hồ, TP. Huếm",
+          "Xe khách 16 chỗ vượt ẩu qua xe đầu kéo va chạm với xe khách đang xuống dốc tốc độ cao, gây tai nạn liên hoàn giữa 3 xe tại km12+400 đoạn qua phường Hương Hồ, TP. Huế",
           "Xe tải từ đường nhánh nhập vào cao tốc với tốc độ cao",
           "Xe ô tô 16 chỗ chở khách rẽ trái qua đường sắt không chú ý va chạm với tàu hỏa"
         ],
@@ -6465,14 +6465,14 @@
   },
   {
     "id": 102,
-    "title": "Tình huống 102: Xe khách va chạm với xe cứu hỏa đi ngược chiều tại nút giao Pháp Vân aG>P\"*io@ρXҀO",
-    "name": "Xe khách va chạm với xe cứu hỏa đi ngược chiều tại nút giao Pháp Vân aG>P\"*io@ρXҀO",
+    "title": "Tình huống 102: Xe khách va chạm với xe cứu hỏa đi ngược chiều tại nút giao Pháp Vân",
+    "name": "Xe khách va chạm với xe cứu hỏa đi ngược chiều tại nút giao Pháp Vân",
     "chapter": 6,
     "chapterName": "Tai nạn giao thông thực tế",
     "videoUrl": "/videos/102.mp4",
     "timeIndirect": 8.6,
     "timeDirect": 11.85,
-    "part1_name": "Xe khách va chạm với xe cứu hỏa đi ngược chiều tại nút giao Pháp Vân aG>P\"*io@ρXҀO",
+    "part1_name": "Xe khách va chạm với xe cứu hỏa đi ngược chiều tại nút giao Pháp Vân",
     "part2_indirect": "Phương tiện ở làn đường đối diện có xu hướng lấn sang phần đường của xe bạn để vượt chướng ngại vật hoặc tránh xe khác.",
     "part3_direct": "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
     "part4_action": "Rà phanh giảm tốc độ, chủ động điều khiển xe nép sát về phía bên phải làn đường của mình để nhường đường.",
@@ -6481,13 +6481,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Xe khách va chạm với xe cứu hỏa đi ngược chiều tại nút giao Pháp Vân aG>P\"*io@ρXҀO",
-          "Xe con lấn làn xe bạn để vượt xe tải trên đường núi ngay tại đoạn đường quanh",
-          "Gặp xe khách tại đoạn đường cong vào cua chiếm hết làn đường tại khu vực đường hẹpo",
-          "Trên đường cao tốc ban đêm, đột nhiên có xe tải đi chiều ngược lại ở làn khẩn cấpi"
+          "Xe khách va chạm với xe cứu hỏa đi ngược chiều tại nút giao Pháp Vân",
+          "Xe con lấn làn xe bạn để vượt xe tải trên đường núi ngay tại đoạn đường cong",
+          "Gặp xe khách tại đoạn đường cong vào cua chiếm hết làn đường tại khu vực đường hẹp",
+          "Trên đường cao tốc ban đêm, đột nhiên có xe tải đi chiều ngược lại ở làn khẩn cấp"
         ],
         "correctIndex": 0,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe khách va chạm với xe cứu hỏa đi ngược chiều tại nút giao Pháp Vân aG>P\"*io@ρXҀO. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe khách va chạm với xe cứu hỏa đi ngược chiều tại nút giao Pháp Vân. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -6529,14 +6529,14 @@
   },
   {
     "id": 103,
-    "title": "Tình huống 103: Phía trước đột nhiên có xe ô tô từ làn đối diện đi ngược chiều va chạm với xe con8G",
-    "name": "Phía trước đột nhiên có xe ô tô từ làn đối diện đi ngược chiều va chạm với xe con8G",
+    "title": "Tình huống 103: Phía trước đột nhiên có xe ô tô từ làn đối diện đi ngược chiều va chạm với xe con",
+    "name": "Phía trước đột nhiên có xe ô tô từ làn đối diện đi ngược chiều va chạm với xe con",
     "chapter": 6,
     "chapterName": "Tai nạn giao thông thực tế",
     "videoUrl": "/videos/103.mp4",
     "timeIndirect": 12.9,
     "timeDirect": 16.08,
-    "part1_name": "Phía trước đột nhiên có xe ô tô từ làn đối diện đi ngược chiều va chạm với xe con8G",
+    "part1_name": "Phía trước đột nhiên có xe ô tô từ làn đối diện đi ngược chiều va chạm với xe con",
     "part2_indirect": "Phương tiện ở làn đường đối diện có xu hướng lấn sang phần đường của xe bạn để vượt chướng ngại vật hoặc tránh xe khác.",
     "part3_direct": "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
     "part4_action": "Rà phanh giảm tốc độ, chủ động điều khiển xe nép sát về phía bên phải làn đường của mình để nhường đường.",
@@ -6548,10 +6548,10 @@
           "Người đi bộ vượt đèn đỏ sang đường",
           "Gặp xe ô tô từ đường nhánh bên phải tại ngã ba đi ra với tốc độ nhanh",
           "Em bé đột ngột chạy ra đường",
-          "Phía trước đột nhiên có xe ô tô từ làn đối diện đi ngược chiều va chạm với xe con8G"
+          "Phía trước đột nhiên có xe ô tô từ làn đối diện đi ngược chiều va chạm với xe con"
         ],
         "correctIndex": 3,
-        "explanation": "Tình huống mô phỏng kịch bản: Phía trước đột nhiên có xe ô tô từ làn đối diện đi ngược chiều va chạm với xe con8G. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Phía trước đột nhiên có xe ô tô từ làn đối diện đi ngược chiều va chạm với xe con. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -6610,7 +6610,7 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Xe bồn bê-tông từ đường nhánh lấn làn để rẽ tại ngã ba không có đèn giao thông có nhiều xe đang dừng đỗ",
-          "Xe container đang đi từ làn trái chuyển ra đường nhánh cắt qua làn đường xe bạn1l",
+          "Xe container đang đi từ làn trái chuyển ra đường nhánh cắt qua làn đường xe bạn",
           "Đường nông thôn, xuất hiện xe máy đi ra từ ngõ bên phải",
           "Tại ngã tư Hàng Xanh, lái xe ô tô con trong tình trạng có nồng độ cồn không làm chủ tốc độ đâm vào loạt xe dừng chờ đèn đỏ"
         ],
@@ -6662,7 +6662,7 @@
     "chapter": 6,
     "chapterName": "Tai nạn giao thông thực tế",
     "videoUrl": "/videos/105.mp4",
-    "timeIndirect": 7.0,
+    "timeIndirect": 7,
     "timeDirect": 10.25,
     "part1_name": "Xe khách 45 chỗ đâm vào xe đầu kéo kéo rơ moóc chở máy ủi đi từ đường tránh ra gây tai nạn thảm khốc",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
@@ -6727,7 +6727,7 @@
     "chapterName": "Tai nạn giao thông thực tế",
     "videoUrl": "/videos/106.mp4",
     "timeIndirect": 12.8,
-    "timeDirect": 16.0,
+    "timeDirect": 16,
     "part1_name": "Xe khách 48 chỗ thiếu kỹ năng điều khiển, không thông thuộc địa hình lao xuống vực tại Kon Tum",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
@@ -6785,14 +6785,14 @@
   },
   {
     "id": 107,
-    "title": "Tình huống 107: Xe khách chạy vượt xe tải, đâm trực diện vào xe khách đi chiều ngược lại gây tai nạn liên hoàn 3 xe4K",
-    "name": "Xe khách chạy vượt xe tải, đâm trực diện vào xe khách đi chiều ngược lại gây tai nạn liên hoàn 3 xe4K",
+    "title": "Tình huống 107: Xe khách chạy vượt xe tải, đâm trực diện vào xe khách đi chiều ngược lại gây tai nạn liên hoàn 3 xe",
+    "name": "Xe khách chạy vượt xe tải, đâm trực diện vào xe khách đi chiều ngược lại gây tai nạn liên hoàn 3 xe",
     "chapter": 6,
     "chapterName": "Tai nạn giao thông thực tế",
     "videoUrl": "/videos/107.mp4",
     "timeIndirect": 8.5,
     "timeDirect": 11.67,
-    "part1_name": "Xe khách chạy vượt xe tải, đâm trực diện vào xe khách đi chiều ngược lại gây tai nạn liên hoàn 3 xe4K",
+    "part1_name": "Xe khách chạy vượt xe tải, đâm trực diện vào xe khách đi chiều ngược lại gây tai nạn liên hoàn 3 xe",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Phương tiện bên cạnh bắt đầu đè vạch phân làn và chuyển hướng tạt ngang trước đầu xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
@@ -6804,10 +6804,10 @@
           "Đường đèo dốc ban đêm gần đoạn đường cong, đột ngột tại khúc cua có xe khách lấn làn vượt xe tải lớn",
           "Xe bồn bê-tông từ đường nhánh lấn làn để rẽ tại ngã ba không có đèn giao thông có nhiều xe đang dừng đỗ",
           "Xe tải ở làn phải vượt lên và đột ngột chuyển làn sang làn giữa làm xe phía trước phải phanh gấp",
-          "Xe khách chạy vượt xe tải, đâm trực diện vào xe khách đi chiều ngược lại gây tai nạn liên hoàn 3 xe4K"
+          "Xe khách chạy vượt xe tải, đâm trực diện vào xe khách đi chiều ngược lại gây tai nạn liên hoàn 3 xe"
         ],
         "correctIndex": 3,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe khách chạy vượt xe tải, đâm trực diện vào xe khách đi chiều ngược lại gây tai nạn liên hoàn 3 xe4K. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe khách chạy vượt xe tải, đâm trực diện vào xe khách đi chiều ngược lại gây tai nạn liên hoàn 3 xe. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -6913,14 +6913,14 @@
   },
   {
     "id": 109,
-    "title": "Tình huống 109: Xe 16 chỗ từ đường nhánh, khuất tầm nhìn rẽ vào đường chính không giảm tốc độ, bị xe sơ mi rơ moóc đâm vào (tại Ngã 3 Nà Phặc - Bắc Kạn)_C5jhlH",
-    "name": "Xe 16 chỗ từ đường nhánh, khuất tầm nhìn rẽ vào đường chính không giảm tốc độ, bị xe sơ mi rơ moóc đâm vào (tại Ngã 3 Nà Phặc - Bắc Kạn)_C5jhlH",
+    "title": "Tình huống 109: Xe 16 chỗ từ đường nhánh, khuất tầm nhìn rẽ vào đường chính không giảm tốc độ, bị xe sơ mi rơ moóc đâm vào (tại Ngã 3 Nà Phặc - Bắc Kạn)",
+    "name": "Xe 16 chỗ từ đường nhánh, khuất tầm nhìn rẽ vào đường chính không giảm tốc độ, bị xe sơ mi rơ moóc đâm vào (tại Ngã 3 Nà Phặc - Bắc Kạn)",
     "chapter": 6,
     "chapterName": "Tai nạn giao thông thực tế",
     "videoUrl": "/videos/109.mp4",
     "timeIndirect": 5.7,
     "timeDirect": 8.87,
-    "part1_name": "Xe 16 chỗ từ đường nhánh, khuất tầm nhìn rẽ vào đường chính không giảm tốc độ, bị xe sơ mi rơ moóc đâm vào (tại Ngã 3 Nà Phặc - Bắc Kạn)_C5jhlH",
+    "part1_name": "Xe 16 chỗ từ đường nhánh, khuất tầm nhìn rẽ vào đường chính không giảm tốc độ, bị xe sơ mi rơ moóc đâm vào (tại Ngã 3 Nà Phặc - Bắc Kạn)",
     "part2_indirect": "Phía trước bên phải có xe kích thước lớn đang đỗ làm khuất tầm nhìn, có vạch kẻ đường cho người đi bộ hoặc lối giao cắt.",
     "part3_direct": "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
     "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
@@ -6929,13 +6929,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Xe 16 chỗ từ đường nhánh, khuất tầm nhìn rẽ vào đường chính không giảm tốc độ, bị xe sơ mi rơ moóc đâm vào (tại Ngã 3 Nà Phặc - Bắc Kạn)_C5jhlH",
+          "Xe 16 chỗ từ đường nhánh, khuất tầm nhìn rẽ vào đường chính không giảm tốc độ, bị xe sơ mi rơ moóc đâm vào (tại Ngã 3 Nà Phặc - Bắc Kạn)",
           "Xe ô tô Innova lùi trên cao tốc Hà Nội - Thái Nguyên",
           "Xe buýt lấn làn đường vượt ẩu tại ngã tư có đèn giao thông",
           "Tình huống nguy hiểm khi gặp xe tải lớn đi qua hầm chui dân sinh"
         ],
         "correctIndex": 0,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe 16 chỗ từ đường nhánh, khuất tầm nhìn rẽ vào đường chính không giảm tốc độ, bị xe sơ mi rơ moóc đâm vào (tại Ngã 3 Nà Phặc - Bắc Kạn)_C5jhlH. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe 16 chỗ từ đường nhánh, khuất tầm nhìn rẽ vào đường chính không giảm tốc độ, bị xe sơ mi rơ moóc đâm vào (tại Ngã 3 Nà Phặc - Bắc Kạn). Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -6977,14 +6977,14 @@
   },
   {
     "id": 110,
-    "title": "Tình huống 110: Xe container bất ngờ tông vào hàng loạt phương tiện đang dừng đèn đỏ tại quốc lộ 1, đoạn nút giao Mỹ Phước - Tân Vạn, Bình DươngsN",
-    "name": "Xe container bất ngờ tông vào hàng loạt phương tiện đang dừng đèn đỏ tại quốc lộ 1, đoạn nút giao Mỹ Phước - Tân Vạn, Bình DươngsN",
+    "title": "Tình huống 110: Xe container bất ngờ tông vào hàng loạt phương tiện đang dừng đèn đỏ tại quốc lộ 1, đoạn nút giao Mỹ Phước - Tân Vạn, Bình Dương",
+    "name": "Xe container bất ngờ tông vào hàng loạt phương tiện đang dừng đèn đỏ tại quốc lộ 1, đoạn nút giao Mỹ Phước - Tân Vạn, Bình Dương",
     "chapter": 6,
     "chapterName": "Tai nạn giao thông thực tế",
     "videoUrl": "/videos/110.mp4",
     "timeIndirect": 5.6,
     "timeDirect": 8.83,
-    "part1_name": "Xe container bất ngờ tông vào hàng loạt phương tiện đang dừng đèn đỏ tại quốc lộ 1, đoạn nút giao Mỹ Phước - Tân Vạn, Bình DươngsN",
+    "part1_name": "Xe container bất ngờ tông vào hàng loạt phương tiện đang dừng đèn đỏ tại quốc lộ 1, đoạn nút giao Mỹ Phước - Tân Vạn, Bình Dương",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
@@ -6994,12 +6994,12 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Trẻ em đột ngột lao ra để nhặt quả bóng bị lăn ra đường",
-          "Cao tốc, xe tải đột ngột giảm tốc và chuyển sang làn xe bạn do gặp xe đang gặp sự cố trên đườngv",
+          "Cao tốc, xe tải đột ngột giảm tốc và chuyển sang làn xe bạn do gặp xe đang gặp sự cố trên đường",
           "Xe tải lớn ở làn đối diện lấn làn vượt xe đang thu gom rác",
-          "Xe container bất ngờ tông vào hàng loạt phương tiện đang dừng đèn đỏ tại quốc lộ 1, đoạn nút giao Mỹ Phước - Tân Vạn, Bình DươngsN"
+          "Xe container bất ngờ tông vào hàng loạt phương tiện đang dừng đèn đỏ tại quốc lộ 1, đoạn nút giao Mỹ Phước - Tân Vạn, Bình Dương"
         ],
         "correctIndex": 3,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe container bất ngờ tông vào hàng loạt phương tiện đang dừng đèn đỏ tại quốc lộ 1, đoạn nút giao Mỹ Phước - Tân Vạn, Bình DươngsN. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe container bất ngờ tông vào hàng loạt phương tiện đang dừng đèn đỏ tại quốc lộ 1, đoạn nút giao Mỹ Phước - Tân Vạn, Bình Dương. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -7041,14 +7041,14 @@
   },
   {
     "id": 111,
-    "title": "Tình huống 111: Xe khách lấn làn vượt xe tải chỗ đường cong, đâm vào xe khách đi ngược chiều tại đường Hồ Chí Minh, đoạn qua thôn 7, xã Hoà Phú, TP.Buôn Ma Thuột (Đắk Lắk",
-    "name": "Xe khách lấn làn vượt xe tải chỗ đường cong, đâm vào xe khách đi ngược chiều tại đường Hồ Chí Minh, đoạn qua thôn 7, xã Hoà Phú, TP.Buôn Ma Thuột (Đắk Lắk",
+    "title": "Tình huống 111: Xe khách lấn làn vượt xe tải chỗ đường cong, đâm vào xe khách đi ngược chiều tại đường Hồ Chí Minh, đoạn qua thôn 7, xã Hoà Phú, TP. Buôn Ma Thuột (Đắk Lắk)",
+    "name": "Xe khách lấn làn vượt xe tải chỗ đường cong, đâm vào xe khách đi ngược chiều tại đường Hồ Chí Minh, đoạn qua thôn 7, xã Hoà Phú, TP. Buôn Ma Thuột (Đắk Lắk)",
     "chapter": 6,
     "chapterName": "Tai nạn giao thông thực tế",
     "videoUrl": "/videos/111.mp4",
-    "timeIndirect": 5.0,
+    "timeIndirect": 5,
     "timeDirect": 8.15,
-    "part1_name": "Xe khách lấn làn vượt xe tải chỗ đường cong, đâm vào xe khách đi ngược chiều tại đường Hồ Chí Minh, đoạn qua thôn 7, xã Hoà Phú, TP.Buôn Ma Thuột (Đắk Lắk",
+    "part1_name": "Xe khách lấn làn vượt xe tải chỗ đường cong, đâm vào xe khách đi ngược chiều tại đường Hồ Chí Minh, đoạn qua thôn 7, xã Hoà Phú, TP. Buôn Ma Thuột (Đắk Lắk)",
     "part2_indirect": "Phương tiện ở làn đường đối diện có xu hướng lấn sang phần đường của xe bạn để vượt chướng ngại vật hoặc tránh xe khác.",
     "part3_direct": "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
     "part4_action": "Rà phanh giảm tốc độ, chủ động điều khiển xe nép sát về phía bên phải làn đường của mình để nhường đường.",
@@ -7058,12 +7058,12 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Xe bồn bê-tông từ đường nhánh lấn làn để rẽ tại ngã ba không có đèn giao thông có nhiều xe đang dừng đỗ",
-          "Xe khách lấn làn vượt xe tải chỗ đường cong, đâm vào xe khách đi ngược chiều tại đường Hồ Chí Minh, đoạn qua thôn 7, xã Hoà Phú, TP.Buôn Ma Thuột (Đắk Lắk",
+          "Xe khách lấn làn vượt xe tải chỗ đường cong, đâm vào xe khách đi ngược chiều tại đường Hồ Chí Minh, đoạn qua thôn 7, xã Hoà Phú, TP. Buôn Ma Thuột (Đắk Lắk)",
           "Xe ô tô phía trước đang đi, đột ngột phanh gấp khi gặp vũng nước trên đường",
           "Xe con vào cua lấn làn nguy hiểm va chạm với xe ngược chiều trên đường đồi núi"
         ],
         "correctIndex": 1,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe khách lấn làn vượt xe tải chỗ đường cong, đâm vào xe khách đi ngược chiều tại đường Hồ Chí Minh, đoạn qua thôn 7, xã Hoà Phú, TP.Buôn Ma Thuột (Đắk Lắk. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe khách lấn làn vượt xe tải chỗ đường cong, đâm vào xe khách đi ngược chiều tại đường Hồ Chí Minh, đoạn qua thôn 7, xã Hoà Phú, TP. Buôn Ma Thuột (Đắk Lắk). Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -7105,14 +7105,14 @@
   },
   {
     "id": 112,
-    "title": "Tình huống 112: Xe khách 16 chỗ vượt ẩu qua xe đầu kéo va chạm với xe khách đang xuống dốc tốc độ cao, gây tai nạn liên hoàn giữa 3 xe tại km12+400 đoạn qua phường Hương Hồ, TP. Huếm",
-    "name": "Xe khách 16 chỗ vượt ẩu qua xe đầu kéo va chạm với xe khách đang xuống dốc tốc độ cao, gây tai nạn liên hoàn giữa 3 xe tại km12+400 đoạn qua phường Hương Hồ, TP. Huếm",
+    "title": "Tình huống 112: Xe khách 16 chỗ vượt ẩu qua xe đầu kéo va chạm với xe khách đang xuống dốc tốc độ cao, gây tai nạn liên hoàn giữa 3 xe tại km12+400 đoạn qua phường Hương Hồ, TP. Huế",
+    "name": "Xe khách 16 chỗ vượt ẩu qua xe đầu kéo va chạm với xe khách đang xuống dốc tốc độ cao, gây tai nạn liên hoàn giữa 3 xe tại km12+400 đoạn qua phường Hương Hồ, TP. Huế",
     "chapter": 6,
     "chapterName": "Tai nạn giao thông thực tế",
     "videoUrl": "/videos/112.mp4",
-    "timeIndirect": 1.0,
+    "timeIndirect": 1,
     "timeDirect": 3.83,
-    "part1_name": "Xe khách 16 chỗ vượt ẩu qua xe đầu kéo va chạm với xe khách đang xuống dốc tốc độ cao, gây tai nạn liên hoàn giữa 3 xe tại km12+400 đoạn qua phường Hương Hồ, TP. Huếm",
+    "part1_name": "Xe khách 16 chỗ vượt ẩu qua xe đầu kéo va chạm với xe khách đang xuống dốc tốc độ cao, gây tai nạn liên hoàn giữa 3 xe tại km12+400 đoạn qua phường Hương Hồ, TP. Huế",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Phương tiện bên cạnh bắt đầu đè vạch phân làn và chuyển hướng tạt ngang trước đầu xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
@@ -7123,11 +7123,11 @@
         "options": [
           "Xe con phía trước giảm tốc đột ngột và chuyển làn để tránh xe buýt đang dừng",
           "Xe bồn bê-tông từ đường nhánh lấn làn để rẽ tại ngã ba không có đèn giao thông có nhiều xe đang dừng đỗ",
-          "Xe khách 16 chỗ vượt ẩu qua xe đầu kéo va chạm với xe khách đang xuống dốc tốc độ cao, gây tai nạn liên hoàn giữa 3 xe tại km12+400 đoạn qua phường Hương Hồ, TP. Huếm",
+          "Xe khách 16 chỗ vượt ẩu qua xe đầu kéo va chạm với xe khách đang xuống dốc tốc độ cao, gây tai nạn liên hoàn giữa 3 xe tại km12+400 đoạn qua phường Hương Hồ, TP. Huế",
           "Xe tải phía trước làn phải đột ngột tăng tốc và chuyển sang làn giữa làm xe con phía trước phanh gấp"
         ],
         "correctIndex": 2,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe khách 16 chỗ vượt ẩu qua xe đầu kéo va chạm với xe khách đang xuống dốc tốc độ cao, gây tai nạn liên hoàn giữa 3 xe tại km12+400 đoạn qua phường Hương Hồ, TP. Huếm. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe khách 16 chỗ vượt ẩu qua xe đầu kéo va chạm với xe khách đang xuống dốc tốc độ cao, gây tai nạn liên hoàn giữa 3 xe tại km12+400 đoạn qua phường Hương Hồ, TP. Huế. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -7185,8 +7185,8 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Đường núi, trời mưa, xe phía trước đột ngột dừng lại vì hỏng máyA",
-          "Xe con từ làn trong cùng bên trái lấn làn vượt ẩu để đi ra đường nhánh, va chạm với xe tảiy",
+          "Đường núi, trời mưa, xe phía trước đột ngột dừng lại vì hỏng máy",
+          "Xe con từ làn trong cùng bên trái lấn làn vượt ẩu để đi ra đường nhánh, va chạm với xe tải",
           "Phía đường cong xuất hiện xe tải đi đối diện làm xe khách phía trước giảm tốc độ đột ngột",
           "Khi đèn tín hiệu chuyển sang xanh, đột ngột có xe con cố vượt từ đường giao bên trái sang làm va chạm với xe con"
         ],
@@ -7233,14 +7233,14 @@
   },
   {
     "id": 114,
-    "title": "Tình huống 114: Ô tô 7 chỗ đi trên cầu treo hẹp ban đêm, tài xế lái xe va chạm với xe máy, xe đâm xuống sông tại cầu treo qua sông Giăng, Thanh Chương, Nghệ AnJQ",
-    "name": "Ô tô 7 chỗ đi trên cầu treo hẹp ban đêm, tài xế lái xe va chạm với xe máy, xe đâm xuống sông tại cầu treo qua sông Giăng, Thanh Chương, Nghệ AnJQ",
+    "title": "Tình huống 114: Ô tô 7 chỗ đi trên cầu treo hẹp ban đêm, tài xế lái xe va chạm với xe máy, xe đâm xuống sông tại cầu treo qua sông Giăng, Thanh Chương, Nghệ An",
+    "name": "Ô tô 7 chỗ đi trên cầu treo hẹp ban đêm, tài xế lái xe va chạm với xe máy, xe đâm xuống sông tại cầu treo qua sông Giăng, Thanh Chương, Nghệ An",
     "chapter": 6,
     "chapterName": "Tai nạn giao thông thực tế",
     "videoUrl": "/videos/114.mp4",
     "timeIndirect": 5.5,
     "timeDirect": 8.7,
-    "part1_name": "Ô tô 7 chỗ đi trên cầu treo hẹp ban đêm, tài xế lái xe va chạm với xe máy, xe đâm xuống sông tại cầu treo qua sông Giăng, Thanh Chương, Nghệ AnJQ",
+    "part1_name": "Ô tô 7 chỗ đi trên cầu treo hẹp ban đêm, tài xế lái xe va chạm với xe máy, xe đâm xuống sông tại cầu treo qua sông Giăng, Thanh Chương, Nghệ An",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
@@ -7249,13 +7249,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Xe con phía trước giảm tốc độ và chuyển sang làn xe bạn do gặp đoạn đường đang sửa chữa phía trướcj",
+          "Xe con phía trước giảm tốc độ và chuyển sang làn xe bạn do gặp đoạn đường đang sửa chữa phía trước",
           "Trẻ em đột ngột lao ra để nhặt quả bóng bị lăn ra đường",
-          "Ô tô 7 chỗ đi trên cầu treo hẹp ban đêm, tài xế lái xe va chạm với xe máy, xe đâm xuống sông tại cầu treo qua sông Giăng, Thanh Chương, Nghệ AnJQ",
+          "Ô tô 7 chỗ đi trên cầu treo hẹp ban đêm, tài xế lái xe va chạm với xe máy, xe đâm xuống sông tại cầu treo qua sông Giăng, Thanh Chương, Nghệ An",
           "Xe buýt lấn làn đường vượt ẩu tại ngã tư có đèn giao thông"
         ],
         "correctIndex": 2,
-        "explanation": "Tình huống mô phỏng kịch bản: Ô tô 7 chỗ đi trên cầu treo hẹp ban đêm, tài xế lái xe va chạm với xe máy, xe đâm xuống sông tại cầu treo qua sông Giăng, Thanh Chương, Nghệ AnJQ. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Ô tô 7 chỗ đi trên cầu treo hẹp ban đêm, tài xế lái xe va chạm với xe máy, xe đâm xuống sông tại cầu treo qua sông Giăng, Thanh Chương, Nghệ An. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -7314,9 +7314,9 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Xe ô tô 16 chỗ chở khách rẽ trái qua đường sắt không chú ý va chạm với tàu hỏa",
-          "Xe ô tô bất ngờ đi nhanh ra từ đường nhánh bên trái tại ngã",
+          "Xe ô tô bất ngờ đi nhanh ra từ đường nhánh bên trái tại ngã ba",
           "Ban đêm, xe con phanh gấp tránh xe máy từ ngõ lao ra, xe khách không làm chủ tốc độ đã đâm trực diện vào xe con",
-          "Xe đạp bất ngờ đi ra từ đường nhánh tại ngã"
+          "Xe đạp bất ngờ đi ra từ đường nhánh tại ngã ba"
         ],
         "correctIndex": 2,
         "explanation": "Tình huống mô phỏng kịch bản: Ban đêm, xe con phanh gấp tránh xe máy từ ngõ lao ra, xe khách không làm chủ tốc độ đã đâm trực diện vào xe con. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
@@ -7361,14 +7361,14 @@
   },
   {
     "id": 116,
-    "title": "Tình huống 116: Phía trước có đá lở đột ngột và rơi xuống (tai nạn tại Đồng Văn, Hà Giang",
-    "name": "Phía trước có đá lở đột ngột và rơi xuống (tai nạn tại Đồng Văn, Hà Giang",
+    "title": "Tình huống 116: Phía trước có đá lở đột ngột và rơi xuống (tai nạn tại Đồng Văn, Hà Giang)",
+    "name": "Phía trước có đá lở đột ngột và rơi xuống (tai nạn tại Đồng Văn, Hà Giang)",
     "chapter": 6,
     "chapterName": "Tai nạn giao thông thực tế",
     "videoUrl": "/videos/116.mp4",
-    "timeIndirect": 4.0,
+    "timeIndirect": 4,
     "timeDirect": 7.17,
-    "part1_name": "Phía trước có đá lở đột ngột và rơi xuống (tai nạn tại Đồng Văn, Hà Giang",
+    "part1_name": "Phía trước có đá lở đột ngột và rơi xuống (tai nạn tại Đồng Văn, Hà Giang)",
     "part2_indirect": "Đoạn đường núi hiểm trở trong điều kiện thời tiết xấu, vách đá dựng đứng tiềm ẩn nguy cơ sạt lở.",
     "part3_direct": "Khối đất đá từ trên vách núi bắt đầu rơi sạt xuống chắn ngang mặt đường phía trước.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
@@ -7377,13 +7377,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Phía trước có đá lở đột ngột và rơi xuống (tai nạn tại Đồng Văn, Hà Giang",
-          "Đường nông thôn, nhóm xe đạp đi ra từ ngõ bên phảiw",
+          "Phía trước có đá lở đột ngột và rơi xuống (tai nạn tại Đồng Văn, Hà Giang)",
+          "Đường nông thôn, nhóm xe đạp đi ra từ ngõ bên phải",
           "Tình huống nguy hiểm khi gặp xe tải lớn đi qua hầm chui dân sinh",
           "Xe máy đang đi thẳng, đột ngột rẽ trái sang đường trước đầu xe bạn"
         ],
         "correctIndex": 0,
-        "explanation": "Tình huống mô phỏng kịch bản: Phía trước có đá lở đột ngột và rơi xuống (tai nạn tại Đồng Văn, Hà Giang. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Phía trước có đá lở đột ngột và rơi xuống (tai nạn tại Đồng Văn, Hà Giang). Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -7441,10 +7441,10 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Phía trước có đá lở đột ngột và rơi xuống (tai nạn tại Đồng Văn, Hà Giang",
+          "Phía trước có đá lở đột ngột và rơi xuống (tai nạn tại Đồng Văn, Hà Giang)",
           "Xe bán tải từ đường bên kia quay đầu đột ngột lấn làn xe bạn",
           "Xe con phanh gấp tránh xe máy từ ngõ lao ra, xe khách không làm chủ tốc độ đã đâm trực diện vào xe con",
-          "Xe container bất ngờ tông vào hàng loạt phương tiện đang dừng đèn đỏ tại quốc lộ 1, đoạn nút giao Mỹ Phước - Tân Vạn, Bình DươngsN"
+          "Xe container bất ngờ tông vào hàng loạt phương tiện đang dừng đèn đỏ tại quốc lộ 1, đoạn nút giao Mỹ Phước - Tân Vạn, Bình Dương"
         ],
         "correctIndex": 2,
         "explanation": "Tình huống mô phỏng kịch bản: Xe con phanh gấp tránh xe máy từ ngõ lao ra, xe khách không làm chủ tốc độ đã đâm trực diện vào xe con. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
@@ -7489,14 +7489,14 @@
   },
   {
     "id": 118,
-    "title": "Tình huống 118: Xe 16 chỗ rẽ không quan sát, không làm chủ tốc độ đâm vào xe bán tải đang lùiFu",
-    "name": "Xe 16 chỗ rẽ không quan sát, không làm chủ tốc độ đâm vào xe bán tải đang lùiFu",
+    "title": "Tình huống 118: Xe 16 chỗ rẽ không quan sát, không làm chủ tốc độ đâm vào xe bán tải đang lùi",
+    "name": "Xe 16 chỗ rẽ không quan sát, không làm chủ tốc độ đâm vào xe bán tải đang lùi",
     "chapter": 6,
     "chapterName": "Tai nạn giao thông thực tế",
     "videoUrl": "/videos/118.mp4",
-    "timeIndirect": 4.0,
+    "timeIndirect": 4,
     "timeDirect": 7.17,
-    "part1_name": "Xe 16 chỗ rẽ không quan sát, không làm chủ tốc độ đâm vào xe bán tải đang lùiFu",
+    "part1_name": "Xe 16 chỗ rẽ không quan sát, không làm chủ tốc độ đâm vào xe bán tải đang lùi",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
@@ -7506,12 +7506,12 @@
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
           "Xe tải phía trước làn phải đột ngột tăng tốc và chuyển sang làn giữa làm xe con phía trước phanh gấp",
-          "Xe 16 chỗ rẽ không quan sát, không làm chủ tốc độ đâm vào xe bán tải đang lùiFu",
-          "Xe ô tô bất ngờ đi nhanh ra từ đường nhánh bên trái tại ngã",
-          "Gặp tài xế xe đang dừng đỗ ven đường đột ngột mở cửa"
+          "Xe 16 chỗ rẽ không quan sát, không làm chủ tốc độ đâm vào xe bán tải đang lùi",
+          "Xe ô tô bất ngờ đi nhanh ra từ đường nhánh bên trái tại ngã ba",
+          "Gặp tài xế xe đang dừng đỗ ven đường đột ngột mở cửa xe"
         ],
         "correctIndex": 1,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe 16 chỗ rẽ không quan sát, không làm chủ tốc độ đâm vào xe bán tải đang lùiFu. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe 16 chỗ rẽ không quan sát, không làm chủ tốc độ đâm vào xe bán tải đang lùi. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -7617,14 +7617,14 @@
   },
   {
     "id": 120,
-    "title": "Tình huống 120: Xe tải không làm chủ được tốc độ mất lái lao vào chợ dân sinh và va chạm với các xe đang đi phía trướcLU",
-    "name": "Xe tải không làm chủ được tốc độ mất lái lao vào chợ dân sinh và va chạm với các xe đang đi phía trướcLU",
+    "title": "Tình huống 120: Xe tải không làm chủ được tốc độ mất lái lao vào chợ dân sinh và va chạm với các xe đang đi phía trước",
+    "name": "Xe tải không làm chủ được tốc độ mất lái lao vào chợ dân sinh và va chạm với các xe đang đi phía trước",
     "chapter": 6,
     "chapterName": "Tai nạn giao thông thực tế",
     "videoUrl": "/videos/120.mp4",
     "timeIndirect": 7.1,
     "timeDirect": 10.32,
-    "part1_name": "Xe tải không làm chủ được tốc độ mất lái lao vào chợ dân sinh và va chạm với các xe đang đi phía trướcLU",
+    "part1_name": "Xe tải không làm chủ được tốc độ mất lái lao vào chợ dân sinh và va chạm với các xe đang đi phía trước",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
@@ -7633,13 +7633,13 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Xe con từ làn trong cùng bên trái lấn làn vượt ẩu để đi ra đường nhánh, va chạm với xe tảiy",
-          "Xe 16 chỗ từ đường nhánh, khuất tầm nhìn rẽ vào đường chính không giảm tốc độ, bị xe sơ mi rơ moóc đâm vào (tại Ngã 3 Nà Phặc - Bắc Kạn)_C5jhlH",
+          "Xe con từ làn trong cùng bên trái lấn làn vượt ẩu để đi ra đường nhánh, va chạm với xe tải",
+          "Xe 16 chỗ từ đường nhánh, khuất tầm nhìn rẽ vào đường chính không giảm tốc độ, bị xe sơ mi rơ moóc đâm vào (tại Ngã 3 Nà Phặc - Bắc Kạn)",
           "Xe khách không tuân thủ khoảng cách an toàn, xử lý tình huống không kịp dẫn tới va chạm với xe tải đang dừng đỗ",
-          "Xe tải không làm chủ được tốc độ mất lái lao vào chợ dân sinh và va chạm với các xe đang đi phía trướcLU"
+          "Xe tải không làm chủ được tốc độ mất lái lao vào chợ dân sinh và va chạm với các xe đang đi phía trước"
         ],
         "correctIndex": 3,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe tải không làm chủ được tốc độ mất lái lao vào chợ dân sinh và va chạm với các xe đang đi phía trướcLU. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe tải không làm chủ được tốc độ mất lái lao vào chợ dân sinh và va chạm với các xe đang đi phía trước. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,

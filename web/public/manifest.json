@@ -2,7 +2,7 @@
   "name": "OnTap GPLX",
   "short_name": "OnTap GPLX",
   "description": "Ôn tập 600 câu lý thuyết phân hạng và 120 tình huống mô phỏng trắc nghiệm chuẩn Cục Đường bộ Việt Nam.",
-  "start_url": "/",
+  "start_url": "/?source=pwa",
   "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",

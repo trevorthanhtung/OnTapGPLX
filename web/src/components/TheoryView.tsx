@@ -268,7 +268,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
     onRefreshStats();
   }, [activeQuestions, userAnswers, currentConfig, currentCategory, timeLeftSeconds, onRefreshStats]);
 
-  // Toggle bookmark
+  // Toggle bookmark on question
   const toggleBookmark = (id: number) => {
     StorageService.toggleBookmark(id);
     setBookmarks(StorageService.getBookmarks());
@@ -298,37 +298,14 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
     };
   }, [isSubmitted, activeQuestions, userAnswers, currentConfig]);
 
-  // Prevent background scrolling and touch drag when a modal is open
+  // Prevent background scrolling when a modal is open
   useEffect(() => {
     const isModalOpen = showExitConfirm || showSubmitConfirm || (isSubmitted && Boolean(examStats) && showResultModal) || showMobileQuestionSheet;
     if (isModalOpen) {
       document.body.style.overflow = 'hidden';
-      document.documentElement.style.overflow = 'hidden';
-
-      const preventTouch = (e: TouchEvent) => {
-        const target = e.target as HTMLElement | null;
-        if (target && target.closest('.modal-scrollable')) {
-          return;
-        }
-        e.preventDefault();
-      };
-
-      const preventWheel = (e: WheelEvent) => {
-        const target = e.target as HTMLElement | null;
-        if (target && target.closest('.modal-scrollable')) {
-          return;
-        }
-        e.preventDefault();
-      };
-
-      document.addEventListener('touchmove', preventTouch, { passive: false });
-      window.addEventListener('wheel', preventWheel, { passive: false });
 
       return () => {
         document.body.style.overflow = '';
-        document.documentElement.style.overflow = '';
-        document.removeEventListener('touchmove', preventTouch);
-        window.removeEventListener('wheel', preventWheel);
       };
     }
   }, [showExitConfirm, showSubmitConfirm, isSubmitted, examStats, showResultModal, showMobileQuestionSheet]);
@@ -339,12 +316,70 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
     return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
   };
 
+  // Prevent accidental tab close / reload during exam on Web
+  useEffect(() => {
+    if (mode === 'exam' && !isSubmitted) {
+      const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+        e.preventDefault();
+        e.returnValue = '';
+        return '';
+      };
+      window.addEventListener('beforeunload', handleBeforeUnload);
+      return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+    }
+  }, [mode, isSubmitted]);
+
+  // History Back navigation for mobile swipe gesture and browser back button
+  useEffect(() => {
+    if (mode === 'hub') return;
+
+    window.history.pushState({ component: 'theory', mode }, '');
+
+    const handlePopState = () => {
+      // 1. If mobile question sheet is open, close it first
+      if (showMobileQuestionSheet) {
+        setShowMobileQuestionSheet(false);
+        window.history.pushState({ component: 'theory', mode }, '');
+        return;
+      }
+
+      // 2. If submit confirmation is open, close it
+      if (showSubmitConfirm) {
+        setShowSubmitConfirm(false);
+        window.history.pushState({ component: 'theory', mode }, '');
+        return;
+      }
+
+      // 3. If exit confirmation is open, close it
+      if (showExitConfirm) {
+        setShowExitConfirm(false);
+        window.history.pushState({ component: 'theory', mode }, '');
+        return;
+      }
+
+      // 4. If in active exam and not submitted, prompt exit confirmation
+      if (mode === 'exam' && !isSubmitted) {
+        setShowExitConfirm(true);
+        window.history.pushState({ component: 'theory', mode }, '');
+        return;
+      }
+
+      // 5. Otherwise (practice mode or submitted exam), exit to hub
+      setMode('hub');
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, [mode, isSubmitted, showMobileQuestionSheet, showSubmitConfirm, showExitConfirm]);
+
   // ==========================================
   // RENDER: HUB VIEW
   // ==========================================
   if (mode === 'hub') {
     return (
-      <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] py-6 sm:py-8 overflow-x-clip animate-in fade-in duration-200">
+      <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] py-6 sm:py-8 animate-in fade-in duration-200">
         {/* Banner Section - Merged with Browse 600 Questions */}
         <div className="bg-slate-900 rounded-2xl p-5 sm:p-7 text-white mb-8 border border-slate-800 shadow-md">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
@@ -680,15 +715,19 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
               )}
 
               <button
+                type="button"
                 onClick={() => currentQ && toggleBookmark(currentQ.id)}
-                className={`p-2 landscape-mobile:p-1.5 rounded-xl border transition-colors cursor-pointer ${
+                className={`p-2 sm:p-2.5 landscape-mobile:p-1.5 rounded-xl border transition-all cursor-pointer flex items-center justify-center ${
                   currentQ && bookmarks.includes(currentQ.id)
-                    ? 'bg-amber-50 border-amber-300 text-amber-600'
-                    : 'border-slate-200 text-slate-400 hover:text-slate-600 hover:bg-slate-50'
+                    ? 'bg-amber-50 border-amber-300 text-amber-600 shadow-xs'
+                    : 'border-slate-200 text-slate-500 hover:text-slate-900 hover:bg-slate-50'
                 }`}
-                title="Đánh dấu câu hỏi này"
+                title={currentQ && bookmarks.includes(currentQ.id) ? 'Bỏ lưu câu hỏi này' : 'Lưu câu hỏi để xem lại'}
               >
-                <Bookmark className="w-4 h-4 landscape-mobile:w-3.5 landscape-mobile:h-3.5" fill={currentQ && bookmarks.includes(currentQ.id) ? 'currentColor' : 'none'} />
+                <Bookmark
+                  className="w-5 h-5 landscape-mobile:w-4 landscape-mobile:h-4"
+                  fill={currentQ && bookmarks.includes(currentQ.id) ? 'currentColor' : 'none'}
+                />
               </button>
             </div>
           </div>
@@ -725,12 +764,14 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
               {activeQuestions.map((q, idx) => {
                 const isSelected = userAnswers[q.id] !== undefined;
                 const isCurrent = idx === currentIndex;
-                const isCorrect = isSubmitted && userAnswers[q.id] === q.correctAnswer;
-                const isWrong = isSubmitted && isSelected && !isCorrect;
+                const showResultForQ = isSubmitted || (mode !== 'exam' && isSelected);
+                const isCorrect = showResultForQ && userAnswers[q.id] === q.correctAnswer;
+                const isWrong = showResultForQ && isSelected && !isCorrect;
+                const isBookmarked = bookmarks.includes(q.id);
 
                 let btnStyle = 'bg-white text-slate-700 border-2 border-slate-200 hover:bg-slate-50 hover:border-slate-300';
 
-                if (isSubmitted) {
+                if (showResultForQ) {
                   if (isCorrect) {
                     btnStyle = isCurrent
                       ? 'bg-emerald-600 text-white border-2 border-slate-900 font-bold'
@@ -744,23 +785,30 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
                       ? 'bg-slate-100 text-slate-800 border-2 border-slate-900 font-bold'
                       : 'bg-slate-100 text-slate-400 border-2 border-slate-200';
                   }
+                } else if (isBookmarked) {
+                  // Tô vàng theo yêu cầu của user
+                  btnStyle = isCurrent
+                    ? 'bg-amber-400 text-slate-950 border-2 border-slate-900 ring-2 ring-amber-400 font-bold shadow-xs'
+                    : isSelected
+                    ? 'bg-amber-400 text-slate-950 border-2 border-slate-900 font-bold shadow-xs'
+                    : 'bg-amber-400 text-slate-950 border-2 border-amber-500 font-bold shadow-xs';
                 } else if (isSelected) {
                   btnStyle = isCurrent
-                    ? 'bg-slate-900 text-white border-2 border-amber-500 font-bold shadow-xs'
+                    ? 'bg-slate-900 text-white border-2 border-amber-400 ring-2 ring-slate-900 font-bold shadow-xs'
                     : 'bg-slate-900 text-white border-2 border-slate-900 font-semibold';
                 } else if (isCurrent) {
-                  btnStyle = 'bg-amber-50 text-slate-900 border-2 border-amber-500 font-bold shadow-xs';
+                  btnStyle = 'bg-slate-100 text-slate-900 border-2 border-slate-900 font-bold shadow-xs';
                 }
 
                 return (
                   <button
                     key={q.id}
                     onClick={() => setCurrentIndex(idx)}
-                    className={`relative h-10 rounded-xl text-sm flex items-center justify-center transition-all ${btnStyle}`}
+                    className={`relative h-10 rounded-xl text-sm flex items-center justify-center transition-all cursor-pointer ${btnStyle}`}
                   >
                     <span>{idx + 1}</span>
                     {q.isCritical && showCriticalHint && (
-                      <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-rose-500" title="Câu điểm liệt" />
+                      <span className="absolute top-1 left-1 w-2 h-2 rounded-full bg-rose-500" title="Câu điểm liệt" />
                     )}
                   </button>
                 );
@@ -768,7 +816,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
             </div>
 
             {/* Legend */}
-            <div className="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 shrink-0">
+            <div className="mt-auto pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-y-2 text-xs text-slate-500 shrink-0">
               <span className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded bg-slate-900"></span> Đã làm
               </span>
@@ -776,7 +824,10 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
                 <span className="w-2.5 h-2.5 rounded bg-white border-2 border-slate-300"></span> Chưa làm
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded bg-amber-50 border-2 border-amber-500"></span> Đang xem
+                <span className="w-2.5 h-2.5 rounded bg-amber-400 border border-amber-500"></span> Đã lưu
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded bg-slate-100 border-2 border-slate-900"></span> Đang xem
               </span>
               {showCriticalHint && (
                 <span className="flex items-center gap-1.5">
@@ -845,7 +896,8 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
                           {currentChoices.map((choice) => {
                             const isSelected = userAnswers[currentQ.id] === choice;
                             const isCorrectAnswer = currentQ.correctAnswer === choice;
-                            const showResult = isSubmitted || mode !== 'exam';
+                            const hasAnswered = userAnswers[currentQ.id] !== undefined;
+                            const showResult = isSubmitted || (mode !== 'exam' && hasAnswered);
 
                             let btnStyle = 'border-slate-200 bg-slate-50 text-slate-800 hover:bg-slate-100 hover:border-slate-300';
 
@@ -870,8 +922,8 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
                         </div>
                       </div>
 
-                      {/* Tip / Explanation in Practice Mode or after Submit */}
-                      {(isSubmitted || mode !== 'exam') && (
+                      {/* Tip / Explanation in Practice Mode (only after selecting an answer) or after Submit in Exam */}
+                      {(isSubmitted || (mode !== 'exam' && userAnswers[currentQ.id] !== undefined)) && (
                         <div className="p-3 landscape-mobile:p-2 rounded-xl bg-slate-50 border border-slate-200 mb-2 shrink-0 animate-in fade-in duration-150">
                           <div className="text-[11px] font-bold text-slate-900 uppercase tracking-wider mb-0.5">
                             Đáp án đúng: Ý {currentQ.correctAnswer}
@@ -982,8 +1034,11 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
             <div className="flex items-center justify-between pb-3 landscape-mobile:pb-2 mb-3 landscape-mobile:mb-2 border-b border-slate-100 shrink-0">
               <div>
                 <h4 className="font-bold text-slate-900 text-base landscape-mobile:text-sm">Danh sách câu hỏi</h4>
-                <p className="text-xs landscape-mobile:text-[11px] text-slate-500 font-medium">
-                  Đã trả lời {Object.keys(userAnswers).length} / {activeQuestions.length} câu
+                <p className="text-xs landscape-mobile:text-[11px] text-slate-500 font-medium flex items-center gap-2">
+                  <span>Đã trả lời {Object.keys(userAnswers).length} / {activeQuestions.length} câu</span>
+                  {bookmarks.length > 0 && (
+                    <span className="text-amber-600 font-semibold">• {bookmarks.length} đã lưu</span>
+                  )}
                 </p>
               </div>
               <button
@@ -1001,12 +1056,14 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
               {activeQuestions.map((q, idx) => {
                 const isSelected = userAnswers[q.id] !== undefined;
                 const isCurrent = idx === currentIndex;
-                const isCorrect = isSubmitted && userAnswers[q.id] === q.correctAnswer;
-                const isWrong = isSubmitted && isSelected && !isCorrect;
+                const showResultForQ = isSubmitted || (mode !== 'exam' && isSelected);
+                const isCorrect = showResultForQ && userAnswers[q.id] === q.correctAnswer;
+                const isWrong = showResultForQ && isSelected && !isCorrect;
+                const isBookmarked = bookmarks.includes(q.id);
 
                 let btnStyle = 'bg-white text-slate-700 border-2 border-slate-200 hover:bg-slate-50';
 
-                if (isSubmitted) {
+                if (showResultForQ) {
                   if (isCorrect) {
                     btnStyle = isCurrent
                       ? 'bg-emerald-600 text-white border-2 border-slate-900 font-bold'
@@ -1020,12 +1077,19 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
                       ? 'bg-slate-100 text-slate-800 border-2 border-slate-900 font-bold'
                       : 'bg-slate-100 text-slate-400 border-2 border-slate-200';
                   }
+                } else if (isBookmarked) {
+                  // Tô vàng theo yêu cầu của user
+                  btnStyle = isCurrent
+                    ? 'bg-amber-400 text-slate-950 border-2 border-slate-900 ring-2 ring-amber-400 font-bold shadow-xs'
+                    : isSelected
+                    ? 'bg-amber-400 text-slate-950 border-2 border-slate-900 font-bold shadow-xs'
+                    : 'bg-amber-400 text-slate-950 border-2 border-amber-500 font-bold shadow-xs';
                 } else if (isSelected) {
                   btnStyle = isCurrent
-                    ? 'bg-slate-900 text-white border-2 border-amber-500 font-bold'
+                    ? 'bg-slate-900 text-white border-2 border-amber-400 font-bold shadow-xs'
                     : 'bg-slate-900 text-white border-2 border-slate-900 font-semibold';
                 } else if (isCurrent) {
-                  btnStyle = 'bg-amber-50 text-slate-900 border-2 border-amber-500 font-bold';
+                  btnStyle = 'bg-slate-100 text-slate-900 border-2 border-slate-900 font-bold';
                 }
 
                 return (
@@ -1040,13 +1104,29 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
                     <span>{idx + 1}</span>
                     {q.isCritical && showCriticalHint && (
                       <span
-                        className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-rose-500 ring-1 ring-white"
+                        className="absolute top-1 left-1 w-2 h-2 rounded-full bg-rose-500 ring-1 ring-white"
                         title="Câu điểm liệt"
                       />
                     )}
                   </button>
                 );
               })}
+            </div>
+
+            {/* Mobile Sheet Legend */}
+            <div className="mt-3 pt-2.5 border-t border-slate-100 flex flex-wrap items-center justify-between gap-y-1.5 text-[11px] text-slate-500 shrink-0">
+              <span className="flex items-center gap-1">
+                <span className="w-2 h-2 rounded bg-slate-900"></span> Đã làm
+              </span>
+              <span className="flex items-center gap-1">
+                <span className="w-2 h-2 rounded bg-white border border-slate-300"></span> Chưa làm
+              </span>
+              <span className="flex items-center gap-1">
+                <span className="w-2 h-2 rounded bg-amber-400 border border-amber-500"></span> Đã lưu
+              </span>
+              <span className="flex items-center gap-1">
+                <span className="w-2 h-2 rounded bg-slate-100 border border-slate-900"></span> Đang xem
+              </span>
             </div>
           </div>
         </div>

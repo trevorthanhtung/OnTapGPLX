@@ -18,24 +18,10 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onOp
   // Lock body & window scroll when confirmation modal is visible
   useEffect(() => {
     if (showConfirmLanding) {
-      const preventDefault = (e: Event) => {
-        e.preventDefault();
-      };
-
-      const originalBodyOverflow = document.body.style.overflow;
-      const originalHtmlOverflow = document.documentElement.style.overflow;
-
       document.body.style.overflow = 'hidden';
-      document.documentElement.style.overflow = 'hidden';
-
-      window.addEventListener('touchmove', preventDefault, { passive: false });
-      window.addEventListener('wheel', preventDefault, { passive: false });
 
       return () => {
-        document.body.style.overflow = originalBodyOverflow;
-        document.documentElement.style.overflow = originalHtmlOverflow;
-        window.removeEventListener('touchmove', preventDefault);
-        window.removeEventListener('wheel', preventDefault);
+        document.body.style.overflow = '';
       };
     }
   }, [showConfirmLanding]);
@@ -99,7 +85,7 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onOp
   };
 
   return (
-    <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] py-6 sm:py-8 overflow-x-clip animate-in fade-in duration-200">
+    <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] py-6 sm:py-8 animate-in fade-in duration-200">
       {/* Page Header */}
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-slate-900 tracking-tight mb-1">Thống kê tiến độ</h1>

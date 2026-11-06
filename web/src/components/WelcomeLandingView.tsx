@@ -36,26 +36,10 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
   // Prevent screen and background scrolling on Welcome Landing View
   useEffect(() => {
     const originalBodyOverflow = document.body.style.overflow;
-    const originalHtmlOverflow = document.documentElement.style.overflow;
-
     document.body.style.overflow = 'hidden';
-    document.documentElement.style.overflow = 'hidden';
-
-    const handleTouchMove = (e: TouchEvent) => {
-      const target = e.target as HTMLElement | null;
-      // Allow scrolling inside scrollable modal contents if opened
-      if (target && target.closest('.overflow-y-auto')) {
-        return;
-      }
-      e.preventDefault();
-    };
-
-    window.addEventListener('touchmove', handleTouchMove, { passive: false });
 
     return () => {
       document.body.style.overflow = originalBodyOverflow;
-      document.documentElement.style.overflow = originalHtmlOverflow;
-      window.removeEventListener('touchmove', handleTouchMove);
     };
   }, []);
 
@@ -72,7 +56,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
   };
 
   return (
-    <div className="fixed inset-0 h-dvh w-full overflow-hidden overscroll-none bg-slate-50 text-slate-900 flex flex-col justify-between selection:bg-slate-200 pt-[env(safe-area-inset-top,0px)] pb-[env(safe-area-inset-bottom,0px)] pl-[env(safe-area-inset-left,0px)] pr-[env(safe-area-inset-right,0px)]">
+    <div className="fixed inset-0 h-dvh w-full overflow-hidden overscroll-none bg-slate-50 text-slate-900 flex flex-col justify-between select-none pt-[env(safe-area-inset-top,0px)] pb-[env(safe-area-inset-bottom,0px)] pl-[env(safe-area-inset-left,0px)] pr-[env(safe-area-inset-right,0px)]">
       {/* Top balance spacer */}
       <div aria-hidden="true" className="h-2 sm:h-6 landscape-mobile:h-1 shrink-0" />
 
@@ -170,18 +154,18 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
           <p className="text-xs landscape-mobile:text-[10px] text-slate-500">
             thực hiện bởi{' '}
             <a
-              href="https://www.youtube.com/@kat.thanhtungg"
+              href="https://github.com/trevorthanhtung"
               target="_blank"
               rel="noopener noreferrer"
               className="font-bold text-slate-800 hover:text-amber-600 underline underline-offset-2 transition-colors cursor-pointer"
-              title="Sài Gòn Về Đêm: Nhập Vai Phá Sản & Trải Nghiệm Ngủ Tại Đền Thờ | Ba Quả Bưởi #1"
+              title="GitHub: trevorthanhtung (thanhtungg.)"
             >
               thanhtungg.
             </a>
           </p>
           <span className="hidden landscape-mobile:inline text-slate-300">•</span>
           <span className="text-[11px] landscape-mobile:text-[10px] text-slate-400 font-mono">
-            Phiên bản 1.0.2
+            Phiên bản 1.1.0
           </span>
         </div>
       </footer>
