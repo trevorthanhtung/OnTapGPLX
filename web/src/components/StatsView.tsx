@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import type { ExamHistoryItem } from '../services/storage';
 import { StorageService } from '../services/storage';
@@ -13,6 +13,32 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onOp
   const [examHistory] = useState<ExamHistoryItem[]>(StorageService.getExamHistory());
   const [wrongCount] = useState<number>(StorageService.getWrongQuestions().length);
   const [studiedCount] = useState<number>(StorageService.getStudiedQuestions().length);
+  const [showConfirmLanding, setShowConfirmLanding] = useState(false);
+
+  // Lock body & window scroll when confirmation modal is visible
+  useEffect(() => {
+    if (showConfirmLanding) {
+      const preventDefault = (e: Event) => {
+        e.preventDefault();
+      };
+
+      const originalBodyOverflow = document.body.style.overflow;
+      const originalHtmlOverflow = document.documentElement.style.overflow;
+
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+
+      window.addEventListener('touchmove', preventDefault, { passive: false });
+      window.addEventListener('wheel', preventDefault, { passive: false });
+
+      return () => {
+        document.body.style.overflow = originalBodyOverflow;
+        document.documentElement.style.overflow = originalHtmlOverflow;
+        window.removeEventListener('touchmove', preventDefault);
+        window.removeEventListener('wheel', preventDefault);
+      };
+    }
+  }, [showConfirmLanding]);
 
   // Pass rate calculation
   const totalExams = examHistory.length;
@@ -73,7 +99,7 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onOp
   };
 
   return (
-    <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] py-6 sm:py-8 overflow-x-hidden animate-in fade-in duration-200">
+    <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] py-6 sm:py-8 overflow-x-clip animate-in fade-in duration-200">
       {/* Page Header */}
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-slate-900 tracking-tight mb-1">Thống kê tiến độ</h1>
@@ -312,13 +338,52 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onOp
 
       {/* Revisit Landing Page & Install Guide */}
       {onOpenLanding && (
-        <div className="flex justify-center mt-6">
+        <div className="flex justify-center mt-6 pb-2">
           <button
-            onClick={onOpenLanding}
-            className="text-xs sm:text-sm font-semibold text-slate-500 hover:text-slate-900 transition-colors py-2.5 px-4 rounded-xl border border-slate-200/90 hover:bg-slate-100 bg-white cursor-pointer shadow-2xs flex items-center gap-1.5"
+            type="button"
+            onClick={() => setShowConfirmLanding(true)}
+            className="text-xs sm:text-sm font-medium text-slate-400 hover:text-slate-700 hover:underline transition-colors cursor-pointer py-1 px-2"
           >
             <span>Trang giới thiệu & Hướng dẫn cài đặt</span>
           </button>
+        </div>
+      )}
+
+      {/* Confirmation Modal to return to Landing Page */}
+      {showConfirmLanding && (
+        <div
+          className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 touch-none overscroll-contain select-none animate-in fade-in duration-150"
+        >
+          <div
+            className="bg-white rounded-2xl max-w-sm w-full p-6 sm:p-7 shadow-xl border border-slate-200 text-center animate-in zoom-in-95 duration-150"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h4 className="text-base sm:text-lg font-bold text-slate-900 mb-2">
+              Quay lại trang giới thiệu?
+            </h4>
+            <p className="text-xs sm:text-sm text-slate-500 mb-6 leading-relaxed">
+              Bạn có muốn quay về trang giới thiệu và hướng dẫn cài đặt ứng dụng không? Dữ liệu ôn tập của bạn vẫn được lưu trữ đầy đủ.
+            </p>
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => setShowConfirmLanding(false)}
+                className="flex-1 py-2.5 px-4 rounded-xl border border-slate-200 text-slate-700 font-semibold text-xs sm:text-sm hover:bg-slate-100 transition-colors cursor-pointer"
+              >
+                Hủy
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setShowConfirmLanding(false);
+                  onOpenLanding?.();
+                }}
+                className="flex-1 py-2.5 px-4 rounded-xl bg-slate-900 text-white font-semibold text-xs sm:text-sm hover:bg-slate-800 transition-colors shadow-2xs cursor-pointer"
+              >
+                Xác nhận
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </div>

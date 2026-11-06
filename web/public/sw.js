@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ontapgplx-v1';
+const CACHE_NAME = 'ontapgplx-v1.0.1';
 const PRECACHE_ASSETS = [
   '/',
   '/index.html',

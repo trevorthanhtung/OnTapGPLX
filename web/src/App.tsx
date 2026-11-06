@@ -47,7 +47,7 @@ export function App() {
       {!showLanding && showSplash && <SplashScreen onFinish={handleSplashFinish} />}
 
       {!showLanding && (
-        <div className={`text-slate-900 flex flex-col font-sans bg-slate-50 w-full max-w-full overflow-x-hidden ${isStudyActive ? 'h-dvh overflow-hidden' : 'min-h-screen'}`}>
+        <div className={`text-slate-900 flex flex-col font-sans bg-slate-50 w-full max-w-full overflow-x-clip ${isStudyActive ? 'h-dvh overflow-hidden' : 'min-h-screen'}`}>
           {!isStudyActive && !showSplash && (
             <Navbar
               activeTab={activeTab}

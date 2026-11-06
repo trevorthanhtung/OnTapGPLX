@@ -71,30 +71,34 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
       {/* Bottom Loading Progress Indicator with Driving Car */}
       <div className="w-full max-w-xs flex flex-col items-center pb-8 sm:pb-10">
         {/* Road Track with Driving Car */}
-        <div className="relative w-full pt-6">
-          {/* Animated Driving Car */}
-          <div
-            className="absolute top-0 -translate-x-1/2 transition-all duration-75 ease-out flex items-center pointer-events-none z-10"
-            style={{ left: `${Math.min(96, Math.max(4, progress))}%` }}
-          >
-            {/* The Car */}
-            <div className="relative flex items-center">
-              {/* Mini exhaust smoke puff when moving */}
-              {progress > 5 && progress < 98 && (
-                <div className="absolute -left-2 bottom-0 w-1.5 h-1.5 rounded-full bg-slate-300 animate-ping opacity-60" />
-              )}
-              <Car className="w-5 h-5 text-amber-500 fill-amber-100 drop-shadow-xs transition-transform" />
-              {/* Headlight beam */}
-              <div className="absolute top-1.5 -right-2 w-2.5 h-1 bg-linear-to-r from-amber-400/70 to-transparent rounded-full blur-[0.5px]" />
-            </div>
-          </div>
-
-          {/* Road / Progress Track */}
-          <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden p-0.5 border border-slate-200/90 shadow-inner">
+        <div className="relative w-full pt-5">
+          {/* Progress Track / Road */}
+          <div className="relative w-full h-2 bg-slate-100 rounded-full border border-slate-200/90 shadow-inner">
+            {/* Filled Progress Bar (Drives behind the car) */}
             <div
               className="h-full bg-linear-to-r from-amber-500 via-orange-500 to-amber-500 rounded-full transition-all duration-75 ease-out shadow-xs shadow-amber-500/40"
               style={{ width: `${progress}%` }}
             />
+
+            {/* The Car riding directly on the bar */}
+            <div
+              className="absolute -top-4 flex items-center pointer-events-none z-10 transition-all duration-75 ease-out"
+              style={{
+                left: `${progress}%`,
+                transform: `translateX(-${progress}%)`
+              }}
+            >
+              <div className="relative flex items-center">
+                {/* Mini exhaust smoke puff when moving */}
+                {progress > 5 && progress < 98 && (
+                  <div className="absolute -left-1.5 bottom-0.5 w-1.5 h-1.5 rounded-full bg-slate-300 animate-ping opacity-60" />
+                )}
+                {/* The Car Icon */}
+                <Car className="w-5 h-5 text-amber-500 fill-amber-100 drop-shadow-xs" />
+                {/* Headlight beam */}
+                <div className="absolute top-1.5 -right-2 w-2.5 h-1 bg-linear-to-r from-amber-400/80 to-transparent rounded-full blur-[0.5px]" />
+              </div>
+            </div>
           </div>
         </div>
 

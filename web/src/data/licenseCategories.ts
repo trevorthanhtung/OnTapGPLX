@@ -2,9 +2,29 @@ import type { LicenseConfig } from '../types';
 
 export const LICENSE_CATEGORIES: LicenseConfig[] = [
   {
-    id: 'B',
-    name: 'Hạng B',
-    description: 'Ô tô chở người đến 8 chỗ, ô tô tải đến 3.5 tấn (thay thế B1 & B2 cũ)',
+    id: 'A1',
+    name: 'Hạng A1',
+    description: 'Xe mô tô hai bánh có dung tích xi-lanh đến 125 cm³',
+    totalQuestions: 25,
+    timeMinutes: 19,
+    passScore: 23,
+    allowedWrong: 2,
+    criticalAllowed: 0
+  },
+  {
+    id: 'A',
+    name: 'Hạng A (A2 cũ)',
+    description: 'Xe mô tô hai bánh có dung tích xi-lanh trên 125 cm³',
+    totalQuestions: 25,
+    timeMinutes: 19,
+    passScore: 23,
+    allowedWrong: 2,
+    criticalAllowed: 0
+  },
+  {
+    id: 'B1',
+    name: 'Hạng B1 (Số tự động)',
+    description: 'Ô tô số tự động chở người đến 8 chỗ, không hành nghề lái xe',
     totalQuestions: 30,
     timeMinutes: 20,
     passScore: 27,
@@ -12,9 +32,9 @@ export const LICENSE_CATEGORIES: LicenseConfig[] = [
     criticalAllowed: 0
   },
   {
-    id: 'B1',
-    name: 'Hạng B1 (Số tự động)',
-    description: 'Ô tô số tự động chở người đến 8 chỗ, không hành nghề lái xe',
+    id: 'B',
+    name: 'Hạng B',
+    description: 'Ô tô chở người đến 8 chỗ, ô tô tải đến 3.5 tấn (thay thế B1 & B2 cũ)',
     totalQuestions: 30,
     timeMinutes: 20,
     passScore: 27,
@@ -49,26 +69,6 @@ export const LICENSE_CATEGORIES: LicenseConfig[] = [
     timeMinutes: 26,
     passScore: 41,
     allowedWrong: 4,
-    criticalAllowed: 0
-  },
-  {
-    id: 'A1',
-    name: 'Hạng A1',
-    description: 'Xe mô tô hai bánh có dung tích xi-lanh đến 125 cm³',
-    totalQuestions: 25,
-    timeMinutes: 19,
-    passScore: 23,
-    allowedWrong: 2,
-    criticalAllowed: 0
-  },
-  {
-    id: 'A',
-    name: 'Hạng A (A2 cũ)',
-    description: 'Xe mô tô hai bánh có dung tích xi-lanh trên 125 cm³',
-    totalQuestions: 25,
-    timeMinutes: 19,
-    passScore: 23,
-    allowedWrong: 2,
     criticalAllowed: 0
   }
 ];

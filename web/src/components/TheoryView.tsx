@@ -344,7 +344,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
   // ==========================================
   if (mode === 'hub') {
     return (
-      <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] py-6 sm:py-8 overflow-x-hidden animate-in fade-in duration-200">
+      <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] py-6 sm:py-8 overflow-x-clip animate-in fade-in duration-200">
         {/* Banner Section - Merged with Browse 600 Questions */}
         <div className="bg-slate-900 rounded-2xl p-5 sm:p-7 text-white mb-8 border border-slate-800 shadow-md">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">

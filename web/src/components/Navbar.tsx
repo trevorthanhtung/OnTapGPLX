@@ -30,7 +30,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     setIsVisible(true);
   }, [activeTab]);
 
-  // Facebook-style motion: hide on scroll down, show on scroll up
+  // Motion navbar: show immediately when scrolling up anywhere, or when near top
   useEffect(() => {
     const handleScroll = () => {
       if (isCategoryOpen) {
@@ -40,32 +40,30 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       const currentScrollY = window.scrollY;
 
-      // Always show at top of page
+      // Always show when near top of page
       if (currentScrollY <= 25) {
         setIsVisible(true);
         lastScrollY.current = currentScrollY;
         return;
       }
 
-      // Ignore iOS rubber-banding
-      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-      if (currentScrollY < 0 || currentScrollY > maxScroll) {
+      const delta = currentScrollY - lastScrollY.current;
+
+      // When scrolling up anywhere (even in the middle/bottom of the page), show immediately
+      if (delta < -3) {
+        setIsVisible(true);
+        lastScrollY.current = currentScrollY;
         return;
       }
 
-      const delta = currentScrollY - lastScrollY.current;
-
-      // Require a minimum 8px scroll delta to prevent jittering
-      if (Math.abs(delta) > 8) {
-        if (delta > 0 && currentScrollY > 70) {
-          // Scrolling down -> hide
-          setIsVisible(false);
-        } else if (delta < 0) {
-          // Scrolling up -> show
-          setIsVisible(true);
-        }
+      // When scrolling down past 60px, hide
+      if (delta > 8 && currentScrollY > 60) {
+        setIsVisible(false);
         lastScrollY.current = currentScrollY;
+        return;
       }
+
+      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });

@@ -363,7 +363,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
   // ==========================================
   if (mode === 'hub') {
     return (
-      <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] py-6 sm:py-8 overflow-x-hidden animate-in fade-in duration-200">
+      <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] py-6 sm:py-8 overflow-x-clip animate-in fade-in duration-200">
         {/* Banner Section */}
         <div className="bg-slate-900 rounded-2xl p-5 sm:p-7 text-white mb-8 border border-slate-800 shadow-md">
           <div className="max-w-4xl">
@@ -371,7 +371,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
               Bộ 120 Tình Huống Mô Phỏng Giao Thông
             </h1>
             <p className="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
-              Phần mềm mô phỏng các tình huống giao thông dùng cho sát hạch lái xe theo chuẩn Cục Đường bộ Việt Nam (Phiên bản v2.0.0). Nhận diện dấu hiệu tiềm ẩn, thời điểm nguy hiểm và phương án xử lý an toàn.
+              Phần mềm mô phỏng các tình huống giao thông dùng cho sát hạch lái xe theo chuẩn Cục Đường bộ Việt Nam (Phiên bản v2.1.0 mới nhất). Nhận diện dấu hiệu tiềm ẩn, thời điểm nguy hiểm và phương án xử lý an toàn.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 sm:gap-4">
