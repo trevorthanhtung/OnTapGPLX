@@ -824,11 +824,11 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
                 {/* Card Inner Content: Column in Portrait/Desktop, 2-Col Row in Landscape Mobile */}
                 <div className="flex flex-col landscape-mobile:flex-row landscape-mobile:gap-3 flex-1 min-h-0 justify-between">
                   {/* Left Column in Landscape Mobile / Image Box in Portrait */}
-                  <div className="mb-3 sm:mb-4 landscape-mobile:mb-0 rounded-xl overflow-hidden border border-slate-100 bg-white flex items-center justify-center p-2 sm:p-4 landscape-mobile:p-1 flex-1 min-h-0 max-h-[38vh] landscape-mobile:max-h-none landscape-mobile:w-[58%]">
+                  <div className="w-full mb-3 sm:mb-4 landscape-mobile:mb-0 rounded-xl overflow-hidden border border-slate-100 bg-white flex items-center justify-center p-1 sm:p-2.5 landscape-mobile:p-1 flex-1 min-h-0 max-h-[42vh] sm:max-h-none landscape-mobile:max-h-none landscape-mobile:w-[58%]">
                     <img
                       src={currentQ.image}
                       alt={`Câu hỏi ${currentIndex + 1}`}
-                      className="max-w-full max-h-full h-auto object-contain select-none"
+                      className="w-full h-full max-w-full max-h-full object-contain select-none"
                       loading="eager"
                     />
                   </div>

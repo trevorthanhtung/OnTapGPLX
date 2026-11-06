@@ -33,6 +33,32 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
     };
   }, []);
 
+  // Prevent screen and background scrolling on Welcome Landing View
+  useEffect(() => {
+    const originalBodyOverflow = document.body.style.overflow;
+    const originalHtmlOverflow = document.documentElement.style.overflow;
+
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+
+    const handleTouchMove = (e: TouchEvent) => {
+      const target = e.target as HTMLElement | null;
+      // Allow scrolling inside scrollable modal contents if opened
+      if (target && target.closest('.overflow-y-auto')) {
+        return;
+      }
+      e.preventDefault();
+    };
+
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+    return () => {
+      document.body.style.overflow = originalBodyOverflow;
+      document.documentElement.style.overflow = originalHtmlOverflow;
+      window.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, []);
+
   const handleInstallClick = async () => {
     if (deferredPrompt) {
       deferredPrompt.prompt();
@@ -46,7 +72,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
   };
 
   return (
-    <div className="min-h-dvh bg-slate-50 text-slate-900 flex flex-col justify-between selection:bg-slate-200 pt-[env(safe-area-inset-top,0px)] pb-[env(safe-area-inset-bottom,0px)] pl-[env(safe-area-inset-left,0px)] pr-[env(safe-area-inset-right,0px)]">
+    <div className="fixed inset-0 h-dvh w-full overflow-hidden overscroll-none bg-slate-50 text-slate-900 flex flex-col justify-between selection:bg-slate-200 pt-[env(safe-area-inset-top,0px)] pb-[env(safe-area-inset-bottom,0px)] pl-[env(safe-area-inset-left,0px)] pr-[env(safe-area-inset-right,0px)]">
       {/* Top balance spacer */}
       <div aria-hidden="true" className="h-2 sm:h-6 landscape-mobile:h-1 shrink-0" />
 
@@ -155,15 +181,21 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
           </p>
           <span className="hidden landscape-mobile:inline text-slate-300">•</span>
           <span className="text-[11px] landscape-mobile:text-[10px] text-slate-400 font-mono">
-            Phiên bản 1.0.1
+            Phiên bản 1.0.2
           </span>
         </div>
       </footer>
 
       {/* Policy Modal (Terms / Privacy / Cookie) */}
       {policyModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 landscape-mobile:p-2 pt-[max(0.75rem,env(safe-area-inset-top))] pb-[max(0.75rem,env(safe-area-inset-bottom))] bg-slate-900/40 backdrop-blur-xs animate-in fade-in duration-150">
-          <div className="bg-white text-slate-900 w-full max-w-md landscape-mobile:max-w-xl rounded-2xl p-5 sm:p-6 landscape-mobile:p-3.5 shadow-2xl border border-slate-200 flex flex-col max-h-[85vh] landscape-mobile:max-h-[92vh] animate-in zoom-in-95 duration-150">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 landscape-mobile:p-2 pt-[max(0.75rem,env(safe-area-inset-top))] pb-[max(0.75rem,env(safe-area-inset-bottom))] bg-slate-900/40 backdrop-blur-xs overscroll-contain animate-in fade-in duration-150"
+          onClick={() => setPolicyModal(null)}
+        >
+          <div
+            className="bg-white text-slate-900 w-full max-w-md landscape-mobile:max-w-xl rounded-2xl p-5 sm:p-6 landscape-mobile:p-3.5 shadow-2xl border border-slate-200 flex flex-col max-h-[85vh] landscape-mobile:max-h-[92vh] animate-in zoom-in-95 duration-150 touch-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
             {/* Modal Header */}
             <div className="flex items-center justify-between pb-3.5 landscape-mobile:pb-2 border-b border-slate-100 mb-4 landscape-mobile:mb-2">
               <h3 className="font-bold text-slate-900 text-base landscape-mobile:text-sm">
@@ -284,8 +316,14 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
 
       {/* Install Modal */}
       {showInstallModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 landscape-mobile:p-2 pt-[max(0.75rem,env(safe-area-inset-top))] pb-[max(0.75rem,env(safe-area-inset-bottom))] bg-slate-900/40 backdrop-blur-xs">
-          <div className="bg-white w-full max-w-md landscape-mobile:max-w-xl rounded-2xl shadow-xl border border-slate-200 overflow-hidden flex flex-col max-h-[85vh] landscape-mobile:max-h-[92vh]">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 landscape-mobile:p-2 pt-[max(0.75rem,env(safe-area-inset-top))] pb-[max(0.75rem,env(safe-area-inset-bottom))] bg-slate-900/40 backdrop-blur-xs overscroll-contain animate-in fade-in duration-150"
+          onClick={() => setShowInstallModal(false)}
+        >
+          <div
+            className="bg-white w-full max-w-md landscape-mobile:max-w-xl rounded-2xl shadow-xl border border-slate-200 overflow-hidden flex flex-col max-h-[85vh] landscape-mobile:max-h-[92vh] animate-in zoom-in-95 duration-150 touch-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
             {/* Modal Header */}
             <div className="px-5 py-3.5 landscape-mobile:py-2 border-b border-slate-100 flex items-center justify-between">
               <div className="font-bold text-slate-900 text-sm">Hướng dẫn cài đặt ứng dụng</div>
