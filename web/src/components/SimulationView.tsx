@@ -15,7 +15,8 @@ interface SimulationViewProps {
   onActiveStateChange?: (isActive: boolean) => void;
 }
 
-const VIDEO_CDN = (import.meta.env.VITE_VIDEO_CDN_URL || '').replace(/\/$/, '');
+const DEFAULT_CDN = 'https://pub-c2abeb24380a45a987615e62ee85f7e8.r2.dev';
+const VIDEO_CDN = (import.meta.env.VITE_VIDEO_CDN_URL || (import.meta.env.PROD ? DEFAULT_CDN : '')).replace(/\/$/, '');
 const getVideoSrc = (url?: string) => {
   if (!url) return undefined;
   if (url.startsWith('http://') || url.startsWith('https://')) return `${url}?v=2026.2`;
