@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Production builds
+dist/
+build/
+
+# Local raw installer and extracted folders (avoid committing 15+ GB of binaries)
+*.exe
+extracted_data/
+extracted_mophong/
+Phần mềm tu Luyen 600 Cau 2026/
+
+# Video files (5.6 GB - host on Cloudflare R2 / CDN)
+web/public/videos/
+
+# Environment and local config
+.env
+.env.local
+.env.*.local
+
+# OS and Editor junk
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
