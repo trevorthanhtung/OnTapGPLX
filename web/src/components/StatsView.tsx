@@ -319,7 +319,7 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onOp
         )}
       </div>
 
-      {/* Revisit Landing Page & Install Guide */}
+      {/* Revisit Landing Page */}
       {onOpenLanding && (
         <div className="flex justify-center mt-6 pb-2">
           <button
@@ -327,7 +327,7 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onOp
             onClick={() => setShowConfirmLanding(true)}
             className="text-xs sm:text-sm font-medium text-slate-400 hover:text-slate-700 hover:underline transition-colors cursor-pointer py-1 px-2"
           >
-            <span>Trang giới thiệu & Hướng dẫn cài đặt</span>
+            <span>Trang giới thiệu</span>
           </button>
         </div>
       )}
@@ -345,7 +345,7 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onOp
               Quay lại trang giới thiệu?
             </h4>
             <p className="text-xs sm:text-sm text-slate-500 mb-6 leading-relaxed">
-              Bạn có muốn quay về trang giới thiệu và hướng dẫn cài đặt ứng dụng không? Dữ liệu ôn tập của bạn vẫn được lưu trữ đầy đủ.
+              Bạn có muốn quay về trang giới thiệu không? Dữ liệu ôn tập của bạn vẫn được lưu trữ đầy đủ.
             </p>
             <div className="flex items-center gap-3">
               <button
