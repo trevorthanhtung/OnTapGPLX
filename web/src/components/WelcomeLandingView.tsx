@@ -643,29 +643,39 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                       <div className="w-12 h-[0.5px] bg-slate-400 mx-auto mt-0.5 mb-1" />
 
                       {/* Tiêu đề đỏ chữ đậm chuẩn GPLX thật */}
-                      <div className="flex items-center justify-center gap-2">
+                      <div className="text-center">
                         <span className="text-red-600 font-black text-xs sm:text-[13px] md:text-[14.5px] lg:text-[15px] uppercase tracking-wider">
                           GIẤY PHÉP LÁI XE
-                        </span>
-                        <span className="text-red-600/90 font-mono font-bold text-[8px] sm:text-[8.5px] md:text-[9.5px] lg:text-[10px]">
-                          Số: 0102600899
                         </span>
                       </div>
                     </div>
 
-                    {/* Card Center: Official Info Row & Main Picker Box */}
-                    <div className="w-full flex-1 flex flex-col justify-center py-1 sm:py-2 px-0.5">
-                      {/* Learner Info Row */}
-                      <div className="flex items-center justify-between text-[8px] sm:text-[9px] md:text-[10.5px] text-slate-600 mb-2 pb-1.5 border-b border-rose-200/60 font-medium">
-                        <div>
-                          Họ và tên: <strong className="text-slate-900 font-bold uppercase">ONTAP GPLX</strong>
-                        </div>
+                    {/* Card Center: 3 Official Info Rows */}
+                    <div className="w-full flex-1 flex flex-col justify-center py-1.5 sm:py-2.5 px-0.5 space-y-1.5 sm:space-y-2">
+                      {/* Row 1: License Number (Ẩn ý ngày ra mắt hôm nay: 07/11/2026 - Bản số 0001) */}
+                      <div className="flex items-center justify-between text-[8px] sm:text-[9px] md:text-[10.5px] text-slate-600 pb-1.5 border-b border-rose-200/60 font-medium">
+                        <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold text-slate-700 uppercase tracking-wider shrink-0">
+                          Số:
+                        </span>
+                        <span className="font-mono font-bold text-red-600 tracking-wider text-[9px] sm:text-[10px] md:text-[11px]">
+                          071120260001
+                        </span>
                       </div>
 
-                      {/* Main Category Row (Không khung card, thuần chữ, ấn là đổi hạng) */}
+                      {/* Row 2: Learner Info Row */}
+                      <div className="flex items-center justify-between text-[8px] sm:text-[9px] md:text-[10.5px] text-slate-600 pb-1.5 border-b border-rose-200/60 font-medium">
+                        <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold text-slate-700 uppercase tracking-wider shrink-0">
+                          Họ và tên:
+                        </span>
+                        <strong className="text-slate-900 font-bold uppercase tracking-tight text-right pl-2">
+                          ONTAP GPLX
+                        </strong>
+                      </div>
+
+                      {/* Row 3: Main Category Row (Không khung card, thuần chữ, ấn là đổi hạng) */}
                       <div
                         onClick={handleNextCategory}
-                        className="w-full flex items-center justify-between py-1 cursor-pointer select-none group"
+                        className="w-full flex items-center justify-between py-0.5 cursor-pointer select-none group"
                         title="Chạm để chuyển hạng GPLX"
                       >
                         <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold text-slate-700 uppercase tracking-wider shrink-0">
