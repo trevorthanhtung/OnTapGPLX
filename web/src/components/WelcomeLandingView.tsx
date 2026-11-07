@@ -373,14 +373,14 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
             </button>
           </header>
 
-          {/* Main Walkthrough Container: Responsive 2-Column on Desktop & Landscape Mobile, Single-Column on Mobile Portrait */}
-          <div className="w-full max-w-md md:max-w-xl lg:max-w-5xl landscape-mobile:max-w-4xl mx-auto flex-1 flex flex-col lg:flex-row landscape-mobile:flex-row items-center justify-between lg:justify-center px-5 sm:px-8 lg:px-10 pb-4 sm:pb-6 lg:pb-8 landscape-mobile:pb-2 gap-4 sm:gap-6 lg:gap-14 landscape-mobile:gap-6 overflow-hidden my-auto">
-            {/* Left Column (Desktop/Landscape) / Upper Half (Mobile Portrait): Graphic Area */}
-            <div className="relative flex-1 lg:flex-none lg:w-1/2 landscape-mobile:flex-none landscape-mobile:w-[48%] flex items-center justify-center min-h-[200px] sm:min-h-[240px] lg:min-h-[420px] landscape-mobile:min-h-0 overflow-visible">
+          {/* Main Walkthrough Container: Responsive 2-Column on Desktop & Landscape Mobile, Centered Stage on Tablet Portrait, Single-Column on Mobile Portrait */}
+          <div className="w-full max-w-md md:max-w-xl lg:max-w-5xl landscape-mobile:max-w-4xl mx-auto flex-1 flex flex-col lg:flex-row landscape-mobile:flex-row items-center justify-between md:justify-center px-5 sm:px-8 lg:px-10 pb-4 sm:pb-6 lg:pb-8 landscape-mobile:pb-2 gap-4 sm:gap-6 md:gap-8 lg:gap-14 landscape-mobile:gap-6 overflow-hidden my-auto">
+            {/* Left Column (Desktop/Landscape) / Upper Half (Mobile/Tablet Portrait): Graphic Area */}
+            <div className="relative flex-1 md:flex-none lg:w-1/2 landscape-mobile:flex-none landscape-mobile:w-[48%] flex items-center justify-center min-h-[200px] sm:min-h-[240px] md:min-h-0 lg:min-h-[420px] landscape-mobile:min-h-0 overflow-visible">
               {/* Faint Large Watermark Number behind graphic */}
               <div
                 key={`watermark-${currentSlide.step}`}
-                className="absolute select-none font-black text-[130px] sm:text-[170px] lg:text-[230px] landscape-mobile:text-[90px] text-slate-900/[0.04] pointer-events-none tracking-tighter leading-none animate-in fade-in zoom-in-90 duration-300"
+                className="absolute select-none font-black text-[130px] sm:text-[170px] md:text-[220px] lg:text-[250px] landscape-mobile:text-[90px] text-slate-900/[0.04] pointer-events-none tracking-tighter leading-none animate-in fade-in zoom-in-90 duration-300"
               >
                 {currentSlide.step}
               </div>
@@ -390,10 +390,10 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 key={`graphic-${currentStep}`}
                 className={
                   currentStep === 0
-                    ? 'relative z-10 w-48 sm:w-56 lg:w-64 h-[272px] sm:h-[310px] lg:h-[370px] landscape-mobile:w-36 landscape-mobile:h-[195px] bg-[#fffdfa] rounded-r-lg rounded-l-xs border-r border-t border-b border-slate-300/80 border-l-[7px] border-l-slate-300 shadow-2xl shadow-slate-400/40 p-2 sm:p-2.5 lg:p-3 landscape-mobile:p-1.5 flex flex-col justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
+                    ? 'relative z-10 w-48 sm:w-56 md:w-64 lg:w-72 h-[272px] sm:h-[310px] md:h-[380px] lg:h-[420px] landscape-mobile:w-36 landscape-mobile:h-[195px] bg-[#fffdfa] rounded-r-lg rounded-l-xs border-r border-t border-b border-slate-300/80 border-l-[7px] border-l-slate-300 shadow-2xl shadow-slate-400/40 p-2 sm:p-2.5 md:p-3 landscape-mobile:p-1.5 flex flex-col justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
                     : currentStep === 1
-                    ? 'relative z-10 w-[316px] sm:w-[360px] lg:w-[440px] max-w-full h-[216px] sm:h-[240px] lg:h-[295px] landscape-mobile:w-72 landscape-mobile:h-[175px] flex flex-col items-center justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
-                    : 'relative z-10 w-[316px] sm:w-[350px] lg:w-[430px] max-w-full h-[228px] sm:h-[248px] lg:h-[295px] landscape-mobile:w-72 landscape-mobile:h-[180px] flex flex-col justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
+                    ? 'relative z-10 w-[316px] sm:w-[360px] md:w-[450px] lg:w-[480px] max-w-full h-[216px] sm:h-[240px] md:h-[300px] lg:h-[320px] landscape-mobile:w-72 landscape-mobile:h-[175px] flex flex-col items-center justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
+                    : 'relative z-10 w-[316px] sm:w-[350px] md:w-[440px] lg:w-[460px] max-w-full h-[228px] sm:h-[248px] md:h-[300px] lg:h-[315px] landscape-mobile:w-72 landscape-mobile:h-[180px] flex flex-col justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
                 }
               >
                 {/* ------------------------------------------------------------- */}
@@ -704,19 +704,19 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
               </div>
             </div>
 
-            {/* Subtle Divider Line: Visible only on mobile portrait, hidden on desktop & landscape mobile */}
-            <div className="w-full border-t border-slate-200/80 my-1.5 sm:my-2 landscape-mobile:hidden lg:hidden shrink-0" />
+            {/* Subtle Divider Line: Visible only on mobile portrait, hidden on tablet, desktop & landscape mobile */}
+            <div className="w-full border-t border-slate-200/80 my-1.5 sm:my-2 landscape-mobile:hidden md:hidden lg:hidden shrink-0" />
 
-            {/* Right Column (Desktop/Landscape) / Lower Half (Mobile Portrait): Step Counter, Title, Description, and Layered CTA Button */}
-            <div className="w-full lg:w-1/2 landscape-mobile:w-[50%] pt-1 lg:pt-0 landscape-mobile:pt-0 flex flex-col justify-center shrink-0">
+            {/* Right Column (Desktop/Landscape) / Lower Half (Mobile/Tablet Portrait): Step Counter, Title, Description, and Layered CTA Button */}
+            <div className="w-full md:max-w-xl lg:max-w-none lg:w-1/2 landscape-mobile:w-[50%] pt-1 md:pt-0 landscape-mobile:pt-0 flex flex-col justify-center shrink-0">
               {/* Step Counter Row: 01 / 03 & Modern Pagination Indicator */}
-              <div className="flex items-center justify-between mb-2.5 sm:mb-3.5 lg:mb-4 landscape-mobile:mb-1.5">
+              <div className="flex items-center justify-between mb-2.5 sm:mb-3.5 md:mb-4 lg:mb-4 landscape-mobile:mb-1.5">
                 {/* Step Number (01 / 03) */}
                 <div className="flex items-baseline gap-1.5 font-mono select-none">
-                  <span className="text-2xl sm:text-3xl lg:text-4xl landscape-mobile:text-xl font-black text-slate-900 tracking-tight">
+                  <span className="text-2xl sm:text-3xl md:text-4xl landscape-mobile:text-xl font-black text-slate-900 tracking-tight">
                     {currentSlide.step}
                   </span>
-                  <span className="text-xs sm:text-sm lg:text-base font-bold text-slate-400">
+                  <span className="text-xs sm:text-sm md:text-base font-bold text-slate-400">
                     / 03
                   </span>
                 </div>
@@ -746,10 +746,10 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                           aria-selected={isCurrent}
                           onClick={() => setCurrentStep(idx)}
                           aria-label={`Chuyển đến bước ${idx + 1}`}
-                          className={`h-2 lg:h-2.5 rounded-full transition-all duration-300 ease-out cursor-pointer ${
+                          className={`h-2 md:h-2.5 rounded-full transition-all duration-300 ease-out cursor-pointer ${
                             isCurrent
-                              ? 'w-8 sm:w-10 lg:w-12 bg-linear-to-r from-amber-500 to-orange-500 shadow-xs shadow-amber-500/40'
-                              : 'w-2 sm:w-2.5 lg:w-3 bg-slate-200 hover:bg-slate-300'
+                              ? 'w-8 sm:w-10 md:w-12 bg-linear-to-r from-amber-500 to-orange-500 shadow-xs shadow-amber-500/40'
+                              : 'w-2 sm:w-2.5 md:w-3 bg-slate-200 hover:bg-slate-300'
                           }`}
                         />
                       );
@@ -761,7 +761,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
               {/* Heading Title (Crisp Slate with Amber Accent) */}
               <h2
                 key={`title-${currentStep}`}
-                className="text-xl sm:text-2xl lg:text-3xl landscape-mobile:text-base font-black text-slate-900 tracking-tight uppercase mb-1.5 sm:mb-2.5 lg:mb-3.5 landscape-mobile:mb-1 leading-snug animate-in fade-in duration-200"
+                className="text-xl sm:text-2xl md:text-3xl landscape-mobile:text-base font-black text-slate-900 tracking-tight uppercase mb-1.5 sm:mb-2.5 md:mb-3.5 landscape-mobile:mb-1 leading-snug animate-in fade-in duration-200"
               >
                 <span>{currentSlide.titlePrefix} </span>
                 <span className="text-amber-500">{currentSlide.titleHighlight}</span>
@@ -770,7 +770,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
               {/* Description Body */}
               <p
                 key={`desc-${currentStep}`}
-                className="text-xs sm:text-sm lg:text-base landscape-mobile:text-[11px] text-slate-600 leading-relaxed font-normal mb-4 sm:mb-6 lg:mb-7 landscape-mobile:mb-2 line-clamp-3 sm:line-clamp-none animate-in fade-in duration-200"
+                className="text-xs sm:text-sm md:text-base landscape-mobile:text-[11px] text-slate-600 leading-relaxed font-normal mb-4 sm:mb-6 md:mb-7 landscape-mobile:mb-2 line-clamp-3 sm:line-clamp-none animate-in fade-in duration-200"
               >
                 {currentStep === 2
                   ? `Đang chọn ${activeCategoryConfig.label} (${activeCategoryConfig.desc}). Đề thi gồm ${activeCategoryConfig.totalQ} câu làm trong ${activeCategoryConfig.time} phút, đạt từ ${activeCategoryConfig.pass}/${activeCategoryConfig.totalQ} câu trở lên.`
@@ -789,10 +789,10 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 <button
                   type="button"
                   onClick={handleNextSlide}
-                  className="relative w-full py-3.5 sm:py-4 lg:py-4.5 landscape-mobile:py-2.5 px-6 rounded-xl bg-linear-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 active:translate-x-1 active:translate-y-1 text-slate-950 font-black text-sm sm:text-base lg:text-lg tracking-wider uppercase flex items-center justify-center gap-2 transition-transform duration-75 cursor-pointer shadow-md"
+                  className="relative w-full py-3.5 sm:py-4 md:py-4.5 landscape-mobile:py-2.5 px-6 rounded-xl bg-linear-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 active:translate-x-1 active:translate-y-1 text-slate-950 font-black text-sm sm:text-base md:text-lg tracking-wider uppercase flex items-center justify-center gap-2 transition-transform duration-75 cursor-pointer shadow-md"
                 >
                   <span>{currentSlide.buttonText}</span>
-                  <span className="text-lg lg:text-xl leading-none font-black">›</span>
+                  <span className="text-lg md:text-xl leading-none font-black">›</span>
                 </button>
               </div>
             </div>
