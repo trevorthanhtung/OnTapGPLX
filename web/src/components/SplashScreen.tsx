@@ -261,13 +261,37 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
       >
         {/* Road Track with Driving Vios */}
         <div className="relative w-full pt-6">
-          {/* Progress Track / Road Lane */}
-          <div className="relative w-full h-2.5 bg-slate-100 rounded-full border border-slate-200/90 shadow-inner overflow-hidden">
-            {/* Filled Highway Track (Follows right behind the Vios) */}
+          {/* Progress Bar Container with standalone Vios riding directly on it */}
+          <div className="relative w-full">
+            {/* Standalone Toyota Vios Sedan positioned directly on top of the progress track */}
             <div
-              className="h-full bg-linear-to-r from-amber-500 via-orange-500 to-amber-500 rounded-full transition-all duration-75 ease-out shadow-xs shadow-orange-500/50"
-              style={{ width: `${progress}%` }}
-            />
+              className={`absolute -top-[19px] z-10 pointer-events-none transition-all duration-75 ease-out ${
+                isLaunching ? 'animate-[carTurboLaunch_0.45s_cubic-bezier(0.7,0,0.84,0)_forwards]' : ''
+              }`}
+              style={{
+                left: `${progress}%`,
+                transform: isLaunching ? undefined : 'translateX(-65%)',
+              }}
+            >
+              <div
+                className="relative flex items-center"
+                style={{
+                  animation: !isLaunching ? 'carRumble 0.12s infinite alternate ease-in-out' : undefined,
+                }}
+              >
+                {/* Clean Standalone Vios Sedan (No card, no light beams!) */}
+                <ViosSedan />
+              </div>
+            </div>
+
+            {/* Progress Track / Road Lane */}
+            <div className="relative w-full h-2.5 bg-slate-100 rounded-full border border-slate-200/90 shadow-inner overflow-hidden">
+              {/* Filled Highway Track (Follows right behind the Vios) */}
+              <div
+                className="h-full bg-linear-to-r from-amber-500 via-orange-500 to-amber-500 rounded-full transition-all duration-75 ease-out shadow-xs shadow-orange-500/50"
+                style={{ width: `${progress}%` }}
+              />
+            </div>
           </div>
 
           {/* Scrolling Dashed Highway Lane (Moving left to create speed illusion) */}
@@ -278,27 +302,6 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
               animation: 'roadDashScroll 0.55s linear infinite',
             }}
           />
-
-          {/* Standalone Toyota Vios Sedan positioned right at the head of the progress track */}
-          <div
-            className={`absolute top-0.5 z-10 pointer-events-none transition-all duration-75 ease-out ${
-              isLaunching ? 'animate-[carTurboLaunch_0.45s_cubic-bezier(0.7,0,0.84,0)_forwards]' : ''
-            }`}
-            style={{
-              left: `${progress}%`,
-              transform: isLaunching ? undefined : 'translateX(-65%)',
-            }}
-          >
-            <div
-              className="relative flex items-center"
-              style={{
-                animation: !isLaunching ? 'carRumble 0.12s infinite alternate ease-in-out' : undefined,
-              }}
-            >
-              {/* Clean Standalone Vios Sedan (No card, no light beams!) */}
-              <ViosSedan />
-            </div>
-          </div>
         </div>
 
         {/* Status & Progress Percentage */}
