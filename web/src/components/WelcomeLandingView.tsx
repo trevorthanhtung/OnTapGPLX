@@ -669,38 +669,43 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
 
             {/* Lower Half: Step Counter, Title, Description, and Layered CTA Button */}
             <div className="w-full pt-1 flex flex-col shrink-0">
-              {/* Step Counter Row (01 ————— 03) with Dynamic Animated Progress Track */}
+              {/* Step Counter Row: 01 / 03 & Modern Pagination Indicator */}
               <div className="flex items-center justify-between mb-2.5 sm:mb-3 landscape-mobile:mb-1">
-                <div className="flex items-center gap-3 flex-1 pr-4">
-                  <span className="text-2xl sm:text-3xl landscape-mobile:text-xl font-black font-mono text-slate-900 tracking-tight min-w-[2ch]">
+                {/* Step Number (01 / 03) */}
+                <div className="flex items-baseline gap-1.5 font-mono select-none">
+                  <span className="text-2xl sm:text-3xl landscape-mobile:text-xl font-black text-slate-900 tracking-tight">
                     {currentSlide.step}
                   </span>
+                  <span className="text-xs sm:text-sm font-bold text-slate-400">
+                    / 03
+                  </span>
+                </div>
 
-                  {/* Progress Track: fills dynamically (33% -> 66% -> 100%) and allows clicking steps */}
-                  <div className="flex-1 max-w-[200px] sm:max-w-[240px] landscape-mobile:max-w-[140px] h-2 rounded-full bg-slate-200/90 overflow-hidden relative flex shadow-inner">
-                    {/* Animated Fill Bar */}
-                    <div
-                      className="absolute inset-y-0 left-0 rounded-full bg-linear-to-r from-amber-500 to-orange-500 transition-all duration-300 ease-out shadow-xs shadow-amber-500/40 pointer-events-none"
-                      style={{
-                        width: `${((currentStep + 1) / slides.length) * 100}%`,
-                      }}
-                    />
-                    {/* 3 Clickable Step Zones */}
-                    {slides.map((_, idx) => (
+                {/* 3 Sleek Interactive Pagination Pills */}
+                <div
+                  className="flex items-center gap-1.5 p-1 -m-1"
+                  role="tablist"
+                  aria-label="Các bước giới thiệu"
+                >
+                  {slides.map((_, idx) => {
+                    const isCurrent = idx === currentStep;
+                    return (
                       <button
                         key={idx}
                         type="button"
+                        role="tab"
+                        aria-selected={isCurrent}
                         onClick={() => setCurrentStep(idx)}
                         aria-label={`Chuyển đến bước ${idx + 1}`}
-                        className="flex-1 h-full relative z-10 opacity-0 cursor-pointer"
+                        className={`h-2 rounded-full transition-all duration-300 ease-out cursor-pointer ${
+                          isCurrent
+                            ? 'w-8 sm:w-10 bg-linear-to-r from-amber-500 to-orange-500 shadow-xs shadow-amber-500/40'
+                            : 'w-2 sm:w-2.5 bg-slate-200 hover:bg-slate-300'
+                        }`}
                       />
-                    ))}
-                  </div>
+                    );
+                  })}
                 </div>
-
-                <span className="text-xs sm:text-sm font-bold font-mono text-slate-400 shrink-0">
-                  03
-                </span>
               </div>
 
               {/* Heading Title (Crisp Slate with Amber Accent) */}
