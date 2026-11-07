@@ -527,107 +527,28 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 )}
 
                 {/* ------------------------------------------------------------- */}
-                {/* Slide 03 Graphic: Thẻ GPLX PET Chuẩn Việt Nam (Chỉ Tiếng Việt) */}
+                {/* Slide 03 Graphic: Thẻ GPLX Tối Giản (Thuần Tiếng Việt, Chuẩn UI) */}
                 {/* ------------------------------------------------------------- */}
                 {currentStep === 2 && (
-                  <div className="w-full h-full rounded-xl border border-rose-200/90 bg-linear-to-br from-[#fff7f2] via-[#fffdfa] to-[#fee2e2]/40 p-2.5 sm:p-3 landscape-mobile:p-1.5 shadow-xl shadow-rose-950/5 flex flex-col justify-between overflow-hidden relative">
-                    {/* Subtle Guilloche Security Watermark (Hoa văn bảo an mờ chìm) */}
-                    <div
-                      aria-hidden="true"
-                      className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.06] overflow-hidden"
-                    >
-                      <svg viewBox="0 0 200 200" className="w-64 h-64">
-                        <circle cx="100" cy="100" r="90" fill="none" stroke="#dc2626" strokeWidth="1" strokeDasharray="3 3" />
-                        <circle cx="100" cy="100" r="70" fill="none" stroke="#dc2626" strokeWidth="1" />
-                        <circle cx="100" cy="100" r="50" fill="none" stroke="#dc2626" strokeWidth="1" strokeDasharray="4 2" />
-                        <circle cx="100" cy="100" r="30" fill="none" stroke="#dc2626" strokeWidth="1" />
-                        {[0, 15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165, 180, 195, 210, 225, 240, 255, 270, 285, 300, 315, 330, 345].map(
-                          (angle) => (
-                            <line
-                              key={angle}
-                              x1="100"
-                              y1="100"
-                              x2={100 + 90 * Math.cos((angle * Math.PI) / 180)}
-                              y2={100 + 90 * Math.sin((angle * Math.PI) / 180)}
-                              stroke="#dc2626"
-                              strokeWidth="0.8"
-                            />
-                          )
-                        )}
-                      </svg>
-                    </div>
-
-                    {/* Official National Header: Quốc huy + Quốc hiệu */}
-                    <div className="relative z-10 pb-1.5 border-b border-rose-200/80">
-                      <div className="flex items-center gap-2">
-                        {/* Quốc huy Việt Nam SVG */}
-                        <svg viewBox="0 0 100 100" className="w-8 h-8 sm:w-9 sm:h-9 shrink-0 drop-shadow-xs">
-                          {/* Red Shield Base */}
-                          <circle cx="50" cy="50" r="46" fill="#dc2626" stroke="#eab308" strokeWidth="2.5" />
-                          <circle cx="50" cy="50" r="43" fill="none" stroke="#fef08a" strokeWidth="1" strokeDasharray="2 1.5" />
-
-                          {/* Golden Rice Sheaves */}
-                          <path d="M 18,65 C 14,40 25,20 45,12 C 43,24 36,38 34,55 Z" fill="#facc15" opacity="0.95" />
-                          <path d="M 82,65 C 86,40 75,20 55,12 C 57,24 64,38 66,55 Z" fill="#facc15" opacity="0.95" />
-
-                          {/* Cogwheel */}
-                          <circle cx="50" cy="74" r="14" fill="#eab308" />
-                          <circle cx="50" cy="74" r="6" fill="#dc2626" />
-                          {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, i) => (
-                            <rect
-                              key={i}
-                              x="48"
-                              y="57"
-                              width="4"
-                              height="5"
-                              fill="#eab308"
-                              transform={`rotate(${angle} 50 74)`}
-                            />
-                          ))}
-
-                          {/* Ribbon */}
-                          <path d="M 28,78 Q 50,72 72,78 L 74,84 Q 50,78 26,84 Z" fill="#b91c1c" />
-
-                          {/* Star in center */}
-                          <polygon
-                            points="50,22 56,38 73,38 59,49 64,65 50,55 36,65 41,49 27,38 44,38"
-                            fill="#fde047"
-                            stroke="#ca8a04"
-                            strokeWidth="0.8"
-                          />
-                        </svg>
-
-                        {/* Quốc hiệu (Chỉ Tiếng Việt) */}
-                        <div className="flex-1 text-center pr-1 sm:pr-2">
-                          <div className="font-bold text-[8.5px] sm:text-[9.5px] text-slate-900 uppercase tracking-tight leading-tight">
-                            CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
-                          </div>
-                          <div className="italic text-[7px] sm:text-[7.5px] text-slate-700 leading-none mt-0.5 font-medium">
-                            Độc lập - Tự do - Hạnh phúc
-                          </div>
-                          <div className="w-14 h-[0.5px] bg-slate-400 mx-auto mt-0.5" />
-                        </div>
+                  <div className="w-full h-full rounded-xl border border-slate-300/90 bg-[#fffdfa] p-3 sm:p-3.5 landscape-mobile:p-1.5 shadow-xl shadow-slate-200/50 flex flex-col justify-between overflow-hidden relative">
+                    {/* Official National Header (Thuần Tiếng Việt, Căn Giữa Trang Trọng) */}
+                    <div className="text-center pb-2 border-b border-slate-200/90">
+                      <div className="font-bold text-[9px] sm:text-[10px] text-slate-800 uppercase tracking-tight leading-tight">
+                        CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
                       </div>
-
-                      {/* Tiêu đề đỏ chữ to & Số hiệu chuẩn GPLX */}
-                      <div className="text-center mt-1 space-y-0.2">
-                        <div className="text-rose-600 font-black text-xs sm:text-sm uppercase tracking-wider leading-none">
-                          GIẤY PHÉP LÁI XE
-                        </div>
-                        <div className="text-rose-600/90 font-mono font-bold text-[8px] sm:text-[9px] tracking-wide">
-                          Số: 0102600899
-                        </div>
+                      <div className="italic text-[7.5px] sm:text-[8px] text-slate-500 leading-none mt-0.5 font-medium">
+                        Độc lập - Tự do - Hạnh phúc
+                      </div>
+                      <div className="inline-block px-3 py-0.5 rounded-full bg-rose-600 text-white font-bold text-[8.5px] sm:text-[9.5px] uppercase tracking-wider shadow-2xs mt-1.5">
+                        GIẤY PHÉP LÁI XE
                       </div>
                     </div>
 
-                    {/* Card Body: Thông tin & Lưới chọn 6 hạng bằng full-width */}
-                    <div className="relative z-10 w-full my-auto py-1">
-                      {/* Thí sinh & Quy chế */}
-                      <div className="flex items-center justify-between text-[8.5px] sm:text-[9px] mb-1 px-0.5">
-                        <div className="font-bold text-slate-700">
-                          Họ và tên: <span className="text-slate-900 uppercase">BẠN (HỌC VIÊN)</span>
-                        </div>
-                        <span className="text-[7.5px] font-mono font-bold text-rose-700 bg-rose-100/70 px-1.5 py-0.2 rounded">
+                    {/* Card Body: Full-width 6-Category Selection Grid (Rộng rãi, dễ chọn) */}
+                    <div className="w-full my-auto py-1">
+                      <div className="flex items-center justify-between text-[9px] sm:text-[9.5px] font-bold text-slate-700 uppercase tracking-tight mb-1.5 px-0.5">
+                        <span>Chọn hạng giấy phép dự thi:</span>
+                        <span className="text-[8px] font-mono font-bold text-amber-800 bg-amber-100/70 px-1.5 py-0.5 rounded">
                           Quy chế 2026
                         </span>
                       </div>
@@ -641,26 +562,26 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                               key={cat.id}
                               type="button"
                               onClick={() => handleCategorySelect(cat.id)}
-                              className={`p-1.5 sm:p-2 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
+                              className={`p-2 sm:p-2.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
                                 isSelected
-                                  ? 'border-rose-500 bg-rose-50/90 shadow-xs ring-1 ring-rose-500/40'
-                                  : 'border-slate-200/90 bg-white/80 hover:border-slate-300 hover:bg-white'
+                                  ? 'border-amber-500 bg-amber-50/90 shadow-xs ring-1 ring-amber-500/40'
+                                  : 'border-slate-200/90 bg-slate-50/70 hover:border-slate-300 hover:bg-white'
                               }`}
                             >
                               <div className="min-w-0 pr-1">
                                 <div
-                                  className={`text-[10.5px] sm:text-xs font-bold leading-tight ${
-                                    isSelected ? 'text-rose-950 font-black' : 'text-slate-800'
+                                  className={`text-[11px] sm:text-xs font-bold leading-tight ${
+                                    isSelected ? 'text-amber-950 font-black' : 'text-slate-800'
                                   }`}
                                 >
                                   {cat.label}
                                 </div>
-                                <div className="text-[8px] sm:text-[8.5px] text-slate-500 truncate mt-0.5">
+                                <div className="text-[8.5px] sm:text-[9.5px] text-slate-500 truncate mt-0.5">
                                   {cat.desc}
                                 </div>
                               </div>
                               {isSelected && (
-                                <div className="w-3.5 h-3.5 rounded-full bg-rose-600 text-white flex items-center justify-center shrink-0 shadow-2xs">
+                                <div className="w-4 h-4 rounded-full bg-amber-500 text-white flex items-center justify-center shrink-0 shadow-2xs">
                                   <Check className="w-2.5 h-2.5 stroke-[3]" />
                                 </div>
                               )}
@@ -670,9 +591,9 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                       </div>
                     </div>
 
-                    {/* Card Footer: Thông số đề thi & tiêu chuẩn đạt */}
-                    <div className="relative z-10 pt-1.5 border-t border-rose-200/80 flex items-center justify-between text-[8px] sm:text-[9px] text-slate-600 font-mono">
-                      <span className="text-rose-950 font-bold">
+                    {/* Card Footer: Exam Specs without emoji */}
+                    <div className="pt-2 border-t border-slate-200/90 flex items-center justify-between text-[8.5px] sm:text-[9.5px] text-slate-600 font-mono">
+                      <span className="text-amber-900 font-bold">
                         Đề thi: {activeCategoryConfig.totalQ} câu • {activeCategoryConfig.time} phút
                       </span>
                       <span className="text-emerald-700 font-bold">
