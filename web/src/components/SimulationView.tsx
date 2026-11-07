@@ -557,28 +557,23 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
         {/* Banner Section */}
         <div className="bg-slate-900 rounded-2xl p-5 sm:p-7 text-white mb-8 border border-slate-800 shadow-md">
           <div className="max-w-4xl">
-            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white mb-2 leading-snug">
+            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white mb-4 sm:mb-5 leading-snug">
               Bộ 120 Tình Huống Mô Phỏng Giao Thông
             </h1>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
-              Phần mềm mô phỏng các tình huống giao thông dùng cho sát hạch lái xe theo chuẩn Cục Đường bộ Việt Nam. Nhận diện dấu hiệu tiềm ẩn, thời điểm nguy hiểm và phương án xử lý an toàn.
-            </p>
 
             <div className="flex flex-wrap items-center gap-3 sm:gap-4">
               <button
                 onClick={startExamMode}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 active:scale-98 text-slate-900 font-bold text-sm shadow-md transition-all cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 active:scale-98 text-slate-900 font-bold text-sm shadow-md transition-all cursor-pointer"
               >
                 <span>Thi thử tình huống</span>
-                <ChevronRight className="w-4 h-4" />
               </button>
 
               <button
                 onClick={startAllScenarios}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 active:scale-98 text-white font-bold text-sm border border-slate-700 transition-all cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 active:scale-98 text-white font-bold text-sm border border-slate-700 transition-all cursor-pointer"
               >
                 <span>Ôn luyện toàn bộ 120 tình huống</span>
-                <ChevronRight className="w-4 h-4" />
               </button>
             </div>
           </div>

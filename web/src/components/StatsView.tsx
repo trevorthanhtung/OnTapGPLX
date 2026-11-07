@@ -87,11 +87,8 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onOp
   return (
     <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] py-6 sm:py-8 animate-in fade-in duration-200">
       {/* Page Header */}
-      <div className="mb-8">
-        <h1 className="text-2xl font-bold text-slate-900 tracking-tight mb-1">Thống kê tiến độ</h1>
-        <p className="text-sm text-slate-500">
-          Theo dõi kết quả học tập và lịch sử các bài thi thử của bạn.
-        </p>
+      <div className="mb-6 sm:mb-8">
+        <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Thống kê tiến độ</h1>
       </div>
 
       {/* Mobile Stat Carousel */}

@@ -384,19 +384,15 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
         <div className="bg-slate-900 rounded-2xl p-5 sm:p-7 text-white mb-8 border border-slate-800 shadow-md">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
             <div className="max-w-2xl">
-              <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white mb-2 leading-snug">
+              <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white mb-4 sm:mb-5 leading-snug">
                 Bộ 600 Câu Hỏi Lý Thuyết Sát Hạch Lái Xe
               </h1>
-              <p className="text-slate-400 text-xs sm:text-sm leading-relaxed mb-5">
-                Ngân hàng câu hỏi sát hạch lý thuyết lái xe chuẩn Cục Đường bộ Việt Nam, có giải thích chi tiết và mẹo ghi nhớ nhanh.
-              </p>
 
               <button
                 onClick={startAllQuestions}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 active:scale-98 text-slate-900 font-bold text-sm shadow-md transition-all cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 active:scale-98 text-slate-900 font-bold text-sm shadow-md transition-all cursor-pointer"
               >
                 <span>Luyện toàn bộ 600 câu</span>
-                <ChevronRight className="w-4 h-4" />
               </button>
             </div>
 
