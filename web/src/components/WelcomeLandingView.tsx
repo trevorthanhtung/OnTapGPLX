@@ -662,16 +662,16 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                         </div>
                       </div>
 
-                      {/* Main Category Cycler (Đồng màu với thẻ GPLX, ấn là đổi hạng) */}
+                      {/* Main Category Row (Không khung card, thuần chữ, ấn là đổi hạng) */}
                       <div
                         onClick={handleNextCategory}
-                        className="w-full bg-rose-100/50 hover:bg-rose-100/80 active:scale-[0.99] border border-rose-300/80 rounded-xl px-2.5 py-2 sm:px-3 sm:py-2.5 md:px-3.5 md:py-3 shadow-2xs hover:shadow-xs transition-all cursor-pointer flex items-center justify-between select-none"
+                        className="w-full flex items-center justify-between py-1 cursor-pointer select-none group"
                         title="Chạm để chuyển hạng GPLX"
                       >
                         <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold text-slate-700 uppercase tracking-wider shrink-0">
                           Hạng:
                         </span>
-                        <span className="text-xs sm:text-sm md:text-base font-black text-red-700 tracking-tight text-right pl-2">
+                        <span className="text-xs sm:text-sm md:text-base font-black text-red-700 tracking-tight text-right pl-2 group-hover:opacity-80 transition-opacity">
                           {activeCategoryConfig.name}
                         </span>
                       </div>
