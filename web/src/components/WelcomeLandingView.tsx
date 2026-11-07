@@ -664,7 +664,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                       <div className="relative">
                         <div className="flex items-center justify-between mb-1">
                           <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold text-slate-700 uppercase tracking-wider">
-                            Hạng / Class (7 Hạng sát hạch):
+                            Hạng:
                           </span>
                           <span className="text-[7.5px] sm:text-[8.5px] md:text-[9.5px] text-red-600 font-medium flex items-center gap-0.5">
                             Chạm đổi hạng ▾
