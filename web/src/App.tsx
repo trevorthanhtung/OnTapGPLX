@@ -31,9 +31,9 @@ export function App() {
   const isPWA = isPWAMode();
   const isFirstVisit = !StorageService.hasEnteredApp();
 
-  // If running in PWA mode: bypass landing page, show Splash screen on launch then enter app
-  const [showLanding, setShowLanding] = useState(!isPWA && isFirstVisit);
-  const [showSplash, setShowSplash] = useState(isPWA);
+  // Onboarding (OB) chỉ xuất hiện lần đầu tiên vào app; các lần sau vào thẳng app
+  const [showLanding, setShowLanding] = useState(isFirstVisit);
+  const [showSplash, setShowSplash] = useState(!isFirstVisit && isPWA);
   const [activeTab, setActiveTab] = useState<'theory' | 'simulation' | 'stats'>('theory');
   const [currentCategory, setCurrentCategory] = useState<LicenseCategory>(StorageService.getCategory());
   const [wrongCount, setWrongCount] = useState<number>(StorageService.getWrongQuestions().length);
@@ -87,12 +87,6 @@ export function App() {
     }, 2000);
     return () => clearTimeout(timer);
   }, [toastMessage]);
-
-  useEffect(() => {
-    if (isPWA) {
-      StorageService.setEnteredApp();
-    }
-  }, [isPWA]);
 
   const handleStartExperience = () => {
     StorageService.setEnteredApp();
