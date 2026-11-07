@@ -653,7 +653,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                       {/* Learner Info Row */}
                       <div className="flex items-center justify-between text-[8px] sm:text-[9px] md:text-[10.5px] text-slate-600 mb-2 pb-1.5 border-b border-rose-200/60 font-medium">
                         <div>
-                          Họ và tên: <strong className="text-slate-900 font-bold uppercase">Bạn (Học viên)</strong>
+                          Họ và tên: <strong className="text-slate-900 font-bold uppercase">ONTAP GPLX</strong>
                         </div>
                         <div className="font-mono text-red-600 font-bold">
                           Quy chế 2026
