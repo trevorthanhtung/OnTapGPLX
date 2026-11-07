@@ -4,118 +4,82 @@ interface SplashScreenProps {
   onFinish: () => void;
 }
 
-// Custom Toyota Vios Sedan SVG Icon (Xe tập lái / sát hạch quốc dân)
+// Modern Fastback Sedan Silhouette SVG (Matching reference vector style)
 const ViosSedan: React.FC = () => (
   <svg
-    viewBox="0 0 54 22"
-    className="w-12 h-6 select-none pointer-events-none"
+    viewBox="0 0 100 35"
+    className="w-14 h-5 select-none pointer-events-none overflow-visible"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <defs>
-      {/* Vios warm pearl-orange metallic gradient */}
-      <linearGradient id="viosBodyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#ea580c" />
-        <stop offset="35%" stopColor="#f97316" />
-        <stop offset="85%" stopColor="#fb923c" />
-        <stop offset="100%" stopColor="#f97316" />
-      </linearGradient>
-
-      {/* Modern tinted glass */}
-      <linearGradient id="viosGlassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" stopColor="#e0f2fe" stopOpacity="0.95" />
-        <stop offset="100%" stopColor="#7dd3fc" stopOpacity="0.85" />
-      </linearGradient>
-    </defs>
-
-    {/* Main Sedan Body (Toyota Vios silhouette: 3-box sedan shape with clear trunk deck) */}
+    {/* Solid Sedan Silhouette Body */}
     <path
-      d="M 2 15
-         C 1.5 15 1 14.2 1 13
-         C 1 11.2 2 10.4 3.5 10.2
-         L 9.5 10.2
-         C 10.8 10.2 14.5 4.5 17 3.8
-         C 19 3.2 31.5 3.2 34 4
-         C 36 4.6 41.5 9 43.5 10
-         L 50 11
-         C 51.5 11.3 53 12 53 13.2
-         C 53 14.4 52 15 50.5 15
-         L 44.8 15
-         C 44.3 12.8 42.4 11.4 40 11.4
-         C 37.6 11.4 35.7 12.8 35.2 15
-         L 17.8 15
-         C 17.3 12.8 15.4 11.4 13 11.4
-         C 10.6 11.4 8.7 12.8 8.2 15
-         Z"
-      fill="url(#viosBodyGrad)"
-      stroke="#c2410c"
-      strokeWidth="0.75"
-      strokeLinejoin="round"
+      d="M 12 18
+         C 11.5 20 12 23.5 16 26.5
+         H 17.5
+         C 17.8 22.8 20.6 20 24 20
+         C 27.4 20 30.2 22.8 30.5 26.5
+         H 67.5
+         C 67.8 22.8 70.6 20 74 20
+         C 77.4 20 80.2 22.8 80.5 26.5
+         H 83.5
+         C 87 25 89 23 89 21.5
+         C 89 20 87.5 19 86 18.5
+         L 79 16.5
+         L 67 14.2
+         C 64 12 59 9.2 56 9
+         C 52 8.8 42 8.5 35 9.5
+         C 28 10.5 20 14 15 16.5
+         L 12 18 Z"
+      fill="#0f172a"
     />
 
-    {/* Dynamic character crease line */}
+    {/* Rear Passenger Window (White Cutout with B-pillar) */}
     <path
-      d="M 9.5 11.2 L 48 11.8"
-      stroke="#ffedd5"
-      strokeWidth="0.65"
-      strokeLinecap="round"
-      opacity="0.8"
+      d="M 27 15.5 C 29 13.5 34 11.5 43.5 10.5 L 43.5 15.5 Z"
+      fill="#ffffff"
+    />
+    <line x1="31.5" y1="13.2" x2="31.5" y2="15.5" stroke="#0f172a" strokeWidth="1" />
+
+    {/* Front Driver Window (White Cutout) */}
+    <path
+      d="M 45.5 10.5 L 56 10.5 C 59 11.5 62 13 64 14.8 L 45.5 15.5 Z"
+      fill="#ffffff"
     />
 
-    {/* Rear Passenger Window */}
+    {/* Side mirror silhouette */}
+    <path d="M 58 15.8 C 58 14.8 60.5 14.8 61 15.8 Z" fill="#0f172a" />
+
+    {/* Sharp Modern Headlight (White Cutout) */}
     <path
-      d="M 11 9.5 L 16.8 4.8 L 24 4.8 L 24 9.5 Z"
-      fill="url(#viosGlassGrad)"
-      stroke="#9a3412"
-      strokeWidth="0.5"
+      d="M 78.5 17.5 L 87 19.5 C 84.5 21 81.5 21 78.5 19.5 Z"
+      fill="#ffffff"
     />
 
-    {/* Front Driver Window */}
+    {/* Sleek Taillight (White Cutout) */}
     <path
-      d="M 25.5 4.8 L 33 4.8 L 40.5 9.5 L 25.5 9.5 Z"
-      fill="url(#viosGlassGrad)"
-      stroke="#9a3412"
-      strokeWidth="0.5"
+      d="M 12.5 17.5 L 18 18 C 16.5 19.5 13.5 19.5 12.5 19 Z"
+      fill="#ffffff"
     />
 
-    {/* B-Pillar divider */}
-    <rect x="24" y="4.5" width="1.5" height="5.2" fill="#7c2d12" />
-
-    {/* Side mirror */}
-    <ellipse cx="27" cy="9.2" rx="1.2" ry="0.8" fill="#9a3412" />
-
-    {/* Taillight (Wrap-around sedan light) */}
+    {/* Front lower bumper air scoop (White Cutout) */}
     <path
-      d="M 1.5 10.5 L 4 10.5 L 3.5 12 L 1.5 11.6 Z"
-      fill="#ef4444"
-      stroke="#991b1b"
-      strokeWidth="0.4"
+      d="M 83 23.5 L 86.5 24.5 L 84 26 Z"
+      fill="#ffffff"
     />
 
-    {/* Vios Sharp Projector Headlight */}
-    <path
-      d="M 48.5 11 L 52.5 11.8 L 49 12.8 Z"
-      fill="#fef08a"
-      stroke="#ca8a04"
-      strokeWidth="0.4"
-    />
-
-    {/* Rear Wheel (Alloy rim + dark tire) */}
+    {/* Rear Wheel (Black tire + Bold white ring rim + Black hub) */}
     <g>
-      <circle cx="13" cy="15.5" r="3.6" fill="#1e293b" />
-      <circle cx="13" cy="15.5" r="2.2" fill="#cbd5e1" stroke="#475569" strokeWidth="0.5" />
-      <circle cx="13" cy="15.5" r="0.8" fill="#0f172a" />
-      <line x1="13" y1="13.7" x2="13" y2="17.3" stroke="#64748b" strokeWidth="0.5" />
-      <line x1="11.2" y1="15.5" x2="14.8" y2="15.5" stroke="#64748b" strokeWidth="0.5" />
+      <circle cx="24" cy="26.5" r="6.2" fill="#0f172a" />
+      <circle cx="24" cy="26.5" r="4.2" fill="none" stroke="#ffffff" strokeWidth="1.8" />
+      <circle cx="24" cy="26.5" r="2.2" fill="#0f172a" />
     </g>
 
-    {/* Front Wheel (Alloy rim + dark tire) */}
+    {/* Front Wheel (Black tire + Bold white ring rim + Black hub) */}
     <g>
-      <circle cx="40" cy="15.5" r="3.6" fill="#1e293b" />
-      <circle cx="40" cy="15.5" r="2.2" fill="#cbd5e1" stroke="#475569" strokeWidth="0.5" />
-      <circle cx="40" cy="15.5" r="0.8" fill="#0f172a" />
-      <line x1="40" y1="13.7" x2="40" y2="17.3" stroke="#64748b" strokeWidth="0.5" />
-      <line x1="38.2" y1="15.5" x2="41.8" y2="15.5" stroke="#64748b" strokeWidth="0.5" />
+      <circle cx="74" cy="26.5" r="6.2" fill="#0f172a" />
+      <circle cx="74" cy="26.5" r="4.2" fill="none" stroke="#ffffff" strokeWidth="1.8" />
+      <circle cx="74" cy="26.5" r="2.2" fill="#0f172a" />
     </g>
   </svg>
 );
@@ -265,7 +229,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
           <div className="relative w-full">
             {/* Standalone Toyota Vios Sedan positioned directly on top of the progress track */}
             <div
-              className={`absolute -top-[19px] z-10 pointer-events-none transition-all duration-75 ease-out ${
+              className={`absolute -top-[18px] z-10 pointer-events-none transition-all duration-75 ease-out ${
                 isLaunching ? 'animate-[carTurboLaunch_0.45s_cubic-bezier(0.7,0,0.84,0)_forwards]' : ''
               }`}
               style={{
