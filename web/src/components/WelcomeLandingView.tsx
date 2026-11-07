@@ -600,9 +600,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                                 </div>
                               </div>
                               {isSelected && (
-                                <div className="w-4 h-4 rounded-full bg-red-600 text-white flex items-center justify-center shrink-0 shadow-2xs">
-                                  <Check className="w-2.5 h-2.5 stroke-[3]" />
-                                </div>
+                                <Check className="w-4 h-4 text-red-600 stroke-[3] shrink-0" />
                               )}
                             </button>
                           );
