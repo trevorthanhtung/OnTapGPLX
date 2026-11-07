@@ -129,9 +129,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
 
   return (
     <div
-      className={`fixed inset-0 h-dvh w-full overflow-hidden overscroll-none select-none flex flex-col justify-between pt-[env(safe-area-inset-top,0px)] pb-[env(safe-area-inset-bottom,0px)] pl-[env(safe-area-inset-left,0px)] pr-[env(safe-area-inset-right,0px)] ${
-        viewMode === 'landing' ? 'bg-slate-50 text-slate-900' : 'bg-[#0f1217] text-slate-100'
-      }`}
+      className="fixed inset-0 h-dvh w-full overflow-hidden overscroll-none select-none flex flex-col justify-between pt-[env(safe-area-inset-top,0px)] pb-[env(safe-area-inset-bottom,0px)] pl-[env(safe-area-inset-left,0px)] pr-[env(safe-area-inset-right,0px)] bg-slate-50 text-slate-900"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
@@ -243,7 +241,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
       )}
 
       {/* ========================================================================= */}
-      {/* 2. MÀN 3 BƯỚC ONBOARDING CAROUSEL (01 - 02 - 03) - CHUẨN MÀU ONTAP GPLX    */}
+      {/* 2. MÀN 3 BƯỚC ONBOARDING CAROUSEL (01 - 02 - 03) - CHUẨN NỀN SÁNG ONTAP GPLX */}
       {/* ========================================================================= */}
       {viewMode === 'walkthrough' && (
         <div className="w-full h-full flex flex-col justify-between animate-in fade-in zoom-in-95 duration-250">
@@ -252,7 +250,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
             <button
               type="button"
               onClick={handleSkip}
-              className="text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-amber-400 active:text-white transition-colors cursor-pointer py-1 px-2"
+              className="text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-slate-800 active:text-slate-950 transition-colors cursor-pointer py-1 px-2"
             >
               BỎ QUA
             </button>
@@ -260,12 +258,12 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
 
           {/* Main Walkthrough Container */}
           <div className="w-full max-w-md landscape-mobile:max-w-2xl mx-auto flex-1 flex flex-col justify-between px-5 landscape-mobile:px-8 overflow-hidden">
-            {/* Upper Half: Graphic Area with huge watermark number */}
+            {/* Upper Half: Graphic Area with watermark number */}
             <div className="relative flex-1 flex items-center justify-center min-h-[220px] landscape-mobile:min-h-[140px] overflow-hidden">
               {/* Faint Large Watermark Number behind graphic */}
               <div
                 key={`watermark-${currentSlide.step}`}
-                className="absolute select-none font-black text-[130px] sm:text-[170px] landscape-mobile:text-[100px] text-white/[0.04] pointer-events-none tracking-tighter leading-none animate-in fade-in zoom-in-90 duration-300"
+                className="absolute select-none font-black text-[130px] sm:text-[170px] landscape-mobile:text-[100px] text-slate-900/[0.04] pointer-events-none tracking-tighter leading-none animate-in fade-in zoom-in-90 duration-300"
               >
                 {currentSlide.step}
               </div>
@@ -273,22 +271,22 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
               {/* Graphic Container (Tailored specifically for Driving Test App) */}
               <div
                 key={`graphic-${currentStep}`}
-                className="relative z-10 w-64 h-56 sm:w-72 sm:h-60 landscape-mobile:w-48 landscape-mobile:h-36 rounded-2xl border border-slate-800 bg-[#151921] p-3.5 landscape-mobile:p-2.5 shadow-2xl flex items-center justify-center animate-in zoom-in-95 fade-in duration-250"
+                className="relative z-10 w-64 h-56 sm:w-72 sm:h-60 landscape-mobile:w-48 landscape-mobile:h-36 rounded-2xl border border-slate-200/90 bg-white p-3.5 landscape-mobile:p-2.5 shadow-xl shadow-slate-200/60 flex items-center justify-center animate-in zoom-in-95 fade-in duration-250"
               >
                 {/* ------------------------------------------------------------- */}
                 {/* Slide 01 Graphic: Mô phỏng Thẻ câu hỏi Lý thuyết sát hạch thực tế */}
                 {/* ------------------------------------------------------------- */}
                 {currentStep === 0 && (
-                  <div className="w-full h-full rounded-xl bg-[#1a202c] border border-slate-700/60 p-3 landscape-mobile:p-2 flex flex-col justify-between shadow-inner">
+                  <div className="w-full h-full rounded-xl bg-slate-50 border border-slate-200 p-3 landscape-mobile:p-2 flex flex-col justify-between shadow-2xs">
                     {/* Header: Category & Critical Warning Badge */}
-                    <div className="flex items-center justify-between pb-1.5 border-b border-slate-700/60">
+                    <div className="flex items-center justify-between pb-1.5 border-b border-slate-200">
                       <div className="flex items-center gap-1.5">
                         <div className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
-                        <span className="text-[10px] font-bold text-amber-400 tracking-tight">
+                        <span className="text-[10px] font-bold text-amber-700 tracking-tight">
                           HẠNG B • 600 CÂU
                         </span>
                       </div>
-                      <div className="px-1.5 py-0.5 rounded-md bg-rose-500/20 border border-rose-500/40 text-rose-400 text-[9px] font-bold flex items-center gap-1">
+                      <div className="px-1.5 py-0.5 rounded-md bg-rose-50 border border-rose-200 text-rose-600 text-[9px] font-bold flex items-center gap-1">
                         <ShieldAlert className="w-2.5 h-2.5" />
                         <span>60 ĐIỂM LIỆT</span>
                       </div>
@@ -296,25 +294,25 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
 
                     {/* Question Content */}
                     <div className="my-auto py-1 space-y-1.5">
-                      <div className="text-[10.5px] sm:text-[11px] font-semibold text-slate-200 leading-snug line-clamp-2">
+                      <div className="text-[10.5px] sm:text-[11px] font-semibold text-slate-800 leading-snug line-clamp-2">
                         Khi gặp biển nào dưới đây, người lái xe phải nhường đường cho xe trên đường ưu tiên?
                       </div>
 
                       {/* Options with active correct choice */}
                       <div className="space-y-1">
-                        <div className="px-2 py-1 rounded-md bg-[#131720] border border-slate-700/50 flex items-center justify-between text-[9px] text-slate-400">
+                        <div className="px-2 py-1 rounded-md bg-white border border-slate-200 flex items-center justify-between text-[9px] text-slate-600">
                           <span>1. Biển đường cùng cấp</span>
                         </div>
-                        <div className="px-2 py-1 rounded-md bg-emerald-500/15 border border-emerald-500/50 flex items-center justify-between text-[9px] text-emerald-300 font-bold">
+                        <div className="px-2 py-1 rounded-md bg-emerald-50 border border-emerald-300 flex items-center justify-between text-[9px] text-emerald-800 font-bold">
                           <span>2. Biển giao nhau với đường ưu tiên</span>
-                          <Check className="w-3 h-3 text-emerald-400 shrink-0 stroke-[2.5]" />
+                          <Check className="w-3 h-3 text-emerald-600 shrink-0 stroke-[2.5]" />
                         </div>
                       </div>
                     </div>
 
                     {/* Footer Tip */}
-                    <div className="pt-1.5 border-t border-slate-700/60 flex items-center justify-between text-[9px] text-slate-400">
-                      <span className="flex items-center gap-1 text-amber-400 font-medium">
+                    <div className="pt-1.5 border-t border-slate-200 flex items-center justify-between text-[9px] text-slate-500">
+                      <span className="flex items-center gap-1 text-amber-700 font-medium">
                         💡 Kèm mẹo giải nhanh
                       </span>
                       <span className="font-mono text-slate-400">Chuẩn 2026</span>
@@ -326,7 +324,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 {/* Slide 02 Graphic: Giao diện mô phỏng 120 tình huống & Phím Space */}
                 {/* ------------------------------------------------------------- */}
                 {currentStep === 1 && (
-                  <div className="w-full h-full rounded-xl bg-[#1a202c] border border-slate-700/60 p-3 landscape-mobile:p-2 flex flex-col justify-between shadow-inner">
+                  <div className="w-full h-full rounded-xl bg-slate-900 border border-slate-800 p-3 landscape-mobile:p-2 flex flex-col justify-between shadow-2xs">
                     {/* Windshield Road Simulation View */}
                     <div className="flex-1 w-full bg-[#0c1017] rounded-lg border border-slate-800 flex flex-col justify-between p-2 relative overflow-hidden mb-2">
                       <div className="w-full flex items-center justify-between z-10">
@@ -378,30 +376,32 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 {/* Slide 03 Graphic: Chứng nhận Kết quả Sát hạch Thi thử          */}
                 {/* ------------------------------------------------------------- */}
                 {currentStep === 2 && (
-                  <div className="w-full h-full rounded-xl bg-[#1a202c] border border-emerald-600/40 p-3 landscape-mobile:p-2 flex flex-col justify-between shadow-inner">
+                  <div className="w-full h-full rounded-xl bg-slate-50 border border-emerald-200 p-3 landscape-mobile:p-2 flex flex-col justify-between shadow-2xs">
                     {/* Card Header */}
-                    <div className="flex items-center justify-between pb-1.5 border-b border-slate-700/60">
-                      <span className="text-[10px] font-bold text-slate-300">KẾT QUẢ THI THỬ</span>
-                      <span className="text-[9px] font-mono text-amber-400 font-bold">HẠNG B</span>
+                    <div className="flex items-center justify-between pb-1.5 border-b border-slate-200">
+                      <span className="text-[10px] font-bold text-slate-700">KẾT QUẢ THI THỬ</span>
+                      <span className="text-[9px] font-mono text-amber-700 font-bold bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200">
+                        HẠNG B
+                      </span>
                     </div>
 
                     {/* Center Score & Pass Badge */}
                     <div className="my-auto flex flex-col items-center justify-center text-center py-1">
-                      <div className="w-10 h-10 rounded-full bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center text-emerald-400 mb-1 shadow-[0_0_15px_rgba(16,185,129,0.25)]">
+                      <div className="w-10 h-10 rounded-full bg-emerald-100 border border-emerald-300 flex items-center justify-center text-emerald-600 mb-1 shadow-sm">
                         <Award className="w-5 h-5" />
                       </div>
-                      <div className="font-black text-sm text-emerald-400 tracking-wider">
+                      <div className="font-black text-sm text-emerald-700 tracking-wider">
                         ĐẠT SÁT HẠCH
                       </div>
-                      <div className="text-lg font-black font-mono text-white mt-0.5 tracking-tight">
+                      <div className="text-lg font-black font-mono text-slate-900 mt-0.5 tracking-tight">
                         35 <span className="text-slate-400 text-xs font-normal">/ 35 CÂU</span>
                       </div>
                     </div>
 
                     {/* Sub Metrics */}
-                    <div className="pt-1.5 border-t border-slate-700/60 flex items-center justify-between text-[9px] font-mono text-slate-400">
+                    <div className="pt-1.5 border-t border-slate-200 flex items-center justify-between text-[9px] font-mono text-slate-500">
                       <span>⏱️ 16:24 / 22:00</span>
-                      <span className="text-emerald-400 font-bold">✓ 0 câu liệt sai</span>
+                      <span className="text-emerald-600 font-bold">✓ 0 câu liệt sai</span>
                     </div>
                   </div>
                 )}
@@ -409,43 +409,43 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
             </div>
 
             {/* Thin Divider Line separating graphics from text */}
-            <div className="w-full border-t border-slate-800 my-2 shrink-0" />
+            <div className="w-full border-t border-slate-200 my-2 shrink-0" />
 
             {/* Lower Half: Step Counter, Title, Description, and Layered CTA Button */}
             <div className="w-full pt-1 pb-4 sm:pb-6 landscape-mobile:pb-2 flex flex-col shrink-0">
               {/* Step Counter Row (01 ————— 03) */}
               <div className="flex items-center justify-between mb-3 landscape-mobile:mb-1.5">
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl sm:text-3xl landscape-mobile:text-xl font-black font-mono text-white tracking-tight">
+                  <span className="text-2xl sm:text-3xl landscape-mobile:text-xl font-black font-mono text-slate-900 tracking-tight">
                     {currentSlide.step}
                   </span>
                   {/* Amber Accent Indicator Line */}
-                  <div className="w-20 sm:w-28 landscape-mobile:w-16 h-1 rounded-full bg-linear-to-r from-amber-500 to-orange-500 shadow-xs shadow-amber-500/50" />
+                  <div className="w-20 sm:w-28 landscape-mobile:w-16 h-1.5 rounded-full bg-linear-to-r from-amber-500 to-orange-500 shadow-xs shadow-amber-500/40" />
                 </div>
 
-                <span className="text-xs sm:text-sm font-bold font-mono text-slate-500">
+                <span className="text-xs sm:text-sm font-bold font-mono text-slate-400">
                   03
                 </span>
               </div>
 
-              {/* Heading Title (Crisp White with Amber Accent) */}
+              {/* Heading Title (Crisp Slate with Amber Accent) */}
               <h2
                 key={`title-${currentStep}`}
-                className="text-xl sm:text-2xl landscape-mobile:text-base font-black text-white tracking-tight uppercase mb-2 landscape-mobile:mb-1 leading-snug animate-in fade-in duration-200"
+                className="text-xl sm:text-2xl landscape-mobile:text-base font-black text-slate-900 tracking-tight uppercase mb-2 landscape-mobile:mb-1 leading-snug animate-in fade-in duration-200"
               >
                 <span>{currentSlide.titlePrefix} </span>
-                <span className="text-amber-400">{currentSlide.titleHighlight}</span>
+                <span className="text-amber-500">{currentSlide.titleHighlight}</span>
               </h2>
 
               {/* Description Body */}
               <p
                 key={`desc-${currentStep}`}
-                className="text-xs sm:text-sm landscape-mobile:text-[11px] text-slate-300 leading-relaxed font-normal mb-5 sm:mb-6 landscape-mobile:mb-2 line-clamp-3 sm:line-clamp-none animate-in fade-in duration-200"
+                className="text-xs sm:text-sm landscape-mobile:text-[11px] text-slate-600 leading-relaxed font-normal mb-5 sm:mb-6 landscape-mobile:mb-2 line-clamp-3 sm:line-clamp-none animate-in fade-in duration-200"
               >
                 {currentSlide.desc}
               </p>
 
-              {/* 3D Layered Offset CTA Button in Signature Amber / Orange */}
+              {/* 3D Layered Offset CTA Button */}
               <div className="w-full relative select-none">
                 {/* Orange Bottom Offset Layer */}
                 <div
@@ -463,8 +463,6 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                   <span className="text-lg leading-none font-black">›</span>
                 </button>
               </div>
-
-
             </div>
           </div>
         </div>
