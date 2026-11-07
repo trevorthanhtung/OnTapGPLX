@@ -721,21 +721,12 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                   </span>
                 </div>
 
-                {/* 3 Sleek Interactive Pagination Pills & Desktop Keyboard Hint */}
-                <div className="flex items-center gap-3">
-                  <div
-                    className="hidden lg:flex items-center gap-1 text-[11px] font-mono text-slate-400 select-none mr-1"
-                    title="Dùng phím mũi tên ← → để chuyển bước"
-                  >
-                    <kbd className="px-1.5 py-0.5 rounded bg-slate-200/80 border border-slate-300/80 text-[10px] font-mono font-bold text-slate-600 shadow-2xs">←</kbd>
-                    <kbd className="px-1.5 py-0.5 rounded bg-slate-200/80 border border-slate-300/80 text-[10px] font-mono font-bold text-slate-600 shadow-2xs">→</kbd>
-                  </div>
-
-                  <div
-                    className="flex items-center gap-1.5 lg:gap-2 p-1 -m-1"
-                    role="tablist"
-                    aria-label="Các bước giới thiệu"
-                  >
+                {/* 3 Sleek Interactive Pagination Pills */}
+                <div
+                  className="flex items-center gap-1.5 lg:gap-2 p-1 -m-1"
+                  role="tablist"
+                  aria-label="Các bước giới thiệu"
+                >
                     {slides.map((_, idx) => {
                       const isCurrent = idx === currentStep;
                       return (
@@ -756,7 +747,6 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                     })}
                   </div>
                 </div>
-              </div>
 
               {/* Heading Title (Crisp Slate with Amber Accent) */}
               <h2
