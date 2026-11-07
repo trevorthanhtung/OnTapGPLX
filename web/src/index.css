@@ -117,3 +117,115 @@
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
+
+/* Splash Screen Animations */
+@keyframes splashLogoEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.72);
+  }
+  65% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes splashSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes splashFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowBreathe {
+  0%, 100% {
+    transform: scale(0.92);
+    opacity: 0.25;
+  }
+  50% {
+    transform: scale(1.28);
+    opacity: 0.65;
+  }
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes carRumble {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-1.5px);
+  }
+  100% {
+    transform: translateY(0.5px);
+  }
+}
+
+@keyframes roadDashScroll {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: -36px;
+  }
+}
+
+@keyframes speedLineMove {
+  0% {
+    transform: translateX(120vw);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.45;
+  }
+  80% {
+    opacity: 0.45;
+  }
+  100% {
+    transform: translateX(-120vw);
+    opacity: 0;
+  }
+}
+
+@keyframes carTurboLaunch {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  15% {
+    transform: translateX(-12px) scale(0.95);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(450px) scaleX(1.5) scaleY(0.8);
+    opacity: 0;
+  }
+}
+

@@ -125,7 +125,7 @@ export function App() {
 
       {!showLanding && (
         <div className={`text-slate-900 flex flex-col font-sans bg-slate-50 w-full max-w-full ${isStudyActive ? 'h-dvh overflow-hidden' : 'min-h-screen'}`}>
-          {!isStudyActive && !showSplash && (
+          {!isStudyActive && (
             <Navbar
               activeTab={activeTab}
               setActiveTab={handleTabChange}

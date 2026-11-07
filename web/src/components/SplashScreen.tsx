@@ -7,11 +7,12 @@ interface SplashScreenProps {
 
 export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
   const [progress, setProgress] = useState(0);
-  const [isFadingOut, setIsFadingOut] = useState(false);
+  const [isLaunching, setIsLaunching] = useState(false);
+  const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
     const startTime = Date.now();
-    const duration = 1800; // 1.8s for smooth car drive
+    const duration = 2200; // 2.2s for pleasant, rhythmic car drive
 
     const timer = setInterval(() => {
       const elapsed = Date.now() - startTime;
@@ -20,92 +21,244 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
 
       if (pct >= 100) {
         clearInterval(timer);
-        setIsFadingOut(true);
+        // Stage 1: Turbo boost launch of the car (0ms)
+        setIsLaunching(true);
+
+        // Stage 2: Shared element transition - logo floats up to navbar, others fade out (150ms)
+        setTimeout(() => {
+          setIsExiting(true);
+        }, 150);
+
+        // Stage 3: Complete transition and handover to app (550ms)
         setTimeout(() => {
           onFinish();
-        }, 350); // allow fade-out animation
+        }, 600);
       }
     }, 25);
 
     return () => clearInterval(timer);
   }, [onFinish]);
 
+  // Dynamic progress-based statuses & pro driving tips
+  const getStatusInfo = (pct: number) => {
+    if (pct < 30) {
+      return {
+        status: 'Đang tải ngân hàng 600 câu hỏi lý thuyết...',
+        tip: '💡 Mẹo: Câu hỏi có cụm từ "Bị nghiêm cấm" luôn luôn là đáp án đúng.',
+      };
+    }
+    if (pct < 65) {
+      return {
+        status: 'Đồng bộ 120 tình huống mô phỏng & biển báo...',
+        tip: '💡 Mẹo: "Giảm tốc độ", "Về số thấp", "Đi về bên phải" luôn là lựa chọn an toàn.',
+      };
+    }
+    if (pct < 90) {
+      return {
+        status: 'Tối ưu dữ liệu học ngoại tuyến trên thiết bị...',
+        tip: '💡 Mẹo: Chú ý 60 câu điểm liệt — chỉ cần sai 1 câu là truất quyền sát hạch!',
+      };
+    }
+    if (pct < 100) {
+      return {
+        status: 'Sẵn sàng xuất phát! Vững vàng tay lái...',
+        tip: '💡 Mẹo: Tình huống mô phỏng bấm phím Space đúng thời điểm vàng.',
+      };
+    }
+    return {
+      status: 'Khởi hành thành công!',
+      tip: 'Chúc bạn ôn thi tự tin và đạt kết quả tối đa 100%!',
+    };
+  };
+
+  const statusInfo = getStatusInfo(progress);
+
   return (
     <div
-      className={`fixed inset-0 z-[100] flex flex-col items-center justify-between bg-white text-slate-900 p-6 pt-[max(1.5rem,env(safe-area-inset-top))] pb-[max(2rem,env(safe-area-inset-bottom))] pl-[max(1.5rem,env(safe-area-inset-left))] pr-[max(1.5rem,env(safe-area-inset-right))] select-none transition-opacity duration-300 ${
-        isFadingOut ? 'opacity-0 pointer-events-none' : 'opacity-100'
+      className={`fixed inset-0 z-[100] flex flex-col items-center justify-between p-6 pt-[max(1.5rem,env(safe-area-inset-top))] pb-[max(2rem,env(safe-area-inset-bottom))] pl-[max(1.5rem,env(safe-area-inset-left))] pr-[max(1.5rem,env(safe-area-inset-right))] select-none overflow-hidden transition-colors duration-400 ${
+        isExiting ? 'bg-transparent pointer-events-none' : 'bg-white text-slate-900'
       }`}
     >
-      {/* Top spacer for balanced vertical centering */}
-      <div aria-hidden="true" className="w-full shrink-0 pt-6" />
-
-      {/* Center Branding */}
-      <div className="flex flex-col items-center text-center animate-in zoom-in-95 duration-500">
-        {/* Logo Container with glowing ring */}
-        <div className="relative mb-6">
-          <div className="absolute -inset-2 rounded-3xl bg-linear-to-tr from-amber-400 to-orange-400 opacity-20 blur-xl animate-pulse" />
-          <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-white border border-slate-200/90 p-2 shadow-xl shadow-slate-200/60 flex items-center justify-center overflow-hidden">
-            <img
-              src="/logo.jpg"
-              alt="OnTap GPLX Logo"
-              className="w-full h-full object-contain rounded-xl"
-            />
-          </div>
-        </div>
-
-        {/* Brand Name */}
-        <div className="flex items-center gap-2 mb-2">
-          <span className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">OnTap</span>
-          <span className="text-3xl sm:text-4xl font-black text-amber-500 tracking-tight">GPLX</span>
-        </div>
-
-        {/* Slogan */}
-        <p className="text-sm sm:text-base font-bold text-slate-700 tracking-wide uppercase">
-          Ôn Thi Giấy Phép Lái Xe 2026
-        </p>
-        <p className="text-xs text-slate-500 mt-1 max-w-xs font-medium">
-          Dữ liệu chuẩn Cục Đường bộ Việt Nam
-        </p>
+      {/* Background Traffic Speed Lines (Subtle Highway Velocity Effect) */}
+      <div
+        className={`absolute inset-0 overflow-hidden pointer-events-none select-none z-0 transition-opacity duration-300 ${
+          isExiting ? 'opacity-0' : 'opacity-100'
+        }`}
+      >
+        <div
+          className="absolute top-[22%] left-0 w-36 h-[1.5px] bg-linear-to-r from-transparent via-amber-400/30 to-transparent"
+          style={{ animation: 'speedLineMove 2.4s linear infinite 0.2s' }}
+        />
+        <div
+          className="absolute top-[40%] left-0 w-56 h-[1px] bg-linear-to-r from-transparent via-slate-300/40 to-transparent"
+          style={{ animation: 'speedLineMove 1.9s linear infinite 0.8s' }}
+        />
+        <div
+          className="absolute top-[64%] left-0 w-44 h-[1.5px] bg-linear-to-r from-transparent via-orange-400/25 to-transparent"
+          style={{ animation: 'speedLineMove 2.6s linear infinite 0.4s' }}
+        />
+        <div
+          className="absolute top-[82%] left-0 w-32 h-[1px] bg-linear-to-r from-transparent via-slate-300/35 to-transparent"
+          style={{ animation: 'speedLineMove 1.7s linear infinite 1.3s' }}
+        />
       </div>
 
-      {/* Bottom Loading Progress Indicator with Driving Car */}
-      <div className="w-full max-w-xs flex flex-col items-center pb-8 sm:pb-10">
-        {/* Road Track with Driving Car */}
-        <div className="relative w-full pt-5">
-          {/* Progress Track / Road */}
-          <div className="relative w-full h-2 bg-slate-100 rounded-full border border-slate-200/90 shadow-inner">
-            {/* Filled Progress Bar (Drives behind the car) */}
+      {/* Top spacer for balanced vertical alignment */}
+      <div aria-hidden="true" className="w-full shrink-0 pt-6" />
+
+      {/* Center Branding & Logo */}
+      <div
+        className={`relative z-10 flex flex-col items-center text-center transition-all duration-450 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+          isExiting ? '-translate-y-[38vh] sm:-translate-y-[40vh] scale-35' : 'translate-y-0 scale-100'
+        }`}
+      >
+        {/* Logo Container with Breathing Glow & Floating Animation */}
+        <div
+          className="relative mb-6"
+          style={{
+            animation: 'splashLogoEntrance 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+          }}
+        >
+          {/* Gentle Floating Effect */}
+          <div style={{ animation: 'logoFloat 2.6s ease-in-out infinite' }}>
+            {/* Quầng sáng cam "thở" (Breathing Glow) */}
             <div
-              className="h-full bg-linear-to-r from-amber-500 via-orange-500 to-amber-500 rounded-full transition-all duration-75 ease-out shadow-xs shadow-amber-500/40"
-              style={{ width: `${progress}%` }}
+              className={`absolute -inset-4 rounded-3xl bg-linear-to-tr from-amber-400 via-orange-500 to-amber-300 blur-2xl pointer-events-none transition-opacity duration-300 ${
+                isExiting ? 'opacity-0' : ''
+              }`}
+              style={{ animation: 'glowBreathe 2.6s ease-in-out infinite' }}
             />
 
-            {/* The Car riding directly on the bar */}
-            <div
-              className="absolute -top-4 flex items-center pointer-events-none z-10 transition-all duration-75 ease-out"
-              style={{
-                left: `${progress}%`,
-                transform: `translateX(-${progress}%)`
-              }}
-            >
-              <div className="relative flex items-center">
-                {/* Mini exhaust smoke puff when moving */}
-                {progress > 5 && progress < 98 && (
-                  <div className="absolute -left-1.5 bottom-0.5 w-1.5 h-1.5 rounded-full bg-slate-300 animate-ping opacity-60" />
-                )}
-                {/* The Car Icon */}
-                <Car className="w-5 h-5 text-amber-500 fill-amber-100 drop-shadow-xs" />
-                {/* Headlight beam */}
-                <div className="absolute top-1.5 -right-2 w-2.5 h-1 bg-linear-to-r from-amber-400/80 to-transparent rounded-full blur-[0.5px]" />
-              </div>
+            {/* Main Logo Card */}
+            <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-white border border-slate-200/90 p-2.5 shadow-xl shadow-amber-500/10 flex items-center justify-center overflow-hidden">
+              <img
+                src="/logo.jpg"
+                alt="OnTap GPLX Logo"
+                className="w-full h-full object-contain rounded-xl"
+              />
             </div>
           </div>
         </div>
 
-        {/* Labels */}
-        <div className="flex items-center justify-between w-full mt-2.5 text-[11px] font-mono text-slate-400 font-medium">
-          <span>Khởi tạo tài nguyên...</span>
-          <span>{progress}%</span>
+        {/* Brand Name (Sequential Slide Up: OnTap then GPLX) */}
+        <div
+          className={`flex items-center gap-2 mb-2 transition-opacity duration-250 ${
+            isExiting ? 'opacity-0' : 'opacity-100'
+          }`}
+        >
+          <span
+            className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight"
+            style={{ animation: 'splashSlideUp 0.5s ease-out 0.18s both' }}
+          >
+            OnTap
+          </span>
+          <span
+            className="text-3xl sm:text-4xl font-black text-amber-500 tracking-tight"
+            style={{ animation: 'splashSlideUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.32s both' }}
+          >
+            GPLX
+          </span>
+        </div>
+
+        {/* Primary Slogan */}
+        <p
+          className={`text-sm sm:text-base font-bold text-slate-700 tracking-wide uppercase transition-opacity duration-250 ${
+            isExiting ? 'opacity-0' : 'opacity-100'
+          }`}
+          style={{ animation: 'splashFadeUp 0.5s ease-out 0.48s both' }}
+        >
+          Ôn Thi Giấy Phép Lái Xe 2026
+        </p>
+
+        {/* Secondary Subtitle */}
+        <p
+          className={`text-xs text-slate-500 mt-1 max-w-xs font-medium transition-opacity duration-250 ${
+            isExiting ? 'opacity-0' : 'opacity-100'
+          }`}
+          style={{ animation: 'splashFadeUp 0.5s ease-out 0.62s both' }}
+        >
+          Dữ liệu chuẩn Cục Đường bộ Việt Nam
+        </p>
+      </div>
+
+      {/* Bottom Progress Section (Highway Theme with Driving Car & Tips) */}
+      <div
+        className={`w-full max-w-sm flex flex-col items-center pb-8 sm:pb-12 px-2 transition-all duration-300 ${
+          isLaunching ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
+        }`}
+        style={{ animation: 'splashFadeUp 0.6s ease-out 0.75s both' }}
+      >
+        {/* Road Track with Driving Car */}
+        <div className="relative w-full pt-6">
+          {/* Progress Track / Road Lane */}
+          <div className="relative w-full h-3 bg-slate-100 rounded-full border border-slate-200/90 shadow-inner overflow-hidden">
+            {/* Filled Highway Track (Follows the car) */}
+            <div
+              className="h-full bg-linear-to-r from-amber-500 via-orange-500 to-amber-500 rounded-full transition-all duration-75 ease-out shadow-xs shadow-orange-500/50"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+
+          {/* Scrolling Dashed Highway Lane (Moving left to create speed illusion) */}
+          <div
+            className="w-full h-1 mt-1.5 rounded-full opacity-60 overflow-hidden"
+            style={{
+              background: 'repeating-linear-gradient(90deg, #94a3b8 0px, #94a3b8 10px, transparent 10px, transparent 20px)',
+              animation: 'roadDashScroll 0.55s linear infinite',
+            }}
+          />
+
+          {/* The Car riding on the progress highway */}
+          <div
+            className={`absolute -top-3.5 z-10 pointer-events-none transition-all duration-75 ease-out ${
+              isLaunching ? 'animate-[carTurboLaunch_0.45s_cubic-bezier(0.7,0,0.84,0)_forwards]' : ''
+            }`}
+            style={{
+              left: `${progress}%`,
+              transform: isLaunching ? undefined : `translateX(-${progress}%)`,
+            }}
+          >
+            <div
+              className="relative flex items-center"
+              style={{
+                animation: !isLaunching ? 'carRumble 0.12s infinite alternate ease-in-out' : undefined,
+              }}
+            >
+              {/* Exhaust Tail Light Trail */}
+              <div className="absolute -left-7 bottom-0.5 w-8 h-2 bg-linear-to-l from-orange-500 via-amber-400/50 to-transparent rounded-full blur-[0.8px] pointer-events-none" />
+
+              {/* Turbo Jet Boost Trail at 100% */}
+              {isLaunching && (
+                <div className="absolute -left-14 bottom-0 w-16 h-3 bg-linear-to-l from-orange-600 via-amber-400 to-transparent rounded-full blur-[1px] animate-pulse" />
+              )}
+
+              {/* Smoke Puff Particle when driving */}
+              {progress > 5 && progress < 99 && !isLaunching && (
+                <div className="absolute -left-2.5 bottom-0 w-2 h-2 rounded-full bg-slate-300/80 animate-ping" />
+              )}
+
+              {/* Car Icon with badge styling */}
+              <div className="p-1 rounded-full bg-white shadow-md border border-amber-200/90">
+                <Car className="w-5 h-5 text-amber-500 fill-amber-100 drop-shadow-xs" />
+              </div>
+
+              {/* Headlight beam */}
+              <div className="absolute top-2 -right-4 w-5 h-1.5 bg-linear-to-r from-amber-400/90 via-amber-300/40 to-transparent rounded-full blur-[0.6px] pointer-events-none" />
+            </div>
+          </div>
+        </div>
+
+        {/* Dynamic Status & Progress Percentage */}
+        <div className="flex items-center justify-between w-full mt-3 text-xs font-mono font-medium text-slate-500">
+          <span className="truncate pr-2 font-medium text-slate-600">{statusInfo.status}</span>
+          <span className="font-bold text-amber-600 shrink-0">{progress}%</span>
+        </div>
+
+        {/* Dynamic Driving Pro-Tip Box */}
+        <div className="mt-2.5 w-full py-1.5 px-3 rounded-xl bg-amber-50/80 border border-amber-200/60 text-center transition-all duration-300">
+          <p className="text-[11px] sm:text-xs text-amber-800 font-medium leading-relaxed truncate sm:whitespace-normal">
+            {statusInfo.tip}
+          </p>
         </div>
       </div>
     </div>
