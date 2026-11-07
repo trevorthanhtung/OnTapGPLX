@@ -298,13 +298,15 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 {currentSlide.step}
               </div>
 
-              {/* Graphic Container: 3D Book for Slide 01, Card for Slide 02 & 03 */}
+              {/* Graphic Container: 3D Book for Slide 01, 3D Exam Monitor for Slide 02, 3D PET Card for Slide 03 */}
               <div
                 key={`graphic-${currentStep}`}
                 className={
                   currentStep === 0
                     ? 'relative z-10 w-48 sm:w-52 h-[272px] sm:h-[304px] landscape-mobile:w-36 landscape-mobile:h-[195px] bg-[#fffdfa] rounded-r-lg rounded-l-xs border-r border-t border-b border-slate-300/80 border-l-[7px] border-l-slate-300 shadow-2xl shadow-slate-400/40 p-2 sm:p-2.5 landscape-mobile:p-1.5 flex flex-col justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
-                    : 'relative z-10 w-72 sm:w-80 h-[276px] sm:h-[308px] landscape-mobile:w-56 landscape-mobile:h-[200px] rounded-2xl border border-slate-200/90 bg-white p-3 landscape-mobile:p-2 shadow-xl shadow-slate-200/60 flex items-center justify-center animate-in zoom-in-95 fade-in duration-250'
+                    : currentStep === 1
+                    ? 'relative z-10 w-72 sm:w-80 h-[272px] sm:h-[304px] landscape-mobile:w-60 landscape-mobile:h-[195px] flex flex-col items-center justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
+                    : 'relative z-10 w-72 sm:w-80 h-[272px] sm:h-[304px] landscape-mobile:w-64 landscape-mobile:h-[195px] flex flex-col justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
                 }
               >
                 {/* ------------------------------------------------------------- */}
@@ -425,242 +427,264 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 )}
 
                 {/* ------------------------------------------------------------- */}
-                {/* Slide 02 Graphic: Bộ PC và người đang xem clip mô phỏng trắc nghiệm */}
+                {/* Slide 02 Graphic: Máy Tính Phòng Thi Sát Hạch Mô Phỏng 3D      */}
                 {/* ------------------------------------------------------------- */}
                 {currentStep === 1 && (
-                  <div className="w-full h-full rounded-xl bg-slate-50 border border-slate-200/90 p-2.5 landscape-mobile:p-1.5 flex flex-col justify-between shadow-inner">
-                    {/* Header: Scenario & Multiple Choice Badge */}
-                    <div className="flex items-center justify-between pb-1.5 border-b border-slate-200/80">
-                      <div className="flex items-center gap-1.5">
-                        <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-                        <span className="text-[10px] font-bold text-slate-800 tracking-tight">
-                          CLIP MÔ PHỎNG 3D
-                        </span>
+                  <div className="w-full h-full flex flex-col items-center justify-between">
+                    {/* Top Surveillance Webcam */}
+                    <div className="w-20 sm:w-24 h-4 sm:h-4.5 rounded-t-md bg-slate-800 border-t border-x border-slate-700 shadow-sm flex items-center justify-center gap-1.5 px-2 z-10 -mb-[1px]">
+                      <div className="w-2 h-2 rounded-full bg-slate-950 border border-sky-400 flex items-center justify-center">
+                        <div className="w-0.5 h-0.5 rounded-full bg-sky-300" />
                       </div>
-                      <div className="px-1.5 py-0.5 rounded-md bg-blue-50 border border-blue-200 text-blue-700 text-[9px] font-bold">
-                        TRẮC NGHIỆM 4 CÂU
-                      </div>
-                    </div>
-
-                    {/* Scene SVG: Person at PC desk studying driving video simulation */}
-                    <div className="my-auto w-full h-32 sm:h-36 landscape-mobile:h-24 bg-white rounded-lg border border-slate-200/80 overflow-hidden relative shadow-2xs">
-                      <svg viewBox="0 0 240 145" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
-                        {/* Soft background ambient gradient */}
-                        <defs>
-                          <linearGradient id="screenGlow" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.15" />
-                            <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.0" />
-                          </linearGradient>
-                          <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stopColor="#7dd3fc" />
-                            <stop offset="100%" stopColor="#bae6fd" />
-                          </linearGradient>
-                        </defs>
-
-                        {/* Ambient screen light beam on wall */}
-                        <polygon points="120,40 50,140 220,140" fill="url(#screenGlow)" />
-
-                        {/* Desk Line */}
-                        <rect x="20" y="122" width="205" height="4" rx="2" fill="#94a3b8" />
-                        <line x1="40" y1="126" x2="40" y2="145" stroke="#cbd5e1" strokeWidth="2.5" />
-                        <line x1="205" y1="126" x2="205" y2="145" stroke="#cbd5e1" strokeWidth="2.5" />
-
-                        {/* Desktop PC Tower */}
-                        <g transform="translate(182, 60)">
-                          <rect x="0" y="0" width="22" height="62" rx="3" fill="#1e293b" stroke="#334155" strokeWidth="1" />
-                          {/* Power button & USB slots */}
-                          <circle cx="11" cy="8" r="2" fill="#38bdf8" />
-                          <line x1="6" y1="14" x2="16" y2="14" stroke="#64748b" strokeWidth="1" />
-                          <line x1="6" y1="18" x2="16" y2="18" stroke="#64748b" strokeWidth="1" />
-                          {/* Fan grille */}
-                          <rect x="4" y="32" width="14" height="24" rx="1" fill="#0f172a" />
-                          <line x1="6" y1="38" x2="16" y2="38" stroke="#334155" strokeWidth="0.8" />
-                          <line x1="6" y1="44" x2="16" y2="44" stroke="#334155" strokeWidth="0.8" />
-                          <line x1="6" y1="50" x2="16" y2="50" stroke="#334155" strokeWidth="0.8" />
-                        </g>
-
-                        {/* PC Monitor */}
-                        <g transform="translate(80, 20)">
-                          {/* Stand */}
-                          <path d="M 45 74 L 40 102 L 56 102 L 51 74 Z" fill="#64748b" />
-                          <rect x="32" y="101" width="32" height="3" rx="1.5" fill="#475569" />
-
-                          {/* Monitor Frame */}
-                          <rect x="0" y="0" width="96" height="74" rx="4" fill="#0f172a" stroke="#334155" strokeWidth="1.2" />
-
-                          {/* Screen Content: Driving Video Simulation Clip */}
-                          <rect x="3" y="3" width="90" height="64" rx="2" fill="#020617" />
-                          <g transform="translate(3, 3)">
-                            {/* Sky */}
-                            <rect x="0" y="0" width="90" height="32" fill="url(#skyGrad)" />
-                            {/* Mountains in background */}
-                            <polygon points="0,32 20,18 40,32" fill="#93c5fd" />
-                            <polygon points="35,32 55,14 75,32" fill="#60a5fa" />
-                            {/* Highway Road with Vanishing Point */}
-                            <polygon points="0,64 45,32 90,64" fill="#334155" />
-                            {/* Dashed center lane divider */}
-                            <line x1="45" y1="32" x2="45" y2="60" stroke="#fde047" strokeWidth="1.2" strokeDasharray="3 2" />
-
-                            {/* Car in front on the road */}
-                            <g transform="translate(39, 40)">
-                              <rect x="0" y="0" width="12" height="10" rx="2" fill="#dc2626" />
-                              <rect x="2" y="2" width="8" height="4" rx="1" fill="#fee2e2" />
-                              {/* Brake lights glowing red */}
-                              <circle cx="1.5" cy="8" r="1.2" fill="#ef4444" />
-                              <circle cx="10.5" cy="8" r="1.2" fill="#ef4444" />
-                            </g>
-
-                            {/* Video Playback Bar at bottom of screen */}
-                            <rect x="0" y="59" width="90" height="5" fill="#0f172a" opacity="0.9" />
-                            <rect x="0" y="60" width="45" height="3" fill="#ef4444" />
-                            <circle cx="45" cy="61.5" r="2" fill="#ffffff" />
-                            <text x="86" y="63" textAnchor="end" fill="#94a3b8" fontSize="3.5" fontFamily="monospace">14s</text>
-
-                            {/* Video Live Badge */}
-                            <rect x="3" y="3" width="16" height="6" rx="1" fill="#ef4444" />
-                            <text x="11" y="7.5" textAnchor="middle" fill="#ffffff" fontSize="4" fontWeight="bold">CLIP</text>
-
-                            {/* Multiple Choice Options overlay on top-right of monitor */}
-                            <g transform="translate(56, 4)">
-                              <rect x="0" y="0" width="31" height="15" rx="2" fill="#0f172a" opacity="0.85" stroke="#334155" strokeWidth="0.5" />
-                              <text x="3" y="5" fill="#e2e8f0" fontSize="3.5" fontWeight="bold">Trắc nghiệm:</text>
-                              {/* Option A */}
-                              <rect x="3" y="7" width="11" height="3" rx="0.5" fill="#1e293b" />
-                              <text x="8.5" y="9.2" textAnchor="middle" fill="#94a3b8" fontSize="2.5">A. Phanh</text>
-                              {/* Option B (Correct check) */}
-                              <rect x="16" y="7" width="12" height="3" rx="0.5" fill="#059669" />
-                              <text x="22" y="9.2" textAnchor="middle" fill="#ffffff" fontSize="2.5" fontWeight="bold">B. Giảm tốc ✓</text>
-                              {/* Option C */}
-                              <rect x="3" y="11" width="11" height="3" rx="0.5" fill="#1e293b" />
-                              <text x="8.5" y="13.2" textAnchor="middle" fill="#94a3b8" fontSize="2.5">C. Rẽ trái</text>
-                              {/* Option D */}
-                              <rect x="16" y="11" width="12" height="3" rx="0.5" fill="#1e293b" />
-                              <text x="22" y="13.2" textAnchor="middle" fill="#94a3b8" fontSize="2.5">D. Tăng ga</text>
-                            </g>
-                          </g>
-
-                          {/* Monitor Power LED */}
-                          <circle cx="48" cy="71" r="1" fill="#38bdf8" />
-                        </g>
-
-                        {/* Keyboard & Mouse on Desk */}
-                        <g transform="translate(92, 114)">
-                          <rect x="0" y="0" width="46" height="7" rx="1.5" fill="#334155" stroke="#475569" strokeWidth="0.5" />
-                          <line x1="3" y1="3.5" x2="43" y2="3.5" stroke="#64748b" strokeWidth="1" strokeDasharray="2 1" />
-                          {/* Mouse */}
-                          <rect x="52" y="1" width="7" height="9" rx="3" fill="#334155" stroke="#475569" strokeWidth="0.5" />
-                          <line x1="55.5" y1="1" x2="55.5" y2="5" stroke="#64748b" strokeWidth="0.6" />
-                        </g>
-
-                        {/* Student / Person sitting at desk watching the simulation */}
-                        <g transform="translate(38, 48)">
-                          {/* Chair backrest */}
-                          <path d="M 12 40 Q 6 15 16 -5 Q 26 -5 32 40 Z" fill="#0f172a" />
-                          <rect x="12" y="38" width="22" height="6" rx="2" fill="#1e293b" />
-
-                          {/* Person Back/Side View */}
-                          {/* Torso / Shirt in blue */}
-                          <path d="M 22 28 Q 28 26 36 28 L 42 70 L 18 70 Z" fill="#2563eb" />
-                          {/* Arm resting toward desk/mouse */}
-                          <path d="M 34 32 Q 46 45 56 66 L 50 68 Q 42 50 32 36 Z" fill="#1d4ed8" />
-                          <circle cx="56" cy="67" r="2.5" fill="#fed7aa" />
-
-                          {/* Neck */}
-                          <rect x="25" y="18" width="6" height="8" fill="#fed7aa" />
-
-                          {/* Head & Hair */}
-                          <ellipse cx="28" cy="14" rx="9" ry="11" fill="#1e293b" />
-                          <circle cx="30" cy="15" r="7.5" fill="#fed7aa" />
-                          {/* Hair back */}
-                          <path d="M 20 12 Q 22 4 30 5 Q 36 6 36 12 Q 33 21 21 18 Z" fill="#1e293b" />
-
-                          {/* Headphones over head */}
-                          <path d="M 23 8 Q 28 3 34 8" fill="none" stroke="#64748b" strokeWidth="2.2" strokeLinecap="round" />
-                          <rect x="20" y="8" width="4" height="8" rx="2" fill="#0f172a" />
-                          <rect x="33" y="8" width="4" height="8" rx="2" fill="#0f172a" />
-                        </g>
-
-                        {/* Floating Success Pill */}
-                        <g transform="translate(142, 10)">
-                          <rect x="0" y="0" width="76" height="14" rx="7" fill="#ecfdf5" stroke="#10b981" strokeWidth="0.8" />
-                          <circle cx="8" cy="7" r="4.5" fill="#10b981" />
-                          <path d="M 6 7 L 7.5 8.5 L 10 5.5" fill="none" stroke="#ffffff" strokeWidth="1" strokeLinecap="round" />
-                          <text x="16" y="9.5" fill="#065f46" fontSize="5.5" fontWeight="bold">Chọn đúng +2.5đ</text>
-                        </g>
-                      </svg>
-                    </div>
-
-                    {/* Footer summary: Trắc nghiệm 4 mốc thời điểm */}
-                    <div className="pt-1.5 border-t border-slate-200/80 flex items-center justify-between text-[9px] text-slate-500">
-                      <span className="flex items-center gap-1 text-blue-700 font-medium">
-                        🎯 4 mốc trắc nghiệm theo video
+                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shadow-xs shadow-emerald-400/80" />
+                      <span className="text-[6.5px] sm:text-[7px] font-mono font-bold text-slate-300 uppercase tracking-tighter">
+                        CAM 08
                       </span>
-                      <span className="font-mono text-slate-400">10 điểm tối đa</span>
                     </div>
+
+                    {/* Monitor Outer Casing (Slate 900 with 3D Bezel) */}
+                    <div className="w-full flex-1 rounded-xl bg-slate-900 border-2 border-slate-700/90 shadow-2xl p-1.5 sm:p-2 flex flex-col justify-between relative overflow-hidden">
+                      {/* Exam Room Seal Label (Tem niêm phong thi sát hạch) */}
+                      <div className="absolute top-1 right-2 z-20 px-1.5 py-0.5 rounded-xs bg-amber-500 text-slate-950 text-[6.5px] sm:text-[7.5px] font-black uppercase tracking-tight shadow-xs rotate-2 border border-amber-300 flex items-center gap-0.5">
+                        <span>★</span>
+                        <span>MÁY THI SỐ 08</span>
+                      </div>
+
+                      {/* Inner Screen Display (IPS LED Sát Hạch Panel) */}
+                      <div className="w-full h-full rounded-lg bg-slate-950 border border-slate-800/90 flex flex-col justify-between p-1.5 sm:p-2 overflow-hidden relative shadow-inner">
+                        {/* Software Top Bar */}
+                        <div className="flex items-center justify-between pb-1 border-b border-slate-800 text-[8px] sm:text-[9px] text-slate-300 font-mono">
+                          <div className="flex items-center gap-1">
+                            <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                            <span className="font-bold text-slate-200 uppercase tracking-tight">
+                              SÁT HẠCH MÔ PHỎNG 3D
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-2 text-slate-400">
+                            <span>SBD: 08</span>
+                            <span className="text-amber-400 font-bold">TH 18/120</span>
+                            <span className="text-emerald-400 font-bold">⏱️ 02:45</span>
+                          </div>
+                        </div>
+
+                        {/* Video Cockpit Driving Scene */}
+                        <div className="w-full h-24 sm:h-28 landscape-mobile:h-18 rounded-md bg-slate-900 border border-slate-800 overflow-hidden relative my-1">
+                          <svg viewBox="0 0 280 110" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
+                            <defs>
+                              <linearGradient id="skyGrad2" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stopColor="#38bdf8" />
+                                <stop offset="100%" stopColor="#bae6fd" />
+                              </linearGradient>
+                              <linearGradient id="roadGrad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stopColor="#475569" />
+                                <stop offset="100%" stopColor="#1e293b" />
+                              </linearGradient>
+                            </defs>
+
+                            {/* Sky */}
+                            <rect x="0" y="0" width="280" height="42" fill="url(#skyGrad2)" />
+                            {/* Distant Hills */}
+                            <polygon points="0,42 40,24 80,42" fill="#93c5fd" />
+                            <polygon points="65,42 115,18 165,42" fill="#60a5fa" />
+                            <polygon points="150,42 200,22 250,42" fill="#93c5fd" />
+                            <polygon points="230,42 265,28 280,42" fill="#60a5fa" />
+
+                            {/* Highway Asphalt Road */}
+                            <polygon points="0,110 140,42 280,110" fill="url(#roadGrad)" />
+                            {/* Yellow Dashed Center Line */}
+                            <line x1="140" y1="42" x2="140" y2="105" stroke="#fde047" strokeWidth="2" strokeDasharray="6 4" />
+                            {/* Guardrails */}
+                            <line x1="0" y1="110" x2="140" y2="42" stroke="#94a3b8" strokeWidth="1" />
+                            <line x1="280" y1="110" x2="140" y2="42" stroke="#94a3b8" strokeWidth="1" />
+
+                            {/* Truck in front with glowing red brake lights */}
+                            <g transform="translate(124, 46)">
+                              <rect x="0" y="0" width="32" height="22" rx="2" fill="#0369a1" stroke="#0284c7" strokeWidth="0.8" />
+                              <rect x="3" y="3" width="26" height="12" rx="1" fill="#0ea5e9" />
+                              {/* Glowing Brake Lights */}
+                              <circle cx="5" cy="18" r="2.5" fill="#ef4444" />
+                              <circle cx="5" cy="18" r="5" fill="#ef4444" opacity="0.3" />
+                              <circle cx="27" cy="18" r="2.5" fill="#ef4444" />
+                              <circle cx="27" cy="18" r="5" fill="#ef4444" opacity="0.3" />
+                              {/* License Plate */}
+                              <rect x="12" y="16" width="8" height="3" fill="#ffffff" />
+                            </g>
+
+                            {/* Steering Wheel Arc at bottom */}
+                            <path d="M 85 110 Q 140 82 195 110" fill="none" stroke="#0f172a" strokeWidth="9" />
+                            <circle cx="140" cy="100" r="5.5" fill="#334155" />
+
+                            {/* Red Danger Warning Flash */}
+                            <g transform="translate(60, 5)">
+                              <rect x="0" y="0" width="160" height="14" rx="7" fill="#dc2626" opacity="0.95" />
+                              <text x="80" y="10" textAnchor="middle" fill="#ffffff" fontSize="6.5" fontWeight="900" fontFamily="sans-serif">
+                                ⚠️ TÌNH HUỐNG: XE PHÍA TRƯỚC PHANH GẤP
+                              </text>
+                            </g>
+                          </svg>
+                        </div>
+
+                        {/* 4 Real-time Multiple Choice Options */}
+                        <div className="grid grid-cols-2 gap-1 my-0.5">
+                          <div className="p-1 rounded bg-slate-900 border border-slate-800 text-[7.5px] sm:text-[8px] text-slate-400 truncate">
+                            A. Giữ nguyên tốc độ
+                          </div>
+                          <div className="p-1 rounded bg-emerald-950/90 border border-emerald-500/80 text-[7.5px] sm:text-[8px] text-emerald-300 font-bold flex items-center justify-between shadow-2xs">
+                            <span className="truncate">B. Phanh giảm tốc</span>
+                            <span className="text-[6.5px] px-1 py-0.2 rounded bg-emerald-500 text-slate-950 font-black shrink-0 ml-0.5">
+                              +5Đ ✓
+                            </span>
+                          </div>
+                          <div className="p-1 rounded bg-slate-900 border border-slate-800 text-[7.5px] sm:text-[8px] text-slate-400 truncate">
+                            C. Bấm còi vượt gấp
+                          </div>
+                          <div className="p-1 rounded bg-slate-900 border border-slate-800 text-[7.5px] sm:text-[8px] text-slate-400 truncate">
+                            D. Đánh lái sang phải
+                          </div>
+                        </div>
+
+                        {/* Bottom Simulation Scoring Timeline */}
+                        <div className="pt-1 border-t border-slate-800/80 flex items-center justify-between text-[7px] sm:text-[7.5px] text-slate-500 font-mono">
+                          <div className="flex items-center gap-1 font-bold">
+                            <span className="px-1 rounded bg-emerald-500/20 text-emerald-400">5đ</span>
+                            <span className="px-1 rounded bg-amber-500/20 text-amber-400">4đ</span>
+                            <span className="px-1 rounded bg-amber-600/20 text-amber-500">3đ</span>
+                            <span className="px-1 rounded bg-orange-500/20 text-orange-400">2đ</span>
+                            <span className="px-1 rounded bg-rose-500/20 text-rose-400">1đ</span>
+                          </div>
+                          <span className="text-blue-400 font-semibold">Quy chế thi mới Cục Đường Bộ</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Metal Stand */}
+                    <div className="w-12 h-2.5 bg-linear-to-b from-slate-700 to-slate-800 -mt-[1px]" />
+                    <div className="w-28 sm:w-32 h-1.5 rounded-full bg-linear-to-r from-slate-500 via-slate-200 to-slate-500 shadow-md" />
                   </div>
                 )}
 
                 {/* ------------------------------------------------------------- */}
-                {/* Slide 03 Graphic: Chọn loại bằng đang học (Interactive Picker)   */}
+                {/* Slide 03 Graphic: Tấm Bằng Lái Xe GPLX PET 3D Chuẩn Cục Đường Bộ */}
                 {/* ------------------------------------------------------------- */}
                 {currentStep === 2 && (
-                  <div className="w-full h-full rounded-xl bg-slate-50/50 border border-slate-200/90 p-2.5 sm:p-3 landscape-mobile:p-1.5 flex flex-col justify-between">
-                    {/* Header: Title & Quy chế badge */}
-                    <div className="flex items-center justify-between pb-1.5 border-b border-slate-200/80">
-                      <div className="flex items-center gap-1.5">
-                        <div className="w-2 h-2 rounded-full bg-amber-500" />
-                        <span className="text-[10.5px] sm:text-xs font-bold text-slate-800 uppercase tracking-tight">
-                          Hạng bằng bạn đang học:
-                        </span>
+                  <div className="w-full h-full rounded-2xl border border-amber-300/90 bg-linear-to-br from-[#fffdf5] via-[#fef9c3] to-[#fef08a] p-2.5 sm:p-3 landscape-mobile:p-1.5 shadow-2xl shadow-amber-900/15 ring-1 ring-amber-400/50 flex flex-col justify-between overflow-hidden relative">
+                    {/* Guilloche Security Wave Lines (Background decorative SVG) */}
+                    <svg
+                      className="absolute inset-0 w-full h-full pointer-events-none opacity-20"
+                      viewBox="0 0 300 240"
+                      preserveAspectRatio="none"
+                    >
+                      <path
+                        d="M0,40 Q75,10 150,40 T300,40 M0,80 Q75,50 150,80 T300,80 M0,120 Q75,90 150,120 T300,120 M0,160 Q75,130 150,160 T300,160 M0,200 Q75,170 150,200 T300,200"
+                        fill="none"
+                        stroke="#d97706"
+                        strokeWidth="0.8"
+                      />
+                      <circle cx="240" cy="180" r="45" fill="none" stroke="#dc2626" strokeWidth="1" strokeDasharray="3 3" opacity="0.3" />
+                    </svg>
+
+                    {/* Official National Header */}
+                    <div className="text-center relative z-10 pb-1 border-b border-amber-300/80">
+                      <div className="font-black text-[8px] sm:text-[9px] text-slate-900 uppercase tracking-tight leading-tight">
+                        CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
                       </div>
-                      <span className="px-1.5 py-0.5 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-[8.5px] font-bold">
-                        Quy chế 2026
-                      </span>
+                      <div className="italic text-[6.5px] sm:text-[7.5px] text-slate-700 leading-none mt-0.5">
+                        Độc lập - Tự do - Hạnh phúc
+                      </div>
+                      <div className="font-black text-[10px] sm:text-[11.5px] text-rose-700 uppercase tracking-tight mt-1 leading-tight flex items-center justify-center gap-1">
+                        <span>GIẤY PHÉP LÁI XE</span>
+                        <span className="text-[7.5px] text-rose-600 font-bold">/ DRIVING LICENCE</span>
+                      </div>
                     </div>
 
-                    {/* 6 Category Tiles */}
-                    <div className="grid grid-cols-2 gap-1.5 sm:gap-2 my-auto py-1">
-                      {categoriesList.map((cat) => {
-                        const isSelected = selectedCategory === cat.id;
-                        return (
-                          <button
-                            key={cat.id}
-                            type="button"
-                            onClick={() => handleCategorySelect(cat.id)}
-                            className={`p-2 sm:p-2.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
-                              isSelected
-                                ? 'border-amber-500 bg-amber-50/90 shadow-xs ring-1 ring-amber-500/50'
-                                : 'border-slate-200/90 bg-white hover:border-slate-300 hover:bg-slate-50/80'
-                            }`}
-                          >
-                            <div className="min-w-0 pr-1">
-                              <div
-                                className={`text-[11px] sm:text-xs font-bold leading-tight ${
-                                  isSelected ? 'text-amber-950 font-black' : 'text-slate-800'
+                    {/* Card Body: Left Photo & Info + Right 6-Category Selector */}
+                    <div className="flex gap-2 sm:gap-2.5 my-auto py-1 relative z-10 items-center">
+                      {/* Left: 3x4 ID Photo Frame with Driver Avatar & Chip */}
+                      <div className="w-16 sm:w-18 shrink-0 flex flex-col items-center">
+                        <div className="w-15 sm:w-16 h-18 sm:h-20 rounded-md bg-white border border-amber-400/80 p-0.5 shadow-sm relative overflow-hidden flex flex-col items-center justify-center">
+                          {/* Driver Portrait Avatar */}
+                          <div className="w-full h-full rounded bg-slate-100 flex flex-col items-center justify-end overflow-hidden relative">
+                            {/* Head & Smile */}
+                            <circle cx="28" cy="18" r="9" fill="#fed7aa" />
+                            <path d="M 21 14 Q 28 8 35 14 Q 38 22 21 22 Z" fill="#1e293b" />
+                            {/* Torso & Suit */}
+                            <path d="M 12 36 L 22 26 L 34 26 L 44 36 Z" fill="#1e293b" />
+                            <polygon points="26,26 30,26 28,34" fill="#dc2626" />
+                            <polygon points="25,26 31,26 28,31" fill="#ffffff" />
+                          </div>
+
+                          {/* Red Circular Stamp over photo corner */}
+                          <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-full border border-rose-500/80 bg-rose-500/10 flex items-center justify-center pointer-events-none rotate-12">
+                            <span className="text-[5px] font-black text-rose-600 uppercase">CỤC ĐB</span>
+                          </div>
+                        </div>
+
+                        {/* Gold Smartchip / Security Bar */}
+                        <div className="w-8 h-2 rounded bg-amber-400 border border-amber-500/80 mt-1 shadow-2xs flex items-center justify-around px-0.5">
+                          <div className="w-1.5 h-1 bg-amber-600/50 rounded-xs" />
+                          <div className="w-2 h-1 bg-amber-600/50 rounded-xs" />
+                          <div className="w-1.5 h-1 bg-amber-600/50 rounded-xs" />
+                        </div>
+                      </div>
+
+                      {/* Right: Driver Info & 6 Interactive Category Buttons */}
+                      <div className="flex-1 min-w-0">
+                        {/* Driver Metadata Header */}
+                        <div className="text-[8px] sm:text-[9px] text-slate-800 font-mono mb-1 leading-tight">
+                          <div className="flex justify-between">
+                            <span className="text-slate-600">Số/No: <strong className="text-slate-900 font-bold">010260089999</strong></span>
+                            <span className="px-1 py-0.2 rounded bg-rose-600 text-white font-black text-[6.5px]">CHÍNH CHỦ</span>
+                          </div>
+                          <div className="text-slate-600 truncate mt-0.5">
+                            Họ tên/Name: <strong className="text-slate-900 font-bold uppercase">BẠN (THÍ SINH)</strong>
+                          </div>
+                        </div>
+
+                        {/* 6 Category Selection Tiles (Hạng / Class) */}
+                        <div className="grid grid-cols-2 gap-1 sm:gap-1.5">
+                          {categoriesList.map((cat) => {
+                            const isSelected = selectedCategory === cat.id;
+                            return (
+                              <button
+                                key={cat.id}
+                                type="button"
+                                onClick={() => handleCategorySelect(cat.id)}
+                                className={`p-1 sm:p-1.5 rounded-lg border text-left transition-all cursor-pointer flex items-center justify-between ${
+                                  isSelected
+                                    ? 'border-amber-600 bg-amber-500/25 shadow-xs ring-1 ring-amber-600/60 font-bold'
+                                    : 'border-amber-300/70 bg-white/70 hover:border-amber-400 hover:bg-white'
                                 }`}
                               >
-                                {cat.label}
-                              </div>
-                              <div className="text-[8.5px] sm:text-[9.5px] text-slate-500 truncate mt-0.5">
-                                {cat.desc}
-                              </div>
-                            </div>
-                            {isSelected && (
-                              <div className="w-4 h-4 rounded-full bg-amber-500 text-white flex items-center justify-center shrink-0 shadow-2xs">
-                                <Check className="w-2.5 h-2.5 stroke-[3]" />
-                              </div>
-                            )}
-                          </button>
-                        );
-                      })}
+                                <div className="min-w-0 pr-0.5">
+                                  <div
+                                    className={`text-[10px] sm:text-[11px] font-black leading-tight ${
+                                      isSelected ? 'text-amber-950 font-black' : 'text-slate-800'
+                                    }`}
+                                  >
+                                    {cat.label}
+                                  </div>
+                                  <div className="text-[7.5px] sm:text-[8px] text-slate-600 truncate">
+                                    {cat.desc}
+                                  </div>
+                                </div>
+                                {isSelected && (
+                                  <div className="w-3.5 h-3.5 rounded-full bg-amber-600 text-white flex items-center justify-center shrink-0 shadow-2xs">
+                                    <Check className="w-2.5 h-2.5 stroke-[3]" />
+                                  </div>
+                                )}
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </div>
                     </div>
 
-                    {/* Footer Exam info */}
-                    <div className="pt-1.5 border-t border-slate-200/80 flex items-center justify-between text-[9px] sm:text-[10px] text-slate-600 font-mono">
-                      <span className="text-amber-700 font-bold">
+                    {/* Card Footer: Exam Specs according to selected Category */}
+                    <div className="pt-1 border-t border-amber-300/80 flex items-center justify-between text-[8px] sm:text-[9px] text-slate-700 font-mono relative z-10">
+                      <span className="text-amber-900 font-bold">
                         🎯 Đề thi: {activeCategoryConfig.totalQ} câu • {activeCategoryConfig.time} phút
                       </span>
-                      <span className="text-emerald-700 font-bold">
+                      <span className="text-emerald-800 font-bold">
                         Đạt: {activeCategoryConfig.pass}/{activeCategoryConfig.totalQ}
                       </span>
                     </div>
