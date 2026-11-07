@@ -220,9 +220,9 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
           <div aria-hidden="true" className="h-3 sm:h-6 landscape-mobile:h-1 shrink-0" />
 
           {/* Centered Main Container */}
-          <main className="w-full max-w-md landscape-mobile:max-w-2xl mx-auto px-5 landscape-mobile:px-6 my-auto py-4 landscape-mobile:py-1.5 flex flex-col items-center">
+          <main className="w-full max-w-md sm:max-w-lg lg:max-w-xl landscape-mobile:max-w-2xl mx-auto px-5 sm:px-8 landscape-mobile:px-6 my-auto py-4 sm:py-6 landscape-mobile:py-1.5 flex flex-col items-center">
             {/* App Logo */}
-            <div className="w-16 h-16 sm:w-20 sm:h-20 landscape-mobile:w-11 landscape-mobile:h-11 rounded-2xl landscape-mobile:rounded-xl bg-white border border-slate-200 p-2 landscape-mobile:p-1.5 shadow-xs flex items-center justify-center mb-4 landscape-mobile:mb-1.5">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-22 lg:h-22 landscape-mobile:w-11 landscape-mobile:h-11 rounded-2xl landscape-mobile:rounded-xl bg-white border border-slate-200 p-2 landscape-mobile:p-1.5 shadow-xs flex items-center justify-center mb-4 sm:mb-5 landscape-mobile:mb-1.5">
               <img
                 src="/logo.jpg"
                 alt="OnTap GPLX Logo"
@@ -231,28 +231,28 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
             </div>
 
             {/* Header Text */}
-            <div className="text-center mb-6 landscape-mobile:mb-2.5 space-y-1 landscape-mobile:space-y-0.5">
-              <div className="text-2xl sm:text-3xl landscape-mobile:text-lg font-black text-slate-900 tracking-tight">
+            <div className="text-center mb-6 sm:mb-8 landscape-mobile:mb-2.5 space-y-1 landscape-mobile:space-y-0.5">
+              <div className="text-2xl sm:text-3xl lg:text-4xl landscape-mobile:text-lg font-black text-slate-900 tracking-tight">
                 OnTap <span className="text-amber-500">GPLX</span>
               </div>
-              <div className="text-xs landscape-mobile:text-[10px] font-semibold text-slate-500 uppercase tracking-widest">
+              <div className="text-xs sm:text-sm landscape-mobile:text-[10px] font-semibold text-slate-500 uppercase tracking-widest">
                 Ôn thi giấy phép lái xe 2026
               </div>
             </div>
 
             {/* 2 Clean Action Cards */}
-            <div className="w-full space-y-3 landscape-mobile:space-y-0 landscape-mobile:grid landscape-mobile:grid-cols-2 landscape-mobile:gap-3 mb-5 landscape-mobile:mb-2">
+            <div className="w-full space-y-3 sm:space-y-4 landscape-mobile:space-y-0 landscape-mobile:grid landscape-mobile:grid-cols-2 landscape-mobile:gap-3 mb-5 sm:mb-6 landscape-mobile:mb-2">
               {/* Card 1: Trải nghiệm ngay -> Bấm vào ra 3 bước Onboarding */}
               <button
                 type="button"
                 onClick={handleStartWalkthrough}
-                className="w-full text-left bg-slate-900 hover:bg-slate-800 active:bg-slate-950 text-white rounded-2xl landscape-mobile:rounded-xl p-5 landscape-mobile:p-3.5 transition-all duration-150 cursor-pointer shadow-xs block"
+                className="w-full text-left bg-slate-900 hover:bg-slate-800 active:bg-slate-950 text-white rounded-2xl landscape-mobile:rounded-xl p-5 sm:p-6 landscape-mobile:p-3.5 transition-all duration-150 cursor-pointer shadow-xs block"
               >
                 <div className="space-y-1 landscape-mobile:space-y-0.5">
-                  <div className="text-base sm:text-lg landscape-mobile:text-sm font-bold tracking-tight text-white">
+                  <div className="text-base sm:text-lg lg:text-xl landscape-mobile:text-sm font-bold tracking-tight text-white">
                     Trải nghiệm ngay
                   </div>
-                  <p className="text-xs sm:text-sm landscape-mobile:text-[11px] text-slate-300 leading-snug font-normal">
+                  <p className="text-xs sm:text-sm lg:text-base text-slate-300 leading-snug font-normal">
                     Ôn tập 600 câu lý thuyết phân hạng và 120 tình huống mô phỏng trắc nghiệm.
                   </p>
                 </div>
@@ -262,13 +262,13 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
               <button
                 type="button"
                 onClick={handleInstallClick}
-                className="w-full text-left bg-white hover:bg-slate-50/90 active:bg-slate-100 text-slate-900 rounded-2xl landscape-mobile:rounded-xl p-5 landscape-mobile:p-3.5 border border-slate-200 hover:border-slate-300 shadow-xs transition-all duration-150 cursor-pointer block"
+                className="w-full text-left bg-white hover:bg-slate-50/90 active:bg-slate-100 text-slate-900 rounded-2xl landscape-mobile:rounded-xl p-5 sm:p-6 landscape-mobile:p-3.5 border border-slate-200 hover:border-slate-300 shadow-xs transition-all duration-150 cursor-pointer block"
               >
                 <div className="space-y-1 landscape-mobile:space-y-0.5">
-                  <div className="text-base sm:text-lg landscape-mobile:text-sm font-bold text-slate-900 tracking-tight">
+                  <div className="text-base sm:text-lg lg:text-xl landscape-mobile:text-sm font-bold text-slate-900 tracking-tight">
                     Hướng dẫn cài đặt ứng dụng
                   </div>
-                  <p className="text-xs sm:text-sm landscape-mobile:text-[11px] text-slate-500 leading-relaxed font-normal">
+                  <p className="text-xs sm:text-sm lg:text-base text-slate-500 leading-relaxed font-normal">
                     Cài OnTap GPLX vào màn hình chính điện thoại hoặc máy tính để mở nhanh và thuận tiện hơn.
                   </p>
                 </div>
@@ -323,24 +323,24 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
       {viewMode === 'walkthrough' && (
         <div className="w-full h-full flex flex-col justify-between animate-in fade-in zoom-in-95 duration-250">
           {/* Top Bar: "BỎ QUA" on the right only */}
-          <header className="w-full max-w-md landscape-mobile:max-w-2xl mx-auto px-5 sm:px-6 pt-1 pb-2 sm:pb-3 flex items-center justify-end shrink-0 z-20">
+          <header className="w-full max-w-md md:max-w-xl lg:max-w-5xl landscape-mobile:max-w-4xl mx-auto px-5 sm:px-8 lg:px-10 pt-2 sm:pt-4 lg:pt-6 pb-1 sm:pb-2 flex items-center justify-end shrink-0 z-20">
             <button
               type="button"
               onClick={handleSkip}
-              className="text-xs font-bold uppercase tracking-wider text-slate-400 hover:text-slate-800 active:text-slate-950 transition-colors cursor-pointer py-1.5 px-3 rounded-lg hover:bg-slate-200/50"
+              className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-400 hover:text-slate-800 active:text-slate-950 transition-colors cursor-pointer py-1.5 px-3 rounded-lg hover:bg-slate-200/50"
             >
               BỎ QUA
             </button>
           </header>
 
-          {/* Main Walkthrough Container */}
-          <div className="w-full max-w-md landscape-mobile:max-w-2xl mx-auto flex-1 flex flex-col justify-between px-5 sm:px-6 landscape-mobile:px-8 pb-3 sm:pb-5 landscape-mobile:pb-1 overflow-hidden">
-            {/* Upper Half: Graphic Area with watermark number */}
-            <div className="relative flex-1 flex items-center justify-center min-h-[220px] landscape-mobile:min-h-[140px] overflow-hidden">
+          {/* Main Walkthrough Container: Responsive 2-Column on Desktop & Landscape Mobile, Single-Column on Mobile Portrait */}
+          <div className="w-full max-w-md md:max-w-xl lg:max-w-5xl landscape-mobile:max-w-4xl mx-auto flex-1 flex flex-col lg:flex-row landscape-mobile:flex-row items-center justify-between lg:justify-center px-5 sm:px-8 lg:px-10 pb-4 sm:pb-6 lg:pb-8 landscape-mobile:pb-2 gap-4 sm:gap-6 lg:gap-14 landscape-mobile:gap-6 overflow-hidden my-auto">
+            {/* Left Column (Desktop/Landscape) / Upper Half (Mobile Portrait): Graphic Area */}
+            <div className="relative flex-1 lg:flex-none lg:w-1/2 landscape-mobile:flex-none landscape-mobile:w-[48%] flex items-center justify-center min-h-[200px] sm:min-h-[240px] lg:min-h-[420px] landscape-mobile:min-h-0 overflow-visible">
               {/* Faint Large Watermark Number behind graphic */}
               <div
                 key={`watermark-${currentSlide.step}`}
-                className="absolute select-none font-black text-[130px] sm:text-[170px] landscape-mobile:text-[100px] text-slate-900/[0.04] pointer-events-none tracking-tighter leading-none animate-in fade-in zoom-in-90 duration-300"
+                className="absolute select-none font-black text-[130px] sm:text-[170px] lg:text-[230px] landscape-mobile:text-[90px] text-slate-900/[0.04] pointer-events-none tracking-tighter leading-none animate-in fade-in zoom-in-90 duration-300"
               >
                 {currentSlide.step}
               </div>
@@ -350,17 +350,17 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 key={`graphic-${currentStep}`}
                 className={
                   currentStep === 0
-                    ? 'relative z-10 w-48 sm:w-52 h-[272px] sm:h-[304px] landscape-mobile:w-36 landscape-mobile:h-[195px] bg-[#fffdfa] rounded-r-lg rounded-l-xs border-r border-t border-b border-slate-300/80 border-l-[7px] border-l-slate-300 shadow-2xl shadow-slate-400/40 p-2 sm:p-2.5 landscape-mobile:p-1.5 flex flex-col justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
+                    ? 'relative z-10 w-48 sm:w-56 lg:w-64 h-[272px] sm:h-[310px] lg:h-[370px] landscape-mobile:w-36 landscape-mobile:h-[195px] bg-[#fffdfa] rounded-r-lg rounded-l-xs border-r border-t border-b border-slate-300/80 border-l-[7px] border-l-slate-300 shadow-2xl shadow-slate-400/40 p-2 sm:p-2.5 lg:p-3 landscape-mobile:p-1.5 flex flex-col justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
                     : currentStep === 1
-                    ? 'relative z-10 w-[316px] sm:w-[350px] max-w-full h-[216px] sm:h-[232px] landscape-mobile:w-72 landscape-mobile:h-[175px] flex flex-col items-center justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
-                    : 'relative z-10 w-[316px] sm:w-[344px] max-w-full h-[228px] sm:h-[242px] landscape-mobile:w-72 landscape-mobile:h-[180px] flex flex-col justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
+                    ? 'relative z-10 w-[316px] sm:w-[360px] lg:w-[440px] max-w-full h-[216px] sm:h-[240px] lg:h-[295px] landscape-mobile:w-72 landscape-mobile:h-[175px] flex flex-col items-center justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
+                    : 'relative z-10 w-[316px] sm:w-[350px] lg:w-[430px] max-w-full h-[228px] sm:h-[248px] lg:h-[295px] landscape-mobile:w-72 landscape-mobile:h-[180px] flex flex-col justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
                 }
               >
                 {/* ------------------------------------------------------------- */}
                 {/* Slide 01 Graphic: Cuốn sách ÔN THI CẤP TỐC 600 CÂU & 120 TH MÔ PHỎNG */}
                 {/* ------------------------------------------------------------- */}
                 {currentStep === 0 && (
-                  <div className="w-full h-full border border-indigo-950/80 p-1 sm:p-1.5 flex flex-col justify-between relative">
+                  <div className="w-full h-full border border-indigo-950/80 p-1 sm:p-1.5 lg:p-2 flex flex-col justify-between relative">
                     {/* Corner square accents */}
                     <div className="absolute top-0.5 left-0.5 w-1 h-1 border border-indigo-950" />
                     <div className="absolute top-0.5 right-0.5 w-1 h-1 border border-indigo-950" />
@@ -368,29 +368,29 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                     <div className="absolute bottom-0.5 right-0.5 w-1 h-1 border border-indigo-950" />
 
                     {/* Inner border box */}
-                    <div className="w-full h-full border border-indigo-950/70 p-1.5 sm:p-2 landscape-mobile:p-1 flex flex-col justify-between items-center text-center">
+                    <div className="w-full h-full border border-indigo-950/70 p-1.5 sm:p-2 lg:p-2.5 landscape-mobile:p-1 flex flex-col justify-between items-center text-center">
                       {/* Top Titles */}
                       <div className="space-y-0.5 pt-1">
-                        <div className="font-black tracking-widest text-[11px] sm:text-[12px] landscape-mobile:text-[8px] text-slate-900 uppercase leading-none">
+                        <div className="font-black tracking-widest text-[11px] sm:text-[12px] lg:text-[13px] landscape-mobile:text-[8px] text-slate-900 uppercase leading-none">
                           PHƯƠNG PHÁP
                         </div>
-                        <div className="font-bold tracking-wider text-[8.5px] sm:text-[9.5px] landscape-mobile:text-[6.5px] text-slate-700 uppercase">
+                        <div className="font-bold tracking-wider text-[8.5px] sm:text-[9.5px] lg:text-[10.5px] landscape-mobile:text-[6.5px] text-slate-700 uppercase">
                           HỌC NHANH FULL
                         </div>
                       </div>
 
                       {/* Big Title & Pill */}
                       <div className="space-y-1 my-1">
-                        <div className="font-black text-slate-900 text-sm sm:text-base landscape-mobile:text-[10px] tracking-tight uppercase leading-none">
+                        <div className="font-black text-slate-900 text-sm sm:text-base lg:text-lg landscape-mobile:text-[10px] tracking-tight uppercase leading-none">
                           ÔN THI CẤP TỐC
                         </div>
-                        <div className="inline-block px-2 py-0.5 rounded-full bg-rose-600 text-white font-bold text-[7px] sm:text-[8px] landscape-mobile:text-[5.5px] tracking-normal shadow-2xs">
+                        <div className="inline-block px-2 lg:px-2.5 py-0.5 rounded-full bg-rose-600 text-white font-bold text-[7px] sm:text-[8px] lg:text-[9px] landscape-mobile:text-[5.5px] tracking-normal shadow-2xs">
                           Câu Hỏi Luật Mới Bộ Công An
                         </div>
                       </div>
 
                       {/* Sa hình ngã tư (Intersection Illustration SVG) */}
-                      <div className="w-full h-18 sm:h-22 landscape-mobile:h-13 bg-[#f3f7eb] border border-slate-300/80 rounded-xs overflow-hidden relative shadow-inner my-0.5">
+                      <div className="w-full h-18 sm:h-22 lg:h-28 landscape-mobile:h-13 bg-[#f3f7eb] border border-slate-300/80 rounded-xs overflow-hidden relative shadow-inner my-0.5">
                         <svg viewBox="0 0 200 130" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
                           {/* 4 Green Grass Corner Lawns */}
                           <rect x="0" y="0" width="60" height="40" fill="#dcfce7" />
@@ -462,10 +462,10 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
 
                       {/* Bottom Text */}
                       <div className="space-y-0.5 mt-0.5 pb-0.5">
-                        <div className="font-black text-indigo-950 text-[10.5px] sm:text-[12px] landscape-mobile:text-[8px] leading-tight tracking-normal">
+                        <div className="font-black text-indigo-950 text-[10.5px] sm:text-[12px] lg:text-[13px] landscape-mobile:text-[8px] leading-tight tracking-normal">
                           600 câu hỏi và 120 TH Mô Phỏng
                         </div>
-                        <div className="italic text-slate-500 text-[8px] sm:text-[9px] landscape-mobile:text-[6.5px] tracking-normal font-medium">
+                        <div className="italic text-slate-500 text-[8px] sm:text-[9px] lg:text-[10px] landscape-mobile:text-[6.5px] tracking-normal font-medium">
                           ( Lưu hành nội bộ )
                         </div>
                       </div>
@@ -488,23 +488,23 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                       {/* Inner Retina Screen (Widescreen 16:10 Ratio) */}
                       <div className="w-full h-full rounded-lg bg-slate-950 border border-slate-800/90 p-1.5 flex flex-col justify-between overflow-hidden">
                         {/* macOS Window Title Bar */}
-                        <div className="flex items-center justify-between pb-1 border-b border-slate-800/90 text-[8px] sm:text-[9px] font-mono">
+                        <div className="flex items-center justify-between pb-1 border-b border-slate-800/90 text-[8px] sm:text-[9px] lg:text-[10px] font-mono">
                           {/* 3 macOS Traffic Light Window Buttons */}
                           <div className="flex items-center gap-1.5">
-                            <div className="w-2 h-2 rounded-full bg-rose-500 shadow-2xs" />
-                            <div className="w-2 h-2 rounded-full bg-amber-500 shadow-2xs" />
-                            <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-2xs" />
-                            <span className="font-bold text-slate-200 uppercase tracking-tight ml-1 text-[8px] sm:text-[8.5px]">
+                            <div className="w-2 h-2 lg:w-2.5 lg:h-2.5 rounded-full bg-rose-500 shadow-2xs" />
+                            <div className="w-2 h-2 lg:w-2.5 lg:h-2.5 rounded-full bg-amber-500 shadow-2xs" />
+                            <div className="w-2 h-2 lg:w-2.5 lg:h-2.5 rounded-full bg-emerald-500 shadow-2xs" />
+                            <span className="font-bold text-slate-200 uppercase tracking-tight ml-1 text-[8px] sm:text-[8.5px] lg:text-[9.5px]">
                               MÔ PHỎNG 120 TÌNH HUỐNG
                             </span>
                           </div>
-                          <span className="text-slate-400 font-mono text-[7.5px] sm:text-[8px]">
+                          <span className="text-slate-400 font-mono text-[7.5px] sm:text-[8px] lg:text-[9px]">
                             Tình huống 18/120
                           </span>
                         </div>
 
                         {/* Video Scene (Simulated Highway 3D Widescreen) */}
-                        <div className="w-full h-18 sm:h-21 landscape-mobile:h-14 rounded-md bg-[#090d16] border border-slate-800/80 overflow-hidden relative my-0.5">
+                        <div className="w-full h-18 sm:h-21 lg:h-28 landscape-mobile:h-14 rounded-md bg-[#090d16] border border-slate-800/80 overflow-hidden relative my-0.5">
                           <svg viewBox="0 0 280 110" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
                             <defs>
                               <linearGradient id="skyGradDark" x1="0" y1="0" x2="0" y2="1">
@@ -556,23 +556,23 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
 
                         {/* 4 Minimalist Flat Options (Dark Theme) */}
                         <div className="grid grid-cols-2 gap-1 my-0.5">
-                          <div className="p-1 sm:p-1.5 rounded-md bg-slate-900 border border-slate-800 text-[8px] sm:text-[8.5px] text-slate-300 truncate">
+                          <div className="p-1 sm:p-1.5 lg:p-2 rounded-md bg-slate-900 border border-slate-800 text-[8px] sm:text-[8.5px] lg:text-[10px] text-slate-300 truncate">
                             A. Giữ nguyên tốc độ
                           </div>
-                          <div className="p-1 sm:p-1.5 rounded-md bg-emerald-950/80 border border-emerald-500/80 text-[8px] sm:text-[8.5px] text-emerald-300 font-bold flex items-center justify-between shadow-2xs">
+                          <div className="p-1 sm:p-1.5 lg:p-2 rounded-md bg-emerald-950/80 border border-emerald-500/80 text-[8px] sm:text-[8.5px] lg:text-[10px] text-emerald-300 font-bold flex items-center justify-between shadow-2xs">
                             <span className="truncate">B. Phanh giảm tốc</span>
-                            <Check className="w-3.5 h-3.5 text-emerald-400 stroke-[3] shrink-0 ml-1" />
+                            <Check className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-emerald-400 stroke-[3] shrink-0 ml-1" />
                           </div>
-                          <div className="p-1 sm:p-1.5 rounded-md bg-slate-900 border border-slate-800 text-[8px] sm:text-[8.5px] text-slate-300 truncate">
+                          <div className="p-1 sm:p-1.5 lg:p-2 rounded-md bg-slate-900 border border-slate-800 text-[8px] sm:text-[8.5px] lg:text-[10px] text-slate-300 truncate">
                             C. Bấm còi vượt xe
                           </div>
-                          <div className="p-1 sm:p-1.5 rounded-md bg-slate-900 border border-slate-800 text-[8px] sm:text-[8.5px] text-slate-300 truncate">
+                          <div className="p-1 sm:p-1.5 lg:p-2 rounded-md bg-slate-900 border border-slate-800 text-[8px] sm:text-[8.5px] lg:text-[10px] text-slate-300 truncate">
                             D. Đánh lái sang phải
                           </div>
                         </div>
 
                         {/* Bottom Footer Caption (Minimalist Dark) */}
-                        <div className="pt-1 border-t border-slate-850 flex items-center justify-between text-[7.5px] sm:text-[8px] text-slate-400 font-mono">
+                        <div className="pt-1 lg:pt-1.5 border-t border-slate-850 flex items-center justify-between text-[7.5px] sm:text-[8px] lg:text-[9.5px] text-slate-400 font-mono">
                           <span>Trắc nghiệm 4 mốc thời điểm</span>
                           <span className="text-emerald-400 font-bold">10 điểm tối đa</span>
                         </div>
@@ -581,9 +581,9 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
 
                     {/* MacBook Base (Unibody Aluminum Keyboard Deck, Widescreen Lip & Thumb Scoop) */}
                     <div className="w-[105%] flex flex-col items-center relative z-10 -mt-[1px]">
-                      <div className="w-full h-3 sm:h-3.5 bg-linear-to-b from-slate-700 via-slate-800 to-slate-900 border-t border-slate-600/90 rounded-b-lg shadow-xl shadow-slate-950/60 flex items-start justify-center relative">
+                      <div className="w-full h-3 sm:h-3.5 lg:h-4 bg-linear-to-b from-slate-700 via-slate-800 to-slate-900 border-t border-slate-600/90 rounded-b-lg shadow-xl shadow-slate-950/60 flex items-start justify-center relative">
                         {/* Center Thumb Opening Scoop */}
-                        <div className="w-12 sm:w-14 h-1 rounded-b-sm bg-slate-600/90 shadow-inner" />
+                        <div className="w-12 sm:w-14 lg:w-18 h-1 lg:h-1.5 rounded-b-sm bg-slate-600/90 shadow-inner" />
                         {/* Slim Chamfer Metallic Highlight Edge */}
                         <div className="w-full h-[0.5px] bg-slate-400/40 absolute bottom-0" />
                       </div>
@@ -600,23 +600,23 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 {/* Slide 03 Graphic: Thẻ GPLX PET Hình Chữ Nhật Chuẩn Màu Sắc    */}
                 {/* ------------------------------------------------------------- */}
                 {currentStep === 2 && (
-                  <div className="w-full h-full rounded-2xl border border-rose-300/80 bg-linear-to-br from-[#ffe4e6] via-[#fff1f2] to-[#fed7aa]/35 p-2.5 sm:p-3 pb-3 sm:pb-3.5 landscape-mobile:p-1.5 shadow-xl shadow-rose-950/10 flex flex-col justify-between overflow-hidden relative">
+                  <div className="w-full h-full rounded-2xl lg:rounded-3xl border border-rose-300/80 bg-linear-to-br from-[#ffe4e6] via-[#fff1f2] to-[#fed7aa]/35 p-2.5 sm:p-3 lg:p-4 pb-3 sm:pb-3.5 lg:pb-4.5 landscape-mobile:p-1.5 shadow-xl shadow-rose-950/10 flex flex-col justify-between overflow-hidden relative">
                     {/* Official National Header & Red Title (Màu sắc chuẩn phôi GPLX) */}
                     <div className="text-center pb-1 sm:pb-1.5 border-b border-rose-200/90 shrink-0">
-                      <div className="font-bold text-[8.5px] sm:text-[9.5px] text-slate-900 uppercase tracking-tight leading-tight">
+                      <div className="font-bold text-[8.5px] sm:text-[9.5px] lg:text-[11px] text-slate-900 uppercase tracking-tight leading-tight">
                         CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
                       </div>
-                      <div className="italic text-[7px] sm:text-[7.5px] text-slate-600 leading-none mt-0.5 font-medium">
+                      <div className="italic text-[7px] sm:text-[7.5px] lg:text-[9px] text-slate-600 leading-none mt-0.5 font-medium">
                         Độc lập - Tự do - Hạnh phúc
                       </div>
                       <div className="w-12 h-[0.5px] bg-slate-400 mx-auto mt-0.5 mb-1" />
 
                       {/* Tiêu đề đỏ chữ đậm chuẩn GPLX thật */}
                       <div className="flex items-center justify-center gap-2">
-                        <span className="text-red-600 font-black text-xs sm:text-[13px] uppercase tracking-wider">
+                        <span className="text-red-600 font-black text-xs sm:text-[13px] lg:text-[14px] uppercase tracking-wider">
                           GIẤY PHÉP LÁI XE
                         </span>
-                        <span className="text-red-600/90 font-mono font-bold text-[8px] sm:text-[8.5px]">
+                        <span className="text-red-600/90 font-mono font-bold text-[8px] sm:text-[8.5px] lg:text-[10px]">
                           Số: 0102600899
                         </span>
                       </div>
@@ -625,7 +625,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                     {/* Card Body: Full-width 6-Category Selection Grid (Spacious & Clean) */}
                     <div className="w-full flex-1 flex flex-col justify-center py-1">
                       {/* 6 Category Selection Tiles (Grid 2 cols) */}
-                      <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
+                      <div className="grid grid-cols-2 gap-1.5 sm:gap-2 lg:gap-2.5">
                         {categoriesList.map((cat) => {
                           const isSelected = selectedCategory === cat.id;
                           return (
@@ -633,7 +633,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                               key={cat.id}
                               type="button"
                               onClick={() => handleCategorySelect(cat.id)}
-                              className={`px-2.5 py-1.5 sm:py-2 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
+                              className={`px-2.5 py-1.5 sm:py-2 lg:px-3 lg:py-2.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
                                 isSelected
                                   ? 'border-red-500 bg-white/95 shadow-xs ring-1 ring-red-400/50'
                                   : 'border-rose-200/90 bg-white/75 hover:border-rose-300 hover:bg-white'
@@ -641,18 +641,18 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                             >
                               <div className="min-w-0 pr-1">
                                 <div
-                                  className={`text-[11px] sm:text-xs font-bold leading-tight ${
+                                  className={`text-[11px] sm:text-xs lg:text-[13px] font-bold leading-tight ${
                                     isSelected ? 'text-red-950 font-black' : 'text-slate-800'
                                   }`}
                                 >
                                   {cat.label}
                                 </div>
-                                <div className="text-[8px] sm:text-[8.5px] text-slate-500 truncate mt-0.5">
+                                <div className="text-[8px] sm:text-[8.5px] lg:text-[10px] text-slate-500 truncate mt-0.5">
                                   {cat.desc}
                                 </div>
                               </div>
                               {isSelected && (
-                                <Check className="w-4 h-4 text-red-600 stroke-[3] shrink-0" />
+                                <Check className="w-4 h-4 lg:w-5 lg:h-5 text-red-600 stroke-[3] shrink-0" />
                               )}
                             </button>
                           );
@@ -664,26 +664,26 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
               </div>
             </div>
 
-            {/* Subtle Divider Line separating graphics from text */}
-            <div className="w-full border-t border-slate-200/80 my-1.5 sm:my-2 landscape-mobile:my-0.5 shrink-0" />
+            {/* Subtle Divider Line: Visible only on mobile portrait, hidden on desktop & landscape mobile */}
+            <div className="w-full border-t border-slate-200/80 my-1.5 sm:my-2 landscape-mobile:hidden lg:hidden shrink-0" />
 
-            {/* Lower Half: Step Counter, Title, Description, and Layered CTA Button */}
-            <div className="w-full pt-1 flex flex-col shrink-0">
+            {/* Right Column (Desktop/Landscape) / Lower Half (Mobile Portrait): Step Counter, Title, Description, and Layered CTA Button */}
+            <div className="w-full lg:w-1/2 landscape-mobile:w-[50%] pt-1 lg:pt-0 landscape-mobile:pt-0 flex flex-col justify-center shrink-0">
               {/* Step Counter Row: 01 / 03 & Modern Pagination Indicator */}
-              <div className="flex items-center justify-between mb-2.5 sm:mb-3 landscape-mobile:mb-1">
+              <div className="flex items-center justify-between mb-2.5 sm:mb-3.5 lg:mb-4 landscape-mobile:mb-1.5">
                 {/* Step Number (01 / 03) */}
                 <div className="flex items-baseline gap-1.5 font-mono select-none">
-                  <span className="text-2xl sm:text-3xl landscape-mobile:text-xl font-black text-slate-900 tracking-tight">
+                  <span className="text-2xl sm:text-3xl lg:text-4xl landscape-mobile:text-xl font-black text-slate-900 tracking-tight">
                     {currentSlide.step}
                   </span>
-                  <span className="text-xs sm:text-sm font-bold text-slate-400">
+                  <span className="text-xs sm:text-sm lg:text-base font-bold text-slate-400">
                     / 03
                   </span>
                 </div>
 
                 {/* 3 Sleek Interactive Pagination Pills */}
                 <div
-                  className="flex items-center gap-1.5 p-1 -m-1"
+                  className="flex items-center gap-1.5 lg:gap-2 p-1 -m-1"
                   role="tablist"
                   aria-label="Các bước giới thiệu"
                 >
@@ -697,10 +697,10 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                         aria-selected={isCurrent}
                         onClick={() => setCurrentStep(idx)}
                         aria-label={`Chuyển đến bước ${idx + 1}`}
-                        className={`h-2 rounded-full transition-all duration-300 ease-out cursor-pointer ${
+                        className={`h-2 lg:h-2.5 rounded-full transition-all duration-300 ease-out cursor-pointer ${
                           isCurrent
-                            ? 'w-8 sm:w-10 bg-linear-to-r from-amber-500 to-orange-500 shadow-xs shadow-amber-500/40'
-                            : 'w-2 sm:w-2.5 bg-slate-200 hover:bg-slate-300'
+                            ? 'w-8 sm:w-10 lg:w-12 bg-linear-to-r from-amber-500 to-orange-500 shadow-xs shadow-amber-500/40'
+                            : 'w-2 sm:w-2.5 lg:w-3 bg-slate-200 hover:bg-slate-300'
                         }`}
                       />
                     );
@@ -711,7 +711,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
               {/* Heading Title (Crisp Slate with Amber Accent) */}
               <h2
                 key={`title-${currentStep}`}
-                className="text-xl sm:text-2xl landscape-mobile:text-base font-black text-slate-900 tracking-tight uppercase mb-1.5 sm:mb-2 landscape-mobile:mb-1 leading-snug animate-in fade-in duration-200"
+                className="text-xl sm:text-2xl lg:text-3xl landscape-mobile:text-base font-black text-slate-900 tracking-tight uppercase mb-1.5 sm:mb-2.5 lg:mb-3.5 landscape-mobile:mb-1 leading-snug animate-in fade-in duration-200"
               >
                 <span>{currentSlide.titlePrefix} </span>
                 <span className="text-amber-500">{currentSlide.titleHighlight}</span>
@@ -720,7 +720,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
               {/* Description Body */}
               <p
                 key={`desc-${currentStep}`}
-                className="text-xs sm:text-sm landscape-mobile:text-[11px] text-slate-600 leading-relaxed font-normal mb-4 sm:mb-5 landscape-mobile:mb-2 line-clamp-3 sm:line-clamp-none animate-in fade-in duration-200"
+                className="text-xs sm:text-sm lg:text-base landscape-mobile:text-[11px] text-slate-600 leading-relaxed font-normal mb-4 sm:mb-6 lg:mb-7 landscape-mobile:mb-2 line-clamp-3 sm:line-clamp-none animate-in fade-in duration-200"
               >
                 {currentStep === 2
                   ? `Đang chọn ${activeCategoryConfig.label} (${activeCategoryConfig.desc}). Đề thi gồm ${activeCategoryConfig.totalQ} câu làm trong ${activeCategoryConfig.time} phút, đạt từ ${activeCategoryConfig.pass}/${activeCategoryConfig.totalQ} câu trở lên.`
@@ -739,10 +739,10 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 <button
                   type="button"
                   onClick={handleNextSlide}
-                  className="relative w-full py-3.5 sm:py-4 landscape-mobile:py-2.5 px-6 rounded-xl bg-linear-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 active:translate-x-1 active:translate-y-1 text-slate-950 font-black text-sm sm:text-base tracking-wider uppercase flex items-center justify-center gap-2 transition-transform duration-75 cursor-pointer shadow-md"
+                  className="relative w-full py-3.5 sm:py-4 lg:py-4.5 landscape-mobile:py-2.5 px-6 rounded-xl bg-linear-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 active:translate-x-1 active:translate-y-1 text-slate-950 font-black text-sm sm:text-base lg:text-lg tracking-wider uppercase flex items-center justify-center gap-2 transition-transform duration-75 cursor-pointer shadow-md"
                 >
                   <span>{currentSlide.buttonText}</span>
-                  <span className="text-lg leading-none font-black">›</span>
+                  <span className="text-lg lg:text-xl leading-none font-black">›</span>
                 </button>
               </div>
             </div>
