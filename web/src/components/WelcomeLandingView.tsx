@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { X, ArrowLeft, Award, Check, ShieldAlert } from 'lucide-react';
+import { X, Award, Check, ShieldAlert } from 'lucide-react';
 
 interface WelcomeLandingViewProps {
   onStartExperience: () => void;
@@ -247,27 +247,8 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
       {/* ========================================================================= */}
       {viewMode === 'walkthrough' && (
         <div className="w-full h-full flex flex-col justify-between animate-in fade-in zoom-in-95 duration-250">
-          {/* Top Bar: Brand with back arrow on the left, "BỎ QUA" on the right */}
-          <header className="w-full max-w-md landscape-mobile:max-w-2xl mx-auto px-5 py-3 sm:py-4 flex items-center justify-between shrink-0 z-20">
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() => setViewMode('landing')}
-                className="p-1 -ml-1 text-slate-400 hover:text-white transition-colors cursor-pointer"
-                title="Quay lại"
-              >
-                <ArrowLeft className="w-4 h-4" />
-              </button>
-              <img
-                src="/logo.jpg"
-                alt="Logo"
-                className="w-6 h-6 rounded-md object-contain border border-slate-700/60"
-              />
-              <span className="text-xs font-bold tracking-tight text-slate-300">
-                OnTap <span className="text-amber-500">GPLX</span>
-              </span>
-            </div>
-
+          {/* Top Bar: "BỎ QUA" on the right only */}
+          <header className="w-full max-w-md landscape-mobile:max-w-2xl mx-auto px-5 py-3 sm:py-4 flex items-center justify-end shrink-0 z-20">
             <button
               type="button"
               onClick={handleSkip}
@@ -483,34 +464,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 </button>
               </div>
 
-              {/* Secondary Links & Legal Footer */}
-              <div className="mt-3.5 landscape-mobile:mt-1.5 flex items-center justify-between text-[10px] sm:text-[11px] text-slate-400 px-1">
-                <button
-                  type="button"
-                  onClick={() => setShowInstallModal(true)}
-                  className="hover:text-amber-400 transition-colors cursor-pointer underline underline-offset-2"
-                >
-                  Cài đặt ứng dụng (PWA)
-                </button>
 
-                <div className="flex items-center gap-1.5">
-                  <button
-                    type="button"
-                    onClick={() => setPolicyModal('terms')}
-                    className="hover:text-white transition-colors cursor-pointer"
-                  >
-                    Điều khoản
-                  </button>
-                  <span>•</span>
-                  <button
-                    type="button"
-                    onClick={() => setPolicyModal('privacy')}
-                    className="hover:text-white transition-colors cursor-pointer"
-                  >
-                    Quyền riêng tư
-                  </button>
-                </div>
-              </div>
             </div>
           </div>
         </div>
