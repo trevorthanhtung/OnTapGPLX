@@ -682,19 +682,9 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                           className="w-full bg-rose-100/50 hover:bg-rose-100/80 active:scale-[0.99] border border-rose-300/80 rounded-xl p-2 sm:p-2.5 md:p-3 shadow-2xs hover:shadow-xs transition-all cursor-pointer flex items-center justify-between group select-none"
                           title="Chạm để chuyển hạng GPLX"
                         >
-                          <div className="text-left min-w-0 pr-1.5 flex-1">
-                            <div className="flex items-center gap-1.5 sm:gap-2">
-                              <span className="text-xs sm:text-sm md:text-base font-black text-red-700 tracking-tight">
-                                {activeCategoryConfig.name}
-                              </span>
-                              <span className="px-1.5 py-0.5 rounded-md bg-rose-200/60 text-red-800 font-mono font-bold text-[8px] sm:text-[9px] md:text-[10px] shrink-0">
-                                {activeCategoryConfig.totalQuestions} câu • {activeCategoryConfig.timeMinutes}p
-                              </span>
-                            </div>
-                            <div className="text-[8.5px] sm:text-[9.5px] md:text-[11px] text-slate-600 truncate mt-0.5 font-normal">
-                              {activeCategoryConfig.description}
-                            </div>
-                          </div>
+                          <span className="text-xs sm:text-sm md:text-base font-black text-red-700 tracking-tight pl-0.5">
+                            {activeCategoryConfig.name}
+                          </span>
 
                           {/* Left & Right Switch Controls */}
                           <div className="flex items-center gap-1 shrink-0 text-red-700 ml-1">
@@ -721,16 +711,6 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                               <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                             </button>
                           </div>
-                        </div>
-                      </div>
-
-                      {/* Official Exam Specs Footer strip */}
-                      <div className="mt-2 pt-1.5 border-t border-rose-200/60 flex items-center justify-between text-[8px] sm:text-[8.5px] md:text-[10px] text-slate-600">
-                        <div>
-                          Tiêu chuẩn đạt: <strong className="text-emerald-700 font-bold">{activeCategoryConfig.passScore}/{activeCategoryConfig.totalQuestions} câu</strong>
-                        </div>
-                        <div className="text-slate-500">
-                          Tối đa sai: <strong className="text-slate-700 font-bold">{activeCategoryConfig.allowedWrong} câu</strong> (0 câu liệt)
                         </div>
                       </div>
                     </div>
