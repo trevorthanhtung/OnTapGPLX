@@ -570,17 +570,10 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                       </div>
                     </div>
 
-                    {/* Card Body: Full-width 6-Category Selection Grid */}
-                    <div className="w-full my-auto py-0.5">
-                      <div className="flex items-center justify-between text-[8px] sm:text-[8.5px] font-bold text-slate-700 uppercase tracking-tight mb-1 px-0.5">
-                        <span>Hạng giấy phép dự thi:</span>
-                        <span className="text-[7.5px] font-mono font-bold text-red-700 bg-red-100/80 px-1.5 py-0.2 rounded border border-red-200">
-                          Quy chế 2026
-                        </span>
-                      </div>
-
+                    {/* Card Body: Full-width 6-Category Selection Grid (Spacious & Clean) */}
+                    <div className="w-full my-auto py-1">
                       {/* 6 Category Selection Tiles (Grid 2 cols) */}
-                      <div className="grid grid-cols-2 gap-1 sm:gap-1.5">
+                      <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
                         {categoriesList.map((cat) => {
                           const isSelected = selectedCategory === cat.id;
                           return (
@@ -588,7 +581,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                               key={cat.id}
                               type="button"
                               onClick={() => handleCategorySelect(cat.id)}
-                              className={`p-1.5 sm:p-2 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
+                              className={`p-2 sm:p-2.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
                                 isSelected
                                   ? 'border-red-500 bg-white/95 shadow-xs ring-1 ring-red-400/50'
                                   : 'border-rose-200/90 bg-white/75 hover:border-rose-300 hover:bg-white'
@@ -596,18 +589,18 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                             >
                               <div className="min-w-0 pr-1">
                                 <div
-                                  className={`text-[10px] sm:text-[11px] font-bold leading-tight ${
+                                  className={`text-[11px] sm:text-xs font-bold leading-tight ${
                                     isSelected ? 'text-red-950 font-black' : 'text-slate-800'
                                   }`}
                                 >
                                   {cat.label}
                                 </div>
-                                <div className="text-[7.5px] sm:text-[8px] text-slate-500 truncate mt-0.5">
+                                <div className="text-[8px] sm:text-[8.5px] text-slate-500 truncate mt-0.5">
                                   {cat.desc}
                                 </div>
                               </div>
                               {isSelected && (
-                                <div className="w-3.5 h-3.5 rounded-full bg-red-600 text-white flex items-center justify-center shrink-0 shadow-2xs">
+                                <div className="w-4 h-4 rounded-full bg-red-600 text-white flex items-center justify-center shrink-0 shadow-2xs">
                                   <Check className="w-2.5 h-2.5 stroke-[3]" />
                                 </div>
                               )}
@@ -615,16 +608,6 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                           );
                         })}
                       </div>
-                    </div>
-
-                    {/* Card Footer: Exam Specs without emoji */}
-                    <div className="pt-1.5 border-t border-rose-200/90 flex items-center justify-between text-[8px] sm:text-[8.5px] text-slate-600 font-mono">
-                      <span className="text-red-950 font-bold">
-                        Đề thi: {activeCategoryConfig.totalQ} câu • {activeCategoryConfig.time} phút
-                      </span>
-                      <span className="text-emerald-700 font-bold">
-                        Đạt: {activeCategoryConfig.pass}/{activeCategoryConfig.totalQ} câu
-                      </span>
                     </div>
                   </div>
                 )}
