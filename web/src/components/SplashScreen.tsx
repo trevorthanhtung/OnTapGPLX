@@ -39,39 +39,16 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
     return () => clearInterval(timer);
   }, [onFinish]);
 
-  // Dynamic progress-based statuses & pro driving tips
-  const getStatusInfo = (pct: number) => {
-    if (pct < 30) {
-      return {
-        status: 'Đang tải ngân hàng 600 câu hỏi lý thuyết...',
-        tip: '💡 Mẹo: Câu hỏi có cụm từ "Bị nghiêm cấm" luôn luôn là đáp án đúng.',
-      };
-    }
-    if (pct < 65) {
-      return {
-        status: 'Đồng bộ 120 tình huống mô phỏng & biển báo...',
-        tip: '💡 Mẹo: "Giảm tốc độ", "Về số thấp", "Đi về bên phải" luôn là lựa chọn an toàn.',
-      };
-    }
-    if (pct < 90) {
-      return {
-        status: 'Tối ưu dữ liệu học ngoại tuyến trên thiết bị...',
-        tip: '💡 Mẹo: Chú ý 60 câu điểm liệt — chỉ cần sai 1 câu là truất quyền sát hạch!',
-      };
-    }
-    if (pct < 100) {
-      return {
-        status: 'Sẵn sàng xuất phát! Vững vàng tay lái...',
-        tip: '💡 Mẹo: Tình huống mô phỏng bấm phím Space đúng thời điểm vàng.',
-      };
-    }
-    return {
-      status: 'Khởi hành thành công!',
-      tip: 'Chúc bạn ôn thi tự tin và đạt kết quả tối đa 100%!',
-    };
+  // Dynamic progress-based statuses
+  const getStatusText = (pct: number) => {
+    if (pct < 30) return 'Đang tải ngân hàng 600 câu hỏi lý thuyết...';
+    if (pct < 65) return 'Đồng bộ 120 tình huống mô phỏng & biển báo...';
+    if (pct < 90) return 'Tối ưu dữ liệu học ngoại tuyến trên thiết bị...';
+    if (pct < 100) return 'Sẵn sàng xuất phát! Vững vàng tay lái...';
+    return 'Khởi hành thành công!';
   };
 
-  const statusInfo = getStatusInfo(progress);
+  const statusText = getStatusText(progress);
 
   return (
     <div
@@ -250,15 +227,8 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
 
         {/* Dynamic Status & Progress Percentage */}
         <div className="flex items-center justify-between w-full mt-3 text-xs font-mono font-medium text-slate-500">
-          <span className="truncate pr-2 font-medium text-slate-600">{statusInfo.status}</span>
+          <span className="truncate pr-2 font-medium text-slate-600">{statusText}</span>
           <span className="font-bold text-amber-600 shrink-0">{progress}%</span>
-        </div>
-
-        {/* Dynamic Driving Pro-Tip Box */}
-        <div className="mt-2.5 w-full py-1.5 px-3 rounded-xl bg-amber-50/80 border border-amber-200/60 text-center transition-all duration-300">
-          <p className="text-[11px] sm:text-xs text-amber-800 font-medium leading-relaxed truncate sm:whitespace-normal">
-            {statusInfo.tip}
-          </p>
         </div>
       </div>
     </div>
