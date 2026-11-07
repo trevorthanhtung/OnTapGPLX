@@ -1030,11 +1030,8 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
             <div className="flex items-center justify-between pb-3 landscape-mobile:pb-2 mb-3 landscape-mobile:mb-2 border-b border-slate-100 shrink-0">
               <div>
                 <h4 className="font-bold text-slate-900 text-base landscape-mobile:text-sm">Danh sách câu hỏi</h4>
-                <p className="text-xs landscape-mobile:text-[11px] text-slate-500 font-medium flex items-center gap-2">
-                  <span>Đã trả lời {Object.keys(userAnswers).length} / {activeQuestions.length} câu</span>
-                  {bookmarks.length > 0 && (
-                    <span className="text-amber-600 font-semibold">• {bookmarks.length} đã lưu</span>
-                  )}
+                <p className="text-xs landscape-mobile:text-[11px] text-slate-500 font-medium">
+                  Đã trả lời {Object.keys(userAnswers).length} / {activeQuestions.length} câu
                 </p>
               </div>
               <button
