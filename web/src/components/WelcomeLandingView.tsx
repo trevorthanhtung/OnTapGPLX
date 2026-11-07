@@ -20,8 +20,11 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [policyModal, setPolicyModal] = useState<'terms' | 'privacy' | 'cookie' | null>(null);
 
+  const isDraggingRef = useRef(false);
   const touchStartXRef = useRef<number>(0);
   const touchEndXRef = useRef<number>(0);
+  const touchStartYRef = useRef<number>(0);
+  const touchEndYRef = useRef<number>(0);
 
   const [selectedCategory, setSelectedCategory] = useState<LicenseCategory>(() =>
     StorageService.getCategory()
@@ -136,23 +139,64 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
     onStartExperience();
   };
 
-  // Touch swipe support (left/right swipe to switch slides in walkthrough)
+  // Intentional Swipe & Drag support (kéo/vuốt để chuyển slide, chạm nhẹ không bị nhảy)
+  const handlePointerDown = (clientX: number, clientY: number) => {
+    isDraggingRef.current = true;
+    touchStartXRef.current = clientX;
+    touchEndXRef.current = clientX;
+    touchStartYRef.current = clientY;
+    touchEndYRef.current = clientY;
+  };
+
+  const handlePointerMove = (clientX: number, clientY: number) => {
+    if (!isDraggingRef.current) return;
+    touchEndXRef.current = clientX;
+    touchEndYRef.current = clientY;
+  };
+
+  const handlePointerUp = () => {
+    if (!isDraggingRef.current) return;
+    isDraggingRef.current = false;
+    if (viewMode !== 'walkthrough') return;
+
+    const deltaX = touchStartXRef.current - touchEndXRef.current;
+    const deltaY = touchStartYRef.current - touchEndYRef.current;
+
+    // Chỉ chuyển slide khi kéo/vuốt chủ đích: khoảng cách vuốt > 50px và theo phương ngang
+    if (Math.abs(deltaX) > 50 && Math.abs(deltaX) > Math.abs(deltaY) * 1.5) {
+      if (deltaX > 0 && currentStep < slides.length - 1) {
+        // Vuốt sang trái -> xem slide tiếp theo
+        setCurrentStep(currentStep + 1);
+      } else if (deltaX < 0 && currentStep > 0) {
+        // Vuốt sang phải -> quay lại slide trước
+        setCurrentStep(currentStep - 1);
+      }
+    }
+  };
+
   const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartXRef.current = e.targetTouches[0].clientX;
+    handlePointerDown(e.targetTouches[0].clientX, e.targetTouches[0].clientY);
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    touchEndXRef.current = e.targetTouches[0].clientX;
+    handlePointerMove(e.targetTouches[0].clientX, e.targetTouches[0].clientY);
   };
 
   const handleTouchEnd = () => {
-    if (viewMode !== 'walkthrough') return;
-    const deltaX = touchStartXRef.current - touchEndXRef.current;
-    if (deltaX > 45 && currentStep < slides.length - 1) {
-      setCurrentStep(currentStep + 1);
-    } else if (deltaX < -45 && currentStep > 0) {
-      setCurrentStep(currentStep - 1);
-    }
+    handlePointerUp();
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (e.button !== 0) return;
+    handlePointerDown(e.clientX, e.clientY);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    handlePointerMove(e.clientX, e.clientY);
+  };
+
+  const handleMouseUp = () => {
+    handlePointerUp();
   };
 
   const currentSlide = slides[currentStep];
@@ -163,6 +207,9 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
     >
       {/* ========================================================================= */}
       {/* 1. MÀN MINIMALISM TRẢI NGHIỆM NGAY & HƯỚNG DẪN CÀI (MÀN ĐẦU TIÊN)         */}
