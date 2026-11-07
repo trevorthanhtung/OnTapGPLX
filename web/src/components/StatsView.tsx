@@ -335,18 +335,10 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onOp
       {/* Confirmation Modal to return to Landing Page */}
       {showConfirmLanding && (
         <div
-          className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 touch-none overscroll-contain select-none animate-in fade-in duration-150 cursor-pointer"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) setShowConfirmLanding(false);
-          }}
-          onPointerDown={(e) => {
-            if (e.target === e.currentTarget) setShowConfirmLanding(false);
-          }}
+          className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 touch-none overscroll-contain select-none animate-in fade-in duration-150"
         >
           <div
-            className="bg-white rounded-2xl max-w-sm w-full p-6 sm:p-7 shadow-xl border border-slate-200 text-center animate-in zoom-in-95 duration-150 cursor-default"
-            onClick={(e) => e.stopPropagation()}
-            onPointerDown={(e) => e.stopPropagation()}
+            className="bg-white rounded-2xl max-w-sm w-full p-6 sm:p-7 shadow-xl border border-slate-200 text-center animate-in zoom-in-95 duration-150"
           >
             <h4 className="text-base sm:text-lg font-bold text-slate-900 mb-2">
               Quay lại trang giới thiệu?

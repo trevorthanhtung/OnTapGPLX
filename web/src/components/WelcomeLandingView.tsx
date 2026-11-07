@@ -173,18 +173,10 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
       {/* Policy Modal (Terms / Privacy / Cookie) */}
       {policyModal && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 landscape-mobile:p-2 pt-[max(0.75rem,env(safe-area-inset-top))] pb-[max(0.75rem,env(safe-area-inset-bottom))] bg-slate-900/40 backdrop-blur-xs overscroll-contain animate-in fade-in duration-150 cursor-pointer"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) setPolicyModal(null);
-          }}
-          onPointerDown={(e) => {
-            if (e.target === e.currentTarget) setPolicyModal(null);
-          }}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 landscape-mobile:p-2 pt-[max(0.75rem,env(safe-area-inset-top))] pb-[max(0.75rem,env(safe-area-inset-bottom))] bg-slate-900/40 backdrop-blur-xs overscroll-contain animate-in fade-in duration-150"
         >
           <div
-            className="bg-white text-slate-900 w-full max-w-md landscape-mobile:max-w-xl rounded-2xl p-5 sm:p-6 landscape-mobile:p-3.5 shadow-2xl border border-slate-200 flex flex-col max-h-[85vh] landscape-mobile:max-h-[92vh] animate-in zoom-in-95 duration-150 touch-auto cursor-default"
-            onClick={(e) => e.stopPropagation()}
-            onPointerDown={(e) => e.stopPropagation()}
+            className="bg-white text-slate-900 w-full max-w-md landscape-mobile:max-w-xl rounded-2xl p-5 sm:p-6 landscape-mobile:p-3.5 shadow-2xl border border-slate-200 flex flex-col max-h-[85vh] landscape-mobile:max-h-[92vh] animate-in zoom-in-95 duration-150 touch-auto"
           >
             {/* Modal Header */}
             <div className="flex items-center justify-between pb-3.5 landscape-mobile:pb-2 border-b border-slate-100 mb-4 landscape-mobile:mb-2">
@@ -307,18 +299,10 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
       {/* Install Modal */}
       {showInstallModal && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 landscape-mobile:p-2 pt-[max(0.75rem,env(safe-area-inset-top))] pb-[max(0.75rem,env(safe-area-inset-bottom))] bg-slate-900/40 backdrop-blur-xs overscroll-contain animate-in fade-in duration-150 cursor-pointer"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) setShowInstallModal(false);
-          }}
-          onPointerDown={(e) => {
-            if (e.target === e.currentTarget) setShowInstallModal(false);
-          }}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 landscape-mobile:p-2 pt-[max(0.75rem,env(safe-area-inset-top))] pb-[max(0.75rem,env(safe-area-inset-bottom))] bg-slate-900/40 backdrop-blur-xs overscroll-contain animate-in fade-in duration-150"
         >
           <div
-            className="bg-white w-full max-w-md landscape-mobile:max-w-xl rounded-2xl shadow-xl border border-slate-200 overflow-hidden flex flex-col max-h-[85vh] landscape-mobile:max-h-[92vh] animate-in zoom-in-95 duration-150 touch-auto cursor-default"
-            onClick={(e) => e.stopPropagation()}
-            onPointerDown={(e) => e.stopPropagation()}
+            className="bg-white w-full max-w-md landscape-mobile:max-w-xl rounded-2xl shadow-xl border border-slate-200 overflow-hidden flex flex-col max-h-[85vh] landscape-mobile:max-h-[92vh] animate-in zoom-in-95 duration-150 touch-auto"
           >
             {/* Modal Header */}
             <div className="px-5 py-3.5 landscape-mobile:py-2 border-b border-slate-100 flex items-center justify-between">

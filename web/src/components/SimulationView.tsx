@@ -463,18 +463,11 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
 
     return (
       <div
-        className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4 animate-in fade-in duration-150 cursor-pointer"
-        onClick={(e) => {
-          if (e.target === e.currentTarget) setShowQuestionSheet(false);
-        }}
-        onPointerDown={(e) => {
-          if (e.target === e.currentTarget) setShowQuestionSheet(false);
-        }}
+        className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4 animate-in fade-in duration-150"
       >
         <div
-          className="bg-white rounded-t-3xl sm:rounded-2xl max-w-md landscape-mobile:max-w-xl w-full max-h-[82vh] landscape-mobile:max-h-[92vh] flex flex-col p-5 pb-[max(1.5rem,env(safe-area-inset-bottom,0px))] landscape-mobile:p-3 shadow-2xl border border-slate-200 animate-in slide-in-from-bottom duration-200 overscroll-contain cursor-default"
+          className="bg-white rounded-t-3xl sm:rounded-2xl max-w-md landscape-mobile:max-w-xl w-full max-h-[82vh] landscape-mobile:max-h-[92vh] flex flex-col p-5 pb-[max(1.5rem,env(safe-area-inset-bottom,0px))] landscape-mobile:p-3 shadow-2xl border border-slate-200 animate-in slide-in-from-bottom duration-200 overscroll-contain"
           onClick={(e) => e.stopPropagation()}
-          onPointerDown={(e) => e.stopPropagation()}
         >
           {/* Header */}
           <div className="flex items-center justify-between pb-3 landscape-mobile:pb-2 mb-3 landscape-mobile:mb-2 border-b border-slate-100 shrink-0">
@@ -1068,19 +1061,10 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
 
         {/* Submit Confirmation Dialog for Exam Mode */}
         {showSubmitConfirm && (
-          <div
-            className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in duration-150 cursor-pointer"
-            onClick={(e) => {
-              if (e.target === e.currentTarget) setShowSubmitConfirm(false);
-            }}
-            onPointerDown={(e) => {
-              if (e.target === e.currentTarget) setShowSubmitConfirm(false);
-            }}
-          >
+          <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in duration-150">
             <div
-              className="bg-white rounded-2xl max-w-sm w-full p-6 shadow-xl border border-slate-200 text-center animate-in zoom-in-95 duration-150 cursor-default"
+              className="bg-white rounded-2xl max-w-sm w-full p-6 shadow-xl border border-slate-200 text-center animate-in zoom-in-95 duration-150"
               onClick={(e) => e.stopPropagation()}
-              onPointerDown={(e) => e.stopPropagation()}
             >
               <h4 className="text-lg font-bold text-slate-900 mb-2">
                 Bạn có chắc chắn muốn nộp bài?
@@ -1116,19 +1100,10 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
 
         {/* Exit Confirmation Dialog for Exam Mode */}
         {showExitConfirm && (
-          <div
-            className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in duration-150 cursor-pointer"
-            onClick={(e) => {
-              if (e.target === e.currentTarget) setShowExitConfirm(false);
-            }}
-            onPointerDown={(e) => {
-              if (e.target === e.currentTarget) setShowExitConfirm(false);
-            }}
-          >
+          <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in duration-150">
             <div
-              className="bg-white rounded-2xl max-w-sm w-full p-6 shadow-xl border border-slate-200 text-center animate-in zoom-in-95 duration-150 cursor-default"
+              className="bg-white rounded-2xl max-w-sm w-full p-6 shadow-xl border border-slate-200 text-center animate-in zoom-in-95 duration-150"
               onClick={(e) => e.stopPropagation()}
-              onPointerDown={(e) => e.stopPropagation()}
             >
               <h4 className="text-lg font-bold text-slate-900 mb-2">Thoát bài thi hiện tại?</h4>
               <p className="text-xs text-slate-500 mb-6 leading-relaxed">
