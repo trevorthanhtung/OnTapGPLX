@@ -1413,11 +1413,11 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
       {/* Content Right in Landscape Mobile & Desktop / Below Video in Portrait */}
       <div
         ref={practiceQuestionsRef}
-        className="space-y-4 mb-8 lg:mb-0 landscape-mobile:mb-0 lg:h-full landscape-mobile:h-full lg:overflow-y-auto landscape-mobile:overflow-y-auto pr-0 lg:pr-2 landscape-mobile:pr-1.5 lg:col-span-6 xl:col-span-6 2xl:col-span-6"
+        className="mb-8 lg:mb-0 landscape-mobile:mb-0 lg:h-full landscape-mobile:h-full lg:overflow-y-auto landscape-mobile:overflow-y-auto pr-0 lg:pr-2 landscape-mobile:pr-1.5 lg:col-span-6 xl:col-span-6 2xl:col-span-6 flex flex-col"
       >
         {/* Either 4-Step Analysis Card OR 4-Question Practice Quiz */}
         {!showPracticeQuiz ? (
-          <div>
+          <div className="w-full my-auto py-1 sm:py-2">
             {/* Unified Single Card for 4 Analysis Steps */}
             <div className="bg-white rounded-2xl border border-slate-200 divide-y divide-slate-100 shadow-2xs overflow-hidden animate-in fade-in duration-200">
               {/* Part 1: Tên tình huống */}
