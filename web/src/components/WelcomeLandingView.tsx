@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { X, Award } from 'lucide-react';
+import { X, Check } from 'lucide-react';
+import { StorageService } from '../services/storage';
+import type { LicenseCategory } from '../types';
 
 interface WelcomeLandingViewProps {
   onStartExperience: () => void;
@@ -20,6 +22,34 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
 
   const touchStartXRef = useRef<number>(0);
   const touchEndXRef = useRef<number>(0);
+
+  const [selectedCategory, setSelectedCategory] = useState<LicenseCategory>(() =>
+    StorageService.getCategory()
+  );
+
+  const categoriesList: {
+    id: LicenseCategory;
+    label: string;
+    desc: string;
+    totalQ: number;
+    time: number;
+    pass: number;
+  }[] = [
+    { id: 'B', label: 'Hạng B', desc: 'Ô tô con & tải ≤ 3.5T', totalQ: 30, time: 20, pass: 27 },
+    { id: 'B1', label: 'Hạng B1', desc: 'Ô tô số tự động', totalQ: 30, time: 20, pass: 27 },
+    { id: 'A1', label: 'Hạng A1', desc: 'Xe máy ≤ 125cc', totalQ: 25, time: 19, pass: 23 },
+    { id: 'A', label: 'Hạng A', desc: 'Mô tô PKL > 125cc', totalQ: 25, time: 19, pass: 23 },
+    { id: 'C', label: 'Hạng C', desc: 'Xe tải nặng > 7.5T', totalQ: 40, time: 24, pass: 36 },
+    { id: 'C1', label: 'Hạng C1', desc: 'Xe tải 3.5T - 7.5T', totalQ: 35, time: 22, pass: 32 },
+  ];
+
+  const handleCategorySelect = (cat: LicenseCategory) => {
+    setSelectedCategory(cat);
+    StorageService.setCategory(cat);
+  };
+
+  const activeCategoryConfig =
+    categoriesList.find((c) => c.id === selectedCategory) || categoriesList[0];
 
   useEffect(() => {
     const handleBeforeInstallPrompt = (e: any) => {
@@ -82,9 +112,9 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
     },
     {
       step: '03',
-      titlePrefix: 'THI THỬ',
-      titleHighlight: 'CHUẨN SÁT HẠCH',
-      desc: 'Cấu trúc đề thi sát với phòng thi thật, tự động bấm giờ và chấm điểm tức thì. Thống kê câu hay làm sai để ôn luyện cấp tốc đến khi tự tin đỗ 100%.',
+      titlePrefix: 'CHỌN HẠNG BẰNG',
+      titleHighlight: 'SÁT HẠCH',
+      desc: 'Chọn loại giấy phép lái xe bạn đang học để ứng dụng tự động thiết lập bộ đề thi, ngân hàng câu hỏi lý thuyết và thời gian làm bài chuẩn quy chế 2026.',
       buttonText: 'BẮT ĐẦU NGAY',
     },
   ];
@@ -274,7 +304,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 className={
                   currentStep === 0
                     ? 'relative z-10 w-48 sm:w-52 h-[272px] sm:h-[304px] landscape-mobile:w-36 landscape-mobile:h-[195px] bg-[#fffdfa] rounded-r-lg rounded-l-xs border-r border-t border-b border-slate-300/80 border-l-[7px] border-l-slate-300 shadow-2xl shadow-slate-400/40 p-2 sm:p-2.5 landscape-mobile:p-1.5 flex flex-col justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
-                    : 'relative z-10 w-64 h-56 sm:w-72 sm:h-60 landscape-mobile:w-48 landscape-mobile:h-36 rounded-2xl border border-slate-200/90 bg-white p-3.5 landscape-mobile:p-2.5 shadow-xl shadow-slate-200/60 flex items-center justify-center animate-in zoom-in-95 fade-in duration-250'
+                    : 'relative z-10 w-72 sm:w-80 h-[276px] sm:h-[308px] landscape-mobile:w-56 landscape-mobile:h-[200px] rounded-2xl border border-slate-200/90 bg-white p-3 landscape-mobile:p-2 shadow-xl shadow-slate-200/60 flex items-center justify-center animate-in zoom-in-95 fade-in duration-250'
                 }
               >
                 {/* ------------------------------------------------------------- */}
@@ -584,35 +614,68 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 )}
 
                 {/* ------------------------------------------------------------- */}
-                {/* Slide 03 Graphic: Chứng nhận Kết quả Sát hạch Thi thử          */}
+                {/* Slide 03 Graphic: Chọn loại bằng đang học (Interactive Picker)   */}
                 {/* ------------------------------------------------------------- */}
                 {currentStep === 2 && (
-                  <div className="w-full h-full rounded-xl bg-slate-50 border border-emerald-200 p-3 landscape-mobile:p-2 flex flex-col justify-between shadow-2xs">
-                    {/* Card Header */}
-                    <div className="flex items-center justify-between pb-1.5 border-b border-slate-200">
-                      <span className="text-[10px] font-bold text-slate-700">KẾT QUẢ THI THỬ</span>
-                      <span className="text-[9px] font-mono text-amber-700 font-bold bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200">
-                        HẠNG B
+                  <div className="w-full h-full rounded-xl bg-slate-50/50 border border-slate-200/90 p-2.5 sm:p-3 landscape-mobile:p-1.5 flex flex-col justify-between">
+                    {/* Header: Title & Quy chế badge */}
+                    <div className="flex items-center justify-between pb-1.5 border-b border-slate-200/80">
+                      <div className="flex items-center gap-1.5">
+                        <div className="w-2 h-2 rounded-full bg-amber-500" />
+                        <span className="text-[10.5px] sm:text-xs font-bold text-slate-800 uppercase tracking-tight">
+                          Hạng bằng bạn đang học:
+                        </span>
+                      </div>
+                      <span className="px-1.5 py-0.5 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-[8.5px] font-bold">
+                        Quy chế 2026
                       </span>
                     </div>
 
-                    {/* Center Score & Pass Badge */}
-                    <div className="my-auto flex flex-col items-center justify-center text-center py-1">
-                      <div className="w-10 h-10 rounded-full bg-emerald-100 border border-emerald-300 flex items-center justify-center text-emerald-600 mb-1 shadow-sm">
-                        <Award className="w-5 h-5" />
-                      </div>
-                      <div className="font-black text-sm text-emerald-700 tracking-wider">
-                        ĐẠT SÁT HẠCH
-                      </div>
-                      <div className="text-lg font-black font-mono text-slate-900 mt-0.5 tracking-tight">
-                        35 <span className="text-slate-400 text-xs font-normal">/ 35 CÂU</span>
-                      </div>
+                    {/* 6 Category Tiles */}
+                    <div className="grid grid-cols-2 gap-1.5 sm:gap-2 my-auto py-1">
+                      {categoriesList.map((cat) => {
+                        const isSelected = selectedCategory === cat.id;
+                        return (
+                          <button
+                            key={cat.id}
+                            type="button"
+                            onClick={() => handleCategorySelect(cat.id)}
+                            className={`p-2 sm:p-2.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
+                              isSelected
+                                ? 'border-amber-500 bg-amber-50/90 shadow-xs ring-1 ring-amber-500/50'
+                                : 'border-slate-200/90 bg-white hover:border-slate-300 hover:bg-slate-50/80'
+                            }`}
+                          >
+                            <div className="min-w-0 pr-1">
+                              <div
+                                className={`text-[11px] sm:text-xs font-bold leading-tight ${
+                                  isSelected ? 'text-amber-950 font-black' : 'text-slate-800'
+                                }`}
+                              >
+                                {cat.label}
+                              </div>
+                              <div className="text-[8.5px] sm:text-[9.5px] text-slate-500 truncate mt-0.5">
+                                {cat.desc}
+                              </div>
+                            </div>
+                            {isSelected && (
+                              <div className="w-4 h-4 rounded-full bg-amber-500 text-white flex items-center justify-center shrink-0 shadow-2xs">
+                                <Check className="w-2.5 h-2.5 stroke-[3]" />
+                              </div>
+                            )}
+                          </button>
+                        );
+                      })}
                     </div>
 
-                    {/* Sub Metrics */}
-                    <div className="pt-1.5 border-t border-slate-200 flex items-center justify-between text-[9px] font-mono text-slate-500">
-                      <span>⏱️ 16:24 / 22:00</span>
-                      <span className="text-emerald-600 font-bold">✓ 0 câu liệt sai</span>
+                    {/* Footer Exam info */}
+                    <div className="pt-1.5 border-t border-slate-200/80 flex items-center justify-between text-[9px] sm:text-[10px] text-slate-600 font-mono">
+                      <span className="text-amber-700 font-bold">
+                        🎯 Đề thi: {activeCategoryConfig.totalQ} câu • {activeCategoryConfig.time} phút
+                      </span>
+                      <span className="text-emerald-700 font-bold">
+                        Đạt: {activeCategoryConfig.pass}/{activeCategoryConfig.totalQ}
+                      </span>
                     </div>
                   </div>
                 )}
@@ -653,7 +716,9 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 key={`desc-${currentStep}`}
                 className="text-xs sm:text-sm landscape-mobile:text-[11px] text-slate-600 leading-relaxed font-normal mb-5 sm:mb-6 landscape-mobile:mb-2 line-clamp-3 sm:line-clamp-none animate-in fade-in duration-200"
               >
-                {currentSlide.desc}
+                {currentStep === 2
+                  ? `Đang chọn ${activeCategoryConfig.label} (${activeCategoryConfig.desc}). Đề thi gồm ${activeCategoryConfig.totalQ} câu làm trong ${activeCategoryConfig.time} phút, đạt từ ${activeCategoryConfig.pass}/${activeCategoryConfig.totalQ} câu trở lên.`
+                  : currentSlide.desc}
               </p>
 
               {/* 3D Layered Offset CTA Button */}
