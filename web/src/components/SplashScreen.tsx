@@ -8,7 +8,7 @@ interface SplashScreenProps {
 const ViosSedan: React.FC = () => (
   <svg
     viewBox="0 0 100 35"
-    className="w-14 h-5 select-none pointer-events-none overflow-visible"
+    className="w-12 h-[18px] select-none pointer-events-none overflow-visible"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -227,14 +227,13 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
         <div className="relative w-full pt-6">
           {/* Progress Bar Container with standalone Vios riding directly on it */}
           <div className="relative w-full">
-            {/* Standalone Toyota Vios Sedan positioned directly on top of the progress track */}
+            {/* Standalone Toyota Vios Sedan positioned directly on top of the orange progress track */}
             <div
-              className={`absolute -top-[18px] z-10 pointer-events-none transition-all duration-75 ease-out ${
+              className={`absolute -top-[16px] z-10 pointer-events-none transition-all duration-75 ease-out ${
                 isLaunching ? 'animate-[carTurboLaunch_0.45s_cubic-bezier(0.7,0,0.84,0)_forwards]' : ''
               }`}
               style={{
-                left: `${progress}%`,
-                transform: isLaunching ? undefined : 'translateX(-65%)',
+                left: `clamp(0px, calc(${progress}% - 46px), calc(100% - 48px))`,
               }}
             >
               <div
