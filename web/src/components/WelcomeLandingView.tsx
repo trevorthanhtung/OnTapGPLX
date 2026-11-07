@@ -321,34 +321,21 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                     {/* Inner border box */}
                     <div className="w-full h-full border border-indigo-950/70 p-1.5 sm:p-2 landscape-mobile:p-1 flex flex-col justify-between items-center text-center">
                       {/* Top Titles */}
-                      <div className="space-y-0.2">
-                        <div className="font-serif font-black tracking-widest text-[10.5px] sm:text-[11.5px] landscape-mobile:text-[8px] text-slate-900 uppercase leading-none">
+                      <div className="space-y-0.5 pt-1">
+                        <div className="font-black tracking-widest text-[11px] sm:text-[12px] landscape-mobile:text-[8px] text-slate-900 uppercase leading-none">
                           PHƯƠNG PHÁP
                         </div>
-                        <div className="font-serif font-bold tracking-wider text-[8px] sm:text-[9px] landscape-mobile:text-[6.5px] text-slate-800 uppercase">
+                        <div className="font-bold tracking-wider text-[8.5px] sm:text-[9.5px] landscape-mobile:text-[6.5px] text-slate-700 uppercase">
                           HỌC NHANH FULL
                         </div>
                       </div>
 
-                      {/* Starburst Badge: Mới 2026 */}
-                      <div className="relative my-0.5">
-                        <svg viewBox="0 0 90 32" className="w-14 sm:w-16 h-5 sm:h-6 landscape-mobile:w-11 landscape-mobile:h-4 drop-shadow-2xs">
-                          <polygon
-                            points="45,0 52,6 63,3 67,11 78,11 76,19 86,22 80,28 88,32 76,32 71,38 61,33 52,38 45,32 38,38 29,33 19,38 14,32 2,32 10,28 4,22 14,19 12,11 23,11 27,6 38,0"
-                            fill="#dc2626"
-                          />
-                          <text x="45" y="19" textAnchor="middle" fill="#ffffff" fontSize="10.5" fontWeight="900" fontFamily="sans-serif">
-                            Mới 2026
-                          </text>
-                        </svg>
-                      </div>
-
                       {/* Big Title & Pill */}
-                      <div className="space-y-0.5">
-                        <div className="font-serif font-black text-slate-900 text-xs sm:text-[14px] landscape-mobile:text-[9.5px] tracking-wide uppercase leading-tight">
+                      <div className="space-y-1 my-1">
+                        <div className="font-black text-slate-900 text-sm sm:text-base landscape-mobile:text-[10px] tracking-tight uppercase leading-none">
                           ÔN THI CẤP TỐC
                         </div>
-                        <div className="inline-block px-1.5 py-0.2 rounded-full bg-rose-600 text-white font-bold text-[6.5px] sm:text-[7.5px] landscape-mobile:text-[5.5px] tracking-tight shadow-2xs">
+                        <div className="inline-block px-2 py-0.5 rounded-full bg-rose-600 text-white font-bold text-[7px] sm:text-[8px] landscape-mobile:text-[5.5px] tracking-normal shadow-2xs">
                           Câu Hỏi Luật Mới Bộ Công An
                         </div>
                       </div>
@@ -425,11 +412,11 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                       </div>
 
                       {/* Bottom Text */}
-                      <div className="space-y-0.2 mt-0.5">
-                        <div className="font-serif font-black text-indigo-950 text-[10px] sm:text-[11.5px] landscape-mobile:text-[8px] leading-tight tracking-tight">
+                      <div className="space-y-0.5 mt-0.5 pb-0.5">
+                        <div className="font-black text-indigo-950 text-[10.5px] sm:text-[12px] landscape-mobile:text-[8px] leading-tight tracking-normal">
                           600 câu hỏi và 120 TH Mô Phỏng
                         </div>
-                        <div className="font-serif italic text-slate-500 text-[7px] sm:text-[8px] landscape-mobile:text-[6px]">
+                        <div className="italic text-slate-500 text-[8px] sm:text-[9px] landscape-mobile:text-[6.5px] tracking-normal font-medium">
                           ( Lưu hành nội bộ )
                         </div>
                       </div>
