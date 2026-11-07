@@ -681,9 +681,14 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                         <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold text-slate-700 uppercase tracking-wider shrink-0">
                           Hạng:
                         </span>
-                        <span className="text-xs sm:text-sm md:text-base font-black text-red-700 tracking-tight text-right pl-2 group-hover:opacity-80 transition-opacity">
-                          {activeCategoryConfig.name}
-                        </span>
+                        <div className="text-right pl-2">
+                          <div className="text-xs sm:text-sm md:text-base font-black text-red-700 tracking-tight group-hover:opacity-80 transition-opacity">
+                            {activeCategoryConfig.name}
+                          </div>
+                          <div className="text-[7px] sm:text-[8px] md:text-[9px] text-slate-400 group-hover:text-red-600/70 font-normal transition-colors leading-tight mt-0.5">
+                            Chạm để chọn loại bằng
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
