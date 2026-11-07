@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { X, BookOpen, Video, Zap, ArrowRight, Smartphone, Sparkles, Check } from 'lucide-react';
-import { StorageService } from '../services/storage';
-import type { LicenseCategory } from '../types';
+import React, { useState, useEffect, useRef } from 'react';
+import { X, AlertTriangle, Award } from 'lucide-react';
 
 interface WelcomeLandingViewProps {
   onStartExperience: () => void;
 }
 
 export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartExperience }) => {
+  const [currentStep, setCurrentStep] = useState<number>(0);
   const [showInstallModal, setShowInstallModal] = useState(false);
   const [installTab, setInstallTab] = useState<'ios' | 'android' | 'pc'>('ios');
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [policyModal, setPolicyModal] = useState<'terms' | 'privacy' | 'cookie' | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState<LicenseCategory>(() => StorageService.getCategory());
+
+  const touchStartXRef = useRef<number>(0);
+  const touchEndXRef = useRef<number>(0);
 
   useEffect(() => {
     const handleBeforeInstallPrompt = (e: any) => {
@@ -36,7 +37,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
     };
   }, []);
 
-  // Prevent background scrolling while on Welcome Landing View
+  // Prevent background scrolling while on Onboarding screen
   useEffect(() => {
     const originalBodyOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
@@ -58,201 +59,274 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
     }
   };
 
-  const handleCategoryChange = (cat: LicenseCategory) => {
-    setSelectedCategory(cat);
-    StorageService.setCategory(cat);
-  };
-
-  const quickCategories: { id: LicenseCategory; label: string; desc: string }[] = [
-    { id: 'B', label: 'Hạng B', desc: 'Ô tô con & tải nhẹ' },
-    { id: 'A1', label: 'Hạng A1', desc: 'Xe máy ≤ 125cc' },
-    { id: 'B1', label: 'Hạng B1', desc: 'Ô tô số tự động' },
-    { id: 'C', label: 'Hạng C', desc: 'Xe tải nặng' },
+  const slides = [
+    {
+      step: '01',
+      title: 'NGÂN HÀNG 600 CÂU HỎI',
+      desc: 'Bộ câu hỏi sát hạch lý thuyết chuẩn Cục Đường bộ Việt Nam. Phân chia theo từng hạng bằng, có giải thích chi tiết và gắn cờ cảnh báo 60 câu điểm liệt.',
+      buttonText: 'TIẾP TỤC',
+    },
+    {
+      step: '02',
+      title: '120 TÌNH HUỐNG MÔ PHỎNG',
+      desc: 'Hệ thống video 3D thực tế với thang điểm trắc nghiệm 4 mốc thời gian. Rèn luyện phản xạ nhấn phím Space đúng thời điểm nguy hiểm để đạt điểm tối đa 5/5.',
+      buttonText: 'TIẾP TỤC',
+    },
+    {
+      step: '03',
+      title: 'THI THỬ CHUẨN SÁT HẠCH',
+      desc: 'Đề thi cấu trúc ngẫu nhiên có bấm giờ như phòng thi thật. Tự động lưu lịch sử, tổng hợp các câu làm sai để bạn ôn luyện cấp tốc đến khi đỗ 100%.',
+      buttonText: 'BẮT ĐẦU NGAY',
+    },
   ];
 
+  const handleNext = () => {
+    if (currentStep < slides.length - 1) {
+      setCurrentStep(currentStep + 1);
+    } else {
+      onStartExperience();
+    }
+  };
+
+  const handleSkip = () => {
+    onStartExperience();
+  };
+
+  // Touch swipe support (left/right swipe to switch slides)
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartXRef.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndXRef.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const deltaX = touchStartXRef.current - touchEndXRef.current;
+    if (deltaX > 45 && currentStep < slides.length - 1) {
+      // Swiped left -> next
+      setCurrentStep(currentStep + 1);
+    } else if (deltaX < -45 && currentStep > 0) {
+      // Swiped right -> prev
+      setCurrentStep(currentStep - 1);
+    }
+  };
+
+  const currentSlide = slides[currentStep];
+
   return (
-    <div className="fixed inset-0 h-dvh w-full overflow-hidden overscroll-none bg-slate-50 text-slate-900 flex flex-col justify-between select-none pt-[env(safe-area-inset-top,0px)] pb-[env(safe-area-inset-bottom,0px)] pl-[env(safe-area-inset-left,0px)] pr-[env(safe-area-inset-right,0px)]">
-      {/* Top Spacer / Subtle ambient header light */}
-      <div className="w-full shrink-0 h-2 sm:h-4 landscape-mobile:h-1" />
-
-      {/* Main Interactive Onboarding Card Container */}
-      <main className="w-full max-w-xl landscape-mobile:max-w-3xl mx-auto px-4 sm:px-6 my-auto flex flex-col items-center">
-        {/* Hero Branding Section */}
-        <div className="flex flex-col items-center text-center mb-4 sm:mb-6 landscape-mobile:mb-2">
-          {/* Logo with Ambient Breathing Glow */}
-          <div className="relative mb-3 landscape-mobile:mb-1">
-            <div className="absolute -inset-2 rounded-2xl bg-linear-to-tr from-amber-400/40 to-orange-400/30 blur-lg animate-pulse" />
-            <div className="relative w-14 h-14 sm:w-16 sm:h-16 landscape-mobile:w-10 landscape-mobile:h-10 rounded-2xl bg-white border border-slate-200/90 p-2 shadow-md flex items-center justify-center overflow-hidden">
-              <img
-                src="/logo.jpg"
-                alt="OnTap GPLX Logo"
-                className="w-full h-full object-contain rounded-xl"
-              />
-            </div>
-          </div>
-
-          {/* Badge & Title */}
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200/80 text-amber-800 text-[11px] font-semibold mb-2">
-            <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-            <span>Quy chế Sát hạch Chuẩn 2026</span>
-          </div>
-
-          <h1 className="text-2xl sm:text-3xl landscape-mobile:text-xl font-black text-slate-900 tracking-tight">
+    <div
+      className="fixed inset-0 h-dvh w-full overflow-hidden overscroll-none bg-[#111315] text-slate-100 flex flex-col justify-between select-none pt-[env(safe-area-inset-top,0px)] pb-[env(safe-area-inset-bottom,0px)] pl-[env(safe-area-inset-left,0px)] pr-[env(safe-area-inset-right,0px)]"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
+      {/* Top Bar: Skip button on the right */}
+      <header className="w-full max-w-md landscape-mobile:max-w-2xl mx-auto px-5 py-3 sm:py-4 flex items-center justify-between shrink-0 z-20">
+        <div className="flex items-center gap-2">
+          <img
+            src="/logo.jpg"
+            alt="Logo"
+            className="w-6 h-6 rounded-md object-contain border border-slate-700/60"
+          />
+          <span className="text-xs font-bold tracking-tight text-slate-400">
             OnTap <span className="text-amber-500">GPLX</span>
-          </h1>
-          <p className="text-xs sm:text-sm landscape-mobile:text-[11px] text-slate-500 max-w-sm mt-1 leading-snug">
-            Nền tảng ôn thi lý thuyết và mô phỏng giao thông Cục Đường bộ Việt Nam
-          </p>
-        </div>
-
-        {/* 3 Core Value Pillars (Compact Cards) */}
-        <div className="w-full grid grid-cols-3 gap-2 sm:gap-3 mb-4 sm:mb-5 landscape-mobile:mb-2">
-          <div className="p-3 landscape-mobile:p-2 rounded-xl bg-white border border-slate-200/80 shadow-2xs text-center flex flex-col items-center">
-            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center mb-1.5">
-              <BookOpen className="w-4 h-4" />
-            </div>
-            <div className="font-bold text-xs sm:text-sm text-slate-900">600 Câu hỏi</div>
-            <div className="text-[10px] sm:text-[11px] text-slate-500 mt-0.5 leading-tight line-clamp-1">
-              Kèm mẹo ghi nhớ
-            </div>
-          </div>
-
-          <div className="p-3 landscape-mobile:p-2 rounded-xl bg-white border border-slate-200/80 shadow-2xs text-center flex flex-col items-center">
-            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-orange-50 text-orange-600 flex items-center justify-center mb-1.5">
-              <Video className="w-4 h-4" />
-            </div>
-            <div className="font-bold text-xs sm:text-sm text-slate-900">120 Tình huống</div>
-            <div className="text-[10px] sm:text-[11px] text-slate-500 mt-0.5 leading-tight line-clamp-1">
-              Trắc nghiệm 4 phần
-            </div>
-          </div>
-
-          <div className="p-3 landscape-mobile:p-2 rounded-xl bg-white border border-slate-200/80 shadow-2xs text-center flex flex-col items-center">
-            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-1.5">
-              <Zap className="w-4 h-4" />
-            </div>
-            <div className="font-bold text-xs sm:text-sm text-slate-900">Học Offline</div>
-            <div className="text-[10px] sm:text-[11px] text-slate-500 mt-0.5 leading-tight line-clamp-1">
-              0% quảng cáo
-            </div>
-          </div>
-        </div>
-
-        {/* Quick License Selector */}
-        <div className="w-full mb-4 sm:mb-5 landscape-mobile:mb-2">
-          <div className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider text-center mb-2">
-            Chọn nhanh hạng giấy phép của bạn:
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-            {quickCategories.map((cat) => {
-              const isSelected = selectedCategory === cat.id;
-              return (
-                <button
-                  key={cat.id}
-                  type="button"
-                  onClick={() => handleCategoryChange(cat.id)}
-                  className={`p-2 sm:p-2.5 rounded-xl border text-left transition-all cursor-pointer relative ${
-                    isSelected
-                      ? 'bg-amber-50/70 border-amber-500 text-amber-950 shadow-xs ring-1 ring-amber-500/50'
-                      : 'bg-white border-slate-200/80 text-slate-700 hover:border-slate-300'
-                  }`}
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="font-bold text-xs sm:text-sm">{cat.label}</span>
-                    {isSelected && (
-                      <Check className="w-3.5 h-3.5 text-amber-600 shrink-0" />
-                    )}
-                  </div>
-                  <div className="text-[10px] text-slate-500 truncate mt-0.5">
-                    {cat.desc}
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Action Buttons */}
-        <div className="w-full space-y-2 mb-3.5 sm:mb-4 landscape-mobile:mb-2">
-          {/* Primary Action Button */}
-          <button
-            type="button"
-            onClick={onStartExperience}
-            className="w-full py-3.5 sm:py-4 px-5 rounded-2xl bg-slate-900 hover:bg-slate-800 active:bg-slate-950 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all duration-150 cursor-pointer group"
-          >
-            <span>Bắt đầu ôn tập ngay</span>
-            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" />
-          </button>
-
-          {/* Secondary Action: Install PWA Guide */}
-          <button
-            type="button"
-            onClick={() => setShowInstallModal(true)}
-            className="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 transition-colors cursor-pointer"
-          >
-            <Smartphone className="w-3.5 h-3.5 text-slate-500" />
-            <span>Hướng dẫn cài đặt ứng dụng vào điện thoại / máy tính</span>
-          </button>
-        </div>
-
-        {/* Legal Disclaimer */}
-        <div className="w-full text-center px-2">
-          <p className="text-[11px] sm:text-xs text-slate-500 leading-relaxed font-normal">
-            Bằng việc tiếp tục, bạn đồng ý với{' '}
-            <button
-              type="button"
-              onClick={() => setPolicyModal('terms')}
-              className="text-slate-800 font-semibold underline underline-offset-2 hover:text-amber-600 transition-colors cursor-pointer"
-            >
-              Điều khoản
-            </button>
-            ,{' '}
-            <button
-              type="button"
-              onClick={() => setPolicyModal('privacy')}
-              className="text-slate-800 font-semibold underline underline-offset-2 hover:text-amber-600 transition-colors cursor-pointer"
-            >
-              Quyền riêng tư
-            </button>{' '}
-            &{' '}
-            <button
-              type="button"
-              onClick={() => setPolicyModal('cookie')}
-              className="text-slate-800 font-semibold underline underline-offset-2 hover:text-amber-600 transition-colors cursor-pointer"
-            >
-              Cookie
-            </button>
-            .
-          </p>
-        </div>
-      </main>
-
-      {/* Footer */}
-      <footer className="w-full py-3 sm:py-4 landscape-mobile:py-1 px-4 text-center shrink-0">
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
-          <p className="text-xs text-slate-500">
-            thực hiện bởi{' '}
-            <a
-              href="https://github.com/trevorthanhtung"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-bold text-slate-800 hover:text-amber-600 underline underline-offset-2 transition-colors cursor-pointer"
-              title="GitHub: trevorthanhtung (thanhtungg.)"
-            >
-              thanhtungg.
-            </a>
-          </p>
-          <span className="hidden sm:inline text-slate-300">•</span>
-          <span className="text-[11px] text-slate-400 font-mono">
-            Phiên bản 1.1.0
           </span>
         </div>
-      </footer>
+
+        <button
+          type="button"
+          onClick={handleSkip}
+          className="text-xs font-bold uppercase tracking-widest text-[#8b9e82] hover:text-[#a8bea0] active:text-white transition-colors cursor-pointer py-1 px-2"
+        >
+          BỎ QUA
+        </button>
+      </header>
+
+      {/* Main Walkthrough Container */}
+      <div className="w-full max-w-md landscape-mobile:max-w-2xl mx-auto flex-1 flex flex-col justify-between px-5 landscape-mobile:px-8 overflow-hidden">
+        {/* Upper Half: Graphic Area with huge watermark number */}
+        <div className="relative flex-1 flex items-center justify-center min-h-[220px] landscape-mobile:min-h-[140px] overflow-hidden">
+          {/* Faint Large Watermark Number behind graphic */}
+          <div
+            key={`watermark-${currentSlide.step}`}
+            className="absolute select-none font-black text-[130px] sm:text-[170px] landscape-mobile:text-[100px] text-white/[0.04] pointer-events-none tracking-tighter leading-none animate-in fade-in zoom-in-90 duration-300"
+          >
+            {currentSlide.step}
+          </div>
+
+          {/* Graphic Container (Matching 2x2 grid mockup from reference) */}
+          <div
+            key={`graphic-${currentStep}`}
+            className="relative z-10 w-52 h-52 sm:w-60 sm:h-60 landscape-mobile:w-36 landscape-mobile:h-36 rounded-2xl border border-slate-800 bg-[#16181b]/90 p-4 landscape-mobile:p-2.5 shadow-2xl flex items-center justify-center animate-in zoom-in-95 fade-in duration-250"
+          >
+            {/* Slide 01 Graphic: 2x2 Feature Cards Grid */}
+            {currentStep === 0 && (
+              <div className="grid grid-cols-2 gap-2.5 landscape-mobile:gap-1.5 w-full h-full">
+                {/* Box 1 (Top-Left): 600 Question Bank */}
+                <div className="rounded-xl bg-[#1f2329] border border-slate-700/50 p-2.5 landscape-mobile:p-1.5 flex flex-col justify-between">
+                  <div className="w-7 h-3 rounded-full bg-slate-200/90 self-start" />
+                  <span className="text-[10px] font-bold text-slate-300">600 CÂU</span>
+                </div>
+
+                {/* Box 2 (Top-Right): 60 Critical Questions (Green with orange 'C' badge) */}
+                <div className="rounded-xl bg-[#334631] border border-emerald-600/40 p-2.5 landscape-mobile:p-1.5 flex flex-col justify-between relative overflow-visible">
+                  <div className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-orange-500 text-white font-black text-[10px] flex items-center justify-center shadow-md">
+                    c
+                  </div>
+                  <div className="w-7 h-3 rounded-full bg-emerald-200/90 self-start" />
+                  <span className="text-[10px] font-bold text-emerald-200">ĐIỂM LIỆT</span>
+                </div>
+
+                {/* Box 3 (Bottom-Left): 120 Simulation */}
+                <div className="rounded-xl bg-[#1f2329] border border-slate-700/50 p-2.5 landscape-mobile:p-1.5 flex flex-col justify-between">
+                  <div className="w-7 h-3 rounded-full bg-slate-200/90 self-start" />
+                  <span className="text-[10px] font-bold text-slate-300">120 MP</span>
+                </div>
+
+                {/* Box 4 (Bottom-Right): Pass 100% (with red corner ribbon) */}
+                <div className="rounded-xl bg-[#1f2329] border border-slate-700/50 p-2.5 landscape-mobile:p-1.5 flex flex-col justify-between relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-0 h-0 border-t-[18px] border-t-rose-500 border-l-[18px] border-l-transparent" />
+                  <div className="w-7 h-3 rounded-full bg-slate-200/90 self-start" />
+                  <span className="text-[10px] font-bold text-slate-300">ĐỖ 100%</span>
+                </div>
+              </div>
+            )}
+
+            {/* Slide 02 Graphic: Video Simulation Timeline & Spacebar */}
+            {currentStep === 1 && (
+              <div className="w-full h-full rounded-xl bg-[#1b2027] border border-slate-700/60 p-3 landscape-mobile:p-2 flex flex-col justify-between">
+                {/* Windshield Road Simulation View */}
+                <div className="flex-1 w-full bg-[#0f141c] rounded-lg border border-slate-800 flex flex-col items-center justify-center relative overflow-hidden mb-2">
+                  <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-400 text-[10px] font-bold">
+                    <AlertTriangle className="w-3 h-3" />
+                    <span>TÌNH HUỐNG 5/5</span>
+                  </div>
+                </div>
+
+                {/* Timeline Flags */}
+                <div className="w-full h-1.5 bg-slate-700 rounded-full mb-2 relative flex items-center">
+                  <div className="h-full w-3/5 bg-linear-to-r from-emerald-500 to-amber-500 rounded-full" />
+                  <div className="absolute left-[60%] -top-1 w-3.5 h-3.5 rounded-full bg-amber-400 border border-white shadow-xs" />
+                </div>
+
+                {/* Spacebar Key Prompt */}
+                <div className="w-full py-1.5 rounded-md bg-slate-800 border border-slate-600 text-center font-mono font-bold text-[10px] text-amber-300 tracking-wider">
+                  [ PHÍM SPACE ]
+                </div>
+              </div>
+            )}
+
+            {/* Slide 03 Graphic: Exam Pass Certificate & License Card */}
+            {currentStep === 2 && (
+              <div className="w-full h-full rounded-xl bg-[#1b221c] border border-emerald-600/50 p-3 landscape-mobile:p-2 flex flex-col items-center justify-center text-center relative overflow-hidden">
+                <div className="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 mb-2">
+                  <Award className="w-7 h-7" />
+                </div>
+                <div className="font-black text-sm text-white tracking-wide">
+                  ĐẠT SÁT HẠCH
+                </div>
+                <div className="text-[10px] font-mono font-bold text-amber-400 mt-0.5">
+                  ĐIỂM: 30 / 30 CÂU
+                </div>
+                <div className="text-[9px] text-slate-400 mt-1">
+                  Chuẩn quy chế 2026
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Thin Divider Line separating graphics from text */}
+        <div className="w-full border-t border-[#262c26]/90 my-2 shrink-0" />
+
+        {/* Lower Half: Step Counter, Title, Description, and Layered CTA Button */}
+        <div className="w-full pt-1 pb-4 sm:pb-6 landscape-mobile:pb-2 flex flex-col shrink-0">
+          {/* Step Counter Row (01 ————— 03) */}
+          <div className="flex items-center justify-between mb-3 landscape-mobile:mb-1.5">
+            <div className="flex items-center gap-3">
+              <span className="text-2xl sm:text-3xl landscape-mobile:text-xl font-black font-mono text-white tracking-tight">
+                {currentSlide.step}
+              </span>
+              {/* Orange Accent Indicator Line */}
+              <div className="w-20 sm:w-28 landscape-mobile:w-16 h-1 rounded-full bg-orange-500 shadow-xs shadow-orange-500/40" />
+            </div>
+
+            <span className="text-xs sm:text-sm font-bold font-mono text-slate-500">
+              03
+            </span>
+          </div>
+
+          {/* Heading Title (Uppercase styled in Sage Green #859b77) */}
+          <h2
+            key={`title-${currentStep}`}
+            className="text-xl sm:text-2xl landscape-mobile:text-base font-black text-[#859b77] tracking-tight uppercase mb-2 landscape-mobile:mb-1 leading-snug animate-in fade-in duration-200"
+          >
+            {currentSlide.title}
+          </h2>
+
+          {/* Description Body */}
+          <p
+            key={`desc-${currentStep}`}
+            className="text-xs sm:text-sm landscape-mobile:text-[11px] text-slate-300 leading-relaxed font-normal mb-5 sm:mb-6 landscape-mobile:mb-2 line-clamp-3 sm:line-clamp-none animate-in fade-in duration-200"
+          >
+            {currentSlide.desc}
+          </p>
+
+          {/* 3D Layered Offset CTA Button (Matching Reference Design!) */}
+          <div className="w-full relative select-none">
+            {/* Orange Bottom Offset Layer */}
+            <div
+              className="absolute inset-0 translate-x-1 translate-y-1 rounded-xl bg-orange-500 pointer-events-none"
+              aria-hidden="true"
+            />
+
+            {/* Top Interactive Button Layer */}
+            <button
+              type="button"
+              onClick={handleNext}
+              className="relative w-full py-3.5 sm:py-4 landscape-mobile:py-2.5 px-6 rounded-xl bg-[#6d8161] hover:bg-[#788e6b] active:translate-x-1 active:translate-y-1 text-white font-bold text-sm sm:text-base tracking-wider uppercase flex items-center justify-center gap-2 transition-transform duration-75 cursor-pointer shadow-md"
+            >
+              <span>{currentSlide.buttonText}</span>
+              <span className="text-lg leading-none font-bold">›</span>
+            </button>
+          </div>
+
+          {/* Secondary Links & Legal Footer */}
+          <div className="mt-3.5 landscape-mobile:mt-1.5 flex items-center justify-between text-[10px] sm:text-[11px] text-slate-400 px-1">
+            <button
+              type="button"
+              onClick={() => setShowInstallModal(true)}
+              className="hover:text-amber-400 transition-colors cursor-pointer underline underline-offset-2"
+            >
+              Cài đặt ứng dụng (PWA)
+            </button>
+
+            <div className="flex items-center gap-1.5">
+              <button
+                type="button"
+                onClick={() => setPolicyModal('terms')}
+                className="hover:text-white transition-colors cursor-pointer"
+              >
+                Điều khoản
+              </button>
+              <span>•</span>
+              <button
+                type="button"
+                onClick={() => setPolicyModal('privacy')}
+                className="hover:text-white transition-colors cursor-pointer"
+              >
+                Quyền riêng tư
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Policy Modal (Terms / Privacy / Cookie) */}
       {policyModal && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 landscape-mobile:p-2 pt-[max(0.75rem,env(safe-area-inset-top))] pb-[max(0.75rem,env(safe-area-inset-bottom))] bg-slate-900/40 backdrop-blur-xs overscroll-contain animate-in fade-in duration-150"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 landscape-mobile:p-2 pt-[max(0.75rem,env(safe-area-inset-top))] pb-[max(0.75rem,env(safe-area-inset-bottom))] bg-slate-900/60 backdrop-blur-xs overscroll-contain animate-in fade-in duration-150"
         >
           <div
             className="bg-white text-slate-900 w-full max-w-md landscape-mobile:max-w-xl rounded-2xl p-5 sm:p-6 landscape-mobile:p-3.5 shadow-2xl border border-slate-200 flex flex-col max-h-[85vh] landscape-mobile:max-h-[92vh] animate-in zoom-in-95 duration-150 touch-auto"
@@ -289,7 +363,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                       2. Lưu trữ hoàn toàn trên thiết bị của bạn
                     </h4>
                     <p>
-                      Toàn bộ tiến độ ôn tập, danh sách câu trả lời sai, câu hỏi điểm liệt đã đánh dấu và kết quả các bài thi sát hạch thử được lưu trực tiếp trên chính thiết bị (điện thoại hoặc máy tính) của bạn, hoàn toàn không tải lên máy chủ bên ngoài.
+                      Toàn bộ tiến độ ôn tập, danh sách câu trả lời sai, câu hỏi điểm liệt đã đánh dấu và kết quả các bài thi sát hạch thử được lưu trực tiếp trên chính thiết bị của bạn, hoàn toàn không tải lên máy chủ bên ngoài.
                     </p>
                   </div>
                   <div>
@@ -318,7 +392,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                       2. Dữ liệu chuẩn Cục Đường bộ Việt Nam
                     </h4>
                     <p>
-                      Ngân hàng 600 câu hỏi sát hạch lý thuyết (bao gồm 60 câu hỏi về tình huống mất an toàn giao thông nghiêm trọng) và 120 tình huống mô phỏng giao thông chuẩn trắc nghiệm 4 phần theo quy chế mới được đối soát bám sát tài liệu chuẩn của Cục Đường bộ Việt Nam.
+                      Ngân hàng 600 câu hỏi sát hạch lý thuyết (bao gồm 60 câu hỏi điểm liệt) và 120 tình huống mô phỏng giao thông chuẩn trắc nghiệm 4 phần theo quy chế mới được đối soát bám sát tài liệu chuẩn của Cục Đường bộ Việt Nam.
                     </p>
                   </div>
                   <div>
@@ -378,10 +452,10 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
       {/* Install Modal */}
       {showInstallModal && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 landscape-mobile:p-2 pt-[max(0.75rem,env(safe-area-inset-top))] pb-[max(0.75rem,env(safe-area-inset-bottom))] bg-slate-900/40 backdrop-blur-xs overscroll-contain animate-in fade-in duration-150"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 landscape-mobile:p-2 pt-[max(0.75rem,env(safe-area-inset-top))] pb-[max(0.75rem,env(safe-area-inset-bottom))] bg-slate-900/60 backdrop-blur-xs overscroll-contain animate-in fade-in duration-150"
         >
           <div
-            className="bg-white w-full max-w-md landscape-mobile:max-w-xl rounded-2xl shadow-xl border border-slate-200 overflow-hidden flex flex-col max-h-[85vh] landscape-mobile:max-h-[92vh] animate-in zoom-in-95 duration-150 touch-auto"
+            className="bg-white text-slate-900 w-full max-w-md landscape-mobile:max-w-xl rounded-2xl shadow-xl border border-slate-200 overflow-hidden flex flex-col max-h-[85vh] landscape-mobile:max-h-[92vh] animate-in zoom-in-95 duration-150 touch-auto"
           >
             {/* Modal Header */}
             <div className="px-5 py-3.5 landscape-mobile:py-2 border-b border-slate-100 flex items-center justify-between">
