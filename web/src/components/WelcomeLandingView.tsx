@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { X, Check, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, Check, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
 import { StorageService } from '../services/storage';
+import { LICENSE_CATEGORIES } from '../data/licenseCategories';
 import type { LicenseCategory } from '../types';
 
 interface WelcomeLandingViewProps {
@@ -19,6 +20,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
   const [installTab, setInstallTab] = useState<'ios' | 'android' | 'pc'>('ios');
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [policyModal, setPolicyModal] = useState<'terms' | 'privacy' | 'cookie' | null>(null);
+  const [isPickerOpen, setIsPickerOpen] = useState(false);
 
   const isDraggingRef = useRef(false);
   const touchStartXRef = useRef<number>(0);
@@ -30,29 +32,13 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
     StorageService.getCategory()
   );
 
-  const categoriesList: {
-    id: LicenseCategory;
-    label: string;
-    desc: string;
-    totalQ: number;
-    time: number;
-    pass: number;
-  }[] = [
-    { id: 'B', label: 'Hạng B', desc: 'Ô tô con & tải ≤ 3.5T', totalQ: 30, time: 20, pass: 27 },
-    { id: 'B1', label: 'Hạng B1', desc: 'Ô tô số tự động', totalQ: 30, time: 20, pass: 27 },
-    { id: 'A1', label: 'Hạng A1', desc: 'Xe máy ≤ 125cc', totalQ: 25, time: 19, pass: 23 },
-    { id: 'A', label: 'Hạng A', desc: 'Mô tô PKL > 125cc', totalQ: 25, time: 19, pass: 23 },
-    { id: 'C', label: 'Hạng C', desc: 'Xe tải nặng > 7.5T', totalQ: 40, time: 24, pass: 36 },
-    { id: 'C1', label: 'Hạng C1', desc: 'Xe tải 3.5T - 7.5T', totalQ: 35, time: 22, pass: 32 },
-  ];
-
   const handleCategorySelect = (cat: LicenseCategory) => {
     setSelectedCategory(cat);
     StorageService.setCategory(cat);
   };
 
   const activeCategoryConfig =
-    categoriesList.find((c) => c.id === selectedCategory) || categoriesList[0];
+    LICENSE_CATEGORIES.find((c) => c.id === selectedCategory) || LICENSE_CATEGORIES[0];
 
   useEffect(() => {
     const handleBeforeInstallPrompt = (e: any) => {
@@ -637,68 +623,147 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 )}
 
                 {/* ------------------------------------------------------------- */}
-                {/* Slide 03 Graphic: Thẻ GPLX PET Hình Chữ Nhật Chuẩn Màu Sắc    */}
+                {/* Slide 03 Graphic: Thẻ GPLX PET với Ô Picker 7 Hạng Chuẩn      */}
                 {/* ------------------------------------------------------------- */}
                 {currentStep === 2 && (
-                  <div className="w-full h-full rounded-2xl lg:rounded-3xl border border-rose-300/80 bg-linear-to-br from-[#ffe4e6] via-[#fff1f2] to-[#fed7aa]/35 p-2.5 sm:p-3 lg:p-4 pb-3 sm:pb-3.5 lg:pb-4.5 landscape-mobile:p-1.5 shadow-xl shadow-rose-950/10 flex flex-col justify-between overflow-hidden relative">
+                  <div className="w-full h-full rounded-2xl lg:rounded-3xl border border-rose-300/80 bg-linear-to-br from-[#ffe4e6] via-[#fff1f2] to-[#fed7aa]/35 p-3 sm:p-3.5 md:p-4 pb-3 sm:pb-3.5 md:pb-4.5 landscape-mobile:p-2 shadow-xl shadow-rose-950/10 flex flex-col justify-between overflow-hidden relative select-none">
                     {/* Official National Header & Red Title (Màu sắc chuẩn phôi GPLX) */}
-                    <div className="text-center pb-1 sm:pb-1.5 border-b border-rose-200/90 shrink-0">
-                      <div className="font-bold text-[8.5px] sm:text-[9.5px] lg:text-[11px] text-slate-900 uppercase tracking-tight leading-tight">
+                    <div className="text-center pb-1.5 border-b border-rose-200/90 shrink-0">
+                      <div className="font-bold text-[8.5px] sm:text-[9.5px] md:text-[11px] lg:text-[11.5px] text-slate-900 uppercase tracking-tight leading-tight">
                         CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
                       </div>
-                      <div className="italic text-[7px] sm:text-[7.5px] lg:text-[9px] text-slate-600 leading-none mt-0.5 font-medium">
+                      <div className="italic text-[7px] sm:text-[7.5px] md:text-[8.5px] lg:text-[9px] text-slate-600 leading-none mt-0.5 font-medium">
                         Độc lập - Tự do - Hạnh phúc
                       </div>
                       <div className="w-12 h-[0.5px] bg-slate-400 mx-auto mt-0.5 mb-1" />
 
                       {/* Tiêu đề đỏ chữ đậm chuẩn GPLX thật */}
                       <div className="flex items-center justify-center gap-2">
-                        <span className="text-red-600 font-black text-xs sm:text-[13px] lg:text-[14px] uppercase tracking-wider">
+                        <span className="text-red-600 font-black text-xs sm:text-[13px] md:text-[14.5px] lg:text-[15px] uppercase tracking-wider">
                           GIẤY PHÉP LÁI XE
                         </span>
-                        <span className="text-red-600/90 font-mono font-bold text-[8px] sm:text-[8.5px] lg:text-[10px]">
+                        <span className="text-red-600/90 font-mono font-bold text-[8px] sm:text-[8.5px] md:text-[9.5px] lg:text-[10px]">
                           Số: 0102600899
                         </span>
                       </div>
                     </div>
 
-                    {/* Card Body: Full-width 6-Category Selection Grid (Spacious & Clean) */}
-                    <div className="w-full flex-1 flex flex-col justify-center py-1">
-                      {/* 6 Category Selection Tiles (Grid 2 cols) */}
-                      <div className="grid grid-cols-2 gap-1.5 sm:gap-2 lg:gap-2.5">
-                        {categoriesList.map((cat) => {
-                          const isSelected = selectedCategory === cat.id;
-                          return (
-                            <button
-                              key={cat.id}
-                              type="button"
-                              onClick={() => handleCategorySelect(cat.id)}
-                              className={`px-2.5 py-1.5 sm:py-2 lg:px-3 lg:py-2.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
-                                isSelected
-                                  ? 'border-red-500 bg-white/95 shadow-xs ring-1 ring-red-400/50'
-                                  : 'border-rose-200/90 bg-white/75 hover:border-rose-300 hover:bg-white'
-                              }`}
-                            >
-                              <div className="min-w-0 pr-1">
-                                <div
-                                  className={`text-[11px] sm:text-xs lg:text-[13px] font-bold leading-tight ${
-                                    isSelected ? 'text-red-950 font-black' : 'text-slate-800'
-                                  }`}
-                                >
-                                  {cat.label}
-                                </div>
-                                <div className="text-[8px] sm:text-[8.5px] lg:text-[10px] text-slate-500 truncate mt-0.5">
-                                  {cat.desc}
-                                </div>
-                              </div>
-                              {isSelected && (
-                                <Check className="w-4 h-4 lg:w-5 lg:h-5 text-red-600 stroke-[3] shrink-0" />
-                              )}
-                            </button>
-                          );
-                        })}
+                    {/* Card Center: Official Info Row & Main Picker Box */}
+                    <div className="w-full flex-1 flex flex-col justify-center py-1 sm:py-2 px-0.5">
+                      {/* Learner Info Row */}
+                      <div className="flex items-center justify-between text-[8px] sm:text-[9px] md:text-[10.5px] text-slate-600 mb-2 pb-1.5 border-b border-rose-200/60 font-medium">
+                        <div>
+                          Họ và tên: <strong className="text-slate-900 font-bold uppercase">Bạn (Học viên)</strong>
+                        </div>
+                        <div className="font-mono text-red-600 font-bold">
+                          Quy chế 2026
+                        </div>
+                      </div>
+
+                      {/* Main Category Picker Trigger */}
+                      <div className="relative">
+                        <div className="flex items-center justify-between mb-1">
+                          <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold text-slate-700 uppercase tracking-wider">
+                            Hạng / Class (7 Hạng sát hạch):
+                          </span>
+                          <span className="text-[7.5px] sm:text-[8.5px] md:text-[9.5px] text-red-600 font-medium flex items-center gap-0.5">
+                            Chạm đổi hạng ▾
+                          </span>
+                        </div>
+
+                        {/* Picker Trigger Button */}
+                        <button
+                          type="button"
+                          onClick={() => setIsPickerOpen(true)}
+                          className="w-full bg-white/95 hover:bg-white active:scale-[0.99] border-2 border-red-500/80 rounded-xl p-2 sm:p-2.5 md:p-3 shadow-xs hover:shadow-md transition-all cursor-pointer flex items-center justify-between group"
+                        >
+                          <div className="text-left min-w-0 pr-2">
+                            <div className="flex items-center gap-1.5 sm:gap-2">
+                              <span className="text-xs sm:text-sm md:text-base font-black text-red-950 tracking-tight">
+                                {activeCategoryConfig.name}
+                              </span>
+                              <span className="px-1.5 py-0.5 rounded-full bg-red-100 text-red-700 font-mono font-bold text-[8px] sm:text-[9px] md:text-[10px] shrink-0">
+                                {activeCategoryConfig.totalQuestions} câu • {activeCategoryConfig.timeMinutes}p
+                              </span>
+                            </div>
+                            <div className="text-[8.5px] sm:text-[9.5px] md:text-[11px] text-slate-500 truncate mt-0.5 font-normal">
+                              {activeCategoryConfig.description}
+                            </div>
+                          </div>
+                          <div className="w-7 h-7 rounded-lg bg-red-50 group-hover:bg-red-100 flex items-center justify-center shrink-0 text-red-600 transition-colors">
+                            <ChevronDown className="w-4 h-4" />
+                          </div>
+                        </button>
+                      </div>
+
+                      {/* Official Exam Specs Footer strip */}
+                      <div className="mt-2 pt-1.5 border-t border-rose-200/60 flex items-center justify-between text-[8px] sm:text-[8.5px] md:text-[10px] text-slate-600">
+                        <div>
+                          Tiêu chuẩn đạt: <strong className="text-emerald-700 font-bold">{activeCategoryConfig.passScore}/{activeCategoryConfig.totalQuestions} câu</strong>
+                        </div>
+                        <div className="text-slate-500">
+                          Tối đa sai: <strong className="text-slate-700 font-bold">{activeCategoryConfig.allowedWrong} câu</strong> (0 câu liệt)
+                        </div>
                       </div>
                     </div>
+
+                    {/* Popover / Sheet: 7 Categories in Exact Order (A1 -> A -> B1 -> B -> C1 -> C -> D) */}
+                    {isPickerOpen && (
+                      <div className="absolute inset-0 z-40 bg-white/98 backdrop-blur-md p-2.5 sm:p-3 flex flex-col justify-between shadow-2xl animate-in fade-in zoom-in-95 duration-150">
+                        {/* Dropdown Header */}
+                        <div className="flex items-center justify-between pb-1.5 border-b border-slate-200 shrink-0">
+                          <div className="text-[10px] sm:text-xs font-bold text-slate-900 uppercase tracking-wider">
+                            Chọn hạng GPLX (7 Hạng chuẩn 2026)
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => setIsPickerOpen(false)}
+                            className="w-6 h-6 rounded-full hover:bg-slate-100 flex items-center justify-center text-slate-400 hover:text-slate-700 transition-colors cursor-pointer"
+                          >
+                            <X className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
+
+                        {/* 7 Categories List in Exact Canonical Order */}
+                        <div className="flex-1 overflow-y-auto py-1 space-y-1 pr-0.5">
+                          {LICENSE_CATEGORIES.map((cat) => {
+                            const isSelected = selectedCategory === cat.id;
+                            return (
+                              <button
+                                key={cat.id}
+                                type="button"
+                                onClick={() => {
+                                  handleCategorySelect(cat.id);
+                                  setIsPickerOpen(false);
+                                }}
+                                className={`w-full text-left px-2.5 py-1.5 sm:py-2 rounded-xl transition-all cursor-pointer flex items-center justify-between ${
+                                  isSelected
+                                    ? 'bg-red-50 text-red-950 font-bold border border-red-200 shadow-2xs'
+                                    : 'hover:bg-slate-50 text-slate-800'
+                                }`}
+                              >
+                                <div className="min-w-0 pr-2">
+                                  <div className="flex items-center gap-1.5 text-xs sm:text-[13px] leading-tight">
+                                    <span className={isSelected ? 'font-black text-red-600' : 'font-bold'}>
+                                      {cat.name}
+                                    </span>
+                                    <span className="text-[9px] sm:text-[10px] font-mono text-slate-400">
+                                      ({cat.totalQuestions} câu • {cat.timeMinutes}p)
+                                    </span>
+                                  </div>
+                                  <div className="text-[8.5px] sm:text-[9.5px] text-slate-500 truncate mt-0.5">
+                                    {cat.description}
+                                  </div>
+                                </div>
+                                {isSelected && (
+                                  <Check className="w-4 h-4 text-red-600 stroke-[3] shrink-0" />
+                                )}
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
@@ -763,7 +828,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 className="text-xs sm:text-sm md:text-base landscape-mobile:text-[11px] text-slate-600 leading-relaxed font-normal mb-4 sm:mb-6 md:mb-7 landscape-mobile:mb-2 line-clamp-3 sm:line-clamp-none animate-in fade-in duration-200"
               >
                 {currentStep === 2
-                  ? `Đang chọn ${activeCategoryConfig.label} (${activeCategoryConfig.desc}). Đề thi gồm ${activeCategoryConfig.totalQ} câu làm trong ${activeCategoryConfig.time} phút, đạt từ ${activeCategoryConfig.pass}/${activeCategoryConfig.totalQ} câu trở lên.`
+                  ? `Đang chọn ${activeCategoryConfig.name} (${activeCategoryConfig.description}). Đề thi gồm ${activeCategoryConfig.totalQuestions} câu làm trong ${activeCategoryConfig.timeMinutes} phút, đạt từ ${activeCategoryConfig.passScore}/${activeCategoryConfig.totalQuestions} câu trở lên.`
                   : currentSlide.desc}
               </p>
 
