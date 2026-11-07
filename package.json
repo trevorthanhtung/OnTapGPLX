@@ -1,6 +1,6 @@
 {
   "name": "ontapgplx",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": true,
   "description": "OnTapGPLX - Ôn thi Giấy phép lái xe 600 câu lý thuyết & 120 tình huống mô phỏng",
   "scripts": {
