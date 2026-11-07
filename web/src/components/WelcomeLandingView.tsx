@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { X, Check, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
+import { X, Check, ChevronLeft, ChevronRight } from 'lucide-react';
 import { StorageService } from '../services/storage';
 import { LICENSE_CATEGORIES } from '../data/licenseCategories';
 import type { LicenseCategory } from '../types';
@@ -20,7 +20,6 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
   const [installTab, setInstallTab] = useState<'ios' | 'android' | 'pc'>('ios');
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [policyModal, setPolicyModal] = useState<'terms' | 'privacy' | 'cookie' | null>(null);
-  const [isPickerOpen, setIsPickerOpen] = useState(false);
 
   const isDraggingRef = useRef(false);
   const touchStartXRef = useRef<number>(0);
@@ -35,6 +34,18 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
   const handleCategorySelect = (cat: LicenseCategory) => {
     setSelectedCategory(cat);
     StorageService.setCategory(cat);
+  };
+
+  const handleNextCategory = () => {
+    const currentIndex = LICENSE_CATEGORIES.findIndex((c) => c.id === selectedCategory);
+    const nextIndex = (currentIndex + 1) % LICENSE_CATEGORIES.length;
+    handleCategorySelect(LICENSE_CATEGORIES[nextIndex].id);
+  };
+
+  const handlePrevCategory = () => {
+    const currentIndex = LICENSE_CATEGORIES.findIndex((c) => c.id === selectedCategory);
+    const prevIndex = (currentIndex - 1 + LICENSE_CATEGORIES.length) % LICENSE_CATEGORIES.length;
+    handleCategorySelect(LICENSE_CATEGORIES[prevIndex].id);
   };
 
   const activeCategoryConfig =
@@ -657,37 +668,60 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                         </div>
                       </div>
 
-                      {/* Main Category Picker Trigger */}
+                      {/* Main Category Cycler (Đồng màu với thẻ GPLX, ấn là đổi hạng) */}
                       <div className="relative">
-                        <div className="mb-1">
+                        <div className="mb-1 flex items-center justify-between">
                           <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold text-slate-700 uppercase tracking-wider">
                             Hạng:
                           </span>
                         </div>
 
-                        {/* Picker Trigger Button */}
-                        <button
-                          type="button"
-                          onClick={() => setIsPickerOpen(true)}
-                          className="w-full bg-white/80 hover:bg-white/95 active:scale-[0.99] border border-rose-200/90 hover:border-rose-300 rounded-xl p-2 sm:p-2.5 md:p-3 shadow-2xs hover:shadow-xs transition-all cursor-pointer flex items-center justify-between group backdrop-blur-xs"
+                        {/* Interactive Cycler Box (Đồng màu nền rose-100 với thẻ, ấn là đổi hạng) */}
+                        <div
+                          onClick={handleNextCategory}
+                          className="w-full bg-rose-100/50 hover:bg-rose-100/80 active:scale-[0.99] border border-rose-300/80 rounded-xl p-2 sm:p-2.5 md:p-3 shadow-2xs hover:shadow-xs transition-all cursor-pointer flex items-center justify-between group select-none"
+                          title="Chạm để chuyển hạng GPLX"
                         >
-                          <div className="text-left min-w-0 pr-2">
+                          <div className="text-left min-w-0 pr-1.5 flex-1">
                             <div className="flex items-center gap-1.5 sm:gap-2">
-                              <span className="text-xs sm:text-sm md:text-base font-bold text-slate-900 tracking-tight group-hover:text-rose-700 transition-colors">
+                              <span className="text-xs sm:text-sm md:text-base font-black text-red-700 tracking-tight">
                                 {activeCategoryConfig.name}
                               </span>
-                              <span className="px-1.5 py-0.5 rounded-md bg-rose-50 text-rose-700 border border-rose-200/70 font-mono font-medium text-[8px] sm:text-[9px] md:text-[10px] shrink-0">
+                              <span className="px-1.5 py-0.5 rounded-md bg-rose-200/60 text-red-800 font-mono font-bold text-[8px] sm:text-[9px] md:text-[10px] shrink-0">
                                 {activeCategoryConfig.totalQuestions} câu • {activeCategoryConfig.timeMinutes}p
                               </span>
                             </div>
-                            <div className="text-[8.5px] sm:text-[9.5px] md:text-[11px] text-slate-500 truncate mt-0.5 font-normal">
+                            <div className="text-[8.5px] sm:text-[9.5px] md:text-[11px] text-slate-600 truncate mt-0.5 font-normal">
                               {activeCategoryConfig.description}
                             </div>
                           </div>
-                          <div className="w-7 h-7 rounded-lg bg-rose-50/80 group-hover:bg-rose-100/80 flex items-center justify-center shrink-0 text-rose-600 transition-colors">
-                            <ChevronDown className="w-4 h-4" />
+
+                          {/* Left & Right Switch Controls */}
+                          <div className="flex items-center gap-1 shrink-0 text-red-700 ml-1">
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handlePrevCategory();
+                              }}
+                              className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-rose-200/50 hover:bg-rose-200/90 active:scale-95 flex items-center justify-center transition-colors cursor-pointer"
+                              title="Hạng trước"
+                            >
+                              <ChevronLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                            </button>
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleNextCategory();
+                              }}
+                              className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-rose-200/50 hover:bg-rose-200/90 active:scale-95 flex items-center justify-center transition-colors cursor-pointer"
+                              title="Hạng kế tiếp"
+                            >
+                              <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                            </button>
                           </div>
-                        </button>
+                        </div>
                       </div>
 
                       {/* Official Exam Specs Footer strip */}
@@ -700,64 +734,6 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                         </div>
                       </div>
                     </div>
-
-                    {/* Popover / Sheet: 7 Categories in Exact Order (A1 -> A -> B1 -> B -> C1 -> C -> D) */}
-                    {isPickerOpen && (
-                      <div className="absolute inset-0 z-40 bg-white/98 backdrop-blur-md p-2.5 sm:p-3 flex flex-col justify-between shadow-2xl animate-in fade-in zoom-in-95 duration-150">
-                        {/* Dropdown Header */}
-                        <div className="flex items-center justify-between pb-1.5 border-b border-slate-200 shrink-0">
-                          <div className="text-[10px] sm:text-xs font-bold text-slate-900 uppercase tracking-wider">
-                            Chọn hạng GPLX (7 Hạng chuẩn 2026)
-                          </div>
-                          <button
-                            type="button"
-                            onClick={() => setIsPickerOpen(false)}
-                            className="w-6 h-6 rounded-full hover:bg-slate-100 flex items-center justify-center text-slate-400 hover:text-slate-700 transition-colors cursor-pointer"
-                          >
-                            <X className="w-3.5 h-3.5" />
-                          </button>
-                        </div>
-
-                        {/* 7 Categories List in Exact Canonical Order */}
-                        <div className="flex-1 overflow-y-auto py-1 space-y-1 pr-0.5">
-                          {LICENSE_CATEGORIES.map((cat) => {
-                            const isSelected = selectedCategory === cat.id;
-                            return (
-                              <button
-                                key={cat.id}
-                                type="button"
-                                onClick={() => {
-                                  handleCategorySelect(cat.id);
-                                  setIsPickerOpen(false);
-                                }}
-                                className={`w-full text-left px-2.5 py-1.5 sm:py-2 rounded-xl transition-all cursor-pointer flex items-center justify-between ${
-                                  isSelected
-                                    ? 'bg-rose-50 text-slate-900 font-bold border border-rose-200/90 shadow-2xs'
-                                    : 'hover:bg-rose-50/40 text-slate-800'
-                                }`}
-                              >
-                                <div className="min-w-0 pr-2">
-                                  <div className="flex items-center gap-1.5 text-xs sm:text-[13px] leading-tight">
-                                    <span className={isSelected ? 'font-bold text-rose-700' : 'font-medium'}>
-                                      {cat.name}
-                                    </span>
-                                    <span className="text-[9px] sm:text-[10px] font-mono text-slate-400">
-                                      ({cat.totalQuestions} câu • {cat.timeMinutes}p)
-                                    </span>
-                                  </div>
-                                  <div className="text-[8.5px] sm:text-[9.5px] text-slate-500 truncate mt-0.5">
-                                    {cat.description}
-                                  </div>
-                                </div>
-                                {isSelected && (
-                                  <Check className="w-4 h-4 text-rose-600 stroke-[2.5] shrink-0" />
-                                )}
-                              </button>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    )}
                   </div>
                 )}
               </div>
