@@ -306,7 +306,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                     ? 'relative z-10 w-48 sm:w-52 h-[272px] sm:h-[304px] landscape-mobile:w-36 landscape-mobile:h-[195px] bg-[#fffdfa] rounded-r-lg rounded-l-xs border-r border-t border-b border-slate-300/80 border-l-[7px] border-l-slate-300 shadow-2xl shadow-slate-400/40 p-2 sm:p-2.5 landscape-mobile:p-1.5 flex flex-col justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
                     : currentStep === 1
                     ? 'relative z-10 w-72 sm:w-80 h-[272px] sm:h-[304px] landscape-mobile:w-60 landscape-mobile:h-[195px] flex flex-col items-center justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
-                    : 'relative z-10 w-72 sm:w-80 h-[272px] sm:h-[304px] landscape-mobile:w-64 landscape-mobile:h-[195px] flex flex-col justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
+                    : 'relative z-10 w-[316px] sm:w-[344px] max-w-full h-[216px] sm:h-[232px] landscape-mobile:w-72 landscape-mobile:h-[175px] flex flex-col justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
                 }
               >
                 {/* ------------------------------------------------------------- */}
@@ -545,34 +545,42 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 )}
 
                 {/* ------------------------------------------------------------- */}
-                {/* Slide 03 Graphic: Thẻ GPLX Tối Giản (Thuần Tiếng Việt, Chuẩn UI) */}
+                {/* Slide 03 Graphic: Thẻ GPLX PET Hình Chữ Nhật Chuẩn Màu Sắc    */}
                 {/* ------------------------------------------------------------- */}
                 {currentStep === 2 && (
-                  <div className="w-full h-full rounded-xl border border-slate-300/90 bg-[#fffdfa] p-3 sm:p-3.5 landscape-mobile:p-1.5 shadow-xl shadow-slate-200/50 flex flex-col justify-between overflow-hidden relative">
-                    {/* Official National Header (Thuần Tiếng Việt, Căn Giữa Trang Trọng) */}
-                    <div className="text-center pb-2 border-b border-slate-200/90">
-                      <div className="font-bold text-[9px] sm:text-[10px] text-slate-800 uppercase tracking-tight leading-tight">
+                  <div className="w-full h-full rounded-2xl border border-rose-300/80 bg-linear-to-br from-[#ffe4e6] via-[#fff1f2] to-[#fed7aa]/35 p-2.5 sm:p-3 landscape-mobile:p-1.5 shadow-xl shadow-rose-950/10 flex flex-col justify-between overflow-hidden relative">
+                    {/* Official National Header & Red Title (Màu sắc chuẩn phôi GPLX) */}
+                    <div className="text-center pb-1.5 border-b border-rose-200/90">
+                      <div className="font-bold text-[8.5px] sm:text-[9.5px] text-slate-900 uppercase tracking-tight leading-tight">
                         CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
                       </div>
-                      <div className="italic text-[7.5px] sm:text-[8px] text-slate-500 leading-none mt-0.5 font-medium">
+                      <div className="italic text-[7px] sm:text-[7.5px] text-slate-600 leading-none mt-0.5 font-medium">
                         Độc lập - Tự do - Hạnh phúc
                       </div>
-                      <div className="inline-block px-3 py-0.5 rounded-full bg-rose-600 text-white font-bold text-[8.5px] sm:text-[9.5px] uppercase tracking-wider shadow-2xs mt-1.5">
-                        GIẤY PHÉP LÁI XE
+                      <div className="w-12 h-[0.5px] bg-slate-400 mx-auto mt-0.5 mb-1" />
+
+                      {/* Tiêu đề đỏ chữ đậm chuẩn GPLX thật */}
+                      <div className="flex items-center justify-center gap-2">
+                        <span className="text-red-600 font-black text-xs sm:text-[13px] uppercase tracking-wider">
+                          GIẤY PHÉP LÁI XE
+                        </span>
+                        <span className="text-red-600/90 font-mono font-bold text-[8px] sm:text-[8.5px]">
+                          Số: 0102600899
+                        </span>
                       </div>
                     </div>
 
-                    {/* Card Body: Full-width 6-Category Selection Grid (Rộng rãi, dễ chọn) */}
-                    <div className="w-full my-auto py-1">
-                      <div className="flex items-center justify-between text-[9px] sm:text-[9.5px] font-bold text-slate-700 uppercase tracking-tight mb-1.5 px-0.5">
-                        <span>Chọn hạng giấy phép dự thi:</span>
-                        <span className="text-[8px] font-mono font-bold text-amber-800 bg-amber-100/70 px-1.5 py-0.5 rounded">
+                    {/* Card Body: Full-width 6-Category Selection Grid */}
+                    <div className="w-full my-auto py-0.5">
+                      <div className="flex items-center justify-between text-[8px] sm:text-[8.5px] font-bold text-slate-700 uppercase tracking-tight mb-1 px-0.5">
+                        <span>Hạng giấy phép dự thi:</span>
+                        <span className="text-[7.5px] font-mono font-bold text-red-700 bg-red-100/80 px-1.5 py-0.2 rounded border border-red-200">
                           Quy chế 2026
                         </span>
                       </div>
 
-                      {/* 6 Category Selection Tiles */}
-                      <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
+                      {/* 6 Category Selection Tiles (Grid 2 cols) */}
+                      <div className="grid grid-cols-2 gap-1 sm:gap-1.5">
                         {categoriesList.map((cat) => {
                           const isSelected = selectedCategory === cat.id;
                           return (
@@ -580,26 +588,26 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                               key={cat.id}
                               type="button"
                               onClick={() => handleCategorySelect(cat.id)}
-                              className={`p-2 sm:p-2.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
+                              className={`p-1.5 sm:p-2 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
                                 isSelected
-                                  ? 'border-amber-500 bg-amber-50/90 shadow-xs ring-1 ring-amber-500/40'
-                                  : 'border-slate-200/90 bg-slate-50/70 hover:border-slate-300 hover:bg-white'
+                                  ? 'border-red-500 bg-white/95 shadow-xs ring-1 ring-red-400/50'
+                                  : 'border-rose-200/90 bg-white/75 hover:border-rose-300 hover:bg-white'
                               }`}
                             >
                               <div className="min-w-0 pr-1">
                                 <div
-                                  className={`text-[11px] sm:text-xs font-bold leading-tight ${
-                                    isSelected ? 'text-amber-950 font-black' : 'text-slate-800'
+                                  className={`text-[10px] sm:text-[11px] font-bold leading-tight ${
+                                    isSelected ? 'text-red-950 font-black' : 'text-slate-800'
                                   }`}
                                 >
                                   {cat.label}
                                 </div>
-                                <div className="text-[8.5px] sm:text-[9.5px] text-slate-500 truncate mt-0.5">
+                                <div className="text-[7.5px] sm:text-[8px] text-slate-500 truncate mt-0.5">
                                   {cat.desc}
                                 </div>
                               </div>
                               {isSelected && (
-                                <div className="w-4 h-4 rounded-full bg-amber-500 text-white flex items-center justify-center shrink-0 shadow-2xs">
+                                <div className="w-3.5 h-3.5 rounded-full bg-red-600 text-white flex items-center justify-center shrink-0 shadow-2xs">
                                   <Check className="w-2.5 h-2.5 stroke-[3]" />
                                 </div>
                               )}
@@ -610,8 +618,8 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                     </div>
 
                     {/* Card Footer: Exam Specs without emoji */}
-                    <div className="pt-2 border-t border-slate-200/90 flex items-center justify-between text-[8.5px] sm:text-[9.5px] text-slate-600 font-mono">
-                      <span className="text-amber-900 font-bold">
+                    <div className="pt-1.5 border-t border-rose-200/90 flex items-center justify-between text-[8px] sm:text-[8.5px] text-slate-600 font-mono">
+                      <span className="text-red-950 font-bold">
                         Đề thi: {activeCategoryConfig.totalQ} câu • {activeCategoryConfig.time} phút
                       </span>
                       <span className="text-emerald-700 font-bold">
