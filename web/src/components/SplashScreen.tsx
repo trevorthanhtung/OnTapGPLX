@@ -7,8 +7,8 @@ interface SplashScreenProps {
 // Custom Toyota Vios Sedan SVG Icon (Xe tập lái / sát hạch quốc dân)
 const ViosSedan: React.FC = () => (
   <svg
-    viewBox="0 0 68 22"
-    className="w-14 h-6 select-none pointer-events-none overflow-visible"
+    viewBox="0 0 54 22"
+    className="w-12 h-6 select-none pointer-events-none"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -26,17 +26,7 @@ const ViosSedan: React.FC = () => (
         <stop offset="0%" stopColor="#e0f2fe" stopOpacity="0.95" />
         <stop offset="100%" stopColor="#7dd3fc" stopOpacity="0.85" />
       </linearGradient>
-
-      {/* Headlight beam */}
-      <linearGradient id="viosHeadlight" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#fef08a" stopOpacity="0.8" />
-        <stop offset="60%" stopColor="#fef08a" stopOpacity="0.3" />
-        <stop offset="100%" stopColor="#fef08a" stopOpacity="0" />
-      </linearGradient>
     </defs>
-
-    {/* Forward Headlight Beam */}
-    <polygon points="53,12 68,9 68,16 53,14" fill="url(#viosHeadlight)" />
 
     {/* Main Sedan Body (Toyota Vios silhouette: 3-box sedan shape with clear trunk deck) */}
     <path
@@ -315,20 +305,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
                 animation: !isLaunching ? 'carRumble 0.12s infinite alternate ease-in-out' : undefined,
               }}
             >
-              {/* Exhaust Tail Light Trail */}
-              <div className="absolute -left-6 bottom-1 w-7 h-1.5 bg-linear-to-l from-orange-500 via-amber-400/40 to-transparent rounded-full blur-[0.6px] pointer-events-none" />
-
-              {/* Turbo Jet Boost Trail at 100% */}
-              {isLaunching && (
-                <div className="absolute -left-12 bottom-0.5 w-14 h-2.5 bg-linear-to-l from-orange-600 via-amber-400 to-transparent rounded-full blur-[1px] animate-pulse" />
-              )}
-
-              {/* Smoke Puff Particle when driving */}
-              {progress > 5 && progress < 99 && !isLaunching && (
-                <div className="absolute -left-2 bottom-1 w-1.5 h-1.5 rounded-full bg-slate-300/70 animate-ping" />
-              )}
-
-              {/* Clean Standalone Vios Sedan (No card, no circle badge!) */}
+              {/* Clean Standalone Vios Sedan (No card, no light beams!) */}
               <ViosSedan />
             </div>
           </div>
