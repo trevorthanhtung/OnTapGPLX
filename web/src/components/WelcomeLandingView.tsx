@@ -427,15 +427,15 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 )}
 
                 {/* ------------------------------------------------------------- */}
-                {/* Slide 02 Graphic: Màn Hình Mô Phỏng 3D Tối Giản (Minimalist) */}
+                {/* Slide 02 Graphic: Màn Hình Máy Tính Viền Đen Mô Phỏng 3D      */}
                 {/* ------------------------------------------------------------- */}
                 {currentStep === 1 && (
                   <div className="w-full h-full flex flex-col items-center justify-between">
-                    {/* Monitor Frame (Clean White / Soft Slate) */}
-                    <div className="w-full flex-1 rounded-xl bg-[#fffdfa] border border-slate-300/90 shadow-xl shadow-slate-200/50 p-2 sm:p-2.5 flex flex-col justify-between relative overflow-hidden">
-                      {/* Top Bar: Clean and Minimal */}
-                      <div className="flex items-center justify-between pb-1.5 border-b border-slate-200 text-[8.5px] sm:text-[9.5px] text-slate-500 font-mono">
-                        <span className="font-bold text-slate-800 uppercase tracking-tight">
+                    {/* Monitor Frame (Sleek Matte Black Bezel / PC Chuyên Dụng) */}
+                    <div className="w-full flex-1 rounded-xl bg-slate-950 border-2 border-slate-800 shadow-2xl shadow-slate-950/40 p-2 sm:p-2.5 flex flex-col justify-between relative overflow-hidden">
+                      {/* Top Bar: Clean and Minimal Dark Theme */}
+                      <div className="flex items-center justify-between pb-1.5 border-b border-slate-800/90 text-[8.5px] sm:text-[9.5px] font-mono">
+                        <span className="font-bold text-slate-200 uppercase tracking-tight">
                           MÔ PHỎNG 120 TÌNH HUỐNG
                         </span>
                         <span className="text-slate-400">
@@ -443,86 +443,86 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                         </span>
                       </div>
 
-                      {/* Video Scene (Pastel palette matching Slide 01 book) */}
-                      <div className="w-full h-24 sm:h-28 landscape-mobile:h-18 rounded-md bg-[#f3f7eb] border border-slate-300/80 overflow-hidden relative my-1">
+                      {/* Video Scene (Simulated Highway 3D) */}
+                      <div className="w-full h-24 sm:h-28 landscape-mobile:h-18 rounded-md bg-[#090d16] border border-slate-800 overflow-hidden relative my-1">
                         <svg viewBox="0 0 280 110" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
                           <defs>
-                            <linearGradient id="skyGradPastel" x1="0" y1="0" x2="0" y2="1">
-                              <stop offset="0%" stopColor="#bae6fd" />
-                              <stop offset="100%" stopColor="#e0f2fe" />
+                            <linearGradient id="skyGradDark" x1="0" y1="0" x2="0" y2="1">
+                              <stop offset="0%" stopColor="#0f172a" />
+                              <stop offset="100%" stopColor="#1e293b" />
                             </linearGradient>
                           </defs>
 
                           {/* Sky */}
-                          <rect x="0" y="0" width="280" height="42" fill="url(#skyGradPastel)" />
-                          {/* Mountains */}
-                          <polygon points="0,42 40,26 80,42" fill="#cbd5e1" />
-                          <polygon points="65,42 115,20 165,42" fill="#94a3b8" />
-                          <polygon points="150,42 200,24 250,42" fill="#cbd5e1" />
-                          <polygon points="230,42 265,30 280,42" fill="#94a3b8" />
+                          <rect x="0" y="0" width="280" height="42" fill="url(#skyGradDark)" />
+                          {/* Distant Hills */}
+                          <polygon points="0,42 40,28 80,42" fill="#334155" />
+                          <polygon points="65,42 115,22 165,42" fill="#1e293b" />
+                          <polygon points="150,42 200,26 250,42" fill="#334155" />
+                          <polygon points="230,42 265,32 280,42" fill="#1e293b" />
 
-                          {/* Highway Asphalt Road (Clean Slate) */}
-                          <polygon points="0,110 140,42 280,110" fill="#94a3b8" />
+                          {/* Highway Asphalt Road */}
+                          <polygon points="0,110 140,42 280,110" fill="#1e293b" />
                           {/* Yellow Dashed Center Line */}
                           <line x1="140" y1="42" x2="140" y2="105" stroke="#f59e0b" strokeWidth="2" strokeDasharray="6 4" />
                           {/* White Side Lines */}
-                          <line x1="0" y1="110" x2="140" y2="42" stroke="#ffffff" strokeWidth="1.2" />
-                          <line x1="280" y1="110" x2="140" y2="42" stroke="#ffffff" strokeWidth="1.2" />
+                          <line x1="0" y1="110" x2="140" y2="42" stroke="#64748b" strokeWidth="1.2" />
+                          <line x1="280" y1="110" x2="140" y2="42" stroke="#64748b" strokeWidth="1.2" />
 
-                          {/* Blue Car in front with clean red brake lights */}
+                          {/* Blue Car in front with glowing red brake lights */}
                           <g transform="translate(125, 48)">
-                            <rect x="0" y="0" width="30" height="20" rx="2" fill="#2563eb" stroke="#1d4ed8" strokeWidth="0.8" />
+                            <rect x="0" y="0" width="30" height="20" rx="2" fill="#2563eb" stroke="#3b82f6" strokeWidth="0.8" />
                             <rect x="3" y="3" width="24" height="10" rx="1" fill="#93c5fd" />
                             {/* Brake Lights */}
-                            <circle cx="5" cy="16" r="2" fill="#dc2626" />
-                            <circle cx="25" cy="16" r="2" fill="#dc2626" />
+                            <circle cx="5" cy="16" r="2.2" fill="#ef4444" />
+                            <circle cx="25" cy="16" r="2.2" fill="#ef4444" />
                             {/* Plate */}
                             <rect x="11" y="14" width="8" height="3" fill="#ffffff" />
                           </g>
 
                           {/* Steering Wheel Arc at bottom */}
-                          <path d="M 90 110 Q 140 85 190 110" fill="none" stroke="#334155" strokeWidth="7" />
-                          <circle cx="140" cy="102" r="4.5" fill="#475569" />
+                          <path d="M 90 110 Q 140 85 190 110" fill="none" stroke="#475569" strokeWidth="7" />
+                          <circle cx="140" cy="102" r="4.5" fill="#64748b" />
 
                           {/* Minimalist Situation Tag */}
                           <g transform="translate(10, 8)">
-                            <rect x="0" y="0" width="135" height="14" rx="7" fill="#0f172a" opacity="0.85" />
-                            <text x="67.5" y="10" textAnchor="middle" fill="#ffffff" fontSize="6.5" fontWeight="bold" fontFamily="sans-serif">
+                            <rect x="0" y="0" width="135" height="14" rx="7" fill="#0f172a" stroke="#334155" strokeWidth="0.8" />
+                            <text x="67.5" y="10" textAnchor="middle" fill="#f8fafc" fontSize="6.5" fontWeight="bold" fontFamily="sans-serif">
                               Tình huống: Xe phía trước giảm tốc
                             </text>
                           </g>
                         </svg>
                       </div>
 
-                      {/* 4 Minimalist Flat Options */}
+                      {/* 4 Minimalist Flat Options (Dark Theme) */}
                       <div className="grid grid-cols-2 gap-1 my-0.5">
-                        <div className="p-1 sm:p-1.5 rounded-md bg-slate-50 border border-slate-200 text-[8px] sm:text-[8.5px] text-slate-600 truncate">
+                        <div className="p-1 sm:p-1.5 rounded-md bg-slate-900 border border-slate-800 text-[8px] sm:text-[8.5px] text-slate-300 truncate">
                           A. Giữ nguyên tốc độ
                         </div>
-                        <div className="p-1 sm:p-1.5 rounded-md bg-emerald-50 border border-emerald-400 text-[8px] sm:text-[8.5px] text-emerald-900 font-bold flex items-center justify-between shadow-2xs">
+                        <div className="p-1 sm:p-1.5 rounded-md bg-emerald-950/80 border border-emerald-500/80 text-[8px] sm:text-[8.5px] text-emerald-300 font-bold flex items-center justify-between shadow-2xs">
                           <span className="truncate">B. Phanh giảm tốc</span>
-                          <span className="w-3.5 h-3.5 rounded-full bg-emerald-600 text-white flex items-center justify-center shrink-0 ml-1">
+                          <span className="w-3.5 h-3.5 rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center shrink-0 ml-1">
                             <Check className="w-2.5 h-2.5 stroke-[3]" />
                           </span>
                         </div>
-                        <div className="p-1 sm:p-1.5 rounded-md bg-slate-50 border border-slate-200 text-[8px] sm:text-[8.5px] text-slate-600 truncate">
+                        <div className="p-1 sm:p-1.5 rounded-md bg-slate-900 border border-slate-800 text-[8px] sm:text-[8.5px] text-slate-300 truncate">
                           C. Bấm còi vượt xe
                         </div>
-                        <div className="p-1 sm:p-1.5 rounded-md bg-slate-50 border border-slate-200 text-[8px] sm:text-[8.5px] text-slate-600 truncate">
+                        <div className="p-1 sm:p-1.5 rounded-md bg-slate-900 border border-slate-800 text-[8px] sm:text-[8.5px] text-slate-300 truncate">
                           D. Đánh lái sang phải
                         </div>
                       </div>
 
-                      {/* Bottom Footer Caption (Minimalist, No colored dots) */}
-                      <div className="pt-1.5 border-t border-slate-200 flex items-center justify-between text-[8px] sm:text-[9px] text-slate-500 font-mono">
+                      {/* Bottom Footer Caption (Minimalist Dark) */}
+                      <div className="pt-1.5 border-t border-slate-800/90 flex items-center justify-between text-[8px] sm:text-[9px] text-slate-400 font-mono">
                         <span>Trắc nghiệm 4 mốc thời điểm</span>
-                        <span className="text-emerald-700 font-bold">10 điểm tối đa</span>
+                        <span className="text-emerald-400 font-bold">10 điểm tối đa</span>
                       </div>
                     </div>
 
-                    {/* Slim Minimalist Stand */}
-                    <div className="w-8 h-2 bg-slate-300 border-x border-slate-300/80 -mt-[1px]" />
-                    <div className="w-24 sm:w-28 h-1 rounded-full bg-slate-300/90 shadow-2xs" />
+                    {/* Dark Slim Stand */}
+                    <div className="w-8 h-2.5 bg-slate-800 border-x border-slate-700/80 -mt-[1px]" />
+                    <div className="w-24 sm:w-28 h-1.5 rounded-full bg-slate-700 shadow-md" />
                   </div>
                 )}
 
