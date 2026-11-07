@@ -42,12 +42,6 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
     handleCategorySelect(LICENSE_CATEGORIES[nextIndex].id);
   };
 
-  const handlePrevCategory = () => {
-    const currentIndex = LICENSE_CATEGORIES.findIndex((c) => c.id === selectedCategory);
-    const prevIndex = (currentIndex - 1 + LICENSE_CATEGORIES.length) % LICENSE_CATEGORIES.length;
-    handleCategorySelect(LICENSE_CATEGORIES[prevIndex].id);
-  };
-
   const activeCategoryConfig =
     LICENSE_CATEGORIES.find((c) => c.id === selectedCategory) || LICENSE_CATEGORIES[0];
 
@@ -669,49 +663,17 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                       </div>
 
                       {/* Main Category Cycler (Đồng màu với thẻ GPLX, ấn là đổi hạng) */}
-                      <div className="relative">
-                        <div className="mb-1 flex items-center justify-between">
-                          <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold text-slate-700 uppercase tracking-wider">
-                            Hạng:
-                          </span>
-                        </div>
-
-                        {/* Interactive Cycler Box (Đồng màu nền rose-100 với thẻ, ấn là đổi hạng) */}
-                        <div
-                          onClick={handleNextCategory}
-                          className="w-full bg-rose-100/50 hover:bg-rose-100/80 active:scale-[0.99] border border-rose-300/80 rounded-xl p-2 sm:p-2.5 md:p-3 shadow-2xs hover:shadow-xs transition-all cursor-pointer flex items-center justify-between group select-none"
-                          title="Chạm để chuyển hạng GPLX"
-                        >
-                          <span className="text-xs sm:text-sm md:text-base font-black text-red-700 tracking-tight pl-0.5">
-                            {activeCategoryConfig.name}
-                          </span>
-
-                          {/* Left & Right Switch Controls */}
-                          <div className="flex items-center gap-1 shrink-0 text-red-700 ml-1">
-                            <button
-                              type="button"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                handlePrevCategory();
-                              }}
-                              className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-rose-200/50 hover:bg-rose-200/90 active:scale-95 flex items-center justify-center transition-colors cursor-pointer"
-                              title="Hạng trước"
-                            >
-                              <ChevronLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                            </button>
-                            <button
-                              type="button"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                handleNextCategory();
-                              }}
-                              className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-rose-200/50 hover:bg-rose-200/90 active:scale-95 flex items-center justify-center transition-colors cursor-pointer"
-                              title="Hạng kế tiếp"
-                            >
-                              <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                            </button>
-                          </div>
-                        </div>
+                      <div
+                        onClick={handleNextCategory}
+                        className="w-full bg-rose-100/50 hover:bg-rose-100/80 active:scale-[0.99] border border-rose-300/80 rounded-xl px-2.5 py-2 sm:px-3 sm:py-2.5 md:px-3.5 md:py-3 shadow-2xs hover:shadow-xs transition-all cursor-pointer flex items-center justify-between select-none"
+                        title="Chạm để chuyển hạng GPLX"
+                      >
+                        <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold text-slate-700 uppercase tracking-wider shrink-0">
+                          Hạng:
+                        </span>
+                        <span className="text-xs sm:text-sm md:text-base font-black text-red-700 tracking-tight text-right pl-2">
+                          {activeCategoryConfig.name}
+                        </span>
                       </div>
                     </div>
                   </div>
