@@ -527,93 +527,73 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 )}
 
                 {/* ------------------------------------------------------------- */}
-                {/* Slide 03 Graphic: Thẻ GPLX PET 3D Tối Giản (Minimalist Card)    */}
+                {/* Slide 03 Graphic: Thẻ GPLX PET Tối Giản (Minimalist Card)     */}
                 {/* ------------------------------------------------------------- */}
                 {currentStep === 2 && (
-                  <div className="w-full h-full rounded-xl border border-slate-300/90 bg-[#fffdfa] p-2.5 sm:p-3 landscape-mobile:p-1.5 shadow-xl shadow-slate-200/50 flex flex-col justify-between overflow-hidden relative">
+                  <div className="w-full h-full rounded-xl border border-slate-300/90 bg-[#fffdfa] p-3 sm:p-3.5 landscape-mobile:p-1.5 shadow-xl shadow-slate-200/50 flex flex-col justify-between overflow-hidden relative">
                     {/* Official National Header (Refined, Minimalist) */}
-                    <div className="text-center pb-1.5 border-b border-slate-200">
-                      <div className="font-bold text-[8.5px] sm:text-[9.5px] text-slate-800 uppercase tracking-tight leading-tight">
+                    <div className="text-center pb-2 border-b border-slate-200/90">
+                      <div className="font-bold text-[9px] sm:text-[10px] text-slate-800 uppercase tracking-tight leading-tight">
                         CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
                       </div>
-                      <div className="italic text-[7px] sm:text-[7.5px] text-slate-500 leading-none mt-0.5">
+                      <div className="italic text-[7.5px] sm:text-[8px] text-slate-500 leading-none mt-0.5">
                         Độc lập - Tự do - Hạnh phúc
                       </div>
-                      <div className="inline-block px-2.5 py-0.5 rounded-full bg-rose-600 text-white font-bold text-[7.5px] sm:text-[8.5px] uppercase tracking-wider shadow-2xs mt-1">
+                      <div className="inline-block px-2.5 py-0.5 rounded-full bg-rose-600 text-white font-bold text-[8px] sm:text-[9px] uppercase tracking-wider shadow-2xs mt-1.5">
                         GIẤY PHÉP LÁI XE / DRIVING LICENCE
                       </div>
                     </div>
 
-                    {/* Card Body: Left Minimalist Avatar & Info + Right 6-Category Selector */}
-                    <div className="flex gap-2.5 my-auto py-1 items-center">
-                      {/* Left: 3x4 ID Frame with Line Art Driver */}
-                      <div className="w-16 sm:w-18 shrink-0 flex flex-col items-center">
-                        <div className="w-15 sm:w-16 h-18 sm:h-20 rounded-md bg-slate-50 border border-slate-200 p-0.5 shadow-2xs overflow-hidden flex flex-col items-center justify-center">
-                          {/* Minimalist Driver Silhouette */}
-                          <div className="w-full h-full rounded bg-white border border-slate-100 flex flex-col items-center justify-end overflow-hidden relative">
-                            {/* Head & Hair */}
-                            <circle cx="28" cy="18" r="8.5" fill="#fed7aa" />
-                            <path d="M 21 14 Q 28 9 35 14 Q 38 21 21 21 Z" fill="#334155" />
-                            {/* Torso */}
-                            <path d="M 14 36 L 22 27 L 34 27 L 42 36 Z" fill="#334155" />
-                            <polygon points="26,27 30,27 28,33" fill="#dc2626" />
-                          </div>
-                        </div>
-
-                        {/* ID Number */}
-                        <div className="text-[7px] text-slate-400 font-mono mt-1 text-center truncate w-full">
-                          Số: 0102600899
-                        </div>
+                    {/* Card Body: Full-width 6-Category Selection Grid (No photo box, clean & spacious) */}
+                    <div className="w-full my-auto py-1">
+                      <div className="flex items-center justify-between text-[9px] sm:text-[9.5px] font-bold text-slate-700 uppercase tracking-tight mb-1.5 px-0.5">
+                        <span>Chọn hạng giấy phép dự thi:</span>
+                        <span className="text-[8px] font-mono font-bold text-amber-800 bg-amber-100/70 px-1.5 py-0.5 rounded">
+                          Quy chế 2026
+                        </span>
                       </div>
 
-                      {/* Right: Category Selector Header & 6 Clean Tiles */}
-                      <div className="flex-1 min-w-0">
-                        <div className="text-[9px] font-bold text-slate-700 uppercase tracking-tight mb-1">
-                          Hạng bằng đang học:
-                        </div>
-
-                        {/* 6 Category Selection Tiles */}
-                        <div className="grid grid-cols-2 gap-1 sm:gap-1.5">
-                          {categoriesList.map((cat) => {
-                            const isSelected = selectedCategory === cat.id;
-                            return (
-                              <button
-                                key={cat.id}
-                                type="button"
-                                onClick={() => handleCategorySelect(cat.id)}
-                                className={`p-1 sm:p-1.5 rounded-lg border text-left transition-all cursor-pointer flex items-center justify-between ${
-                                  isSelected
-                                    ? 'border-amber-500 bg-amber-50 shadow-xs ring-1 ring-amber-500/40'
-                                    : 'border-slate-200 bg-slate-50/80 hover:border-slate-300 hover:bg-white'
-                                }`}
-                              >
-                                <div className="min-w-0 pr-0.5">
-                                  <div
-                                    className={`text-[10px] sm:text-[11px] font-bold leading-tight ${
-                                      isSelected ? 'text-amber-950 font-black' : 'text-slate-800'
-                                    }`}
-                                  >
-                                    {cat.label}
-                                  </div>
-                                  <div className="text-[7.5px] sm:text-[8px] text-slate-500 truncate">
-                                    {cat.desc}
-                                  </div>
+                      {/* 6 Category Selection Tiles */}
+                      <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
+                        {categoriesList.map((cat) => {
+                          const isSelected = selectedCategory === cat.id;
+                          return (
+                            <button
+                              key={cat.id}
+                              type="button"
+                              onClick={() => handleCategorySelect(cat.id)}
+                              className={`p-2 sm:p-2.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
+                                isSelected
+                                  ? 'border-amber-500 bg-amber-50/90 shadow-xs ring-1 ring-amber-500/40'
+                                  : 'border-slate-200/90 bg-slate-50/70 hover:border-slate-300 hover:bg-white'
+                              }`}
+                            >
+                              <div className="min-w-0 pr-1">
+                                <div
+                                  className={`text-[11px] sm:text-xs font-bold leading-tight ${
+                                    isSelected ? 'text-amber-950 font-black' : 'text-slate-800'
+                                  }`}
+                                >
+                                  {cat.label}
                                 </div>
-                                {isSelected && (
-                                  <div className="w-3.5 h-3.5 rounded-full bg-amber-500 text-white flex items-center justify-center shrink-0 shadow-2xs">
-                                    <Check className="w-2.5 h-2.5 stroke-[3]" />
-                                  </div>
-                                )}
-                              </button>
-                            );
-                          })}
-                        </div>
+                                <div className="text-[8.5px] sm:text-[9.5px] text-slate-500 truncate mt-0.5">
+                                  {cat.desc}
+                                </div>
+                              </div>
+                              {isSelected && (
+                                <div className="w-4 h-4 rounded-full bg-amber-500 text-white flex items-center justify-center shrink-0 shadow-2xs">
+                                  <Check className="w-2.5 h-2.5 stroke-[3]" />
+                                </div>
+                              )}
+                            </button>
+                          );
+                        })}
                       </div>
                     </div>
 
                     {/* Card Footer: Exam Specs without emoji */}
-                    <div className="pt-1.5 border-t border-slate-200 flex items-center justify-between text-[8px] sm:text-[9px] text-slate-600 font-mono">
-                      <span className="text-amber-800 font-bold">
+                    <div className="pt-2 border-t border-slate-200/90 flex items-center justify-between text-[8.5px] sm:text-[9.5px] text-slate-600 font-mono">
+                      <span className="text-amber-900 font-bold">
                         Đề thi: {activeCategoryConfig.totalQ} câu • {activeCategoryConfig.time} phút
                       </span>
                       <span className="text-emerald-700 font-bold">
