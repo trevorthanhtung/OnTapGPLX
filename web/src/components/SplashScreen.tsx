@@ -39,17 +39,6 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
     return () => clearInterval(timer);
   }, [onFinish]);
 
-  // Dynamic progress-based statuses
-  const getStatusText = (pct: number) => {
-    if (pct < 30) return 'Đang tải ngân hàng 600 câu hỏi lý thuyết...';
-    if (pct < 65) return 'Đồng bộ 120 tình huống mô phỏng & biển báo...';
-    if (pct < 90) return 'Tối ưu dữ liệu học ngoại tuyến trên thiết bị...';
-    if (pct < 100) return 'Sẵn sàng xuất phát! Vững vàng tay lái...';
-    return 'Khởi hành thành công!';
-  };
-
-  const statusText = getStatusText(progress);
-
   return (
     <div
       className={`fixed inset-0 z-[100] flex flex-col items-center justify-between p-6 pt-[max(1.5rem,env(safe-area-inset-top))] pb-[max(2rem,env(safe-area-inset-bottom))] pl-[max(1.5rem,env(safe-area-inset-left))] pr-[max(1.5rem,env(safe-area-inset-right))] select-none overflow-hidden transition-colors duration-400 ${
@@ -225,9 +214,9 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
           </div>
         </div>
 
-        {/* Dynamic Status & Progress Percentage */}
+        {/* Status & Progress Percentage */}
         <div className="flex items-center justify-between w-full mt-3 text-xs font-mono font-medium text-slate-500">
-          <span className="truncate pr-2 font-medium text-slate-600">{statusText}</span>
+          <span className="font-medium text-slate-600">Đang tải...</span>
           <span className="font-bold text-amber-600 shrink-0">{progress}%</span>
         </div>
       </div>
