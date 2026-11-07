@@ -41,7 +41,7 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Người đi bộ bước chân xuất hiện từ điểm mù khuất tầm nhìn và di chuyển nhanh xuống lòng đường."
@@ -108,7 +108,7 @@
           "Người đi bộ bước chân xuất hiện từ điểm mù khuất tầm nhìn và di chuyển nhanh xuống lòng đường.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 0,
         "explanation": "Thời điểm nguy hiểm trực tiếp: Người đi bộ bước chân xuất hiện từ điểm mù khuất tầm nhìn và di chuyển nhanh xuống lòng đường."
@@ -169,7 +169,7 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Cụm đèn phanh màu đỏ phía sau phương tiện đi trước vừa bật sáng báo hiệu xe phanh dừng đột ngột.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
@@ -201,9 +201,9 @@
     "timeIndirect": 3.9,
     "timeDirect": 7.1,
     "part1_name": "Xe con từ đường nhánh đi nhanh ra tại ngã ba không có đèn tín hiệu giao thông",
-    "part2_indirect": "Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
+    "part2_indirect": "Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
     "part3_direct": "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
-    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
     "quiz": [
       {
         "part": 1,
@@ -222,19 +222,19 @@
         "question": "2. Dấu hiệu cảnh báo sớm nguy cơ mất an toàn giao thông mà người lái xe cần quan sát từ xa là gì?",
         "options": [
           "Các phương tiện cùng chiều đang duy trì tốc độ ổn định và giữ khoảng cách rất an toàn.",
-          "Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
+          "Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
           "Đèn tín hiệu giao thông phía trước đang bật màu xanh liên tục, các xe di chuyển bình thường.",
           "Mặt đường bằng phẳng, tầm nhìn thông thoáng, không có bất kỳ chướng ngại vật nào từ xa."
         ],
         "correctIndex": 1,
-        "explanation": "Dấu hiệu cảnh báo sớm: Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh."
+        "explanation": "Dấu hiệu cảnh báo sớm: Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh."
       },
       {
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
@@ -245,13 +245,13 @@
         "part": 4,
         "question": "4. Trong tình huống này, người lái xe phải thực hiện thao tác nào dưới đây để đảm bảo an toàn?",
         "options": [
-          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
           "Giữ nguyên tốc độ, tiếp tục di chuyển và chỉ rà phanh khi va chạm sắp xảy ra.",
           "Đánh lái gấp sang làn đường ngược chiều để né tránh phương tiện phía trước.",
           "Bấm còi liên tục, đạp mạnh chân ga tăng tốc để nhanh chóng vượt qua khu vực nguy hiểm."
         ],
         "correctIndex": 0,
-        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột."
+        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm."
       }
     ]
   },
@@ -266,7 +266,7 @@
     "timeDirect": 8.92,
     "part1_name": "Xe máy đang đi thẳng, đột ngột rẽ trái sang đường trước đầu xe bạn",
     "part2_indirect": "Phương tiện đi song song hoặc cùng chiều phía trước giảm tốc độ và bắt đầu đổi hướng chuyển làn.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -298,12 +298,12 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
         "correctIndex": 2,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -364,7 +364,7 @@
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 0,
         "explanation": "Thời điểm nguy hiểm trực tiếp: Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn."
@@ -428,7 +428,7 @@
           "Người đi bộ bước chân xuất hiện từ điểm mù khuất tầm nhìn và di chuyển nhanh xuống lòng đường.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 0,
         "explanation": "Thời điểm nguy hiểm trực tiếp: Người đi bộ bước chân xuất hiện từ điểm mù khuất tầm nhìn và di chuyển nhanh xuống lòng đường."
@@ -459,7 +459,7 @@
     "part1_name": "Xe đạp bất ngờ đi ra từ đường nhánh tại ngã ba",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
-    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
     "quiz": [
       {
         "part": 1,
@@ -492,7 +492,7 @@
           "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 0,
         "explanation": "Thời điểm nguy hiểm trực tiếp: Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe."
@@ -504,10 +504,10 @@
           "Đánh lái gấp sang làn đường ngược chiều để né tránh phương tiện phía trước.",
           "Giữ nguyên tốc độ, tiếp tục di chuyển và chỉ rà phanh khi va chạm sắp xảy ra.",
           "Bấm còi liên tục, đạp mạnh chân ga tăng tốc để nhanh chóng vượt qua khu vực nguy hiểm.",
-          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột."
+          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm."
         ],
         "correctIndex": 3,
-        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột."
+        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm."
       }
     ]
   },
@@ -556,7 +556,7 @@
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 2,
         "explanation": "Thời điểm nguy hiểm trực tiếp: Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn."
@@ -587,7 +587,7 @@
     "part1_name": "Xe ô tô bất ngờ đi nhanh ra từ đường nhánh bên trái tại ngã ba",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
-    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
     "quiz": [
       {
         "part": 1,
@@ -617,7 +617,7 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe."
@@ -630,12 +630,12 @@
         "question": "4. Trong tình huống này, người lái xe phải thực hiện thao tác nào dưới đây để đảm bảo an toàn?",
         "options": [
           "Bấm còi liên tục, đạp mạnh chân ga tăng tốc để nhanh chóng vượt qua khu vực nguy hiểm.",
-          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
           "Đánh lái gấp sang làn đường ngược chiều để né tránh phương tiện phía trước.",
           "Giữ nguyên tốc độ, tiếp tục di chuyển và chỉ rà phanh khi va chạm sắp xảy ra."
         ],
         "correctIndex": 1,
-        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột."
+        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm."
       }
     ]
   },
@@ -649,7 +649,7 @@
     "timeIndirect": 3.5,
     "timeDirect": 6.73,
     "part1_name": "Xe bồn bê-tông từ đường nhánh lấn làn để rẽ tại ngã ba không có đèn giao thông có nhiều xe đang dừng đỗ",
-    "part2_indirect": "Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
+    "part2_indirect": "Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
     "part3_direct": "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
     "part4_action": "Rà phanh giảm tốc độ, chủ động điều khiển xe nép sát về phía bên phải làn đường của mình để nhường đường.",
     "quiz": [
@@ -672,10 +672,10 @@
           "Mặt đường bằng phẳng, tầm nhìn thông thoáng, không có bất kỳ chướng ngại vật nào từ xa.",
           "Đèn tín hiệu giao thông phía trước đang bật màu xanh liên tục, các xe di chuyển bình thường.",
           "Các phương tiện cùng chiều đang duy trì tốc độ ổn định và giữ khoảng cách rất an toàn.",
-          "Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh."
+          "Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh."
         ],
         "correctIndex": 3,
-        "explanation": "Dấu hiệu cảnh báo sớm: Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh."
+        "explanation": "Dấu hiệu cảnh báo sớm: Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh."
       },
       {
         "part": 3,
@@ -683,7 +683,7 @@
         "options": [
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
         ],
         "correctIndex": 0,
@@ -705,15 +705,15 @@
   },
   {
     "id": 12,
-    "title": "Tình huống 12: Xe mô-tô lấn làn vượt ẩu nguy hiểm tại giao lộ",
-    "name": "Xe mô-tô lấn làn vượt ẩu nguy hiểm tại giao lộ",
+    "title": "Tình huống 12: Xe mô-tô lấn làn vượt ẩu nguy hiểm tại ngã tư",
+    "name": "Xe mô-tô lấn làn vượt ẩu nguy hiểm tại ngã tư",
     "chapter": 1,
     "chapterName": "Giao thông trong đô thị",
     "videoUrl": "/videos/12.mp4",
     "timeIndirect": 6.8,
     "timeDirect": 10,
-    "part1_name": "Xe mô-tô lấn làn vượt ẩu nguy hiểm tại giao lộ",
-    "part2_indirect": "Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
+    "part1_name": "Xe mô-tô lấn làn vượt ẩu nguy hiểm tại ngã tư",
+    "part2_indirect": "Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
     "part3_direct": "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
     "part4_action": "Rà phanh giảm tốc độ, chủ động điều khiển xe nép sát về phía bên phải làn đường của mình để nhường đường.",
     "quiz": [
@@ -723,11 +723,11 @@
         "options": [
           "Xe con từ đường nhánh nhập làn nguy hiểm cắt qua đầu xe bạn",
           "Trẻ em đột ngột lao ra để nhặt quả bóng bị lăn ra đường",
-          "Xe mô-tô lấn làn vượt ẩu nguy hiểm tại giao lộ",
+          "Xe mô-tô lấn làn vượt ẩu nguy hiểm tại ngã tư",
           "Xe khách chạy vượt xe tải, đâm trực diện vào xe khách đi chiều ngược lại gây tai nạn liên hoàn 3 xe"
         ],
         "correctIndex": 2,
-        "explanation": "Tình huống mô phỏng kịch bản: Xe mô-tô lấn làn vượt ẩu nguy hiểm tại giao lộ. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
+        "explanation": "Tình huống mô phỏng kịch bản: Xe mô-tô lấn làn vượt ẩu nguy hiểm tại ngã tư. Người lái xe cần nhận diện nhanh để chủ động phòng ngừa va chạm."
       },
       {
         "part": 2,
@@ -736,10 +736,10 @@
           "Mặt đường bằng phẳng, tầm nhìn thông thoáng, không có bất kỳ chướng ngại vật nào từ xa.",
           "Đèn tín hiệu giao thông phía trước đang bật màu xanh liên tục, các xe di chuyển bình thường.",
           "Các phương tiện cùng chiều đang duy trì tốc độ ổn định và giữ khoảng cách rất an toàn.",
-          "Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh."
+          "Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh."
         ],
         "correctIndex": 3,
-        "explanation": "Dấu hiệu cảnh báo sớm: Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh."
+        "explanation": "Dấu hiệu cảnh báo sớm: Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh."
       },
       {
         "part": 3,
@@ -747,7 +747,7 @@
         "options": [
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
         ],
         "correctIndex": 0,
@@ -778,7 +778,7 @@
     "timeDirect": 7.8,
     "part1_name": "Người đi xe đạp từ vỉa hè bất ngờ đi xuống đường để sang đường",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -810,12 +810,12 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
         ],
         "correctIndex": 2,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -842,7 +842,7 @@
     "timeDirect": 10.58,
     "part1_name": "Tình huống nguy hiểm khi gặp xe tải lớn đi qua hầm chui dân sinh",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -874,12 +874,12 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
         ],
         "correctIndex": 1,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -940,7 +940,7 @@
           "Cụm đèn phanh màu đỏ phía sau phương tiện đi trước vừa bật sáng báo hiệu xe phanh dừng đột ngột.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 0,
         "explanation": "Thời điểm nguy hiểm trực tiếp: Cụm đèn phanh màu đỏ phía sau phương tiện đi trước vừa bật sáng báo hiệu xe phanh dừng đột ngột."
@@ -971,7 +971,7 @@
     "part1_name": "Xe ô tô từ đường nhánh bên trái bất ngờ đi nhanh ra có nguy cơ va chạm với xe bạn",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
-    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
     "quiz": [
       {
         "part": 1,
@@ -1002,7 +1002,7 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
         ],
@@ -1013,13 +1013,13 @@
         "part": 4,
         "question": "4. Trong tình huống này, người lái xe phải thực hiện thao tác nào dưới đây để đảm bảo an toàn?",
         "options": [
-          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
           "Giữ nguyên tốc độ, tiếp tục di chuyển và chỉ rà phanh khi va chạm sắp xảy ra.",
           "Đánh lái gấp sang làn đường ngược chiều để né tránh phương tiện phía trước.",
           "Bấm còi liên tục, đạp mạnh chân ga tăng tốc để nhanh chóng vượt qua khu vực nguy hiểm."
         ],
         "correctIndex": 0,
-        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột."
+        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm."
       }
     ]
   },
@@ -1033,7 +1033,7 @@
     "timeIndirect": 1.7,
     "timeDirect": 4.93,
     "part1_name": "Xe buýt lấn làn đường vượt ẩu tại ngã tư có đèn giao thông",
-    "part2_indirect": "Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
+    "part2_indirect": "Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
     "part3_direct": "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
     "part4_action": "Rà phanh giảm tốc độ, chủ động điều khiển xe nép sát về phía bên phải làn đường của mình để nhường đường.",
     "quiz": [
@@ -1054,12 +1054,12 @@
         "question": "2. Dấu hiệu cảnh báo sớm nguy cơ mất an toàn giao thông mà người lái xe cần quan sát từ xa là gì?",
         "options": [
           "Mặt đường bằng phẳng, tầm nhìn thông thoáng, không có bất kỳ chướng ngại vật nào từ xa.",
-          "Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
+          "Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
           "Đèn tín hiệu giao thông phía trước đang bật màu xanh liên tục, các xe di chuyển bình thường.",
           "Các phương tiện cùng chiều đang duy trì tốc độ ổn định và giữ khoảng cách rất an toàn."
         ],
         "correctIndex": 1,
-        "explanation": "Dấu hiệu cảnh báo sớm: Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh."
+        "explanation": "Dấu hiệu cảnh báo sớm: Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh."
       },
       {
         "part": 3,
@@ -1067,7 +1067,7 @@
         "options": [
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn."
         ],
         "correctIndex": 3,
@@ -1129,7 +1129,7 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Cánh cửa bên lái của xe ô tô đang đỗ ven đường đột ngột bật mở rộng ra lòng đường.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
@@ -1196,7 +1196,7 @@
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Cánh cửa bên lái của xe ô tô đang đỗ ven đường đột ngột bật mở rộng ra lòng đường.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 2,
         "explanation": "Thời điểm nguy hiểm trực tiếp: Cánh cửa bên lái của xe ô tô đang đỗ ven đường đột ngột bật mở rộng ra lòng đường."
@@ -1257,7 +1257,7 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Cánh cửa bên lái của xe ô tô đang đỗ ven đường đột ngột bật mở rộng ra lòng đường."
@@ -1290,7 +1290,7 @@
     "timeDirect": 10,
     "part1_name": "Xe ô tô phía trước dừng lại và lùi vào nơi đỗ tại khu vực đường hẹp",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -1321,13 +1321,13 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
         "correctIndex": 0,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -1353,9 +1353,9 @@
     "timeIndirect": 6.5,
     "timeDirect": 9.75,
     "part1_name": "Gặp xe ô tô từ đường nhánh bên phải tại ngã ba đi ra với tốc độ nhanh",
-    "part2_indirect": "Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
+    "part2_indirect": "Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
     "part3_direct": "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
-    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
     "quiz": [
       {
         "part": 1,
@@ -1374,19 +1374,19 @@
         "question": "2. Dấu hiệu cảnh báo sớm nguy cơ mất an toàn giao thông mà người lái xe cần quan sát từ xa là gì?",
         "options": [
           "Mặt đường bằng phẳng, tầm nhìn thông thoáng, không có bất kỳ chướng ngại vật nào từ xa.",
-          "Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
+          "Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
           "Các phương tiện cùng chiều đang duy trì tốc độ ổn định và giữ khoảng cách rất an toàn.",
           "Đèn tín hiệu giao thông phía trước đang bật màu xanh liên tục, các xe di chuyển bình thường."
         ],
         "correctIndex": 1,
-        "explanation": "Dấu hiệu cảnh báo sớm: Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh."
+        "explanation": "Dấu hiệu cảnh báo sớm: Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh."
       },
       {
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe."
         ],
@@ -1398,12 +1398,12 @@
         "question": "4. Trong tình huống này, người lái xe phải thực hiện thao tác nào dưới đây để đảm bảo an toàn?",
         "options": [
           "Bấm còi liên tục, đạp mạnh chân ga tăng tốc để nhanh chóng vượt qua khu vực nguy hiểm.",
-          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
           "Giữ nguyên tốc độ, tiếp tục di chuyển và chỉ rà phanh khi va chạm sắp xảy ra.",
           "Đánh lái gấp sang làn đường ngược chiều để né tránh phương tiện phía trước."
         ],
         "correctIndex": 1,
-        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột."
+        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm."
       }
     ]
   },
@@ -1450,7 +1450,7 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn."
         ],
@@ -1513,7 +1513,7 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn."
@@ -1546,7 +1546,7 @@
     "timeDirect": 7.33,
     "part1_name": "Xe ô tô khách bất ngờ đi ra từ nơi đỗ tại đường hẹp",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -1579,11 +1579,11 @@
         "options": [
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 2,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -1610,7 +1610,7 @@
     "timeDirect": 9.3,
     "part1_name": "Tránh xe tại khu vực công trình sửa đường xuất hiện sau khúc cua",
     "part2_indirect": "Đoạn đường đèo dốc có khúc cua gấp, sương mù hoặc mưa gió làm giảm tầm nhìn của người lái xe.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -1642,12 +1642,12 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
         ],
         "correctIndex": 3,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -1673,9 +1673,9 @@
     "timeIndirect": 7.7,
     "timeDirect": 10.87,
     "part1_name": "Xe khách bật đèn cảnh báo dừng giữa ngã tư để đón khách",
-    "part2_indirect": "Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
-    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+    "part2_indirect": "Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
+    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
     "quiz": [
       {
         "part": 1,
@@ -1693,13 +1693,13 @@
         "part": 2,
         "question": "2. Dấu hiệu cảnh báo sớm nguy cơ mất an toàn giao thông mà người lái xe cần quan sát từ xa là gì?",
         "options": [
-          "Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
+          "Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
           "Các phương tiện cùng chiều đang duy trì tốc độ ổn định và giữ khoảng cách rất an toàn.",
           "Đèn tín hiệu giao thông phía trước đang bật màu xanh liên tục, các xe di chuyển bình thường.",
           "Mặt đường bằng phẳng, tầm nhìn thông thoáng, không có bất kỳ chướng ngại vật nào từ xa."
         ],
         "correctIndex": 0,
-        "explanation": "Dấu hiệu cảnh báo sớm: Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh."
+        "explanation": "Dấu hiệu cảnh báo sớm: Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh."
       },
       {
         "part": 3,
@@ -1707,11 +1707,11 @@
         "options": [
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
         ],
         "correctIndex": 3,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -1719,11 +1719,11 @@
         "options": [
           "Giữ nguyên tốc độ, tiếp tục di chuyển và chỉ rà phanh khi va chạm sắp xảy ra.",
           "Đánh lái gấp sang làn đường ngược chiều để né tránh phương tiện phía trước.",
-          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
           "Bấm còi liên tục, đạp mạnh chân ga tăng tốc để nhanh chóng vượt qua khu vực nguy hiểm."
         ],
         "correctIndex": 2,
-        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột."
+        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm."
       }
     ]
   },
@@ -1771,7 +1771,7 @@
         "options": [
           "Cụm đèn phanh màu đỏ phía sau phương tiện đi trước vừa bật sáng báo hiệu xe phanh dừng đột ngột.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
         "correctIndex": 0,
@@ -1836,7 +1836,7 @@
           "Cụm đèn phanh màu đỏ phía sau phương tiện đi trước vừa bật sáng báo hiệu xe phanh dừng đột ngột.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 0,
         "explanation": "Thời điểm nguy hiểm trực tiếp: Cụm đèn phanh màu đỏ phía sau phương tiện đi trước vừa bật sáng báo hiệu xe phanh dừng đột ngột."
@@ -1866,7 +1866,7 @@
     "timeDirect": 7.4,
     "part1_name": "Gặp đàn bò đang đứng trên đường",
     "part2_indirect": "Khu vực đường qua vùng nông thôn, hai bên đường có bãi cỏ và bụi rậm tiềm ẩn động vật nuôi thả rông.",
-    "part3_direct": "Gia súc bước chân từ lề đường xuống chắn ngang phần đường lưu thông của xe bạn.",
+    "part3_direct": "Gia súc bước chân từ lề đường xuống chắn ngang phần đường xe bạn đang chạy.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -1875,7 +1875,7 @@
         "options": [
           "Gặp đàn bò đang đứng trên đường",
           "Tài xế xe đang đỗ ven đường đi ra mở cửa xe tại khu vực đường hẹp",
-          "Xe mô-tô lấn làn vượt ẩu nguy hiểm tại giao lộ",
+          "Xe mô-tô lấn làn vượt ẩu nguy hiểm tại ngã tư",
           "Trời mưa, xe con giảm nhanh tốc độ để tránh xe tải chuyển làn đột ngột tránh chướng ngại vật phía trước"
         ],
         "correctIndex": 0,
@@ -1897,13 +1897,13 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Gia súc bước chân từ lề đường xuống chắn ngang phần đường lưu thông của xe bạn.",
+          "Gia súc bước chân từ lề đường xuống chắn ngang phần đường xe bạn đang chạy.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
         "correctIndex": 2,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Gia súc bước chân từ lề đường xuống chắn ngang phần đường lưu thông của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Gia súc bước chân từ lề đường xuống chắn ngang phần đường xe bạn đang chạy."
       },
       {
         "part": 4,
@@ -1930,7 +1930,7 @@
     "timeDirect": 6.33,
     "part1_name": "Đường nông thôn, gặp đàn bò đi từ dưới vệ đường băng qua đường",
     "part2_indirect": "Khu vực đường qua vùng nông thôn, hai bên đường có bãi cỏ và bụi rậm tiềm ẩn động vật nuôi thả rông.",
-    "part3_direct": "Gia súc bước chân từ lề đường xuống chắn ngang phần đường lưu thông của xe bạn.",
+    "part3_direct": "Gia súc bước chân từ lề đường xuống chắn ngang phần đường xe bạn đang chạy.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -1962,12 +1962,12 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Gia súc bước chân từ lề đường xuống chắn ngang phần đường lưu thông của xe bạn."
+          "Gia súc bước chân từ lề đường xuống chắn ngang phần đường xe bạn đang chạy."
         ],
         "correctIndex": 3,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Gia súc bước chân từ lề đường xuống chắn ngang phần đường lưu thông của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Gia súc bước chân từ lề đường xuống chắn ngang phần đường xe bạn đang chạy."
       },
       {
         "part": 4,
@@ -2025,7 +2025,7 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Người đi bộ bước chân xuất hiện từ điểm mù khuất tầm nhìn và di chuyển nhanh xuống lòng đường.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
@@ -2058,7 +2058,7 @@
     "timeDirect": 9.13,
     "part1_name": "Học sinh đi ra đường tại khu vực gần trường học",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -2090,12 +2090,12 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
         ],
         "correctIndex": 3,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -2122,7 +2122,7 @@
     "timeDirect": 5.17,
     "part1_name": "Gặp xe khách tại đoạn đường cong vào cua chiếm hết làn đường tại khu vực đường hẹp",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -2154,12 +2154,12 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 1,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -2186,7 +2186,7 @@
     "timeDirect": 3,
     "part1_name": "Xe khách phía trước đột ngột phanh giảm tốc độ tránh xe đối diện tại đoạn đường cong",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -2217,13 +2217,13 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
         "correctIndex": 2,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -2283,7 +2283,7 @@
         "options": [
           "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
         "correctIndex": 0,
@@ -2345,7 +2345,7 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
@@ -2412,7 +2412,7 @@
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 2,
         "explanation": "Thời điểm nguy hiểm trực tiếp: Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn."
@@ -2443,7 +2443,7 @@
     "part1_name": "Xe tải từ đường nhánh nhập làn nguy hiểm",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
-    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
     "quiz": [
       {
         "part": 1,
@@ -2475,7 +2475,7 @@
         "options": [
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe."
         ],
         "correctIndex": 3,
@@ -2485,13 +2485,13 @@
         "part": 4,
         "question": "4. Trong tình huống này, người lái xe phải thực hiện thao tác nào dưới đây để đảm bảo an toàn?",
         "options": [
-          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
           "Bấm còi liên tục, đạp mạnh chân ga tăng tốc để nhanh chóng vượt qua khu vực nguy hiểm.",
           "Đánh lái gấp sang làn đường ngược chiều để né tránh phương tiện phía trước.",
           "Giữ nguyên tốc độ, tiếp tục di chuyển và chỉ rà phanh khi va chạm sắp xảy ra."
         ],
         "correctIndex": 0,
-        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột."
+        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm."
       }
     ]
   },
@@ -2537,7 +2537,7 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn."
@@ -2569,9 +2569,9 @@
     "timeIndirect": 6.2,
     "timeDirect": 9.4,
     "part1_name": "Xe con làn đối diện rẽ nhanh cắt qua đầu xe bạn tại ngã ba",
-    "part2_indirect": "Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
-    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+    "part2_indirect": "Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
+    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
     "quiz": [
       {
         "part": 1,
@@ -2590,24 +2590,24 @@
         "question": "2. Dấu hiệu cảnh báo sớm nguy cơ mất an toàn giao thông mà người lái xe cần quan sát từ xa là gì?",
         "options": [
           "Đèn tín hiệu giao thông phía trước đang bật màu xanh liên tục, các xe di chuyển bình thường.",
-          "Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
+          "Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
           "Mặt đường bằng phẳng, tầm nhìn thông thoáng, không có bất kỳ chướng ngại vật nào từ xa.",
           "Các phương tiện cùng chiều đang duy trì tốc độ ổn định và giữ khoảng cách rất an toàn."
         ],
         "correctIndex": 1,
-        "explanation": "Dấu hiệu cảnh báo sớm: Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh."
+        "explanation": "Dấu hiệu cảnh báo sớm: Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh."
       },
       {
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
         ],
         "correctIndex": 1,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -2615,11 +2615,11 @@
         "options": [
           "Giữ nguyên tốc độ, tiếp tục di chuyển và chỉ rà phanh khi va chạm sắp xảy ra.",
           "Bấm còi liên tục, đạp mạnh chân ga tăng tốc để nhanh chóng vượt qua khu vực nguy hiểm.",
-          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
           "Đánh lái gấp sang làn đường ngược chiều để né tránh phương tiện phía trước."
         ],
         "correctIndex": 2,
-        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột."
+        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm."
       }
     ]
   },
@@ -2633,9 +2633,9 @@
     "timeIndirect": 3.8,
     "timeDirect": 7.02,
     "part1_name": "Tại ngã tư, đèn xanh, xe bạn bắt đầu di chuyển có xe mô-tô rẽ cắt ngang qua đầu xe bạn",
-    "part2_indirect": "Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
-    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+    "part2_indirect": "Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
+    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
     "quiz": [
       {
         "part": 1,
@@ -2655,35 +2655,35 @@
         "options": [
           "Đèn tín hiệu giao thông phía trước đang bật màu xanh liên tục, các xe di chuyển bình thường.",
           "Các phương tiện cùng chiều đang duy trì tốc độ ổn định và giữ khoảng cách rất an toàn.",
-          "Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
+          "Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
           "Mặt đường bằng phẳng, tầm nhìn thông thoáng, không có bất kỳ chướng ngại vật nào từ xa."
         ],
         "correctIndex": 2,
-        "explanation": "Dấu hiệu cảnh báo sớm: Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh."
+        "explanation": "Dấu hiệu cảnh báo sớm: Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh."
       },
       {
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
         "correctIndex": 2,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
         "question": "4. Trong tình huống này, người lái xe phải thực hiện thao tác nào dưới đây để đảm bảo an toàn?",
         "options": [
           "Đánh lái gấp sang làn đường ngược chiều để né tránh phương tiện phía trước.",
-          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
           "Bấm còi liên tục, đạp mạnh chân ga tăng tốc để nhanh chóng vượt qua khu vực nguy hiểm.",
           "Giữ nguyên tốc độ, tiếp tục di chuyển và chỉ rà phanh khi va chạm sắp xảy ra."
         ],
         "correctIndex": 1,
-        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột."
+        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm."
       }
     ]
   },
@@ -2730,7 +2730,7 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Phương tiện bên cạnh bắt đầu đè vạch phân làn và chuyển hướng tạt ngang trước đầu xe bạn.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
@@ -2794,7 +2794,7 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Phương tiện bên cạnh bắt đầu đè vạch phân làn và chuyển hướng tạt ngang trước đầu xe bạn.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
         ],
@@ -2860,7 +2860,7 @@
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Cụm đèn phanh màu đỏ phía sau phương tiện đi trước vừa bật sáng báo hiệu xe phanh dừng đột ngột.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 2,
         "explanation": "Thời điểm nguy hiểm trực tiếp: Cụm đèn phanh màu đỏ phía sau phương tiện đi trước vừa bật sáng báo hiệu xe phanh dừng đột ngột."
@@ -2922,7 +2922,7 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Phương tiện bên cạnh bắt đầu đè vạch phân làn và chuyển hướng tạt ngang trước đầu xe bạn.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
         ],
@@ -2985,7 +2985,7 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện bên cạnh bắt đầu đè vạch phân làn và chuyển hướng tạt ngang trước đầu xe bạn.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
@@ -3052,7 +3052,7 @@
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện bên cạnh bắt đầu đè vạch phân làn và chuyển hướng tạt ngang trước đầu xe bạn.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 1,
         "explanation": "Thời điểm nguy hiểm trực tiếp: Phương tiện bên cạnh bắt đầu đè vạch phân làn và chuyển hướng tạt ngang trước đầu xe bạn."
@@ -3116,7 +3116,7 @@
           "Cụm đèn phanh màu đỏ phía sau phương tiện đi trước vừa bật sáng báo hiệu xe phanh dừng đột ngột.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 0,
         "explanation": "Thời điểm nguy hiểm trực tiếp: Cụm đèn phanh màu đỏ phía sau phương tiện đi trước vừa bật sáng báo hiệu xe phanh dừng đột ngột."
@@ -3178,7 +3178,7 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Cụm đèn phanh màu đỏ phía sau phương tiện đi trước vừa bật sáng báo hiệu xe phanh dừng đột ngột."
         ],
@@ -3210,7 +3210,7 @@
     "timeDirect": 9,
     "part1_name": "Xe tải bật đèn cảnh báo đi ngược đường ở làn bên phải cao tốc",
     "part2_indirect": "Xe đang chạy với tốc độ cao trên đường cao tốc, phía trước có phương tiện đang giảm tốc độ hoặc chuyển hướng.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Rà phanh giảm tốc độ phù hợp, bật đèn cảnh báo nguy hiểm (hazard) để báo hiệu cho xe phía sau, tránh phanh gấp khóa bánh.",
     "quiz": [
       {
@@ -3241,13 +3241,13 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
         ],
         "correctIndex": 3,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -3274,7 +3274,7 @@
     "timeDirect": 12.5,
     "part1_name": "Qua đoạn đường cong đột nhiên có xe tải đi lùi trong làn khẩn cấp",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -3305,13 +3305,13 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
         ],
         "correctIndex": 0,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -3338,7 +3338,7 @@
     "timeDirect": 12.75,
     "part1_name": "Trên đường cao tốc ban đêm, đột nhiên có xe tải đi chiều ngược lại ở làn khẩn cấp",
     "part2_indirect": "Xe đang chạy với tốc độ cao trên đường cao tốc, phía trước có phương tiện đang giảm tốc độ hoặc chuyển hướng.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Rà phanh giảm tốc độ phù hợp, bật đèn cảnh báo nguy hiểm (hazard) để báo hiệu cho xe phía sau, tránh phanh gấp khóa bánh.",
     "quiz": [
       {
@@ -3369,13 +3369,13 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
         ],
         "correctIndex": 1,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -3403,7 +3403,7 @@
     "part1_name": "Xe tải từ đường nhánh nhập vào cao tốc với tốc độ cao",
     "part2_indirect": "Xe đang chạy với tốc độ cao trên đường cao tốc, phía trước có phương tiện đang giảm tốc độ hoặc chuyển hướng.",
     "part3_direct": "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
-    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
     "quiz": [
       {
         "part": 1,
@@ -3436,7 +3436,7 @@
           "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 0,
         "explanation": "Thời điểm nguy hiểm trực tiếp: Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe."
@@ -3447,11 +3447,11 @@
         "options": [
           "Bấm còi liên tục, đạp mạnh chân ga tăng tốc để nhanh chóng vượt qua khu vực nguy hiểm.",
           "Đánh lái gấp sang làn đường ngược chiều để né tránh phương tiện phía trước.",
-          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
           "Giữ nguyên tốc độ, tiếp tục di chuyển và chỉ rà phanh khi va chạm sắp xảy ra."
         ],
         "correctIndex": 2,
-        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột."
+        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm."
       }
     ]
   },
@@ -3466,7 +3466,7 @@
     "timeDirect": 7.33,
     "part1_name": "Cao tốc, xe tải đột ngột giảm tốc và chuyển sang làn xe bạn do gặp xe đang gặp sự cố trên đường",
     "part2_indirect": "Xe đang chạy với tốc độ cao trên đường cao tốc, phía trước có phương tiện đang giảm tốc độ hoặc chuyển hướng.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Rà phanh giảm tốc độ phù hợp, bật đèn cảnh báo nguy hiểm (hazard) để báo hiệu cho xe phía sau, tránh phanh gấp khóa bánh.",
     "quiz": [
       {
@@ -3497,13 +3497,13 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
         ],
         "correctIndex": 2,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -3530,7 +3530,7 @@
     "timeDirect": 7.27,
     "part1_name": "Xe con đang dừng ở làn khẩn cấp xi nhan nhập làn trước xe bạn",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -3562,12 +3562,12 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
         "correctIndex": 1,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -3594,7 +3594,7 @@
     "timeDirect": 20.48,
     "part1_name": "Xe con phía trước giảm tốc độ và chuyển sang làn xe bạn do gặp đoạn đường đang sửa chữa phía trước",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -3627,11 +3627,11 @@
         "options": [
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 2,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -3658,7 +3658,7 @@
     "timeDirect": 14.25,
     "part1_name": "Xe tải phía trước giảm tốc độ, chuyển sang làn giữa do gặp đoạn đường đang sửa chữa phía trước",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -3689,13 +3689,13 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
         ],
         "correctIndex": 3,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -3723,7 +3723,7 @@
     "part1_name": "Xe container đang đi từ làn trái chuyển ra đường nhánh cắt qua làn đường xe bạn",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
-    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
     "quiz": [
       {
         "part": 1,
@@ -3755,7 +3755,7 @@
         "options": [
           "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
         "correctIndex": 0,
@@ -3767,11 +3767,11 @@
         "options": [
           "Giữ nguyên tốc độ, tiếp tục di chuyển và chỉ rà phanh khi va chạm sắp xảy ra.",
           "Bấm còi liên tục, đạp mạnh chân ga tăng tốc để nhanh chóng vượt qua khu vực nguy hiểm.",
-          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
           "Đánh lái gấp sang làn đường ngược chiều để né tránh phương tiện phía trước."
         ],
         "correctIndex": 2,
-        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột."
+        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm."
       }
     ]
   },
@@ -3786,7 +3786,7 @@
     "timeDirect": 7.33,
     "part1_name": "Xe 16 chỗ từ làn đường khẩn cấp đi ra vào làn xe bạn",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -3817,13 +3817,13 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
         ],
         "correctIndex": 1,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -3851,7 +3851,7 @@
     "part1_name": "Xe con từ đường nhánh nhập làn nguy hiểm cắt qua đầu xe bạn",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
-    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
     "quiz": [
       {
         "part": 1,
@@ -3884,7 +3884,7 @@
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 2,
         "explanation": "Thời điểm nguy hiểm trực tiếp: Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe."
@@ -3896,10 +3896,10 @@
           "Bấm còi liên tục, đạp mạnh chân ga tăng tốc để nhanh chóng vượt qua khu vực nguy hiểm.",
           "Giữ nguyên tốc độ, tiếp tục di chuyển và chỉ rà phanh khi va chạm sắp xảy ra.",
           "Đánh lái gấp sang làn đường ngược chiều để né tránh phương tiện phía trước.",
-          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột."
+          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm."
         ],
         "correctIndex": 3,
-        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột."
+        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm."
       }
     ]
   },
@@ -3947,7 +3947,7 @@
         "options": [
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
         ],
         "correctIndex": 1,
@@ -3978,7 +3978,7 @@
     "timeDirect": 4.42,
     "part1_name": "Đàn gia súc từ bên đường đi ra cắt qua làn đường xe bạn tại khu vực cao tốc bị hỏng hộ lan",
     "part2_indirect": "Xe đang chạy với tốc độ cao trên đường cao tốc, phía trước có phương tiện đang giảm tốc độ hoặc chuyển hướng.",
-    "part3_direct": "Gia súc bước chân từ lề đường xuống chắn ngang phần đường lưu thông của xe bạn.",
+    "part3_direct": "Gia súc bước chân từ lề đường xuống chắn ngang phần đường xe bạn đang chạy.",
     "part4_action": "Rà phanh giảm tốc độ phù hợp, bật đèn cảnh báo nguy hiểm (hazard) để báo hiệu cho xe phía sau, tránh phanh gấp khóa bánh.",
     "quiz": [
       {
@@ -4009,13 +4009,13 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
-          "Gia súc bước chân từ lề đường xuống chắn ngang phần đường lưu thông của xe bạn.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
+          "Gia súc bước chân từ lề đường xuống chắn ngang phần đường xe bạn đang chạy.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
         ],
         "correctIndex": 1,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Gia súc bước chân từ lề đường xuống chắn ngang phần đường lưu thông của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Gia súc bước chân từ lề đường xuống chắn ngang phần đường xe bạn đang chạy."
       },
       {
         "part": 4,
@@ -4042,7 +4042,7 @@
     "timeDirect": 10,
     "part1_name": "Phía đường cong xuất hiện xe tải đi đối diện làm xe khách phía trước giảm tốc độ đột ngột",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -4074,12 +4074,12 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
         ],
         "correctIndex": 1,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -4137,7 +4137,7 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
@@ -4170,7 +4170,7 @@
     "timeDirect": 9.32,
     "part1_name": "Đi phía sau xe tải chở vật liệu không được chằng buộc cẩn thận",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -4203,11 +4203,11 @@
         "options": [
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
         ],
         "correctIndex": 3,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -4268,7 +4268,7 @@
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Cụm đèn phanh màu đỏ phía sau phương tiện đi trước vừa bật sáng báo hiệu xe phanh dừng đột ngột.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 1,
         "explanation": "Thời điểm nguy hiểm trực tiếp: Cụm đèn phanh màu đỏ phía sau phương tiện đi trước vừa bật sáng báo hiệu xe phanh dừng đột ngột."
@@ -4298,7 +4298,7 @@
     "timeDirect": 10.92,
     "part1_name": "Đường núi, sương mù, có đàn bò đứng sát đường ngay sau đoạn đường cong",
     "part2_indirect": "Đoạn đường đèo dốc có khúc cua gấp, sương mù hoặc mưa gió làm giảm tầm nhìn của người lái xe.",
-    "part3_direct": "Gia súc bước chân từ lề đường xuống chắn ngang phần đường lưu thông của xe bạn.",
+    "part3_direct": "Gia súc bước chân từ lề đường xuống chắn ngang phần đường xe bạn đang chạy.",
     "part4_action": "Chuyển về số thấp, rà phanh kiểm soát tốc độ, đi bám sát phần đường bên phải, không vượt xe tại đoạn đường cong cua.",
     "quiz": [
       {
@@ -4329,13 +4329,13 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Gia súc bước chân từ lề đường xuống chắn ngang phần đường lưu thông của xe bạn.",
+          "Gia súc bước chân từ lề đường xuống chắn ngang phần đường xe bạn đang chạy.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
         "correctIndex": 2,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Gia súc bước chân từ lề đường xuống chắn ngang phần đường lưu thông của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Gia súc bước chân từ lề đường xuống chắn ngang phần đường xe bạn đang chạy."
       },
       {
         "part": 4,
@@ -4396,7 +4396,7 @@
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 1,
         "explanation": "Thời điểm nguy hiểm trực tiếp: Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn."
@@ -4457,7 +4457,7 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
@@ -4490,7 +4490,7 @@
     "timeDirect": 11.82,
     "part1_name": "Đường núi, trời mưa, xe phía trước đột ngột dừng lại vì hỏng máy",
     "part2_indirect": "Đoạn đường đèo dốc có khúc cua gấp, sương mù hoặc mưa gió làm giảm tầm nhìn của người lái xe.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Chuyển về số thấp, rà phanh kiểm soát tốc độ, đi bám sát phần đường bên phải, không vượt xe tại đoạn đường cong cua.",
     "quiz": [
       {
@@ -4521,13 +4521,13 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
         "correctIndex": 0,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -4586,7 +4586,7 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
@@ -4652,7 +4652,7 @@
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 0,
         "explanation": "Thời điểm nguy hiểm trực tiếp: Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn."
@@ -4715,7 +4715,7 @@
         "options": [
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Cụm đèn phanh màu đỏ phía sau phương tiện đi trước vừa bật sáng báo hiệu xe phanh dừng đột ngột.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
         "correctIndex": 1,
@@ -4746,7 +4746,7 @@
     "timeDirect": 5,
     "part1_name": "Trẻ em đột ngột lao ra để nhặt quả bóng bị lăn ra đường",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -4777,13 +4777,13 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
         "correctIndex": 1,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -4810,7 +4810,7 @@
     "timeDirect": 6.25,
     "part1_name": "Em bé đột ngột chạy ra đường",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -4841,13 +4841,13 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
         "correctIndex": 2,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -4874,7 +4874,7 @@
     "timeDirect": 6.17,
     "part1_name": "Xe con từ làn phải (khuất tầm nhìn) cắt ngang qua các xe đang đi thẳng để sang đường",
     "part2_indirect": "Phía trước bên phải có xe kích thước lớn đang đỗ làm khuất tầm nhìn, có vạch kẻ đường cho người đi bộ hoặc lối giao cắt.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -4907,11 +4907,11 @@
         "options": [
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 2,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -4970,7 +4970,7 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện bên cạnh bắt đầu đè vạch phân làn và chuyển hướng tạt ngang trước đầu xe bạn.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
         ],
@@ -5003,7 +5003,7 @@
     "part1_name": "Xe mô-tô đi ra từ đường nhánh nguy hiểm phía sau xe buýt vừa đi qua",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
     "part3_direct": "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
-    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
     "quiz": [
       {
         "part": 1,
@@ -5035,7 +5035,7 @@
         "options": [
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe."
         ],
         "correctIndex": 3,
@@ -5047,11 +5047,11 @@
         "options": [
           "Đánh lái gấp sang làn đường ngược chiều để né tránh phương tiện phía trước.",
           "Giữ nguyên tốc độ, tiếp tục di chuyển và chỉ rà phanh khi va chạm sắp xảy ra.",
-          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
           "Bấm còi liên tục, đạp mạnh chân ga tăng tốc để nhanh chóng vượt qua khu vực nguy hiểm."
         ],
         "correctIndex": 2,
-        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột."
+        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm."
       }
     ]
   },
@@ -5099,7 +5099,7 @@
         "options": [
           "Phương tiện bên cạnh bắt đầu đè vạch phân làn và chuyển hướng tạt ngang trước đầu xe bạn.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
         "correctIndex": 0,
@@ -5163,7 +5163,7 @@
         "options": [
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn."
         ],
         "correctIndex": 3,
@@ -5226,7 +5226,7 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn."
         ],
@@ -5258,7 +5258,7 @@
     "timeDirect": 7.32,
     "part1_name": "Xuất hiện gia súc từ vệ đường đi ra đường quốc lộ ngay trước mặt xe bạn",
     "part2_indirect": "Khu vực đường qua vùng nông thôn, hai bên đường có bãi cỏ và bụi rậm tiềm ẩn động vật nuôi thả rông.",
-    "part3_direct": "Gia súc bước chân từ lề đường xuống chắn ngang phần đường lưu thông của xe bạn.",
+    "part3_direct": "Gia súc bước chân từ lề đường xuống chắn ngang phần đường xe bạn đang chạy.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -5290,12 +5290,12 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Gia súc bước chân từ lề đường xuống chắn ngang phần đường lưu thông của xe bạn."
+          "Gia súc bước chân từ lề đường xuống chắn ngang phần đường xe bạn đang chạy."
         ],
         "correctIndex": 3,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Gia súc bước chân từ lề đường xuống chắn ngang phần đường lưu thông của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Gia súc bước chân từ lề đường xuống chắn ngang phần đường xe bạn đang chạy."
       },
       {
         "part": 4,
@@ -5353,7 +5353,7 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện bên cạnh bắt đầu đè vạch phân làn và chuyển hướng tạt ngang trước đầu xe bạn."
@@ -5419,7 +5419,7 @@
         "options": [
           "Cụm đèn phanh màu đỏ phía sau phương tiện đi trước vừa bật sáng báo hiệu xe phanh dừng đột ngột.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
         "correctIndex": 0,
@@ -5482,7 +5482,7 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Phương tiện bên cạnh bắt đầu đè vạch phân làn và chuyển hướng tạt ngang trước đầu xe bạn."
         ],
@@ -5545,7 +5545,7 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Đoàn tàu hỏa xuất hiện nhô ra cắt ngang qua khu vực đường ngang giao cắt."
@@ -5612,7 +5612,7 @@
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Phương tiện bên cạnh bắt đầu đè vạch phân làn và chuyển hướng tạt ngang trước đầu xe bạn.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 2,
         "explanation": "Thời điểm nguy hiểm trực tiếp: Phương tiện bên cạnh bắt đầu đè vạch phân làn và chuyển hướng tạt ngang trước đầu xe bạn."
@@ -5642,7 +5642,7 @@
     "timeDirect": 8.4,
     "part1_name": "Xe đạp từ bên kia đường đối diện băng qua đường không quan sát trước mặt xe bạn",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -5675,11 +5675,11 @@
         "options": [
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
         ],
         "correctIndex": 3,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -5739,7 +5739,7 @@
         "options": [
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
         "correctIndex": 1,
@@ -5770,7 +5770,7 @@
     "timeDirect": 5.57,
     "part1_name": "Xe ô tô Innova lùi trên cao tốc Hà Nội - Thái Nguyên",
     "part2_indirect": "Xe đang chạy với tốc độ cao trên đường cao tốc, phía trước có phương tiện đang giảm tốc độ hoặc chuyển hướng.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Rà phanh giảm tốc độ phù hợp, bật đèn cảnh báo nguy hiểm (hazard) để báo hiệu cho xe phía sau, tránh phanh gấp khóa bánh.",
     "quiz": [
       {
@@ -5801,13 +5801,13 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
         "correctIndex": 1,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -5868,7 +5868,7 @@
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 2,
         "explanation": "Thời điểm nguy hiểm trực tiếp: Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn."
@@ -5930,7 +5930,7 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
@@ -5962,7 +5962,7 @@
     "timeDirect": 17,
     "part1_name": "Tai nạn liên hoàn giữa 3 xe khách do đâm vào xe đang dừng đỗ để sửa chữa",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -5993,13 +5993,13 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
         "correctIndex": 2,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -6026,7 +6026,7 @@
     "timeDirect": 5.33,
     "part1_name": "Tài xế giật mình đánh lái gấp đâm xe vào dải phân cách, xe đổ vào đám đông làm 5 người thiệt mạng",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -6059,11 +6059,11 @@
         "options": [
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 2,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -6090,7 +6090,7 @@
     "timeDirect": 17.18,
     "part1_name": "Tai nạn xe container không làm chủ tốc độ đâm trực diện vào xe ô tô con đang dừng chờ đèn đỏ",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -6121,13 +6121,13 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
         ],
         "correctIndex": 1,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -6161,7 +6161,7 @@
         "part": 1,
         "question": "1. Tình huống nguy hiểm tiềm ẩn xuất hiện trong video mô phỏng là gì?",
         "options": [
-          "Xe mô-tô lấn làn vượt ẩu nguy hiểm tại giao lộ",
+          "Xe mô-tô lấn làn vượt ẩu nguy hiểm tại ngã tư",
           "Xe khách vào cua với tốc độ cao, lấn sang đường ngược chiều va chạm với xe đi chiều ngược lại",
           "Xe 16 chỗ từ đường nhánh, khuất tầm nhìn rẽ vào đường chính không giảm tốc độ, bị xe sơ mi rơ moóc đâm vào (tại Ngã 3 Nà Phặc - Bắc Kạn)",
           "Xe tải từ đường nhánh nhập vào cao tốc với tốc độ cao"
@@ -6187,7 +6187,7 @@
         "options": [
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn."
         ],
         "correctIndex": 3,
@@ -6252,7 +6252,7 @@
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 2,
         "explanation": "Thời điểm nguy hiểm trực tiếp: Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn."
@@ -6313,7 +6313,7 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn."
@@ -6379,7 +6379,7 @@
         "options": [
           "Đoàn tàu hỏa xuất hiện nhô ra cắt ngang qua khu vực đường ngang giao cắt.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
         ],
         "correctIndex": 0,
@@ -6442,7 +6442,7 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Đoàn tàu hỏa xuất hiện nhô ra cắt ngang qua khu vực đường ngang giao cắt.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
@@ -6505,7 +6505,7 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
@@ -6570,7 +6570,7 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
         ],
@@ -6601,9 +6601,9 @@
     "timeIndirect": 15.7,
     "timeDirect": 18.92,
     "part1_name": "Tại ngã tư Hàng Xanh, lái xe ô tô con trong tình trạng có nồng độ cồn không làm chủ tốc độ đâm vào loạt xe dừng chờ đèn đỏ",
-    "part2_indirect": "Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
-    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+    "part2_indirect": "Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
+    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
     "quiz": [
       {
         "part": 1,
@@ -6622,36 +6622,36 @@
         "question": "2. Dấu hiệu cảnh báo sớm nguy cơ mất an toàn giao thông mà người lái xe cần quan sát từ xa là gì?",
         "options": [
           "Các phương tiện cùng chiều đang duy trì tốc độ ổn định và giữ khoảng cách rất an toàn.",
-          "Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
+          "Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh.",
           "Mặt đường bằng phẳng, tầm nhìn thông thoáng, không có bất kỳ chướng ngại vật nào từ xa.",
           "Đèn tín hiệu giao thông phía trước đang bật màu xanh liên tục, các xe di chuyển bình thường."
         ],
         "correctIndex": 1,
-        "explanation": "Dấu hiệu cảnh báo sớm: Xe đang tiến vào khu vực giao lộ không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh."
+        "explanation": "Dấu hiệu cảnh báo sớm: Xe đang tiến vào khu vực ngã ba, ngã tư không có đèn tín hiệu, tầm nhìn bị che khuất bởi các công trình và phương tiện xung quanh."
       },
       {
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
         ],
         "correctIndex": 3,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
         "question": "4. Trong tình huống này, người lái xe phải thực hiện thao tác nào dưới đây để đảm bảo an toàn?",
         "options": [
           "Đánh lái gấp sang làn đường ngược chiều để né tránh phương tiện phía trước.",
-          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
           "Bấm còi liên tục, đạp mạnh chân ga tăng tốc để nhanh chóng vượt qua khu vực nguy hiểm.",
           "Giữ nguyên tốc độ, tiếp tục di chuyển và chỉ rà phanh khi va chạm sắp xảy ra."
         ],
         "correctIndex": 1,
-        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột."
+        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm."
       }
     ]
   },
@@ -6666,7 +6666,7 @@
     "timeDirect": 10.25,
     "part1_name": "Xe khách 45 chỗ đâm vào xe đầu kéo kéo rơ moóc chở máy ủi đi từ đường tránh ra gây tai nạn thảm khốc",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -6698,12 +6698,12 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
         ],
         "correctIndex": 1,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -6730,7 +6730,7 @@
     "timeDirect": 16,
     "part1_name": "Xe khách 48 chỗ thiếu kỹ năng điều khiển, không thông thuộc địa hình lao xuống vực tại Kon Tum",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -6761,13 +6761,13 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
         "correctIndex": 1,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -6826,7 +6826,7 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện bên cạnh bắt đầu đè vạch phân làn và chuyển hướng tạt ngang trước đầu xe bạn.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng."
         ],
@@ -6891,7 +6891,7 @@
         "options": [
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
         ],
         "correctIndex": 1,
@@ -6923,7 +6923,7 @@
     "part1_name": "Xe 16 chỗ từ đường nhánh, khuất tầm nhìn rẽ vào đường chính không giảm tốc độ, bị xe sơ mi rơ moóc đâm vào (tại Ngã 3 Nà Phặc - Bắc Kạn)",
     "part2_indirect": "Phía trước bên phải có xe kích thước lớn đang đỗ làm khuất tầm nhìn, có vạch kẻ đường cho người đi bộ hoặc lối giao cắt.",
     "part3_direct": "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
-    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+    "part4_action": "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
     "quiz": [
       {
         "part": 1,
@@ -6956,7 +6956,7 @@
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 1,
         "explanation": "Thời điểm nguy hiểm trực tiếp: Đầu phương tiện từ đường nhánh, ngõ hẻm bất ngờ nhô nhanh ra lòng đường chính cắt ngang đầu xe."
@@ -6966,12 +6966,12 @@
         "question": "4. Trong tình huống này, người lái xe phải thực hiện thao tác nào dưới đây để đảm bảo an toàn?",
         "options": [
           "Đánh lái gấp sang làn đường ngược chiều để né tránh phương tiện phía trước.",
-          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột.",
+          "Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm.",
           "Bấm còi liên tục, đạp mạnh chân ga tăng tốc để nhanh chóng vượt qua khu vực nguy hiểm.",
           "Giữ nguyên tốc độ, tiếp tục di chuyển và chỉ rà phanh khi va chạm sắp xảy ra."
         ],
         "correctIndex": 1,
-        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có xung đột."
+        "explanation": "Kỹ thuật xử lý an toàn: Giảm tốc độ, chú ý quan sát hai bên đường, chuẩn bị sẵn sàng tư thế phanh dừng xe an toàn khi có nguy cơ va chạm."
       }
     ]
   },
@@ -6986,7 +6986,7 @@
     "timeDirect": 8.83,
     "part1_name": "Xe container bất ngờ tông vào hàng loạt phương tiện đang dừng đèn đỏ tại quốc lộ 1, đoạn nút giao Mỹ Phước - Tân Vạn, Bình Dương",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -7017,13 +7017,13 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 0,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -7084,7 +7084,7 @@
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 2,
         "explanation": "Thời điểm nguy hiểm trực tiếp: Bánh xe hoặc đầu xe của phương tiện đi ngược chiều đè qua vạch phân chia làn đường sang phần đường xe bạn."
@@ -7145,7 +7145,7 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Phương tiện bên cạnh bắt đầu đè vạch phân làn và chuyển hướng tạt ngang trước đầu xe bạn."
@@ -7209,7 +7209,7 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện bên cạnh bắt đầu đè vạch phân làn và chuyển hướng tạt ngang trước đầu xe bạn."
@@ -7242,7 +7242,7 @@
     "timeDirect": 8.7,
     "part1_name": "Ô tô 7 chỗ đi trên cầu treo hẹp ban đêm, tài xế lái xe va chạm với xe máy, xe đâm xuống sông tại cầu treo qua sông Giăng, Thanh Chương, Nghệ An",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -7273,13 +7273,13 @@
         "part": 3,
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
         ],
         "correctIndex": 0,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -7338,7 +7338,7 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Cụm đèn phanh màu đỏ phía sau phương tiện đi trước vừa bật sáng báo hiệu xe phanh dừng đột ngột.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
         ],
@@ -7404,7 +7404,7 @@
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Khối đất đá từ trên vách núi bắt đầu rơi sạt xuống chắn ngang mặt đường phía trước.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 2,
         "explanation": "Thời điểm nguy hiểm trực tiếp: Khối đất đá từ trên vách núi bắt đầu rơi sạt xuống chắn ngang mặt đường phía trước."
@@ -7466,7 +7466,7 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Cụm đèn phanh màu đỏ phía sau phương tiện đi trước vừa bật sáng báo hiệu xe phanh dừng đột ngột.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè."
         ],
@@ -7498,7 +7498,7 @@
     "timeDirect": 7.17,
     "part1_name": "Xe 16 chỗ rẽ không quan sát, không làm chủ tốc độ đâm vào xe bán tải đang lùi",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -7530,12 +7530,12 @@
         "question": "3. Thời điểm nguy hiểm trực tiếp xuất hiện đòi hỏi người lái xe phải xử lý ngay là khi nào?",
         "options": [
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe."
         ],
         "correctIndex": 1,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -7562,7 +7562,7 @@
     "timeDirect": 8.55,
     "part1_name": "Xe khách không tuân thủ khoảng cách an toàn, xử lý tình huống không kịp dẫn tới va chạm với xe tải đang dừng đỗ",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -7595,11 +7595,11 @@
         "options": [
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
         ],
         "correctIndex": 3,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
@@ -7626,7 +7626,7 @@
     "timeDirect": 10.32,
     "part1_name": "Xe tải không làm chủ được tốc độ mất lái lao vào chợ dân sinh và va chạm với các xe đang đi phía trước",
     "part2_indirect": "Điều kiện giao thông phía trước có chướng ngại vật tiềm ẩn từ xa, đòi hỏi người lái xe phải nâng cao chú ý quan sát.",
-    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn.",
+    "part3_direct": "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn.",
     "part4_action": "Đạp phanh giảm tốc độ ngay, tập trung quan sát toàn cảnh, giữ khoảng cách và xử lý tình huống bình tĩnh, dứt khoát.",
     "quiz": [
       {
@@ -7659,11 +7659,11 @@
         "options": [
           "Phương tiện phía trước vẫn duy trì tốc độ đều và không có tín hiệu chuyển hướng.",
           "Người đi bộ đã qua hết phần đường và đứng an toàn trên vỉa hè.",
-          "Không có bất kỳ xung đột giao thông nào xảy ra trong tầm nhìn của xe.",
-          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+          "Không có bất kỳ nguy cơ va chạm nào xảy ra trong tầm nhìn của xe.",
+          "Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
         ],
         "correctIndex": 3,
-        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua quỹ đạo chuyển động của xe bạn."
+        "explanation": "Thời điểm nguy hiểm trực tiếp: Chướng ngại vật hoặc phương tiện nguy hiểm cắt ngang qua hướng di chuyển của xe bạn."
       },
       {
         "part": 4,
