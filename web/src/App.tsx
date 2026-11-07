@@ -96,6 +96,7 @@ export function App() {
 
   const handleStartExperience = () => {
     StorageService.setEnteredApp();
+    setCurrentCategory(StorageService.getCategory());
     setShowLanding(false);
     setShowSplash(true);
   };
