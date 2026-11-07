@@ -353,7 +353,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                     ? 'relative z-10 w-48 sm:w-52 h-[272px] sm:h-[304px] landscape-mobile:w-36 landscape-mobile:h-[195px] bg-[#fffdfa] rounded-r-lg rounded-l-xs border-r border-t border-b border-slate-300/80 border-l-[7px] border-l-slate-300 shadow-2xl shadow-slate-400/40 p-2 sm:p-2.5 landscape-mobile:p-1.5 flex flex-col justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
                     : currentStep === 1
                     ? 'relative z-10 w-[316px] sm:w-[350px] max-w-full h-[216px] sm:h-[232px] landscape-mobile:w-72 landscape-mobile:h-[175px] flex flex-col items-center justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
-                    : 'relative z-10 w-[316px] sm:w-[344px] max-w-full h-[216px] sm:h-[232px] landscape-mobile:w-72 landscape-mobile:h-[175px] flex flex-col justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
+                    : 'relative z-10 w-[316px] sm:w-[344px] max-w-full h-[228px] sm:h-[242px] landscape-mobile:w-72 landscape-mobile:h-[180px] flex flex-col justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
                 }
               >
                 {/* ------------------------------------------------------------- */}
@@ -600,9 +600,9 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 {/* Slide 03 Graphic: Thẻ GPLX PET Hình Chữ Nhật Chuẩn Màu Sắc    */}
                 {/* ------------------------------------------------------------- */}
                 {currentStep === 2 && (
-                  <div className="w-full h-full rounded-2xl border border-rose-300/80 bg-linear-to-br from-[#ffe4e6] via-[#fff1f2] to-[#fed7aa]/35 p-2.5 sm:p-3 landscape-mobile:p-1.5 shadow-xl shadow-rose-950/10 flex flex-col justify-between overflow-hidden relative">
+                  <div className="w-full h-full rounded-2xl border border-rose-300/80 bg-linear-to-br from-[#ffe4e6] via-[#fff1f2] to-[#fed7aa]/35 p-2.5 sm:p-3 pb-3 sm:pb-3.5 landscape-mobile:p-1.5 shadow-xl shadow-rose-950/10 flex flex-col justify-between overflow-hidden relative">
                     {/* Official National Header & Red Title (Màu sắc chuẩn phôi GPLX) */}
-                    <div className="text-center pb-1.5 border-b border-rose-200/90">
+                    <div className="text-center pb-1 sm:pb-1.5 border-b border-rose-200/90 shrink-0">
                       <div className="font-bold text-[8.5px] sm:text-[9.5px] text-slate-900 uppercase tracking-tight leading-tight">
                         CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
                       </div>
@@ -623,7 +623,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                     </div>
 
                     {/* Card Body: Full-width 6-Category Selection Grid (Spacious & Clean) */}
-                    <div className="w-full my-auto py-1">
+                    <div className="w-full flex-1 flex flex-col justify-center py-1">
                       {/* 6 Category Selection Tiles (Grid 2 cols) */}
                       <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
                         {categoriesList.map((cat) => {
@@ -633,7 +633,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                               key={cat.id}
                               type="button"
                               onClick={() => handleCategorySelect(cat.id)}
-                              className={`p-2 sm:p-2.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
+                              className={`px-2.5 py-1.5 sm:py-2 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
                                 isSelected
                                   ? 'border-red-500 bg-white/95 shadow-xs ring-1 ring-red-400/50'
                                   : 'border-rose-200/90 bg-white/75 hover:border-rose-300 hover:bg-white'
