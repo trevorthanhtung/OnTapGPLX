@@ -159,7 +159,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
 
   return (
     <div
-      className="fixed inset-0 h-dvh w-full overflow-hidden overscroll-none select-none flex flex-col justify-between pt-[env(safe-area-inset-top,0px)] pb-[env(safe-area-inset-bottom,0px)] pl-[env(safe-area-inset-left,0px)] pr-[env(safe-area-inset-right,0px)] bg-slate-50 text-slate-900"
+      className="fixed inset-0 h-dvh w-full overflow-hidden overscroll-none select-none flex flex-col justify-between pt-[max(0.75rem,env(safe-area-inset-top,0px))] pb-[max(1.25rem,env(safe-area-inset-bottom,0px))] pl-[max(0.75rem,env(safe-area-inset-left,0px))] pr-[max(0.75rem,env(safe-area-inset-right,0px))] bg-slate-50 text-slate-900"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
@@ -170,7 +170,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
       {viewMode === 'landing' && (
         <div className="w-full h-full flex flex-col justify-between animate-in fade-in duration-200">
           {/* Top balance spacer */}
-          <div aria-hidden="true" className="h-2 sm:h-6 landscape-mobile:h-1 shrink-0" />
+          <div aria-hidden="true" className="h-3 sm:h-6 landscape-mobile:h-1 shrink-0" />
 
           {/* Centered Main Container */}
           <main className="w-full max-w-md landscape-mobile:max-w-2xl mx-auto px-5 landscape-mobile:px-6 my-auto py-4 landscape-mobile:py-1.5 flex flex-col items-center">
@@ -261,7 +261,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
           </main>
 
           {/* Minimalist Landing Footer */}
-          <footer className="w-full shrink-0 py-3 sm:py-4 landscape-mobile:py-1 text-center text-[11px] landscape-mobile:text-[10px] text-slate-400 font-mono">
+          <footer className="w-full shrink-0 py-2 sm:py-3 landscape-mobile:py-1 text-center text-[11px] landscape-mobile:text-[10px] text-slate-400 font-mono">
             thực hiện bởi <span className="font-semibold text-slate-600">thanhtungg.</span>
             <span className="block text-[10px] landscape-mobile:text-[9px] text-slate-400 font-mono mt-0.5">
               Phiên bản 1.1.0
@@ -276,18 +276,18 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
       {viewMode === 'walkthrough' && (
         <div className="w-full h-full flex flex-col justify-between animate-in fade-in zoom-in-95 duration-250">
           {/* Top Bar: "BỎ QUA" on the right only */}
-          <header className="w-full max-w-md landscape-mobile:max-w-2xl mx-auto px-5 py-3 sm:py-4 flex items-center justify-end shrink-0 z-20">
+          <header className="w-full max-w-md landscape-mobile:max-w-2xl mx-auto px-5 sm:px-6 pt-1 pb-2 sm:pb-3 flex items-center justify-end shrink-0 z-20">
             <button
               type="button"
               onClick={handleSkip}
-              className="text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-slate-800 active:text-slate-950 transition-colors cursor-pointer py-1 px-2"
+              className="text-xs font-bold uppercase tracking-wider text-slate-400 hover:text-slate-800 active:text-slate-950 transition-colors cursor-pointer py-1.5 px-3 rounded-lg hover:bg-slate-200/50"
             >
               BỎ QUA
             </button>
           </header>
 
           {/* Main Walkthrough Container */}
-          <div className="w-full max-w-md landscape-mobile:max-w-2xl mx-auto flex-1 flex flex-col justify-between px-5 landscape-mobile:px-8 overflow-hidden">
+          <div className="w-full max-w-md landscape-mobile:max-w-2xl mx-auto flex-1 flex flex-col justify-between px-5 sm:px-6 landscape-mobile:px-8 pb-3 sm:pb-5 landscape-mobile:pb-1 overflow-hidden">
             {/* Upper Half: Graphic Area with watermark number */}
             <div className="relative flex-1 flex items-center justify-center min-h-[220px] landscape-mobile:min-h-[140px] overflow-hidden">
               {/* Faint Large Watermark Number behind graphic */}
@@ -682,13 +682,13 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
               </div>
             </div>
 
-            {/* Thin Divider Line separating graphics from text */}
-            <div className="w-full border-t border-slate-200 my-2 shrink-0" />
+            {/* Subtle Divider Line separating graphics from text */}
+            <div className="w-full border-t border-slate-200/80 my-1.5 sm:my-2 landscape-mobile:my-0.5 shrink-0" />
 
             {/* Lower Half: Step Counter, Title, Description, and Layered CTA Button */}
-            <div className="w-full pt-1 pb-4 sm:pb-6 landscape-mobile:pb-2 flex flex-col shrink-0">
+            <div className="w-full pt-1 flex flex-col shrink-0">
               {/* Step Counter Row (01 ————— 03) */}
-              <div className="flex items-center justify-between mb-3 landscape-mobile:mb-1.5">
+              <div className="flex items-center justify-between mb-2.5 sm:mb-3 landscape-mobile:mb-1">
                 <div className="flex items-center gap-3">
                   <span className="text-2xl sm:text-3xl landscape-mobile:text-xl font-black font-mono text-slate-900 tracking-tight">
                     {currentSlide.step}
@@ -705,7 +705,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
               {/* Heading Title (Crisp Slate with Amber Accent) */}
               <h2
                 key={`title-${currentStep}`}
-                className="text-xl sm:text-2xl landscape-mobile:text-base font-black text-slate-900 tracking-tight uppercase mb-2 landscape-mobile:mb-1 leading-snug animate-in fade-in duration-200"
+                className="text-xl sm:text-2xl landscape-mobile:text-base font-black text-slate-900 tracking-tight uppercase mb-1.5 sm:mb-2 landscape-mobile:mb-1 leading-snug animate-in fade-in duration-200"
               >
                 <span>{currentSlide.titlePrefix} </span>
                 <span className="text-amber-500">{currentSlide.titleHighlight}</span>
@@ -714,7 +714,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
               {/* Description Body */}
               <p
                 key={`desc-${currentStep}`}
-                className="text-xs sm:text-sm landscape-mobile:text-[11px] text-slate-600 leading-relaxed font-normal mb-5 sm:mb-6 landscape-mobile:mb-2 line-clamp-3 sm:line-clamp-none animate-in fade-in duration-200"
+                className="text-xs sm:text-sm landscape-mobile:text-[11px] text-slate-600 leading-relaxed font-normal mb-4 sm:mb-5 landscape-mobile:mb-2 line-clamp-3 sm:line-clamp-none animate-in fade-in duration-200"
               >
                 {currentStep === 2
                   ? `Đang chọn ${activeCategoryConfig.label} (${activeCategoryConfig.desc}). Đề thi gồm ${activeCategoryConfig.totalQ} câu làm trong ${activeCategoryConfig.time} phút, đạt từ ${activeCategoryConfig.pass}/${activeCategoryConfig.totalQ} câu trở lên.`
