@@ -77,7 +77,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
       step: '02',
       titlePrefix: '120 TÌNH HUỐNG',
       titleHighlight: 'MÔ PHỎNG',
-      desc: 'Video 3D thực tế theo quy chế mới. Rèn luyện phản xạ nhấn phím Space chuẩn xác để giành trọn thang điểm 5/5 trong mọi tình huống giao thông.',
+      desc: 'Hệ thống video 3D thực tế gồm 6 chương giao thông. Xem clip nhận diện tình huống và chọn đáp án trắc nghiệm phương án xử lý an toàn chuẩn quy chế mới.',
       buttonText: 'TIẾP TỤC',
     },
     {
@@ -408,53 +408,177 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 )}
 
                 {/* ------------------------------------------------------------- */}
-                {/* Slide 02 Graphic: Giao diện mô phỏng 120 tình huống & Phím Space */}
+                {/* Slide 02 Graphic: Bộ PC và người đang xem clip mô phỏng trắc nghiệm */}
                 {/* ------------------------------------------------------------- */}
                 {currentStep === 1 && (
-                  <div className="w-full h-full rounded-xl bg-slate-900 border border-slate-800 p-3 landscape-mobile:p-2 flex flex-col justify-between shadow-2xs">
-                    {/* Windshield Road Simulation View */}
-                    <div className="flex-1 w-full bg-[#0c1017] rounded-lg border border-slate-800 flex flex-col justify-between p-2 relative overflow-hidden mb-2">
-                      <div className="w-full flex items-center justify-between z-10">
-                        <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-400 text-[9px] font-bold">
-                          <span>TÌNH HUỐNG 18/120</span>
-                        </div>
-                        <span className="text-[9px] font-mono font-bold text-emerald-400 bg-emerald-500/20 px-1.5 py-0.5 rounded border border-emerald-500/40">
-                          +5 ĐIỂM
+                  <div className="w-full h-full rounded-xl bg-slate-50 border border-slate-200/90 p-2.5 landscape-mobile:p-1.5 flex flex-col justify-between shadow-inner">
+                    {/* Header: Scenario & Multiple Choice Badge */}
+                    <div className="flex items-center justify-between pb-1.5 border-b border-slate-200/80">
+                      <div className="flex items-center gap-1.5">
+                        <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                        <span className="text-[10px] font-bold text-slate-800 tracking-tight">
+                          CLIP MÔ PHỎNG 3D
                         </span>
                       </div>
-
-                      {/* Windshield Lane graphic with braking car */}
-                      <div className="w-full flex flex-col items-center justify-center my-auto py-0.5">
-                        <div className="w-16 h-6 rounded bg-slate-800 border border-slate-600 flex items-center justify-between px-1.5 shadow-md relative">
-                          <div className="w-2 h-2 bg-rose-500 rounded-full shadow-[0_0_8px_#f43f5e] animate-pulse" />
-                          <span className="text-[7.5px] font-mono font-bold text-slate-300">XE PHANH GẤP</span>
-                          <div className="w-2 h-2 bg-rose-500 rounded-full shadow-[0_0_8px_#f43f5e] animate-pulse" />
-                        </div>
-                        <div className="w-20 h-1 border-b border-dashed border-amber-400/60 mt-1" />
+                      <div className="px-1.5 py-0.5 rounded-md bg-blue-50 border border-blue-200 text-blue-700 text-[9px] font-bold">
+                        TRẮC NGHIỆM 4 CÂU
                       </div>
                     </div>
 
-                    {/* 5-tier Hazard score bar (Green 5, Amber 4-3, Red 2-1) */}
-                    <div className="w-full mb-2">
-                      <div className="flex justify-between text-[8px] font-mono text-slate-400 mb-0.5 px-0.5">
-                        <span className="text-emerald-400 font-bold">5 điểm</span>
-                        <span className="text-amber-400">4đ</span>
-                        <span className="text-amber-500">3đ</span>
-                        <span className="text-orange-500">2đ</span>
-                        <span className="text-rose-500">1đ</span>
-                      </div>
-                      <div className="w-full h-1.5 bg-slate-800 rounded-full relative flex items-center overflow-hidden">
-                        <div className="h-full w-1/5 bg-emerald-500" />
-                        <div className="h-full w-2/5 bg-amber-400" />
-                        <div className="h-full w-1/5 bg-orange-500" />
-                        <div className="h-full w-1/5 bg-rose-500" />
-                      </div>
+                    {/* Scene SVG: Person at PC desk studying driving video simulation */}
+                    <div className="my-auto w-full h-32 sm:h-36 landscape-mobile:h-24 bg-white rounded-lg border border-slate-200/80 overflow-hidden relative shadow-2xs">
+                      <svg viewBox="0 0 240 145" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
+                        {/* Soft background ambient gradient */}
+                        <defs>
+                          <linearGradient id="screenGlow" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.15" />
+                            <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.0" />
+                          </linearGradient>
+                          <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stopColor="#7dd3fc" />
+                            <stop offset="100%" stopColor="#bae6fd" />
+                          </linearGradient>
+                        </defs>
+
+                        {/* Ambient screen light beam on wall */}
+                        <polygon points="120,40 50,140 220,140" fill="url(#screenGlow)" />
+
+                        {/* Desk Line */}
+                        <rect x="20" y="122" width="205" height="4" rx="2" fill="#94a3b8" />
+                        <line x1="40" y1="126" x2="40" y2="145" stroke="#cbd5e1" strokeWidth="2.5" />
+                        <line x1="205" y1="126" x2="205" y2="145" stroke="#cbd5e1" strokeWidth="2.5" />
+
+                        {/* Desktop PC Tower */}
+                        <g transform="translate(182, 60)">
+                          <rect x="0" y="0" width="22" height="62" rx="3" fill="#1e293b" stroke="#334155" strokeWidth="1" />
+                          {/* Power button & USB slots */}
+                          <circle cx="11" cy="8" r="2" fill="#38bdf8" />
+                          <line x1="6" y1="14" x2="16" y2="14" stroke="#64748b" strokeWidth="1" />
+                          <line x1="6" y1="18" x2="16" y2="18" stroke="#64748b" strokeWidth="1" />
+                          {/* Fan grille */}
+                          <rect x="4" y="32" width="14" height="24" rx="1" fill="#0f172a" />
+                          <line x1="6" y1="38" x2="16" y2="38" stroke="#334155" strokeWidth="0.8" />
+                          <line x1="6" y1="44" x2="16" y2="44" stroke="#334155" strokeWidth="0.8" />
+                          <line x1="6" y1="50" x2="16" y2="50" stroke="#334155" strokeWidth="0.8" />
+                        </g>
+
+                        {/* PC Monitor */}
+                        <g transform="translate(80, 20)">
+                          {/* Stand */}
+                          <path d="M 45 74 L 40 102 L 56 102 L 51 74 Z" fill="#64748b" />
+                          <rect x="32" y="101" width="32" height="3" rx="1.5" fill="#475569" />
+
+                          {/* Monitor Frame */}
+                          <rect x="0" y="0" width="96" height="74" rx="4" fill="#0f172a" stroke="#334155" strokeWidth="1.2" />
+
+                          {/* Screen Content: Driving Video Simulation Clip */}
+                          <rect x="3" y="3" width="90" height="64" rx="2" fill="#020617" />
+                          <g transform="translate(3, 3)">
+                            {/* Sky */}
+                            <rect x="0" y="0" width="90" height="32" fill="url(#skyGrad)" />
+                            {/* Mountains in background */}
+                            <polygon points="0,32 20,18 40,32" fill="#93c5fd" />
+                            <polygon points="35,32 55,14 75,32" fill="#60a5fa" />
+                            {/* Highway Road with Vanishing Point */}
+                            <polygon points="0,64 45,32 90,64" fill="#334155" />
+                            {/* Dashed center lane divider */}
+                            <line x1="45" y1="32" x2="45" y2="60" stroke="#fde047" strokeWidth="1.2" strokeDasharray="3 2" />
+
+                            {/* Car in front on the road */}
+                            <g transform="translate(39, 40)">
+                              <rect x="0" y="0" width="12" height="10" rx="2" fill="#dc2626" />
+                              <rect x="2" y="2" width="8" height="4" rx="1" fill="#fee2e2" />
+                              {/* Brake lights glowing red */}
+                              <circle cx="1.5" cy="8" r="1.2" fill="#ef4444" />
+                              <circle cx="10.5" cy="8" r="1.2" fill="#ef4444" />
+                            </g>
+
+                            {/* Video Playback Bar at bottom of screen */}
+                            <rect x="0" y="59" width="90" height="5" fill="#0f172a" opacity="0.9" />
+                            <rect x="0" y="60" width="45" height="3" fill="#ef4444" />
+                            <circle cx="45" cy="61.5" r="2" fill="#ffffff" />
+                            <text x="86" y="63" textAnchor="end" fill="#94a3b8" fontSize="3.5" fontFamily="monospace">14s</text>
+
+                            {/* Video Live Badge */}
+                            <rect x="3" y="3" width="16" height="6" rx="1" fill="#ef4444" />
+                            <text x="11" y="7.5" textAnchor="middle" fill="#ffffff" fontSize="4" fontWeight="bold">CLIP</text>
+
+                            {/* Multiple Choice Options overlay on top-right of monitor */}
+                            <g transform="translate(56, 4)">
+                              <rect x="0" y="0" width="31" height="15" rx="2" fill="#0f172a" opacity="0.85" stroke="#334155" strokeWidth="0.5" />
+                              <text x="3" y="5" fill="#e2e8f0" fontSize="3.5" fontWeight="bold">Trắc nghiệm:</text>
+                              {/* Option A */}
+                              <rect x="3" y="7" width="11" height="3" rx="0.5" fill="#1e293b" />
+                              <text x="8.5" y="9.2" textAnchor="middle" fill="#94a3b8" fontSize="2.5">A. Phanh</text>
+                              {/* Option B (Correct check) */}
+                              <rect x="16" y="7" width="12" height="3" rx="0.5" fill="#059669" />
+                              <text x="22" y="9.2" textAnchor="middle" fill="#ffffff" fontSize="2.5" fontWeight="bold">B. Giảm tốc ✓</text>
+                              {/* Option C */}
+                              <rect x="3" y="11" width="11" height="3" rx="0.5" fill="#1e293b" />
+                              <text x="8.5" y="13.2" textAnchor="middle" fill="#94a3b8" fontSize="2.5">C. Rẽ trái</text>
+                              {/* Option D */}
+                              <rect x="16" y="11" width="12" height="3" rx="0.5" fill="#1e293b" />
+                              <text x="22" y="13.2" textAnchor="middle" fill="#94a3b8" fontSize="2.5">D. Tăng ga</text>
+                            </g>
+                          </g>
+
+                          {/* Monitor Power LED */}
+                          <circle cx="48" cy="71" r="1" fill="#38bdf8" />
+                        </g>
+
+                        {/* Keyboard & Mouse on Desk */}
+                        <g transform="translate(92, 114)">
+                          <rect x="0" y="0" width="46" height="7" rx="1.5" fill="#334155" stroke="#475569" strokeWidth="0.5" />
+                          <line x1="3" y1="3.5" x2="43" y2="3.5" stroke="#64748b" strokeWidth="1" strokeDasharray="2 1" />
+                          {/* Mouse */}
+                          <rect x="52" y="1" width="7" height="9" rx="3" fill="#334155" stroke="#475569" strokeWidth="0.5" />
+                          <line x1="55.5" y1="1" x2="55.5" y2="5" stroke="#64748b" strokeWidth="0.6" />
+                        </g>
+
+                        {/* Student / Person sitting at desk watching the simulation */}
+                        <g transform="translate(38, 48)">
+                          {/* Chair backrest */}
+                          <path d="M 12 40 Q 6 15 16 -5 Q 26 -5 32 40 Z" fill="#0f172a" />
+                          <rect x="12" y="38" width="22" height="6" rx="2" fill="#1e293b" />
+
+                          {/* Person Back/Side View */}
+                          {/* Torso / Shirt in blue */}
+                          <path d="M 22 28 Q 28 26 36 28 L 42 70 L 18 70 Z" fill="#2563eb" />
+                          {/* Arm resting toward desk/mouse */}
+                          <path d="M 34 32 Q 46 45 56 66 L 50 68 Q 42 50 32 36 Z" fill="#1d4ed8" />
+                          <circle cx="56" cy="67" r="2.5" fill="#fed7aa" />
+
+                          {/* Neck */}
+                          <rect x="25" y="18" width="6" height="8" fill="#fed7aa" />
+
+                          {/* Head & Hair */}
+                          <ellipse cx="28" cy="14" rx="9" ry="11" fill="#1e293b" />
+                          <circle cx="30" cy="15" r="7.5" fill="#fed7aa" />
+                          {/* Hair back */}
+                          <path d="M 20 12 Q 22 4 30 5 Q 36 6 36 12 Q 33 21 21 18 Z" fill="#1e293b" />
+
+                          {/* Headphones over head */}
+                          <path d="M 23 8 Q 28 3 34 8" fill="none" stroke="#64748b" strokeWidth="2.2" strokeLinecap="round" />
+                          <rect x="20" y="8" width="4" height="8" rx="2" fill="#0f172a" />
+                          <rect x="33" y="8" width="4" height="8" rx="2" fill="#0f172a" />
+                        </g>
+
+                        {/* Floating Success Pill */}
+                        <g transform="translate(142, 10)">
+                          <rect x="0" y="0" width="76" height="14" rx="7" fill="#ecfdf5" stroke="#10b981" strokeWidth="0.8" />
+                          <circle cx="8" cy="7" r="4.5" fill="#10b981" />
+                          <path d="M 6 7 L 7.5 8.5 L 10 5.5" fill="none" stroke="#ffffff" strokeWidth="1" strokeLinecap="round" />
+                          <text x="16" y="9.5" fill="#065f46" fontSize="5.5" fontWeight="bold">Chọn đúng +2.5đ</text>
+                        </g>
+                      </svg>
                     </div>
 
-                    {/* Spacebar Key Prompt */}
-                    <div className="w-full py-1.5 rounded-md bg-slate-800 border border-slate-700 text-center font-mono font-bold text-[9.5px] text-amber-400 tracking-wider flex items-center justify-center gap-1.5 shadow-xs">
-                      <span className="px-1.5 py-0.5 bg-slate-700 rounded text-white text-[8.5px] border border-slate-600">SPACE</span>
-                      <span>NHẤN KHI THẤY NGUY HIỂM</span>
+                    {/* Footer summary: Trắc nghiệm 4 mốc thời điểm */}
+                    <div className="pt-1.5 border-t border-slate-200/80 flex items-center justify-between text-[9px] text-slate-500">
+                      <span className="flex items-center gap-1 text-blue-700 font-medium">
+                        🎯 4 mốc trắc nghiệm theo video
+                      </span>
+                      <span className="font-mono text-slate-400">10 điểm tối đa</span>
                     </div>
                   </div>
                 )}
