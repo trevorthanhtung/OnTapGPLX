@@ -607,18 +607,23 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
 
           {/* Desktop Grid View */}
           <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-4">
-            {CHAPTERS.map((ch) => (
-              <div
-                key={ch.id}
-                onClick={() => startChapterPractice(ch.id)}
-                className="flex items-center justify-between p-4 rounded-xl border border-slate-100 bg-slate-50 hover:bg-slate-100 hover:border-slate-300 transition-all cursor-pointer"
-              >
-                <div>
-                  <h3 className="font-semibold text-slate-900 text-sm">{ch.title}</h3>
+            {CHAPTERS.map((ch) => {
+              const isLast = ch.id === 7;
+              return (
+                <div
+                  key={ch.id}
+                  onClick={() => startChapterPractice(ch.id)}
+                  className={`flex items-center justify-between p-4 rounded-xl border border-slate-100 bg-slate-50 hover:bg-slate-100 hover:border-slate-300 transition-all cursor-pointer ${
+                    isLast ? 'md:col-span-2' : ''
+                  }`}
+                >
+                  <div>
+                    <h3 className="font-semibold text-slate-900 text-sm">{ch.title}</h3>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-slate-400" />
                 </div>
-                <ChevronRight className="w-4 h-4 text-slate-400" />
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
