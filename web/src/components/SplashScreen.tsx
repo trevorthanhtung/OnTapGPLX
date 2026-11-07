@@ -241,22 +241,12 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
           </span>
         </div>
 
-        {/* Primary Slogan */}
+        {/* Secondary Subtitle */}
         <p
-          className={`text-sm sm:text-base font-bold text-slate-700 tracking-wide uppercase transition-opacity duration-250 ${
+          className={`text-xs text-slate-500 mt-0.5 max-w-xs font-medium transition-opacity duration-250 ${
             isExiting ? 'opacity-0' : 'opacity-100'
           }`}
           style={{ animation: 'splashFadeUp 0.5s ease-out 0.48s both' }}
-        >
-          Ôn Thi Giấy Phép Lái Xe 2026
-        </p>
-
-        {/* Secondary Subtitle */}
-        <p
-          className={`text-xs text-slate-500 mt-1 max-w-xs font-medium transition-opacity duration-250 ${
-            isExiting ? 'opacity-0' : 'opacity-100'
-          }`}
-          style={{ animation: 'splashFadeUp 0.5s ease-out 0.62s both' }}
         >
           Dữ liệu chuẩn Cục Đường bộ Việt Nam
         </p>
