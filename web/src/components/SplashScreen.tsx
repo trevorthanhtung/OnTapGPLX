@@ -1,9 +1,134 @@
 import React, { useEffect, useState } from 'react';
-import { Car } from 'lucide-react';
 
 interface SplashScreenProps {
   onFinish: () => void;
 }
+
+// Custom Toyota Vios Sedan SVG Icon (Xe tập lái / sát hạch quốc dân)
+const ViosSedan: React.FC = () => (
+  <svg
+    viewBox="0 0 68 22"
+    className="w-14 h-6 select-none pointer-events-none overflow-visible"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <defs>
+      {/* Vios warm pearl-orange metallic gradient */}
+      <linearGradient id="viosBodyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#ea580c" />
+        <stop offset="35%" stopColor="#f97316" />
+        <stop offset="85%" stopColor="#fb923c" />
+        <stop offset="100%" stopColor="#f97316" />
+      </linearGradient>
+
+      {/* Modern tinted glass */}
+      <linearGradient id="viosGlassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stopColor="#e0f2fe" stopOpacity="0.95" />
+        <stop offset="100%" stopColor="#7dd3fc" stopOpacity="0.85" />
+      </linearGradient>
+
+      {/* Headlight beam */}
+      <linearGradient id="viosHeadlight" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#fef08a" stopOpacity="0.8" />
+        <stop offset="60%" stopColor="#fef08a" stopOpacity="0.3" />
+        <stop offset="100%" stopColor="#fef08a" stopOpacity="0" />
+      </linearGradient>
+    </defs>
+
+    {/* Forward Headlight Beam */}
+    <polygon points="53,12 68,9 68,16 53,14" fill="url(#viosHeadlight)" />
+
+    {/* Main Sedan Body (Toyota Vios silhouette: 3-box sedan shape with clear trunk deck) */}
+    <path
+      d="M 2 15
+         C 1.5 15 1 14.2 1 13
+         C 1 11.2 2 10.4 3.5 10.2
+         L 9.5 10.2
+         C 10.8 10.2 14.5 4.5 17 3.8
+         C 19 3.2 31.5 3.2 34 4
+         C 36 4.6 41.5 9 43.5 10
+         L 50 11
+         C 51.5 11.3 53 12 53 13.2
+         C 53 14.4 52 15 50.5 15
+         L 44.8 15
+         C 44.3 12.8 42.4 11.4 40 11.4
+         C 37.6 11.4 35.7 12.8 35.2 15
+         L 17.8 15
+         C 17.3 12.8 15.4 11.4 13 11.4
+         C 10.6 11.4 8.7 12.8 8.2 15
+         Z"
+      fill="url(#viosBodyGrad)"
+      stroke="#c2410c"
+      strokeWidth="0.75"
+      strokeLinejoin="round"
+    />
+
+    {/* Dynamic character crease line */}
+    <path
+      d="M 9.5 11.2 L 48 11.8"
+      stroke="#ffedd5"
+      strokeWidth="0.65"
+      strokeLinecap="round"
+      opacity="0.8"
+    />
+
+    {/* Rear Passenger Window */}
+    <path
+      d="M 11 9.5 L 16.8 4.8 L 24 4.8 L 24 9.5 Z"
+      fill="url(#viosGlassGrad)"
+      stroke="#9a3412"
+      strokeWidth="0.5"
+    />
+
+    {/* Front Driver Window */}
+    <path
+      d="M 25.5 4.8 L 33 4.8 L 40.5 9.5 L 25.5 9.5 Z"
+      fill="url(#viosGlassGrad)"
+      stroke="#9a3412"
+      strokeWidth="0.5"
+    />
+
+    {/* B-Pillar divider */}
+    <rect x="24" y="4.5" width="1.5" height="5.2" fill="#7c2d12" />
+
+    {/* Side mirror */}
+    <ellipse cx="27" cy="9.2" rx="1.2" ry="0.8" fill="#9a3412" />
+
+    {/* Taillight (Wrap-around sedan light) */}
+    <path
+      d="M 1.5 10.5 L 4 10.5 L 3.5 12 L 1.5 11.6 Z"
+      fill="#ef4444"
+      stroke="#991b1b"
+      strokeWidth="0.4"
+    />
+
+    {/* Vios Sharp Projector Headlight */}
+    <path
+      d="M 48.5 11 L 52.5 11.8 L 49 12.8 Z"
+      fill="#fef08a"
+      stroke="#ca8a04"
+      strokeWidth="0.4"
+    />
+
+    {/* Rear Wheel (Alloy rim + dark tire) */}
+    <g>
+      <circle cx="13" cy="15.5" r="3.6" fill="#1e293b" />
+      <circle cx="13" cy="15.5" r="2.2" fill="#cbd5e1" stroke="#475569" strokeWidth="0.5" />
+      <circle cx="13" cy="15.5" r="0.8" fill="#0f172a" />
+      <line x1="13" y1="13.7" x2="13" y2="17.3" stroke="#64748b" strokeWidth="0.5" />
+      <line x1="11.2" y1="15.5" x2="14.8" y2="15.5" stroke="#64748b" strokeWidth="0.5" />
+    </g>
+
+    {/* Front Wheel (Alloy rim + dark tire) */}
+    <g>
+      <circle cx="40" cy="15.5" r="3.6" fill="#1e293b" />
+      <circle cx="40" cy="15.5" r="2.2" fill="#cbd5e1" stroke="#475569" strokeWidth="0.5" />
+      <circle cx="40" cy="15.5" r="0.8" fill="#0f172a" />
+      <line x1="40" y1="13.7" x2="40" y2="17.3" stroke="#64748b" strokeWidth="0.5" />
+      <line x1="38.2" y1="15.5" x2="41.8" y2="15.5" stroke="#64748b" strokeWidth="0.5" />
+    </g>
+  </svg>
+);
 
 export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
   const [progress, setProgress] = useState(0);
@@ -147,18 +272,18 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
         </p>
       </div>
 
-      {/* Bottom Progress Section (Highway Theme with Driving Car & Tips) */}
+      {/* Bottom Progress Section (Highway Theme with Standalone Vios Sedan leading the track) */}
       <div
         className={`w-full max-w-sm flex flex-col items-center pb-8 sm:pb-12 px-2 transition-all duration-300 ${
           isLaunching ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
         }`}
         style={{ animation: 'splashFadeUp 0.6s ease-out 0.75s both' }}
       >
-        {/* Road Track with Driving Car */}
+        {/* Road Track with Driving Vios */}
         <div className="relative w-full pt-6">
           {/* Progress Track / Road Lane */}
-          <div className="relative w-full h-3 bg-slate-100 rounded-full border border-slate-200/90 shadow-inner overflow-hidden">
-            {/* Filled Highway Track (Follows the car) */}
+          <div className="relative w-full h-2.5 bg-slate-100 rounded-full border border-slate-200/90 shadow-inner overflow-hidden">
+            {/* Filled Highway Track (Follows right behind the Vios) */}
             <div
               className="h-full bg-linear-to-r from-amber-500 via-orange-500 to-amber-500 rounded-full transition-all duration-75 ease-out shadow-xs shadow-orange-500/50"
               style={{ width: `${progress}%` }}
@@ -167,21 +292,21 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
 
           {/* Scrolling Dashed Highway Lane (Moving left to create speed illusion) */}
           <div
-            className="w-full h-1 mt-1.5 rounded-full opacity-60 overflow-hidden"
+            className="w-full h-1 mt-1 rounded-full opacity-50 overflow-hidden"
             style={{
               background: 'repeating-linear-gradient(90deg, #94a3b8 0px, #94a3b8 10px, transparent 10px, transparent 20px)',
               animation: 'roadDashScroll 0.55s linear infinite',
             }}
           />
 
-          {/* The Car riding on the progress highway */}
+          {/* Standalone Toyota Vios Sedan positioned right at the head of the progress track */}
           <div
-            className={`absolute -top-3.5 z-10 pointer-events-none transition-all duration-75 ease-out ${
+            className={`absolute top-0.5 z-10 pointer-events-none transition-all duration-75 ease-out ${
               isLaunching ? 'animate-[carTurboLaunch_0.45s_cubic-bezier(0.7,0,0.84,0)_forwards]' : ''
             }`}
             style={{
               left: `${progress}%`,
-              transform: isLaunching ? undefined : `translateX(-${progress}%)`,
+              transform: isLaunching ? undefined : 'translateX(-65%)',
             }}
           >
             <div
@@ -191,25 +316,20 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
               }}
             >
               {/* Exhaust Tail Light Trail */}
-              <div className="absolute -left-7 bottom-0.5 w-8 h-2 bg-linear-to-l from-orange-500 via-amber-400/50 to-transparent rounded-full blur-[0.8px] pointer-events-none" />
+              <div className="absolute -left-6 bottom-1 w-7 h-1.5 bg-linear-to-l from-orange-500 via-amber-400/40 to-transparent rounded-full blur-[0.6px] pointer-events-none" />
 
               {/* Turbo Jet Boost Trail at 100% */}
               {isLaunching && (
-                <div className="absolute -left-14 bottom-0 w-16 h-3 bg-linear-to-l from-orange-600 via-amber-400 to-transparent rounded-full blur-[1px] animate-pulse" />
+                <div className="absolute -left-12 bottom-0.5 w-14 h-2.5 bg-linear-to-l from-orange-600 via-amber-400 to-transparent rounded-full blur-[1px] animate-pulse" />
               )}
 
               {/* Smoke Puff Particle when driving */}
               {progress > 5 && progress < 99 && !isLaunching && (
-                <div className="absolute -left-2.5 bottom-0 w-2 h-2 rounded-full bg-slate-300/80 animate-ping" />
+                <div className="absolute -left-2 bottom-1 w-1.5 h-1.5 rounded-full bg-slate-300/70 animate-ping" />
               )}
 
-              {/* Car Icon with badge styling */}
-              <div className="p-1 rounded-full bg-white shadow-md border border-amber-200/90">
-                <Car className="w-5 h-5 text-amber-500 fill-amber-100 drop-shadow-xs" />
-              </div>
-
-              {/* Headlight beam */}
-              <div className="absolute top-2 -right-4 w-5 h-1.5 bg-linear-to-r from-amber-400/90 via-amber-300/40 to-transparent rounded-full blur-[0.6px] pointer-events-none" />
+              {/* Clean Standalone Vios Sedan (No card, no circle badge!) */}
+              <ViosSedan />
             </div>
           </div>
         </div>
