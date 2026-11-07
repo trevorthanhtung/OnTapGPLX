@@ -624,17 +624,36 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
 
             {/* Lower Half: Step Counter, Title, Description, and Layered CTA Button */}
             <div className="w-full pt-1 flex flex-col shrink-0">
-              {/* Step Counter Row (01 ————— 03) */}
+              {/* Step Counter Row (01 ————— 03) with Dynamic Animated Progress Track */}
               <div className="flex items-center justify-between mb-2.5 sm:mb-3 landscape-mobile:mb-1">
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl sm:text-3xl landscape-mobile:text-xl font-black font-mono text-slate-900 tracking-tight">
+                <div className="flex items-center gap-3 flex-1 pr-4">
+                  <span className="text-2xl sm:text-3xl landscape-mobile:text-xl font-black font-mono text-slate-900 tracking-tight min-w-[2ch]">
                     {currentSlide.step}
                   </span>
-                  {/* Amber Accent Indicator Line */}
-                  <div className="w-20 sm:w-28 landscape-mobile:w-16 h-1.5 rounded-full bg-linear-to-r from-amber-500 to-orange-500 shadow-xs shadow-amber-500/40" />
+
+                  {/* Progress Track: fills dynamically (33% -> 66% -> 100%) and allows clicking steps */}
+                  <div className="flex-1 max-w-[200px] sm:max-w-[240px] landscape-mobile:max-w-[140px] h-2 rounded-full bg-slate-200/90 overflow-hidden relative flex shadow-inner">
+                    {/* Animated Fill Bar */}
+                    <div
+                      className="absolute inset-y-0 left-0 rounded-full bg-linear-to-r from-amber-500 to-orange-500 transition-all duration-300 ease-out shadow-xs shadow-amber-500/40 pointer-events-none"
+                      style={{
+                        width: `${((currentStep + 1) / slides.length) * 100}%`,
+                      }}
+                    />
+                    {/* 3 Clickable Step Zones */}
+                    {slides.map((_, idx) => (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => setCurrentStep(idx)}
+                        aria-label={`Chuyển đến bước ${idx + 1}`}
+                        className="flex-1 h-full relative z-10 opacity-0 cursor-pointer"
+                      />
+                    ))}
+                  </div>
                 </div>
 
-                <span className="text-xs sm:text-sm font-bold font-mono text-slate-400">
+                <span className="text-xs sm:text-sm font-bold font-mono text-slate-400 shrink-0">
                   03
                 </span>
               </div>
