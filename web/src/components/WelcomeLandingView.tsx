@@ -439,7 +439,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                           MÔ PHỎNG 120 TÌNH HUỐNG
                         </span>
                         <span className="text-slate-400">
-                          Tình huống 18/120 • 22s
+                          Tình huống 18/120
                         </span>
                       </div>
 
@@ -501,8 +501,8 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                         </div>
                         <div className="p-1 sm:p-1.5 rounded-md bg-emerald-50 border border-emerald-400 text-[8px] sm:text-[8.5px] text-emerald-900 font-bold flex items-center justify-between shadow-2xs">
                           <span className="truncate">B. Phanh giảm tốc</span>
-                          <span className="text-[7.5px] px-1 py-0.2 rounded bg-emerald-600 text-white font-black shrink-0 ml-1">
-                            ✓ Đúng
+                          <span className="w-3.5 h-3.5 rounded-full bg-emerald-600 text-white flex items-center justify-center shrink-0 ml-1">
+                            <Check className="w-2.5 h-2.5 stroke-[3]" />
                           </span>
                         </div>
                         <div className="p-1 sm:p-1.5 rounded-md bg-slate-50 border border-slate-200 text-[8px] sm:text-[8.5px] text-slate-600 truncate">
