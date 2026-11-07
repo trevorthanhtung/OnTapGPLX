@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { X, ArrowLeft, AlertTriangle, Award } from 'lucide-react';
+import { X, ArrowLeft, Award, Check, ShieldAlert } from 'lucide-react';
 
 interface WelcomeLandingViewProps {
   onStartExperience: () => void;
@@ -68,20 +68,23 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
   const slides = [
     {
       step: '01',
-      title: 'NGÂN HÀNG 600 CÂU HỎI',
-      desc: 'Bộ câu hỏi sát hạch lý thuyết chuẩn Cục Đường bộ Việt Nam. Phân chia theo từng hạng bằng, có giải thích chi tiết và gắn cờ cảnh báo 60 câu điểm liệt.',
+      titlePrefix: 'NGÂN HÀNG',
+      titleHighlight: '600 CÂU HỎI',
+      desc: 'Bộ câu hỏi sát hạch chuẩn Cục Đường bộ Việt Nam. Phân chia rõ từng hạng bằng, có giải thích chi tiết và gắn cờ cảnh báo 60 câu điểm liệt không được sai.',
       buttonText: 'TIẾP TỤC',
     },
     {
       step: '02',
-      title: '120 TÌNH HUỐNG MÔ PHỎNG',
-      desc: 'Hệ thống video 3D thực tế với thang điểm trắc nghiệm 4 mốc thời gian. Rèn luyện phản xạ nhấn phím Space đúng thời điểm nguy hiểm để đạt điểm tối đa 5/5.',
+      titlePrefix: '120 TÌNH HUỐNG',
+      titleHighlight: 'MÔ PHỎNG',
+      desc: 'Video 3D thực tế theo quy chế mới. Rèn luyện phản xạ nhấn phím Space chuẩn xác để giành trọn thang điểm 5/5 trong mọi tình huống giao thông.',
       buttonText: 'TIẾP TỤC',
     },
     {
       step: '03',
-      title: 'THI THỬ CHUẨN SÁT HẠCH',
-      desc: 'Đề thi cấu trúc ngẫu nhiên có bấm giờ như phòng thi thật. Tự động lưu lịch sử, tổng hợp các câu làm sai để bạn ôn luyện cấp tốc đến khi đỗ 100%.',
+      titlePrefix: 'THI THỬ',
+      titleHighlight: 'CHUẨN SÁT HẠCH',
+      desc: 'Cấu trúc đề thi sát với phòng thi thật, tự động bấm giờ và chấm điểm tức thì. Thống kê câu hay làm sai để ôn luyện cấp tốc đến khi tự tin đỗ 100%.',
       buttonText: 'BẮT ĐẦU NGAY',
     },
   ];
@@ -127,7 +130,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
   return (
     <div
       className={`fixed inset-0 h-dvh w-full overflow-hidden overscroll-none select-none flex flex-col justify-between pt-[env(safe-area-inset-top,0px)] pb-[env(safe-area-inset-bottom,0px)] pl-[env(safe-area-inset-left,0px)] pr-[env(safe-area-inset-right,0px)] ${
-        viewMode === 'landing' ? 'bg-slate-50 text-slate-900' : 'bg-[#111315] text-slate-100'
+        viewMode === 'landing' ? 'bg-slate-50 text-slate-900' : 'bg-[#0f1217] text-slate-100'
       }`}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
@@ -240,7 +243,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
       )}
 
       {/* ========================================================================= */}
-      {/* 2. MÀN 3 BƯỚC ONBOARDING CAROUSEL (01 - 02 - 03)                          */}
+      {/* 2. MÀN 3 BƯỚC ONBOARDING CAROUSEL (01 - 02 - 03) - CHUẨN MÀU ONTAP GPLX    */}
       {/* ========================================================================= */}
       {viewMode === 'walkthrough' && (
         <div className="w-full h-full flex flex-col justify-between animate-in fade-in zoom-in-95 duration-250">
@@ -260,7 +263,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 alt="Logo"
                 className="w-6 h-6 rounded-md object-contain border border-slate-700/60"
               />
-              <span className="text-xs font-bold tracking-tight text-slate-400">
+              <span className="text-xs font-bold tracking-tight text-slate-300">
                 OnTap <span className="text-amber-500">GPLX</span>
               </span>
             </div>
@@ -268,7 +271,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
             <button
               type="button"
               onClick={handleSkip}
-              className="text-xs font-bold uppercase tracking-widest text-[#8b9e82] hover:text-[#a8bea0] active:text-white transition-colors cursor-pointer py-1 px-2"
+              className="text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-amber-400 active:text-white transition-colors cursor-pointer py-1 px-2"
             >
               BỎ QUA
             </button>
@@ -286,82 +289,138 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 {currentSlide.step}
               </div>
 
-              {/* Graphic Container (Matching 2x2 grid mockup from reference) */}
+              {/* Graphic Container (Tailored specifically for Driving Test App) */}
               <div
                 key={`graphic-${currentStep}`}
-                className="relative z-10 w-52 h-52 sm:w-60 sm:h-60 landscape-mobile:w-36 landscape-mobile:h-36 rounded-2xl border border-slate-800 bg-[#16181b]/90 p-4 landscape-mobile:p-2.5 shadow-2xl flex items-center justify-center animate-in zoom-in-95 fade-in duration-250"
+                className="relative z-10 w-64 h-56 sm:w-72 sm:h-60 landscape-mobile:w-48 landscape-mobile:h-36 rounded-2xl border border-slate-800 bg-[#151921] p-3.5 landscape-mobile:p-2.5 shadow-2xl flex items-center justify-center animate-in zoom-in-95 fade-in duration-250"
               >
-                {/* Slide 01 Graphic: 2x2 Feature Cards Grid */}
+                {/* ------------------------------------------------------------- */}
+                {/* Slide 01 Graphic: Mô phỏng Thẻ câu hỏi Lý thuyết sát hạch thực tế */}
+                {/* ------------------------------------------------------------- */}
                 {currentStep === 0 && (
-                  <div className="grid grid-cols-2 gap-2.5 landscape-mobile:gap-1.5 w-full h-full">
-                    {/* Box 1 (Top-Left): 600 Question Bank */}
-                    <div className="rounded-xl bg-[#1f2329] border border-slate-700/50 p-2.5 landscape-mobile:p-1.5 flex flex-col justify-between">
-                      <div className="w-7 h-3 rounded-full bg-slate-200/90 self-start" />
-                      <span className="text-[10px] font-bold text-slate-300">600 CÂU</span>
-                    </div>
-
-                    {/* Box 2 (Top-Right): 60 Critical Questions (Green with orange 'C' badge) */}
-                    <div className="rounded-xl bg-[#334631] border border-emerald-600/40 p-2.5 landscape-mobile:p-1.5 flex flex-col justify-between relative overflow-visible">
-                      <div className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-orange-500 text-white font-black text-[10px] flex items-center justify-center shadow-md">
-                        c
+                  <div className="w-full h-full rounded-xl bg-[#1a202c] border border-slate-700/60 p-3 landscape-mobile:p-2 flex flex-col justify-between shadow-inner">
+                    {/* Header: Category & Critical Warning Badge */}
+                    <div className="flex items-center justify-between pb-1.5 border-b border-slate-700/60">
+                      <div className="flex items-center gap-1.5">
+                        <div className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+                        <span className="text-[10px] font-bold text-amber-400 tracking-tight">
+                          HẠNG B • 600 CÂU
+                        </span>
                       </div>
-                      <div className="w-7 h-3 rounded-full bg-emerald-200/90 self-start" />
-                      <span className="text-[10px] font-bold text-emerald-200">ĐIỂM LIỆT</span>
+                      <div className="px-1.5 py-0.5 rounded-md bg-rose-500/20 border border-rose-500/40 text-rose-400 text-[9px] font-bold flex items-center gap-1">
+                        <ShieldAlert className="w-2.5 h-2.5" />
+                        <span>60 ĐIỂM LIỆT</span>
+                      </div>
                     </div>
 
-                    {/* Box 3 (Bottom-Left): 120 Simulation */}
-                    <div className="rounded-xl bg-[#1f2329] border border-slate-700/50 p-2.5 landscape-mobile:p-1.5 flex flex-col justify-between">
-                      <div className="w-7 h-3 rounded-full bg-slate-200/90 self-start" />
-                      <span className="text-[10px] font-bold text-slate-300">120 MP</span>
+                    {/* Question Content */}
+                    <div className="my-auto py-1 space-y-1.5">
+                      <div className="text-[10.5px] sm:text-[11px] font-semibold text-slate-200 leading-snug line-clamp-2">
+                        Khi gặp biển nào dưới đây, người lái xe phải nhường đường cho xe trên đường ưu tiên?
+                      </div>
+
+                      {/* Options with active correct choice */}
+                      <div className="space-y-1">
+                        <div className="px-2 py-1 rounded-md bg-[#131720] border border-slate-700/50 flex items-center justify-between text-[9px] text-slate-400">
+                          <span>1. Biển đường cùng cấp</span>
+                        </div>
+                        <div className="px-2 py-1 rounded-md bg-emerald-500/15 border border-emerald-500/50 flex items-center justify-between text-[9px] text-emerald-300 font-bold">
+                          <span>2. Biển giao nhau với đường ưu tiên</span>
+                          <Check className="w-3 h-3 text-emerald-400 shrink-0 stroke-[2.5]" />
+                        </div>
+                      </div>
                     </div>
 
-                    {/* Box 4 (Bottom-Right): Pass 100% (with red corner ribbon) */}
-                    <div className="rounded-xl bg-[#1f2329] border border-slate-700/50 p-2.5 landscape-mobile:p-1.5 flex flex-col justify-between relative overflow-hidden">
-                      <div className="absolute top-0 right-0 w-0 h-0 border-t-[18px] border-t-rose-500 border-l-[18px] border-l-transparent" />
-                      <div className="w-7 h-3 rounded-full bg-slate-200/90 self-start" />
-                      <span className="text-[10px] font-bold text-slate-300">ĐỖ 100%</span>
+                    {/* Footer Tip */}
+                    <div className="pt-1.5 border-t border-slate-700/60 flex items-center justify-between text-[9px] text-slate-400">
+                      <span className="flex items-center gap-1 text-amber-400 font-medium">
+                        💡 Kèm mẹo giải nhanh
+                      </span>
+                      <span className="font-mono text-slate-400">Chuẩn 2026</span>
                     </div>
                   </div>
                 )}
 
-                {/* Slide 02 Graphic: Video Simulation Timeline & Spacebar */}
+                {/* ------------------------------------------------------------- */}
+                {/* Slide 02 Graphic: Giao diện mô phỏng 120 tình huống & Phím Space */}
+                {/* ------------------------------------------------------------- */}
                 {currentStep === 1 && (
-                  <div className="w-full h-full rounded-xl bg-[#1b2027] border border-slate-700/60 p-3 landscape-mobile:p-2 flex flex-col justify-between">
+                  <div className="w-full h-full rounded-xl bg-[#1a202c] border border-slate-700/60 p-3 landscape-mobile:p-2 flex flex-col justify-between shadow-inner">
                     {/* Windshield Road Simulation View */}
-                    <div className="flex-1 w-full bg-[#0f141c] rounded-lg border border-slate-800 flex flex-col items-center justify-center relative overflow-hidden mb-2">
-                      <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-400 text-[10px] font-bold">
-                        <AlertTriangle className="w-3 h-3" />
-                        <span>TÌNH HUỐNG 5/5</span>
+                    <div className="flex-1 w-full bg-[#0c1017] rounded-lg border border-slate-800 flex flex-col justify-between p-2 relative overflow-hidden mb-2">
+                      <div className="w-full flex items-center justify-between z-10">
+                        <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-400 text-[9px] font-bold">
+                          <span>TÌNH HUỐNG 18/120</span>
+                        </div>
+                        <span className="text-[9px] font-mono font-bold text-emerald-400 bg-emerald-500/20 px-1.5 py-0.5 rounded border border-emerald-500/40">
+                          +5 ĐIỂM
+                        </span>
+                      </div>
+
+                      {/* Windshield Lane graphic with braking car */}
+                      <div className="w-full flex flex-col items-center justify-center my-auto py-0.5">
+                        <div className="w-16 h-6 rounded bg-slate-800 border border-slate-600 flex items-center justify-between px-1.5 shadow-md relative">
+                          <div className="w-2 h-2 bg-rose-500 rounded-full shadow-[0_0_8px_#f43f5e] animate-pulse" />
+                          <span className="text-[7.5px] font-mono font-bold text-slate-300">XE PHANH GẤP</span>
+                          <div className="w-2 h-2 bg-rose-500 rounded-full shadow-[0_0_8px_#f43f5e] animate-pulse" />
+                        </div>
+                        <div className="w-20 h-1 border-b border-dashed border-amber-400/60 mt-1" />
                       </div>
                     </div>
 
-                    {/* Timeline Flags */}
-                    <div className="w-full h-1.5 bg-slate-700 rounded-full mb-2 relative flex items-center">
-                      <div className="h-full w-3/5 bg-linear-to-r from-emerald-500 to-amber-500 rounded-full" />
-                      <div className="absolute left-[60%] -top-1 w-3.5 h-3.5 rounded-full bg-amber-400 border border-white shadow-xs" />
+                    {/* 5-tier Hazard score bar (Green 5, Amber 4-3, Red 2-1) */}
+                    <div className="w-full mb-2">
+                      <div className="flex justify-between text-[8px] font-mono text-slate-400 mb-0.5 px-0.5">
+                        <span className="text-emerald-400 font-bold">5 điểm</span>
+                        <span className="text-amber-400">4đ</span>
+                        <span className="text-amber-500">3đ</span>
+                        <span className="text-orange-500">2đ</span>
+                        <span className="text-rose-500">1đ</span>
+                      </div>
+                      <div className="w-full h-1.5 bg-slate-800 rounded-full relative flex items-center overflow-hidden">
+                        <div className="h-full w-1/5 bg-emerald-500" />
+                        <div className="h-full w-2/5 bg-amber-400" />
+                        <div className="h-full w-1/5 bg-orange-500" />
+                        <div className="h-full w-1/5 bg-rose-500" />
+                      </div>
                     </div>
 
                     {/* Spacebar Key Prompt */}
-                    <div className="w-full py-1.5 rounded-md bg-slate-800 border border-slate-600 text-center font-mono font-bold text-[10px] text-amber-300 tracking-wider">
-                      [ PHÍM SPACE ]
+                    <div className="w-full py-1.5 rounded-md bg-slate-800 border border-slate-700 text-center font-mono font-bold text-[9.5px] text-amber-400 tracking-wider flex items-center justify-center gap-1.5 shadow-xs">
+                      <span className="px-1.5 py-0.5 bg-slate-700 rounded text-white text-[8.5px] border border-slate-600">SPACE</span>
+                      <span>NHẤN KHI THẤY NGUY HIỂM</span>
                     </div>
                   </div>
                 )}
 
-                {/* Slide 03 Graphic: Exam Pass Certificate & License Card */}
+                {/* ------------------------------------------------------------- */}
+                {/* Slide 03 Graphic: Chứng nhận Kết quả Sát hạch Thi thử          */}
+                {/* ------------------------------------------------------------- */}
                 {currentStep === 2 && (
-                  <div className="w-full h-full rounded-xl bg-[#1b221c] border border-emerald-600/50 p-3 landscape-mobile:p-2 flex flex-col items-center justify-center text-center relative overflow-hidden">
-                    <div className="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 mb-2">
-                      <Award className="w-7 h-7" />
+                  <div className="w-full h-full rounded-xl bg-[#1a202c] border border-emerald-600/40 p-3 landscape-mobile:p-2 flex flex-col justify-between shadow-inner">
+                    {/* Card Header */}
+                    <div className="flex items-center justify-between pb-1.5 border-b border-slate-700/60">
+                      <span className="text-[10px] font-bold text-slate-300">KẾT QUẢ THI THỬ</span>
+                      <span className="text-[9px] font-mono text-amber-400 font-bold">HẠNG B</span>
                     </div>
-                    <div className="font-black text-sm text-white tracking-wide">
-                      ĐẠT SÁT HẠCH
+
+                    {/* Center Score & Pass Badge */}
+                    <div className="my-auto flex flex-col items-center justify-center text-center py-1">
+                      <div className="w-10 h-10 rounded-full bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center text-emerald-400 mb-1 shadow-[0_0_15px_rgba(16,185,129,0.25)]">
+                        <Award className="w-5 h-5" />
+                      </div>
+                      <div className="font-black text-sm text-emerald-400 tracking-wider">
+                        ĐẠT SÁT HẠCH
+                      </div>
+                      <div className="text-lg font-black font-mono text-white mt-0.5 tracking-tight">
+                        35 <span className="text-slate-400 text-xs font-normal">/ 35 CÂU</span>
+                      </div>
                     </div>
-                    <div className="text-[10px] font-mono font-bold text-amber-400 mt-0.5">
-                      ĐIỂM: 30 / 30 CÂU
-                    </div>
-                    <div className="text-[9px] text-slate-400 mt-1">
-                      Chuẩn quy chế 2026
+
+                    {/* Sub Metrics */}
+                    <div className="pt-1.5 border-t border-slate-700/60 flex items-center justify-between text-[9px] font-mono text-slate-400">
+                      <span>⏱️ 16:24 / 22:00</span>
+                      <span className="text-emerald-400 font-bold">✓ 0 câu liệt sai</span>
                     </div>
                   </div>
                 )}
@@ -369,7 +428,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
             </div>
 
             {/* Thin Divider Line separating graphics from text */}
-            <div className="w-full border-t border-[#262c26]/90 my-2 shrink-0" />
+            <div className="w-full border-t border-slate-800 my-2 shrink-0" />
 
             {/* Lower Half: Step Counter, Title, Description, and Layered CTA Button */}
             <div className="w-full pt-1 pb-4 sm:pb-6 landscape-mobile:pb-2 flex flex-col shrink-0">
@@ -379,8 +438,8 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                   <span className="text-2xl sm:text-3xl landscape-mobile:text-xl font-black font-mono text-white tracking-tight">
                     {currentSlide.step}
                   </span>
-                  {/* Orange Accent Indicator Line */}
-                  <div className="w-20 sm:w-28 landscape-mobile:w-16 h-1 rounded-full bg-orange-500 shadow-xs shadow-orange-500/40" />
+                  {/* Amber Accent Indicator Line */}
+                  <div className="w-20 sm:w-28 landscape-mobile:w-16 h-1 rounded-full bg-linear-to-r from-amber-500 to-orange-500 shadow-xs shadow-amber-500/50" />
                 </div>
 
                 <span className="text-xs sm:text-sm font-bold font-mono text-slate-500">
@@ -388,12 +447,13 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 </span>
               </div>
 
-              {/* Heading Title (Uppercase styled in Sage Green #859b77) */}
+              {/* Heading Title (Crisp White with Amber Accent) */}
               <h2
                 key={`title-${currentStep}`}
-                className="text-xl sm:text-2xl landscape-mobile:text-base font-black text-[#859b77] tracking-tight uppercase mb-2 landscape-mobile:mb-1 leading-snug animate-in fade-in duration-200"
+                className="text-xl sm:text-2xl landscape-mobile:text-base font-black text-white tracking-tight uppercase mb-2 landscape-mobile:mb-1 leading-snug animate-in fade-in duration-200"
               >
-                {currentSlide.title}
+                <span>{currentSlide.titlePrefix} </span>
+                <span className="text-amber-400">{currentSlide.titleHighlight}</span>
               </h2>
 
               {/* Description Body */}
@@ -404,11 +464,11 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 {currentSlide.desc}
               </p>
 
-              {/* 3D Layered Offset CTA Button */}
+              {/* 3D Layered Offset CTA Button in Signature Amber / Orange */}
               <div className="w-full relative select-none">
                 {/* Orange Bottom Offset Layer */}
                 <div
-                  className="absolute inset-0 translate-x-1 translate-y-1 rounded-xl bg-orange-500 pointer-events-none"
+                  className="absolute inset-0 translate-x-1 translate-y-1 rounded-xl bg-orange-600 pointer-events-none"
                   aria-hidden="true"
                 />
 
@@ -416,10 +476,10 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 <button
                   type="button"
                   onClick={handleNextSlide}
-                  className="relative w-full py-3.5 sm:py-4 landscape-mobile:py-2.5 px-6 rounded-xl bg-[#6d8161] hover:bg-[#788e6b] active:translate-x-1 active:translate-y-1 text-white font-bold text-sm sm:text-base tracking-wider uppercase flex items-center justify-center gap-2 transition-transform duration-75 cursor-pointer shadow-md"
+                  className="relative w-full py-3.5 sm:py-4 landscape-mobile:py-2.5 px-6 rounded-xl bg-linear-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 active:translate-x-1 active:translate-y-1 text-slate-950 font-black text-sm sm:text-base tracking-wider uppercase flex items-center justify-center gap-2 transition-transform duration-75 cursor-pointer shadow-md"
                 >
                   <span>{currentSlide.buttonText}</span>
-                  <span className="text-lg leading-none font-bold">›</span>
+                  <span className="text-lg leading-none font-black">›</span>
                 </button>
               </div>
 
@@ -427,7 +487,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
               <div className="mt-3.5 landscape-mobile:mt-1.5 flex items-center justify-between text-[10px] sm:text-[11px] text-slate-400 px-1">
                 <button
                   type="button"
-                  onClick={handleInstallClick}
+                  onClick={() => setShowInstallModal(true)}
                   className="hover:text-amber-400 transition-colors cursor-pointer underline underline-offset-2"
                 >
                   Cài đặt ứng dụng (PWA)
