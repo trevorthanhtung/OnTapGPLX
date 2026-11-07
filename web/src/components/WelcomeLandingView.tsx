@@ -655,19 +655,13 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                         <div>
                           Họ và tên: <strong className="text-slate-900 font-bold uppercase">ONTAP GPLX</strong>
                         </div>
-                        <div className="font-mono text-red-600 font-bold">
-                          Quy chế 2026
-                        </div>
                       </div>
 
                       {/* Main Category Picker Trigger */}
                       <div className="relative">
-                        <div className="flex items-center justify-between mb-1">
+                        <div className="mb-1">
                           <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold text-slate-700 uppercase tracking-wider">
                             Hạng:
-                          </span>
-                          <span className="text-[7.5px] sm:text-[8.5px] md:text-[9.5px] text-red-600 font-medium flex items-center gap-0.5">
-                            Chạm đổi hạng ▾
                           </span>
                         </div>
 
