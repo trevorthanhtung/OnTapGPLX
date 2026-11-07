@@ -427,220 +427,152 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 )}
 
                 {/* ------------------------------------------------------------- */}
-                {/* Slide 02 Graphic: Máy Tính Phòng Thi Sát Hạch Mô Phỏng 3D      */}
+                {/* Slide 02 Graphic: Màn Hình Mô Phỏng 3D Tối Giản (Minimalist) */}
                 {/* ------------------------------------------------------------- */}
                 {currentStep === 1 && (
                   <div className="w-full h-full flex flex-col items-center justify-between">
-                    {/* Top Surveillance Webcam */}
-                    <div className="w-20 sm:w-24 h-4 sm:h-4.5 rounded-t-md bg-slate-800 border-t border-x border-slate-700 shadow-sm flex items-center justify-center gap-1.5 px-2 z-10 -mb-[1px]">
-                      <div className="w-2 h-2 rounded-full bg-slate-950 border border-sky-400 flex items-center justify-center">
-                        <div className="w-0.5 h-0.5 rounded-full bg-sky-300" />
-                      </div>
-                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shadow-xs shadow-emerald-400/80" />
-                      <span className="text-[6.5px] sm:text-[7px] font-mono font-bold text-slate-300 uppercase tracking-tighter">
-                        CAM 08
-                      </span>
-                    </div>
-
-                    {/* Monitor Outer Casing (Slate 900 with 3D Bezel) */}
-                    <div className="w-full flex-1 rounded-xl bg-slate-900 border-2 border-slate-700/90 shadow-2xl p-1.5 sm:p-2 flex flex-col justify-between relative overflow-hidden">
-                      {/* Exam Room Seal Label (Tem niêm phong thi sát hạch) */}
-                      <div className="absolute top-1 right-2 z-20 px-1.5 py-0.5 rounded-xs bg-amber-500 text-slate-950 text-[6.5px] sm:text-[7.5px] font-black uppercase tracking-tight shadow-xs rotate-2 border border-amber-300 flex items-center gap-0.5">
-                        <span>★</span>
-                        <span>MÁY THI SỐ 08</span>
+                    {/* Monitor Frame (Clean White / Soft Slate) */}
+                    <div className="w-full flex-1 rounded-xl bg-[#fffdfa] border border-slate-300/90 shadow-xl shadow-slate-200/50 p-2 sm:p-2.5 flex flex-col justify-between relative overflow-hidden">
+                      {/* Top Bar: Clean and Minimal */}
+                      <div className="flex items-center justify-between pb-1.5 border-b border-slate-200 text-[8.5px] sm:text-[9.5px] text-slate-500 font-mono">
+                        <span className="font-bold text-slate-800 uppercase tracking-tight">
+                          MÔ PHỎNG 120 TÌNH HUỐNG
+                        </span>
+                        <span className="text-slate-400">
+                          Tình huống 18/120 • 22s
+                        </span>
                       </div>
 
-                      {/* Inner Screen Display (IPS LED Sát Hạch Panel) */}
-                      <div className="w-full h-full rounded-lg bg-slate-950 border border-slate-800/90 flex flex-col justify-between p-1.5 sm:p-2 overflow-hidden relative shadow-inner">
-                        {/* Software Top Bar */}
-                        <div className="flex items-center justify-between pb-1 border-b border-slate-800 text-[8px] sm:text-[9px] text-slate-300 font-mono">
-                          <div className="flex items-center gap-1">
-                            <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                            <span className="font-bold text-slate-200 uppercase tracking-tight">
-                              SÁT HẠCH MÔ PHỎNG 3D
-                            </span>
-                          </div>
-                          <div className="flex items-center gap-2 text-slate-400">
-                            <span>SBD: 08</span>
-                            <span className="text-amber-400 font-bold">TH 18/120</span>
-                            <span className="text-emerald-400 font-bold">⏱️ 02:45</span>
-                          </div>
+                      {/* Video Scene (Pastel palette matching Slide 01 book) */}
+                      <div className="w-full h-24 sm:h-28 landscape-mobile:h-18 rounded-md bg-[#f3f7eb] border border-slate-300/80 overflow-hidden relative my-1">
+                        <svg viewBox="0 0 280 110" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
+                          <defs>
+                            <linearGradient id="skyGradPastel" x1="0" y1="0" x2="0" y2="1">
+                              <stop offset="0%" stopColor="#bae6fd" />
+                              <stop offset="100%" stopColor="#e0f2fe" />
+                            </linearGradient>
+                          </defs>
+
+                          {/* Sky */}
+                          <rect x="0" y="0" width="280" height="42" fill="url(#skyGradPastel)" />
+                          {/* Mountains */}
+                          <polygon points="0,42 40,26 80,42" fill="#cbd5e1" />
+                          <polygon points="65,42 115,20 165,42" fill="#94a3b8" />
+                          <polygon points="150,42 200,24 250,42" fill="#cbd5e1" />
+                          <polygon points="230,42 265,30 280,42" fill="#94a3b8" />
+
+                          {/* Highway Asphalt Road (Clean Slate) */}
+                          <polygon points="0,110 140,42 280,110" fill="#94a3b8" />
+                          {/* Yellow Dashed Center Line */}
+                          <line x1="140" y1="42" x2="140" y2="105" stroke="#f59e0b" strokeWidth="2" strokeDasharray="6 4" />
+                          {/* White Side Lines */}
+                          <line x1="0" y1="110" x2="140" y2="42" stroke="#ffffff" strokeWidth="1.2" />
+                          <line x1="280" y1="110" x2="140" y2="42" stroke="#ffffff" strokeWidth="1.2" />
+
+                          {/* Blue Car in front with clean red brake lights */}
+                          <g transform="translate(125, 48)">
+                            <rect x="0" y="0" width="30" height="20" rx="2" fill="#2563eb" stroke="#1d4ed8" strokeWidth="0.8" />
+                            <rect x="3" y="3" width="24" height="10" rx="1" fill="#93c5fd" />
+                            {/* Brake Lights */}
+                            <circle cx="5" cy="16" r="2" fill="#dc2626" />
+                            <circle cx="25" cy="16" r="2" fill="#dc2626" />
+                            {/* Plate */}
+                            <rect x="11" y="14" width="8" height="3" fill="#ffffff" />
+                          </g>
+
+                          {/* Steering Wheel Arc at bottom */}
+                          <path d="M 90 110 Q 140 85 190 110" fill="none" stroke="#334155" strokeWidth="7" />
+                          <circle cx="140" cy="102" r="4.5" fill="#475569" />
+
+                          {/* Minimalist Situation Tag */}
+                          <g transform="translate(10, 8)">
+                            <rect x="0" y="0" width="135" height="14" rx="7" fill="#0f172a" opacity="0.85" />
+                            <text x="67.5" y="10" textAnchor="middle" fill="#ffffff" fontSize="6.5" fontWeight="bold" fontFamily="sans-serif">
+                              Tình huống: Xe phía trước giảm tốc
+                            </text>
+                          </g>
+                        </svg>
+                      </div>
+
+                      {/* 4 Minimalist Flat Options */}
+                      <div className="grid grid-cols-2 gap-1 my-0.5">
+                        <div className="p-1 sm:p-1.5 rounded-md bg-slate-50 border border-slate-200 text-[8px] sm:text-[8.5px] text-slate-600 truncate">
+                          A. Giữ nguyên tốc độ
                         </div>
-
-                        {/* Video Cockpit Driving Scene */}
-                        <div className="w-full h-24 sm:h-28 landscape-mobile:h-18 rounded-md bg-slate-900 border border-slate-800 overflow-hidden relative my-1">
-                          <svg viewBox="0 0 280 110" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
-                            <defs>
-                              <linearGradient id="skyGrad2" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="0%" stopColor="#38bdf8" />
-                                <stop offset="100%" stopColor="#bae6fd" />
-                              </linearGradient>
-                              <linearGradient id="roadGrad" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="0%" stopColor="#475569" />
-                                <stop offset="100%" stopColor="#1e293b" />
-                              </linearGradient>
-                            </defs>
-
-                            {/* Sky */}
-                            <rect x="0" y="0" width="280" height="42" fill="url(#skyGrad2)" />
-                            {/* Distant Hills */}
-                            <polygon points="0,42 40,24 80,42" fill="#93c5fd" />
-                            <polygon points="65,42 115,18 165,42" fill="#60a5fa" />
-                            <polygon points="150,42 200,22 250,42" fill="#93c5fd" />
-                            <polygon points="230,42 265,28 280,42" fill="#60a5fa" />
-
-                            {/* Highway Asphalt Road */}
-                            <polygon points="0,110 140,42 280,110" fill="url(#roadGrad)" />
-                            {/* Yellow Dashed Center Line */}
-                            <line x1="140" y1="42" x2="140" y2="105" stroke="#fde047" strokeWidth="2" strokeDasharray="6 4" />
-                            {/* Guardrails */}
-                            <line x1="0" y1="110" x2="140" y2="42" stroke="#94a3b8" strokeWidth="1" />
-                            <line x1="280" y1="110" x2="140" y2="42" stroke="#94a3b8" strokeWidth="1" />
-
-                            {/* Truck in front with glowing red brake lights */}
-                            <g transform="translate(124, 46)">
-                              <rect x="0" y="0" width="32" height="22" rx="2" fill="#0369a1" stroke="#0284c7" strokeWidth="0.8" />
-                              <rect x="3" y="3" width="26" height="12" rx="1" fill="#0ea5e9" />
-                              {/* Glowing Brake Lights */}
-                              <circle cx="5" cy="18" r="2.5" fill="#ef4444" />
-                              <circle cx="5" cy="18" r="5" fill="#ef4444" opacity="0.3" />
-                              <circle cx="27" cy="18" r="2.5" fill="#ef4444" />
-                              <circle cx="27" cy="18" r="5" fill="#ef4444" opacity="0.3" />
-                              {/* License Plate */}
-                              <rect x="12" y="16" width="8" height="3" fill="#ffffff" />
-                            </g>
-
-                            {/* Steering Wheel Arc at bottom */}
-                            <path d="M 85 110 Q 140 82 195 110" fill="none" stroke="#0f172a" strokeWidth="9" />
-                            <circle cx="140" cy="100" r="5.5" fill="#334155" />
-
-                            {/* Red Danger Warning Flash */}
-                            <g transform="translate(60, 5)">
-                              <rect x="0" y="0" width="160" height="14" rx="7" fill="#dc2626" opacity="0.95" />
-                              <text x="80" y="10" textAnchor="middle" fill="#ffffff" fontSize="6.5" fontWeight="900" fontFamily="sans-serif">
-                                ⚠️ TÌNH HUỐNG: XE PHÍA TRƯỚC PHANH GẤP
-                              </text>
-                            </g>
-                          </svg>
+                        <div className="p-1 sm:p-1.5 rounded-md bg-emerald-50 border border-emerald-400 text-[8px] sm:text-[8.5px] text-emerald-900 font-bold flex items-center justify-between shadow-2xs">
+                          <span className="truncate">B. Phanh giảm tốc</span>
+                          <span className="text-[7.5px] px-1 py-0.2 rounded bg-emerald-600 text-white font-black shrink-0 ml-1">
+                            ✓ Đúng
+                          </span>
                         </div>
-
-                        {/* 4 Real-time Multiple Choice Options */}
-                        <div className="grid grid-cols-2 gap-1 my-0.5">
-                          <div className="p-1 rounded bg-slate-900 border border-slate-800 text-[7.5px] sm:text-[8px] text-slate-400 truncate">
-                            A. Giữ nguyên tốc độ
-                          </div>
-                          <div className="p-1 rounded bg-emerald-950/90 border border-emerald-500/80 text-[7.5px] sm:text-[8px] text-emerald-300 font-bold flex items-center justify-between shadow-2xs">
-                            <span className="truncate">B. Phanh giảm tốc</span>
-                            <span className="text-[6.5px] px-1 py-0.2 rounded bg-emerald-500 text-slate-950 font-black shrink-0 ml-0.5">
-                              +5Đ ✓
-                            </span>
-                          </div>
-                          <div className="p-1 rounded bg-slate-900 border border-slate-800 text-[7.5px] sm:text-[8px] text-slate-400 truncate">
-                            C. Bấm còi vượt gấp
-                          </div>
-                          <div className="p-1 rounded bg-slate-900 border border-slate-800 text-[7.5px] sm:text-[8px] text-slate-400 truncate">
-                            D. Đánh lái sang phải
-                          </div>
+                        <div className="p-1 sm:p-1.5 rounded-md bg-slate-50 border border-slate-200 text-[8px] sm:text-[8.5px] text-slate-600 truncate">
+                          C. Bấm còi vượt xe
                         </div>
-
-                        {/* Bottom Simulation Scoring Timeline */}
-                        <div className="pt-1 border-t border-slate-800/80 flex items-center justify-between text-[7px] sm:text-[7.5px] text-slate-500 font-mono">
-                          <div className="flex items-center gap-1 font-bold">
-                            <span className="px-1 rounded bg-emerald-500/20 text-emerald-400">5đ</span>
-                            <span className="px-1 rounded bg-amber-500/20 text-amber-400">4đ</span>
-                            <span className="px-1 rounded bg-amber-600/20 text-amber-500">3đ</span>
-                            <span className="px-1 rounded bg-orange-500/20 text-orange-400">2đ</span>
-                            <span className="px-1 rounded bg-rose-500/20 text-rose-400">1đ</span>
-                          </div>
-                          <span className="text-blue-400 font-semibold">Quy chế thi mới Cục Đường Bộ</span>
+                        <div className="p-1 sm:p-1.5 rounded-md bg-slate-50 border border-slate-200 text-[8px] sm:text-[8.5px] text-slate-600 truncate">
+                          D. Đánh lái sang phải
                         </div>
+                      </div>
+
+                      {/* Bottom Footer Caption (Minimalist, No colored dots) */}
+                      <div className="pt-1.5 border-t border-slate-200 flex items-center justify-between text-[8px] sm:text-[9px] text-slate-500 font-mono">
+                        <span>Trắc nghiệm 4 mốc thời điểm</span>
+                        <span className="text-emerald-700 font-bold">10 điểm tối đa</span>
                       </div>
                     </div>
 
-                    {/* Metal Stand */}
-                    <div className="w-12 h-2.5 bg-linear-to-b from-slate-700 to-slate-800 -mt-[1px]" />
-                    <div className="w-28 sm:w-32 h-1.5 rounded-full bg-linear-to-r from-slate-500 via-slate-200 to-slate-500 shadow-md" />
+                    {/* Slim Minimalist Stand */}
+                    <div className="w-8 h-2 bg-slate-300 border-x border-slate-300/80 -mt-[1px]" />
+                    <div className="w-24 sm:w-28 h-1 rounded-full bg-slate-300/90 shadow-2xs" />
                   </div>
                 )}
 
                 {/* ------------------------------------------------------------- */}
-                {/* Slide 03 Graphic: Tấm Bằng Lái Xe GPLX PET 3D Chuẩn Cục Đường Bộ */}
+                {/* Slide 03 Graphic: Thẻ GPLX PET 3D Tối Giản (Minimalist Card)    */}
                 {/* ------------------------------------------------------------- */}
                 {currentStep === 2 && (
-                  <div className="w-full h-full rounded-2xl border border-amber-300/90 bg-linear-to-br from-[#fffdf5] via-[#fef9c3] to-[#fef08a] p-2.5 sm:p-3 landscape-mobile:p-1.5 shadow-2xl shadow-amber-900/15 ring-1 ring-amber-400/50 flex flex-col justify-between overflow-hidden relative">
-                    {/* Guilloche Security Wave Lines (Background decorative SVG) */}
-                    <svg
-                      className="absolute inset-0 w-full h-full pointer-events-none opacity-20"
-                      viewBox="0 0 300 240"
-                      preserveAspectRatio="none"
-                    >
-                      <path
-                        d="M0,40 Q75,10 150,40 T300,40 M0,80 Q75,50 150,80 T300,80 M0,120 Q75,90 150,120 T300,120 M0,160 Q75,130 150,160 T300,160 M0,200 Q75,170 150,200 T300,200"
-                        fill="none"
-                        stroke="#d97706"
-                        strokeWidth="0.8"
-                      />
-                      <circle cx="240" cy="180" r="45" fill="none" stroke="#dc2626" strokeWidth="1" strokeDasharray="3 3" opacity="0.3" />
-                    </svg>
-
-                    {/* Official National Header */}
-                    <div className="text-center relative z-10 pb-1 border-b border-amber-300/80">
-                      <div className="font-black text-[8px] sm:text-[9px] text-slate-900 uppercase tracking-tight leading-tight">
+                  <div className="w-full h-full rounded-xl border border-slate-300/90 bg-[#fffdfa] p-2.5 sm:p-3 landscape-mobile:p-1.5 shadow-xl shadow-slate-200/50 flex flex-col justify-between overflow-hidden relative">
+                    {/* Official National Header (Refined, Minimalist) */}
+                    <div className="text-center pb-1.5 border-b border-slate-200">
+                      <div className="font-bold text-[8.5px] sm:text-[9.5px] text-slate-800 uppercase tracking-tight leading-tight">
                         CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
                       </div>
-                      <div className="italic text-[6.5px] sm:text-[7.5px] text-slate-700 leading-none mt-0.5">
+                      <div className="italic text-[7px] sm:text-[7.5px] text-slate-500 leading-none mt-0.5">
                         Độc lập - Tự do - Hạnh phúc
                       </div>
-                      <div className="font-black text-[10px] sm:text-[11.5px] text-rose-700 uppercase tracking-tight mt-1 leading-tight flex items-center justify-center gap-1">
-                        <span>GIẤY PHÉP LÁI XE</span>
-                        <span className="text-[7.5px] text-rose-600 font-bold">/ DRIVING LICENCE</span>
+                      <div className="inline-block px-2.5 py-0.5 rounded-full bg-rose-600 text-white font-bold text-[7.5px] sm:text-[8.5px] uppercase tracking-wider shadow-2xs mt-1">
+                        GIẤY PHÉP LÁI XE / DRIVING LICENCE
                       </div>
                     </div>
 
-                    {/* Card Body: Left Photo & Info + Right 6-Category Selector */}
-                    <div className="flex gap-2 sm:gap-2.5 my-auto py-1 relative z-10 items-center">
-                      {/* Left: 3x4 ID Photo Frame with Driver Avatar & Chip */}
+                    {/* Card Body: Left Minimalist Avatar & Info + Right 6-Category Selector */}
+                    <div className="flex gap-2.5 my-auto py-1 items-center">
+                      {/* Left: 3x4 ID Frame with Line Art Driver */}
                       <div className="w-16 sm:w-18 shrink-0 flex flex-col items-center">
-                        <div className="w-15 sm:w-16 h-18 sm:h-20 rounded-md bg-white border border-amber-400/80 p-0.5 shadow-sm relative overflow-hidden flex flex-col items-center justify-center">
-                          {/* Driver Portrait Avatar */}
-                          <div className="w-full h-full rounded bg-slate-100 flex flex-col items-center justify-end overflow-hidden relative">
-                            {/* Head & Smile */}
-                            <circle cx="28" cy="18" r="9" fill="#fed7aa" />
-                            <path d="M 21 14 Q 28 8 35 14 Q 38 22 21 22 Z" fill="#1e293b" />
-                            {/* Torso & Suit */}
-                            <path d="M 12 36 L 22 26 L 34 26 L 44 36 Z" fill="#1e293b" />
-                            <polygon points="26,26 30,26 28,34" fill="#dc2626" />
-                            <polygon points="25,26 31,26 28,31" fill="#ffffff" />
-                          </div>
-
-                          {/* Red Circular Stamp over photo corner */}
-                          <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-full border border-rose-500/80 bg-rose-500/10 flex items-center justify-center pointer-events-none rotate-12">
-                            <span className="text-[5px] font-black text-rose-600 uppercase">CỤC ĐB</span>
+                        <div className="w-15 sm:w-16 h-18 sm:h-20 rounded-md bg-slate-50 border border-slate-200 p-0.5 shadow-2xs overflow-hidden flex flex-col items-center justify-center">
+                          {/* Minimalist Driver Silhouette */}
+                          <div className="w-full h-full rounded bg-white border border-slate-100 flex flex-col items-center justify-end overflow-hidden relative">
+                            {/* Head & Hair */}
+                            <circle cx="28" cy="18" r="8.5" fill="#fed7aa" />
+                            <path d="M 21 14 Q 28 9 35 14 Q 38 21 21 21 Z" fill="#334155" />
+                            {/* Torso */}
+                            <path d="M 14 36 L 22 27 L 34 27 L 42 36 Z" fill="#334155" />
+                            <polygon points="26,27 30,27 28,33" fill="#dc2626" />
                           </div>
                         </div>
 
-                        {/* Gold Smartchip / Security Bar */}
-                        <div className="w-8 h-2 rounded bg-amber-400 border border-amber-500/80 mt-1 shadow-2xs flex items-center justify-around px-0.5">
-                          <div className="w-1.5 h-1 bg-amber-600/50 rounded-xs" />
-                          <div className="w-2 h-1 bg-amber-600/50 rounded-xs" />
-                          <div className="w-1.5 h-1 bg-amber-600/50 rounded-xs" />
+                        {/* ID Number */}
+                        <div className="text-[7px] text-slate-400 font-mono mt-1 text-center truncate w-full">
+                          Số: 0102600899
                         </div>
                       </div>
 
-                      {/* Right: Driver Info & 6 Interactive Category Buttons */}
+                      {/* Right: Category Selector Header & 6 Clean Tiles */}
                       <div className="flex-1 min-w-0">
-                        {/* Driver Metadata Header */}
-                        <div className="text-[8px] sm:text-[9px] text-slate-800 font-mono mb-1 leading-tight">
-                          <div className="flex justify-between">
-                            <span className="text-slate-600">Số/No: <strong className="text-slate-900 font-bold">010260089999</strong></span>
-                            <span className="px-1 py-0.2 rounded bg-rose-600 text-white font-black text-[6.5px]">CHÍNH CHỦ</span>
-                          </div>
-                          <div className="text-slate-600 truncate mt-0.5">
-                            Họ tên/Name: <strong className="text-slate-900 font-bold uppercase">BẠN (THÍ SINH)</strong>
-                          </div>
+                        <div className="text-[9px] font-bold text-slate-700 uppercase tracking-tight mb-1">
+                          Hạng bằng đang học:
                         </div>
 
-                        {/* 6 Category Selection Tiles (Hạng / Class) */}
+                        {/* 6 Category Selection Tiles */}
                         <div className="grid grid-cols-2 gap-1 sm:gap-1.5">
                           {categoriesList.map((cat) => {
                             const isSelected = selectedCategory === cat.id;
@@ -651,24 +583,24 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                                 onClick={() => handleCategorySelect(cat.id)}
                                 className={`p-1 sm:p-1.5 rounded-lg border text-left transition-all cursor-pointer flex items-center justify-between ${
                                   isSelected
-                                    ? 'border-amber-600 bg-amber-500/25 shadow-xs ring-1 ring-amber-600/60 font-bold'
-                                    : 'border-amber-300/70 bg-white/70 hover:border-amber-400 hover:bg-white'
+                                    ? 'border-amber-500 bg-amber-50 shadow-xs ring-1 ring-amber-500/40'
+                                    : 'border-slate-200 bg-slate-50/80 hover:border-slate-300 hover:bg-white'
                                 }`}
                               >
                                 <div className="min-w-0 pr-0.5">
                                   <div
-                                    className={`text-[10px] sm:text-[11px] font-black leading-tight ${
+                                    className={`text-[10px] sm:text-[11px] font-bold leading-tight ${
                                       isSelected ? 'text-amber-950 font-black' : 'text-slate-800'
                                     }`}
                                   >
                                     {cat.label}
                                   </div>
-                                  <div className="text-[7.5px] sm:text-[8px] text-slate-600 truncate">
+                                  <div className="text-[7.5px] sm:text-[8px] text-slate-500 truncate">
                                     {cat.desc}
                                   </div>
                                 </div>
                                 {isSelected && (
-                                  <div className="w-3.5 h-3.5 rounded-full bg-amber-600 text-white flex items-center justify-center shrink-0 shadow-2xs">
+                                  <div className="w-3.5 h-3.5 rounded-full bg-amber-500 text-white flex items-center justify-center shrink-0 shadow-2xs">
                                     <Check className="w-2.5 h-2.5 stroke-[3]" />
                                   </div>
                                 )}
@@ -679,13 +611,13 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                       </div>
                     </div>
 
-                    {/* Card Footer: Exam Specs according to selected Category */}
-                    <div className="pt-1 border-t border-amber-300/80 flex items-center justify-between text-[8px] sm:text-[9px] text-slate-700 font-mono relative z-10">
-                      <span className="text-amber-900 font-bold">
-                        🎯 Đề thi: {activeCategoryConfig.totalQ} câu • {activeCategoryConfig.time} phút
+                    {/* Card Footer: Exam Specs without emoji */}
+                    <div className="pt-1.5 border-t border-slate-200 flex items-center justify-between text-[8px] sm:text-[9px] text-slate-600 font-mono">
+                      <span className="text-amber-800 font-bold">
+                        Đề thi: {activeCategoryConfig.totalQ} câu • {activeCategoryConfig.time} phút
                       </span>
-                      <span className="text-emerald-800 font-bold">
-                        Đạt: {activeCategoryConfig.pass}/{activeCategoryConfig.totalQ}
+                      <span className="text-emerald-700 font-bold">
+                        Đạt: {activeCategoryConfig.pass}/{activeCategoryConfig.totalQ} câu
                       </span>
                     </div>
                   </div>
