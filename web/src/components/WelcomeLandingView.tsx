@@ -1,26 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import {
-  X,
-  BookOpen,
-  Video,
-  Zap,
-  ArrowRight,
-  ArrowLeft,
-  Smartphone,
-  Sparkles,
-  Check,
-  AlertTriangle,
-  Award,
-} from 'lucide-react';
-import { StorageService } from '../services/storage';
-import type { LicenseCategory } from '../types';
+import { X, ArrowLeft, AlertTriangle, Award } from 'lucide-react';
 
 interface WelcomeLandingViewProps {
   onStartExperience: () => void;
 }
 
 export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartExperience }) => {
-  // Mode: 'landing' (Màn đầu tiên: Trải nghiệm ngay & Hướng dẫn cài) -> 'walkthrough' (3 bước onboarding)
+  // Mode: 'landing' (Màn tối giản: Trải nghiệm ngay & Hướng dẫn cài) -> 'walkthrough' (3 bước onboarding)
   const [viewMode, setViewMode] = useState<'landing' | 'walkthrough'>('landing');
 
   // Walkthrough slide step: 0 (01), 1 (02), 2 (03)
@@ -31,9 +17,6 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
   const [installTab, setInstallTab] = useState<'ios' | 'android' | 'pc'>('ios');
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [policyModal, setPolicyModal] = useState<'terms' | 'privacy' | 'cookie' | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState<LicenseCategory>(() =>
-    StorageService.getCategory()
-  );
 
   const touchStartXRef = useRef<number>(0);
   const touchEndXRef = useRef<number>(0);
@@ -81,18 +64,6 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
       setShowInstallModal(true);
     }
   };
-
-  const handleCategoryChange = (cat: LicenseCategory) => {
-    setSelectedCategory(cat);
-    StorageService.setCategory(cat);
-  };
-
-  const quickCategories: { id: LicenseCategory; label: string; desc: string }[] = [
-    { id: 'B', label: 'Hạng B', desc: 'Ô tô con & tải nhẹ' },
-    { id: 'A1', label: 'Hạng A1', desc: 'Xe máy ≤ 125cc' },
-    { id: 'B1', label: 'Hạng B1', desc: 'Ô tô số tự động' },
-    { id: 'C', label: 'Hạng C', desc: 'Xe tải nặng' },
-  ];
 
   const slides = [
     {
@@ -163,181 +134,105 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
       onTouchEnd={handleTouchEnd}
     >
       {/* ========================================================================= */}
-      {/* 1. MÀN TRẢI NGHIỆM NGAY & HƯỚNG DẪN CÀI (MÀN ĐẦU TIÊN)                     */}
+      {/* 1. MÀN MINIMALISM TRẢI NGHIỆM NGAY & HƯỚNG DẪN CÀI (MÀN ĐẦU TIÊN)         */}
       {/* ========================================================================= */}
       {viewMode === 'landing' && (
         <div className="w-full h-full flex flex-col justify-between animate-in fade-in duration-200">
-          {/* Top Spacer */}
-          <div className="w-full shrink-0 h-2 sm:h-4 landscape-mobile:h-1" />
+          {/* Top balance spacer */}
+          <div aria-hidden="true" className="h-2 sm:h-6 landscape-mobile:h-1 shrink-0" />
 
-          {/* Main Landing Content Container */}
-          <main className="w-full max-w-xl landscape-mobile:max-w-3xl mx-auto px-4 sm:px-6 my-auto flex flex-col items-center">
-            {/* Hero Branding Section */}
-            <div className="flex flex-col items-center text-center mb-4 sm:mb-6 landscape-mobile:mb-2">
-              {/* Logo with Ambient Breathing Glow */}
-              <div className="relative mb-3 landscape-mobile:mb-1">
-                <div className="absolute -inset-2 rounded-2xl bg-linear-to-tr from-amber-400/40 to-orange-400/30 blur-lg animate-pulse" />
-                <div className="relative w-14 h-14 sm:w-16 sm:h-16 landscape-mobile:w-10 landscape-mobile:h-10 rounded-2xl bg-white border border-slate-200/90 p-2 shadow-md flex items-center justify-center overflow-hidden">
-                  <img
-                    src="/logo.jpg"
-                    alt="OnTap GPLX Logo"
-                    className="w-full h-full object-contain rounded-xl"
-                  />
-                </div>
-              </div>
+          {/* Centered Main Container */}
+          <main className="w-full max-w-md landscape-mobile:max-w-2xl mx-auto px-5 landscape-mobile:px-6 my-auto py-4 landscape-mobile:py-1.5 flex flex-col items-center">
+            {/* App Logo */}
+            <div className="w-16 h-16 sm:w-20 sm:h-20 landscape-mobile:w-11 landscape-mobile:h-11 rounded-2xl landscape-mobile:rounded-xl bg-white border border-slate-200 p-2 landscape-mobile:p-1.5 shadow-xs flex items-center justify-center mb-4 landscape-mobile:mb-1.5">
+              <img
+                src="/logo.jpg"
+                alt="OnTap GPLX Logo"
+                className="w-full h-full object-contain rounded-xl landscape-mobile:rounded-lg"
+              />
+            </div>
 
-              {/* Badge & Title */}
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200/80 text-amber-800 text-[11px] font-semibold mb-2">
-                <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                <span>Quy chế Sát hạch Chuẩn 2026</span>
-              </div>
-
-              <h1 className="text-2xl sm:text-3xl landscape-mobile:text-xl font-black text-slate-900 tracking-tight">
+            {/* Header Text */}
+            <div className="text-center mb-6 landscape-mobile:mb-2.5 space-y-1 landscape-mobile:space-y-0.5">
+              <div className="text-2xl sm:text-3xl landscape-mobile:text-lg font-black text-slate-900 tracking-tight">
                 OnTap <span className="text-amber-500">GPLX</span>
-              </h1>
-              <p className="text-xs sm:text-sm landscape-mobile:text-[11px] text-slate-500 max-w-sm mt-1 leading-snug">
-                Nền tảng ôn thi lý thuyết và mô phỏng giao thông Cục Đường bộ Việt Nam
-              </p>
-            </div>
-
-            {/* 3 Core Value Pillars (Cards) */}
-            <div className="w-full grid grid-cols-3 gap-2 sm:gap-3 mb-4 sm:mb-5 landscape-mobile:mb-2">
-              <div className="bg-white p-2.5 sm:p-3 landscape-mobile:p-2 rounded-xl border border-slate-200/80 shadow-xs flex flex-col items-center text-center">
-                <div className="w-8 h-8 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center mb-1.5">
-                  <BookOpen className="w-4 h-4" />
-                </div>
-                <div className="text-[11px] sm:text-xs font-bold text-slate-800 leading-tight">
-                  600 Câu hỏi
-                </div>
-                <div className="text-[9px] sm:text-[10px] text-slate-400 mt-0.5">
-                  Kèm mẹo ghi nhớ
-                </div>
               </div>
-
-              <div className="bg-white p-2.5 sm:p-3 landscape-mobile:p-2 rounded-xl border border-slate-200/80 shadow-xs flex flex-col items-center text-center">
-                <div className="w-8 h-8 rounded-lg bg-orange-50 text-orange-600 flex items-center justify-center mb-1.5">
-                  <Video className="w-4 h-4" />
-                </div>
-                <div className="text-[11px] sm:text-xs font-bold text-slate-800 leading-tight">
-                  120 Tình huống
-                </div>
-                <div className="text-[9px] sm:text-[10px] text-slate-400 mt-0.5">
-                  Trắc nghiệm 4 phần
-                </div>
-              </div>
-
-              <div className="bg-white p-2.5 sm:p-3 landscape-mobile:p-2 rounded-xl border border-slate-200/80 shadow-xs flex flex-col items-center text-center">
-                <div className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-1.5">
-                  <Zap className="w-4 h-4" />
-                </div>
-                <div className="text-[11px] sm:text-xs font-bold text-slate-800 leading-tight">
-                  Học Offline
-                </div>
-                <div className="text-[9px] sm:text-[10px] text-slate-400 mt-0.5">
-                  0% quảng cáo
-                </div>
+              <div className="text-xs landscape-mobile:text-[10px] font-semibold text-slate-500 uppercase tracking-widest">
+                Ôn thi giấy phép lái xe 2026
               </div>
             </div>
 
-            {/* Quick Category Selector */}
-            <div className="w-full mb-4 sm:mb-5 landscape-mobile:mb-2">
-              <div className="text-[10px] sm:text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2 text-center">
-                Chọn nhanh hạng giấy phép của bạn:
-              </div>
-              <div className="grid grid-cols-2 gap-2 sm:gap-2.5">
-                {quickCategories.map((cat) => {
-                  const isSelected = selectedCategory === cat.id;
-                  return (
-                    <button
-                      key={cat.id}
-                      type="button"
-                      onClick={() => handleCategoryChange(cat.id)}
-                      className={`p-2.5 sm:p-3 landscape-mobile:p-2 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
-                        isSelected
-                          ? 'border-amber-500 bg-amber-50/50 shadow-xs ring-1 ring-amber-500/30'
-                          : 'border-slate-200/80 bg-white hover:border-slate-300 hover:bg-slate-50/50'
-                      }`}
-                    >
-                      <div className="min-w-0 pr-1">
-                        <div
-                          className={`text-xs sm:text-sm font-bold leading-tight ${
-                            isSelected ? 'text-amber-900' : 'text-slate-800'
-                          }`}
-                        >
-                          {cat.label}
-                        </div>
-                        <div className="text-[10px] sm:text-[11px] text-slate-400 truncate mt-0.5">
-                          {cat.desc}
-                        </div>
-                      </div>
-                      {isSelected && (
-                        <div className="w-5 h-5 rounded-full bg-amber-500 text-white flex items-center justify-center shrink-0">
-                          <Check className="w-3 h-3 stroke-[2.5]" />
-                        </div>
-                      )}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* CTA Buttons: Trải nghiệm ngay & Hướng dẫn cài đặt */}
-            <div className="w-full space-y-2.5 sm:space-y-3 landscape-mobile:space-y-1.5">
-              {/* Nút bấm Trải nghiệm ngay -> Mở 3 bước Onboarding */}
+            {/* 2 Clean Action Cards */}
+            <div className="w-full space-y-3 landscape-mobile:space-y-0 landscape-mobile:grid landscape-mobile:grid-cols-2 landscape-mobile:gap-3 mb-5 landscape-mobile:mb-2">
+              {/* Card 1: Trải nghiệm ngay -> Bấm vào ra 3 bước Onboarding */}
               <button
                 type="button"
                 onClick={handleStartWalkthrough}
-                className="w-full py-3.5 sm:py-4 landscape-mobile:py-2.5 px-6 rounded-2xl bg-slate-900 hover:bg-slate-800 active:scale-[0.99] text-white font-bold text-sm sm:text-base tracking-wide flex items-center justify-center gap-2 shadow-lg shadow-slate-900/15 transition-all cursor-pointer"
+                className="w-full text-left bg-slate-900 hover:bg-slate-800 active:bg-slate-950 text-white rounded-2xl landscape-mobile:rounded-xl p-5 landscape-mobile:p-3.5 transition-all duration-150 cursor-pointer shadow-xs block"
               >
-                <span>Trải nghiệm ngay</span>
-                <ArrowRight className="w-4 h-4" />
+                <div className="space-y-1 landscape-mobile:space-y-0.5">
+                  <div className="text-base sm:text-lg landscape-mobile:text-sm font-bold tracking-tight text-white">
+                    Trải nghiệm ngay
+                  </div>
+                  <p className="text-xs sm:text-sm landscape-mobile:text-[11px] text-slate-300 leading-snug font-normal">
+                    Ôn tập 600 câu lý thuyết phân hạng và 120 tình huống mô phỏng trắc nghiệm.
+                  </p>
+                </div>
               </button>
 
-              {/* Nút Hướng dẫn cài đặt ứng dụng vào điện thoại / máy tính */}
+              {/* Card 2: Hướng dẫn cài đặt ứng dụng */}
               <button
                 type="button"
                 onClick={handleInstallClick}
-                className="w-full py-3 landscape-mobile:py-2 px-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-700 font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-2xs transition-colors cursor-pointer"
+                className="w-full text-left bg-white hover:bg-slate-50/90 active:bg-slate-100 text-slate-900 rounded-2xl landscape-mobile:rounded-xl p-5 landscape-mobile:p-3.5 border border-slate-200 hover:border-slate-300 shadow-xs transition-all duration-150 cursor-pointer block"
               >
-                <Smartphone className="w-4 h-4 text-slate-500" />
-                <span>Hướng dẫn cài đặt ứng dụng vào điện thoại / máy tính</span>
+                <div className="space-y-1 landscape-mobile:space-y-0.5">
+                  <div className="text-base sm:text-lg landscape-mobile:text-sm font-bold text-slate-900 tracking-tight">
+                    Hướng dẫn cài đặt ứng dụng
+                  </div>
+                  <p className="text-xs sm:text-sm landscape-mobile:text-[11px] text-slate-500 leading-relaxed font-normal">
+                    Cài OnTap GPLX vào màn hình chính điện thoại hoặc máy tính để mở nhanh và thuận tiện hơn.
+                  </p>
+                </div>
               </button>
             </div>
 
-            {/* Legal Disclaimer & Terms Trigger */}
-            <div className="mt-4 sm:mt-5 landscape-mobile:mt-2 text-center text-[10px] sm:text-[11px] text-slate-400 leading-normal">
-              Bằng việc tiếp tục, bạn đồng ý với{' '}
-              <button
-                type="button"
-                onClick={() => setPolicyModal('terms')}
-                className="text-slate-600 underline underline-offset-2 hover:text-slate-900 cursor-pointer font-medium"
-              >
-                Điều khoản
-              </button>
-              ,{' '}
-              <button
-                type="button"
-                onClick={() => setPolicyModal('privacy')}
-                className="text-slate-600 underline underline-offset-2 hover:text-slate-900 cursor-pointer font-medium"
-              >
-                Quyền riêng tư
-              </button>{' '}
-              &{' '}
-              <button
-                type="button"
-                onClick={() => setPolicyModal('cookie')}
-                className="text-slate-600 underline underline-offset-2 hover:text-slate-900 cursor-pointer font-medium"
-              >
-                Cookie
-              </button>
-              .
+            {/* Terms, Privacy & Cookie Agreement Text */}
+            <div className="w-full text-center px-1">
+              <p className="text-[11px] sm:text-xs landscape-mobile:text-[10px] text-slate-500 leading-relaxed max-w-sm landscape-mobile:max-w-xl mx-auto font-normal">
+                Bằng việc tiếp tục, bạn đồng ý với{' '}
+                <button
+                  type="button"
+                  onClick={() => setPolicyModal('terms')}
+                  className="text-slate-700 underline underline-offset-2 hover:text-slate-900 cursor-pointer font-medium"
+                >
+                  Điều khoản
+                </button>
+                ,{' '}
+                <button
+                  type="button"
+                  onClick={() => setPolicyModal('privacy')}
+                  className="text-slate-700 underline underline-offset-2 hover:text-slate-900 cursor-pointer font-medium"
+                >
+                  Quyền riêng tư
+                </button>{' '}
+                và{' '}
+                <button
+                  type="button"
+                  onClick={() => setPolicyModal('cookie')}
+                  className="text-slate-700 underline underline-offset-2 hover:text-slate-900 cursor-pointer font-medium"
+                >
+                  Cookie
+                </button>
+                .
+              </p>
             </div>
           </main>
 
           {/* Minimalist Landing Footer */}
-          <footer className="w-full shrink-0 py-3 sm:py-4 landscape-mobile:py-1 text-center text-[10px] text-slate-400 font-mono">
-            thực hiện bởi <span className="font-bold text-slate-600">thanhtungg.</span>
-            <span className="block text-[9px] text-slate-400 font-mono mt-0.5">
+          <footer className="w-full shrink-0 py-3 sm:py-4 landscape-mobile:py-1 text-center text-[11px] landscape-mobile:text-[10px] text-slate-400 font-mono">
+            thực hiện bởi <span className="font-semibold text-slate-600">thanhtungg.</span>
+            <span className="block text-[10px] landscape-mobile:text-[9px] text-slate-400 font-mono mt-0.5">
               Phiên bản 1.1.0
             </span>
           </footer>
@@ -532,7 +427,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
               <div className="mt-3.5 landscape-mobile:mt-1.5 flex items-center justify-between text-[10px] sm:text-[11px] text-slate-400 px-1">
                 <button
                   type="button"
-                  onClick={() => setShowInstallModal(true)}
+                  onClick={handleInstallClick}
                   className="hover:text-amber-400 transition-colors cursor-pointer underline underline-offset-2"
                 >
                   Cài đặt ứng dụng (PWA)
