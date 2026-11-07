@@ -305,7 +305,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                   currentStep === 0
                     ? 'relative z-10 w-48 sm:w-52 h-[272px] sm:h-[304px] landscape-mobile:w-36 landscape-mobile:h-[195px] bg-[#fffdfa] rounded-r-lg rounded-l-xs border-r border-t border-b border-slate-300/80 border-l-[7px] border-l-slate-300 shadow-2xl shadow-slate-400/40 p-2 sm:p-2.5 landscape-mobile:p-1.5 flex flex-col justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
                     : currentStep === 1
-                    ? 'relative z-10 w-72 sm:w-80 h-[272px] sm:h-[304px] landscape-mobile:w-60 landscape-mobile:h-[195px] flex flex-col items-center justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
+                    ? 'relative z-10 w-[316px] sm:w-[350px] max-w-full h-[216px] sm:h-[232px] landscape-mobile:w-72 landscape-mobile:h-[175px] flex flex-col items-center justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
                     : 'relative z-10 w-[316px] sm:w-[344px] max-w-full h-[216px] sm:h-[232px] landscape-mobile:w-72 landscape-mobile:h-[175px] flex flex-col justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
                 }
               >
@@ -427,37 +427,37 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 )}
 
                 {/* ------------------------------------------------------------- */}
-                {/* Slide 02 Graphic: Laptop MacBook Pro Mô Phỏng 3D              */}
+                {/* Slide 02 Graphic: Laptop MacBook Pro Mô Phỏng 3D (Chuẩn Tỷ Lệ) */}
                 {/* ------------------------------------------------------------- */}
                 {currentStep === 1 && (
                   <div className="w-full h-full flex flex-col items-center justify-between">
-                    {/* MacBook Display Lid (Space Gray Unibody Casing) */}
-                    <div className="w-full flex-1 rounded-t-2xl rounded-b-xs bg-slate-900 border-t-2 border-x-2 border-slate-700/80 shadow-2xl shadow-slate-950/50 p-1.5 sm:p-2 flex flex-col justify-between relative overflow-hidden">
-                      {/* Top Bezel: Centered Camera Notch */}
-                      <div className="absolute top-1 left-1/2 -translate-x-1/2 w-8 h-1.5 bg-slate-950 rounded-b-md flex items-center justify-center z-20">
-                        <div className="w-1 h-1 rounded-full bg-slate-800 border border-slate-700" />
+                    {/* MacBook Display Lid (Midnight / Space Gray Aluminum Casing) */}
+                    <div className="w-full flex-1 rounded-t-2xl rounded-b-none bg-[#0c101c] border-t border-x border-slate-700/80 shadow-2xl shadow-slate-950/60 p-1.5 sm:p-2 flex flex-col justify-between relative overflow-hidden">
+                      {/* Top Bezel: Centered Slim Camera Notch */}
+                      <div className="absolute top-0.5 left-1/2 -translate-x-1/2 w-6 h-1.5 bg-black rounded-b-sm flex items-center justify-center z-20">
+                        <div className="w-0.5 h-0.5 rounded-full bg-slate-700" />
                       </div>
 
-                      {/* Inner Retina Screen */}
-                      <div className="w-full h-full rounded-lg bg-slate-950 border border-slate-800/90 p-1.5 sm:p-2 flex flex-col justify-between overflow-hidden">
+                      {/* Inner Retina Screen (Widescreen 16:10 Ratio) */}
+                      <div className="w-full h-full rounded-lg bg-slate-950 border border-slate-800/90 p-1.5 flex flex-col justify-between overflow-hidden">
                         {/* macOS Window Title Bar */}
-                        <div className="flex items-center justify-between pb-1.5 border-b border-slate-800/90 text-[8.5px] sm:text-[9.5px] font-mono">
+                        <div className="flex items-center justify-between pb-1 border-b border-slate-800/90 text-[8px] sm:text-[9px] font-mono">
                           {/* 3 macOS Traffic Light Window Buttons */}
                           <div className="flex items-center gap-1.5">
-                            <div className="w-2 h-2 rounded-full bg-rose-500/90 shadow-2xs" />
-                            <div className="w-2 h-2 rounded-full bg-amber-500/90 shadow-2xs" />
-                            <div className="w-2 h-2 rounded-full bg-emerald-500/90 shadow-2xs" />
-                            <span className="font-bold text-slate-200 uppercase tracking-tight ml-1 text-[8.5px] sm:text-[9px]">
+                            <div className="w-2 h-2 rounded-full bg-rose-500 shadow-2xs" />
+                            <div className="w-2 h-2 rounded-full bg-amber-500 shadow-2xs" />
+                            <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-2xs" />
+                            <span className="font-bold text-slate-200 uppercase tracking-tight ml-1 text-[8px] sm:text-[8.5px]">
                               MÔ PHỎNG 120 TÌNH HUỐNG
                             </span>
                           </div>
-                          <span className="text-slate-400 font-mono text-[8px] sm:text-[8.5px]">
+                          <span className="text-slate-400 font-mono text-[7.5px] sm:text-[8px]">
                             Tình huống 18/120
                           </span>
                         </div>
 
-                        {/* Video Scene (Simulated Highway 3D) */}
-                        <div className="w-full h-24 sm:h-28 landscape-mobile:h-18 rounded-md bg-[#090d16] border border-slate-800 overflow-hidden relative my-1">
+                        {/* Video Scene (Simulated Highway 3D Widescreen) */}
+                        <div className="w-full h-18 sm:h-21 landscape-mobile:h-14 rounded-md bg-[#090d16] border border-slate-800/80 overflow-hidden relative my-0.5">
                           <svg viewBox="0 0 280 110" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
                             <defs>
                               <linearGradient id="skyGradDark" x1="0" y1="0" x2="0" y2="1">
@@ -527,19 +527,26 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                         </div>
 
                         {/* Bottom Footer Caption (Minimalist Dark) */}
-                        <div className="pt-1.5 border-t border-slate-800/90 flex items-center justify-between text-[8px] sm:text-[9px] text-slate-400 font-mono">
+                        <div className="pt-1 border-t border-slate-850 flex items-center justify-between text-[7.5px] sm:text-[8px] text-slate-400 font-mono">
                           <span>Trắc nghiệm 4 mốc thời điểm</span>
                           <span className="text-emerald-400 font-bold">10 điểm tối đa</span>
                         </div>
                       </div>
                     </div>
 
-                    {/* MacBook Base (Unibody Aluminum Keyboard Lip & Thumb Notch) */}
-                    <div className="w-[104%] h-3.5 sm:h-4 bg-linear-to-b from-slate-700 via-slate-800 to-slate-900 border-t border-slate-600/90 rounded-b-xl shadow-xl shadow-slate-950/50 flex flex-col items-center justify-start relative z-10 -mt-[1px]">
-                      {/* Center Thumb Opening Notch (Rãnh mở máy MacBook) */}
-                      <div className="w-12 sm:w-14 h-1 rounded-b-md bg-slate-600/90 shadow-inner" />
-                      {/* Slim Front Edge Chamfer Highlight */}
-                      <div className="w-full h-[1px] bg-slate-500/40 mt-auto" />
+                    {/* MacBook Base (Unibody Aluminum Keyboard Deck, Widescreen Lip & Thumb Scoop) */}
+                    <div className="w-[105%] flex flex-col items-center relative z-10 -mt-[1px]">
+                      <div className="w-full h-3 sm:h-3.5 bg-linear-to-b from-slate-700 via-slate-800 to-slate-900 border-t border-slate-600/90 rounded-b-lg shadow-xl shadow-slate-950/60 flex items-start justify-center relative">
+                        {/* Center Thumb Opening Scoop */}
+                        <div className="w-12 sm:w-14 h-1 rounded-b-sm bg-slate-600/90 shadow-inner" />
+                        {/* Slim Chamfer Metallic Highlight Edge */}
+                        <div className="w-full h-[0.5px] bg-slate-400/40 absolute bottom-0" />
+                      </div>
+                      {/* Rubber feet left & right */}
+                      <div className="w-[96%] flex justify-between px-2 -mt-0.5">
+                        <div className="w-4 h-0.5 rounded-full bg-slate-950/80" />
+                        <div className="w-4 h-0.5 rounded-full bg-slate-950/80" />
+                      </div>
                     </div>
                   </div>
                 )}
