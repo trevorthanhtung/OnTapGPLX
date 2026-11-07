@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { X, Check } from 'lucide-react';
+import { X, Check, ChevronLeft, ChevronRight } from 'lucide-react';
 import { StorageService } from '../services/storage';
 import type { LicenseCategory } from '../types';
 
@@ -174,6 +174,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
     }
   };
 
+  // Touch handlers: Dành riêng cho màn hình cảm ứng (Mobile & Tablet)
   const handleTouchStart = (e: React.TouchEvent) => {
     handlePointerDown(e.targetTouches[0].clientX, e.targetTouches[0].clientY);
   };
@@ -186,30 +187,44 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
     handlePointerUp();
   };
 
-  const handleMouseDown = (e: React.MouseEvent) => {
-    if (e.button !== 0) return;
-    handlePointerDown(e.clientX, e.clientY);
-  };
+  // Desktop keyboard controls: Phím mũi tên <- -> để chuyển slide, Enter để tiếp tục
+  useEffect(() => {
+    if (viewMode !== 'walkthrough') return;
 
-  const handleMouseMove = (e: React.MouseEvent) => {
-    handlePointerMove(e.clientX, e.clientY);
-  };
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Bỏ qua nếu đang mở modal chính sách hoặc cài đặt
+      if (policyModal || showInstallModal) return;
 
-  const handleMouseUp = () => {
-    handlePointerUp();
-  };
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        if (currentStep < slides.length - 1) {
+          setCurrentStep((prev) => prev + 1);
+        } else {
+          onStartExperience();
+        }
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        if (currentStep > 0) {
+          setCurrentStep((prev) => prev - 1);
+        }
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        handleNextSlide();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [viewMode, currentStep, slides.length, policyModal, showInstallModal]);
 
   const currentSlide = slides[currentStep];
 
   return (
     <div
-      className="fixed inset-0 h-dvh w-full overflow-hidden overscroll-none select-none flex flex-col justify-between pt-[max(0.75rem,env(safe-area-inset-top,0px))] pb-[max(1.25rem,env(safe-area-inset-bottom,0px))] pl-[max(0.75rem,env(safe-area-inset-left,0px))] pr-[max(0.75rem,env(safe-area-inset-right,0px))] bg-slate-50 text-slate-900"
+      className="fixed inset-0 h-dvh w-full overflow-hidden overscroll-none select-none flex flex-col justify-between pt-[max(0.75rem,env(safe-area-inset-top,0px))] pb-[max(1.25rem,env(safe-area-inset-bottom,0px))] pl-[max(0.75rem,env(safe-area-inset-left,0px))] pr-[max(0.75rem,env(safe-area-inset-right,0px))] bg-slate-50 text-slate-900 relative"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
-      onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
     >
       {/* ========================================================================= */}
       {/* 1. MÀN MINIMALISM TRẢI NGHIỆM NGAY & HƯỚNG DẪN CÀI (MÀN ĐẦU TIÊN)         */}
@@ -321,7 +336,32 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
       {/* 2. MÀN 3 BƯỚC ONBOARDING CAROUSEL (01 - 02 - 03) - CHUẨN NỀN SÁNG ONTAP GPLX */}
       {/* ========================================================================= */}
       {viewMode === 'walkthrough' && (
-        <div className="w-full h-full flex flex-col justify-between animate-in fade-in zoom-in-95 duration-250">
+        <div className="w-full h-full flex flex-col justify-between animate-in fade-in zoom-in-95 duration-250 relative">
+          {/* Desktop Floating Navigation Arrows (Phím ← và →) */}
+          {currentStep > 0 && (
+            <button
+              type="button"
+              onClick={() => setCurrentStep((prev) => prev - 1)}
+              aria-label="Slide trước (Phím ←)"
+              title="Phím mũi tên ←"
+              className="hidden lg:flex absolute left-6 xl:left-10 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 hover:bg-white active:scale-95 border border-slate-200 shadow-md items-center justify-center text-slate-700 hover:text-slate-950 transition-all cursor-pointer z-30"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+          )}
+
+          {currentStep < slides.length - 1 && (
+            <button
+              type="button"
+              onClick={() => setCurrentStep((prev) => prev + 1)}
+              aria-label="Slide tiếp theo (Phím →)"
+              title="Phím mũi tên →"
+              className="hidden lg:flex absolute right-6 xl:right-10 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 hover:bg-white active:scale-95 border border-slate-200 shadow-md items-center justify-center text-slate-700 hover:text-slate-950 transition-all cursor-pointer z-30"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          )}
+
           {/* Top Bar: "BỎ QUA" on the right only */}
           <header className="w-full max-w-md md:max-w-xl lg:max-w-5xl landscape-mobile:max-w-4xl mx-auto px-5 sm:px-8 lg:px-10 pt-2 sm:pt-4 lg:pt-6 pb-1 sm:pb-2 flex items-center justify-end shrink-0 z-20">
             <button
@@ -681,30 +721,40 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                   </span>
                 </div>
 
-                {/* 3 Sleek Interactive Pagination Pills */}
-                <div
-                  className="flex items-center gap-1.5 lg:gap-2 p-1 -m-1"
-                  role="tablist"
-                  aria-label="Các bước giới thiệu"
-                >
-                  {slides.map((_, idx) => {
-                    const isCurrent = idx === currentStep;
-                    return (
-                      <button
-                        key={idx}
-                        type="button"
-                        role="tab"
-                        aria-selected={isCurrent}
-                        onClick={() => setCurrentStep(idx)}
-                        aria-label={`Chuyển đến bước ${idx + 1}`}
-                        className={`h-2 lg:h-2.5 rounded-full transition-all duration-300 ease-out cursor-pointer ${
-                          isCurrent
-                            ? 'w-8 sm:w-10 lg:w-12 bg-linear-to-r from-amber-500 to-orange-500 shadow-xs shadow-amber-500/40'
-                            : 'w-2 sm:w-2.5 lg:w-3 bg-slate-200 hover:bg-slate-300'
-                        }`}
-                      />
-                    );
-                  })}
+                {/* 3 Sleek Interactive Pagination Pills & Desktop Keyboard Hint */}
+                <div className="flex items-center gap-3">
+                  <div
+                    className="hidden lg:flex items-center gap-1 text-[11px] font-mono text-slate-400 select-none mr-1"
+                    title="Dùng phím mũi tên ← → để chuyển bước"
+                  >
+                    <kbd className="px-1.5 py-0.5 rounded bg-slate-200/80 border border-slate-300/80 text-[10px] font-mono font-bold text-slate-600 shadow-2xs">←</kbd>
+                    <kbd className="px-1.5 py-0.5 rounded bg-slate-200/80 border border-slate-300/80 text-[10px] font-mono font-bold text-slate-600 shadow-2xs">→</kbd>
+                  </div>
+
+                  <div
+                    className="flex items-center gap-1.5 lg:gap-2 p-1 -m-1"
+                    role="tablist"
+                    aria-label="Các bước giới thiệu"
+                  >
+                    {slides.map((_, idx) => {
+                      const isCurrent = idx === currentStep;
+                      return (
+                        <button
+                          key={idx}
+                          type="button"
+                          role="tab"
+                          aria-selected={isCurrent}
+                          onClick={() => setCurrentStep(idx)}
+                          aria-label={`Chuyển đến bước ${idx + 1}`}
+                          className={`h-2 lg:h-2.5 rounded-full transition-all duration-300 ease-out cursor-pointer ${
+                            isCurrent
+                              ? 'w-8 sm:w-10 lg:w-12 bg-linear-to-r from-amber-500 to-orange-500 shadow-xs shadow-amber-500/40'
+                              : 'w-2 sm:w-2.5 lg:w-3 bg-slate-200 hover:bg-slate-300'
+                          }`}
+                        />
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
 
