@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { X, Award, Check, ShieldAlert } from 'lucide-react';
+import { X, Award } from 'lucide-react';
 
 interface WelcomeLandingViewProps {
   onStartExperience: () => void;
@@ -268,54 +268,141 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 {currentSlide.step}
               </div>
 
-              {/* Graphic Container (Tailored specifically for Driving Test App) */}
+              {/* Graphic Container: 3D Book for Slide 01, Card for Slide 02 & 03 */}
               <div
                 key={`graphic-${currentStep}`}
-                className="relative z-10 w-64 h-56 sm:w-72 sm:h-60 landscape-mobile:w-48 landscape-mobile:h-36 rounded-2xl border border-slate-200/90 bg-white p-3.5 landscape-mobile:p-2.5 shadow-xl shadow-slate-200/60 flex items-center justify-center animate-in zoom-in-95 fade-in duration-250"
+                className={
+                  currentStep === 0
+                    ? 'relative z-10 w-48 sm:w-52 h-[272px] sm:h-[304px] landscape-mobile:w-36 landscape-mobile:h-[195px] bg-[#fffdfa] rounded-r-lg rounded-l-xs border-r border-t border-b border-slate-300/80 border-l-[7px] border-l-slate-300 shadow-2xl shadow-slate-400/40 p-2 sm:p-2.5 landscape-mobile:p-1.5 flex flex-col justify-between animate-in zoom-in-95 fade-in duration-250 select-none'
+                    : 'relative z-10 w-64 h-56 sm:w-72 sm:h-60 landscape-mobile:w-48 landscape-mobile:h-36 rounded-2xl border border-slate-200/90 bg-white p-3.5 landscape-mobile:p-2.5 shadow-xl shadow-slate-200/60 flex items-center justify-center animate-in zoom-in-95 fade-in duration-250'
+                }
               >
                 {/* ------------------------------------------------------------- */}
-                {/* Slide 01 Graphic: Mô phỏng Thẻ câu hỏi Lý thuyết sát hạch thực tế */}
+                {/* Slide 01 Graphic: Cuốn sách ÔN THI CẤP TỐC 600 CÂU & 120 TH MÔ PHỎNG */}
                 {/* ------------------------------------------------------------- */}
                 {currentStep === 0 && (
-                  <div className="w-full h-full rounded-xl bg-slate-50 border border-slate-200 p-3 landscape-mobile:p-2 flex flex-col justify-between shadow-2xs">
-                    {/* Header: Category & Critical Warning Badge */}
-                    <div className="flex items-center justify-between pb-1.5 border-b border-slate-200">
-                      <div className="flex items-center gap-1.5">
-                        <div className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
-                        <span className="text-[10px] font-bold text-amber-700 tracking-tight">
-                          HẠNG B • 600 CÂU
-                        </span>
-                      </div>
-                      <div className="px-1.5 py-0.5 rounded-md bg-rose-50 border border-rose-200 text-rose-600 text-[9px] font-bold flex items-center gap-1">
-                        <ShieldAlert className="w-2.5 h-2.5" />
-                        <span>60 ĐIỂM LIỆT</span>
-                      </div>
-                    </div>
+                  <div className="w-full h-full border border-indigo-950/80 p-1 sm:p-1.5 flex flex-col justify-between relative">
+                    {/* Corner square accents */}
+                    <div className="absolute top-0.5 left-0.5 w-1 h-1 border border-indigo-950" />
+                    <div className="absolute top-0.5 right-0.5 w-1 h-1 border border-indigo-950" />
+                    <div className="absolute bottom-0.5 left-0.5 w-1 h-1 border border-indigo-950" />
+                    <div className="absolute bottom-0.5 right-0.5 w-1 h-1 border border-indigo-950" />
 
-                    {/* Question Content */}
-                    <div className="my-auto py-1 space-y-1.5">
-                      <div className="text-[10.5px] sm:text-[11px] font-semibold text-slate-800 leading-snug line-clamp-2">
-                        Khi gặp biển nào dưới đây, người lái xe phải nhường đường cho xe trên đường ưu tiên?
-                      </div>
-
-                      {/* Options with active correct choice */}
-                      <div className="space-y-1">
-                        <div className="px-2 py-1 rounded-md bg-white border border-slate-200 flex items-center justify-between text-[9px] text-slate-600">
-                          <span>1. Biển đường cùng cấp</span>
+                    {/* Inner border box */}
+                    <div className="w-full h-full border border-indigo-950/70 p-1.5 sm:p-2 landscape-mobile:p-1 flex flex-col justify-between items-center text-center">
+                      {/* Top Titles */}
+                      <div className="space-y-0.2">
+                        <div className="font-serif font-black tracking-widest text-[10.5px] sm:text-[11.5px] landscape-mobile:text-[8px] text-slate-900 uppercase leading-none">
+                          PHƯƠNG PHÁP
                         </div>
-                        <div className="px-2 py-1 rounded-md bg-emerald-50 border border-emerald-300 flex items-center justify-between text-[9px] text-emerald-800 font-bold">
-                          <span>2. Biển giao nhau với đường ưu tiên</span>
-                          <Check className="w-3 h-3 text-emerald-600 shrink-0 stroke-[2.5]" />
+                        <div className="font-serif font-bold tracking-wider text-[8px] sm:text-[9px] landscape-mobile:text-[6.5px] text-slate-800 uppercase">
+                          HỌC NHANH FULL
                         </div>
                       </div>
-                    </div>
 
-                    {/* Footer Tip */}
-                    <div className="pt-1.5 border-t border-slate-200 flex items-center justify-between text-[9px] text-slate-500">
-                      <span className="flex items-center gap-1 text-amber-700 font-medium">
-                        💡 Kèm mẹo giải nhanh
-                      </span>
-                      <span className="font-mono text-slate-400">Chuẩn 2026</span>
+                      {/* Starburst Badge: Mới 2026 */}
+                      <div className="relative my-0.5">
+                        <svg viewBox="0 0 90 32" className="w-14 sm:w-16 h-5 sm:h-6 landscape-mobile:w-11 landscape-mobile:h-4 drop-shadow-2xs">
+                          <polygon
+                            points="45,0 52,6 63,3 67,11 78,11 76,19 86,22 80,28 88,32 76,32 71,38 61,33 52,38 45,32 38,38 29,33 19,38 14,32 2,32 10,28 4,22 14,19 12,11 23,11 27,6 38,0"
+                            fill="#dc2626"
+                          />
+                          <text x="45" y="19" textAnchor="middle" fill="#ffffff" fontSize="10.5" fontWeight="900" fontFamily="sans-serif">
+                            Mới 2026
+                          </text>
+                        </svg>
+                      </div>
+
+                      {/* Big Title & Pill */}
+                      <div className="space-y-0.5">
+                        <div className="font-serif font-black text-slate-900 text-xs sm:text-[14px] landscape-mobile:text-[9.5px] tracking-wide uppercase leading-tight">
+                          ÔN THI CẤP TỐC
+                        </div>
+                        <div className="inline-block px-1.5 py-0.2 rounded-full bg-rose-600 text-white font-bold text-[6.5px] sm:text-[7.5px] landscape-mobile:text-[5.5px] tracking-tight shadow-2xs">
+                          Câu Hỏi Luật Mới Bộ Công An
+                        </div>
+                      </div>
+
+                      {/* Sa hình ngã tư (Intersection Illustration SVG) */}
+                      <div className="w-full h-18 sm:h-22 landscape-mobile:h-13 bg-[#f3f7eb] border border-slate-300/80 rounded-xs overflow-hidden relative shadow-inner my-0.5">
+                        <svg viewBox="0 0 200 130" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
+                          {/* 4 Green Grass Corner Lawns */}
+                          <rect x="0" y="0" width="60" height="40" fill="#dcfce7" />
+                          <rect x="140" y="0" width="60" height="40" fill="#dcfce7" />
+                          <rect x="0" y="90" width="60" height="40" fill="#dcfce7" />
+                          <rect x="140" y="90" width="60" height="40" fill="#dcfce7" />
+
+                          {/* Roads */}
+                          <rect x="60" y="0" width="80" height="130" fill="#cbd5e1" />
+                          <rect x="0" y="40" width="200" height="50" fill="#cbd5e1" />
+
+                          {/* Road lane markings */}
+                          <line x1="100" y1="0" x2="100" y2="40" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="4 3" />
+                          <line x1="100" y1="90" x2="100" y2="130" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="4 3" />
+                          <line x1="0" y1="65" x2="60" y2="65" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="4 3" />
+                          <line x1="140" y1="65" x2="200" y2="65" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="4 3" />
+
+                          {/* Red Curved Turning Arrow (From bottom lane turning right) */}
+                          <path d="M 85 115 Q 85 78 145 78" fill="none" stroke="#dc2626" strokeWidth="2.5" strokeLinecap="round" />
+                          <polygon points="143,74 152,78 143,82" fill="#dc2626" />
+
+                          {/* Red Straight Arrow (For motorbike / straight lane) */}
+                          <path d="M 115 115 L 115 50" fill="none" stroke="#dc2626" strokeWidth="2" strokeDasharray="3 2" />
+
+                          {/* Traffic Police Officer (CSGT) in center of crossroads */}
+                          <g transform="translate(100, 65)">
+                            {/* Officer shadow */}
+                            <ellipse cx="0" cy="8" rx="6" ry="2" fill="#94a3b8" opacity="0.6" />
+                            {/* Outstretched Arms (directing both ways) */}
+                            <line x1="-14" y1="-1" x2="14" y2="-1" stroke="#fde047" strokeWidth="3" strokeLinecap="round" />
+                            <circle cx="-14" cy="-1" r="1.5" fill="#fbcfe8" />
+                            <circle cx="14" cy="-1" r="1.5" fill="#fbcfe8" />
+                            {/* Body in yellow khaki uniform */}
+                            <path d="M -4,2 L -3,-4 L 3,-4 L 4,2 Z" fill="#fef08a" stroke="#ca8a04" strokeWidth="0.8" />
+                            {/* Legs */}
+                            <line x1="-2" y1="2" x2="-2" y2="8" stroke="#ca8a04" strokeWidth="1.5" />
+                            <line x1="2" y1="2" x2="2" y2="8" stroke="#ca8a04" strokeWidth="1.5" />
+                            {/* Head & Police Cap */}
+                            <circle cx="0" cy="-7" r="2.5" fill="#fbcfe8" />
+                            <ellipse cx="0" cy="-8.5" rx="3.2" ry="1.2" fill="#ffffff" stroke="#ca8a04" strokeWidth="0.6" />
+                          </g>
+
+                          {/* Blue Sedan (Car turning) */}
+                          <g transform="translate(73, 98) rotate(-15)">
+                            <rect x="0" y="0" width="16" height="25" rx="3" fill="#2563eb" stroke="#1d4ed8" strokeWidth="0.8" />
+                            {/* Windshield */}
+                            <rect x="2" y="5" width="12" height="6" rx="1" fill="#93c5fd" />
+                            <rect x="2" y="15" width="12" height="4" rx="1" fill="#93c5fd" />
+                            {/* Headlights */}
+                            <circle cx="2" cy="2" r="1" fill="#fef08a" />
+                            <circle cx="14" cy="2" r="1" fill="#fef08a" />
+                          </g>
+
+                          {/* Cyan Truck on the right side */}
+                          <g transform="translate(150, 50)">
+                            <rect x="0" y="0" width="30" height="12" rx="1" fill="#0284c7" stroke="#0369a1" strokeWidth="0.8" />
+                            <rect x="0" y="1" width="10" height="10" rx="1" fill="#38bdf8" />
+                            <circle cx="4" cy="12" r="2" fill="#334155" />
+                            <circle cx="24" cy="12" r="2" fill="#334155" />
+                          </g>
+
+                          {/* Motorbike on top left */}
+                          <g transform="translate(75, 15)">
+                            <ellipse cx="5" cy="8" rx="3" ry="8" fill="#dc2626" />
+                            <circle cx="5" cy="5" r="2.5" fill="#f43f5e" />
+                          </g>
+                        </svg>
+                      </div>
+
+                      {/* Bottom Text */}
+                      <div className="space-y-0.2 mt-0.5">
+                        <div className="font-serif font-black text-indigo-950 text-[10px] sm:text-[11.5px] landscape-mobile:text-[8px] leading-tight tracking-tight">
+                          600 câu hỏi và 120 TH Mô Phỏng
+                        </div>
+                        <div className="font-serif italic text-slate-500 text-[7px] sm:text-[8px] landscape-mobile:text-[6px]">
+                          ( Lưu hành nội bộ )
+                        </div>
+                      </div>
                     </div>
                   </div>
                 )}
