@@ -810,7 +810,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                         <div className="w-16 h-16 landscape-mobile:w-11 landscape-mobile:h-11 rounded-full bg-white/90 text-slate-900 flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
                           <Play className="w-7 h-7 landscape-mobile:w-5 landscape-mobile:h-5 ml-0.5 fill-current text-slate-900" />
                         </div>
-                        <span className="mt-3 landscape-mobile:mt-1.5 text-white font-medium text-xs landscape-mobile:text-[11px]">
+                        <span className="hidden md:block mt-3 text-white font-medium text-xs">
                           Bấm để xem video tình huống
                         </span>
                       </div>
@@ -1269,7 +1269,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                       <div className="w-16 h-16 landscape-mobile:w-11 landscape-mobile:h-11 rounded-full bg-white/90 text-slate-900 flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
                         <Play className="w-7 h-7 landscape-mobile:w-5 landscape-mobile:h-5 ml-0.5 fill-current text-slate-900" />
                       </div>
-                      <span className="mt-3 landscape-mobile:mt-1.5 text-white font-medium text-xs landscape-mobile:text-[11px]">
+                      <span className="hidden md:block mt-3 text-white font-medium text-xs">
                         Bấm để xem video tình huống
                       </span>
                     </div>
