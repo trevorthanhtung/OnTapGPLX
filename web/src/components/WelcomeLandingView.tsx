@@ -669,14 +669,14 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                         <button
                           type="button"
                           onClick={() => setIsPickerOpen(true)}
-                          className="w-full bg-white/95 hover:bg-white active:scale-[0.99] border-2 border-red-500/80 rounded-xl p-2 sm:p-2.5 md:p-3 shadow-xs hover:shadow-md transition-all cursor-pointer flex items-center justify-between group"
+                          className="w-full bg-white/80 hover:bg-white/95 active:scale-[0.99] border border-rose-200/90 hover:border-rose-300 rounded-xl p-2 sm:p-2.5 md:p-3 shadow-2xs hover:shadow-xs transition-all cursor-pointer flex items-center justify-between group backdrop-blur-xs"
                         >
                           <div className="text-left min-w-0 pr-2">
                             <div className="flex items-center gap-1.5 sm:gap-2">
-                              <span className="text-xs sm:text-sm md:text-base font-black text-red-950 tracking-tight">
+                              <span className="text-xs sm:text-sm md:text-base font-bold text-slate-900 tracking-tight group-hover:text-rose-700 transition-colors">
                                 {activeCategoryConfig.name}
                               </span>
-                              <span className="px-1.5 py-0.5 rounded-full bg-red-100 text-red-700 font-mono font-bold text-[8px] sm:text-[9px] md:text-[10px] shrink-0">
+                              <span className="px-1.5 py-0.5 rounded-md bg-rose-50 text-rose-700 border border-rose-200/70 font-mono font-medium text-[8px] sm:text-[9px] md:text-[10px] shrink-0">
                                 {activeCategoryConfig.totalQuestions} câu • {activeCategoryConfig.timeMinutes}p
                               </span>
                             </div>
@@ -684,7 +684,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                               {activeCategoryConfig.description}
                             </div>
                           </div>
-                          <div className="w-7 h-7 rounded-lg bg-red-50 group-hover:bg-red-100 flex items-center justify-center shrink-0 text-red-600 transition-colors">
+                          <div className="w-7 h-7 rounded-lg bg-rose-50/80 group-hover:bg-rose-100/80 flex items-center justify-center shrink-0 text-rose-600 transition-colors">
                             <ChevronDown className="w-4 h-4" />
                           </div>
                         </button>
@@ -732,13 +732,13 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                                 }}
                                 className={`w-full text-left px-2.5 py-1.5 sm:py-2 rounded-xl transition-all cursor-pointer flex items-center justify-between ${
                                   isSelected
-                                    ? 'bg-red-50 text-red-950 font-bold border border-red-200 shadow-2xs'
-                                    : 'hover:bg-slate-50 text-slate-800'
+                                    ? 'bg-rose-50 text-slate-900 font-bold border border-rose-200/90 shadow-2xs'
+                                    : 'hover:bg-rose-50/40 text-slate-800'
                                 }`}
                               >
                                 <div className="min-w-0 pr-2">
                                   <div className="flex items-center gap-1.5 text-xs sm:text-[13px] leading-tight">
-                                    <span className={isSelected ? 'font-black text-red-600' : 'font-bold'}>
+                                    <span className={isSelected ? 'font-bold text-rose-700' : 'font-medium'}>
                                       {cat.name}
                                     </span>
                                     <span className="text-[9px] sm:text-[10px] font-mono text-slate-400">
@@ -750,7 +750,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                                   </div>
                                 </div>
                                 {isSelected && (
-                                  <Check className="w-4 h-4 text-red-600 stroke-[3] shrink-0" />
+                                  <Check className="w-4 h-4 text-rose-600 stroke-[2.5] shrink-0" />
                                 )}
                               </button>
                             );
