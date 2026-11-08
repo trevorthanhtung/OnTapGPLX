@@ -317,7 +317,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
           <footer className="w-full shrink-0 py-2 sm:py-3 landscape-mobile:py-1 text-center text-[11px] landscape-mobile:text-[10px] text-slate-400 font-mono">
             thực hiện bởi <span className="font-semibold text-slate-600">thanhtungg.</span>
             <span className="block text-[10px] landscape-mobile:text-[9px] text-slate-400 font-mono mt-0.5">
-              Phiên bản 1.3.3
+              Phiên bản 2.0.0
             </span>
           </footer>
         </div>
@@ -590,9 +590,9 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                           <div className="p-1 sm:p-1.5 lg:p-2 rounded-md bg-slate-900 border border-slate-800 text-[8px] sm:text-[8.5px] lg:text-[10px] text-slate-300 truncate">
                             A. Giữ nguyên tốc độ
                           </div>
-                          <div className="p-1 sm:p-1.5 lg:p-2 rounded-md bg-emerald-950/80 border border-emerald-500/80 text-[8px] sm:text-[8.5px] lg:text-[10px] text-emerald-300 font-bold flex items-center justify-between shadow-2xs">
+                          <div className="p-1 sm:p-1.5 lg:p-2 rounded-md bg-slate-900 border border-slate-800 text-[8px] sm:text-[8.5px] lg:text-[10px] text-emerald-400 font-semibold flex items-center justify-between">
                             <span className="truncate">B. Phanh giảm tốc</span>
-                            <Check className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-emerald-400 stroke-[3] shrink-0 ml-1" />
+                            <Check className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-emerald-400 stroke-[2.5] shrink-0 ml-1" />
                           </div>
                           <div className="p-1 sm:p-1.5 lg:p-2 rounded-md bg-slate-900 border border-slate-800 text-[8px] sm:text-[8.5px] lg:text-[10px] text-slate-300 truncate">
                             C. Bấm còi vượt xe
@@ -652,7 +652,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
 
                     {/* Card Center: Left ID Photo (Hình thẻ nam sidepart 2D) + Right 3 Official Info Rows */}
                     <div className="w-full flex-1 flex items-center gap-2.5 sm:gap-3.5 md:gap-4 py-1 sm:py-2 px-0.5">
-                      {/* Left: 3x4 Portrait ID Photo Box (Hình thẻ chuẩn GPLX) */}
+                      {/* Left: 3x4 Portrait ID Photo Box (Hình thẻ chuẩn GPLX vẽ theo chân dung của bro) */}
                       <div className="w-13 sm:w-16 md:w-20 lg:w-22 shrink-0">
                         <div className="w-full aspect-[3/4] rounded-md sm:rounded-lg bg-white border border-rose-300/90 p-0.5 sm:p-1 shadow-2xs overflow-hidden flex items-center justify-center">
                           <svg
@@ -661,69 +661,91 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <defs>
-                              <linearGradient id="gplx-photo-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stopColor="#7dd3fc" />
-                                <stop offset="60%" stopColor="#38bdf8" />
+                              <linearGradient id="user-gplx-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor="#bae6fd" />
+                                <stop offset="50%" stopColor="#38bdf8" />
                                 <stop offset="100%" stopColor="#0284c7" />
                               </linearGradient>
-                              <radialGradient id="gplx-halo" cx="50%" cy="45%" r="45%">
-                                <stop offset="0%" stopColor="#ffffff" stopOpacity="0.4" />
+                              <radialGradient id="user-halo" cx="50%" cy="46%" r="48%">
+                                <stop offset="0%" stopColor="#ffffff" stopOpacity="0.45" />
                                 <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
                               </radialGradient>
-                              <linearGradient id="gplx-neck-shadow" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="0%" stopColor="#ea580c" stopOpacity="0.25" />
-                                <stop offset="100%" stopColor="#ea580c" stopOpacity="0" />
+                              <linearGradient id="user-chin-shadow" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stopColor="#c2410c" stopOpacity="0.28" />
+                                <stop offset="100%" stopColor="#c2410c" stopOpacity="0" />
                               </linearGradient>
                             </defs>
 
-                            {/* Phông nền xanh ảnh thẻ chuẩn Việt Nam */}
-                            <rect width="120" height="160" fill="url(#gplx-photo-bg)" />
-                            <circle cx="60" cy="65" r="45" fill="url(#gplx-halo)" />
+                            {/* Nền ảnh thẻ studio Việt Nam */}
+                            <rect width="120" height="160" fill="url(#user-gplx-bg)" />
+                            <circle cx="60" cy="72" r="50" fill="url(#user-halo)" />
 
-                            {/* Áo sơ mi trắng có cổ */}
-                            <path d="M 8 160 C 14 132 32 120 46 116 L 46 128 L 60 140 L 74 128 L 74 116 C 88 120 106 132 112 160 Z" fill="#ffffff" />
-                            <polygon points="44,116 60,138 52,138 38,124" fill="#f8fafc" stroke="#cbd5e1" strokeWidth="0.8" />
-                            <polygon points="76,116 60,138 68,138 82,124" fill="#f1f5f9" stroke="#cbd5e1" strokeWidth="0.8" />
-                            <line x1="60" y1="138" x2="60" y2="160" stroke="#e2e8f0" strokeWidth="1.5" />
-                            <circle cx="60" cy="148" r="1.2" fill="#94a3b8" />
+                            {/* Áo thun đen cổ tròn (Crewneck T-shirt chuẩn hình mẫu của bro) */}
+                            <path d="M 4 160 C 10 130 30 118 46 114 L 46 124 C 52 130 68 130 74 124 L 74 114 C 90 118 110 130 116 160 Z" fill="#18181b" />
+                            <path d="M 46 114 C 52 127 68 127 74 114 C 70 122 50 122 46 114 Z" fill="#27272a" stroke="#3f3f46" strokeWidth="0.8" />
+                            <path d="M 48 116 C 53 124 67 124 72 116" stroke="#52525b" strokeWidth="0.6" strokeDasharray="1 1" fill="none" opacity="0.6" />
 
-                            {/* Cổ */}
-                            <path d="M 48 90 L 48 124 L 72 124 L 72 90 Z" fill="#ffedd5" />
-                            <rect x="48" y="90" width="24" height="12" fill="url(#gplx-neck-shadow)" />
+                            {/* Cổ nam tính, chắc khỏe */}
+                            <path d="M 47 88 L 47 120 C 53 125 67 125 73 120 L 73 88 Z" fill="#fed7aa" />
+                            <path d="M 47 88 C 54 99 66 99 73 88 Z" fill="url(#user-chin-shadow)" />
 
-                            {/* Hai tai */}
-                            <ellipse cx="37" cy="74" rx="4.5" ry="7.5" fill="#fecaca" />
-                            <ellipse cx="83" cy="74" rx="4.5" ry="7.5" fill="#fecaca" />
-                            <ellipse cx="37" cy="74" rx="2.5" ry="4.5" fill="#fca5a5" opacity="0.6" />
-                            <ellipse cx="83" cy="74" rx="2.5" ry="4.5" fill="#fca5a5" opacity="0.6" />
+                            {/* Hai bên tai */}
+                            <ellipse cx="34" cy="74" rx="4.8" ry="8" fill="#fed7aa" />
+                            <ellipse cx="86" cy="74" rx="4.8" ry="8" fill="#fed7aa" />
+                            <ellipse cx="34.5" cy="74" rx="2.6" ry="5" fill="#fca5a5" opacity="0.5" />
+                            <ellipse cx="85.5" cy="74" rx="2.6" ry="5" fill="#fca5a5" opacity="0.5" />
 
-                            {/* Khuôn mặt nam tính */}
-                            <path d="M 38 58 C 38 86 47 102 60 102 C 73 102 82 86 82 58 C 82 42 74 38 60 38 C 46 38 38 42 38 58 Z" fill="#fed7aa" />
+                            {/* Khuôn mặt chuẩn tỷ lệ ảnh thật của bro */}
+                            <path d="M 36 55 C 36 82 46 100 60 100 C 74 100 84 82 84 55 C 84 38 75 35 60 35 C 45 35 36 38 36 55 Z" fill="#ffedd5" />
+                            <path d="M 38 78 C 45 96 54 99 60 99 C 66 99 75 96 82 78 C 76 94 66 98 60 98 C 54 98 44 94 38 78 Z" fill="#fdba74" opacity="0.3" />
 
-                            {/* Lông mày nam */}
-                            <path d="M 43 62 Q 50 58 57 61" stroke="#0f172a" strokeWidth="2.6" strokeLinecap="round" fill="none" />
-                            <path d="M 63 61 Q 70 58 77 62" stroke="#0f172a" strokeWidth="2.6" strokeLinecap="round" fill="none" />
+                            {/* Lông mày rậm ngang nam tính */}
+                            <path d="M 42 58 Q 49 55 57 57" stroke="#18181b" strokeWidth="2.8" strokeLinecap="round" fill="none" />
+                            <path d="M 63 57 Q 71 55 78 58" stroke="#18181b" strokeWidth="2.8" strokeLinecap="round" fill="none" />
 
-                            {/* Mắt nam sáng */}
-                            <ellipse cx="50" cy="68" rx="3.8" ry="2.4" fill="#0f172a" />
-                            <circle cx="49" cy="67" r="1" fill="#ffffff" />
-                            <ellipse cx="70" cy="68" rx="3.8" ry="2.4" fill="#0f172a" />
-                            <circle cx="69" cy="67" r="1" fill="#ffffff" />
+                            {/* Mắt sáng, ấm áp, mí lót tự nhiên */}
+                            <path d="M 43 65 Q 49 63 56 65" stroke="#18181b" strokeWidth="1.8" strokeLinecap="round" fill="none" />
+                            <ellipse cx="49.5" cy="67" rx="3.6" ry="2.5" fill="#0f172a" />
+                            <circle cx="48.5" cy="66" r="1" fill="#ffffff" />
 
-                            {/* Sống mũi */}
-                            <path d="M 59 66 L 58.5 78 L 62.5 78" stroke="#f97316" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.8" />
+                            <path d="M 64 65 Q 71 63 77 65" stroke="#18181b" strokeWidth="1.8" strokeLinecap="round" fill="none" />
+                            <ellipse cx="70.5" cy="67" rx="3.6" ry="2.5" fill="#0f172a" />
+                            <circle cx="69.5" cy="66" r="1" fill="#ffffff" />
 
-                            {/* Miệng cười nhẹ */}
-                            <path d="M 53 87 Q 60 90.5 67 87" stroke="#dc2626" strokeWidth="1.8" strokeLinecap="round" fill="none" />
+                            {/* Bọng mắt nhẹ */}
+                            <path d="M 44.5 70.5 Q 49.5 72.5 55 70.5" stroke="#fb923c" strokeWidth="0.8" strokeLinecap="round" fill="none" opacity="0.6" />
+                            <path d="M 65 70.5 Q 70.5 72.5 75.5 70.5" stroke="#fb923c" strokeWidth="0.8" strokeLinecap="round" fill="none" opacity="0.6" />
 
-                            {/* TÓC SIDEPART DỰNG RỦ 2D (Ngôi 7/3, mái phồng rủ nhẹ qua trán) */}
-                            <path d="M 36 68 L 36 50 C 35 34 46 22 62 21 C 76 21 86 30 85 52 L 85 68 L 81 60 L 81 48 C 80 34 72 26 60 26 C 48 26 40 34 39 48 L 39 60 Z" fill="#0f172a" />
-                            <path d="M 35 52 C 34 32 46 22 63 21 C 78 21 87 29 86 44 C 84 44 79 36 71 34 C 64 33 55 35 48 42 C 43 47 42 54 35 52 Z" fill="#1e293b" />
-                            <path d="M 48 24 Q 54 18 64 19 Q 74 20 78 26 Q 70 23 60 23 Q 52 23 48 24 Z" fill="#334155" />
-                            <path d="M 38 32 Q 44 22 55 21 Q 46 25 41 34 Z" fill="#334155" />
-                            <path d="M 68 34 C 60 35 52 38 47 45 C 44 49 43 56 41 60 C 43 54 48 48 55 44 C 62 40 68 38 72 36 Z" fill="#0f172a" />
-                            <path d="M 56 36 Q 50 42 46 51 Q 48 44 54 40 Z" fill="#334155" />
-                            <path d="M 72 34 C 76 34 82 39 84 46 C 81 44 76 42 72 42 Z" fill="#0f172a" />
+                            {/* Sống mũi thẳng & cánh mũi */}
+                            <path d="M 59.5 64 L 59 76" stroke="#fb923c" strokeWidth="1.1" strokeLinecap="round" fill="none" opacity="0.75" />
+                            <path d="M 56 77.5 Q 60 79.5 64 77.5" stroke="#ea580c" strokeWidth="1.2" strokeLinecap="round" fill="none" opacity="0.8" />
+                            <circle cx="56" cy="77" r="0.7" fill="#ea580c" opacity="0.4" />
+                            <circle cx="64" cy="77" r="0.7" fill="#ea580c" opacity="0.4" />
+
+                            {/* Miệng mỉm cười nhẹ */}
+                            <path d="M 52.5 86.5 Q 60 89.5 67.5 86.5" stroke="#9f1239" strokeWidth="1.7" strokeLinecap="round" fill="none" />
+                            <path d="M 54.5 86 Q 60 84.8 65.5 86" stroke="#fda4af" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.85" />
+                            <path d="M 55.5 89 Q 60 91.5 64.5 89" stroke="#f43f5e" strokeWidth="1.3" strokeLinecap="round" fill="none" opacity="0.8" />
+
+                            {/* Nốt ruồi duyên dưới cằm của bro */}
+                            <circle cx="63.5" cy="94" r="0.75" fill="#78350f" opacity="0.85" />
+
+                            {/* TÓC BỔ LUỐNG / SIDEPART 6/4 PHỒNG DỰNG RỦ ĐẶC TRƯNG */}
+                            <path d="M 33 66 C 32 44 33 30 45 20 C 54 14 68 14 77 20 C 87 28 88 44 87 66 L 82 56 L 82 46 C 81 33 73 24 60 24 C 47 24 38 33 38 46 L 38 56 Z" fill="#09090b" />
+                            <path d="M 35 46 C 34 26 48 16 62 16 C 72 16 85 23 86 44 C 82 32 72 25 60 25 C 48 25 39 33 35 46 Z" fill="#18181b" />
+                            <path d="M 44 23 Q 54 17 64 18 Q 74 19 80 26 Q 73 22 63 22 Q 52 22 44 23 Z" fill="#27272a" />
+                            <path d="M 37 32 Q 44 20 54 19 Q 45 23 40 33 Z" fill="#27272a" />
+
+                            {/* Mái trái uốn cong rủ nhẹ */}
+                            <path d="M 58 22 C 54 26 42 27 37 38 C 34 46 36 55 41 57 C 45 58 48 53 47 47 C 46 41 49 35 54 33 C 57 32 58 34 58 36 C 58 31 58 26 58 22 Z" fill="#09090b" />
+                            <path d="M 40 38 Q 45 32 52 30" stroke="#3f3f46" strokeWidth="1.2" strokeLinecap="round" fill="none" opacity="0.6" />
+                            <path d="M 37 46 Q 41 40 45 38" stroke="#52525b" strokeWidth="0.9" strokeLinecap="round" fill="none" opacity="0.5" />
+
+                            {/* Mái phải bồng bềnh rủ cong đuôi mày */}
+                            <path d="M 58 22 C 62 25 71 23 77 29 C 83 35 85 46 84 55 C 82 54 81 48 78 44 C 74 40 68 41 63 44 C 60 46 59 48 58 47 C 57 43 57 30 58 22 Z" fill="#09090b" />
+                            <path d="M 64 29 Q 73 31 78 42" stroke="#3f3f46" strokeWidth="1.2" strokeLinecap="round" fill="none" opacity="0.6" />
+                            <path d="M 67 36 Q 74 38 77 46" stroke="#52525b" strokeWidth="0.9" strokeLinecap="round" fill="none" opacity="0.5" />
+                            <path d="M 64 42 Q 71 40 77 45 Q 71 42 65 45 Z" fill="#18181b" />
                           </svg>
                         </div>
                       </div>

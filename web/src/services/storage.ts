@@ -112,6 +112,14 @@ export const StorageService = {
     localStorage.setItem(STORAGE_KEYS.EXAM_HISTORY, JSON.stringify(history));
   },
 
+  clearExamHistory(): void {
+    try {
+      localStorage.removeItem(STORAGE_KEYS.EXAM_HISTORY);
+    } catch {
+      // ignore
+    }
+  },
+
   exportBackup(): string {
     const data = {
       category: this.getCategory(),

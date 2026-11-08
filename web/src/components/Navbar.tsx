@@ -90,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     <>
       <header className={`sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 pt-[max(0.75rem,env(safe-area-inset-top,0px))] sm:pt-[env(safe-area-inset-top,0px)] landscape-mobile:pt-[max(0.25rem,env(safe-area-inset-top,0px))] pl-[env(safe-area-inset-left,0px)] pr-[env(safe-area-inset-right,0px)] transition-transform duration-300 ease-in-out will-change-transform ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-14 sm:h-16">
+        <div className="relative flex items-center justify-between h-14 sm:h-16">
           {/* Logo & Brand */}
           <div className="flex items-center gap-2 sm:gap-3 cursor-pointer shrink-0" onClick={() => setActiveTab('theory')}>
             <img
@@ -105,7 +105,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           {/* Navigation Tabs (Desktop only - 1024px and up) - Segmented Control (PA1) */}
-          <nav className="hidden lg:inline-flex items-center p-1 bg-slate-100/90 rounded-xl border border-slate-200/70 shadow-2xs">
+          <nav className="hidden lg:inline-flex items-center p-1 bg-slate-100/90 rounded-xl border border-slate-200/70 shadow-2xs absolute left-1/2 -translate-x-1/2">
             <button
               onClick={() => setActiveTab('theory')}
               className={`px-4 py-1.5 rounded-lg text-sm transition-all cursor-pointer whitespace-nowrap ${
@@ -146,12 +146,12 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 type="button"
                 onClick={() => setIsCategoryOpen(!isCategoryOpen)}
-                className="flex items-center gap-1.5 bg-white hover:bg-slate-50 border border-slate-200/90 text-slate-800 px-3 py-1.5 rounded-xl text-xs sm:text-sm font-medium shadow-2xs transition-colors cursor-pointer whitespace-nowrap"
+                className="flex items-center justify-between w-[92px] sm:w-[100px] bg-white hover:bg-slate-50 border border-slate-200/90 text-slate-800 px-3 py-1.5 rounded-xl text-xs sm:text-sm font-medium shadow-2xs transition-colors cursor-pointer whitespace-nowrap"
                 title="Chọn hạng GPLX"
               >
                 <span>Hạng {currentConfig.id}</span>
                 <ChevronDown
-                  className={`w-3.5 h-3.5 text-slate-500 ml-0.5 transition-transform duration-150 ${
+                  className={`w-3.5 h-3.5 text-slate-500 shrink-0 transition-transform duration-150 ${
                     isCategoryOpen ? 'rotate-180' : ''
                   }`}
                 />

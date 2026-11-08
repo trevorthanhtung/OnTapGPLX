@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, RotateCcw } from 'lucide-react';
 import type { ExamHistoryItem } from '../services/storage';
 import { StorageService } from '../services/storage';
 
@@ -9,22 +9,30 @@ interface StatsViewProps {
   onOpenLanding?: () => void;
 }
 
-export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onOpenLanding }) => {
-  const [examHistory] = useState<ExamHistoryItem[]>(StorageService.getExamHistory());
+export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRefresh, onOpenLanding }) => {
+  const [examHistory, setExamHistory] = useState<ExamHistoryItem[]>(StorageService.getExamHistory());
   const [wrongCount] = useState<number>(StorageService.getWrongQuestions().length);
   const [studiedCount] = useState<number>(StorageService.getStudiedQuestions().length);
   const [showConfirmLanding, setShowConfirmLanding] = useState(false);
+  const [showConfirmClear, setShowConfirmClear] = useState(false);
 
   // Lock body & window scroll when confirmation modal is visible
   useEffect(() => {
-    if (showConfirmLanding) {
+    if (showConfirmLanding || showConfirmClear) {
       document.body.style.overflow = 'hidden';
 
       return () => {
         document.body.style.overflow = '';
       };
     }
-  }, [showConfirmLanding]);
+  }, [showConfirmLanding, showConfirmClear]);
+
+  const handleClearHistory = () => {
+    StorageService.clearExamHistory();
+    setExamHistory([]);
+    setShowConfirmClear(false);
+    onRefresh?.();
+  };
 
   // Pass rate calculation
   const totalExams = examHistory.length;
@@ -269,9 +277,21 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onOp
 
       {/* Recent Exam History Card */}
       <div className="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 lg:p-8 shadow-xs">
-        <h2 className="text-base sm:text-lg font-bold text-slate-900 mb-3 sm:mb-4">
-          Lịch sử thi thử gần nhất
-        </h2>
+        <div className="flex items-center justify-between mb-3 sm:mb-4">
+          <h2 className="text-base sm:text-lg font-bold text-slate-900">
+            Lịch sử thi thử gần nhất
+          </h2>
+          {examHistory.length > 0 && (
+            <button
+              type="button"
+              onClick={() => setShowConfirmClear(true)}
+              className="p-1 text-slate-400 hover:text-slate-700 transition-colors cursor-pointer"
+              title="Làm mới lịch sử thi thử"
+            >
+              <RotateCcw className="w-4 h-4" />
+            </button>
+          )}
+        </div>
 
         {examHistory.length > 0 ? (
           <div className="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
@@ -363,6 +383,39 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onOp
                 className="flex-1 py-2.5 px-4 rounded-xl bg-slate-900 text-white font-semibold text-xs sm:text-sm hover:bg-slate-800 transition-colors shadow-2xs cursor-pointer"
               >
                 Xác nhận
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+      {/* Confirmation Modal to Clear Exam History */}
+      {showConfirmClear && (
+        <div
+          className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 touch-none overscroll-contain select-none animate-in fade-in duration-150"
+        >
+          <div
+            className="bg-white rounded-2xl max-w-sm w-full p-6 sm:p-7 shadow-xl border border-slate-200 text-center animate-in zoom-in-95 duration-150"
+          >
+            <h4 className="text-base sm:text-lg font-bold text-slate-900 mb-2">
+              Làm mới lịch sử thi?
+            </h4>
+            <p className="text-xs sm:text-sm text-slate-500 mb-6 leading-relaxed">
+              Bạn có chắc chắn muốn xóa toàn bộ lịch sử thi thử không? Bảng kết quả sẽ được dọn dẹp sạch sẽ về ban đầu.
+            </p>
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => setShowConfirmClear(false)}
+                className="flex-1 py-2.5 px-4 rounded-xl border border-slate-200 text-slate-700 font-semibold text-xs sm:text-sm hover:bg-slate-100 transition-colors cursor-pointer"
+              >
+                Hủy
+              </button>
+              <button
+                type="button"
+                onClick={handleClearHistory}
+                className="flex-1 py-2.5 px-4 rounded-xl bg-rose-600 text-white font-semibold text-xs sm:text-sm hover:bg-rose-700 transition-colors shadow-2xs cursor-pointer"
+              >
+                Làm mới
               </button>
             </div>
           </div>
