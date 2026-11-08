@@ -650,43 +650,122 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                       </div>
                     </div>
 
-                    {/* Card Center: 3 Official Info Rows */}
-                    <div className="w-full flex-1 flex flex-col justify-center py-1.5 sm:py-2.5 px-0.5 space-y-1.5 sm:space-y-2">
-                      {/* Row 1: License Number (Ẩn ý ngày ra mắt hôm nay: 07/11/2026 - Bản số 0001) */}
-                      <div className="flex items-center justify-between text-[8px] sm:text-[9px] md:text-[10.5px] text-slate-600 pb-1.5 border-b border-rose-200/60 font-medium">
-                        <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold text-slate-700 uppercase tracking-wider shrink-0">
-                          Số:
-                        </span>
-                        <span className="font-mono font-bold text-red-600 tracking-wider text-[9px] sm:text-[10px] md:text-[11px]">
-                          071120260001
-                        </span>
+                    {/* Card Center: Left ID Photo (Hình thẻ nam sidepart 2D) + Right 3 Official Info Rows */}
+                    <div className="w-full flex-1 flex items-center gap-2.5 sm:gap-3.5 md:gap-4 py-1 sm:py-2 px-0.5">
+                      {/* Left: 3x4 Portrait ID Photo Box (Hình thẻ chuẩn GPLX) */}
+                      <div className="w-13 sm:w-16 md:w-20 lg:w-22 shrink-0">
+                        <div className="w-full aspect-[3/4] rounded-md sm:rounded-lg bg-white border border-rose-300/90 p-0.5 sm:p-1 shadow-2xs overflow-hidden flex items-center justify-center">
+                          <svg
+                            viewBox="0 0 120 160"
+                            className="w-full h-full rounded-xs sm:rounded-sm object-cover"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <defs>
+                              <linearGradient id="gplx-photo-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor="#7dd3fc" />
+                                <stop offset="60%" stopColor="#38bdf8" />
+                                <stop offset="100%" stopColor="#0284c7" />
+                              </linearGradient>
+                              <radialGradient id="gplx-halo" cx="50%" cy="45%" r="45%">
+                                <stop offset="0%" stopColor="#ffffff" stopOpacity="0.4" />
+                                <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
+                              </radialGradient>
+                              <linearGradient id="gplx-neck-shadow" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stopColor="#ea580c" stopOpacity="0.25" />
+                                <stop offset="100%" stopColor="#ea580c" stopOpacity="0" />
+                              </linearGradient>
+                            </defs>
+
+                            {/* Phông nền xanh ảnh thẻ chuẩn Việt Nam */}
+                            <rect width="120" height="160" fill="url(#gplx-photo-bg)" />
+                            <circle cx="60" cy="65" r="45" fill="url(#gplx-halo)" />
+
+                            {/* Áo sơ mi trắng có cổ */}
+                            <path d="M 8 160 C 14 132 32 120 46 116 L 46 128 L 60 140 L 74 128 L 74 116 C 88 120 106 132 112 160 Z" fill="#ffffff" />
+                            <polygon points="44,116 60,138 52,138 38,124" fill="#f8fafc" stroke="#cbd5e1" strokeWidth="0.8" />
+                            <polygon points="76,116 60,138 68,138 82,124" fill="#f1f5f9" stroke="#cbd5e1" strokeWidth="0.8" />
+                            <line x1="60" y1="138" x2="60" y2="160" stroke="#e2e8f0" strokeWidth="1.5" />
+                            <circle cx="60" cy="148" r="1.2" fill="#94a3b8" />
+
+                            {/* Cổ */}
+                            <path d="M 48 90 L 48 124 L 72 124 L 72 90 Z" fill="#ffedd5" />
+                            <rect x="48" y="90" width="24" height="12" fill="url(#gplx-neck-shadow)" />
+
+                            {/* Hai tai */}
+                            <ellipse cx="37" cy="74" rx="4.5" ry="7.5" fill="#fecaca" />
+                            <ellipse cx="83" cy="74" rx="4.5" ry="7.5" fill="#fecaca" />
+                            <ellipse cx="37" cy="74" rx="2.5" ry="4.5" fill="#fca5a5" opacity="0.6" />
+                            <ellipse cx="83" cy="74" rx="2.5" ry="4.5" fill="#fca5a5" opacity="0.6" />
+
+                            {/* Khuôn mặt nam tính */}
+                            <path d="M 38 58 C 38 86 47 102 60 102 C 73 102 82 86 82 58 C 82 42 74 38 60 38 C 46 38 38 42 38 58 Z" fill="#fed7aa" />
+
+                            {/* Lông mày nam */}
+                            <path d="M 43 62 Q 50 58 57 61" stroke="#0f172a" strokeWidth="2.6" strokeLinecap="round" fill="none" />
+                            <path d="M 63 61 Q 70 58 77 62" stroke="#0f172a" strokeWidth="2.6" strokeLinecap="round" fill="none" />
+
+                            {/* Mắt nam sáng */}
+                            <ellipse cx="50" cy="68" rx="3.8" ry="2.4" fill="#0f172a" />
+                            <circle cx="49" cy="67" r="1" fill="#ffffff" />
+                            <ellipse cx="70" cy="68" rx="3.8" ry="2.4" fill="#0f172a" />
+                            <circle cx="69" cy="67" r="1" fill="#ffffff" />
+
+                            {/* Sống mũi */}
+                            <path d="M 59 66 L 58.5 78 L 62.5 78" stroke="#f97316" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.8" />
+
+                            {/* Miệng cười nhẹ */}
+                            <path d="M 53 87 Q 60 90.5 67 87" stroke="#dc2626" strokeWidth="1.8" strokeLinecap="round" fill="none" />
+
+                            {/* TÓC SIDEPART DỰNG RỦ 2D (Ngôi 7/3, mái phồng rủ nhẹ qua trán) */}
+                            <path d="M 36 68 L 36 50 C 35 34 46 22 62 21 C 76 21 86 30 85 52 L 85 68 L 81 60 L 81 48 C 80 34 72 26 60 26 C 48 26 40 34 39 48 L 39 60 Z" fill="#0f172a" />
+                            <path d="M 35 52 C 34 32 46 22 63 21 C 78 21 87 29 86 44 C 84 44 79 36 71 34 C 64 33 55 35 48 42 C 43 47 42 54 35 52 Z" fill="#1e293b" />
+                            <path d="M 48 24 Q 54 18 64 19 Q 74 20 78 26 Q 70 23 60 23 Q 52 23 48 24 Z" fill="#334155" />
+                            <path d="M 38 32 Q 44 22 55 21 Q 46 25 41 34 Z" fill="#334155" />
+                            <path d="M 68 34 C 60 35 52 38 47 45 C 44 49 43 56 41 60 C 43 54 48 48 55 44 C 62 40 68 38 72 36 Z" fill="#0f172a" />
+                            <path d="M 56 36 Q 50 42 46 51 Q 48 44 54 40 Z" fill="#334155" />
+                            <path d="M 72 34 C 76 34 82 39 84 46 C 81 44 76 42 72 42 Z" fill="#0f172a" />
+                          </svg>
+                        </div>
                       </div>
 
-                      {/* Row 2: Learner Info Row */}
-                      <div className="flex items-center justify-between text-[8px] sm:text-[9px] md:text-[10.5px] text-slate-600 pb-1.5 border-b border-rose-200/60 font-medium">
-                        <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold text-slate-700 uppercase tracking-wider shrink-0">
-                          Họ và tên:
-                        </span>
-                        <strong className="text-slate-900 font-bold uppercase tracking-tight text-right pl-2">
-                          ONTAP GPLX
-                        </strong>
-                      </div>
+                      {/* Right: 3 Official Info Rows */}
+                      <div className="flex-1 min-w-0 flex flex-col justify-center space-y-1 sm:space-y-1.5 md:space-y-2">
+                        {/* Row 1: License Number (Ẩn ý ngày ra mắt hôm nay: 07/11/2026 - Bản số 0001) */}
+                        <div className="flex items-center justify-between text-[8px] sm:text-[9px] md:text-[10.5px] text-slate-600 pb-1 sm:pb-1.5 border-b border-rose-200/60 font-medium">
+                          <span className="text-[7.5px] sm:text-[8.5px] md:text-[9.5px] font-bold text-slate-700 uppercase tracking-wider shrink-0">
+                            Số:
+                          </span>
+                          <span className="font-mono font-bold text-red-600 tracking-wider text-[8.5px] sm:text-[9.5px] md:text-[11px]">
+                            071120260001
+                          </span>
+                        </div>
 
-                      {/* Row 3: Main Category Row (Không khung card, thuần chữ, ấn là đổi hạng) */}
-                      <div
-                        onClick={handleNextCategory}
-                        className="w-full flex items-center justify-between py-0.5 cursor-pointer select-none group"
-                        title="Chạm để chuyển hạng GPLX"
-                      >
-                        <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold text-slate-700 uppercase tracking-wider shrink-0">
-                          Hạng:
-                        </span>
-                        <div className="text-right pl-2">
-                          <div className="text-xs sm:text-sm md:text-base font-black text-red-700 tracking-tight group-hover:opacity-80 transition-opacity">
-                            {activeCategoryConfig.name}
-                          </div>
-                          <div className="text-[7px] sm:text-[8px] md:text-[9px] text-slate-400 group-hover:text-red-600/70 font-normal transition-colors leading-tight mt-0.5">
-                            Chạm để chọn loại bằng
+                        {/* Row 2: Learner Info Row */}
+                        <div className="flex items-center justify-between text-[8px] sm:text-[9px] md:text-[10.5px] text-slate-600 pb-1 sm:pb-1.5 border-b border-rose-200/60 font-medium">
+                          <span className="text-[7.5px] sm:text-[8.5px] md:text-[9.5px] font-bold text-slate-700 uppercase tracking-wider shrink-0">
+                            Họ và tên:
+                          </span>
+                          <strong className="text-slate-900 font-bold uppercase tracking-tight text-right pl-2 truncate text-[8.5px] sm:text-[9.5px] md:text-[11px]">
+                            ONTAP GPLX
+                          </strong>
+                        </div>
+
+                        {/* Row 3: Main Category Row (Không khung card, thuần chữ, ấn là đổi hạng) */}
+                        <div
+                          onClick={handleNextCategory}
+                          className="w-full flex items-center justify-between py-0.5 cursor-pointer select-none group"
+                          title="Chạm để chuyển hạng GPLX"
+                        >
+                          <span className="text-[7.5px] sm:text-[8.5px] md:text-[9.5px] font-bold text-slate-700 uppercase tracking-wider shrink-0">
+                            Hạng:
+                          </span>
+                          <div className="text-right pl-2">
+                            <div className="text-xs sm:text-sm md:text-base font-black text-red-700 tracking-tight group-hover:opacity-80 transition-opacity">
+                              {activeCategoryConfig.name}
+                            </div>
+                            <div className="text-[7px] sm:text-[8px] md:text-[8.5px] text-slate-400 group-hover:text-red-600/70 font-normal transition-colors leading-tight mt-0.5">
+                              Chạm để chọn loại bằng
+                            </div>
                           </div>
                         </div>
                       </div>
