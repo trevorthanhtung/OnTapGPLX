@@ -317,7 +317,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
           <footer className="w-full shrink-0 py-2 sm:py-3 landscape-mobile:py-1 text-center text-[11px] landscape-mobile:text-[10px] text-slate-400 font-mono">
             thực hiện bởi <span className="font-semibold text-slate-600">thanhtungg.</span>
             <span className="block text-[10px] landscape-mobile:text-[9px] text-slate-400 font-mono mt-0.5">
-              Phiên bản 1.3.2
+              Phiên bản 1.3.3
             </span>
           </footer>
         </div>

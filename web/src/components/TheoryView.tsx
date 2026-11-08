@@ -817,23 +817,35 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
             </div>
 
             {/* Legend */}
-            <div className="mt-auto pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-y-2 text-xs text-slate-500 shrink-0">
-              <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded bg-slate-900"></span> Đã làm
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded bg-white border-2 border-slate-300"></span> Chưa làm
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded bg-amber-400 border border-amber-500"></span> Đã lưu
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded bg-slate-100 border-2 border-slate-900"></span> Đang xem
-              </span>
-              {showCriticalHint && (
-                <span className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-rose-500"></span> Điểm liệt
-                </span>
+            <div className="mt-auto pt-4 border-t border-slate-100 flex items-center justify-center text-xs text-slate-500 shrink-0">
+              {mode === 'exam' ? (
+                <div className="flex flex-wrap items-center justify-between w-full gap-y-2">
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded bg-slate-900"></span> Đã làm
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded bg-white border-2 border-slate-300"></span> Chưa làm
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded bg-amber-400 border border-amber-500"></span> Đã lưu
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded bg-slate-100 border-2 border-slate-900"></span> Đang xem
+                  </span>
+                </div>
+              ) : (
+                <div className="flex items-center justify-center gap-6 w-full">
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded bg-amber-400 border border-amber-500 shadow-2xs"></span>
+                    <span className="font-medium text-slate-700">Đã lưu</span>
+                  </span>
+                  {showCriticalHint && (
+                    <span className="flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-rose-500 shadow-2xs"></span>
+                      <span className="font-medium text-slate-700">Điểm liệt</span>
+                    </span>
+                  )}
+                </div>
               )}
             </div>
 
@@ -1112,19 +1124,36 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
             </div>
 
             {/* Mobile Sheet Legend */}
-            <div className="mt-3 pt-2.5 border-t border-slate-100 flex flex-wrap items-center justify-between gap-y-1.5 text-[11px] text-slate-500 shrink-0">
-              <span className="flex items-center gap-1">
-                <span className="w-2 h-2 rounded bg-slate-900"></span> Đã làm
-              </span>
-              <span className="flex items-center gap-1">
-                <span className="w-2 h-2 rounded bg-white border border-slate-300"></span> Chưa làm
-              </span>
-              <span className="flex items-center gap-1">
-                <span className="w-2 h-2 rounded bg-amber-400 border border-amber-500"></span> Đã lưu
-              </span>
-              <span className="flex items-center gap-1">
-                <span className="w-2 h-2 rounded bg-slate-100 border border-slate-900"></span> Đang xem
-              </span>
+            <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-center text-[11px] text-slate-500 shrink-0">
+              {mode === 'exam' ? (
+                <div className="flex flex-wrap items-center justify-between gap-y-1.5 w-full">
+                  <span className="flex items-center gap-1">
+                    <span className="w-2 h-2 rounded bg-slate-900"></span> Đã làm
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <span className="w-2 h-2 rounded bg-white border border-slate-300"></span> Chưa làm
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <span className="w-2 h-2 rounded bg-amber-400 border border-amber-500"></span> Đã lưu
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <span className="w-2 h-2 rounded bg-slate-100 border border-slate-900"></span> Đang xem
+                  </span>
+                </div>
+              ) : (
+                <div className="flex items-center justify-center gap-6 w-full">
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded bg-amber-400 border border-amber-500 shadow-2xs"></span>
+                    <span className="font-medium text-slate-700">Đã lưu</span>
+                  </span>
+                  {showCriticalHint && (
+                    <span className="flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-rose-500 shadow-2xs"></span>
+                      <span className="font-medium text-slate-700">Điểm liệt</span>
+                    </span>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         </div>
