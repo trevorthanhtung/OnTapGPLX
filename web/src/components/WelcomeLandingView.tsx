@@ -315,7 +315,15 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
 
           {/* Minimalist Landing Footer */}
           <footer className="w-full shrink-0 py-2 sm:py-3 landscape-mobile:py-1 text-center text-[11px] landscape-mobile:text-[10px] text-slate-400 font-mono">
-            thực hiện bởi <span className="font-semibold text-slate-600">thanhtungg.</span>
+            thực hiện bởi{' '}
+            <a
+              href="https://github.com/trevorthanhtung"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-slate-600 hover:text-slate-900 hover:underline transition-colors cursor-pointer"
+            >
+              thanhtungg.
+            </a>
             <span className="block text-[10px] landscape-mobile:text-[9px] text-slate-400 font-mono mt-0.5">
               Phiên bản 2.0.0
             </span>
