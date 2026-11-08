@@ -834,15 +834,15 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
                   </span>
                 </div>
               ) : (
-                <div className="flex items-center justify-center gap-6 w-full">
-                  <span className="flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded bg-amber-400 border border-amber-500 shadow-2xs"></span>
-                    <span className="font-medium text-slate-700">Đã lưu</span>
+                <div className="flex items-center justify-between w-full px-4">
+                  <span className="flex items-center gap-2">
+                    <span className="w-3.5 h-3.5 rounded bg-amber-400 border border-amber-500 shadow-2xs"></span>
+                    <span className="font-semibold text-slate-700">Đã lưu</span>
                   </span>
                   {showCriticalHint && (
-                    <span className="flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-rose-500 shadow-2xs"></span>
-                      <span className="font-medium text-slate-700">Điểm liệt</span>
+                    <span className="flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-rose-500 shadow-2xs"></span>
+                      <span className="font-semibold text-slate-700">Điểm liệt</span>
                     </span>
                   )}
                 </div>
@@ -1141,15 +1141,15 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
                   </span>
                 </div>
               ) : (
-                <div className="flex items-center justify-center gap-6 w-full">
-                  <span className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded bg-amber-400 border border-amber-500 shadow-2xs"></span>
-                    <span className="font-medium text-slate-700">Đã lưu</span>
+                <div className="flex items-center justify-between w-full px-4">
+                  <span className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded bg-amber-400 border border-amber-500 shadow-2xs"></span>
+                    <span className="font-semibold text-slate-700">Đã lưu</span>
                   </span>
                   {showCriticalHint && (
-                    <span className="flex items-center gap-1.5">
+                    <span className="flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-rose-500 shadow-2xs"></span>
-                      <span className="font-medium text-slate-700">Điểm liệt</span>
+                      <span className="font-semibold text-slate-700">Điểm liệt</span>
                     </span>
                   )}
                 </div>

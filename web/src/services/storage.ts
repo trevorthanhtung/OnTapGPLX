@@ -7,7 +7,9 @@ const STORAGE_KEYS = {
   EXAM_HISTORY: 'ontapgplx_exam_history',
   SIMULATION_HISTORY: 'ontapgplx_sim_history',
   STUDIED_QUESTIONS: 'ontapgplx_studied_questions',
-  HAS_ENTERED_APP: 'ontapgplx_has_entered_app'
+  HAS_ENTERED_APP: 'ontapgplx_has_entered_app',
+  HAS_ENTERED_WEB: 'ontapgplx_has_entered_web',
+  HAS_ENTERED_PWA: 'ontapgplx_has_entered_pwa'
 };
 
 export interface ExamHistoryItem {
@@ -136,16 +138,27 @@ export const StorageService = {
     }
   },
 
-  hasEnteredApp(): boolean {
+  hasEnteredApp(isPWA = false): boolean {
     try {
-      return localStorage.getItem(STORAGE_KEYS.HAS_ENTERED_APP) === 'true';
+      if (isPWA) {
+        return localStorage.getItem(STORAGE_KEYS.HAS_ENTERED_PWA) === 'true';
+      }
+      return (
+        localStorage.getItem(STORAGE_KEYS.HAS_ENTERED_WEB) === 'true' ||
+        localStorage.getItem(STORAGE_KEYS.HAS_ENTERED_APP) === 'true'
+      );
     } catch {
       return false;
     }
   },
 
-  setEnteredApp(): void {
+  setEnteredApp(isPWA = false): void {
     try {
+      if (isPWA) {
+        localStorage.setItem(STORAGE_KEYS.HAS_ENTERED_PWA, 'true');
+      } else {
+        localStorage.setItem(STORAGE_KEYS.HAS_ENTERED_WEB, 'true');
+      }
       localStorage.setItem(STORAGE_KEYS.HAS_ENTERED_APP, 'true');
     } catch {
       // ignore
@@ -155,6 +168,8 @@ export const StorageService = {
   resetEnteredApp(): void {
     try {
       localStorage.removeItem(STORAGE_KEYS.HAS_ENTERED_APP);
+      localStorage.removeItem(STORAGE_KEYS.HAS_ENTERED_WEB);
+      localStorage.removeItem(STORAGE_KEYS.HAS_ENTERED_PWA);
     } catch {
       // ignore
     }

@@ -29,7 +29,7 @@ const isMobileOrPWA = (): boolean => {
 
 export function App() {
   const isPWA = isPWAMode();
-  const isFirstVisit = !StorageService.hasEnteredApp();
+  const isFirstVisit = !StorageService.hasEnteredApp(isPWA);
 
   // Onboarding (OB) chỉ xuất hiện lần đầu tiên vào app; các lần sau vào thẳng app
   const [showLanding, setShowLanding] = useState(isFirstVisit);
@@ -89,7 +89,7 @@ export function App() {
   }, [toastMessage]);
 
   const handleStartExperience = () => {
-    StorageService.setEnteredApp();
+    StorageService.setEnteredApp(isPWA);
     setCurrentCategory(StorageService.getCategory());
     setShowLanding(false);
     setShowSplash(true);
