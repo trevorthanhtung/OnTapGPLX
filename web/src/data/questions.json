@@ -6,7 +6,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Phần đường xe chạy là phần của đường bộ được thiết kế để các phương tiện giao thông đường bộ như ô tô, xe máy di chuyển. Đây là khu vực chính để phương tiện di chuyển, không bao gồm lề đường hay phần đường cho người đi bộ.",
+    "tip": "Chỉ tính phần mặt đường cho xe chạy, không bao gồm lề đường hay vỉa hè.",
     "totalOptions": 3
   },
   {
@@ -16,7 +16,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Làn đường là phần của phần đường xe chạy được chia theo chiều dọc, có đủ chiều rộng để đảm bảo phương tiện di chuyển an toàn. Mỗi làn giúp phân luồng giao thông rõ ràng, giảm va chạm và giữ trật tự trên đường.",
+    "tip": "Làn đường bắt buộc phải chia theo chiều dọc và có đủ bề rộng cho xe chạy an toàn.",
     "totalOptions": 3
   },
   {
@@ -26,7 +26,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Khổ giới hạn của đường bộ là khoảng trống có giới hạn về chiều rộng và chiều cao, nhằm đảm bảo các phương tiện, kể cả có hàng hóa chất trên xe, đi qua được an toàn. Khổ này được quy định rõ ràng theo tiêu chuẩn kỹ thuật, giúp ngăn chặn va chạm với cầu, hầm hay vật cản trên đường.",
+    "tip": "Khổ giới hạn là khoảng trống an toàn về cả chiều cao và chiều rộng (tính cả hàng hóa xếp trên xe).",
     "totalOptions": 3
   },
   {
@@ -36,7 +36,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Dải phân cách được lắp đặt nhằm tách biệt hai chiều xe chạy hoặc các loại phương tiện khác nhau trên cùng một chiều đường như xe cơ giới và xe thô sơ.",
+    "tip": "Dải phân cách dùng để chia đôi hai chiều xe chạy riêng biệt hoặc phân tách làn cơ giới với làn thô sơ.",
     "totalOptions": 3
   },
   {
@@ -46,7 +46,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Vạch kẻ đường là gì là vạch chỉ sự phân chia làn đường Vạch kẻ đường giúp xác định ranh giới làn, hướng đi, vị trí dừng xe nhằm đảm bảo trật tự và an toàn khi tham gia giao thông.",
+    "tip": "Vạch kẻ đường dùng để phân chia làn xe, hướng đi và vị trí dừng lại.",
     "totalOptions": 4
   },
   {
@@ -56,7 +56,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Người điều khiển phương tiện tham gia giao thông là người lái xe Bao gồm người điều khiển xe cơ giới, xe thô sơ và xe máy chuyên dùng, họ chịu trách nhiệm vận hành phương tiện đúng quy định, đảm bảo an toàn và tuân thủ luật khi đi lại trên đường.",
+    "tip": "Người điều khiển phương tiện bao gồm cả 3 nhóm: xe cơ giới, xe thô sơ và xe máy chuyên dùng.",
     "totalOptions": 3
   },
   {
@@ -66,7 +66,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Người điều khiển phương tiện có động cơ trên đường là người trực tiếp điều khiển xe cơ giới như ô tô, xe máy tham gia giao thông, không bao gồm người điều khiển xe thô sơ hay xe máy chuyên dùng.",
+    "tip": "Người lái xe là người trực tiếp điều khiển xe cơ giới (ô tô, xe máy).",
     "totalOptions": 3
   },
   {
@@ -76,7 +76,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Phương tiện có động cơ chạy bằng xăng hoặc điện gồm ô tô, mô tô, xe máy và các loại xe tương tự, được dùng để chở người hoặc hàng hóa, khác với xe thô sơ như xe đạp.",
+    "tip": "Xe cơ giới gồm các xe có gắn động cơ (ô tô, xe máy, xe 4 bánh có động cơ). Xe đạp, xích lô là xe thô sơ.",
     "totalOptions": 2
   },
   {
@@ -86,7 +86,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Phương tiện không dùng động cơ, di chuyển bằng sức người ‍ gồm xe đạp, xích lô, xe lăn và các loại xe tương tự, không gây ô nhiễm và thường đi chậm.",
+    "tip": "Xe thô sơ gồm: xe đạp (kể cả xe đạp điện), xích lô, xe lăn người khuyết tật và xe súc vật kéo.",
     "totalOptions": 3
   },
   {
@@ -96,7 +96,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Gồm cả xe có động cơ và không động cơ đi trên đường từ xe đạp, xích lô đến ô tô, xe máy đều thuộc phương tiện giao thông đường bộ theo quy định.",
+    "tip": "Phương tiện giao thông đường bộ bao gồm cả xe cơ giới và xe thô sơ.",
     "totalOptions": 3
   },
   {
@@ -106,7 +106,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Bao gồm người điều khiển, người đi bộ và dắt vật nuôi ‍ tất cả những ai tham gia di chuyển, điều khiển hoặc xuất hiện trên đường đều là người tham gia giao thông.",
+    "tip": "Phương tiện tham gia giao thông gồm: xe cơ giới, xe thô sơ và cả xe máy chuyên dùng.",
     "totalOptions": 3
   },
   {
@@ -116,7 +116,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Là người trực tiếp điều khiển phương tiện có hoặc không động cơ gồm cả xe cơ giới, xe thô sơ và xe máy chuyên dùng khi tham gia giao thông trên đường.",
+    "tip": "Người tham gia giao thông gồm: người điều khiển, người ngồi trên xe, người đi bộ và người dắt súc vật.",
     "totalOptions": 3
   },
   {
@@ -126,7 +126,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Là người có quyền ra hiệu lệnh và điều tiết giao thông gồm Cảnh sát giao thông và người được phân công hướng dẫn đảm bảo trật tự an toàn trên đường.",
+    "tip": "Người điều khiển giao thông gồm: Cảnh sát giao thông và người được giao nhiệm vụ hướng dẫn giao thông.",
     "totalOptions": 3
   },
   {
@@ -136,7 +136,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Là khi xe đứng yên trong thời gian ngắn để lên xuống hàng hoặc người người lái vẫn phải kiểm soát xe, không tắt máy và đảm bảo an toàn đúng quy định.",
+    "tip": "Dừng xe là trạng thái đứng yên tạm thời. Người lái không được tắt máy và không rời vị trí lái.",
     "totalOptions": 3
   },
   {
@@ -146,7 +146,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Là khi xe dừng lại không giới hạn thời gian tại một vị trí ⏹ người lái có thể rời khỏi xe nếu đã đảm bảo an toàn như kéo phanh tay hoặc chèn bánh trên đường dốc.",
+    "tip": "Đỗ xe là trạng thái đứng yên không giới hạn thời gian. Phải kéo phanh tay và chèn bánh nếu đỗ trên dốc.",
     "totalOptions": 2
   },
   {
@@ -156,7 +156,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Là loại đường hiện đại, tách biệt chiều xe chạy, không giao cắt chỉ cho xe ra vào đúng điểm quy định nhằm đảm bảo an toàn và rút ngắn thời gian di chuyển.",
+    "tip": "Đường cao tốc: có dải phân cách chia 2 chiều riêng biệt, không giao cắt cùng mức, chỉ ra vào ở các điểm quy định.",
     "totalOptions": 2
   },
   {
@@ -166,7 +166,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Là ghế hoặc đai chuyên dụng bảo vệ trẻ khi ngồi ô tô giúp giảm chấn thương khi va chạm hoặc phanh gấp bằng cách cố định và hạn chế chuyển động của trẻ.",
+    "tip": "Thiết bị an toàn trẻ em: cố định và hạn chế tối đa sự di chuyển của cơ thể trẻ khi phanh gấp hoặc va chạm.",
     "totalOptions": 2
   },
   {
@@ -176,7 +176,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Được chia theo mục đích sử dụng như đường chính, nhánh, gom mỗi loại phục vụ nhu cầu di chuyển khác nhau từ xe cá nhân, công cộng đến người đi bộ.",
+    "tip": "Phân loại theo chức năng: đường chính, đường nhánh, đường gom, đường nội bộ.",
     "totalOptions": 3
   },
   {
@@ -186,7 +186,7 @@
     "isCritical": true,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Gây nguy hiểm bằng cách rải đinh, dầu hay chất trơn trên đường là hành vi bị cấm vì ảnh hưởng đến an toàn giao thông và có thể gây tai nạn nghiêm trọng.",
+    "tip": "Tuyệt đối nghiêm cấm rải đinh, vật sắc nhọn hoặc đổ chất gây trơn trượt ra đường.",
     "totalOptions": 3
   },
   {
@@ -196,7 +196,7 @@
     "isCritical": true,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Xe không đảm bảo kỹ thuật hoặc quá hạn sử dụng bị cấm vì tiềm ẩn nguy cơ tai nạn cao và gây ô nhiễm môi trường khi tham gia giao thông.",
+    "tip": "Tuyệt đối nghiêm cấm đưa xe không đảm bảo an toàn kỹ thuật hoặc đã hết niên hạn sử dụng vào tham gia giao thông.",
     "totalOptions": 3
   },
   {
@@ -216,7 +216,7 @@
     "isCritical": true,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Đua xe trái phép sẽ bị phạt nặng tùy mức độ vi phạm có thể xử lý hành chính hoặc hình sự nếu gây nguy hiểm cho xã hội và vi phạm pháp luật nghiêm trọng.",
+    "tip": "Đua xe trái phép bị nghiêm cấm, chỉ được tổ chức khi có sự cho phép / cấp phép của cơ quan có thẩm quyền.",
     "totalOptions": 2
   },
   {
@@ -286,7 +286,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Cấm can thiệp trái phép vào thông số kỹ thuật của xe như chỉnh sửa đồng hồ km, số khung, số máy vì ảnh hưởng đến an toàn và gian lận trong quản lý phương tiện.",
+    "tip": "Tuyệt đối cấm can thiệp, thay đổi thông số kỹ thuật, số khung, số máy của xe.",
     "totalOptions": 2
   },
   {
@@ -346,7 +346,7 @@
     "isCritical": true,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Phải giảm tốc độ hoặc dừng lại trong các điều kiện đường nguy hiểm như đường hẹp, đèo dốc, mưa gió, để đảm bảo an toàn cho bản thân và người khác.",
+    "tip": "Phải giảm tốc độ hoặc dừng lại trong các điều kiện đường nguy hiểm như đường hẹp, đèo dốc, mưa gió.",
     "totalOptions": 4
   },
   {
@@ -496,7 +496,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Chỉ dùng còi khi cần cảnh báo nguy hiểm hoặc xin vượt, giúp người khác nhận biết tình huống kịp thời, tránh lạm dụng gây ồn ào ảnh hưởng an toàn giao thông.",
+    "tip": "Chỉ dùng còi khi cần cảnh báo nguy hiểm hoặc xin vượt.",
     "totalOptions": 3
   },
   {
@@ -516,7 +516,7 @@
     "isCritical": true,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Khoản 6 Điều 9 Luật TTATGTĐB: Các hành vi BỊ NGHIÊM CẤM: (6.) Dùng tay cầm và sử dụng điện thoại hoặc thiết bị điện tử khác khi điều khiển phương tiện tham gia giao thông đang di chuyển trên đường bộ. (Hành vi 1 bị cấm) → Đáp án 1 đúng.",
+    "tip": "Khoản 6 Điều 9 Luật TTATGTĐB: Các hành vi BỊ NGHIÊM CẤM: (6) Dùng tay cầm và sử dụng điện thoại hoặc thiết bị điện tử khác khi điều khiển phương tiện tham gia giao thông đang di chuyển trên đường bộ. (Hành vi 1 bị cấm) → Đáp án 1 đúng.",
     "totalOptions": 2
   },
   {
@@ -536,7 +536,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Khoản 4 Điều 15 Luật TTATGTĐB: (4.) KHÔNG ĐƯỢC QUAY ĐẦU XE ở phần đường dành cho người đi bộ qua đường, trên cầu, đầu cầu, gầm cầu vượt, ngầm, tại nơi đường bộ giao nhau cùng mức với đường sắt, đường hẹp, đường dốc, đoạn đường cong tầm nhìn bị che khuất, trên đường cao tốc, trong hầm đường bộ, trên đường một chiều, trừ khi có hiệu lệnh của người điều khiển giao thông hoặc chỉ dẫn của biển báo hiệu tạm thời. Đáp án 3 đúng.",
+    "tip": "Khoản 4 Điều 15 Luật TTATGTĐB: (4) KHÔNG ĐƯỢC QUAY ĐẦU XE ở phần đường dành cho người đi bộ qua đường, trên cầu, đầu cầu, gầm cầu vượt, ngầm, tại nơi đường bộ giao nhau cùng mức với đường sắt, đường hẹp, đường dốc, đoạn đường cong tầm nhìn bị che khuất, trên đường cao tốc, trong hầm đường bộ, trên đường một chiều, trừ khi có hiệu lệnh của người điều khiển giao thông hoặc chỉ dẫn của biển báo hiệu tạm thời. Đáp án 3 đúng.",
     "totalOptions": 3
   },
   {
@@ -1226,7 +1226,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Xe gắn máy từ 16 tuổi;.",
+    "tip": "Xe gắn máy từ 16 tuổi.",
     "totalOptions": 4
   },
   {
@@ -1266,7 +1266,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Hạng B: đến 08 chỗ (không kể lái xe); ô tô tải và chuyên dùng đến 3.500 kg; kéo rơ moóc đến 750 kg;.",
+    "tip": "Hạng B: đến 08 chỗ (không kể lái xe); ô tô tải và chuyên dùng đến 3.500 kg; kéo rơ moóc đến 750 kg.",
     "totalOptions": 3
   },
   {
@@ -1296,7 +1296,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Hạng D1: trên 08 chỗ đến 16 chỗ (không kể lái xe); và lái xe hạng B, C1, C;.",
+    "tip": "Hạng D1: trên 08 chỗ đến 16 chỗ (không kể lái xe); và lái xe hạng B, C1, C.",
     "totalOptions": 3
   },
   {
@@ -1306,7 +1306,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Hạng D2: trên 16 chỗ đến 29 chỗ (không kể lái xe); và lái xe hạng B, C1, C, D1;.",
+    "tip": "Hạng D2: trên 16 chỗ đến 29 chỗ (không kể lái xe); và lái xe hạng B, C1, C, D1.",
     "totalOptions": 3
   },
   {
@@ -1316,7 +1316,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Hạng D: trên 29 chỗ (không kể lái xe); xe giường nằm; và lái xe hạng B, C1, C, D1, D2;.",
+    "tip": "Hạng D: trên 29 chỗ (không kể lái xe); xe giường nằm; và lái xe hạng B, C1, C, D1, D2.",
     "totalOptions": 4
   },
   {
@@ -1336,7 +1336,7 @@
     "isCritical": false,
     "chapter": 1,
     "chapterTitle": "Quy định & Quy tắc giao thông đường bộ",
-    "tip": "Hạng CE: lái xe hạng C kéo rơ moóc trên 750 kg; xe ô tô đầu kéo kéo sơ mi rơ moóc;.",
+    "tip": "Hạng CE: lái xe hạng C kéo rơ moóc trên 750 kg; xe ô tô đầu kéo kéo sơ mi rơ moóc.",
     "totalOptions": 3
   },
   {
@@ -3076,7 +3076,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "Biển 1: DP.133 “Hết cấm vượt”; Biển 2: P.125 “Cấm vượt”; Biển 3: P.126 “Cấm ô tô tải vượt”. Chỉ có biển 2 cấm ô tô con vượt nên là đáp án đúng Biển 1 và biển 3.",
+    "tip": "Biển 1: DP.133 “Hết cấm vượt”; Biển 2: P.125 “Cấm vượt”; Biển 3: P.126 “Cấm ô tô tải vượt”. Chỉ có biển 2 cấm ô tô con vượt. Đáp án đúng là Biển 1 và Biển 3.",
     "totalOptions": 4
   },
   {
@@ -3096,7 +3096,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "Biển 1: DP.133 “Hết cấm vượt”; Biển 2: P.125 “Cấm vượt”; Biển 3: P.126 “Cấm ô tô tải vượt”. Biển 2 áp dụng với xe tải nên đáp án đúng là Biển 2 và Biển 3.",
+    "tip": "Biển 1: DP.133 “Hết cấm vượt”; Biển 2: P.125 “Cấm vượt”; Biển 3: P.126 “Cấm ô tô tải vượt”. Biển 2 áp dụng với xe tải. Đáp án đúng là Biển 2. và Biển 3.",
     "totalOptions": 4
   },
   {
@@ -3126,7 +3126,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "Biển 1: P.123a “Cấm rẽ trái” không cấm quay đầu xe; Biển 2: P.124a “Cấm quay xe” không cấm rẽ trái. Nên Biển 2 là đáp án đúng.",
+    "tip": "Biển 1: P.123a “Cấm rẽ trái” không cấm quay đầu xe; Biển 2: P.124a “Cấm quay xe” không cấm rẽ trái. Đáp án đúng là Biển 2.",
     "totalOptions": 4
   },
   {
@@ -3136,7 +3136,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "Biển 1: P.123a “Cấm rẽ trái” không cấm quay đầu xe; Biển 2: P.124a “Cấm quay xe” không cấm rẽ trái. Nên Biển 1 là đáp án đúng.",
+    "tip": "Biển 1: P.123a “Cấm rẽ trái” không cấm quay đầu xe; Biển 2: P.124a “Cấm quay xe” không cấm rẽ trái. Đáp án đúng là Biển 1.",
     "totalOptions": 3
   },
   {
@@ -3146,7 +3146,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "Biển 1: P.123a “Cấm rẽ trái” không cấm quay đầu xe; Biển 2: P.124a “Cấm quay xe” không cấm rẽ trái. Nên Biển 2 là đáp án đúng.",
+    "tip": "Biển 1: P.123a “Cấm rẽ trái” không cấm quay đầu xe; Biển 2: P.124a “Cấm quay xe” không cấm rẽ trái. Đáp án đúng là Biển 2.",
     "totalOptions": 3
   },
   {
@@ -3186,7 +3186,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "Biển 1: P.124b “Cấm ô tô quay đầu xe” không cấm rẽ trái; Biển 2: P.124e “Cấm ôtô rẽ trái và quay xe”; Biển 3: P.124f “Cấm ô tô rẽ phải và quay xe”. Nên Biển 1 là đáp án đúng.",
+    "tip": "Biển 1: P.124b “Cấm ô tô quay đầu xe” không cấm rẽ trái; Biển 2: P.124e “Cấm ôtô rẽ trái và quay xe”; Biển 3: P.124f “Cấm ô tô rẽ phải và quay xe”. Đáp án đúng là Biển 1.",
     "totalOptions": 4
   },
   {
@@ -3196,7 +3196,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "Biển 1: P.124b “Cấm ô tô quay đầu xe” không cấm rẽ trái; Biển 2: P.124e “Cấm ôtô rẽ trái và quay xe”; Biển 3: P.124f “Cấm ô tô rẽ phải và quay xe”. Nên Biển 2 là đáp án đúng.",
+    "tip": "Biển 1: P.124b “Cấm ô tô quay đầu xe” không cấm rẽ trái; Biển 2: P.124e “Cấm ôtô rẽ trái và quay xe”; Biển 3: P.124f “Cấm ô tô rẽ phải và quay xe”. Đáp án đúng là Biển 2.",
     "totalOptions": 4
   },
   {
@@ -3286,7 +3286,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "Biển 1: P.101 “Đường cấm” không cấm xe ưu tiên; Biển 2: R.122 “Dừng lại” áp dụng với cả xe ưu tiên; Biển 3: P.102 “Cấm đi ngược chiều” không áp dụng với xe ưu tiên; Nên Biển 2 là đáp án đúng, áp dụng với cả xe ưu tiên.",
+    "tip": "Biển 1: P.101 “Đường cấm” không cấm xe ưu tiên; Biển 2: R.122 “Dừng lại” áp dụng với cả xe ưu tiên; Biển 3: P.102 “Cấm đi ngược chiều” không áp dụng với xe ưu tiên; Đáp án đúng là Biển 2, áp dụng với cả xe ưu tiên.",
     "totalOptions": 3
   },
   {
@@ -3296,7 +3296,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "Biển 1: P.101 “Đường cấm” không cấm xe ưu tiên; Biển 2: R.122 “Dừng lại” áp dụng với cả xe ưu tiên; Nên Biển 1 là đáp án đúng.",
+    "tip": "Biển 1: P.101 “Đường cấm” không cấm xe ưu tiên; Biển 2: R.122 “Dừng lại” áp dụng với cả xe ưu tiên; Đáp án đúng là Biển 1.",
     "totalOptions": 3
   },
   {
@@ -3326,7 +3326,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "BIển 1 và 2: P.111 (b,c) “Cấm xe ba bánh loại có động cơ”: Biển 3: P.111d “Cấm xe ba bánh loại không có động cơ”. Nên Biển 3 là đáp án đúng.",
+    "tip": "BIển 1 và 2: P.111 (b,c) “Cấm xe ba bánh loại có động cơ”: Biển 3: P.111d “Cấm xe ba bánh loại không có động cơ”. Đáp án đúng là Biển 3.",
     "totalOptions": 3
   },
   {
@@ -3426,7 +3426,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "Biển 1: P.108 “Cấm ô tô kéo moóc”; Biển 2: P.109 “Cấm máy kéo”; Biển 3: P.106a “Cấm ô tô tải” thì cấm máy kéo. Nên đáp án đúng là Biển 2 và Biển 3.",
+    "tip": "Biển 1: P.108 “Cấm ô tô kéo moóc”; Biển 2: P.109 “Cấm máy kéo”; Biển 3: P.106a “Cấm ô tô tải” thì cấm máy kéo. Đáp án đúng là Biển 2. và Biển 3.",
     "totalOptions": 4
   },
   {
@@ -3836,7 +3836,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "Biển 1: W.203a “Đường bị hẹp cả hai bên”; Biển 2: W203b “Đường bị hẹp về phía trái”; Biển 3: W.201b “Chỗ ngoặt nguy hiểm vòng bên phải”. Nên đáp án đúng là Biển 1 và Biển 2.",
+    "tip": "Biển 1: W.203a “Đường bị hẹp cả hai bên”; Biển 2: W203b “Đường bị hẹp về phía trái”; Biển 3: W.201b “Chỗ ngoặt nguy hiểm vòng bên phải”. Đáp án đúng là Biển 1. và Biển 2.",
     "totalOptions": 4
   },
   {
@@ -3856,7 +3856,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "Biển 1: W.205a “Đường giao nhau” cùng cấp; Biển 2: W.207a “Giao nhau với đường không ưu tiên”; Biển 3: W.208 “Giao nhau với đường ưu tiên”;.",
+    "tip": "Biển 1: W.205a “Đường giao nhau” cùng cấp; Biển 2: W.207a “Giao nhau với đường không ưu tiên”; Biển 3: W.208 “Giao nhau với đường ưu tiên”.",
     "totalOptions": 4
   },
   {
@@ -3866,7 +3866,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "Biển 1: W.205a “Đường giao nhau” cùng cấp; Biển 2: W.207a “Giao nhau với đường không ưu tiên”; Biển 3: W.208 “Giao nhau với đường ưu tiên”;.",
+    "tip": "Biển 1: W.205a “Đường giao nhau” cùng cấp; Biển 2: W.207a “Giao nhau với đường không ưu tiên”; Biển 3: W.208 “Giao nhau với đường ưu tiên”.",
     "totalOptions": 3
   },
   {
@@ -3876,7 +3876,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "Biển 1: W.205a “Đường giao nhau” cùng cấp; Biển 2: W.207a “Giao nhau với đường không ưu tiên”; Biển 3: W.208 “Giao nhau với đường ưu tiên”;.",
+    "tip": "Biển 1: W.205a “Đường giao nhau” cùng cấp; Biển 2: W.207a “Giao nhau với đường không ưu tiên”; Biển 3: W.208 “Giao nhau với đường ưu tiên”.",
     "totalOptions": 3
   },
   {
@@ -3986,7 +3986,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "Biển 1: I.416 “Đường tránh”; Biển 2: I448 “Làn đường cứu nạn hay làn thoát xe khẩn cấp”. Nên Biển 2 là đáp án đúng.",
+    "tip": "Biển 1: I.416 “Đường tránh”; Biển 2: I448 “Làn đường cứu nạn hay làn thoát xe khẩn cấp”. Đáp án đúng là Biển 2.",
     "totalOptions": 3
   },
   {
@@ -3996,7 +3996,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "Biển 1: W.218 “Cửa chui”; Biển 2: W.240 “Đường hầm”; Biển 3: W.237 “Cầu vồng”. Nên biển 2 là đáp án đúng.",
+    "tip": "Biển 1: W.218 “Cửa chui”; Biển 2: W.240 “Đường hầm”; Biển 3: W.237 “Cầu vồng”. Đáp án đúng là Biển 2.",
     "totalOptions": 3
   },
   {
@@ -4326,7 +4326,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "Biển 1: R.301a “Hướng đi phải theo” chỉ được đi thẳng đặt trước ngã ba, ngã tư; Biển 2: I.407a “Đường một chiều” không liên quan hướng đi phải theo. Nên Biển 1 là đáp án đúng.",
+    "tip": "Biển 1: R.301a “Hướng đi phải theo” chỉ được đi thẳng đặt trước ngã ba, ngã tư; Biển 2: I.407a “Đường một chiều” không liên quan hướng đi phải theo. Đáp án đúng là Biển 1.",
     "totalOptions": 2
   },
   {
@@ -4336,7 +4336,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "Biển 1: R.301a “Hướng đi phải theo” chỉ được đi thẳng đặt trước ngã ba, ngã tư; Biển 2: I.407a “Đường một chiều”; Nên Biển 2 là đáp án đúng.",
+    "tip": "Biển 1: R.301a “Hướng đi phải theo” chỉ được đi thẳng đặt trước ngã ba, ngã tư; Biển 2: I.407a “Đường một chiều”; Đáp án đúng là Biển 2.",
     "totalOptions": 3
   },
   {
@@ -4496,7 +4496,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "Biển 1: I424a “Cầu vượt qua đường cho người đi bộ”; Biển 2: I424c “Hầm chui qua đường cho người đi bộ” nên đáp án đúng là biển 1.",
+    "tip": "Biển 1: I424a “Cầu vượt qua đường cho người đi bộ”; Biển 2: I424c “Hầm chui qua đường cho người đi bộ” Đáp án đúng là Biển 1.",
     "totalOptions": 4
   },
   {
@@ -4506,7 +4506,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "Biển 1: I424b “Cầu vượt qua đường cho người đi bộ”; Biển 2: I424d “Hầm chui qua đường cho người đi bộ” nên đáp án đúng là biển 2.",
+    "tip": "Biển 1: I424b “Cầu vượt qua đường cho người đi bộ”; Biển 2: I424d “Hầm chui qua đường cho người đi bộ” Đáp án đúng là Biển 2.",
     "totalOptions": 4
   },
   {
@@ -4566,7 +4566,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "Biển 1: I.447d “Cầu vượt liên thông”; Biển 2: R.308b “Tuyến đường cầu vượt cắt qua”; Biển 3: I.447a “Cầu vượt liên thông”;.",
+    "tip": "Biển 1: I.447d “Cầu vượt liên thông”; Biển 2: R.308b “Tuyến đường cầu vượt cắt qua”; Biển 3: I.447a “Cầu vượt liên thông”.",
     "totalOptions": 4
   },
   {
@@ -4756,7 +4756,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "Vạch 9.3: Vạch mũi tên chỉ hướng trên mặt đường chỉ hướng xe phải đi: Vạch 1 chỉ được rẽ phải; Vạch 2 đi thẳng và rẽ trái; Vạch 3 đi thẳng và rẽ phải;.",
+    "tip": "Vạch 9.3: Vạch mũi tên chỉ hướng trên mặt đường chỉ hướng xe phải đi: Vạch 1 chỉ được rẽ phải; Vạch 2 đi thẳng và rẽ trái; Vạch 3 đi thẳng và rẽ phải.",
     "totalOptions": 4
   },
   {
@@ -4776,7 +4776,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "Vạch 1: Phân chia các làn xe cùng chiều, cho phép lấn làn đè vạch; Vạch 2: Phân chia hai chiều xe chạy ngược chiều; xe không được lấn làn, không được đè lên vạch. Vạch 3: Phân chia các làn xe cùng chiều, không cho phép lấn làn, không cho phép đè vạch;.",
+    "tip": "Vạch 1: Phân chia các làn xe cùng chiều, cho phép lấn làn đè vạch; Vạch 2: Phân chia hai chiều xe chạy ngược chiều; xe không được lấn làn, không được đè lên vạch. Vạch 3: Phân chia các làn xe cùng chiều, không cho phép lấn làn, không cho phép đè vạch.",
     "totalOptions": 4
   },
   {
@@ -4806,7 +4806,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "Vạch 1: Phân chia các làn xe cùng chiều, cho phép lấn làn đè vạch; Vạch 2: Phân chia các làn xe cùng chiều, không cho phép lấn làn, không cho phép đè vạch;.",
+    "tip": "Vạch 1: Phân chia các làn xe cùng chiều, cho phép lấn làn đè vạch; Vạch 2: Phân chia các làn xe cùng chiều, không cho phép lấn làn, không cho phép đè vạch.",
     "totalOptions": 2
   },
   {
@@ -4816,7 +4816,7 @@
     "isCritical": false,
     "chapter": 6,
     "chapterTitle": "Hệ thống biển báo hiệu đường bộ",
-    "tip": "Vạch 1: Phân chia hai chiều xe chạy ngược chiều, cho phép lấn làn, đè vạch ở cả 2 chiều; Vạch 2: Phân chia các làn xe cùng chiều, không cho phép lấn làn, không cho phép đè vạch; Vạch 3: Phân chia các làn xe cùng chiều, cho phép lấn làn đè vạch;.",
+    "tip": "Vạch 1: Phân chia hai chiều xe chạy ngược chiều, cho phép lấn làn, đè vạch ở cả 2 chiều; Vạch 2: Phân chia các làn xe cùng chiều, không cho phép lấn làn, không cho phép đè vạch; Vạch 3: Phân chia các làn xe cùng chiều, cho phép lấn làn đè vạch.",
     "totalOptions": 4
   },
   {
@@ -4866,7 +4866,7 @@
     "isCritical": false,
     "chapter": 7,
     "chapterTitle": "Giải các thế sa hình & Xử lý tình huống",
-    "tip": "Thứ tự ưu tiên: Xe ưu tiên - Đường ưu tiên - Đường cùng cấp theo thứ tự bên phải trống - rẽ phải - đi thẳng - rẽ trái. 1. Xe tải: Đường ưu tiên và đi thẳng; 2. Mô tô: Đường ưu tiên và rẽ trái; 3. Xe khách: Đường không ưu tiên, đi thẳng. 4. Xe con: Đường không ưu tiên, rẽ trái.",
+    "tip": "Thứ tự đi: Xe tải (Đường ưu tiên và đi thẳng) ➔ Mô tô (Đường ưu tiên và rẽ trái) ➔ Xe khách (Đường không ưu tiên, đi thẳng) ➔ Xe con (Đường không ưu tiên, rẽ trái).",
     "totalOptions": 4
   },
   {
@@ -4876,7 +4876,7 @@
     "isCritical": false,
     "chapter": 7,
     "chapterTitle": "Giải các thế sa hình & Xử lý tình huống",
-    "tip": "Thứ tự ưu tiên: Xe ưu tiên - Đường ưu tiên - Đường cùng cấp theo thứ tự bên phải trống - rẽ phải - đi thẳng - rẽ trái. 1. Xe công an: Xe ưu tiên. 2. Xe con: Đường ưu tiên. 3. Xe tải: Đường không ưu tiên, đi thẳng. 4. Xe khách: Đường không ưu tiên, rẽ trái.",
+    "tip": "Thứ tự đi: Xe công an (Xe ưu tiên) ➔ Xe con (Đường ưu tiên) ➔ Xe tải (Đường không ưu tiên, đi thẳng) ➔ Xe khách (Đường không ưu tiên, rẽ trái).",
     "totalOptions": 4
   },
   {
@@ -4886,7 +4886,7 @@
     "isCritical": false,
     "chapter": 7,
     "chapterTitle": "Giải các thế sa hình & Xử lý tình huống",
-    "tip": "Thứ tự ưu tiên: Xe ưu tiên - Đường ưu tiên - Đường cùng cấp theo thứ tự bên phải trống - rẽ phải - đi thẳng - rẽ trái. 1. Xe công an: Xe ưu tiên; 2. Xe tải: Đường ưu tiên; 3. Xe khách: Đường không ưu tiên, bên phải trống; 4. Xe con: Đường không ưu tiên, bên phải vướng xe khách nên phải nhường.",
+    "tip": "Thứ tự đi: Xe công an (Xe ưu tiên) ➔ Xe tải (Đường ưu tiên) ➔ Xe khách (Đường không ưu tiên, bên phải trống) ➔ Xe con (Đường không ưu tiên, bên phải vướng xe khách nên phải nhường).",
     "totalOptions": 4
   },
   {
@@ -4896,7 +4896,7 @@
     "isCritical": false,
     "chapter": 7,
     "chapterTitle": "Giải các thế sa hình & Xử lý tình huống",
-    "tip": "Thứ tự ưu tiên: Xe ưu tiên - Đường ưu tiên - Đường cùng cấp theo thứ tự bên phải trống - rẽ phải - đi thẳng - rẽ trái. 1. Xe mô tô: Bên phải trống; 2. Xe con: Đi thẳng; 3. Xe tải: Rẽ trái;.",
+    "tip": "Thứ tự đi: Xe mô tô (Bên phải trống) ➔ Xe con (Đi thẳng) ➔ Xe tải (Rẽ trái).",
     "totalOptions": 4
   },
   {
@@ -4926,7 +4926,7 @@
     "isCritical": false,
     "chapter": 7,
     "chapterTitle": "Giải các thế sa hình & Xử lý tình huống",
-    "tip": "Thứ tự ưu tiên: Xe vào ngã ba, ngã tư trước - Xe ưu tiên - Đường ưu tiên - Đường cùng cấp theo thứ tự bên phải trống - rẽ phải - đi thẳng - rẽ trái. 1. Xe con (A): Đã vào ngã tư trước; 2. Xe cứu thương: Xe ưu tiên; 3. Xe con (B);.",
+    "tip": "Thứ tự đi: Xe con (A) (Đã vào ngã tư trước ➔ Xe cứu thương (Xe ưu tiên) ➔ Xe con (B).",
     "totalOptions": 3
   },
   {
@@ -4956,7 +4956,7 @@
     "isCritical": false,
     "chapter": 7,
     "chapterTitle": "Giải các thế sa hình & Xử lý tình huống",
-    "tip": "Thứ tự ưu tiên: Xe ưu tiên - Đường ưu tiên - Đường cùng cấp theo thứ tự bên phải trống - rẽ phải - đi thẳng - rẽ trái. 1. Xe con: Đường ưu tiên; 2. Xe tải: Đường không ưu tiên, rẽ phải; 3. Xe khách: Đường không ưu tiên, rẽ trái (Đáp án đúng).",
+    "tip": "Thứ tự đi: Xe con (Đường ưu tiên) ➔ Xe tải (Đường không ưu tiên, rẽ phải) ➔ Xe khách (Đường không ưu tiên, rẽ trái (Đáp án đúng).",
     "totalOptions": 3
   },
   {
@@ -5056,7 +5056,7 @@
     "isCritical": false,
     "chapter": 7,
     "chapterTitle": "Giải các thế sa hình & Xử lý tình huống",
-    "tip": "Thứ tự ưu tiên không vòng xuyến: Xe vào ngã ba, ngã tư trước - Xe ưu tiên - Đường ưu tiên - Đường cùng cấp theo thứ tự bên phải trống - rẽ phải - đi thẳng - rẽ trái. Đáp án đúng là Xe con (B): Đường ưu tiên;.",
+    "tip": "Thứ tự ưu tiên không vòng xuyến: Xe vào ngã ba, ngã tư trước - Xe ưu tiên - Đường ưu tiên - Đường cùng cấp theo thứ tự bên phải trống - rẽ phải - đi thẳng - rẽ trái. Đáp án đúng là Xe con (B): Đường ưu tiên.",
     "totalOptions": 3
   },
   {
@@ -5326,7 +5326,7 @@
     "isCritical": false,
     "chapter": 7,
     "chapterTitle": "Giải các thế sa hình & Xử lý tình huống",
-    "tip": "Thứ tự ưu tiên: Xe ưu tiên - Đường ưu tiên - Bên phải trống - Rẽ phải - Đi thẳng - Rẽ trái. 1. Xe tải: Rẽ phải; 2. Xe khách: Đi thẳng; 3. Xe con: Rẽ trái.",
+    "tip": "Thứ tự đi: Xe tải (Rẽ phải) ➔ Xe khách (Đi thẳng) ➔ Xe con (Rẽ trái).",
     "totalOptions": 3
   },
   {
@@ -5356,7 +5356,7 @@
     "isCritical": false,
     "chapter": 7,
     "chapterTitle": "Giải các thế sa hình & Xử lý tình huống",
-    "tip": "Thứ tự ưu tiên: Xe ưu tiên - Đường ưu tiên - Bên phải trống - Rẽ phải - Đi thẳng - Rẽ trái. 1. Xe công an: Xe ưu tiên; 2. Xe con: Đường ưu tiên, bên phải trống; 3. Xe tải: Đường ưu tiên, bên phải vướng xe con nếu đi trước; 4. Xe khách: Đường không ưu tiên.",
+    "tip": "Thứ tự đi: Xe công an (Xe ưu tiên) ➔ Xe con (Đường ưu tiên, bên phải trống) ➔ Xe tải (Đường ưu tiên, bên phải vướng xe con nếu đi trước) ➔ Xe khách (Đường không ưu tiên).",
     "totalOptions": 4
   },
   {
@@ -5396,7 +5396,7 @@
     "isCritical": false,
     "chapter": 7,
     "chapterTitle": "Giải các thế sa hình & Xử lý tình huống",
-    "tip": "Thứ tự ưu tiên: Xe ưu tiên - Đường ưu tiên - Bên phải trống - Rẽ phải - Đi thẳng - Rẽ trái. 1. Xe quân sự: Xe ưu tiên cùng cấp xe công an nhưng đi thẳng; 2. Xe công an: Xe ưu tiên; rẽ trái; 3. Xe con và xe mô tô: Cùng đi thẳng.",
+    "tip": "Thứ tự đi: Xe quân sự (Xe ưu tiên cùng cấp xe công an nhưng đi thẳng) ➔ Xe công an (Xe ưu tiên; rẽ trái) ➔ Xe con và xe mô tô (Cùng đi thẳng).",
     "totalOptions": 3
   },
   {
@@ -5666,7 +5666,7 @@
     "isCritical": false,
     "chapter": 7,
     "chapterTitle": "Giải các thế sa hình & Xử lý tình huống",
-    "tip": "Thứ tự ưu tiên: Xe ưu tiên - Đường ưu tiên - Bên phải trống - Rẽ phải - Đi thẳng - Rẽ trái. Biển báo phía trước là đường ưu tiên và biển phụ báo hướng di chuyển của xe mô tô là hướng ưu tiên. 1. Xe mô tô: Đường ưu tiên; 2. Xe con: Đường không ưu tiên, bên phải trống; 3. Xe của bạn: Đường không ưu tiên, bên phải vướng xe con.",
+    "tip": "Thứ tự đi: Xe mô tô (Đường ưu tiên) ➔ Xe con (Đường không ưu tiên, bên phải trống) ➔ Xe của bạn (Đường không ưu tiên, bên phải vướng xe con).",
     "totalOptions": 3
   },
   {
@@ -5676,7 +5676,7 @@
     "isCritical": false,
     "chapter": 7,
     "chapterTitle": "Giải các thế sa hình & Xử lý tình huống",
-    "tip": "Thứ tự ưu tiên: Xe ưu tiên - Đường ưu tiên - Đường cùng cấp: Bên phải trống, rẽ phải, đi thẳng, rẽ trái. 1. Xe con: Rẽ phải; 2. Xe của bạn: Đi thẳng; 3. Mô tô: Rẽ trái.",
+    "tip": "Thứ tự đi: Xe con (Rẽ phải) ➔ Xe của bạn (Đi thẳng) ➔ Mô tô (Rẽ trái).",
     "totalOptions": 3
   },
   {
@@ -5826,7 +5826,7 @@
     "isCritical": false,
     "chapter": 7,
     "chapterTitle": "Giải các thế sa hình & Xử lý tình huống",
-    "tip": "Thứ tự ưu tiên: Xe ưu tiên - Đường ưu tiên - Bên phải trống - Rẽ phải - Đi thẳng - Rẽ trái. 1. Xe đạp: Bên phải trống; 2. Xe mô tô: Đi thẳng; 3. Xe của bạn: Rẽ trái.",
+    "tip": "Thứ tự đi: Xe đạp (Bên phải trống) ➔ Xe mô tô (Đi thẳng) ➔ Xe của bạn (Rẽ trái).",
     "totalOptions": 3
   },
   {
@@ -5836,7 +5836,7 @@
     "isCritical": false,
     "chapter": 7,
     "chapterTitle": "Giải các thế sa hình & Xử lý tình huống",
-    "tip": "Thứ tự ưu tiên: Xe ưu tiên - Đường ưu tiên - Bên phải trống - Rẽ phải - Đi thẳng - Rẽ trái. 1. Xe của bạn: Đường ưu tiên; 2. Xe con: Đi không ưu tiên, đi thẳng; 3. Xe tải: Đường không ưu tiên, rẽ trái.",
+    "tip": "Thứ tự đi: Xe của bạn (Đường ưu tiên) ➔ Xe con (Đi không ưu tiên, đi thẳng) ➔ Xe tải (Đường không ưu tiên, rẽ trái).",
     "totalOptions": 4
   },
   {
@@ -5846,7 +5846,7 @@
     "isCritical": false,
     "chapter": 7,
     "chapterTitle": "Giải các thế sa hình & Xử lý tình huống",
-    "tip": "Thứ tự ưu tiên: Xe ưu tiên - Đường ưu tiên - Bên phải trống - Rẽ phải - Đi thẳng - Rẽ trái. 1. Xe con: Đường ưu tiên; 2. Xe của bạn: Đường không ưu tiên nên phải nhường đường.",
+    "tip": "Thứ tự đi: Xe con (Đường ưu tiên) ➔ Xe của bạn (Đường không ưu tiên nên phải nhường đường).",
     "totalOptions": 2
   },
   {
@@ -5886,7 +5886,7 @@
     "isCritical": false,
     "chapter": 7,
     "chapterTitle": "Giải các thế sa hình & Xử lý tình huống",
-    "tip": "Thứ tự ưu tiên: Xe ưu tiên - Đường ưu tiên - Bên phải trống - Rẽ phải - Đi thẳng - Rẽ trái. 1. Xe tải: Bên phải trống; 2. Xe con: Đi thẳng; 3. Xe của bạn: Rẽ trái.",
+    "tip": "Thứ tự đi: Xe tải (Bên phải trống) ➔ Xe con (Đi thẳng) ➔ Xe của bạn (Rẽ trái).",
     "totalOptions": 3
   },
   {
@@ -5906,7 +5906,7 @@
     "isCritical": false,
     "chapter": 7,
     "chapterTitle": "Giải các thế sa hình & Xử lý tình huống",
-    "tip": "Thứ tự ưu tiên: Xe ưu tiên - Đường ưu tiên - Bên phải trống - Rẽ phải - Đi thẳng - Rẽ trái. 1. Xe tải: Đi thẳng; 2. Xe của bạn: Rẽ trái.",
+    "tip": "Thứ tự đi: Xe tải (Đi thẳng) ➔ Xe của bạn (Rẽ trái).",
     "totalOptions": 2
   },
   {
@@ -5926,7 +5926,7 @@
     "isCritical": false,
     "chapter": 7,
     "chapterTitle": "Giải các thế sa hình & Xử lý tình huống",
-    "tip": "Thứ tự ưu tiên: Xe ưu tiên - Đường ưu tiên - Bên phải trống - Rẽ phải - Đi thẳng - Rẽ trái. 1. Xe của bạn: Bên phải trống, đi thẳng; 2. Xe tải: Rẽ trái, bên phải trống (khi xe bạn đã đi rồi); 3. Xe đạp: Rẽ trái.",
+    "tip": "Thứ tự đi: Xe của bạn (Bên phải trống, đi thẳng) ➔ Xe tải (Rẽ trái, bên phải trống (khi xe bạn đã đi rồi) ➔ Xe đạp (Rẽ trái).",
     "totalOptions": 3
   },
   {
