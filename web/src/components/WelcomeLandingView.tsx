@@ -9,8 +9,8 @@ interface WelcomeLandingViewProps {
 }
 
 export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartExperience }) => {
-  // Mode: 'walkthrough' (3 bước onboarding ngay lần đầu) -> 'landing'
-  const [viewMode, setViewMode] = useState<'landing' | 'walkthrough'>('walkthrough');
+  // Mode: 'landing' (Màn chào mừng: Trải nghiệm ngay & Hướng dẫn cài) -> 'walkthrough' (3 bước onboarding)
+  const [viewMode, setViewMode] = useState<'landing' | 'walkthrough'>('landing');
 
   // Walkthrough slide step: 0 (01), 1 (02), 2 (03)
   const [currentStep, setCurrentStep] = useState<number>(0);
