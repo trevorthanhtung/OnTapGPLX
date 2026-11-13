@@ -3,6 +3,7 @@ import { X, Check, ChevronLeft, ChevronRight } from 'lucide-react';
 import { StorageService } from '../services/storage';
 import { LICENSE_CATEGORIES } from '../data/licenseCategories';
 import type { LicenseCategory } from '../types';
+import { ThemeToggle } from './ThemeToggle';
 
 interface WelcomeLandingViewProps {
   onStartExperience: () => void;
@@ -212,7 +213,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
 
   return (
     <div
-      className="fixed inset-0 h-dvh w-full overflow-hidden overscroll-none select-none flex flex-col justify-between pt-[max(0.75rem,env(safe-area-inset-top,0px))] pb-[max(1.25rem,env(safe-area-inset-bottom,0px))] pl-[max(0.75rem,env(safe-area-inset-left,0px))] pr-[max(0.75rem,env(safe-area-inset-right,0px))] bg-slate-50 text-slate-900 relative"
+      className="fixed inset-0 h-dvh w-full overflow-hidden overscroll-none select-none flex flex-col justify-between pt-[max(0.75rem,env(safe-area-inset-top,0px))] pb-[max(1.25rem,env(safe-area-inset-bottom,0px))] pl-[max(0.75rem,env(safe-area-inset-left,0px))] pr-[max(0.75rem,env(safe-area-inset-right,0px))] bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 relative transition-colors duration-200"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
@@ -221,14 +222,19 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
       {/* 1. MÀN MINIMALISM TRẢI NGHIỆM NGAY & HƯỚNG DẪN CÀI (MÀN ĐẦU TIÊN)         */}
       {/* ========================================================================= */}
       {viewMode === 'landing' && (
-        <div className="w-full h-full flex flex-col justify-between animate-in fade-in duration-200">
+        <div className="w-full h-full flex flex-col justify-between animate-in fade-in duration-200 relative">
+          {/* Top-right Dark / Light Mode Toggle */}
+          <div className="absolute top-2 right-2 sm:top-4 sm:right-4 lg:top-5 lg:right-6 z-40">
+            <ThemeToggle />
+          </div>
+
           {/* Top balance spacer */}
           <div aria-hidden="true" className="h-3 sm:h-6 landscape-mobile:h-1 shrink-0" />
 
           {/* Centered Main Container */}
           <main className="w-full max-w-md sm:max-w-lg lg:max-w-xl landscape-mobile:max-w-2xl mx-auto px-5 sm:px-8 landscape-mobile:px-6 my-auto py-4 sm:py-6 landscape-mobile:py-1.5 flex flex-col items-center">
             {/* App Logo */}
-            <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-22 lg:h-22 landscape-mobile:w-11 landscape-mobile:h-11 rounded-2xl landscape-mobile:rounded-xl bg-white border border-slate-200 p-2 landscape-mobile:p-1.5 shadow-xs flex items-center justify-center mb-4 sm:mb-5 landscape-mobile:mb-1.5">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-22 lg:h-22 landscape-mobile:w-11 landscape-mobile:h-11 rounded-2xl landscape-mobile:rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-2 landscape-mobile:p-1.5 shadow-xs flex items-center justify-center mb-4 sm:mb-5 landscape-mobile:mb-1.5">
               <img
                 src="/logo.jpg"
                 alt="OnTap GPLX Logo"
@@ -238,10 +244,10 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
 
             {/* Header Text */}
             <div className="text-center mb-6 sm:mb-8 landscape-mobile:mb-2.5 space-y-1 landscape-mobile:space-y-0.5">
-              <div className="text-2xl sm:text-3xl lg:text-4xl landscape-mobile:text-lg font-black text-slate-900 tracking-tight">
+              <div className="text-2xl sm:text-3xl lg:text-4xl landscape-mobile:text-lg font-black text-slate-900 dark:text-white tracking-tight">
                 OnTap <span className="text-amber-500">GPLX</span>
               </div>
-              <div className="text-xs sm:text-sm landscape-mobile:text-[10px] font-semibold text-slate-500 uppercase tracking-widest">
+              <div className="text-xs sm:text-sm landscape-mobile:text-[10px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest">
                 Ôn thi giấy phép lái xe 2026
               </div>
             </div>
@@ -252,13 +258,13 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
               <button
                 type="button"
                 onClick={handleStartWalkthrough}
-                className="w-full text-left bg-slate-900 hover:bg-slate-800 active:bg-slate-950 text-white rounded-2xl landscape-mobile:rounded-xl p-5 sm:p-6 landscape-mobile:p-3.5 transition-all duration-150 cursor-pointer shadow-xs block"
+                className="w-full text-left bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 dark:hover:bg-slate-700/80 active:bg-slate-950 text-white rounded-2xl landscape-mobile:rounded-xl p-5 sm:p-6 landscape-mobile:p-3.5 border border-transparent dark:border-slate-700 transition-all duration-150 cursor-pointer shadow-xs block"
               >
                 <div className="space-y-1 landscape-mobile:space-y-0.5">
                   <div className="text-base sm:text-lg lg:text-xl landscape-mobile:text-sm font-bold tracking-tight text-white">
                     Trải nghiệm ngay
                   </div>
-                  <p className="text-xs sm:text-sm lg:text-base text-slate-300 leading-snug font-normal">
+                  <p className="text-xs sm:text-sm lg:text-base text-slate-300 dark:text-slate-300 leading-snug font-normal">
                     Ôn tập 600 câu lý thuyết phân hạng và 120 tình huống mô phỏng trắc nghiệm.
                   </p>
                 </div>
@@ -268,13 +274,13 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
               <button
                 type="button"
                 onClick={handleInstallClick}
-                className="w-full text-left bg-white hover:bg-slate-50/90 active:bg-slate-100 text-slate-900 rounded-2xl landscape-mobile:rounded-xl p-5 sm:p-6 landscape-mobile:p-3.5 border border-slate-200 hover:border-slate-300 shadow-xs transition-all duration-150 cursor-pointer block"
+                className="w-full text-left bg-white dark:bg-slate-900 hover:bg-slate-50/90 dark:hover:bg-slate-850 active:bg-slate-100 text-slate-900 dark:text-white rounded-2xl landscape-mobile:rounded-xl p-5 sm:p-6 landscape-mobile:p-3.5 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 shadow-xs transition-all duration-150 cursor-pointer block"
               >
                 <div className="space-y-1 landscape-mobile:space-y-0.5">
-                  <div className="text-base sm:text-lg lg:text-xl landscape-mobile:text-sm font-bold text-slate-900 tracking-tight">
+                  <div className="text-base sm:text-lg lg:text-xl landscape-mobile:text-sm font-bold text-slate-900 dark:text-white tracking-tight">
                     Hướng dẫn cài đặt ứng dụng
                   </div>
-                  <p className="text-xs sm:text-sm lg:text-base text-slate-500 leading-relaxed font-normal">
+                  <p className="text-xs sm:text-sm lg:text-base text-slate-500 dark:text-slate-400 leading-relaxed font-normal">
                     Cài OnTap GPLX vào màn hình chính điện thoại hoặc máy tính để mở nhanh và thuận tiện hơn.
                   </p>
                 </div>
@@ -283,12 +289,12 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
 
             {/* Terms, Privacy & Cookie Agreement Text */}
             <div className="w-full text-center px-1">
-              <p className="text-[11px] sm:text-xs landscape-mobile:text-[10px] text-slate-500 leading-relaxed max-w-sm landscape-mobile:max-w-xl mx-auto font-normal">
+              <p className="text-[11px] sm:text-xs landscape-mobile:text-[10px] text-slate-500 dark:text-slate-400 leading-relaxed max-w-sm landscape-mobile:max-w-xl mx-auto font-normal">
                 Bằng việc tiếp tục, bạn đồng ý với{' '}
                 <button
                   type="button"
                   onClick={() => setPolicyModal('terms')}
-                  className="text-slate-700 underline underline-offset-2 hover:text-slate-900 cursor-pointer font-medium"
+                  className="text-slate-700 dark:text-slate-300 underline underline-offset-2 hover:text-slate-900 dark:hover:text-white cursor-pointer font-medium"
                 >
                   Điều khoản
                 </button>
@@ -296,7 +302,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 <button
                   type="button"
                   onClick={() => setPolicyModal('privacy')}
-                  className="text-slate-700 underline underline-offset-2 hover:text-slate-900 cursor-pointer font-medium"
+                  className="text-slate-700 dark:text-slate-300 underline underline-offset-2 hover:text-slate-900 dark:hover:text-white cursor-pointer font-medium"
                 >
                   Quyền riêng tư
                 </button>{' '}
@@ -304,7 +310,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 <button
                   type="button"
                   onClick={() => setPolicyModal('cookie')}
-                  className="text-slate-700 underline underline-offset-2 hover:text-slate-900 cursor-pointer font-medium"
+                  className="text-slate-700 dark:text-slate-300 underline underline-offset-2 hover:text-slate-900 dark:hover:text-white cursor-pointer font-medium"
                 >
                   Cookie
                 </button>
@@ -314,18 +320,18 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
           </main>
 
           {/* Minimalist Landing Footer */}
-          <footer className="w-full shrink-0 py-2 sm:py-3 landscape-mobile:py-1 text-center text-[11px] landscape-mobile:text-[10px] text-slate-400 font-mono">
+          <footer className="w-full shrink-0 py-2 sm:py-3 landscape-mobile:py-1 text-center text-[11px] landscape-mobile:text-[10px] text-slate-400 dark:text-slate-500 font-mono">
             thực hiện bởi{' '}
             <a
               href="https://github.com/trevorthanhtung"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-slate-600 hover:text-slate-900 hover:underline transition-colors cursor-pointer"
+              className="font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:underline transition-colors cursor-pointer"
             >
               thanhtungg.
             </a>
-            <span className="block text-[10px] landscape-mobile:text-[9px] text-slate-400 font-mono mt-0.5">
-              Phiên bản 2.2.0
+            <span className="block text-[10px] landscape-mobile:text-[9px] text-slate-400 dark:text-slate-500 font-mono mt-0.5">
+              Phiên bản 2.3.0
             </span>
           </footer>
         </div>
@@ -361,12 +367,12 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
             </button>
           )}
 
-          {/* Top Bar: "BỎ QUA" on the right only */}
+          {/* Top Bar: "BỎ QUA" on the right */}
           <header className="w-full max-w-md md:max-w-xl lg:max-w-5xl landscape-mobile:max-w-4xl mx-auto px-5 sm:px-8 lg:px-10 pt-2 sm:pt-4 lg:pt-6 pb-1 sm:pb-2 flex items-center justify-end shrink-0 z-20">
             <button
               type="button"
               onClick={handleSkip}
-              className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-400 hover:text-slate-800 active:text-slate-950 transition-colors cursor-pointer py-1.5 px-3 rounded-lg hover:bg-slate-200/50"
+              className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-400 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white active:text-slate-950 dark:active:text-white transition-colors cursor-pointer py-1.5 px-3 rounded-lg hover:bg-slate-200/50 dark:hover:bg-slate-800"
             >
               BỎ QUA
             </button>
@@ -641,18 +647,18 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                 {currentStep === 2 && (
                   <div className="w-full h-full rounded-2xl lg:rounded-3xl border border-rose-300/80 bg-linear-to-br from-[#ffe4e6] via-[#fff1f2] to-[#fed7aa]/35 p-3 sm:p-3.5 md:p-4 pb-3 sm:pb-3.5 md:pb-4.5 landscape-mobile:p-2 shadow-xl shadow-rose-950/10 flex flex-col justify-between overflow-hidden relative select-none">
                     {/* Official National Header & Red Title (Màu sắc chuẩn phôi GPLX) */}
-                    <div className="text-center pb-1.5 border-b border-rose-200/90 shrink-0">
-                      <div className="font-bold text-[8.5px] sm:text-[9.5px] md:text-[11px] lg:text-[11.5px] text-slate-900 uppercase tracking-tight leading-tight">
+                    <div className="text-center pb-1.5 border-b border-rose-300/80 shrink-0">
+                      <div className="font-black text-[9px] sm:text-[10px] md:text-[11.5px] lg:text-[12px] text-slate-950 uppercase tracking-tight leading-tight">
                         CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
                       </div>
-                      <div className="italic text-[7px] sm:text-[7.5px] md:text-[8.5px] lg:text-[9px] text-slate-600 leading-none mt-0.5 font-medium">
+                      <div className="italic text-[7.5px] sm:text-[8px] md:text-[9px] lg:text-[9.5px] text-slate-800 leading-none mt-0.5 font-semibold">
                         Độc lập - Tự do - Hạnh phúc
                       </div>
-                      <div className="w-12 h-[0.5px] bg-slate-400 mx-auto mt-0.5 mb-1" />
+                      <div className="w-14 h-[1px] bg-slate-600 mx-auto mt-0.5 mb-1" />
 
                       {/* Tiêu đề đỏ chữ đậm chuẩn GPLX thật */}
                       <div className="text-center">
-                        <span className="text-red-600 font-black text-xs sm:text-[13px] md:text-[14.5px] lg:text-[15px] uppercase tracking-wider">
+                        <span className="text-red-600 font-black text-xs sm:text-[13.5px] md:text-[15px] lg:text-[16px] uppercase tracking-wider drop-shadow-[0_1px_1px_rgba(220,38,38,0.15)]">
                           GIẤY PHÉP LÁI XE
                         </span>
                       </div>
@@ -761,21 +767,21 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                       {/* Right: 3 Official Info Rows */}
                       <div className="flex-1 min-w-0 flex flex-col justify-center space-y-1 sm:space-y-1.5 md:space-y-2">
                         {/* Row 1: License Number (Ẩn ý ngày ra mắt hôm nay: 07/11/2026 - Bản số 0001) */}
-                        <div className="flex items-center justify-between text-[8px] sm:text-[9px] md:text-[10.5px] text-slate-600 pb-1 sm:pb-1.5 border-b border-rose-200/60 font-medium">
-                          <span className="text-[7.5px] sm:text-[8.5px] md:text-[9.5px] font-bold text-slate-700 uppercase tracking-wider shrink-0">
-                            Số:
+                        <div className="flex items-center justify-between text-[8px] sm:text-[9px] md:text-[10.5px] pb-1 sm:pb-1.5 border-b border-rose-300/60 font-medium">
+                          <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold text-slate-900 uppercase tracking-wider shrink-0">
+                            Số / No:
                           </span>
-                          <span className="font-mono font-bold text-red-600 tracking-wider text-[8.5px] sm:text-[9.5px] md:text-[11px]">
+                          <span className="font-mono font-black text-red-600 tracking-wider text-[9px] sm:text-[10px] md:text-[11.5px]">
                             071120260001
                           </span>
                         </div>
 
                         {/* Row 2: Learner Info Row */}
-                        <div className="flex items-center justify-between text-[8px] sm:text-[9px] md:text-[10.5px] text-slate-600 pb-1 sm:pb-1.5 border-b border-rose-200/60 font-medium">
-                          <span className="text-[7.5px] sm:text-[8.5px] md:text-[9.5px] font-bold text-slate-700 uppercase tracking-wider shrink-0">
+                        <div className="flex items-center justify-between text-[8px] sm:text-[9px] md:text-[10.5px] pb-1 sm:pb-1.5 border-b border-rose-300/60 font-medium">
+                          <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold text-slate-900 uppercase tracking-wider shrink-0">
                             Họ và tên:
                           </span>
-                          <strong className="text-slate-900 font-bold uppercase tracking-tight text-right pl-2 truncate text-[8.5px] sm:text-[9.5px] md:text-[11px]">
+                          <strong className="text-slate-950 font-black uppercase tracking-tight text-right pl-2 truncate text-[9px] sm:text-[10px] md:text-[11.5px]">
                             ONTAP GPLX
                           </strong>
                         </div>
@@ -786,15 +792,15 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                           className="w-full flex items-center justify-between py-0.5 cursor-pointer select-none group"
                           title="Chạm để chuyển hạng GPLX"
                         >
-                          <span className="text-[7.5px] sm:text-[8.5px] md:text-[9.5px] font-bold text-slate-700 uppercase tracking-wider shrink-0">
-                            Hạng:
+                          <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold text-slate-900 uppercase tracking-wider shrink-0">
+                            Hạng / Class:
                           </span>
                           <div className="text-right pl-2">
-                            <div className="text-xs sm:text-sm md:text-base font-black text-red-700 tracking-tight group-hover:opacity-80 transition-opacity">
+                            <div className="text-xs sm:text-sm md:text-base font-black text-red-600 tracking-tight group-hover:scale-105 transition-transform drop-shadow-[0_1px_1px_rgba(220,38,38,0.2)]">
                               {activeCategoryConfig.name}
                             </div>
-                            <div className="text-[7px] sm:text-[8px] md:text-[8.5px] text-slate-400 group-hover:text-red-600/70 font-normal transition-colors leading-tight mt-0.5">
-                              Chạm để chọn loại bằng
+                            <div className="text-[7.5px] sm:text-[8.5px] md:text-[9px] font-bold text-rose-700/90 group-hover:text-red-700 transition-colors leading-tight mt-0.5">
+                              (Chạm để đổi hạng ↻)
                             </div>
                           </div>
                         </div>
@@ -806,7 +812,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
             </div>
 
             {/* Subtle Divider Line: Visible only on mobile portrait, hidden on tablet, desktop & landscape mobile */}
-            <div className="w-full border-t border-slate-200/80 my-1.5 sm:my-2 landscape-mobile:hidden md:hidden lg:hidden shrink-0" />
+            <div className="w-full border-t border-slate-200/80 dark:border-slate-800 my-1.5 sm:my-2 landscape-mobile:hidden md:hidden lg:hidden shrink-0" />
 
             {/* Right Column (Desktop/Landscape) / Lower Half (Mobile/Tablet Portrait): Step Counter, Title, Description, and Layered CTA Button */}
             <div className="w-full md:max-w-xl lg:max-w-none lg:w-1/2 landscape-mobile:w-[50%] pt-1 md:pt-0 landscape-mobile:pt-0 flex flex-col justify-center shrink-0">
@@ -814,10 +820,10 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
               <div className="flex items-center justify-between mb-2.5 sm:mb-3.5 md:mb-4 lg:mb-4 landscape-mobile:mb-1.5">
                 {/* Step Number (01 / 03) */}
                 <div className="flex items-baseline gap-1.5 font-mono select-none">
-                  <span className="text-2xl sm:text-3xl md:text-4xl landscape-mobile:text-xl font-black text-slate-900 tracking-tight">
+                  <span className="text-2xl sm:text-3xl md:text-4xl landscape-mobile:text-xl font-black text-slate-900 dark:text-white tracking-tight">
                     {currentSlide.step}
                   </span>
-                  <span className="text-xs sm:text-sm md:text-base font-bold text-slate-400">
+                  <span className="text-xs sm:text-sm md:text-base font-bold text-slate-400 dark:text-slate-400">
                     / 03
                   </span>
                 </div>
@@ -841,7 +847,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
                           className={`h-2 md:h-2.5 rounded-full transition-all duration-300 ease-out cursor-pointer ${
                             isCurrent
                               ? 'w-8 sm:w-10 md:w-12 bg-linear-to-r from-amber-500 to-orange-500 shadow-xs shadow-amber-500/40'
-                              : 'w-2 sm:w-2.5 md:w-3 bg-slate-200 hover:bg-slate-300'
+                              : 'w-2 sm:w-2.5 md:w-3 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700'
                           }`}
                         />
                       );
@@ -852,16 +858,16 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
               {/* Heading Title (Crisp Slate with Amber Accent) */}
               <h2
                 key={`title-${currentStep}`}
-                className="text-xl sm:text-2xl md:text-3xl landscape-mobile:text-base font-black text-slate-900 tracking-tight uppercase mb-1.5 sm:mb-2.5 md:mb-3.5 landscape-mobile:mb-1 leading-snug animate-in fade-in duration-200"
+                className="text-xl sm:text-2xl md:text-3xl landscape-mobile:text-base font-black text-slate-900 dark:text-white tracking-tight uppercase mb-1.5 sm:mb-2.5 md:mb-3.5 landscape-mobile:mb-1 leading-snug animate-in fade-in duration-200"
               >
                 <span>{currentSlide.titlePrefix} </span>
-                <span className="text-amber-500">{currentSlide.titleHighlight}</span>
+                <span className="text-amber-500 dark:text-amber-400">{currentSlide.titleHighlight}</span>
               </h2>
 
               {/* Description Body */}
               <p
                 key={`desc-${currentStep}`}
-                className="text-xs sm:text-sm md:text-base landscape-mobile:text-[11px] text-slate-600 leading-relaxed font-normal mb-4 sm:mb-6 md:mb-7 landscape-mobile:mb-2 line-clamp-3 sm:line-clamp-none animate-in fade-in duration-200"
+                className="text-xs sm:text-sm md:text-base landscape-mobile:text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed font-normal mb-4 sm:mb-6 md:mb-7 landscape-mobile:mb-2 line-clamp-3 sm:line-clamp-none animate-in fade-in duration-200"
               >
                 {currentStep === 2
                   ? `Đang chọn ${activeCategoryConfig.name} (${activeCategoryConfig.description}). Đề thi gồm ${activeCategoryConfig.totalQuestions} câu làm trong ${activeCategoryConfig.timeMinutes} phút, đạt từ ${activeCategoryConfig.passScore}/${activeCategoryConfig.totalQuestions} câu trở lên.`

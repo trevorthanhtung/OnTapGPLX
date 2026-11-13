@@ -11,6 +11,7 @@ import { LICENSE_CATEGORIES } from '../data/licenseCategories';
 import { QUESTION_QUICK_TIPS } from '../data/questionQuickTips';
 import { ExamGenerator, questionsData } from '../services/examGenerator';
 import { StorageService, type ExamHistoryItem } from '../services/storage';
+import { I18nService, type AppLanguage } from '../locales/i18n';
 
 interface TheoryViewProps {
   currentCategory: LicenseCategory;
@@ -39,6 +40,26 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
   reviewExam,
   onExitReview
 }) => {
+  const [currentLang, setCurrentLang] = useState<AppLanguage>(I18nService.getLanguage());
+
+  useEffect(() => {
+    const handleLangChange = (e: any) => {
+      setCurrentLang(e.detail || I18nService.getLanguage());
+    };
+    window.addEventListener('ontapgplx:language_change', handleLangChange);
+    return () => window.removeEventListener('ontapgplx:language_change', handleLangChange);
+  }, []);
+
+  const t = (key: string, params?: Record<string, string | number>) => {
+    let str = I18nService.t(key, currentLang);
+    if (params) {
+      Object.entries(params).forEach(([k, v]) => {
+        str = str.replace(new RegExp(`\\{${k}\\}`, 'g'), String(v));
+      });
+    }
+    return str;
+  };
+
   const currentConfig = useMemo(
     () => LICENSE_CATEGORIES.find((c) => c.id === currentCategory) || LICENSE_CATEGORIES[0],
     [currentCategory]
@@ -65,6 +86,9 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
   // Notify parent component when entering/exiting study/exam modes to toggle mobile bottom nav
   useEffect(() => {
     onActiveStateChange?.(mode !== 'hub');
+    return () => {
+      onActiveStateChange?.(false);
+    };
   }, [mode, onActiveStateChange]);
   const [activeQuestions, setActiveQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -111,6 +135,12 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
     setTimeLeftSeconds(0);
     setMode('exam');
   }, [reviewExam]);
+
+  const handleExitReview = useCallback(() => {
+    onActiveStateChange?.(false);
+    setMode('hub');
+    onExitReview?.();
+  }, [onActiveStateChange, onExitReview]);
 
   // Mobile chapter carousel state
   const [currentChapterSlide, setCurrentChapterSlide] = useState(0);
@@ -432,7 +462,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
 
       // 5. Otherwise (practice mode or submitted exam), exit to hub
       if (reviewExam) {
-        onExitReview?.();
+        handleExitReview();
         return;
       }
       setMode('hub');
@@ -442,7 +472,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
     return () => {
       window.removeEventListener('popstate', handlePopState);
     };
-  }, [mode, isSubmitted, showMobileQuestionSheet, showSubmitConfirm, showExitConfirm, reviewExam, onExitReview]);
+  }, [mode, isSubmitted, showMobileQuestionSheet, showSubmitConfirm, showExitConfirm, reviewExam, handleExitReview]);
 
   // ==========================================
   // RENDER: HUB VIEW
@@ -493,34 +523,34 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 relative z-10">
             <div className="max-w-2xl">
               <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-white mb-4 sm:mb-5 leading-snug">
-                Bộ {currentConfig.questionPoolCount || 600} Câu Hỏi Lý Thuyết Sát Hạch Lái Xe
+                {t('theory.bannerTitle', { count: currentConfig.questionPoolCount || 600 })}
               </h1>
 
               <button
                 onClick={startAllQuestions}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 active:scale-98 text-slate-950 font-extrabold text-sm shadow-md transition-all cursor-pointer border border-amber-400/40"
               >
-                <span>Luyện toàn bộ {currentConfig.questionPoolCount || 600} câu</span>
+                <span>{t('theory.practiceAll', { count: currentConfig.questionPoolCount || 600 })}</span>
               </button>
             </div>
 
             {/* Structured 3-column Telemetry / Exam Specs Card */}
             <div className="p-3.5 sm:p-4 rounded-xl bg-slate-900/80 backdrop-blur-md border border-sky-500/20 text-center lg:min-w-[340px] shadow-inner relative overflow-hidden">
               <div className="text-[11px] font-bold text-sky-200/90 uppercase tracking-wider mb-2.5 pb-2 border-b border-slate-700/60 text-center">
-                Tiêu chuẩn đạt sát hạch
+                {t('theory.standards')}
               </div>
               <div className="grid grid-cols-3 gap-2 sm:gap-4">
                 <div className="flex flex-col justify-center">
-                  <span className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold mb-1 whitespace-nowrap">Thời gian</span>
-                  <span className="text-sm sm:text-base font-extrabold text-slate-100 whitespace-nowrap">{currentConfig.timeMinutes} phút</span>
+                  <span className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold mb-1 whitespace-nowrap">{t('theory.time')}</span>
+                  <span className="text-sm sm:text-base font-extrabold text-slate-100 whitespace-nowrap">{currentConfig.timeMinutes} {t('theory.minutes')}</span>
                 </div>
                 <div className="flex flex-col justify-center border-x border-slate-700/60 px-1 sm:px-2">
-                  <span className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold mb-1 whitespace-nowrap">Điểm đạt</span>
+                  <span className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold mb-1 whitespace-nowrap">{t('theory.passScore')}</span>
                   <span className="text-sm sm:text-base font-extrabold text-emerald-400 whitespace-nowrap">{currentConfig.passScore}/{currentConfig.totalQuestions}</span>
                 </div>
                 <div className="flex flex-col justify-center">
-                  <span className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold mb-1 whitespace-nowrap">Điểm liệt</span>
-                  <span className="text-sm sm:text-base font-extrabold text-rose-400 whitespace-nowrap">0 câu sai</span>
+                  <span className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold mb-1 whitespace-nowrap">{t('theory.criticalFail')}</span>
+                  <span className="text-sm sm:text-base font-extrabold text-rose-400 whitespace-nowrap">{t('theory.zeroErrors')}</span>
                 </div>
               </div>
             </div>
@@ -532,10 +562,10 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
           {/* Card 1: Thi Thử */}
           <div
             onClick={startExam}
-            className="group relative bg-white rounded-2xl border border-slate-200/90 p-5 sm:p-6 hover:border-slate-300 hover:shadow-md transition-all cursor-pointer flex flex-col justify-between overflow-hidden isolate"
+            className="group relative bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/90 dark:border-slate-800 p-5 sm:p-6 hover:border-slate-300 dark:hover:border-slate-700 hover:shadow-md transition-all cursor-pointer flex flex-col justify-between overflow-hidden isolate"
           >
             {/* Subtle Watermark Art: Exam Timer & Checklist */}
-            <div className="absolute right-0 top-0 w-32 h-32 opacity-[0.06] group-hover:opacity-[0.11] group-hover:scale-105 transition-all pointer-events-none text-slate-900 overflow-hidden">
+            <div className="absolute right-0 top-0 w-32 h-32 opacity-[0.06] dark:opacity-[0.12] group-hover:opacity-[0.11] dark:group-hover:opacity-[0.18] group-hover:scale-105 transition-all pointer-events-none text-slate-900 dark:text-slate-100 overflow-hidden">
               <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3">
                 <circle cx="50" cy="50" r="40" strokeDasharray="180 80" />
                 <path d="M50 20 V50 L68 50" strokeLinecap="round" />
@@ -544,16 +574,16 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">
-                Thi thử theo đề chuẩn
+              <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                {t('theory.mockExamTitle')}
               </h2>
-              <p className="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6">
-                Tạo đề thi ngẫu nhiên gồm {currentConfig.totalQuestions} câu theo đúng cấu trúc đề sát hạch lái xe hạng {currentConfig.id}.
+              <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                {t('theory.mockExamDesc', { count: currentConfig.totalQuestions, category: currentConfig.id })}
               </p>
             </div>
 
-            <div className="flex items-center text-sm font-semibold text-slate-900 group-hover:text-amber-600 transition-colors pt-3 border-t border-slate-100">
-              <span>Bắt đầu thi thử</span>
+            <div className="flex items-center text-sm font-semibold text-slate-900 dark:text-slate-200 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors pt-3 border-t border-slate-100 dark:border-slate-800">
+              <span>{t('theory.startMockExam')}</span>
               <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
             </div>
           </div>
@@ -561,10 +591,10 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
           {/* Card 2: 60 Câu Điểm Liệt */}
           <div
             onClick={startCriticalPractice}
-            className="group relative bg-white rounded-2xl border border-rose-200/80 p-5 sm:p-6 hover:border-rose-300 hover:shadow-md transition-all cursor-pointer flex flex-col justify-between overflow-hidden isolate"
+            className="group relative bg-white dark:bg-slate-900 rounded-2xl border border-rose-200/80 dark:border-rose-900/40 p-5 sm:p-6 hover:border-rose-300 dark:hover:border-rose-700 hover:shadow-md transition-all cursor-pointer flex flex-col justify-between overflow-hidden isolate"
           >
             {/* Subtle Watermark Art: Caution Triangle Hazard */}
-            <div className="absolute right-0 top-0 w-32 h-32 opacity-[0.08] group-hover:opacity-[0.14] group-hover:scale-105 transition-all pointer-events-none text-rose-600 overflow-hidden">
+            <div className="absolute right-0 top-0 w-32 h-32 opacity-[0.08] dark:opacity-[0.14] group-hover:opacity-[0.14] dark:group-hover:opacity-[0.22] group-hover:scale-105 transition-all pointer-events-none text-rose-600 dark:text-rose-400 overflow-hidden">
               <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4">
                 <path d="M50 14 L90 84 H10 Z" strokeLinejoin="round" />
                 <line x1="50" y1="36" x2="50" y2="60" strokeWidth="6" strokeLinecap="round" />
@@ -573,16 +603,16 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-rose-600 transition-colors">
-                {currentConfig.criticalCount || 60} Câu hỏi điểm liệt
+              <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors">
+                {t('theory.criticalTitle', { count: currentConfig.criticalCount || 60 })}
               </h2>
-              <p className="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6">
-                {currentConfig.criticalCount || 60} câu hỏi về tình huống mất an toàn giao thông nghiêm trọng. Trả lời sai 1 câu hỏi điểm liệt bị tính không đạt ngay lập tức.
+              <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                {t('theory.criticalDesc', { count: currentConfig.criticalCount || 60 })}
               </p>
             </div>
 
-            <div className="flex items-center text-sm font-semibold text-rose-600 group-hover:text-rose-700 transition-colors pt-3 border-t border-rose-50">
-              <span>Luyện {currentConfig.criticalCount || 60} câu điểm liệt</span>
+            <div className="flex items-center text-sm font-semibold text-rose-600 dark:text-rose-400 group-hover:text-rose-700 dark:group-hover:text-rose-300 transition-colors pt-3 border-t border-rose-50 dark:border-rose-900/30">
+              <span>{t('theory.practiceCritical', { count: currentConfig.criticalCount || 60 })}</span>
               <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
             </div>
           </div>
@@ -590,14 +620,14 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
           {/* Card 3: Ôn lại câu sai */}
           <div
             onClick={startWrongPractice}
-            className={`group relative bg-white rounded-2xl border p-5 sm:p-6 transition-all flex flex-col justify-between overflow-hidden isolate ${
+            className={`group relative bg-white dark:bg-slate-900 rounded-2xl border p-5 sm:p-6 transition-all flex flex-col justify-between overflow-hidden isolate ${
               wrongQuestionIds.length > 0
-                ? 'border-amber-200/90 hover:border-amber-300 hover:shadow-md cursor-pointer'
-                : 'border-slate-200 opacity-75 cursor-not-allowed'
+                ? 'border-amber-200/90 dark:border-amber-900/40 hover:border-amber-300 dark:hover:border-amber-700 hover:shadow-md cursor-pointer'
+                : 'border-slate-200 dark:border-slate-800 opacity-75 cursor-not-allowed'
             }`}
           >
             {/* Subtle Watermark Art: Revision Notebook / Checkmark Loop */}
-            <div className="absolute right-0 top-0 w-32 h-32 opacity-[0.08] group-hover:opacity-[0.14] group-hover:scale-105 transition-all pointer-events-none text-amber-600 overflow-hidden">
+            <div className="absolute right-0 top-0 w-32 h-32 opacity-[0.08] dark:opacity-[0.14] group-hover:opacity-[0.14] dark:group-hover:opacity-[0.22] group-hover:scale-105 transition-all pointer-events-none text-amber-600 dark:text-amber-400 overflow-hidden">
               <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3">
                 <rect x="22" y="16" width="56" height="68" rx="8" />
                 <line x1="14" y1="30" x2="22" y2="30" strokeWidth="4" strokeLinecap="round" />
@@ -609,33 +639,33 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">
-                Câu hay làm sai
+              <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                {t('theory.wrongTitle')}
               </h2>
-              <p className="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6">
-                Tự động tổng hợp các câu hỏi bạn từng trả lời sai để rèn luyện và ôn tập lại kỹ càng.
+              <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                {t('theory.wrongDesc')}
               </p>
             </div>
 
-            <div className="flex items-center text-sm font-semibold text-amber-700 group-hover:text-amber-800 transition-colors pt-3 border-t border-amber-50">
-              <span>{wrongQuestionIds.length > 0 ? 'Ôn lại câu sai' : 'Chưa có câu sai nào'}</span>
+            <div className="flex items-center text-sm font-semibold text-amber-700 dark:text-amber-400 group-hover:text-amber-800 dark:group-hover:text-amber-300 transition-colors pt-3 border-t border-amber-50 dark:border-amber-900/30">
+              <span>{wrongQuestionIds.length > 0 ? t('theory.reviewWrong') : t('theory.noWrong')}</span>
               {wrongQuestionIds.length > 0 && <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />}
             </div>
           </div>
         </div>
 
         {/* Section: Ôn tập theo các chương/phần của hạng bằng */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-5 sm:p-8">
+        <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 sm:p-8">
           <div className="flex items-center justify-between mb-4 sm:mb-6">
-            <h2 className="text-lg sm:text-xl font-bold text-slate-900">
-              Ôn luyện lý thuyết theo từng phần
+            <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
+              {t('theory.chaptersTitle')}
             </h2>
           </div>
 
           {/* Mobile Single Card Carousel with swipe */}
           <div className="block md:hidden w-full max-w-full overflow-hidden">
             <div
-              className="relative bg-slate-50 border border-slate-200 rounded-xl p-4 sm:p-5 overflow-hidden w-full max-w-full transition-all select-none cursor-pointer touch-pan-y"
+              className="relative bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 rounded-xl p-4 sm:p-5 overflow-hidden w-full max-w-full transition-all select-none cursor-pointer touch-pan-y"
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
@@ -658,11 +688,11 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
                       className="w-full shrink-0 py-2 cursor-pointer"
                       onClick={() => startChapterPractice(ch.id)}
                     >
-                      <h3 className="font-bold text-slate-900 text-base leading-snug">
+                      <h3 className="font-bold text-slate-900 dark:text-white text-base leading-snug">
                         {ch.title}
                       </h3>
-                      <p className="text-xs text-slate-500 font-medium mt-1">
-                        {ch.count} câu hỏi ({ch.range})
+                      <p className="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1">
+                        {ch.count} {t('theory.questions')} ({ch.range})
                       </p>
                     </div>
                   ))}
@@ -670,14 +700,14 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
               </div>
 
               {/* Navigation Controls & Dot Indicators */}
-              <div className="flex items-center justify-between mt-3 pt-2.5 border-t border-slate-200/60">
+              <div className="flex items-center justify-between mt-3 pt-2.5 border-t border-slate-200/60 dark:border-slate-700/60">
                 <button
                   type="button"
                   onClick={(e) => {
                     e.stopPropagation();
                     setCurrentChapterSlide((prev) => (prev - 1 + availableChapters.length) % availableChapters.length);
                   }}
-                  className="p-1.5 -ml-1 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-200 transition-colors"
+                  className="p-1.5 -ml-1 rounded text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
                   aria-label="Chương trước"
                 >
                   <ChevronLeft className="w-4 h-4" />
@@ -696,7 +726,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
                       className={`h-1.5 rounded-full transition-all ${
                         currentChapterSlide === idx
                           ? 'w-6 bg-amber-500'
-                          : 'w-1.5 bg-slate-300 hover:bg-slate-400'
+                          : 'w-1.5 bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-600'
                       }`}
                       aria-label={`Chuyển đến phần ${ch.id}`}
                     />
@@ -709,7 +739,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
                     e.stopPropagation();
                     setCurrentChapterSlide((prev) => (prev + 1) % availableChapters.length);
                   }}
-                  className="p-1.5 -mr-1 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-200 transition-colors"
+                  className="p-1.5 -mr-1 rounded text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
                   aria-label="Chương tiếp theo"
                 >
                   <ChevronRight className="w-4 h-4" />
@@ -726,14 +756,14 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
                 <div
                   key={ch.id}
                   onClick={() => startChapterPractice(ch.id)}
-                  className={`flex items-center justify-between p-4 rounded-xl border border-slate-100 bg-slate-50 hover:bg-slate-100 hover:border-slate-300 transition-all cursor-pointer ${
+                  className={`flex items-center justify-between p-4 rounded-xl border border-slate-100 dark:border-slate-800/80 bg-slate-50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all cursor-pointer ${
                     isLast ? 'md:col-span-2' : ''
                   }`}
                 >
                   <div>
-                    <h3 className="font-semibold text-slate-900 text-sm">{ch.title}</h3>
-                    <p className="text-xs text-slate-500 mt-0.5">
-                      {ch.count} câu ({ch.range})
+                    <h3 className="font-semibold text-slate-900 dark:text-white text-sm">{ch.title}</h3>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                      {ch.count} {t('theory.questionsShort')} ({ch.range})
                     </p>
                   </div>
                   <ChevronRight className="w-4 h-4 text-slate-400 shrink-0 ml-3" />
@@ -765,7 +795,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
   return (
     <div className="h-full flex flex-col overflow-hidden">
       {/* Top Sticky Unified Header Bar */}
-      <header className="shrink-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-2xs pt-[max(0.75rem,env(safe-area-inset-top,0px))] sm:pt-[env(safe-area-inset-top,0px)] landscape-mobile:pt-[max(0.25rem,env(safe-area-inset-top,0px))] pl-[env(safe-area-inset-left,0px)] pr-[env(safe-area-inset-right,0px)]">
+      <header className="shrink-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-2xs pt-[max(0.75rem,env(safe-area-inset-top,0px))] sm:pt-[env(safe-area-inset-top,0px))] landscape-mobile:pt-[max(0.25rem,env(safe-area-inset-top,0px))] pl-[env(safe-area-inset-left,0px))] pr-[env(safe-area-inset-right,0px))]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 landscape-mobile:px-3">
           <div className="flex items-center justify-between h-14 sm:h-16 landscape-mobile:h-11 gap-3">
             {/* Left: Exit/Back Button & Title */}
@@ -773,20 +803,20 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
               <button
                 onClick={() => {
                   if (reviewExam) {
-                    onExitReview?.();
+                    handleExitReview();
                   } else if (mode === 'exam' && !isSubmitted) {
                     setShowExitConfirm(true);
                   } else {
                     setMode('hub');
                   }
                 }}
-                className="p-2 -ml-2 rounded-xl hover:bg-slate-100 text-slate-600 transition-colors shrink-0 cursor-pointer landscape-mobile:p-1.5"
+                className="p-2 -ml-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition-colors shrink-0 cursor-pointer landscape-mobile:p-1.5"
                 title="Quay lại"
               >
                 <ArrowLeft className="w-5 h-5 landscape-mobile:w-4 landscape-mobile:h-4" />
               </button>
               <div className="flex items-center gap-2 min-w-0">
-                <span className="font-bold text-slate-900 text-base sm:text-lg landscape-mobile:text-sm truncate">
+                <span className="font-bold text-slate-900 dark:text-white text-base sm:text-lg landscape-mobile:text-sm truncate">
                   {reviewExam
                     ? `Xem lại bài thi ${reviewExam.category} (${reviewExam.date})`
                     : mode === 'exam'
@@ -808,8 +838,8 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
                 <div
                   className={`h-9 sm:h-10 px-3 sm:px-3.5 rounded-xl border font-mono font-bold text-sm tracking-wide flex items-center justify-center shrink-0 ${
                     timeLeftSeconds < 180
-                      ? 'bg-rose-50 border-rose-300 text-rose-700 animate-pulse'
-                      : 'bg-slate-100 border-slate-200 text-slate-800'
+                      ? 'bg-rose-50 dark:bg-rose-950/60 border-rose-300 dark:border-rose-800 text-rose-700 dark:text-rose-400 animate-pulse'
+                      : 'bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200'
                   }`}
                 >
                   <span>{formatTime(timeLeftSeconds)}</span>
@@ -819,7 +849,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
               {mode === 'exam' && !isSubmitted && (
                 <button
                   onClick={() => setShowSubmitConfirm(true)}
-                  className="lg:hidden h-9 sm:h-10 px-3.5 sm:px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold shadow-xs transition-colors cursor-pointer flex items-center justify-center shrink-0"
+                  className="lg:hidden h-9 sm:h-10 px-3.5 sm:px-4 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-slate-950 text-xs sm:text-sm font-semibold shadow-xs transition-colors cursor-pointer flex items-center justify-center shrink-0"
                 >
                   Nộp bài
                 </button>
@@ -828,7 +858,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
               {!reviewExam && isSubmitted && (
                 <button
                   onClick={startExam}
-                  className="h-9 sm:h-10 px-3.5 sm:px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold shadow-xs transition-colors cursor-pointer flex items-center justify-center shrink-0"
+                  className="h-9 sm:h-10 px-3.5 sm:px-4 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-slate-950 text-xs sm:text-sm font-semibold shadow-xs transition-colors cursor-pointer flex items-center justify-center shrink-0"
                 >
                   <span className="hidden sm:inline">Thi đề mới</span>
                   <span className="sm:hidden">Đề mới</span>
@@ -840,8 +870,8 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
                 onClick={() => currentQ && toggleBookmark(currentQ.id)}
                 className={`h-9 w-9 sm:h-10 sm:w-10 rounded-xl border transition-all cursor-pointer flex items-center justify-center shrink-0 ${
                   currentQ && bookmarks.includes(currentQ.id)
-                    ? 'bg-amber-50 border-amber-300 text-amber-600 shadow-xs'
-                    : 'border-slate-200 text-slate-500 hover:text-slate-900 hover:bg-slate-50'
+                    ? 'bg-amber-50 dark:bg-amber-950/50 border-amber-300 dark:border-amber-700 text-amber-600 dark:text-amber-400 shadow-xs'
+                    : 'border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800'
                 }`}
                 title={currentQ && bookmarks.includes(currentQ.id) ? 'Bỏ lưu câu hỏi này' : 'Lưu câu hỏi để xem lại'}
               >
@@ -862,18 +892,18 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 flex-1 min-h-0 items-stretch">
         {/* Left Side: Desktop Question Navigator Map */}
         <div className="hidden lg:flex lg:col-span-4 flex-col h-full min-h-0">
-          <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs h-full flex flex-col min-h-0">
+          <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-xs h-full flex flex-col min-h-0">
             <div className="mb-4 shrink-0">
               <div className="flex items-center justify-between mb-2">
-                <span className="font-bold text-slate-900 text-sm">Danh sách câu hỏi</span>
-                <span className="text-xs text-slate-500 font-medium">
-                  {Object.keys(userAnswers).length} / {activeQuestions.length} đã làm
+                <span className="font-bold text-slate-900 dark:text-white text-sm">{t('exam.questionList')}</span>
+                <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                  {t('exam.answeredCount', { answered: Object.keys(userAnswers).length, total: activeQuestions.length })}
                 </span>
               </div>
               {/* Progress bar */}
-              <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
+              <div className="w-full h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-slate-900 transition-all duration-300 rounded-full"
+                  className="h-full bg-slate-900 dark:bg-amber-400 transition-all duration-300 rounded-full"
                   style={{
                     width: `${activeQuestions.length > 0 ? (Object.keys(userAnswers).length / activeQuestions.length) * 100 : 0}%`
                   }}
@@ -890,35 +920,35 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
                 const isWrong = showResultForQ && isSelected && !isCorrect;
                 const isBookmarked = bookmarks.includes(q.id);
 
-                let btnStyle = 'bg-white text-slate-700 border-2 border-slate-200 hover:bg-slate-50 hover:border-slate-300';
+                let btnStyle = 'bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 border-2 border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-600';
 
                 if (showResultForQ) {
                   if (isCorrect) {
                     btnStyle = isCurrent
-                      ? 'bg-emerald-600 text-white border-2 border-slate-900 font-bold'
+                      ? 'bg-emerald-600 text-white border-2 border-slate-900 dark:border-amber-400 font-bold'
                       : 'bg-emerald-600 text-white border-2 border-emerald-700 font-bold';
                   } else if (isWrong) {
                     btnStyle = isCurrent
-                      ? 'bg-rose-600 text-white border-2 border-slate-900 font-bold'
+                      ? 'bg-rose-600 text-white border-2 border-slate-900 dark:border-amber-400 font-bold'
                       : 'bg-rose-600 text-white border-2 border-rose-700 font-bold';
                   } else {
                     btnStyle = isCurrent
-                      ? 'bg-slate-100 text-slate-800 border-2 border-slate-900 font-bold'
-                      : 'bg-slate-100 text-slate-400 border-2 border-slate-200';
+                      ? 'bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border-2 border-slate-900 dark:border-amber-400 font-bold'
+                      : 'bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-500 border-2 border-slate-200 dark:border-slate-700';
                   }
                 } else if (isBookmarked) {
                   // Tô vàng theo yêu cầu của user
                   btnStyle = isCurrent
-                    ? 'bg-amber-400 text-slate-950 border-2 border-slate-900 ring-2 ring-amber-400 font-bold shadow-xs'
+                    ? 'bg-amber-400 text-slate-950 border-2 border-slate-900 dark:border-white ring-2 ring-amber-400 font-bold shadow-xs'
                     : isSelected
-                    ? 'bg-amber-400 text-slate-950 border-2 border-slate-900 font-bold shadow-xs'
+                    ? 'bg-amber-400 text-slate-950 border-2 border-slate-900 dark:border-slate-700 font-bold shadow-xs'
                     : 'bg-amber-400 text-slate-950 border-2 border-amber-500 font-bold shadow-xs';
                 } else if (isSelected) {
                   btnStyle = isCurrent
-                    ? 'bg-slate-900 text-white border-2 border-amber-400 ring-2 ring-slate-900 font-bold shadow-xs'
-                    : 'bg-slate-900 text-white border-2 border-slate-900 font-semibold';
+                    ? 'bg-slate-900 dark:bg-amber-500 text-white dark:text-slate-950 border-2 border-amber-400 ring-2 ring-slate-900 dark:ring-amber-500 font-bold shadow-xs'
+                    : 'bg-slate-900 dark:bg-amber-500 text-white dark:text-slate-950 border-2 border-slate-900 dark:border-amber-500 font-semibold';
                 } else if (isCurrent) {
-                  btnStyle = 'bg-slate-100 text-slate-900 border-2 border-slate-900 font-bold shadow-xs';
+                  btnStyle = 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-900 dark:border-amber-400 font-bold shadow-xs';
                 }
 
                 return (
@@ -937,32 +967,32 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
             </div>
 
             {/* Legend */}
-            <div className="mt-auto pt-4 border-t border-slate-100 flex items-center justify-center text-xs text-slate-500 shrink-0">
+            <div className="mt-auto pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-center text-xs text-slate-500 dark:text-slate-400 shrink-0">
               {mode === 'exam' ? (
                 <div className="flex flex-wrap items-center justify-between w-full gap-y-2">
                   <span className="flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded bg-slate-900"></span> Đã làm
+                    <span className="w-2.5 h-2.5 rounded bg-slate-900 dark:bg-amber-500"></span> {t('exam.done')}
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded bg-white border-2 border-slate-300"></span> Chưa làm
+                    <span className="w-2.5 h-2.5 rounded bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600"></span> {t('exam.notDone')}
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded bg-amber-400 border border-amber-500"></span> Đã lưu
+                    <span className="w-2.5 h-2.5 rounded bg-amber-400 border border-amber-500"></span> {t('exam.saved')}
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded bg-slate-100 border-2 border-slate-900"></span> Đang xem
+                    <span className="w-2.5 h-2.5 rounded bg-slate-100 dark:bg-slate-800 border-2 border-slate-900 dark:border-amber-400"></span> {t('exam.viewing')}
                   </span>
                 </div>
               ) : (
                 <div className="flex items-center justify-between w-full px-4">
                   <span className="flex items-center gap-2">
                     <span className="w-3.5 h-3.5 rounded bg-amber-400 border border-amber-500 shadow-2xs"></span>
-                    <span className="font-semibold text-slate-700">Đã lưu</span>
+                    <span className="font-semibold text-slate-700 dark:text-slate-200">{t('exam.saved')}</span>
                   </span>
                   {showCriticalHint && (
                     <span className="flex items-center gap-2">
                       <span className="w-2.5 h-2.5 rounded-full bg-rose-500 shadow-2xs"></span>
-                      <span className="font-semibold text-slate-700">Điểm liệt</span>
+                      <span className="font-semibold text-slate-700 dark:text-slate-200">{t('exam.critical')}</span>
                     </span>
                   )}
                 </div>
@@ -973,9 +1003,9 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
             {mode === 'exam' && !isSubmitted && (
               <button
                 onClick={() => setShowSubmitConfirm(true)}
-                className="w-full mt-3 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm transition-colors shadow-xs shrink-0 cursor-pointer"
+                className="w-full mt-3 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-slate-950 font-semibold text-sm transition-colors shadow-xs shrink-0 cursor-pointer"
               >
-                Nộp bài thi
+                {t('exam.submit')}
               </button>
             )}
           </div>
@@ -984,31 +1014,31 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
         {/* Right Side: Main Question Card */}
         <div className="lg:col-span-8 flex flex-col h-full min-h-0">
           {currentQ ? (
-            <div className="bg-white rounded-2xl border border-slate-200 p-3 sm:p-6 landscape-mobile:p-2.5 shadow-xs flex flex-col justify-between h-full min-h-0 overflow-y-auto no-scrollbar">
+            <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-3 sm:p-6 landscape-mobile:p-2.5 shadow-xs flex flex-col justify-between h-full min-h-0 overflow-y-auto no-scrollbar">
               <div className="flex flex-col flex-1 min-h-0 justify-between">
                 {/* Question Card Header */}
-                <div className="flex items-center justify-between pb-2 mb-2 sm:mb-3 landscape-mobile:pb-1.5 landscape-mobile:mb-1.5 border-b border-slate-100 shrink-0">
+                <div className="flex items-center justify-between pb-2 mb-2 sm:mb-3 landscape-mobile:pb-1.5 landscape-mobile:mb-1.5 border-b border-slate-100 dark:border-slate-800 shrink-0">
                   <div className="flex items-center gap-2">
-                    <span className="text-xs sm:text-sm font-bold text-slate-900">
-                      Câu hỏi {currentIndex + 1}
+                    <span className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">
+                      {t('exam.questionNumber', { number: currentIndex + 1 })}
                     </span>
-                    <span className="text-xs text-slate-400 font-mono">/ {activeQuestions.length}</span>
+                    <span className="text-xs text-slate-400 dark:text-slate-500 font-mono">/ {activeQuestions.length}</span>
                   </div>
 
                   {/* Right: Plain text "Danh sách" (no card, pure text) */}
                   <button
                     type="button"
                     onClick={() => setShowMobileQuestionSheet(true)}
-                    className="text-xs sm:text-sm font-medium text-slate-500 hover:text-slate-900 active:text-slate-900 cursor-pointer select-none lg:hidden transition-colors py-1 px-1.5 -mr-1.5"
+                    className="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white active:text-slate-900 dark:active:text-white cursor-pointer select-none lg:hidden transition-colors py-1 px-1.5 -mr-1.5"
                   >
-                    Danh sách
+                    {t('exam.list')}
                   </button>
                 </div>
 
                 {/* Card Inner Content: Column in Portrait/Desktop, 2-Col Row in Landscape Mobile */}
                 <div className="flex flex-col landscape-mobile:flex-row landscape-mobile:gap-3 flex-1 min-h-0 justify-between">
                   {/* Left Column in Landscape Mobile / Image Box in Portrait */}
-                  <div className="w-full mb-3 sm:mb-4 landscape-mobile:mb-0 rounded-xl overflow-hidden border border-slate-100 bg-white flex items-center justify-center p-1 sm:p-2.5 landscape-mobile:p-1 flex-1 min-h-0 max-h-[42vh] sm:max-h-none landscape-mobile:max-h-none landscape-mobile:w-[58%]">
+                  <div className="w-full mb-3 sm:mb-4 landscape-mobile:mb-0 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-950 flex items-center justify-center p-1 sm:p-2.5 landscape-mobile:p-1 flex-1 min-h-0 max-h-[42vh] sm:max-h-none landscape-mobile:max-h-none landscape-mobile:w-[58%]">
                     <img
                       src={currentQ.image}
                       alt={`Câu hỏi ${currentIndex + 1}`}
@@ -1022,8 +1052,8 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
                     <div>
                       {/* Dynamic Answer Choices */}
                       <div className="mb-2 sm:mb-4 landscape-mobile:mb-2 shrink-0">
-                        <div className="mb-1.5 landscape-mobile:mb-1 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-500">
-                          Chọn đáp án đúng
+                        <div className="mb-1.5 landscape-mobile:mb-1 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                          {t('exam.selectCorrect')}
                         </div>
                         <div className={`grid ${optionsGridClass} gap-2 sm:gap-3 landscape-mobile:gap-1.5`}>
                           {currentChoices.map((choice) => {
@@ -1032,14 +1062,14 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
                             const hasAnswered = userAnswers[currentQ.id] !== undefined;
                             const showResult = isSubmitted || (mode !== 'exam' && hasAnswered);
 
-                            let btnStyle = 'border-slate-200 bg-slate-50 text-slate-800 hover:bg-slate-100 hover:border-slate-300';
+                            let btnStyle = 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-600';
 
                             if (showResult && isCorrectAnswer) {
-                              btnStyle = 'border-emerald-600 bg-emerald-50 text-emerald-950 font-bold shadow-xs';
+                              btnStyle = 'border-emerald-600 dark:border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-950 dark:text-emerald-300 font-bold shadow-xs';
                             } else if (showResult && isSelected && !isCorrectAnswer) {
-                              btnStyle = 'border-rose-600 bg-rose-50 text-rose-950 font-bold shadow-xs';
+                              btnStyle = 'border-rose-600 dark:border-rose-500 bg-rose-50 dark:bg-rose-950/40 text-rose-950 dark:text-rose-300 font-bold shadow-xs';
                             } else if (isSelected) {
-                              btnStyle = 'border-slate-900 bg-slate-900 text-white font-bold shadow-xs';
+                              btnStyle = 'border-slate-900 dark:border-amber-400 bg-slate-900 dark:bg-amber-500 text-white dark:text-slate-950 font-bold shadow-xs';
                             }
 
                             return (
@@ -1048,7 +1078,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
                                 onClick={() => handleSelectAnswer(choice)}
                                 className={`h-12 sm:h-14 landscape-mobile:h-10 rounded-xl border-2 flex items-center justify-center text-base sm:text-lg landscape-mobile:text-sm font-bold transition-all cursor-pointer active:scale-98 ${btnStyle}`}
                               >
-                                Ý {choice}
+                                {t('exam.choice', { choice })}
                               </button>
                             );
                           })}
@@ -1060,7 +1090,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
                         <div className="p-3 landscape-mobile:p-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 mb-2 shrink-0 animate-in fade-in duration-150 space-y-2">
                           <div>
                             <div className="text-[11px] font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider mb-0.5">
-                              Đáp án đúng: Ý {currentQ.correctAnswer}
+                              {t('exam.correctAnswerIs', { choice: currentQ.correctAnswer })}
                             </div>
                             <p className="text-xs sm:text-sm landscape-mobile:text-xs text-slate-700 dark:text-slate-300 leading-relaxed font-medium">
                               {currentQ.tip}
@@ -1069,7 +1099,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
 
                           {QUESTION_QUICK_TIPS[currentQ.id] && (
                             <div className="pt-2 border-t border-slate-200 dark:border-slate-700/80 text-xs sm:text-sm landscape-mobile:text-xs leading-relaxed">
-                              <span className="font-bold text-amber-600 dark:text-amber-400">Mẹo làm nhanh: </span>
+                              <span className="font-bold text-amber-600 dark:text-amber-400">{t('exam.quickTip')}</span>
                               <span className="text-slate-800 dark:text-slate-200 font-medium">
                                 {QUESTION_QUICK_TIPS[currentQ.id]}
                               </span>
@@ -1083,35 +1113,35 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
               </div>
             </div>
           ) : (
-            <div className="text-center py-12 text-slate-400">Không tìm thấy câu hỏi</div>
+            <div className="text-center py-12 text-slate-400 dark:text-slate-500">Không tìm thấy câu hỏi</div>
           )}
         </div>
       </div>
       </div>
 
       {/* Fixed Bottom Navigation Bar (Unified for Desktop and Mobile) */}
-      <div className="shrink-0 z-30 bg-white/95 backdrop-blur-md border-t border-slate-200 shadow-lg pt-1.5 sm:pt-0 pb-[max(0.75rem,env(safe-area-inset-bottom,0px))] sm:pb-[env(safe-area-inset-bottom,0px)] landscape-mobile:pt-1 landscape-mobile:pb-[max(0.25rem,env(safe-area-inset-bottom,0px))] pl-[env(safe-area-inset-left,0px)] pr-[env(safe-area-inset-right,0px)]">
+      <div className="shrink-0 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 shadow-lg pt-1.5 sm:pt-0 pb-[max(0.75rem,env(safe-area-inset-bottom,0px))] sm:pb-[env(safe-area-inset-bottom,0px)] landscape-mobile:pt-1 landscape-mobile:pb-[max(0.25rem,env(safe-area-inset-bottom,0px))] pl-[env(safe-area-inset-left,0px)] pr-[env(safe-area-inset-right,0px)]">
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <button
             onClick={() => setCurrentIndex((prev) => Math.max(0, prev - 1))}
             disabled={currentIndex === 0}
-            className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50 disabled:opacity-30 disabled:cursor-not-allowed text-sm font-semibold transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 disabled:opacity-30 disabled:cursor-not-allowed text-sm font-semibold transition-colors cursor-pointer"
           >
             <ChevronLeft className="w-4 h-4" />
-            <span>Câu trước</span>
+            <span>{t('exam.prev')}</span>
           </button>
 
-          <div className="text-sm font-bold text-slate-500 font-mono">
+          <div className="text-sm font-bold text-slate-500 dark:text-slate-400 font-mono">
             {currentIndex + 1} / {activeQuestions.length}
           </div>
 
           {currentIndex < activeQuestions.length - 1 ? (
             <button
               onClick={() => setCurrentIndex((prev) => Math.min(activeQuestions.length - 1, prev + 1))}
-              className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold transition-colors shadow-xs cursor-pointer"
+              className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-slate-950 text-sm font-semibold transition-colors shadow-xs cursor-pointer"
             >
-              <span>Câu tiếp theo</span>
+              <span>{t('exam.next')}</span>
               <ChevronRight className="w-4 h-4" />
             </button>
           ) : mode === 'exam' && !isSubmitted ? (
@@ -1119,20 +1149,20 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
               onClick={() => setShowSubmitConfirm(true)}
               className="flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-bold transition-colors shadow-xs cursor-pointer"
             >
-              <span>Nộp bài thi</span>
+              <span>{t('exam.submit')}</span>
             </button>
           ) : (
             <button
               onClick={() => {
                 if (reviewExam) {
-                  onExitReview?.();
+                  handleExitReview();
                 } else {
                   setMode('hub');
                 }
               }}
-              className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold transition-colors shadow-xs cursor-pointer"
+              className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-slate-950 text-sm font-semibold transition-colors shadow-xs cursor-pointer"
             >
-              <span>{reviewExam ? 'Đóng xem lại' : 'Hoàn thành'}</span>
+              <span>{reviewExam ? t('exam.closeReview') : t('exam.finish')}</span>
             </button>
           )}
         </div>
@@ -1142,18 +1172,18 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
           <button
             onClick={() => setCurrentIndex((prev) => Math.max(0, prev - 1))}
             disabled={currentIndex === 0}
-            className="flex-1 flex items-center justify-center gap-2 py-3 landscape-mobile:py-1.5 px-4 rounded-xl border border-slate-200 text-slate-700 font-bold text-sm landscape-mobile:text-xs bg-white hover:bg-slate-50 active:scale-97 disabled:opacity-30 disabled:pointer-events-none transition-all cursor-pointer shadow-2xs"
+            className="flex-1 flex items-center justify-center gap-2 py-3 landscape-mobile:py-1.5 px-4 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-bold text-sm landscape-mobile:text-xs bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 active:scale-97 disabled:opacity-30 disabled:pointer-events-none transition-all cursor-pointer shadow-2xs"
           >
             <ChevronLeft className="w-4 h-4 landscape-mobile:w-3.5 landscape-mobile:h-3.5" />
-            <span>Trước</span>
+            <span>{t('exam.prevShort')}</span>
           </button>
 
           {currentIndex < activeQuestions.length - 1 ? (
             <button
               onClick={() => setCurrentIndex((prev) => Math.min(activeQuestions.length - 1, prev + 1))}
-              className="flex-1 flex items-center justify-center gap-2 py-3 landscape-mobile:py-1.5 px-4 rounded-xl bg-slate-900 text-white font-bold text-sm landscape-mobile:text-xs hover:bg-slate-800 active:scale-97 shadow-xs transition-all cursor-pointer"
+              className="flex-1 flex items-center justify-center gap-2 py-3 landscape-mobile:py-1.5 px-4 rounded-xl bg-slate-900 text-white font-bold text-sm landscape-mobile:text-xs hover:bg-slate-800 dark:bg-amber-500 dark:text-slate-950 dark:hover:bg-amber-400 active:scale-97 shadow-xs transition-all cursor-pointer"
             >
-              <span>Tiếp</span>
+              <span>{t('exam.nextShort')}</span>
               <ChevronRight className="w-4 h-4 landscape-mobile:w-3.5 landscape-mobile:h-3.5" />
             </button>
           ) : mode === 'exam' && !isSubmitted ? (
@@ -1161,20 +1191,20 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
               onClick={() => setShowSubmitConfirm(true)}
               className="flex-1 flex items-center justify-center gap-2 py-3 landscape-mobile:py-1.5 px-4 rounded-xl bg-emerald-600 text-white font-bold text-sm landscape-mobile:text-xs hover:bg-emerald-700 active:scale-97 shadow-xs transition-all cursor-pointer"
             >
-              <span>Nộp bài thi</span>
+              <span>{t('exam.submitShort')}</span>
             </button>
           ) : (
             <button
               onClick={() => {
                 if (reviewExam) {
-                  onExitReview?.();
+                  handleExitReview();
                 } else {
                   setMode('hub');
                 }
               }}
-              className="flex-1 flex items-center justify-center gap-2 py-3 landscape-mobile:py-1.5 px-4 rounded-xl bg-slate-900 text-white font-bold text-sm landscape-mobile:text-xs hover:bg-slate-800 active:scale-97 shadow-xs transition-all cursor-pointer"
+              className="flex-1 flex items-center justify-center gap-2 py-3 landscape-mobile:py-1.5 px-4 rounded-xl bg-slate-900 text-white font-bold text-sm landscape-mobile:text-xs hover:bg-slate-800 dark:bg-amber-500 dark:text-slate-950 dark:hover:bg-amber-400 active:scale-97 shadow-xs transition-all cursor-pointer"
             >
-              <span>{reviewExam ? 'Đóng xem lại' : 'Hoàn thành'}</span>
+              <span>{reviewExam ? t('exam.closeReview') : t('exam.finish')}</span>
             </button>
           )}
         </div>
@@ -1184,19 +1214,19 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
       {showMobileQuestionSheet && (
         <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4 animate-in fade-in duration-150">
           <div
-            className="bg-white rounded-t-3xl sm:rounded-2xl max-w-md landscape-mobile:max-w-xl w-full max-h-[82vh] landscape-mobile:max-h-[92vh] flex flex-col p-5 pb-[max(1.5rem,env(safe-area-inset-bottom,0px))] landscape-mobile:p-3 shadow-2xl border border-slate-200 animate-in slide-in-from-bottom duration-200 overscroll-contain"
+            className="bg-white dark:bg-slate-900 rounded-t-3xl sm:rounded-2xl max-w-md landscape-mobile:max-w-xl w-full max-h-[82vh] landscape-mobile:max-h-[92vh] flex flex-col p-5 pb-[max(1.5rem,env(safe-area-inset-bottom,0px))] landscape-mobile:p-3 shadow-2xl border border-slate-200 dark:border-slate-800 animate-in slide-in-from-bottom duration-200 overscroll-contain"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between pb-3 landscape-mobile:pb-2 mb-3 landscape-mobile:mb-2 border-b border-slate-100 shrink-0">
+            <div className="flex items-center justify-between pb-3 landscape-mobile:pb-2 mb-3 landscape-mobile:mb-2 border-b border-slate-100 dark:border-slate-800 shrink-0">
               <div>
-                <h4 className="font-bold text-slate-900 text-base landscape-mobile:text-sm">Danh sách câu hỏi</h4>
-                <p className="text-xs landscape-mobile:text-[11px] text-slate-500 font-medium">
-                  Đã trả lời {Object.keys(userAnswers).length} / {activeQuestions.length} câu
+                <h4 className="font-bold text-slate-900 dark:text-white text-base landscape-mobile:text-sm">{t('exam.questionList')}</h4>
+                <p className="text-xs landscape-mobile:text-[11px] text-slate-500 dark:text-slate-400 font-medium">
+                  {t('exam.answeredCountShort', { answered: Object.keys(userAnswers).length, total: activeQuestions.length })}
                 </p>
               </div>
               <button
                 onClick={() => setShowMobileQuestionSheet(false)}
-                className="p-2 -mr-2 rounded-xl hover:bg-slate-100 text-slate-500 cursor-pointer"
+                className="p-2 -mr-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-400 cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -1214,35 +1244,35 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
                 const isWrong = showResultForQ && isSelected && !isCorrect;
                 const isBookmarked = bookmarks.includes(q.id);
 
-                let btnStyle = 'bg-white text-slate-700 border-2 border-slate-200 hover:bg-slate-50';
+                let btnStyle = 'bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 border-2 border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700';
 
                 if (showResultForQ) {
                   if (isCorrect) {
                     btnStyle = isCurrent
-                      ? 'bg-emerald-600 text-white border-2 border-slate-900 font-bold'
+                      ? 'bg-emerald-600 text-white border-2 border-slate-900 dark:border-amber-400 font-bold'
                       : 'bg-emerald-600 text-white border-2 border-emerald-600 font-bold';
                   } else if (isWrong) {
                     btnStyle = isCurrent
-                      ? 'bg-rose-600 text-white border-2 border-slate-900 font-bold'
+                      ? 'bg-rose-600 text-white border-2 border-slate-900 dark:border-amber-400 font-bold'
                       : 'bg-rose-600 text-white border-2 border-rose-600 font-bold';
                   } else {
                     btnStyle = isCurrent
-                      ? 'bg-slate-100 text-slate-800 border-2 border-slate-900 font-bold'
-                      : 'bg-slate-100 text-slate-400 border-2 border-slate-200';
+                      ? 'bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border-2 border-slate-900 dark:border-amber-400 font-bold'
+                      : 'bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-500 border-2 border-slate-200 dark:border-slate-700';
                   }
                 } else if (isBookmarked) {
                   // Tô vàng theo yêu cầu của user
                   btnStyle = isCurrent
-                    ? 'bg-amber-400 text-slate-950 border-2 border-slate-900 ring-2 ring-amber-400 font-bold shadow-xs'
+                    ? 'bg-amber-400 text-slate-950 border-2 border-slate-900 dark:border-white ring-2 ring-amber-400 font-bold shadow-xs'
                     : isSelected
-                    ? 'bg-amber-400 text-slate-950 border-2 border-slate-900 font-bold shadow-xs'
+                    ? 'bg-amber-400 text-slate-950 border-2 border-slate-900 dark:border-slate-700 font-bold shadow-xs'
                     : 'bg-amber-400 text-slate-950 border-2 border-amber-500 font-bold shadow-xs';
                 } else if (isSelected) {
                   btnStyle = isCurrent
-                    ? 'bg-slate-900 text-white border-2 border-amber-400 font-bold shadow-xs'
-                    : 'bg-slate-900 text-white border-2 border-slate-900 font-semibold';
+                    ? 'bg-slate-900 dark:bg-amber-500 text-white dark:text-slate-950 border-2 border-amber-400 font-bold shadow-xs'
+                    : 'bg-slate-900 dark:bg-amber-500 text-white dark:text-slate-950 border-2 border-slate-900 dark:border-amber-500 font-semibold';
                 } else if (isCurrent) {
-                  btnStyle = 'bg-slate-100 text-slate-900 border-2 border-slate-900 font-bold';
+                  btnStyle = 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-900 dark:border-amber-400 font-bold';
                 }
 
                 return (
@@ -1267,32 +1297,32 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
             </div>
 
             {/* Mobile Sheet Legend */}
-            <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-center text-[11px] text-slate-500 shrink-0">
+            <div className="mt-3 pt-2.5 border-t border-slate-100 dark:border-slate-800 flex items-center justify-center text-[11px] text-slate-500 dark:text-slate-400 shrink-0">
               {mode === 'exam' ? (
                 <div className="flex flex-wrap items-center justify-between gap-y-1.5 w-full">
                   <span className="flex items-center gap-1">
-                    <span className="w-2 h-2 rounded bg-slate-900"></span> Đã làm
+                    <span className="w-2 h-2 rounded bg-slate-900 dark:bg-amber-500"></span> {t('exam.done')}
                   </span>
                   <span className="flex items-center gap-1">
-                    <span className="w-2 h-2 rounded bg-white border border-slate-300"></span> Chưa làm
+                    <span className="w-2 h-2 rounded bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600"></span> {t('exam.notDone')}
                   </span>
                   <span className="flex items-center gap-1">
-                    <span className="w-2 h-2 rounded bg-amber-400 border border-amber-500"></span> Đã lưu
+                    <span className="w-2 h-2 rounded bg-amber-400 border border-amber-500"></span> {t('exam.saved')}
                   </span>
                   <span className="flex items-center gap-1">
-                    <span className="w-2 h-2 rounded bg-slate-100 border border-slate-900"></span> Đang xem
+                    <span className="w-2 h-2 rounded bg-slate-100 dark:bg-slate-800 border border-slate-900 dark:border-amber-400"></span> {t('exam.viewing')}
                   </span>
                 </div>
               ) : (
                 <div className="flex items-center justify-between w-full px-4">
                   <span className="flex items-center gap-2">
                     <span className="w-2.5 h-2.5 rounded bg-amber-400 border border-amber-500 shadow-2xs"></span>
-                    <span className="font-semibold text-slate-700">Đã lưu</span>
+                    <span className="font-semibold text-slate-700 dark:text-slate-200">{t('exam.saved')}</span>
                   </span>
                   {showCriticalHint && (
                     <span className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-rose-500 shadow-2xs"></span>
-                      <span className="font-semibold text-slate-700">Điểm liệt</span>
+                      <span className="w-2.5 h-2.5 rounded-full bg-rose-500 shadow-2xs"></span>
+                      <span className="font-semibold text-slate-700 dark:text-slate-200">{t('exam.critical')}</span>
                     </span>
                   )}
                 </div>
@@ -1306,33 +1336,33 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
       {isSubmitted && examStats && showResultModal && (
         <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in duration-150">
           <div
-            className="bg-white rounded-2xl max-w-sm w-full p-6 sm:p-7 shadow-xl border border-slate-200 text-center animate-in zoom-in-95 duration-150"
+            className="bg-white dark:bg-slate-900 rounded-2xl max-w-sm w-full p-6 sm:p-7 shadow-xl border border-slate-200 dark:border-slate-800 text-center animate-in zoom-in-95 duration-150"
             onClick={(e) => e.stopPropagation()}
           >
             <h3
               className={`text-2xl font-extrabold mb-1 tracking-tight ${
-                examStats.isPassed ? 'text-emerald-600' : 'text-rose-600'
+                examStats.isPassed ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'
               }`}
             >
-              {examStats.isPassed ? 'KẾT QUẢ: ĐẠT' : 'KẾT QUẢ: KHÔNG ĐẠT'}
+              {examStats.isPassed ? t('exam.resultPassed') : t('exam.resultFailed')}
             </h3>
 
-            <div className="text-4xl font-extrabold text-slate-900 my-4 font-mono">
+            <div className="text-4xl font-extrabold text-slate-900 dark:text-white my-4 font-mono">
               {examStats.correct} / {examStats.total}
             </div>
 
             <div className="flex flex-col gap-2.5 mt-6">
               <button
                 onClick={() => setShowResultModal(false)}
-                className="w-full py-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors cursor-pointer"
+                className="w-full py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold text-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer"
               >
-                Xem lại bài thi vừa làm
+                {t('exam.reviewRecent')}
               </button>
               <button
                 onClick={startExam}
-                className="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm transition-colors shadow-xs cursor-pointer"
+                className="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-slate-950 font-semibold text-sm transition-colors shadow-xs cursor-pointer"
               >
-                Làm đề thi khác
+                {t('exam.tryAnother')}
               </button>
             </div>
           </div>
@@ -1343,30 +1373,30 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
       {showSubmitConfirm && (
         <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in duration-150">
           <div
-            className="bg-white rounded-2xl max-w-sm w-full p-6 shadow-xl border border-slate-200 text-center animate-in zoom-in-95 duration-150"
+            className="bg-white dark:bg-slate-900 rounded-2xl max-w-sm w-full p-6 shadow-xl border border-slate-200 dark:border-slate-800 text-center animate-in zoom-in-95 duration-150"
             onClick={(e) => e.stopPropagation()}
           >
-            <h4 className="text-lg font-bold text-slate-900 mb-2">
-              Bạn có chắc chắn muốn nộp bài?
+            <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
+              {t('exam.submitTitle')}
             </h4>
-            <p className="text-sm text-slate-600 mb-6 leading-relaxed">
-              Bạn đã hoàn thành <span className="font-bold text-slate-900">{Object.keys(userAnswers).length}/{activeQuestions.length}</span> câu hỏi.
+            <p className="text-sm text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+              {t('exam.submitDesc', { answered: Object.keys(userAnswers).length, total: activeQuestions.length })}
             </p>
             <div className="flex gap-2.5">
               <button
                 onClick={() => setShowSubmitConfirm(false)}
-                className="flex-1 py-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors cursor-pointer"
+                className="flex-1 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold text-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer"
               >
-                Tiếp tục làm
+                {t('exam.continueTest')}
               </button>
               <button
                 onClick={() => {
                   setShowSubmitConfirm(false);
                   handleSubmitExam();
                 }}
-                className="flex-1 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm transition-colors shadow-xs cursor-pointer"
+                className="flex-1 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-slate-950 font-semibold text-sm transition-colors shadow-xs cursor-pointer"
               >
-                Nộp bài ngay
+                {t('exam.submitNow')}
               </button>
             </div>
           </div>
@@ -1377,28 +1407,28 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
       {showExitConfirm && (
         <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
           <div
-            className="bg-white rounded-2xl max-w-sm w-full p-6 shadow-xl border border-slate-200 text-center animate-in zoom-in-95 duration-150"
+            className="bg-white dark:bg-slate-900 rounded-2xl max-w-sm w-full p-6 shadow-xl border border-slate-200 dark:border-slate-800 text-center animate-in zoom-in-95 duration-150"
             onClick={(e) => e.stopPropagation()}
           >
-            <h4 className="text-lg font-bold text-slate-900 mb-2">Thoát bài thi hiện tại?</h4>
-            <p className="text-xs text-slate-500 mb-6">
-              Bài thi của bạn đang được bấm giờ. Nếu thoát ra, tiến độ của đề thi này sẽ không được lưu.
+            <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{t('exam.exitTitle')}</h4>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mb-6">
+              {t('exam.exitDesc')}
             </p>
             <div className="flex gap-2">
               <button
                 onClick={() => setShowExitConfirm(false)}
-                className="flex-1 py-2 rounded-lg border border-slate-200 text-slate-700 text-sm font-medium hover:bg-slate-50"
+                className="flex-1 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800"
               >
-                Tiếp tục thi
+                {t('exam.exitCancel')}
               </button>
               <button
                 onClick={() => {
                   setShowExitConfirm(false);
                   setMode('hub');
                 }}
-                className="flex-1 py-2 rounded-lg bg-rose-600 hover:bg-rose-700 text-white text-sm font-semibold"
+                className="flex-1 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-sm font-semibold"
               >
-                Thoát
+                {t('exam.exitConfirm')}
               </button>
             </div>
           </div>

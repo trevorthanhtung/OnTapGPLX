@@ -169,8 +169,7 @@ export function App() {
                 onActiveStateChange={setIsStudyActive}
                 reviewExam={reviewExamItem}
                 onExitReview={() => {
-                  setReviewExamItem(null);
-                  setActiveTab('stats');
+                  handleTabChange('stats');
                 }}
               />
             )}

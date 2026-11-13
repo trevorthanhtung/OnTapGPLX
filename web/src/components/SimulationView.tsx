@@ -46,6 +46,9 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
   // Notify parent component when entering/exiting simulation study/exam modes
   useEffect(() => {
     onActiveStateChange?.(mode !== 'hub');
+    return () => {
+      onActiveStateChange?.(false);
+    };
   }, [mode, onActiveStateChange]);
 
   // Cảnh báo người dùng hạng xe máy (A1, A) khi vào phần thi mô phỏng ô tô
@@ -507,22 +510,22 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
         className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4 animate-in fade-in duration-150"
       >
         <div
-          className="bg-white rounded-t-3xl sm:rounded-2xl max-w-md landscape-mobile:max-w-xl w-full max-h-[82vh] landscape-mobile:max-h-[92vh] flex flex-col p-5 pb-[max(1.5rem,env(safe-area-inset-bottom,0px))] landscape-mobile:p-3 shadow-2xl border border-slate-200 animate-in slide-in-from-bottom duration-200 overscroll-contain"
+          className="bg-white dark:bg-slate-900 rounded-t-3xl sm:rounded-2xl max-w-md landscape-mobile:max-w-xl w-full max-h-[82vh] landscape-mobile:max-h-[92vh] flex flex-col p-5 pb-[max(1.5rem,env(safe-area-inset-bottom,0px))] landscape-mobile:p-3 shadow-2xl border border-slate-200 dark:border-slate-800 animate-in slide-in-from-bottom duration-200 overscroll-contain"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="flex items-center justify-between pb-3 landscape-mobile:pb-2 mb-3 landscape-mobile:mb-2 border-b border-slate-100 shrink-0">
+          <div className="flex items-center justify-between pb-3 landscape-mobile:pb-2 mb-3 landscape-mobile:mb-2 border-b border-slate-100 dark:border-slate-800 shrink-0">
             <div>
-              <h4 className="font-bold text-slate-900 text-base landscape-mobile:text-sm">
+              <h4 className="font-bold text-slate-900 dark:text-white text-base landscape-mobile:text-sm">
                 Danh sách câu hỏi
               </h4>
-              <p className="text-xs landscape-mobile:text-[11px] text-slate-500 font-medium">
+              <p className="text-xs landscape-mobile:text-[11px] text-slate-500 dark:text-slate-400 font-medium">
                 Đã trả lời {answeredCount} / {activeScenarios.length} câu
               </p>
             </div>
             <button
               onClick={() => setShowQuestionSheet(false)}
-              className="p-2 -mr-2 rounded-xl hover:bg-slate-100 text-slate-500 cursor-pointer"
+              className="p-2 -mr-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-400 cursor-pointer"
               title="Đóng danh sách"
             >
               <X className="w-5 h-5" />
@@ -536,7 +539,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
           >
             {activeScenarios.map((sc, idx) => {
               const isCurrent = idx === currentIndex;
-              let btnStyle = 'bg-white text-slate-700 border-2 border-slate-200 hover:bg-slate-50';
+              let btnStyle = 'bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 border-2 border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700';
 
               if (mode === 'exam') {
                 const ansCount = Object.keys(examAnswers[idx] || {}).length;
@@ -546,27 +549,27 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                   const scScore = examResult?.details?.[idx]?.score ?? 0;
                   if (scScore >= 0.75) {
                     btnStyle = isCurrent
-                      ? 'bg-emerald-600 text-white border-2 border-slate-900 font-bold'
+                      ? 'bg-emerald-600 text-white border-2 border-slate-900 dark:border-amber-400 font-bold'
                       : 'bg-emerald-600 text-white border-2 border-emerald-600 font-bold';
                   } else if (scScore > 0) {
                     btnStyle = isCurrent
-                      ? 'bg-amber-600 text-white border-2 border-slate-900 font-bold'
+                      ? 'bg-amber-600 text-white border-2 border-slate-900 dark:border-amber-400 font-bold'
                       : 'bg-amber-500 text-white border-2 border-amber-600 font-bold';
                   } else {
                     btnStyle = isCurrent
-                      ? 'bg-rose-600 text-white border-2 border-slate-900 font-bold'
+                      ? 'bg-rose-600 text-white border-2 border-slate-900 dark:border-amber-400 font-bold'
                       : 'bg-rose-600 text-white border-2 border-rose-600 font-bold';
                   }
                 } else if (isSelected) {
                   btnStyle = isCurrent
-                    ? 'bg-slate-900 text-white border-2 border-amber-500 font-bold'
-                    : 'bg-slate-900 text-white border-2 border-slate-900 font-semibold';
+                    ? 'bg-slate-900 dark:bg-amber-500 text-white dark:text-slate-950 border-2 border-amber-500 font-bold'
+                    : 'bg-slate-900 dark:bg-amber-500 text-white dark:text-slate-950 border-2 border-slate-900 dark:border-amber-500 font-semibold';
                 } else if (isCurrent) {
-                  btnStyle = 'bg-amber-50 text-slate-900 border-2 border-amber-500 font-bold';
+                  btnStyle = 'bg-amber-50 dark:bg-amber-950/40 text-slate-900 dark:text-white border-2 border-amber-500 font-bold';
                 }
               } else {
                 if (isCurrent) {
-                  btnStyle = 'bg-amber-50 text-slate-900 border-2 border-amber-500 font-bold';
+                  btnStyle = 'bg-amber-50 dark:bg-amber-950/40 text-slate-900 dark:text-white border-2 border-amber-500 font-bold';
                 }
               }
 
@@ -666,15 +669,15 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
         </div>
 
         {/* Section: Ôn tập theo 6 chương */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-5 sm:p-8">
-          <h2 className="text-lg sm:text-xl font-bold text-slate-900 mb-4 sm:mb-6">
+        <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 sm:p-8">
+          <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-6">
             Ôn luyện theo 6 chương mô phỏng
           </h2>
 
           {/* Mobile Single Card Carousel with swipe */}
           <div className="block md:hidden w-full max-w-full overflow-hidden">
             <div
-              className="relative bg-slate-50 border border-slate-200 rounded-xl p-4 sm:p-5 overflow-hidden w-full max-w-full transition-all select-none cursor-pointer touch-pan-y"
+              className="relative bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-xl p-4 sm:p-5 overflow-hidden w-full max-w-full transition-all select-none cursor-pointer touch-pan-y"
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
@@ -697,7 +700,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                       className="w-full shrink-0 py-2 cursor-pointer"
                       onClick={() => executeWithMotorbikeCheck(() => startChapter(ch.id))}
                     >
-                      <h3 className="font-bold text-slate-900 text-base leading-snug">
+                      <h3 className="font-bold text-slate-900 dark:text-white text-base leading-snug">
                         {ch.title}
                       </h3>
                     </div>
@@ -706,14 +709,14 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
               </div>
 
               {/* Navigation Controls & Dot Indicators */}
-              <div className="flex items-center justify-between mt-3 pt-2.5 border-t border-slate-200/60">
+              <div className="flex items-center justify-between mt-3 pt-2.5 border-t border-slate-200/60 dark:border-slate-700/60">
                 <button
                   type="button"
                   onClick={(e) => {
                     e.stopPropagation();
                     setCurrentChapterSlide((prev) => (prev - 1 + SIMULATION_CHAPTERS.length) % SIMULATION_CHAPTERS.length);
                   }}
-                  className="p-1.5 -ml-1 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-200 transition-colors"
+                  className="p-1.5 -ml-1 rounded text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
                   aria-label="Chương trước"
                 >
                   <ChevronLeft className="w-4 h-4" />
@@ -732,7 +735,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                       className={`h-1.5 rounded-full transition-all ${
                         currentChapterSlide === idx
                           ? 'w-6 bg-amber-500'
-                          : 'w-1.5 bg-slate-300 hover:bg-slate-400'
+                          : 'w-1.5 bg-slate-300 dark:bg-slate-700 hover:bg-slate-400'
                       }`}
                       aria-label={`Chuyển đến chương ${ch.id}`}
                     />
@@ -745,7 +748,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                     e.stopPropagation();
                     setCurrentChapterSlide((prev) => (prev + 1) % SIMULATION_CHAPTERS.length);
                   }}
-                  className="p-1.5 -mr-1 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-200 transition-colors"
+                  className="p-1.5 -mr-1 rounded text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
                   aria-label="Chương tiếp theo"
                 >
                   <ChevronRight className="w-4 h-4" />
@@ -760,12 +763,12 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
               <div
                 key={ch.id}
                 onClick={() => executeWithMotorbikeCheck(() => startChapter(ch.id))}
-                className="flex items-center justify-between p-4 rounded-xl border border-slate-100 bg-slate-50 hover:bg-slate-100 hover:border-slate-300 transition-all cursor-pointer"
+                className="flex items-center justify-between p-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/60 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all cursor-pointer"
               >
                 <div>
-                  <h3 className="font-semibold text-slate-900 text-sm">{ch.title}</h3>
+                  <h3 className="font-semibold text-slate-900 dark:text-white text-sm">{ch.title}</h3>
                 </div>
-                <ChevronRight className="w-4 h-4 text-slate-400" />
+                <ChevronRight className="w-4 h-4 text-slate-400 dark:text-slate-500" />
               </div>
             ))}
           </div>
@@ -775,18 +778,18 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
         {showMotorbikeConfirm && (
           <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in duration-150">
             <div
-              className="bg-white rounded-2xl max-w-sm w-full p-6 shadow-xl border border-slate-200 text-center animate-in zoom-in-95 duration-150"
+              className="bg-white dark:bg-slate-900 rounded-2xl max-w-sm w-full p-6 shadow-xl border border-slate-200 dark:border-slate-800 text-center animate-in zoom-in-95 duration-150"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="w-12 h-12 rounded-full bg-amber-50 border border-amber-200 flex items-center justify-center mx-auto mb-4 text-amber-600">
+              <div className="w-12 h-12 rounded-full bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 flex items-center justify-center mx-auto mb-4 text-amber-600 dark:text-amber-400">
                 <AlertTriangle className="w-6 h-6" />
               </div>
 
-              <h4 className="text-lg font-bold text-slate-900 mb-2">
+              <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
                 Nội dung không bắt buộc
               </h4>
-              <p className="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">
-                Phần thi 120 tình huống mô phỏng chỉ áp dụng cho đào tạo sát hạch lái xe ô tô (B, C, D...). Hạng xe máy <span className="font-semibold text-slate-900">({currentCategory || 'A1/A'})</span> hoàn toàn không thi nội dung này.
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+                Phần thi 120 tình huống mô phỏng chỉ áp dụng cho đào tạo sát hạch lái xe ô tô (B, C, D...). Hạng xe máy <span className="font-semibold text-slate-900 dark:text-white">({currentCategory || 'A1/A'})</span> hoàn toàn không thi nội dung này.
               </p>
 
               <div className="flex gap-2">
@@ -795,7 +798,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                     setShowMotorbikeConfirm(false);
                     pendingActionRef.current = null;
                   }}
-                  className="flex-1 py-2.5 rounded-xl border border-slate-200 text-slate-700 text-sm font-semibold hover:bg-slate-50 cursor-pointer transition-colors"
+                  className="flex-1 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-sm font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer transition-colors"
                 >
                   Quay lại
                 </button>
@@ -806,7 +809,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                     pendingActionRef.current = null;
                     action?.();
                   }}
-                  className="flex-1 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold cursor-pointer transition-colors shadow-xs"
+                  className="flex-1 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-slate-950 text-sm font-semibold cursor-pointer transition-colors shadow-xs"
                 >
                   Tôi vẫn muốn làm
                 </button>
@@ -826,7 +829,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
     return (
       <div className="h-full flex flex-col overflow-hidden">
         {/* Sticky Header */}
-        <header className="shrink-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-2xs pt-[max(0.75rem,env(safe-area-inset-top,0px))] sm:pt-[env(safe-area-inset-top,0px)] landscape-mobile:pt-[max(0.25rem,env(safe-area-inset-top,0px))] pl-[env(safe-area-inset-left,0px)] pr-[env(safe-area-inset-right,0px)]">
+        <header className="shrink-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-2xs pt-[max(0.75rem,env(safe-area-inset-top,0px))] sm:pt-[env(safe-area-inset-top,0px)] landscape-mobile:pt-[max(0.25rem,env(safe-area-inset-top,0px))] pl-[env(safe-area-inset-left,0px)] pr-[env(safe-area-inset-right,0px)]">
           <div className="max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-14 sm:h-16 landscape-mobile:h-11 gap-3">
               <div className="flex items-center gap-2 sm:gap-3 min-w-0">
@@ -842,12 +845,12 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                       setMode('hub');
                     }
                   }}
-                  className="p-2 -ml-2 rounded-xl hover:bg-slate-100 text-slate-600 transition-colors cursor-pointer shrink-0 landscape-mobile:p-1.5"
+                  className="p-2 -ml-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition-colors cursor-pointer shrink-0 landscape-mobile:p-1.5"
                   title="Thoát đề thi"
                 >
                   <ArrowLeft className="w-5 h-5 landscape-mobile:w-4 landscape-mobile:h-4" />
                 </button>
-                <span className="font-bold text-slate-900 text-base sm:text-lg landscape-mobile:text-sm">
+                <span className="font-bold text-slate-900 dark:text-white text-base sm:text-lg landscape-mobile:text-sm">
                   Thi thử tình huống
                 </span>
               </div>
@@ -857,8 +860,8 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                   <div
                     className={`h-9 sm:h-10 px-3 sm:px-3.5 rounded-xl border font-mono font-bold text-sm tracking-wide flex items-center justify-center shrink-0 ${
                       timeLeftSeconds < 120
-                        ? 'bg-rose-50 border-rose-300 text-rose-700 animate-pulse'
-                        : 'bg-slate-100 border-slate-200 text-slate-800'
+                        ? 'bg-rose-50 dark:bg-rose-950/60 border-rose-300 dark:border-rose-800 text-rose-700 dark:text-rose-400 animate-pulse'
+                        : 'bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200'
                     }`}
                   >
                     <span>{formatTime(timeLeftSeconds)}</span>
@@ -868,14 +871,14 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                 {!isExamSubmitted ? (
                   <button
                     onClick={() => setShowSubmitConfirm(true)}
-                    className="px-5 py-2 landscape-mobile:px-3 landscape-mobile:py-1 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm landscape-mobile:text-xs shadow-xs transition-colors cursor-pointer"
+                    className="px-5 py-2 landscape-mobile:px-3 landscape-mobile:py-1 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-slate-950 font-semibold text-sm landscape-mobile:text-xs shadow-xs transition-colors cursor-pointer"
                   >
                     Nộp bài
                   </button>
                 ) : (
                   <button
                     onClick={startExamMode}
-                    className="px-5 py-2 landscape-mobile:px-3 landscape-mobile:py-1 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm landscape-mobile:text-xs transition-colors shadow-xs cursor-pointer"
+                    className="px-5 py-2 landscape-mobile:px-3 landscape-mobile:py-1 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-slate-950 font-semibold text-sm landscape-mobile:text-xs transition-colors shadow-xs cursor-pointer"
                   >
                     Làm đề khác
                   </button>
@@ -891,27 +894,27 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
             <div className="grid grid-cols-1 lg:grid-cols-12 landscape-mobile:grid-cols-2 gap-4 sm:gap-6 items-start lg:items-stretch landscape-mobile:items-stretch lg:h-full landscape-mobile:h-full">
 
               {/* Video Column (Left on Landscape Mobile & Desktop - Fixed/Immobile, Sticky Top in Portrait) */}
-              <div className="sticky top-0 z-30 bg-slate-50 pt-1 pb-3 mb-2 lg:mb-0 landscape-mobile:mb-0 lg:static landscape-mobile:static lg:h-full landscape-mobile:h-full flex flex-col lg:overflow-hidden landscape-mobile:overflow-hidden lg:col-span-6 xl:col-span-6 2xl:col-span-6">
+              <div className="sticky top-0 z-30 bg-slate-50 dark:bg-slate-950 pt-1 pb-3 mb-2 lg:mb-0 landscape-mobile:mb-0 lg:static landscape-mobile:static lg:h-full landscape-mobile:h-full flex flex-col lg:overflow-hidden landscape-mobile:overflow-hidden lg:col-span-6 xl:col-span-6 2xl:col-span-6">
                 {/* Scenario Bar Header: Câu hỏi X / 10 & Danh sách button */}
-                <div className="flex items-center justify-between pb-1.5 mb-2 border-b border-slate-200/80 shrink-0">
+                <div className="flex items-center justify-between pb-1.5 mb-2 border-b border-slate-200/80 dark:border-slate-800 shrink-0">
                   <div className="flex items-center gap-2">
-                    <span className="text-xs sm:text-sm font-bold text-slate-900">
+                    <span className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">
                       Câu hỏi {currentIndex + 1}
                     </span>
-                    <span className="text-xs text-slate-400 font-mono">/ {activeScenarios.length}</span>
+                    <span className="text-xs text-slate-400 dark:text-slate-500 font-mono">/ {activeScenarios.length}</span>
                   </div>
 
                   <button
                     type="button"
                     onClick={() => setShowQuestionSheet(true)}
-                    className="text-xs sm:text-sm font-medium text-slate-500 hover:text-slate-900 active:text-slate-900 cursor-pointer select-none transition-colors py-1 px-1.5 -mr-1.5"
+                    className="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white active:text-slate-900 dark:active:text-white cursor-pointer select-none transition-colors py-1 px-1.5 -mr-1.5"
                   >
                     Danh sách
                   </button>
                 </div>
 
                 {/* Video Player Card */}
-                <div className="bg-black rounded-2xl border border-slate-200 overflow-hidden shadow-sm shrink-0 lg:flex-1 landscape-mobile:flex-1 flex flex-col lg:min-h-0 landscape-mobile:min-h-0">
+                <div className="bg-black rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm shrink-0 lg:flex-1 landscape-mobile:flex-1 flex flex-col lg:min-h-0 landscape-mobile:min-h-0">
                   <div
                     className="relative aspect-video lg:aspect-auto landscape-mobile:aspect-auto bg-black flex items-center justify-center lg:flex-1 landscape-mobile:flex-1 lg:min-h-0 landscape-mobile:min-h-0 overflow-hidden group select-none cursor-pointer"
                     onMouseEnter={handleVideoMouseEnter}
@@ -1052,17 +1055,17 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
               return (
                 <div
                   key={qIdx}
-                  className={`bg-white rounded-2xl border p-4 sm:p-5 landscape-mobile:p-3.5 shadow-2xs transition-all ${
+                  className={`bg-white dark:bg-slate-900 rounded-2xl border p-4 sm:p-5 landscape-mobile:p-3.5 shadow-2xs transition-all ${
                     isExamSubmitted
                       ? isCorrect
-                        ? 'border-emerald-300 bg-emerald-50/20'
-                        : 'border-rose-300 bg-rose-50/20'
+                        ? 'border-emerald-300 dark:border-emerald-800 bg-emerald-50/20 dark:bg-emerald-950/20'
+                        : 'border-rose-300 dark:border-rose-800 bg-rose-50/20 dark:bg-rose-950/20'
                       : selectedOpt !== undefined
-                      ? 'border-slate-300'
-                      : 'border-slate-200'
+                      ? 'border-slate-300 dark:border-slate-700'
+                      : 'border-slate-200 dark:border-slate-800'
                   }`}
                 >
-                  <div className="font-bold text-slate-900 text-sm landscape-mobile:text-xs mb-2 sm:mb-3">
+                  <div className="font-bold text-slate-900 dark:text-white text-sm landscape-mobile:text-xs mb-2 sm:mb-3">
                     {q.question}
                   </div>
 
@@ -1071,15 +1074,15 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                       const isSelected = selectedOpt === optIdx;
                       const isOptCorrect = optIdx === q.correctIndex;
 
-                      let optClass = 'border-slate-200 bg-white text-slate-800 hover:bg-slate-50';
+                      let optClass = 'border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/80 text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700';
                       if (isExamSubmitted) {
                         if (isOptCorrect) {
-                          optClass = 'border-emerald-500 bg-emerald-50 text-emerald-900 font-semibold';
+                          optClass = 'border-emerald-500 dark:border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-300 font-semibold';
                         } else if (isSelected && !isOptCorrect) {
-                          optClass = 'border-rose-400 bg-rose-50 text-rose-900 line-through';
+                          optClass = 'border-rose-400 dark:border-rose-500 bg-rose-50 dark:bg-rose-950/40 text-rose-900 dark:text-rose-300 line-through';
                         }
                       } else if (isSelected) {
-                        optClass = 'border-amber-500 bg-amber-50/60 text-amber-950 font-semibold';
+                        optClass = 'border-amber-500 bg-amber-50/60 dark:bg-amber-950/40 text-amber-950 dark:text-amber-300 font-semibold';
                       }
 
                       return (
@@ -1095,12 +1098,12 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                   </div>
 
                   {/* Score text without card badge, placed below options */}
-                  <div className="flex items-center justify-end mt-2 text-xs text-slate-400 font-medium">
+                  <div className="flex items-center justify-end mt-2 text-xs text-slate-400 dark:text-slate-500 font-medium">
                     {isExamSubmitted ? (
                       isCorrect ? (
-                        <span className="text-emerald-600 font-semibold">+0.25 điểm</span>
+                        <span className="text-emerald-600 dark:text-emerald-400 font-semibold">+0.25 điểm</span>
                       ) : (
-                        <span className="text-rose-500 font-semibold">0 / 0.25 điểm</span>
+                        <span className="text-rose-500 dark:text-rose-400 font-semibold">0 / 0.25 điểm</span>
                       )
                     ) : (
                       <span>0.25 điểm</span>
@@ -1108,8 +1111,8 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                   </div>
 
                   {isExamSubmitted && (
-                    <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600">
-                      <span className="font-semibold text-slate-900">Giải thích: </span>
+                    <div className="mt-3 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-300">
+                      <span className="font-semibold text-slate-900 dark:text-white">Giải thích: </span>
                       {q.explanation}
                     </div>
                   )}
@@ -1123,26 +1126,26 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
         </div>
 
         {/* Fixed Bottom Navigation Bar (Exact match to TheoryView) */}
-        <div className="shrink-0 z-30 bg-white/95 backdrop-blur-md border-t border-slate-200 shadow-lg pt-1.5 sm:pt-0 pb-[max(0.75rem,env(safe-area-inset-bottom,0px))] sm:pb-[env(safe-area-inset-bottom,0px))] landscape-mobile:pt-1 landscape-mobile:pb-[max(0.25rem,env(safe-area-inset-bottom,0px))] pl-[env(safe-area-inset-left,0px)] pr-[env(safe-area-inset-right,0px)]">
+        <div className="shrink-0 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 shadow-lg pt-1.5 sm:pt-0 pb-[max(0.75rem,env(safe-area-inset-bottom,0px))] sm:pb-[env(safe-area-inset-bottom,0px))] landscape-mobile:pt-1 landscape-mobile:pb-[max(0.25rem,env(safe-area-inset-bottom,0px))] pl-[env(safe-area-inset-left,0px)] pr-[env(safe-area-inset-right,0px)]">
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center justify-between max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-8 py-3">
             <button
               onClick={handlePrev}
               disabled={currentIndex === 0}
-              className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50 disabled:opacity-30 disabled:cursor-not-allowed text-sm font-semibold transition-colors cursor-pointer"
+              className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 disabled:opacity-30 disabled:cursor-not-allowed text-sm font-semibold transition-colors cursor-pointer"
             >
               <ChevronLeft className="w-4 h-4" />
               <span>Câu trước</span>
             </button>
 
-            <div className="text-sm font-bold text-slate-500 font-mono">
+            <div className="text-sm font-bold text-slate-500 dark:text-slate-400 font-mono">
               {currentIndex + 1} / {activeScenarios.length}
             </div>
 
             {currentIndex < activeScenarios.length - 1 ? (
               <button
                 onClick={handleNext}
-                className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold transition-colors shadow-xs cursor-pointer"
+                className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-slate-950 text-sm font-semibold transition-colors shadow-xs cursor-pointer"
               >
                 <span>Câu tiếp theo</span>
                 <ChevronRight className="w-4 h-4" />
@@ -1157,7 +1160,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
             ) : (
               <button
                 onClick={startExamMode}
-                className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold transition-colors shadow-xs cursor-pointer"
+                className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-slate-950 text-sm font-semibold transition-colors shadow-xs cursor-pointer"
               >
                 <span>Làm đề khác</span>
               </button>
@@ -1169,7 +1172,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
             <button
               onClick={handlePrev}
               disabled={currentIndex === 0}
-              className="flex-1 flex items-center justify-center gap-2 py-3 landscape-mobile:py-1.5 px-4 rounded-xl border border-slate-200 text-slate-700 font-bold text-sm landscape-mobile:text-xs bg-white hover:bg-slate-50 active:scale-97 disabled:opacity-30 disabled:pointer-events-none transition-all cursor-pointer shadow-2xs"
+              className="flex-1 flex items-center justify-center gap-2 py-3 landscape-mobile:py-1.5 px-4 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-bold text-sm landscape-mobile:text-xs bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 active:scale-97 disabled:opacity-30 disabled:pointer-events-none transition-all cursor-pointer shadow-2xs"
             >
               <ChevronLeft className="w-4 h-4 landscape-mobile:w-3.5 landscape-mobile:h-3.5" />
               <span>Trước</span>
@@ -1178,7 +1181,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
             {currentIndex < activeScenarios.length - 1 ? (
               <button
                 onClick={handleNext}
-                className="flex-1 flex items-center justify-center gap-2 py-3 landscape-mobile:py-1.5 px-4 rounded-xl bg-slate-900 text-white font-bold text-sm landscape-mobile:text-xs hover:bg-slate-800 active:scale-97 shadow-xs transition-all cursor-pointer"
+                className="flex-1 flex items-center justify-center gap-2 py-3 landscape-mobile:py-1.5 px-4 rounded-xl bg-slate-900 text-white font-bold text-sm landscape-mobile:text-xs hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 dark:text-slate-950 active:scale-97 shadow-xs transition-all cursor-pointer"
               >
                 <span>Tiếp</span>
                 <ChevronRight className="w-4 h-4 landscape-mobile:w-3.5 landscape-mobile:h-3.5" />
@@ -1193,7 +1196,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
             ) : (
               <button
                 onClick={startExamMode}
-                className="flex-1 flex items-center justify-center gap-2 py-3 landscape-mobile:py-1.5 px-4 rounded-xl bg-slate-900 text-white font-bold text-sm landscape-mobile:text-xs hover:bg-slate-800 active:scale-97 shadow-xs transition-all cursor-pointer"
+                className="flex-1 flex items-center justify-center gap-2 py-3 landscape-mobile:py-1.5 px-4 rounded-xl bg-slate-900 text-white font-bold text-sm landscape-mobile:text-xs hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 dark:text-slate-950 active:scale-97 shadow-xs transition-all cursor-pointer"
               >
                 <span>Làm đề khác</span>
               </button>
@@ -1205,24 +1208,24 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
         {showSubmitConfirm && (
           <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in duration-150">
             <div
-              className="bg-white rounded-2xl max-w-sm w-full p-6 shadow-xl border border-slate-200 text-center animate-in zoom-in-95 duration-150"
+              className="bg-white dark:bg-slate-900 rounded-2xl max-w-sm w-full p-6 shadow-xl border border-slate-200 dark:border-slate-800 text-center animate-in zoom-in-95 duration-150"
               onClick={(e) => e.stopPropagation()}
             >
-              <h4 className="text-lg font-bold text-slate-900 mb-2">
+              <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
                 Bạn có chắc chắn muốn nộp bài?
               </h4>
               {(() => {
                 const answered = activeScenarios.filter((_, scIdx) => examAnswers[scIdx] && Object.keys(examAnswers[scIdx]).length > 0).length;
                 return (
-                  <p className="text-sm text-slate-600 mb-6 leading-relaxed">
-                    Bạn đã làm <span className="font-bold text-slate-900">{answered}/{activeScenarios.length}</span> tình huống.
+                  <p className="text-sm text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+                    Bạn đã làm <span className="font-bold text-slate-900 dark:text-white">{answered}/{activeScenarios.length}</span> tình huống.
                   </p>
                 );
               })()}
               <div className="flex gap-2.5">
                 <button
                   onClick={() => setShowSubmitConfirm(false)}
-                  className="flex-1 py-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors cursor-pointer"
+                  className="flex-1 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold text-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer"
                 >
                   Tiếp tục làm
                 </button>
@@ -1231,7 +1234,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                     setShowSubmitConfirm(false);
                     handleSubmitExam();
                   }}
-                  className="flex-1 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm transition-colors shadow-xs cursor-pointer"
+                  className="flex-1 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-slate-950 font-semibold text-sm transition-colors shadow-xs cursor-pointer"
                 >
                   Nộp bài ngay
                 </button>
@@ -1244,17 +1247,17 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
         {showExitConfirm && (
           <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in duration-150">
             <div
-              className="bg-white rounded-2xl max-w-sm w-full p-6 shadow-xl border border-slate-200 text-center animate-in zoom-in-95 duration-150"
+              className="bg-white dark:bg-slate-900 rounded-2xl max-w-sm w-full p-6 shadow-xl border border-slate-200 dark:border-slate-800 text-center animate-in zoom-in-95 duration-150"
               onClick={(e) => e.stopPropagation()}
             >
-              <h4 className="text-lg font-bold text-slate-900 mb-2">Thoát bài thi hiện tại?</h4>
-              <p className="text-xs text-slate-500 mb-6 leading-relaxed">
+              <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Thoát bài thi hiện tại?</h4>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">
                 Bài thi của bạn đang được bấm giờ. Nếu thoát ra, tiến độ của đề thi này sẽ không được lưu.
               </p>
               <div className="flex gap-2">
                 <button
                   onClick={() => setShowExitConfirm(false)}
-                  className="flex-1 py-2 rounded-lg border border-slate-200 text-slate-700 text-sm font-medium hover:bg-slate-50 cursor-pointer transition-colors"
+                  className="flex-1 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer transition-colors"
                 >
                   Tiếp tục thi
                 </button>
@@ -1267,7 +1270,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                     }
                     setMode('hub');
                   }}
-                  className="flex-1 py-2 rounded-lg bg-rose-600 hover:bg-rose-700 text-white text-sm font-semibold cursor-pointer transition-colors shadow-xs"
+                  className="flex-1 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-sm font-semibold cursor-pointer transition-colors shadow-xs"
                 >
                   Thoát
                 </button>
@@ -1280,31 +1283,31 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
         {isExamSubmitted && showResultModal && (
           <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in duration-150">
             <div
-              className="bg-white rounded-2xl max-w-sm w-full p-6 sm:p-7 shadow-xl border border-slate-200 text-center animate-in zoom-in-95 duration-150"
+              className="bg-white dark:bg-slate-900 rounded-2xl max-w-sm w-full p-6 sm:p-7 shadow-xl border border-slate-200 dark:border-slate-800 text-center animate-in zoom-in-95 duration-150"
               onClick={(e) => e.stopPropagation()}
             >
               <h3
                 className={`text-2xl font-extrabold mb-1 tracking-tight ${
-                  examResult.isPassed ? 'text-emerald-600' : 'text-rose-600'
+                  examResult.isPassed ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'
                 }`}
               >
                 {examResult.isPassed ? 'KẾT QUẢ: ĐẠT' : 'KẾT QUẢ: KHÔNG ĐẠT'}
               </h3>
 
-              <div className="text-4xl font-extrabold text-slate-900 my-4 font-mono">
+              <div className="text-4xl font-extrabold text-slate-900 dark:text-white my-4 font-mono">
                 {examResult.totalScore} / 10
               </div>
 
               <div className="flex flex-col gap-2.5 mt-6">
                 <button
                   onClick={() => setShowResultModal(false)}
-                  className="w-full py-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors cursor-pointer"
+                  className="w-full py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold text-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer"
                 >
                   Xem lại bài thi vừa làm
                 </button>
                 <button
                   onClick={startExamMode}
-                  className="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm transition-colors shadow-xs cursor-pointer"
+                  className="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-slate-950 font-semibold text-sm transition-colors shadow-xs cursor-pointer"
                 >
                   Làm đề thi khác
                 </button>
@@ -1324,12 +1327,12 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
   return (
     <div className="h-full flex flex-col overflow-hidden">
       {/* Top Sticky Header */}
-      <header className="shrink-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-2xs pt-[max(0.75rem,env(safe-area-inset-top,0px))] sm:pt-[env(safe-area-inset-top,0px)] landscape-mobile:pt-[max(0.25rem,env(safe-area-inset-top,0px))] pl-[env(safe-area-inset-left,0px)] pr-[env(safe-area-inset-right,0px)]">
+      <header className="shrink-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-2xs pt-[max(0.75rem,env(safe-area-inset-top,0px))] sm:pt-[env(safe-area-inset-top,0px)] landscape-mobile:pt-[max(0.25rem,env(safe-area-inset-top,0px))] pl-[env(safe-area-inset-left,0px)] pr-[env(safe-area-inset-right,0px)]">
         <div className="max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-8 landscape-mobile:px-3">
           <div className="flex items-center justify-between h-14 sm:h-16 landscape-mobile:h-11 gap-3">
             <button
               onClick={() => setMode('hub')}
-              className="p-2 -ml-2 rounded-xl hover:bg-slate-100 text-slate-600 transition-colors cursor-pointer shrink-0 landscape-mobile:p-1.5"
+              className="p-2 -ml-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition-colors cursor-pointer shrink-0 landscape-mobile:p-1.5"
               title="Quay lại danh mục"
             >
               <ArrowLeft className="w-5 h-5 landscape-mobile:w-4 landscape-mobile:h-4" />
@@ -1337,7 +1340,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
 
             <button
               onClick={() => setShowPracticeQuiz(!showPracticeQuiz)}
-              className="shrink-0 whitespace-nowrap text-xs sm:text-sm font-semibold text-slate-700 hover:text-slate-900 px-3.5 py-1.5 sm:px-4 sm:py-2 landscape-mobile:px-2.5 landscape-mobile:py-1 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition-colors cursor-pointer shadow-2xs"
+              className="shrink-0 whitespace-nowrap text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white px-3.5 py-1.5 sm:px-4 sm:py-2 landscape-mobile:px-2.5 landscape-mobile:py-1 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors cursor-pointer shadow-2xs"
             >
               {showPracticeQuiz ? 'Ẩn trắc nghiệm' : 'Làm trắc nghiệm'}
             </button>
@@ -1350,27 +1353,27 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
         <div className="max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-8 pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] py-3 sm:py-4 lg:h-full landscape-mobile:py-1.5 landscape-mobile:px-3 landscape-mobile:h-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 landscape-mobile:grid-cols-2 gap-4 sm:gap-6 items-start lg:items-stretch landscape-mobile:items-stretch lg:h-full landscape-mobile:h-full">
             {/* Sticky Video Container */}
-            <div className="sticky top-0 z-30 bg-slate-50 pt-1 pb-3 mb-2 lg:mb-0 landscape-mobile:mb-0 lg:static landscape-mobile:static lg:h-full landscape-mobile:h-full flex flex-col lg:overflow-hidden landscape-mobile:overflow-hidden lg:col-span-6 xl:col-span-6 2xl:col-span-6">
+            <div className="sticky top-0 z-30 bg-slate-50 dark:bg-slate-950 pt-1 pb-3 mb-2 lg:mb-0 landscape-mobile:mb-0 lg:static landscape-mobile:static lg:h-full landscape-mobile:h-full flex flex-col lg:overflow-hidden landscape-mobile:overflow-hidden lg:col-span-6 xl:col-span-6 2xl:col-span-6">
               {/* Scenario Bar Header: Câu hỏi X / N & Danh sách button (Pattern matching 600 câu) */}
-              <div className="flex items-center justify-between pb-1.5 mb-2 border-b border-slate-200/80 shrink-0">
+              <div className="flex items-center justify-between pb-1.5 mb-2 border-b border-slate-200/80 dark:border-slate-800 shrink-0">
                 <div className="flex items-center gap-2">
-                  <span className="text-xs sm:text-sm font-bold text-slate-900">
+                  <span className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">
                     Câu hỏi {currentIndex + 1}
                   </span>
-                  <span className="text-xs text-slate-400 font-mono">/ {activeScenarios.length}</span>
+                  <span className="text-xs text-slate-400 dark:text-slate-500 font-mono">/ {activeScenarios.length}</span>
                 </div>
 
                 <button
                   type="button"
                   onClick={() => setShowQuestionSheet(true)}
-                  className="text-xs sm:text-sm font-medium text-slate-500 hover:text-slate-900 active:text-slate-900 cursor-pointer select-none transition-colors py-1 px-1.5 -mr-1.5"
+                  className="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white active:text-slate-900 dark:active:text-white cursor-pointer select-none transition-colors py-1 px-1.5 -mr-1.5"
                 >
                   Danh sách
                 </button>
               </div>
 
               {/* Video Player Card */}
-              <div className="bg-black rounded-2xl border border-slate-200 overflow-hidden shadow-sm shrink-0 lg:flex-1 landscape-mobile:flex-1 flex flex-col lg:min-h-0 landscape-mobile:min-h-0">
+              <div className="bg-black rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm shrink-0 lg:flex-1 landscape-mobile:flex-1 flex flex-col lg:min-h-0 landscape-mobile:min-h-0">
                 <div
                   className="relative aspect-video lg:aspect-auto landscape-mobile:aspect-auto bg-black flex items-center justify-center lg:flex-1 landscape-mobile:flex-1 lg:min-h-0 landscape-mobile:min-h-0 overflow-hidden group select-none cursor-pointer"
                   onMouseEnter={handleVideoMouseEnter}
@@ -1561,13 +1564,13 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
         {!showPracticeQuiz ? (
           <div className="w-full my-auto py-1 sm:py-2">
             {/* Unified Single Card for 4 Analysis Steps */}
-            <div className="bg-white rounded-2xl border border-slate-200 divide-y divide-slate-100 shadow-2xs overflow-hidden animate-in fade-in duration-200">
+            <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 divide-y divide-slate-100 dark:divide-slate-800 shadow-2xs overflow-hidden animate-in fade-in duration-200">
               {/* Part 1: Tên tình huống */}
               <div className="p-4 sm:p-5">
-                <div className="text-xs font-bold text-slate-900 mb-1.5">
+                <div className="text-xs font-bold text-slate-900 dark:text-white mb-1.5">
                   Tên tình huống
                 </div>
-                <h3 className="text-sm sm:text-base font-semibold text-slate-900 leading-snug">
+                <h3 className="text-sm sm:text-base font-semibold text-slate-900 dark:text-white leading-snug">
                   {currentScenario?.part1_name || currentScenario?.title}
                 </h3>
               </div>
@@ -1575,20 +1578,20 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
               {/* Part 2: Dấu hiệu gián tiếp */}
               <div className="p-4 sm:p-5">
                 <div className="flex items-center justify-between gap-2 mb-1.5">
-                  <span className="text-xs font-bold text-slate-900">
+                  <span className="text-xs font-bold text-slate-900 dark:text-white">
                     Dấu hiệu gián tiếp
                   </span>
                   {currentScenario?.timeIndirect && (
                     <button
                       onClick={() => jumpToTime(currentScenario.timeIndirect!)}
-                      className="text-xs font-medium text-slate-500 hover:text-slate-900 inline-flex items-center gap-1 transition-colors cursor-pointer"
+                      className="text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white inline-flex items-center gap-1 transition-colors cursor-pointer"
                     >
                       <span>Xem {currentScenario.timeIndirect}s</span>
                       <ChevronRight className="w-3.5 h-3.5" />
                     </button>
                   )}
                 </div>
-                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
+                <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
                   {currentScenario?.part2_indirect}
                 </p>
               </div>
@@ -1596,30 +1599,30 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
               {/* Part 3: Dấu hiệu trực tiếp */}
               <div className="p-4 sm:p-5">
                 <div className="flex items-center justify-between gap-2 mb-1.5">
-                  <span className="text-xs font-bold text-slate-900">
+                  <span className="text-xs font-bold text-slate-900 dark:text-white">
                     Dấu hiệu trực tiếp
                   </span>
                   {currentScenario?.timeDirect && (
                     <button
                       onClick={() => jumpToTime(currentScenario.timeDirect!)}
-                      className="text-xs font-medium text-slate-500 hover:text-slate-900 inline-flex items-center gap-1 transition-colors cursor-pointer"
+                      className="text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white inline-flex items-center gap-1 transition-colors cursor-pointer"
                     >
                       <span>Xem {currentScenario.timeDirect}s</span>
                       <ChevronRight className="w-3.5 h-3.5" />
                     </button>
                   )}
                 </div>
-                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
+                <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
                   {currentScenario?.part3_direct}
                 </p>
               </div>
 
               {/* Part 4: Phương án xử lý an toàn */}
               <div className="p-4 sm:p-5">
-                <div className="text-xs font-bold text-slate-900 mb-1.5">
+                <div className="text-xs font-bold text-slate-900 dark:text-white mb-1.5">
                   Phương án xử lý an toàn
                 </div>
-                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
+                <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
                   {currentScenario?.part4_action}
                 </p>
               </div>
@@ -1634,8 +1637,8 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
               const isSelected = selectedOpt !== undefined;
 
               return (
-                <div key={qIdx} className="bg-white rounded-2xl border border-slate-200 p-4 sm:p-5 shadow-2xs">
-                  <div className="font-bold text-slate-900 text-sm sm:text-base mb-3 leading-snug">
+                <div key={qIdx} className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-4 sm:p-5 shadow-2xs">
+                  <div className="font-bold text-slate-900 dark:text-white text-sm sm:text-base mb-3 leading-snug">
                     {q.question}
                   </div>
 
@@ -1644,12 +1647,12 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                       const isThisSelected = selectedOpt === optIdx;
                       const isCorrect = optIdx === q.correctIndex;
 
-                      let optClass = 'border-slate-200 bg-white hover:bg-slate-50 text-slate-700';
+                      let optClass = 'border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/80 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200';
                       if (isSelected) {
                         if (isCorrect) {
-                          optClass = 'border-emerald-500 bg-emerald-50 text-emerald-900 font-semibold';
+                          optClass = 'border-emerald-500 dark:border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-300 font-semibold';
                         } else if (isThisSelected && !isCorrect) {
-                          optClass = 'border-rose-400 bg-rose-50 text-rose-900 line-through';
+                          optClass = 'border-rose-400 dark:border-rose-500 bg-rose-50 dark:bg-rose-950/40 text-rose-900 dark:text-rose-300 line-through';
                         }
                       }
 
@@ -1666,8 +1669,8 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                   </div>
 
                   {isSelected && (
-                    <div className="mt-3.5 pt-2.5 border-t border-slate-100 text-xs sm:text-sm text-slate-600">
-                      <span className="font-semibold text-slate-800">Giải thích: </span>
+                    <div className="mt-3.5 pt-2.5 border-t border-slate-100 dark:border-slate-800 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                      <span className="font-semibold text-slate-800 dark:text-white">Giải thích: </span>
                       {q.explanation}
                     </div>
                   )}
@@ -1684,26 +1687,26 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
       </div>
 
       {/* Fixed Bottom Navigation Bar (Exact match to TheoryView) */}
-      <div className="shrink-0 z-30 bg-white/95 backdrop-blur-md border-t border-slate-200 shadow-lg pt-1.5 sm:pt-0 pb-[max(0.75rem,env(safe-area-inset-bottom,0px))] sm:pb-[env(safe-area-inset-bottom,0px))] landscape-mobile:pt-1 landscape-mobile:pb-[max(0.25rem,env(safe-area-inset-bottom,0px))] pl-[env(safe-area-inset-left,0px)] pr-[env(safe-area-inset-right,0px)]">
+      <div className="shrink-0 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 shadow-lg pt-1.5 sm:pt-0 pb-[max(0.75rem,env(safe-area-inset-bottom,0px))] sm:pb-[env(safe-area-inset-bottom,0px))] landscape-mobile:pt-1 landscape-mobile:pb-[max(0.25rem,env(safe-area-inset-bottom,0px))] pl-[env(safe-area-inset-left,0px)] pr-[env(safe-area-inset-right,0px)]">
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center justify-between max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <button
             onClick={handlePrev}
             disabled={currentIndex === 0}
-            className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50 disabled:opacity-30 disabled:cursor-not-allowed text-sm font-semibold transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 disabled:opacity-30 disabled:cursor-not-allowed text-sm font-semibold transition-colors cursor-pointer"
           >
             <ChevronLeft className="w-4 h-4" />
             <span>Câu trước</span>
           </button>
 
-          <div className="text-sm font-bold text-slate-500 font-mono">
+          <div className="text-sm font-bold text-slate-500 dark:text-slate-400 font-mono">
             {currentIndex + 1} / {activeScenarios.length}
           </div>
 
           {currentIndex < activeScenarios.length - 1 ? (
             <button
               onClick={handleNext}
-              className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold transition-colors shadow-xs cursor-pointer"
+              className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-slate-950 text-sm font-semibold transition-colors shadow-xs cursor-pointer"
             >
               <span>Câu tiếp theo</span>
               <ChevronRight className="w-4 h-4" />
@@ -1711,7 +1714,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
           ) : (
             <button
               onClick={() => setMode('hub')}
-              className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold transition-colors shadow-xs cursor-pointer"
+              className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-slate-950 text-sm font-semibold transition-colors shadow-xs cursor-pointer"
             >
               <span>Hoàn thành</span>
             </button>
@@ -1723,7 +1726,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
           <button
             onClick={handlePrev}
             disabled={currentIndex === 0}
-            className="flex-1 flex items-center justify-center gap-2 py-3 landscape-mobile:py-1.5 px-4 rounded-xl border border-slate-200 text-slate-700 font-bold text-sm landscape-mobile:text-xs bg-white hover:bg-slate-50 active:scale-97 disabled:opacity-30 disabled:pointer-events-none transition-all cursor-pointer shadow-2xs"
+            className="flex-1 flex items-center justify-center gap-2 py-3 landscape-mobile:py-1.5 px-4 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-bold text-sm landscape-mobile:text-xs bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 active:scale-97 disabled:opacity-30 disabled:pointer-events-none transition-all cursor-pointer shadow-2xs"
           >
             <ChevronLeft className="w-4 h-4 landscape-mobile:w-3.5 landscape-mobile:h-3.5" />
             <span>Trước</span>
@@ -1732,7 +1735,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
           {currentIndex < activeScenarios.length - 1 ? (
             <button
               onClick={handleNext}
-              className="flex-1 flex items-center justify-center gap-2 py-3 landscape-mobile:py-1.5 px-4 rounded-xl bg-slate-900 text-white font-bold text-sm landscape-mobile:text-xs hover:bg-slate-800 active:scale-97 shadow-xs transition-all cursor-pointer"
+              className="flex-1 flex items-center justify-center gap-2 py-3 landscape-mobile:py-1.5 px-4 rounded-xl bg-slate-900 text-white font-bold text-sm landscape-mobile:text-xs hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 dark:text-slate-950 active:scale-97 shadow-xs transition-all cursor-pointer"
             >
               <span>Tiếp</span>
               <ChevronRight className="w-4 h-4 landscape-mobile:w-3.5 landscape-mobile:h-3.5" />
@@ -1740,7 +1743,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
           ) : (
             <button
               onClick={() => setMode('hub')}
-              className="flex-1 flex items-center justify-center gap-2 py-3 landscape-mobile:py-1.5 px-4 rounded-xl bg-slate-900 text-white font-bold text-sm landscape-mobile:text-xs hover:bg-slate-800 active:scale-97 shadow-xs transition-all cursor-pointer"
+              className="flex-1 flex items-center justify-center gap-2 py-3 landscape-mobile:py-1.5 px-4 rounded-xl bg-slate-900 text-white font-bold text-sm landscape-mobile:text-xs hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 dark:text-slate-950 active:scale-97 shadow-xs transition-all cursor-pointer"
             >
               <span>Hoàn thành</span>
             </button>

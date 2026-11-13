@@ -121,7 +121,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
   return (
     <div
       className={`fixed inset-0 z-[100] flex flex-col items-center justify-between p-6 pt-[max(1.5rem,env(safe-area-inset-top))] pb-[max(2rem,env(safe-area-inset-bottom))] pl-[max(1.5rem,env(safe-area-inset-left))] pr-[max(1.5rem,env(safe-area-inset-right))] select-none overflow-hidden transition-colors duration-400 ${
-        isExiting ? 'bg-transparent pointer-events-none' : 'bg-white text-slate-900'
+        isExiting ? 'bg-transparent pointer-events-none' : 'bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100'
       }`}
     >
       {/* Background Traffic Speed Lines (Subtle Highway Velocity Effect) */}
@@ -175,7 +175,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
             />
 
             {/* Main Logo Card */}
-            <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-white border border-slate-200/90 p-2.5 shadow-xl shadow-amber-500/10 flex items-center justify-center overflow-hidden">
+            <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 p-2.5 shadow-xl shadow-amber-500/10 flex items-center justify-center overflow-hidden">
               <img
                 src="/logo.jpg"
                 alt="OnTap GPLX Logo"
@@ -192,7 +192,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
           }`}
         >
           <span
-            className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight"
+            className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight"
             style={{ animation: 'splashSlideUp 0.5s ease-out 0.18s both' }}
           >
             OnTap
@@ -207,7 +207,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
 
         {/* Secondary Subtitle */}
         <p
-          className={`text-xs text-slate-500 mt-0.5 max-w-xs font-medium transition-opacity duration-250 ${
+          className={`text-xs text-slate-500 dark:text-slate-400 mt-0.5 max-w-xs font-medium transition-opacity duration-250 ${
             isExiting ? 'opacity-0' : 'opacity-100'
           }`}
           style={{ animation: 'splashFadeUp 0.5s ease-out 0.48s both' }}
@@ -248,7 +248,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
             </div>
 
             {/* Progress Track / Road Lane */}
-            <div className="relative w-full h-2.5 bg-slate-100 rounded-full border border-slate-200/90 shadow-inner overflow-hidden">
+            <div className="relative w-full h-2.5 bg-slate-100 dark:bg-slate-800 rounded-full border border-slate-200/90 dark:border-slate-700 shadow-inner overflow-hidden">
               {/* Filled Highway Track (Follows right behind the Vios) */}
               <div
                 className="h-full bg-linear-to-r from-amber-500 via-orange-500 to-amber-500 rounded-full transition-all duration-75 ease-out shadow-xs shadow-orange-500/50"

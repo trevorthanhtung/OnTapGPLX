@@ -4,7 +4,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { ThemeService, type ThemeMode } from '../services/theme';
-import { I18nService, type AppLanguage } from '../locales/i18n';
+import { I18nService } from '../locales/i18n';
 import type { SubHeaderConfig } from './Navbar';
 import { BookTipsView } from './BookTipsView';
 import { TrafficSignsView } from './TrafficSignsView';
@@ -24,8 +24,7 @@ export const MoreView: React.FC<MoreViewProps> = ({
   onSubHeaderChange
 }) => {
   const [currentTheme, setCurrentTheme] = useState<ThemeMode>(ThemeService.getTheme());
-  const [currentLang, setCurrentLang] = useState<AppLanguage>(I18nService.getLanguage());
-  const [subView, setSubView] = useState<'main' | 'tips' | 'signs' | 'road' | 'law' | 'theme' | 'language'>('main');
+  const [subView, setSubView] = useState<'main' | 'tips' | 'signs' | 'road' | 'law' | 'theme'>('main');
 
   // Modal for Exit Confirmation only
   const [showConfirmLanding, setShowConfirmLanding] = useState(false);
@@ -34,12 +33,6 @@ export const MoreView: React.FC<MoreViewProps> = ({
   const handleThemeChange = (mode: ThemeMode) => {
     setCurrentTheme(mode);
     ThemeService.setTheme(mode);
-  };
-
-  // Sync language changes
-  const handleLanguageChange = (lang: AppLanguage) => {
-    setCurrentLang(lang);
-    I18nService.setLanguage(lang);
   };
 
   // Close modals on Escape key
@@ -77,7 +70,7 @@ export const MoreView: React.FC<MoreViewProps> = ({
     return () => window.removeEventListener('popstate', handlePopState);
   }, [subView]);
 
-  const handleOpenSubView = (view: 'tips' | 'signs' | 'road' | 'law' | 'theme' | 'language') => {
+  const handleOpenSubView = (view: 'tips' | 'signs' | 'road' | 'law' | 'theme') => {
     setSubView(view);
     window.history.pushState({ component: 'moreSubView', subView: view }, '');
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -90,7 +83,7 @@ export const MoreView: React.FC<MoreViewProps> = ({
     }
   }, []);
 
-  const t = (key: string) => I18nService.t(key, currentLang);
+  const t = (key: string) => I18nService.t(key);
 
   // Notify parent component (Navbar/App) when entering/exiting sub-views
   useEffect(() => {
@@ -103,13 +96,8 @@ export const MoreView: React.FC<MoreViewProps> = ({
         title: t('theme.title'),
         onBack: handleBackToMain
       });
-    } else if (subView === 'language') {
-      onSubHeaderChange?.({
-        title: t('lang.title'),
-        onBack: handleBackToMain
-      });
     }
-  }, [subView, currentLang, handleBackToMain, onSubViewChange, onSubHeaderChange]);
+  }, [subView, handleBackToMain, onSubViewChange, onSubHeaderChange]);
 
   // Clean up on unmount
   useEffect(() => {
@@ -138,43 +126,6 @@ export const MoreView: React.FC<MoreViewProps> = ({
                 key={item.id}
                 type="button"
                 onClick={() => handleThemeChange(item.id as ThemeMode)}
-                className="w-full p-3.5 sm:p-4 flex items-center justify-between text-left hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors cursor-pointer group"
-              >
-                <span className={`text-sm ${isSelected ? 'font-bold text-slate-900 dark:text-white' : 'font-medium text-slate-700 dark:text-slate-300'}`}>
-                  {item.label}
-                </span>
-
-                {isSelected && (
-                  <Check className="w-4 h-4 text-slate-900 dark:text-white stroke-[2.5]" />
-                )}
-              </button>
-            );
-          })}
-        </div>
-      </div>
-    );
-  }
-
-  // ==========================================
-  // SUB-VIEW: CHỌN NGÔN NGỮ
-  // ==========================================
-  if (subView === 'language') {
-    return (
-      <div className="max-w-2xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-6 animate-in fade-in duration-150">
-        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden divide-y divide-slate-100 dark:divide-slate-800/80 shadow-2xs">
-          {[
-            { id: 'vi', label: 'Tiếng Việt' },
-            { id: 'en', label: 'English' },
-            { id: 'jp', label: '日本語' },
-            { id: 'cn', label: '简体中文' }
-          ].map((item) => {
-            const isSelected = currentLang === item.id;
-
-            return (
-              <button
-                key={item.id}
-                type="button"
-                onClick={() => handleLanguageChange(item.id as AppLanguage)}
                 className="w-full p-3.5 sm:p-4 flex items-center justify-between text-left hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors cursor-pointer group"
               >
                 <span className={`text-sm ${isSelected ? 'font-bold text-slate-900 dark:text-white' : 'font-medium text-slate-700 dark:text-slate-300'}`}>
@@ -355,20 +306,7 @@ export const MoreView: React.FC<MoreViewProps> = ({
           <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-200 group-hover:translate-x-0.5 transition-transform" />
         </button>
 
-        {/* Row 3: Ngôn ngữ */}
-        <button
-          type="button"
-          onClick={() => handleOpenSubView('language')}
-          className="w-full p-3.5 sm:p-4 flex items-center justify-between text-left hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors cursor-pointer group"
-        >
-          <span className="text-sm font-semibold text-slate-900 dark:text-white">
-            {t('lang.title')}
-          </span>
-
-          <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-200 group-hover:translate-x-0.5 transition-transform" />
-        </button>
-
-        {/* Row 4: Trang giới thiệu */}
+        {/* Row 3: Trang giới thiệu */}
         {onOpenLanding && (
           <button
             type="button"
@@ -389,7 +327,7 @@ export const MoreView: React.FC<MoreViewProps> = ({
             {t('app.version')}
           </span>
           <span className="text-xs font-mono text-slate-400 dark:text-slate-500">
-            v2.2.0
+            v2.3.0
           </span>
         </div>
       </div>

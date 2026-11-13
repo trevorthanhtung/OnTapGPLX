@@ -15,6 +15,17 @@ export const ThemeService = {
     window.dispatchEvent(new CustomEvent('ontapgplx:theme_change', { detail: theme }));
   },
 
+  isDark(): boolean {
+    if (typeof window === 'undefined') return false;
+    return document.documentElement.classList.contains('dark');
+  },
+
+  toggleTheme(): void {
+    if (typeof window === 'undefined') return;
+    const isCurrentlyDark = this.isDark();
+    this.setTheme(isCurrentlyDark ? 'light' : 'dark');
+  },
+
   applyTheme(theme?: ThemeMode): void {
     if (typeof window === 'undefined') return;
     const activeTheme = theme || this.getTheme();

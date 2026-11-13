@@ -3,6 +3,7 @@ import { ChevronDown, BookOpen, BarChart2, ArrowLeft } from 'lucide-react';
 import type { LicenseCategory } from '../types';
 import { LICENSE_CATEGORIES } from '../data/licenseCategories';
 import { I18nService, type AppLanguage } from '../locales/i18n';
+import { ThemeToggle } from './ThemeToggle';
 
 export interface SubHeaderConfig {
   title: string;
@@ -132,7 +133,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 {subHeader.rightElement ? (
                   <div className="z-10 shrink-0">{subHeader.rightElement}</div>
                 ) : (
-                  <div className="w-9 sm:w-10 shrink-0 pointer-events-none" aria-hidden="true" />
+                  <ThemeToggle size="sm" className="z-10" />
                 )}
               </div>
             ) : (
@@ -201,16 +202,16 @@ export const Navbar: React.FC<NavbarProps> = ({
                   </button>
                 </nav>
 
-                {/* Category Selector (Click to toggle) */}
-                <div className="flex items-center gap-2 shrink-0">
+                {/* Category Selector & Theme Toggle */}
+                <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
                   <div className="relative" ref={dropdownRef}>
                     <button
                       type="button"
                       onClick={() => setIsCategoryOpen(!isCategoryOpen)}
                       className="flex items-center justify-between w-[92px] sm:w-[100px] bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700/80 border border-slate-200/90 dark:border-slate-700 text-slate-800 dark:text-slate-200 px-3 py-1.5 rounded-xl text-xs sm:text-sm font-medium shadow-2xs transition-colors cursor-pointer whitespace-nowrap"
-                      title="Chọn hạng GPLX"
+                      title={t('cat.select')}
                     >
-                      <span>Hạng {currentConfig.id}</span>
+                      <span>{t('cat.prefix')} {currentConfig.id}</span>
                       <ChevronDown
                         className={`w-3.5 h-3.5 text-slate-500 dark:text-slate-400 shrink-0 transition-transform duration-150 ${
                           isCategoryOpen ? 'rotate-180' : ''
@@ -222,7 +223,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     {isCategoryOpen && (
                       <div className="absolute right-0 mt-1.5 w-52 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg p-1 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
                         <div className="px-3 py-1.5 text-xs font-semibold text-slate-400 dark:text-slate-400 uppercase tracking-wider border-b border-slate-100 dark:border-slate-700/80 whitespace-nowrap">
-                          Chọn hạng GPLX
+                          {t('cat.select')}
                         </div>
                         {LICENSE_CATEGORIES.map((cat) => (
                           <button
@@ -244,6 +245,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                       </div>
                     )}
                   </div>
+
+                  {/* Dark / Light Mode Toggle Button */}
+                  <ThemeToggle />
                 </div>
               </>
             )}

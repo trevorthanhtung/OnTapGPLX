@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, RotateCcw } from 'lucide-react';
 import type { ExamHistoryItem } from '../services/storage';
 import { StorageService } from '../services/storage';
+import { I18nService, type AppLanguage } from '../locales/i18n';
 
 interface StatsViewProps {
   onGoToWrongQuestions: () => void;
@@ -10,6 +11,26 @@ interface StatsViewProps {
 }
 
 export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRefresh, onReviewExam }) => {
+  const [currentLang, setCurrentLang] = useState<AppLanguage>(I18nService.getLanguage());
+
+  useEffect(() => {
+    const handleLangChange = (e: any) => {
+      setCurrentLang(e.detail || I18nService.getLanguage());
+    };
+    window.addEventListener('ontapgplx:language_change', handleLangChange);
+    return () => window.removeEventListener('ontapgplx:language_change', handleLangChange);
+  }, []);
+
+  const t = (key: string, params?: Record<string, string | number>) => {
+    let str = I18nService.t(key, currentLang);
+    if (params) {
+      Object.entries(params).forEach(([k, v]) => {
+        str = str.replace(new RegExp(`\\{${k}\\}`, 'g'), String(v));
+      });
+    }
+    return str;
+  };
+
   const [examHistory, setExamHistory] = useState<ExamHistoryItem[]>(StorageService.getExamHistory());
   const [wrongCount, setWrongCount] = useState<number>(StorageService.getWrongQuestions().length);
   const [studiedCount, setStudiedCount] = useState<number>(StorageService.getStudiedQuestions().length);
@@ -97,13 +118,13 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRe
     <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] py-6 sm:py-8 animate-in fade-in duration-200">
       {/* Page Header */}
       <div className="mb-6 sm:mb-8">
-        <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Thống kê tiến độ</h1>
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">{t('stats.title')}</h1>
       </div>
 
       {/* Mobile Stat Carousel */}
       <div className="block md:hidden mb-8 w-full max-w-full overflow-hidden">
         <div
-          className="relative bg-white border border-slate-200 rounded-2xl p-5 shadow-xs overflow-hidden w-full max-w-full select-none touch-pan-y"
+          className="relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-xs overflow-hidden w-full max-w-full select-none touch-pan-y"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
@@ -122,15 +143,15 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRe
             >
               {/* Slide 1: Tiến độ câu hỏi */}
               <div className="w-full shrink-0 py-1 min-h-[76px]">
-                <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">
-                  Tiến độ câu hỏi
+                <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">
+                  {t('stats.progressTitle')}
                 </div>
-                <div className="text-2xl font-extrabold text-slate-900 mb-2">
+                <div className="text-2xl font-extrabold text-slate-900 dark:text-white mb-2">
                   {studiedCount} / 600
                 </div>
-                <div className="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+                <div className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-1.5 overflow-hidden">
                   <div
-                    className="bg-slate-900 h-full rounded-full transition-all"
+                    className="bg-slate-900 dark:bg-amber-400 h-full rounded-full transition-all"
                     style={{ width: `${(studiedCount / 600) * 100}%` }}
                   />
                 </div>
@@ -141,50 +162,50 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRe
                 className="w-full shrink-0 py-1 min-h-[76px] cursor-pointer"
                 onClick={onGoToWrongQuestions}
               >
-                <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">
-                  Câu hay làm sai
+                <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">
+                  {t('stats.wrongTitle')}
                 </div>
-                <div className="text-2xl font-extrabold text-slate-900 mb-1">
-                  {wrongCount} câu
+                <div className="text-2xl font-extrabold text-slate-900 dark:text-white mb-1">
+                  {wrongCount} {t('theory.questionsShort')}
                 </div>
-                <p className="text-xs text-amber-700 font-medium">Ôn lại ngay →</p>
+                <p className="text-xs text-amber-700 dark:text-amber-400 font-medium">{t('stats.reviewNow')}</p>
               </div>
 
               {/* Slide 3: Bài thi đã làm */}
               <div className="w-full shrink-0 py-1 min-h-[76px]">
-                <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">
-                  Bài thi đã làm
+                <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">
+                  {t('stats.examsDone')}
                 </div>
-                <div className="text-2xl font-extrabold text-slate-900 mb-1">
-                  {totalExams} đề
+                <div className="text-2xl font-extrabold text-slate-900 dark:text-white mb-1">
+                  {totalExams} {t('stats.examsUnit')}
                 </div>
-                <p className="text-xs text-slate-400 font-medium">Đạt {passedExams} đề</p>
+                <p className="text-xs text-slate-400 dark:text-slate-500 font-medium">{t('stats.passedUnit', { count: passedExams })}</p>
               </div>
 
               {/* Slide 4: Tỷ lệ đạt sát hạch */}
               <div className="w-full shrink-0 py-1 min-h-[76px]">
-                <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">
-                  Tỷ lệ đạt sát hạch
+                <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">
+                  {t('stats.passRate')}
                 </div>
-                <div className={`text-2xl font-extrabold mb-1 ${passRate >= 80 ? 'text-emerald-600' : 'text-slate-900'}`}>
+                <div className={`text-2xl font-extrabold mb-1 ${passRate >= 80 ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-900 dark:text-white'}`}>
                   {passRate}%
                 </div>
-                <p className="text-xs text-slate-400 font-medium">
-                  {passRate >= 80 ? 'Đủ điều kiện dự thi' : 'Cần rèn luyện thêm'}
+                <p className="text-xs text-slate-400 dark:text-slate-500 font-medium">
+                  {passRate >= 80 ? t('stats.eligible') : t('stats.needPractice')}
                 </p>
               </div>
             </div>
           </div>
 
           {/* Navigation Controls & Dot Indicators */}
-          <div className="flex items-center justify-between mt-3 pt-2.5 border-t border-slate-100">
+          <div className="flex items-center justify-between mt-3 pt-2.5 border-t border-slate-100 dark:border-slate-800">
             <button
               type="button"
               onClick={(e) => {
                 e.stopPropagation();
                 setCurrentSlide((prev) => (prev - 1 + 4) % 4);
               }}
-              className="p-1.5 -ml-1 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
+              className="p-1.5 -ml-1 rounded text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
               aria-label="Thẻ trước"
             >
               <ChevronLeft className="w-4 h-4" />
@@ -203,7 +224,7 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRe
                   className={`h-1.5 rounded-full transition-all cursor-pointer ${
                     currentSlide === idx
                       ? 'w-6 bg-amber-500'
-                      : 'w-1.5 bg-slate-300 hover:bg-slate-400'
+                      : 'w-1.5 bg-slate-300 dark:bg-slate-700 hover:bg-slate-400'
                   }`}
                   aria-label={`Chuyển đến thẻ ${idx + 1}`}
                 />
@@ -216,7 +237,7 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRe
                 e.stopPropagation();
                 setCurrentSlide((prev) => (prev + 1) % 4);
               }}
-              className="p-1.5 -mr-1 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
+              className="p-1.5 -mr-1 rounded text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
               aria-label="Thẻ tiếp theo"
             >
               <ChevronRight className="w-4 h-4" />
@@ -228,14 +249,14 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRe
       {/* Desktop Overview Stat Cards */}
       <div className="hidden md:grid md:grid-cols-4 gap-4 mb-8">
         {/* Card 1: Số câu đã học */}
-        <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
-          <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">
-            Tiến độ câu hỏi
+        <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 shadow-xs">
+          <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+            {t('stats.progressTitle')}
           </div>
-          <div className="text-2xl font-extrabold text-slate-900">{studiedCount} / 600</div>
-          <div className="w-full bg-slate-100 rounded-full h-1.5 mt-3 overflow-hidden">
+          <div className="text-2xl font-extrabold text-slate-900 dark:text-white">{studiedCount} / 600</div>
+          <div className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-1.5 mt-3 overflow-hidden">
             <div
-              className="bg-slate-900 h-full rounded-full transition-all"
+              className="bg-slate-900 dark:bg-amber-400 h-full rounded-full transition-all"
               style={{ width: `${(studiedCount / 600) * 100}%` }}
             ></div>
           </div>
@@ -244,50 +265,50 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRe
         {/* Card 2: Câu làm sai */}
         <div
           onClick={onGoToWrongQuestions}
-          className="bg-white rounded-xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition-all cursor-pointer"
+          className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 shadow-xs hover:border-amber-400 dark:hover:border-amber-400 hover:shadow-md transition-all cursor-pointer"
         >
-          <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">
-            Câu hay làm sai
+          <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+            {t('stats.wrongTitle')}
           </div>
-          <div className="text-2xl font-extrabold text-slate-900">{wrongCount} câu</div>
-          <p className="text-xs text-amber-700 mt-2 font-medium">Ôn lại ngay →</p>
+          <div className="text-2xl font-extrabold text-slate-900 dark:text-white">{wrongCount} {t('theory.questionsShort')}</div>
+          <p className="text-xs text-amber-700 dark:text-amber-400 mt-2 font-medium">{t('stats.reviewNow')}</p>
         </div>
 
         {/* Card 3: Số đề đã thi */}
-        <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
-          <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">
-            Bài thi đã làm
+        <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 shadow-xs">
+          <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+            {t('stats.examsDone')}
           </div>
-          <div className="text-2xl font-extrabold text-slate-900">{totalExams} đề</div>
-          <p className="text-xs text-slate-400 mt-2 font-medium">Đạt {passedExams} đề</p>
+          <div className="text-2xl font-extrabold text-slate-900 dark:text-white">{totalExams} {t('stats.examsUnit')}</div>
+          <p className="text-xs text-slate-400 dark:text-slate-500 mt-2 font-medium">{t('stats.passedUnit', { count: passedExams })}</p>
         </div>
 
         {/* Card 4: Tỷ lệ đạt sát hạch */}
-        <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
-          <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">
-            Tỷ lệ đạt sát hạch
+        <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 shadow-xs">
+          <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+            {t('stats.passRate')}
           </div>
-          <div className={`text-2xl font-extrabold ${passRate >= 80 ? 'text-emerald-600' : 'text-slate-900'}`}>
+          <div className={`text-2xl font-extrabold ${passRate >= 80 ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-900 dark:text-white'}`}>
             {passRate}%
           </div>
-          <p className="text-xs text-slate-400 mt-2 font-medium">
-            {passRate >= 80 ? 'Đủ điều kiện dự thi' : 'Cần rèn luyện thêm'}
+          <p className="text-xs text-slate-400 dark:text-slate-500 mt-2 font-medium">
+            {passRate >= 80 ? t('stats.eligible') : t('stats.needPractice')}
           </p>
         </div>
       </div>
 
       {/* Recent Exam History Card */}
-      <div className="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 lg:p-8 shadow-xs">
+      <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-4 sm:p-6 lg:p-8 shadow-xs">
         <div className="flex items-center justify-between mb-3 sm:mb-4">
-          <h2 className="text-base sm:text-lg font-bold text-slate-900">
-            Lịch sử thi thử gần nhất
+          <h2 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+            {t('stats.historyTitle')}
           </h2>
           {(examHistory.length > 0 || studiedCount > 0 || wrongCount > 0) && (
             <button
               type="button"
               onClick={() => setShowConfirmClear(true)}
-              className="p-1 text-slate-400 hover:text-slate-700 transition-colors cursor-pointer"
-              title="Làm mới tiến độ & lịch sử thi thử"
+              className="p-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors cursor-pointer"
+              title={t('stats.resetTooltip')}
             >
               <RotateCcw className="w-4 h-4" />
             </button>
@@ -298,44 +319,44 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRe
           <div className="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
             <table className="w-full min-w-[500px] text-left text-sm">
               <thead>
-                <tr className="border-b border-slate-100 text-slate-400 text-xs uppercase font-semibold">
-                  <th className="py-3 px-3 sm:px-4 whitespace-nowrap">Ngày thi</th>
-                  <th className="py-3 px-3 sm:px-4 whitespace-nowrap">Hạng</th>
-                  <th className="py-3 px-3 sm:px-4 whitespace-nowrap">Điểm</th>
-                  <th className="py-3 px-3 sm:px-4 whitespace-nowrap">Thời gian</th>
-                  <th className="py-3 px-3 sm:px-4 text-right whitespace-nowrap">Kết quả</th>
+                <tr className="border-b border-slate-100 dark:border-slate-800 text-slate-400 dark:text-slate-500 text-xs uppercase font-semibold">
+                  <th className="py-3 px-3 sm:px-4 whitespace-nowrap">{t('stats.thDate')}</th>
+                  <th className="py-3 px-3 sm:px-4 whitespace-nowrap">{t('stats.thCategory')}</th>
+                  <th className="py-3 px-3 sm:px-4 whitespace-nowrap">{t('stats.thScore')}</th>
+                  <th className="py-3 px-3 sm:px-4 whitespace-nowrap">{t('stats.thDuration')}</th>
+                  <th className="py-3 px-3 sm:px-4 text-right whitespace-nowrap">{t('stats.thResult')}</th>
                   <th className="py-3 pl-1 pr-3 sm:pr-4 w-6"></th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 font-medium">
+              <tbody className="divide-y divide-slate-100 dark:divide-slate-800 font-medium">
                 {examHistory.map((item) => (
                   <tr
                     key={item.id}
                     onClick={() => onReviewExam?.(item)}
-                    className="hover:bg-slate-50/80 transition-colors cursor-pointer group"
+                    className="hover:bg-slate-50/80 dark:hover:bg-slate-800/60 transition-colors cursor-pointer group"
                     title="Nhấn để xem lại chi tiết bài thi"
                   >
-                    <td className="py-3.5 px-3 sm:px-4 text-slate-600 whitespace-nowrap">{item.date}</td>
-                    <td className="py-3.5 px-3 sm:px-4 text-slate-900 font-semibold whitespace-nowrap">{item.category}</td>
-                    <td className="py-3.5 px-3 sm:px-4 font-mono font-bold text-slate-900 whitespace-nowrap">
+                    <td className="py-3.5 px-3 sm:px-4 text-slate-600 dark:text-slate-300 whitespace-nowrap">{item.date}</td>
+                    <td className="py-3.5 px-3 sm:px-4 text-slate-900 dark:text-white font-semibold whitespace-nowrap">{item.category}</td>
+                    <td className="py-3.5 px-3 sm:px-4 font-mono font-bold text-slate-900 dark:text-white whitespace-nowrap">
                       {item.score} / {item.total}
                     </td>
-                    <td className="py-3.5 px-3 sm:px-4 text-slate-500 font-mono whitespace-nowrap">
+                    <td className="py-3.5 px-3 sm:px-4 text-slate-500 dark:text-slate-400 font-mono whitespace-nowrap">
                       {String(Math.floor(item.durationSeconds / 60)).padStart(2, '0')}:{String(item.durationSeconds % 60).padStart(2, '0')}
                     </td>
                     <td className="py-3.5 px-3 sm:px-4 text-right whitespace-nowrap">
                       {item.isPassed ? (
-                        <span className="text-xs font-semibold text-emerald-600">
-                          Đạt
+                        <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+                          {t('stats.pass')}
                         </span>
                       ) : (
-                        <span className="text-xs font-semibold text-rose-600">
-                          {item.failedCriticalId ? 'Không đạt (Điểm liệt)' : 'Không đạt'}
+                        <span className="text-xs font-semibold text-rose-600 dark:text-rose-400">
+                          {item.failedCriticalId ? t('stats.failCritical') : t('stats.fail')}
                         </span>
                       )}
                     </td>
                     <td className="py-3.5 pl-1 pr-3 sm:pr-4 text-right">
-                      <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-slate-600 group-hover:translate-x-0.5 transition-all inline-block" />
+                      <ChevronRight className="w-4 h-4 text-slate-300 dark:text-slate-600 group-hover:text-slate-600 dark:group-hover:text-slate-300 group-hover:translate-x-0.5 transition-all inline-block" />
                     </td>
                   </tr>
                 ))}
@@ -343,8 +364,8 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRe
             </table>
           </div>
         ) : (
-          <div className="text-center py-10 text-slate-400 text-sm">
-            Chưa có bài thi thử nào được ghi nhận. Hãy vào mục "Lý thuyết" để bắt đầu bài thi đầu tiên.
+          <div className="text-center py-10 text-slate-400 dark:text-slate-500 text-sm">
+            {t('stats.emptyHistory')}
           </div>
         )}
       </div>
@@ -355,28 +376,28 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRe
           className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 touch-none overscroll-contain select-none animate-in fade-in duration-150"
         >
           <div
-            className="bg-white rounded-2xl max-w-sm w-full p-6 sm:p-7 shadow-xl border border-slate-200 text-center animate-in zoom-in-95 duration-150"
+            className="bg-white dark:bg-slate-900 rounded-2xl max-w-sm w-full p-6 sm:p-7 shadow-xl border border-slate-200 dark:border-slate-800 text-center animate-in zoom-in-95 duration-150"
           >
-            <h4 className="text-base sm:text-lg font-bold text-slate-900 mb-2">
-              Làm mới toàn bộ tiến độ?
+            <h4 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white mb-2">
+              {t('stats.modalTitle')}
             </h4>
-            <p className="text-xs sm:text-sm text-slate-500 mb-6 leading-relaxed">
-              Bạn có chắc chắn muốn làm mới tiến độ câu hỏi và lịch sử thi thử không? Toàn bộ số liệu ôn tập sẽ được đưa về 0.
+            <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">
+              {t('stats.modalDesc')}
             </p>
             <div className="flex items-center gap-3">
               <button
                 type="button"
                 onClick={() => setShowConfirmClear(false)}
-                className="flex-1 py-2.5 px-4 rounded-xl border border-slate-200 text-slate-700 font-semibold text-xs sm:text-sm hover:bg-slate-100 transition-colors cursor-pointer"
+                className="flex-1 py-2.5 px-4 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold text-xs sm:text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
               >
-                Hủy
+                {t('stats.modalCancel')}
               </button>
               <button
                 type="button"
                 onClick={handleClearHistory}
                 className="flex-1 py-2.5 px-4 rounded-xl bg-rose-600 text-white font-semibold text-xs sm:text-sm hover:bg-rose-700 transition-colors shadow-2xs cursor-pointer"
               >
-                Làm mới
+                {t('stats.modalConfirm')}
               </button>
             </div>
           </div>
