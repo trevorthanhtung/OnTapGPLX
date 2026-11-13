@@ -3,7 +3,6 @@ import { ChevronDown, BookOpen, BarChart2, ArrowLeft } from 'lucide-react';
 import type { LicenseCategory } from '../types';
 import { LICENSE_CATEGORIES } from '../data/licenseCategories';
 import { I18nService, type AppLanguage } from '../locales/i18n';
-import { ThemeToggle } from './ThemeToggle';
 
 export interface SubHeaderConfig {
   title: string;
@@ -133,7 +132,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 {subHeader.rightElement ? (
                   <div className="z-10 shrink-0">{subHeader.rightElement}</div>
                 ) : (
-                  <ThemeToggle size="sm" className="z-10" />
+                  <div className="w-9 sm:w-10 shrink-0 pointer-events-none" aria-hidden="true" />
                 )}
               </div>
             ) : (
@@ -202,8 +201,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                   </button>
                 </nav>
 
-                {/* Category Selector & Theme Toggle */}
-                <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                {/* Category Selector (Click to toggle) */}
+                <div className="flex items-center gap-2 shrink-0">
                   <div className="relative" ref={dropdownRef}>
                     <button
                       type="button"
@@ -245,9 +244,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                       </div>
                     )}
                   </div>
-
-                  {/* Dark / Light Mode Toggle Button */}
-                  <ThemeToggle />
                 </div>
               </>
             )}
