@@ -11,10 +11,11 @@ import {
   AlertTriangle
 } from 'lucide-react';
 import simulationsData from '../data/simulations.json';
-import type { SimulationScenario } from '../types';
+import type { SimulationScenario, LicenseCategory } from '../types';
 
 interface SimulationViewProps {
   onActiveStateChange?: (isActive: boolean) => void;
+  currentCategory?: LicenseCategory;
 }
 
 const DEFAULT_CDN = 'https://pub-c2abeb24380a45a987615e62ee85f7e8.r2.dev';
@@ -36,7 +37,7 @@ const SIMULATION_CHAPTERS = [
   { id: 6, title: 'Chương 6: Các tình huống va chạm giao thông thực tế' }
 ];
 
-export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateChange }) => {
+export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateChange, currentCategory }) => {
   const allScenarios = simulationsData as SimulationScenario[];
 
   // App Navigation & Modes
@@ -46,6 +47,20 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
   useEffect(() => {
     onActiveStateChange?.(mode !== 'hub');
   }, [mode, onActiveStateChange]);
+
+  // Cảnh báo người dùng hạng xe máy (A1, A) khi vào phần thi mô phỏng ô tô
+  const isMotorbike = currentCategory === 'A1' || currentCategory === 'A';
+  const [showMotorbikeConfirm, setShowMotorbikeConfirm] = useState(false);
+  const pendingActionRef = useRef<(() => void) | null>(null);
+
+  const executeWithMotorbikeCheck = (action: () => void) => {
+    if (isMotorbike) {
+      pendingActionRef.current = action;
+      setShowMotorbikeConfirm(true);
+    } else {
+      action();
+    }
+  };
 
   const [activeScenarios, setActiveScenarios] = useState<SimulationScenario[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -136,6 +151,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
   // examAnswers: { [scenarioIndex: number]: { [part: number]: selectedOptionIndex } }
   const [examAnswers, setExamAnswers] = useState<Record<number, Record<number, number>>>({});
   const [isExamSubmitted, setIsExamSubmitted] = useState(false);
+  const [timeLeftSeconds, setTimeLeftSeconds] = useState(600);
   const [showResultModal, setShowResultModal] = useState(false);
   const [showSubmitConfirm, setShowSubmitConfirm] = useState(false);
   const [showExitConfirm, setShowExitConfirm] = useState(false);
@@ -265,6 +281,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
     setExamAnswers({});
     setIsExamSubmitted(false);
     setShowResultModal(false);
+    setTimeLeftSeconds(600); // 10 phút
     resetPlayback();
     setMode('exam');
   };
@@ -274,6 +291,30 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
     setShowSubmitConfirm(false);
     setIsExamSubmitted(true);
     setShowResultModal(true);
+  };
+
+  // Timer countdown for 10-minute simulation exam
+  useEffect(() => {
+    if (mode !== 'exam' || isExamSubmitted || timeLeftSeconds <= 0) return;
+
+    const timer = setInterval(() => {
+      setTimeLeftSeconds((prev) => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          handleSubmitExam();
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [mode, isExamSubmitted, timeLeftSeconds]);
+
+  const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
 
   // Reset playback
@@ -554,27 +595,72 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
   if (mode === 'hub') {
     return (
       <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] py-6 sm:py-8 animate-in fade-in duration-200">
-        {/* Banner Section */}
-        <div className="bg-slate-900 rounded-2xl p-5 sm:p-7 text-white mb-8 border border-slate-800 shadow-md">
-          <div className="max-w-4xl">
-            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white mb-4 sm:mb-5 leading-snug">
-              Bộ 120 Tình Huống Mô Phỏng Giao Thông
-            </h1>
+        {/* Banner Section: "Bản sắc riêng" cho 120 Mô Phỏng (Cinematic Simulator + Radar Grid) */}
+        <div className="relative rounded-2xl p-5 sm:p-7 text-white mb-8 overflow-hidden shadow-lg border border-purple-900/40 dark:border-purple-800/40 isolate bg-gradient-to-br from-[#120a26] via-[#1b103b] to-[#0c081a]">
+          {/* Background Decorative Art / Radar Simulation Crosshair Watermark */}
+          <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
+            {/* Ambient Radial Glow */}
+            <div className="absolute -top-24 -left-24 w-80 h-80 rounded-full bg-purple-500/15 blur-3xl" />
+            <div className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-amber-500/10 blur-3xl" />
 
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-              <button
-                onClick={startExamMode}
-                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 active:scale-98 text-slate-900 font-bold text-sm shadow-md transition-all cursor-pointer"
-              >
-                <span>Thi thử tình huống</span>
-              </button>
+            {/* Radar / Simulation Crosshair Grid SVG */}
+            <svg
+              className="absolute right-0 top-0 w-[450px] h-full text-purple-400/10 stroke-current opacity-70"
+              viewBox="0 0 400 200"
+              fill="none"
+              preserveAspectRatio="none"
+            >
+              <circle cx="300" cy="100" r="80" strokeWidth="1.5" strokeDasharray="4 4" />
+              <circle cx="300" cy="100" r="45" strokeWidth="1.5" />
+              <line x1="200" y1="100" x2="400" y2="100" strokeWidth="1" strokeDasharray="2 2" />
+              <line x1="300" y1="0" x2="300" y2="200" strokeWidth="1" strokeDasharray="2 2" />
+              <line x1="0" y1="200" x2="300" y2="100" strokeWidth="1" strokeDasharray="6 6" />
+              <line x1="120" y1="200" x2="300" y2="100" strokeWidth="1" strokeDasharray="6 6" />
+            </svg>
+          </div>
 
-              <button
-                onClick={startAllScenarios}
-                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 active:scale-98 text-white font-bold text-sm border border-slate-700 transition-all cursor-pointer"
-              >
-                <span>Ôn luyện toàn bộ 120 tình huống</span>
-              </button>
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 relative z-10">
+            <div className="max-w-2xl">
+              <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-white mb-4 sm:mb-5 leading-snug">
+                Bộ 120 Tình Huống Mô Phỏng Giao Thông
+              </h1>
+
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+                <button
+                  onClick={() => executeWithMotorbikeCheck(startExamMode)}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 active:scale-98 text-slate-950 font-extrabold text-sm shadow-md transition-all cursor-pointer border border-amber-400/40"
+                >
+                  <span>Thi thử tình huống</span>
+                </button>
+
+                <button
+                  onClick={() => executeWithMotorbikeCheck(startAllScenarios)}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 active:scale-98 text-white font-bold text-sm border border-white/20 backdrop-blur-xs transition-all cursor-pointer"
+                >
+                  <span>Ôn luyện toàn bộ 120 tình huống</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Structured Telemetry Card for Simulation (Matches 600 theory banner) */}
+            <div className="p-3.5 sm:p-4 rounded-xl bg-slate-900/80 backdrop-blur-md border border-purple-500/20 text-center lg:min-w-[340px] shadow-inner relative overflow-hidden">
+              <div className="text-[11px] font-bold text-purple-200/90 uppercase tracking-wider mb-2.5 pb-2 border-b border-slate-700/60 text-center">
+                Tiêu chuẩn thi mô phỏng
+              </div>
+              <div className="grid grid-cols-3 gap-2 sm:gap-4">
+                <div className="flex flex-col justify-center">
+                  <span className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold mb-1 whitespace-nowrap">Thời gian</span>
+                  <span className="text-sm sm:text-base font-extrabold text-slate-100 whitespace-nowrap">10 phút</span>
+                </div>
+                <div className="flex flex-col justify-center border-x border-slate-700/60 px-1 sm:px-2">
+                  <span className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold mb-1 whitespace-nowrap">Số câu thi</span>
+                  <span className="text-sm sm:text-base font-extrabold text-slate-100 whitespace-nowrap">10 câu (4 ý)</span>
+                </div>
+                <div className="flex flex-col justify-center">
+                  <span className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold mb-1 whitespace-nowrap">Điểm đạt</span>
+                  <span className="text-sm sm:text-base font-extrabold text-emerald-400 whitespace-nowrap">5.0/10 đ</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -609,7 +695,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                     <div
                       key={ch.id}
                       className="w-full shrink-0 py-2 cursor-pointer"
-                      onClick={() => startChapter(ch.id)}
+                      onClick={() => executeWithMotorbikeCheck(() => startChapter(ch.id))}
                     >
                       <h3 className="font-bold text-slate-900 text-base leading-snug">
                         {ch.title}
@@ -673,7 +759,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
             {SIMULATION_CHAPTERS.map((ch) => (
               <div
                 key={ch.id}
-                onClick={() => startChapter(ch.id)}
+                onClick={() => executeWithMotorbikeCheck(() => startChapter(ch.id))}
                 className="flex items-center justify-between p-4 rounded-xl border border-slate-100 bg-slate-50 hover:bg-slate-100 hover:border-slate-300 transition-all cursor-pointer"
               >
                 <div>
@@ -684,6 +770,50 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
             ))}
           </div>
         </div>
+
+        {/* Motorbike Warning Confirmation Dialog */}
+        {showMotorbikeConfirm && (
+          <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in duration-150">
+            <div
+              className="bg-white rounded-2xl max-w-sm w-full p-6 shadow-xl border border-slate-200 text-center animate-in zoom-in-95 duration-150"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="w-12 h-12 rounded-full bg-amber-50 border border-amber-200 flex items-center justify-center mx-auto mb-4 text-amber-600">
+                <AlertTriangle className="w-6 h-6" />
+              </div>
+
+              <h4 className="text-lg font-bold text-slate-900 mb-2">
+                Nội dung không bắt buộc
+              </h4>
+              <p className="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">
+                Phần thi 120 tình huống mô phỏng chỉ áp dụng cho đào tạo sát hạch lái xe ô tô (B, C, D...). Hạng xe máy <span className="font-semibold text-slate-900">({currentCategory || 'A1/A'})</span> hoàn toàn không thi nội dung này.
+              </p>
+
+              <div className="flex gap-2">
+                <button
+                  onClick={() => {
+                    setShowMotorbikeConfirm(false);
+                    pendingActionRef.current = null;
+                  }}
+                  className="flex-1 py-2.5 rounded-xl border border-slate-200 text-slate-700 text-sm font-semibold hover:bg-slate-50 cursor-pointer transition-colors"
+                >
+                  Quay lại
+                </button>
+                <button
+                  onClick={() => {
+                    setShowMotorbikeConfirm(false);
+                    const action = pendingActionRef.current;
+                    pendingActionRef.current = null;
+                    action?.();
+                  }}
+                  className="flex-1 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold cursor-pointer transition-colors shadow-xs"
+                >
+                  Tôi vẫn muốn làm
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
@@ -722,7 +852,19 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                 </span>
               </div>
 
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 sm:gap-3">
+                {mode === 'exam' && !isExamSubmitted && (
+                  <div
+                    className={`h-9 sm:h-10 px-3 sm:px-3.5 rounded-xl border font-mono font-bold text-sm tracking-wide flex items-center justify-center shrink-0 ${
+                      timeLeftSeconds < 120
+                        ? 'bg-rose-50 border-rose-300 text-rose-700 animate-pulse'
+                        : 'bg-slate-100 border-slate-200 text-slate-800'
+                    }`}
+                  >
+                    <span>{formatTime(timeLeftSeconds)}</span>
+                  </div>
+                )}
+
                 {!isExamSubmitted ? (
                   <button
                     onClick={() => setShowSubmitConfirm(true)}

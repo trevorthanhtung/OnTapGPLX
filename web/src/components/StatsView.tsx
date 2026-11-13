@@ -6,30 +6,31 @@ import { StorageService } from '../services/storage';
 interface StatsViewProps {
   onGoToWrongQuestions: () => void;
   onRefresh: () => void;
-  onOpenLanding?: () => void;
+  onReviewExam?: (item: ExamHistoryItem) => void;
 }
 
-export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRefresh, onOpenLanding }) => {
+export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRefresh, onReviewExam }) => {
   const [examHistory, setExamHistory] = useState<ExamHistoryItem[]>(StorageService.getExamHistory());
-  const [wrongCount] = useState<number>(StorageService.getWrongQuestions().length);
-  const [studiedCount] = useState<number>(StorageService.getStudiedQuestions().length);
-  const [showConfirmLanding, setShowConfirmLanding] = useState(false);
+  const [wrongCount, setWrongCount] = useState<number>(StorageService.getWrongQuestions().length);
+  const [studiedCount, setStudiedCount] = useState<number>(StorageService.getStudiedQuestions().length);
   const [showConfirmClear, setShowConfirmClear] = useState(false);
 
   // Lock body & window scroll when confirmation modal is visible
   useEffect(() => {
-    if (showConfirmLanding || showConfirmClear) {
+    if (showConfirmClear) {
       document.body.style.overflow = 'hidden';
 
       return () => {
         document.body.style.overflow = '';
       };
     }
-  }, [showConfirmLanding, showConfirmClear]);
+  }, [showConfirmClear]);
 
   const handleClearHistory = () => {
-    StorageService.clearExamHistory();
+    StorageService.clearAllProgress();
     setExamHistory([]);
+    setStudiedCount(0);
+    setWrongCount(0);
     setShowConfirmClear(false);
     onRefresh?.();
   };
@@ -281,12 +282,12 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRe
           <h2 className="text-base sm:text-lg font-bold text-slate-900">
             Lịch sử thi thử gần nhất
           </h2>
-          {examHistory.length > 0 && (
+          {(examHistory.length > 0 || studiedCount > 0 || wrongCount > 0) && (
             <button
               type="button"
               onClick={() => setShowConfirmClear(true)}
               className="p-1 text-slate-400 hover:text-slate-700 transition-colors cursor-pointer"
-              title="Làm mới lịch sử thi thử"
+              title="Làm mới tiến độ & lịch sử thi thử"
             >
               <RotateCcw className="w-4 h-4" />
             </button>
@@ -303,11 +304,17 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRe
                   <th className="py-3 px-3 sm:px-4 whitespace-nowrap">Điểm</th>
                   <th className="py-3 px-3 sm:px-4 whitespace-nowrap">Thời gian</th>
                   <th className="py-3 px-3 sm:px-4 text-right whitespace-nowrap">Kết quả</th>
+                  <th className="py-3 pl-1 pr-3 sm:pr-4 w-6"></th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100 font-medium">
                 {examHistory.map((item) => (
-                  <tr key={item.id} className="hover:bg-slate-50/60 transition-colors">
+                  <tr
+                    key={item.id}
+                    onClick={() => onReviewExam?.(item)}
+                    className="hover:bg-slate-50/80 transition-colors cursor-pointer group"
+                    title="Nhấn để xem lại chi tiết bài thi"
+                  >
                     <td className="py-3.5 px-3 sm:px-4 text-slate-600 whitespace-nowrap">{item.date}</td>
                     <td className="py-3.5 px-3 sm:px-4 text-slate-900 font-semibold whitespace-nowrap">{item.category}</td>
                     <td className="py-3.5 px-3 sm:px-4 font-mono font-bold text-slate-900 whitespace-nowrap">
@@ -327,6 +334,9 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRe
                         </span>
                       )}
                     </td>
+                    <td className="py-3.5 pl-1 pr-3 sm:pr-4 text-right">
+                      <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-slate-600 group-hover:translate-x-0.5 transition-all inline-block" />
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -339,55 +349,6 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRe
         )}
       </div>
 
-      {/* Revisit Landing Page */}
-      {onOpenLanding && (
-        <div className="flex justify-center mt-6 pb-2">
-          <button
-            type="button"
-            onClick={() => setShowConfirmLanding(true)}
-            className="text-xs sm:text-sm font-medium text-slate-400 hover:text-slate-700 hover:underline transition-colors cursor-pointer py-1 px-2"
-          >
-            <span>Trang giới thiệu</span>
-          </button>
-        </div>
-      )}
-
-      {/* Confirmation Modal to return to Landing Page */}
-      {showConfirmLanding && (
-        <div
-          className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 touch-none overscroll-contain select-none animate-in fade-in duration-150"
-        >
-          <div
-            className="bg-white rounded-2xl max-w-sm w-full p-6 sm:p-7 shadow-xl border border-slate-200 text-center animate-in zoom-in-95 duration-150"
-          >
-            <h4 className="text-base sm:text-lg font-bold text-slate-900 mb-2">
-              Quay lại trang giới thiệu?
-            </h4>
-            <p className="text-xs sm:text-sm text-slate-500 mb-6 leading-relaxed">
-              Bạn có muốn quay về trang giới thiệu không? Dữ liệu ôn tập của bạn vẫn được lưu trữ đầy đủ.
-            </p>
-            <div className="flex items-center gap-3">
-              <button
-                type="button"
-                onClick={() => setShowConfirmLanding(false)}
-                className="flex-1 py-2.5 px-4 rounded-xl border border-slate-200 text-slate-700 font-semibold text-xs sm:text-sm hover:bg-slate-100 transition-colors cursor-pointer"
-              >
-                Hủy
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  setShowConfirmLanding(false);
-                  onOpenLanding?.();
-                }}
-                className="flex-1 py-2.5 px-4 rounded-xl bg-slate-900 text-white font-semibold text-xs sm:text-sm hover:bg-slate-800 transition-colors shadow-2xs cursor-pointer"
-              >
-                Xác nhận
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
       {/* Confirmation Modal to Clear Exam History */}
       {showConfirmClear && (
         <div
@@ -397,10 +358,10 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRe
             className="bg-white rounded-2xl max-w-sm w-full p-6 sm:p-7 shadow-xl border border-slate-200 text-center animate-in zoom-in-95 duration-150"
           >
             <h4 className="text-base sm:text-lg font-bold text-slate-900 mb-2">
-              Làm mới lịch sử thi?
+              Làm mới toàn bộ tiến độ?
             </h4>
             <p className="text-xs sm:text-sm text-slate-500 mb-6 leading-relaxed">
-              Bạn có chắc chắn muốn xóa toàn bộ lịch sử thi thử không? Bảng kết quả sẽ được dọn dẹp sạch sẽ về ban đầu.
+              Bạn có chắc chắn muốn làm mới tiến độ câu hỏi và lịch sử thi thử không? Toàn bộ số liệu ôn tập sẽ được đưa về 0.
             </p>
             <div className="flex items-center gap-3">
               <button

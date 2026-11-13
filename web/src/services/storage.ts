@@ -9,7 +9,8 @@ const STORAGE_KEYS = {
   STUDIED_QUESTIONS: 'ontapgplx_studied_questions',
   HAS_ENTERED_APP: 'ontapgplx_has_entered_app',
   HAS_ENTERED_WEB: 'ontapgplx_has_entered_web',
-  HAS_ENTERED_PWA: 'ontapgplx_has_entered_pwa'
+  HAS_ENTERED_PWA: 'ontapgplx_has_entered_pwa',
+  DISMISSED_LAW_UPDATE_BANNER: 'ontapgplx_dismissed_law_update_banner_2025'
 };
 
 export interface ExamHistoryItem {
@@ -21,6 +22,8 @@ export interface ExamHistoryItem {
   isPassed: boolean;
   failedCriticalId?: number;
   durationSeconds: number;
+  questionIds?: number[];
+  userAnswers?: Record<number, number>;
 }
 
 export const StorageService = {
@@ -120,6 +123,28 @@ export const StorageService = {
     }
   },
 
+  clearStudiedQuestions(): void {
+    try {
+      localStorage.removeItem(STORAGE_KEYS.STUDIED_QUESTIONS);
+    } catch {
+      // ignore
+    }
+  },
+
+  clearWrongQuestions(): void {
+    try {
+      localStorage.removeItem(STORAGE_KEYS.WRONG_QUESTIONS);
+    } catch {
+      // ignore
+    }
+  },
+
+  clearAllProgress(): void {
+    this.clearExamHistory();
+    this.clearStudiedQuestions();
+    this.clearWrongQuestions();
+  },
+
   exportBackup(): string {
     const data = {
       category: this.getCategory(),
@@ -178,6 +203,30 @@ export const StorageService = {
       localStorage.removeItem(STORAGE_KEYS.HAS_ENTERED_APP);
       localStorage.removeItem(STORAGE_KEYS.HAS_ENTERED_WEB);
       localStorage.removeItem(STORAGE_KEYS.HAS_ENTERED_PWA);
+    } catch {
+      // ignore
+    }
+  },
+
+  isLawUpdateBannerDismissed(): boolean {
+    try {
+      return localStorage.getItem(STORAGE_KEYS.DISMISSED_LAW_UPDATE_BANNER) === 'true';
+    } catch {
+      return false;
+    }
+  },
+
+  dismissLawUpdateBanner(): void {
+    try {
+      localStorage.setItem(STORAGE_KEYS.DISMISSED_LAW_UPDATE_BANNER, 'true');
+    } catch {
+      // ignore
+    }
+  },
+
+  resetLawUpdateBanner(): void {
+    try {
+      localStorage.removeItem(STORAGE_KEYS.DISMISSED_LAW_UPDATE_BANNER);
     } catch {
       // ignore
     }

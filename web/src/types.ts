@@ -9,6 +9,8 @@ export interface LicenseConfig {
   passScore: number;
   allowedWrong: number;
   criticalAllowed: number; // 0
+  questionPoolCount: number;
+  criticalCount: number;
 }
 
 export interface Question {

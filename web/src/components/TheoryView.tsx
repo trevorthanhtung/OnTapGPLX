@@ -8,32 +8,57 @@ import {
 } from 'lucide-react';
 import type { LicenseCategory, Question } from '../types';
 import { LICENSE_CATEGORIES } from '../data/licenseCategories';
+import { QUESTION_QUICK_TIPS } from '../data/questionQuickTips';
 import { ExamGenerator, questionsData } from '../services/examGenerator';
-import { StorageService } from '../services/storage';
+import { StorageService, type ExamHistoryItem } from '../services/storage';
 
 interface TheoryViewProps {
   currentCategory: LicenseCategory;
   onRefreshStats: () => void;
   onActiveStateChange?: (isActive: boolean) => void;
+  reviewExam?: ExamHistoryItem | null;
+  onExitReview?: () => void;
 }
 
 type Mode = 'hub' | 'exam' | 'practice_critical' | 'practice_chapter' | 'practice_wrong' | 'practice_all';
 
-const CHAPTERS = [
-  { id: 1, title: 'Chương 1: Khái niệm và quy tắc giao thông đường bộ', range: 'Câu 1 - 166', count: 166 },
-  { id: 2, title: 'Chương 2: Nghiệp vụ vận tải', range: 'Câu 167 - 192', count: 26 },
-  { id: 3, title: 'Chương 3: Văn hóa giao thông và đạo đức người lái xe', range: 'Câu 193 - 213', count: 21 },
-  { id: 4, title: 'Chương 4: Kỹ thuật lái xe', range: 'Câu 214 - 269', count: 56 },
-  { id: 5, title: 'Chương 5: Cấu tạo và sửa chữa', range: 'Câu 270 - 304', count: 35 },
-  { id: 6, title: 'Chương 6: Hệ thống biển báo hiệu đường bộ', range: 'Câu 305 - 486', count: 182 },
-  { id: 7, title: 'Chương 7: Giải các thế sa hình và kỹ năng xử lý tình huống giao thông', range: 'Câu 487 - 600', count: 114 }
+const ALL_CHAPTERS = [
+  { id: 1, title: 'Chương 1: Khái niệm và quy tắc giao thông đường bộ' },
+  { id: 2, title: 'Chương 2: Nghiệp vụ vận tải' },
+  { id: 3, title: 'Chương 3: Văn hóa giao thông và đạo đức người lái xe' },
+  { id: 4, title: 'Chương 4: Kỹ thuật lái xe' },
+  { id: 5, title: 'Chương 5: Cấu tạo và sửa chữa' },
+  { id: 6, title: 'Chương 6: Hệ thống biển báo hiệu đường bộ' },
+  { id: 7, title: 'Chương 7: Giải các thế sa hình và kỹ năng xử lý tình huống giao thông' }
 ];
 
-export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefreshStats, onActiveStateChange }) => {
+export const TheoryView: React.FC<TheoryViewProps> = ({
+  currentCategory,
+  onRefreshStats,
+  onActiveStateChange,
+  reviewExam,
+  onExitReview
+}) => {
   const currentConfig = useMemo(
     () => LICENSE_CATEGORIES.find((c) => c.id === currentCategory) || LICENSE_CATEGORIES[0],
     [currentCategory]
   );
+
+  // Danh sách các chương thực tế được áp dụng cho từng hạng bằng
+  const availableChapters = useMemo(() => {
+    const pool = ExamGenerator.getPoolForCategory(currentCategory);
+    return ALL_CHAPTERS.map((ch) => {
+      const chQuestions = pool.filter((q) => q.chapter === ch.id);
+      return {
+        ...ch,
+        count: chQuestions.length,
+        range:
+          chQuestions.length > 0
+            ? `Câu ${chQuestions[0].id} - ${chQuestions[chQuestions.length - 1].id}`
+            : 'Không áp dụng'
+      };
+    }).filter((ch) => ch.count > 0);
+  }, [currentCategory]);
 
   const [mode, setMode] = useState<Mode>('hub');
 
@@ -54,10 +79,48 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
   const [showSubmitConfirm, setShowSubmitConfirm] = useState(false);
   const [showMobileQuestionSheet, setShowMobileQuestionSheet] = useState(false);
 
+  // Handle reviewing a specific exam from history
+  useEffect(() => {
+    if (!reviewExam) return;
+
+    let questions: Question[] = [];
+    if (reviewExam.questionIds && reviewExam.questionIds.length > 0) {
+      const qMap = new Map<number, Question>();
+      questionsData.forEach((q: any) => qMap.set(q.id, q));
+      questions = reviewExam.questionIds
+        .map((id) => qMap.get(id))
+        .filter((q): q is Question => Boolean(q));
+    }
+
+    // Fallback for legacy exams without questionIds
+    if (questions.length === 0) {
+      questions = ExamGenerator.generateExam(reviewExam.category);
+      if (reviewExam.failedCriticalId) {
+        const critQ = questionsData.find((q: any) => q.id === reviewExam.failedCriticalId);
+        if (critQ && !questions.some((q) => q.id === critQ.id)) {
+          questions[0] = critQ as Question;
+        }
+      }
+    }
+
+    setActiveQuestions(questions);
+    setCurrentIndex(0);
+    setUserAnswers(reviewExam.userAnswers || {});
+    setIsSubmitted(true);
+    setShowResultModal(false);
+    setTimeLeftSeconds(0);
+    setMode('exam');
+  }, [reviewExam]);
+
   // Mobile chapter carousel state
   const [currentChapterSlide, setCurrentChapterSlide] = useState(0);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
+
+  // Reset chapter slide on category switch
+  useEffect(() => {
+    setCurrentChapterSlide(0);
+  }, [currentCategory]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
@@ -70,11 +133,11 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
 
   const handleTouchEnd = () => {
     const delta = touchStartX.current - touchEndX.current;
-    if (Math.abs(delta) > 35) {
+    if (Math.abs(delta) > 35 && availableChapters.length > 0) {
       if (delta > 0) {
-        setCurrentChapterSlide((prev) => (prev + 1) % CHAPTERS.length);
+        setCurrentChapterSlide((prev) => (prev + 1) % availableChapters.length);
       } else {
-        setCurrentChapterSlide((prev) => (prev - 1 + CHAPTERS.length) % CHAPTERS.length);
+        setCurrentChapterSlide((prev) => (prev - 1 + availableChapters.length) % availableChapters.length);
       }
     }
     touchStartX.current = 0;
@@ -93,13 +156,13 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
   };
 
   const handleMouseUp = () => {
-    if (touchStartX.current !== 0) {
+    if (touchStartX.current !== 0 && availableChapters.length > 0) {
       const delta = touchStartX.current - touchEndX.current;
       if (Math.abs(delta) > 35) {
         if (delta > 0) {
-          setCurrentChapterSlide((prev) => (prev + 1) % CHAPTERS.length);
+          setCurrentChapterSlide((prev) => (prev + 1) % availableChapters.length);
         } else {
-          setCurrentChapterSlide((prev) => (prev - 1 + CHAPTERS.length) % CHAPTERS.length);
+          setCurrentChapterSlide((prev) => (prev - 1 + availableChapters.length) % availableChapters.length);
         }
       }
       touchStartX.current = 0;
@@ -121,20 +184,20 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
     setMode('exam');
   }, [currentCategory, currentConfig]);
 
-  // Start 60 Critical Questions Practice
+  // Start Critical Questions Practice for current category
   const startCriticalPractice = useCallback(() => {
-    const questions = ExamGenerator.getCriticalQuestions();
+    const questions = ExamGenerator.getCriticalQuestions(currentCategory);
     setActiveQuestions(questions);
     setCurrentIndex(0);
     setUserAnswers({});
     setIsSubmitted(false);
     setTimeLeftSeconds(0);
     setMode('practice_critical');
-  }, []);
+  }, [currentCategory]);
 
-  // Start Practice by Chapter
+  // Start Practice by Chapter for current category
   const startChapterPractice = useCallback((chapterId: number) => {
-    const questions = ExamGenerator.getQuestionsByChapter(chapterId);
+    const questions = ExamGenerator.getQuestionsByChapter(chapterId, currentCategory);
     setActiveQuestions(questions);
     setCurrentIndex(0);
     setUserAnswers({});
@@ -142,7 +205,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
     setTimeLeftSeconds(0);
     setSelectedChapter(chapterId);
     setMode('practice_chapter');
-  }, []);
+  }, [currentCategory]);
 
   // Start Practice Wrong Questions
   const startWrongPractice = useCallback(() => {
@@ -157,15 +220,16 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
     setMode('practice_wrong');
   }, []);
 
-  // Start All 600 Questions
+  // Start All Questions for current category
   const startAllQuestions = useCallback(() => {
-    setActiveQuestions(questionsData);
+    const pool = ExamGenerator.getPoolForCategory(currentCategory);
+    setActiveQuestions(pool);
     setCurrentIndex(0);
     setUserAnswers({});
     setIsSubmitted(false);
     setTimeLeftSeconds(0);
     setMode('practice_all');
-  }, []);
+  }, [currentCategory]);
 
   // Timer countdown for exam mode
   useEffect(() => {
@@ -261,7 +325,9 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
       total: activeQuestions.length,
       isPassed,
       failedCriticalId: failedCritId,
-      durationSeconds: currentConfig.timeMinutes * 60 - timeLeftSeconds
+      durationSeconds: currentConfig.timeMinutes * 60 - timeLeftSeconds,
+      questionIds: activeQuestions.map((q) => q.id),
+      userAnswers: { ...userAnswers }
     });
 
     setWrongQuestionIds(StorageService.getWrongQuestions());
@@ -365,6 +431,10 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
       }
 
       // 5. Otherwise (practice mode or submitted exam), exit to hub
+      if (reviewExam) {
+        onExitReview?.();
+        return;
+      }
       setMode('hub');
     };
 
@@ -372,7 +442,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
     return () => {
       window.removeEventListener('popstate', handlePopState);
     };
-  }, [mode, isSubmitted, showMobileQuestionSheet, showSubmitConfirm, showExitConfirm]);
+  }, [mode, isSubmitted, showMobileQuestionSheet, showSubmitConfirm, showExitConfirm, reviewExam, onExitReview]);
 
   // ==========================================
   // RENDER: HUB VIEW
@@ -380,39 +450,77 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
   if (mode === 'hub') {
     return (
       <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] py-6 sm:py-8 animate-in fade-in duration-200">
-        {/* Banner Section - Merged with Browse 600 Questions */}
-        <div className="bg-slate-900 rounded-2xl p-5 sm:p-7 text-white mb-8 border border-slate-800 shadow-md">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+        {/* Banner Section: "Bản sắc riêng" cho 600 Câu Lý Thuyết (Highway Blue + Traffic Code Watermark) */}
+        <div className="relative rounded-2xl p-5 sm:p-7 text-white mb-8 overflow-hidden shadow-lg border border-sky-900/40 dark:border-sky-800/40 isolate bg-gradient-to-br from-[#071326] via-[#0d1e3d] to-[#081220]">
+          {/* Background Decorative Art / Highway Perspective Lines & Traffic Watermark */}
+          <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
+            {/* Ambient Radial Glow */}
+            <div className="absolute -top-24 -left-24 w-80 h-80 rounded-full bg-sky-500/10 blur-3xl" />
+            <div className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-amber-500/10 blur-3xl" />
+
+            {/* Highway Road Lanes SVG Watermark */}
+            <svg
+              className="absolute right-0 bottom-0 w-[420px] h-full text-sky-400/10 stroke-current opacity-80"
+              viewBox="0 0 400 200"
+              fill="none"
+              preserveAspectRatio="none"
+            >
+              <path d="M 50 200 Q 220 120 400 20" strokeWidth="2.5" />
+              <path d="M 0 200 Q 180 110 370 0" strokeWidth="1.5" strokeDasharray="8 8" />
+              <path d="M 120 200 Q 260 130 400 60" strokeWidth="2.5" />
+              <path d="M 85 200 Q 240 125 400 40" strokeWidth="2" strokeDasharray="12 10" className="text-amber-400/20" />
+            </svg>
+
+            {/* Traffic Sign & Steering Wheel Silhouette Watermark */}
+            <svg
+              className="absolute -right-6 -top-8 w-64 h-64 text-sky-300/5 pointer-events-none"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v6" />
+              <path d="M12 16v6" />
+              <path d="m4.93 4.93 4.24 4.24" />
+              <path d="m14.83 14.83 4.24 4.24" />
+              <path d="m19.07 4.93-4.24 4.24" />
+              <path d="m9.17 14.83-4.24 4.24" />
+            </svg>
+          </div>
+
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 relative z-10">
             <div className="max-w-2xl">
-              <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white mb-4 sm:mb-5 leading-snug">
-                Bộ 600 Câu Hỏi Lý Thuyết Sát Hạch Lái Xe
+              <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-white mb-4 sm:mb-5 leading-snug">
+                Bộ {currentConfig.questionPoolCount || 600} Câu Hỏi Lý Thuyết Sát Hạch Lái Xe
               </h1>
 
               <button
                 onClick={startAllQuestions}
-                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 active:scale-98 text-slate-900 font-bold text-sm shadow-md transition-all cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 active:scale-98 text-slate-950 font-extrabold text-sm shadow-md transition-all cursor-pointer border border-amber-400/40"
               >
-                <span>Luyện toàn bộ 600 câu</span>
+                <span>Luyện toàn bộ {currentConfig.questionPoolCount || 600} câu</span>
               </button>
             </div>
 
             {/* Structured 3-column Telemetry / Exam Specs Card */}
-            <div className="p-3 sm:p-3.5 rounded-xl bg-slate-800/80 border border-slate-700/60 text-center lg:min-w-[340px]">
-              <div className="text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-2.5 pb-2 border-b border-slate-700/60 text-center">
+            <div className="p-3.5 sm:p-4 rounded-xl bg-slate-900/80 backdrop-blur-md border border-sky-500/20 text-center lg:min-w-[340px] shadow-inner relative overflow-hidden">
+              <div className="text-[11px] font-bold text-sky-200/90 uppercase tracking-wider mb-2.5 pb-2 border-b border-slate-700/60 text-center">
                 Tiêu chuẩn đạt sát hạch
               </div>
               <div className="grid grid-cols-3 gap-2 sm:gap-4">
                 <div className="flex flex-col justify-center">
-                  <span className="text-[11px] text-slate-400 uppercase tracking-wider font-medium mb-1 whitespace-nowrap">Thời gian</span>
-                  <span className="text-sm sm:text-base font-bold text-slate-100 whitespace-nowrap">{currentConfig.timeMinutes} phút</span>
+                  <span className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold mb-1 whitespace-nowrap">Thời gian</span>
+                  <span className="text-sm sm:text-base font-extrabold text-slate-100 whitespace-nowrap">{currentConfig.timeMinutes} phút</span>
                 </div>
                 <div className="flex flex-col justify-center border-x border-slate-700/60 px-1 sm:px-2">
-                  <span className="text-[11px] text-slate-400 uppercase tracking-wider font-medium mb-1 whitespace-nowrap">Điểm đạt</span>
-                  <span className="text-sm sm:text-base font-bold text-emerald-400 whitespace-nowrap">{currentConfig.passScore}/{currentConfig.totalQuestions}</span>
+                  <span className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold mb-1 whitespace-nowrap">Điểm đạt</span>
+                  <span className="text-sm sm:text-base font-extrabold text-emerald-400 whitespace-nowrap">{currentConfig.passScore}/{currentConfig.totalQuestions}</span>
                 </div>
                 <div className="flex flex-col justify-center">
-                  <span className="text-[11px] text-slate-400 uppercase tracking-wider font-medium mb-1 whitespace-nowrap">Điểm liệt</span>
-                  <span className="text-sm sm:text-base font-bold text-rose-400 whitespace-nowrap">0 câu sai</span>
+                  <span className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold mb-1 whitespace-nowrap">Điểm liệt</span>
+                  <span className="text-sm sm:text-base font-extrabold text-rose-400 whitespace-nowrap">0 câu sai</span>
                 </div>
               </div>
             </div>
@@ -466,15 +574,15 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
 
             <div>
               <h2 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-rose-600 transition-colors">
-                60 Câu hỏi điểm liệt
+                {currentConfig.criticalCount || 60} Câu hỏi điểm liệt
               </h2>
               <p className="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6">
-                60 câu hỏi về tình huống mất an toàn giao thông nghiêm trọng. Trả lời sai 1 câu hỏi điểm liệt bị tính không đạt ngay lập tức.
+                {currentConfig.criticalCount || 60} câu hỏi về tình huống mất an toàn giao thông nghiêm trọng. Trả lời sai 1 câu hỏi điểm liệt bị tính không đạt ngay lập tức.
               </p>
             </div>
 
             <div className="flex items-center text-sm font-semibold text-rose-600 group-hover:text-rose-700 transition-colors pt-3 border-t border-rose-50">
-              <span>Luyện 60 câu điểm liệt</span>
+              <span>Luyện {currentConfig.criticalCount || 60} câu điểm liệt</span>
               <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
             </div>
           </div>
@@ -516,11 +624,13 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
           </div>
         </div>
 
-        {/* Section: Ôn tập theo 7 chương */}
+        {/* Section: Ôn tập theo các chương/phần của hạng bằng */}
         <div className="bg-white rounded-2xl border border-slate-200 p-5 sm:p-8">
-          <h2 className="text-lg sm:text-xl font-bold text-slate-900 mb-4 sm:mb-6">
-            Ôn luyện theo 7 chương lý thuyết
-          </h2>
+          <div className="flex items-center justify-between mb-4 sm:mb-6">
+            <h2 className="text-lg sm:text-xl font-bold text-slate-900">
+              Ôn luyện lý thuyết theo từng phần
+            </h2>
+          </div>
 
           {/* Mobile Single Card Carousel with swipe */}
           <div className="block md:hidden w-full max-w-full overflow-hidden">
@@ -542,7 +652,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
                   className="flex transition-transform duration-300 ease-out w-full"
                   style={{ transform: `translateX(-${currentChapterSlide * 100}%)` }}
                 >
-                  {CHAPTERS.map((ch) => (
+                  {availableChapters.map((ch) => (
                     <div
                       key={ch.id}
                       className="w-full shrink-0 py-2 cursor-pointer"
@@ -551,6 +661,9 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
                       <h3 className="font-bold text-slate-900 text-base leading-snug">
                         {ch.title}
                       </h3>
+                      <p className="text-xs text-slate-500 font-medium mt-1">
+                        {ch.count} câu hỏi ({ch.range})
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -562,7 +675,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
                   type="button"
                   onClick={(e) => {
                     e.stopPropagation();
-                    setCurrentChapterSlide((prev) => (prev - 1 + CHAPTERS.length) % CHAPTERS.length);
+                    setCurrentChapterSlide((prev) => (prev - 1 + availableChapters.length) % availableChapters.length);
                   }}
                   className="p-1.5 -ml-1 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-200 transition-colors"
                   aria-label="Chương trước"
@@ -570,9 +683,9 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
                   <ChevronLeft className="w-4 h-4" />
                 </button>
 
-                {/* 7 dots */}
+                {/* dots */}
                 <div className="flex items-center gap-1.5">
-                  {CHAPTERS.map((ch, idx) => (
+                  {availableChapters.map((ch, idx) => (
                     <button
                       key={ch.id}
                       type="button"
@@ -585,7 +698,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
                           ? 'w-6 bg-amber-500'
                           : 'w-1.5 bg-slate-300 hover:bg-slate-400'
                       }`}
-                      aria-label={`Chuyển đến chương ${ch.id}`}
+                      aria-label={`Chuyển đến phần ${ch.id}`}
                     />
                   ))}
                 </div>
@@ -594,7 +707,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
                   type="button"
                   onClick={(e) => {
                     e.stopPropagation();
-                    setCurrentChapterSlide((prev) => (prev + 1) % CHAPTERS.length);
+                    setCurrentChapterSlide((prev) => (prev + 1) % availableChapters.length);
                   }}
                   className="p-1.5 -mr-1 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-200 transition-colors"
                   aria-label="Chương tiếp theo"
@@ -607,8 +720,8 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
 
           {/* Desktop Grid View */}
           <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-4">
-            {CHAPTERS.map((ch) => {
-              const isLast = ch.id === 7;
+            {availableChapters.map((ch, idx) => {
+              const isLast = idx === availableChapters.length - 1 && availableChapters.length % 2 !== 0;
               return (
                 <div
                   key={ch.id}
@@ -619,8 +732,11 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
                 >
                   <div>
                     <h3 className="font-semibold text-slate-900 text-sm">{ch.title}</h3>
+                    <p className="text-xs text-slate-500 mt-0.5">
+                      {ch.count} câu ({ch.range})
+                    </p>
                   </div>
-                  <ChevronRight className="w-4 h-4 text-slate-400" />
+                  <ChevronRight className="w-4 h-4 text-slate-400 shrink-0 ml-3" />
                 </div>
               );
             })}
@@ -656,28 +772,32 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
             <div className="flex items-center gap-2 sm:gap-3 min-w-0">
               <button
                 onClick={() => {
-                  if (mode === 'exam' && !isSubmitted) {
+                  if (reviewExam) {
+                    onExitReview?.();
+                  } else if (mode === 'exam' && !isSubmitted) {
                     setShowExitConfirm(true);
                   } else {
                     setMode('hub');
                   }
                 }}
                 className="p-2 -ml-2 rounded-xl hover:bg-slate-100 text-slate-600 transition-colors shrink-0 cursor-pointer landscape-mobile:p-1.5"
-                title="Quay lại danh mục"
+                title="Quay lại"
               >
                 <ArrowLeft className="w-5 h-5 landscape-mobile:w-4 landscape-mobile:h-4" />
               </button>
               <div className="flex items-center gap-2 min-w-0">
                 <span className="font-bold text-slate-900 text-base sm:text-lg landscape-mobile:text-sm truncate">
-                  {mode === 'exam'
+                  {reviewExam
+                    ? `Xem lại bài thi ${reviewExam.category} (${reviewExam.date})`
+                    : mode === 'exam'
                     ? `Đề thi sát hạch ${currentConfig.id}`
                     : mode === 'practice_critical'
-                    ? '60 Câu hỏi điểm liệt'
+                    ? `${currentConfig.criticalCount || 60} Câu hỏi điểm liệt`
                     : mode === 'practice_chapter'
                     ? `Chương ${selectedChapter}`
                     : mode === 'practice_wrong'
                     ? 'Ôn lại các câu sai'
-                    : 'Toàn bộ 600 câu'}
+                    : `Toàn bộ ${activeQuestions.length} câu`}
                 </span>
               </div>
             </div>
@@ -705,7 +825,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
                 </button>
               )}
 
-              {isSubmitted && (
+              {!reviewExam && isSubmitted && (
                 <button
                   onClick={startExam}
                   className="h-9 sm:h-10 px-3.5 sm:px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold shadow-xs transition-colors cursor-pointer flex items-center justify-center shrink-0"
@@ -937,13 +1057,24 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
 
                       {/* Tip / Explanation in Practice Mode (only after selecting an answer) or after Submit in Exam */}
                       {(isSubmitted || (mode !== 'exam' && userAnswers[currentQ.id] !== undefined)) && (
-                        <div className="p-3 landscape-mobile:p-2 rounded-xl bg-slate-50 border border-slate-200 mb-2 shrink-0 animate-in fade-in duration-150">
-                          <div className="text-[11px] font-bold text-slate-900 uppercase tracking-wider mb-0.5">
-                            Đáp án đúng: Ý {currentQ.correctAnswer}
+                        <div className="p-3 landscape-mobile:p-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 mb-2 shrink-0 animate-in fade-in duration-150 space-y-2">
+                          <div>
+                            <div className="text-[11px] font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider mb-0.5">
+                              Đáp án đúng: Ý {currentQ.correctAnswer}
+                            </div>
+                            <p className="text-xs sm:text-sm landscape-mobile:text-xs text-slate-700 dark:text-slate-300 leading-relaxed font-medium">
+                              {currentQ.tip}
+                            </p>
                           </div>
-                          <p className="text-xs sm:text-sm landscape-mobile:text-xs text-slate-700 leading-relaxed font-medium">
-                            {currentQ.tip}
-                          </p>
+
+                          {QUESTION_QUICK_TIPS[currentQ.id] && (
+                            <div className="pt-2 border-t border-slate-200 dark:border-slate-700/80 text-xs sm:text-sm landscape-mobile:text-xs leading-relaxed">
+                              <span className="font-bold text-amber-600 dark:text-amber-400">Mẹo làm nhanh: </span>
+                              <span className="text-slate-800 dark:text-slate-200 font-medium">
+                                {QUESTION_QUICK_TIPS[currentQ.id]}
+                              </span>
+                            </div>
+                          )}
                         </div>
                       )}
                     </div>
@@ -992,10 +1123,16 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
             </button>
           ) : (
             <button
-              onClick={() => setMode('hub')}
+              onClick={() => {
+                if (reviewExam) {
+                  onExitReview?.();
+                } else {
+                  setMode('hub');
+                }
+              }}
               className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold transition-colors shadow-xs cursor-pointer"
             >
-              <span>Hoàn thành</span>
+              <span>{reviewExam ? 'Đóng xem lại' : 'Hoàn thành'}</span>
             </button>
           )}
         </div>
@@ -1028,10 +1165,16 @@ export const TheoryView: React.FC<TheoryViewProps> = ({ currentCategory, onRefre
             </button>
           ) : (
             <button
-              onClick={() => setMode('hub')}
+              onClick={() => {
+                if (reviewExam) {
+                  onExitReview?.();
+                } else {
+                  setMode('hub');
+                }
+              }}
               className="flex-1 flex items-center justify-center gap-2 py-3 landscape-mobile:py-1.5 px-4 rounded-xl bg-slate-900 text-white font-bold text-sm landscape-mobile:text-xs hover:bg-slate-800 active:scale-97 shadow-xs transition-all cursor-pointer"
             >
-              <span>Hoàn thành</span>
+              <span>{reviewExam ? 'Đóng xem lại' : 'Hoàn thành'}</span>
             </button>
           )}
         </div>

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @variant landscape-mobile {
   @media (orientation: landscape) and (max-width: 1023px) {
     & {
@@ -41,6 +43,12 @@
     -webkit-tap-highlight-color: transparent;
     -webkit-user-select: none;
     user-select: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  html.dark body, body.dark {
+    background-color: #020617;
+    color: #f8fafc;
   }
 
   #root {

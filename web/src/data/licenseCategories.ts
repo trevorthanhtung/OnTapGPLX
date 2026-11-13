@@ -7,9 +7,11 @@ export const LICENSE_CATEGORIES: LicenseConfig[] = [
     description: 'Xe mô tô hai bánh có dung tích xi-lanh đến 125 cm³',
     totalQuestions: 25,
     timeMinutes: 19,
-    passScore: 23,
-    allowedWrong: 2,
-    criticalAllowed: 0
+    passScore: 21,
+    allowedWrong: 4,
+    criticalAllowed: 0,
+    questionPoolCount: 200,
+    criticalCount: 20
   },
   {
     id: 'A',
@@ -19,7 +21,9 @@ export const LICENSE_CATEGORIES: LicenseConfig[] = [
     timeMinutes: 19,
     passScore: 23,
     allowedWrong: 2,
-    criticalAllowed: 0
+    criticalAllowed: 0,
+    questionPoolCount: 450,
+    criticalCount: 50
   },
   {
     id: 'B1',
@@ -29,7 +33,9 @@ export const LICENSE_CATEGORIES: LicenseConfig[] = [
     timeMinutes: 20,
     passScore: 27,
     allowedWrong: 3,
-    criticalAllowed: 0
+    criticalAllowed: 0,
+    questionPoolCount: 574,
+    criticalCount: 60
   },
   {
     id: 'B',
@@ -39,7 +45,9 @@ export const LICENSE_CATEGORIES: LicenseConfig[] = [
     timeMinutes: 20,
     passScore: 27,
     allowedWrong: 3,
-    criticalAllowed: 0
+    criticalAllowed: 0,
+    questionPoolCount: 600,
+    criticalCount: 60
   },
   {
     id: 'C1',
@@ -49,7 +57,9 @@ export const LICENSE_CATEGORIES: LicenseConfig[] = [
     timeMinutes: 22,
     passScore: 32,
     allowedWrong: 3,
-    criticalAllowed: 0
+    criticalAllowed: 0,
+    questionPoolCount: 600,
+    criticalCount: 60
   },
   {
     id: 'C',
@@ -59,7 +69,9 @@ export const LICENSE_CATEGORIES: LicenseConfig[] = [
     timeMinutes: 24,
     passScore: 36,
     allowedWrong: 4,
-    criticalAllowed: 0
+    criticalAllowed: 0,
+    questionPoolCount: 600,
+    criticalCount: 60
   },
   {
     id: 'D',
@@ -69,6 +81,8 @@ export const LICENSE_CATEGORIES: LicenseConfig[] = [
     timeMinutes: 26,
     passScore: 41,
     allowedWrong: 4,
-    criticalAllowed: 0
+    criticalAllowed: 0,
+    questionPoolCount: 600,
+    criticalCount: 60
   }
 ];

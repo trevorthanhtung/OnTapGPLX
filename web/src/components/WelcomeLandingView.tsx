@@ -325,7 +325,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
               thanhtungg.
             </a>
             <span className="block text-[10px] landscape-mobile:text-[9px] text-slate-400 font-mono mt-0.5">
-              Phiên bản 2.0.0
+              Phiên bản 2.2.0
             </span>
           </footer>
         </div>

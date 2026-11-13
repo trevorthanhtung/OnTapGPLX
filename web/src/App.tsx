@@ -1,12 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
-import { Navbar } from './components/Navbar';
+import { Navbar, type SubHeaderConfig } from './components/Navbar';
 import { TheoryView } from './components/TheoryView';
 import { SimulationView } from './components/SimulationView';
 import { StatsView } from './components/StatsView';
+import { MoreView } from './components/MoreView';
 import { SplashScreen } from './components/SplashScreen';
 import { WelcomeLandingView } from './components/WelcomeLandingView';
 import type { LicenseCategory } from './types';
-import { StorageService } from './services/storage';
+import { StorageService, type ExamHistoryItem } from './services/storage';
+import { ThemeService } from './services/theme';
 
 const isPWAMode = (): boolean => {
   if (typeof window === 'undefined') return false;
@@ -31,15 +33,32 @@ export function App() {
   const isPWA = isPWAMode();
   const isFirstVisit = !StorageService.hasEnteredApp(isPWA);
 
+  // Initialize theme on app boot
+  useEffect(() => {
+    ThemeService.init();
+  }, []);
+
   // Onboarding (OB) chỉ xuất hiện lần đầu tiên vào app; các lần sau vào thẳng app
   const [showLanding, setShowLanding] = useState(isFirstVisit);
   const [showSplash, setShowSplash] = useState(!isFirstVisit && isPWA);
-  const [activeTab, setActiveTab] = useState<'theory' | 'simulation' | 'stats'>('theory');
+  const [activeTab, setActiveTab] = useState<'theory' | 'simulation' | 'stats' | 'more'>('theory');
   const [currentCategory, setCurrentCategory] = useState<LicenseCategory>(StorageService.getCategory());
   const [wrongCount, setWrongCount] = useState<number>(StorageService.getWrongQuestions().length);
   const [isStudyActive, setIsStudyActive] = useState(false);
+  const [isMoreSubView, setIsMoreSubView] = useState(false);
+  const [moreSubHeader, setMoreSubHeader] = useState<SubHeaderConfig | null>(null);
+  const [reviewExamItem, setReviewExamItem] = useState<ExamHistoryItem | null>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const lastBackPressRef = useRef<number>(0);
+  const isMoreSubViewRef = useRef(false);
+  const lastSubViewExitTimeRef = useRef<number>(0);
+
+  useEffect(() => {
+    if (isMoreSubViewRef.current && !isMoreSubView) {
+      lastSubViewExitTimeRef.current = Date.now();
+    }
+    isMoreSubViewRef.current = isMoreSubView;
+  }, [isMoreSubView]);
 
   // Mobile / PWA Double-Back to Exit handler & tab switching
   useEffect(() => {
@@ -55,7 +74,12 @@ export function App() {
       // If event was triggered by child views (study/modal), do not handle here
       if (e.state?.component || isStudyActive) return;
 
-      // If user is on 'simulation' or 'stats', return to 'theory' (Home tab) first
+      // If user was inside a subview of 'More' or just exited it within 500ms, ignore this popstate
+      if (isMoreSubViewRef.current || Date.now() - lastSubViewExitTimeRef.current < 500) {
+        return;
+      }
+
+      // If user is on 'simulation' or 'stats' or 'more', return to 'theory' (Home tab) first
       if (activeTab !== 'theory') {
         setActiveTab('theory');
         window.history.pushState({ appHomeTrap: true }, '');
@@ -104,9 +128,14 @@ export function App() {
     StorageService.setCategory(cat);
   };
 
-  const handleTabChange = (tab: 'theory' | 'simulation' | 'stats') => {
+  const handleTabChange = (tab: 'theory' | 'simulation' | 'stats' | 'more') => {
     setActiveTab(tab);
     setIsStudyActive(false);
+    setReviewExamItem(null);
+    if (tab !== 'more') {
+      setIsMoreSubView(false);
+      setMoreSubHeader(null);
+    }
   };
 
   const refreshStats = () => {
@@ -119,7 +148,7 @@ export function App() {
       {!showLanding && showSplash && <SplashScreen onFinish={handleSplashFinish} />}
 
       {!showLanding && (
-        <div className={`text-slate-900 flex flex-col font-sans bg-slate-50 w-full max-w-full ${isStudyActive ? 'h-dvh overflow-hidden' : 'min-h-screen'}`}>
+        <div className={`text-slate-900 dark:text-slate-100 flex flex-col font-sans bg-slate-50 dark:bg-slate-950 w-full max-w-full transition-colors duration-200 ${isStudyActive ? 'h-dvh overflow-hidden' : 'min-h-screen'}`}>
           {!isStudyActive && (
             <Navbar
               activeTab={activeTab}
@@ -127,27 +156,49 @@ export function App() {
               currentCategory={currentCategory}
               onSelectCategory={handleSelectCategory}
               wrongCount={wrongCount}
+              hideBottomNav={(isMoreSubView || Boolean(moreSubHeader)) && activeTab === 'more'}
+              subHeader={activeTab === 'more' ? moreSubHeader : null}
             />
           )}
 
-          <main className={`flex-1 flex flex-col min-h-0 w-full max-w-full ${isStudyActive ? 'overflow-hidden' : 'pb-[calc(5.5rem+max(0.75rem,env(safe-area-inset-bottom,0px)))] lg:pb-8 landscape-mobile:pb-16'}`}>
+          <main className={`flex-1 flex flex-col min-h-0 w-full max-w-full ${isStudyActive ? 'overflow-hidden' : ((isMoreSubView || Boolean(moreSubHeader)) && activeTab === 'more') ? 'pb-[max(1.5rem,env(safe-area-inset-bottom,0px))]' : 'pb-[calc(5.5rem+max(0.75rem,env(safe-area-inset-bottom,0px)))] lg:pb-8 landscape-mobile:pb-16'}`}>
             {activeTab === 'theory' && (
               <TheoryView
-                currentCategory={currentCategory}
+                currentCategory={reviewExamItem?.category || currentCategory}
                 onRefreshStats={refreshStats}
                 onActiveStateChange={setIsStudyActive}
+                reviewExam={reviewExamItem}
+                onExitReview={() => {
+                  setReviewExamItem(null);
+                  setActiveTab('stats');
+                }}
               />
             )}
 
             {activeTab === 'simulation' && (
-              <SimulationView onActiveStateChange={setIsStudyActive} />
+              <SimulationView
+                currentCategory={currentCategory}
+                onActiveStateChange={setIsStudyActive}
+              />
             )}
 
             {activeTab === 'stats' && (
               <StatsView
                 onGoToWrongQuestions={() => handleTabChange('theory')}
                 onRefresh={refreshStats}
+                onReviewExam={(item) => {
+                  setReviewExamItem(item);
+                  setActiveTab('theory');
+                }}
+              />
+            )}
+
+            {activeTab === 'more' && (
+              <MoreView
+                onGoToTab={handleTabChange}
                 onOpenLanding={isPWA ? undefined : () => setShowLanding(true)}
+                onSubViewChange={setIsMoreSubView}
+                onSubHeaderChange={setMoreSubHeader}
               />
             )}
           </main>
@@ -156,7 +207,7 @@ export function App() {
 
       {/* Mobile / PWA Double-Back Toast Indicator */}
       {toastMessage && (
-        <div className="fixed bottom-24 left-1/2 -translate-x-1/2 z-[9999] px-4 py-2 rounded-full bg-white/80 text-slate-800 text-xs sm:text-sm font-medium shadow-lg border border-slate-200/60 backdrop-blur-md animate-in fade-in slide-in-from-bottom-2 duration-150 pointer-events-none whitespace-nowrap">
+        <div className="fixed bottom-24 left-1/2 -translate-x-1/2 z-[9999] px-4 py-2 rounded-full bg-white/80 dark:bg-slate-800/90 text-slate-800 dark:text-slate-100 text-xs sm:text-sm font-medium shadow-lg border border-slate-200/60 dark:border-slate-700/60 backdrop-blur-md animate-in fade-in slide-in-from-bottom-2 duration-150 pointer-events-none whitespace-nowrap">
           <span>{toastMessage}</span>
         </div>
       )}
