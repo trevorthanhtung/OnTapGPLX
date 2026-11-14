@@ -3,6 +3,7 @@ import type { LicenseCategory } from '../types';
 const STORAGE_KEYS = {
   CURRENT_CATEGORY: 'ontapgplx_current_category',
   WRONG_QUESTIONS: 'ontapgplx_wrong_questions',
+  WRONG_SCENARIOS: 'ontapgplx_wrong_scenarios',
   BOOKMARKED_QUESTIONS: 'ontapgplx_bookmarked_questions',
   EXAM_HISTORY: 'ontapgplx_exam_history',
   SIMULATION_HISTORY: 'ontapgplx_sim_history',
@@ -24,6 +25,17 @@ export interface ExamHistoryItem {
   durationSeconds: number;
   questionIds?: number[];
   userAnswers?: Record<number, number>;
+}
+
+export interface SimulationExamHistoryItem {
+  id: string;
+  date: string;
+  score: number;
+  total: number;
+  isPassed: boolean;
+  durationSeconds: number;
+  scenarioIds?: number[];
+  userAnswers?: Record<number, Record<number, number>>;
 }
 
 export const StorageService = {
@@ -55,6 +67,36 @@ export const StorageService = {
   removeWrongQuestion(id: number): void {
     const list = this.getWrongQuestions().filter((qId) => qId !== id);
     localStorage.setItem(STORAGE_KEYS.WRONG_QUESTIONS, JSON.stringify(list));
+  },
+
+  getWrongScenarios(): number[] {
+    try {
+      const data = localStorage.getItem(STORAGE_KEYS.WRONG_SCENARIOS);
+      return data ? JSON.parse(data) : [];
+    } catch {
+      return [];
+    }
+  },
+
+  recordWrongScenario(id: number): void {
+    const list = this.getWrongScenarios();
+    if (!list.includes(id)) {
+      list.push(id);
+      localStorage.setItem(STORAGE_KEYS.WRONG_SCENARIOS, JSON.stringify(list));
+    }
+  },
+
+  removeWrongScenario(id: number): void {
+    const list = this.getWrongScenarios().filter((sId) => sId !== id);
+    localStorage.setItem(STORAGE_KEYS.WRONG_SCENARIOS, JSON.stringify(list));
+  },
+
+  clearWrongScenarios(): void {
+    try {
+      localStorage.removeItem(STORAGE_KEYS.WRONG_SCENARIOS);
+    } catch {
+      // ignore
+    }
   },
 
   getBookmarks(): number[] {
@@ -123,6 +165,31 @@ export const StorageService = {
     }
   },
 
+  getSimulationHistory(): SimulationExamHistoryItem[] {
+    try {
+      const data = localStorage.getItem(STORAGE_KEYS.SIMULATION_HISTORY);
+      return data ? JSON.parse(data) : [];
+    } catch {
+      return [];
+    }
+  },
+
+  addSimulationHistory(item: SimulationExamHistoryItem): void {
+    const history = this.getSimulationHistory();
+    history.unshift(item);
+    // keep maximum 50 most recent simulation exams
+    if (history.length > 50) history.pop();
+    localStorage.setItem(STORAGE_KEYS.SIMULATION_HISTORY, JSON.stringify(history));
+  },
+
+  clearSimulationHistory(): void {
+    try {
+      localStorage.removeItem(STORAGE_KEYS.SIMULATION_HISTORY);
+    } catch {
+      // ignore
+    }
+  },
+
   clearStudiedQuestions(): void {
     try {
       localStorage.removeItem(STORAGE_KEYS.STUDIED_QUESTIONS);
@@ -141,17 +208,21 @@ export const StorageService = {
 
   clearAllProgress(): void {
     this.clearExamHistory();
+    this.clearSimulationHistory();
     this.clearStudiedQuestions();
     this.clearWrongQuestions();
+    this.clearWrongScenarios();
   },
 
   exportBackup(): string {
     const data = {
       category: this.getCategory(),
       wrong: this.getWrongQuestions(),
+      wrongScenarios: this.getWrongScenarios(),
       bookmarks: this.getBookmarks(),
       studied: this.getStudiedQuestions(),
       exams: this.getExamHistory(),
+      simulationExams: this.getSimulationHistory(),
       exportedAt: new Date().toISOString()
     };
     return JSON.stringify(data, null, 2);
@@ -162,9 +233,11 @@ export const StorageService = {
       const data = JSON.parse(jsonString);
       if (data.category) this.setCategory(data.category);
       if (Array.isArray(data.wrong)) localStorage.setItem(STORAGE_KEYS.WRONG_QUESTIONS, JSON.stringify(data.wrong));
+      if (Array.isArray(data.wrongScenarios)) localStorage.setItem(STORAGE_KEYS.WRONG_SCENARIOS, JSON.stringify(data.wrongScenarios));
       if (Array.isArray(data.bookmarks)) localStorage.setItem(STORAGE_KEYS.BOOKMARKED_QUESTIONS, JSON.stringify(data.bookmarks));
       if (Array.isArray(data.studied)) localStorage.setItem(STORAGE_KEYS.STUDIED_QUESTIONS, JSON.stringify(data.studied));
       if (Array.isArray(data.exams)) localStorage.setItem(STORAGE_KEYS.EXAM_HISTORY, JSON.stringify(data.exams));
+      if (Array.isArray(data.simulationExams)) localStorage.setItem(STORAGE_KEYS.SIMULATION_HISTORY, JSON.stringify(data.simulationExams));
       return true;
     } catch {
       return false;

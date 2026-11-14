@@ -7,7 +7,7 @@ import { MoreView } from './components/MoreView';
 import { SplashScreen } from './components/SplashScreen';
 import { WelcomeLandingView } from './components/WelcomeLandingView';
 import type { LicenseCategory } from './types';
-import { StorageService, type ExamHistoryItem } from './services/storage';
+import { StorageService, type ExamHistoryItem, type SimulationExamHistoryItem } from './services/storage';
 import { ThemeService } from './services/theme';
 
 const isPWAMode = (): boolean => {
@@ -48,6 +48,7 @@ export function App() {
   const [isMoreSubView, setIsMoreSubView] = useState(false);
   const [moreSubHeader, setMoreSubHeader] = useState<SubHeaderConfig | null>(null);
   const [reviewExamItem, setReviewExamItem] = useState<ExamHistoryItem | null>(null);
+  const [reviewSimExamItem, setReviewSimExamItem] = useState<SimulationExamHistoryItem | null>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const lastBackPressRef = useRef<number>(0);
   const isMoreSubViewRef = useRef(false);
@@ -132,6 +133,7 @@ export function App() {
     setActiveTab(tab);
     setIsStudyActive(false);
     setReviewExamItem(null);
+    setReviewSimExamItem(null);
     if (tab !== 'more') {
       setIsMoreSubView(false);
       setMoreSubHeader(null);
@@ -178,6 +180,11 @@ export function App() {
               <SimulationView
                 currentCategory={currentCategory}
                 onActiveStateChange={setIsStudyActive}
+                reviewExam={reviewSimExamItem}
+                onExitReview={() => {
+                  setReviewSimExamItem(null);
+                  handleTabChange('stats');
+                }}
               />
             )}
 
@@ -188,6 +195,10 @@ export function App() {
                 onReviewExam={(item) => {
                   setReviewExamItem(item);
                   setActiveTab('theory');
+                }}
+                onReviewSimExam={(item) => {
+                  setReviewSimExamItem(item);
+                  setActiveTab('simulation');
                 }}
               />
             )}

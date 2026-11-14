@@ -236,9 +236,14 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
             {/* App Logo */}
             <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-22 lg:h-22 landscape-mobile:w-11 landscape-mobile:h-11 rounded-2xl landscape-mobile:rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-2 landscape-mobile:p-1.5 shadow-xs flex items-center justify-center mb-4 sm:mb-5 landscape-mobile:mb-1.5">
               <img
-                src="/logo.jpg"
+                src="/logo-light.png"
                 alt="OnTap GPLX Logo"
-                className="w-full h-full object-contain rounded-xl landscape-mobile:rounded-lg"
+                className="w-full h-full object-contain rounded-xl landscape-mobile:rounded-lg dark:hidden"
+              />
+              <img
+                src="/logo-dark.png"
+                alt="OnTap GPLX Logo"
+                className="w-full h-full object-contain rounded-xl landscape-mobile:rounded-lg hidden dark:block"
               />
             </div>
 
@@ -331,7 +336,7 @@ export const WelcomeLandingView: React.FC<WelcomeLandingViewProps> = ({ onStartE
               thanhtungg.
             </a>
             <span className="block text-[10px] landscape-mobile:text-[9px] text-slate-400 dark:text-slate-500 font-mono mt-0.5">
-              Phiên bản 2.3.0
+              Phiên bản 2.0.0
             </span>
           </footer>
         </div>

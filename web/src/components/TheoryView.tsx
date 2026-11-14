@@ -5,7 +5,8 @@ import {
   ChevronRight,
   ArrowLeft,
   X,
-  Contrast
+  Contrast,
+  Info
 } from 'lucide-react';
 import type { LicenseCategory, Question } from '../types';
 import { LICENSE_CATEGORIES } from '../data/licenseCategories';
@@ -104,6 +105,17 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
   const [showSubmitConfirm, setShowSubmitConfirm] = useState(false);
   const [showMobileQuestionSheet, setShowMobileQuestionSheet] = useState(false);
   const [invertImage, setInvertImage] = useState<boolean>(true);
+
+  // Toast thông báo lộ trình áp dụng đề thi lý thuyết mới từ 01/03/2027
+  const [showRoadmapToast, setShowRoadmapToast] = useState(true);
+
+  useEffect(() => {
+    if (!showRoadmapToast) return;
+    const timer = setTimeout(() => {
+      setShowRoadmapToast(false);
+    }, 4500);
+    return () => clearTimeout(timer);
+  }, [showRoadmapToast]);
 
   // Handle reviewing a specific exam from history
   useEffect(() => {
@@ -585,14 +597,14 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
         </div>
 
         {/* Feature Cards Grid: 3 balanced cards with subtle watermark art */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-5 mb-8 sm:mb-10">
           {/* Card 1: Thi Thử */}
           <div
             onClick={startExam}
-            className="group relative bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/90 dark:border-slate-800 p-5 sm:p-6 hover:border-slate-300 dark:hover:border-slate-700 hover:shadow-md transition-all cursor-pointer flex flex-col justify-between overflow-hidden isolate"
+            className="group relative bg-white dark:bg-slate-900 rounded-xl sm:rounded-2xl border border-slate-200/90 dark:border-slate-800 p-4 sm:p-6 hover:border-slate-300 dark:hover:border-slate-700 hover:shadow-md transition-all cursor-pointer flex flex-col justify-between overflow-hidden isolate"
           >
             {/* Subtle Watermark Art: Exam Timer & Checklist */}
-            <div className="absolute right-0 top-0 w-32 h-32 opacity-[0.06] dark:opacity-[0.12] group-hover:opacity-[0.11] dark:group-hover:opacity-[0.18] group-hover:scale-105 transition-all pointer-events-none text-slate-900 dark:text-slate-100 overflow-hidden">
+            <div className="absolute right-0 top-0 w-24 h-24 sm:w-32 sm:h-32 opacity-[0.06] dark:opacity-[0.12] group-hover:opacity-[0.11] dark:group-hover:opacity-[0.18] group-hover:scale-105 transition-all pointer-events-none text-slate-900 dark:text-slate-100 overflow-hidden">
               <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3">
                 <circle cx="50" cy="50" r="40" strokeDasharray="180 80" />
                 <path d="M50 20 V50 L68 50" strokeLinecap="round" />
@@ -601,27 +613,27 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+              <h2 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white mb-1 sm:mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
                 {t('theory.mockExamTitle')}
               </h2>
-              <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+              <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-6">
                 {t('theory.mockExamDesc', { count: currentConfig.totalQuestions, category: currentConfig.id })}
               </p>
             </div>
 
-            <div className="flex items-center text-sm font-semibold text-slate-900 dark:text-slate-200 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors pt-3 border-t border-slate-100 dark:border-slate-800">
+            <div className="flex items-center text-xs sm:text-sm font-semibold text-slate-900 dark:text-slate-200 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors pt-2.5 sm:pt-3 border-t border-slate-100 dark:border-slate-800">
               <span>{t('theory.startMockExam')}</span>
-              <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+              <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-1 group-hover:translate-x-1 transition-transform" />
             </div>
           </div>
 
           {/* Card 2: 60 Câu Điểm Liệt */}
           <div
             onClick={startCriticalPractice}
-            className="group relative bg-white dark:bg-slate-900 rounded-2xl border border-rose-200/80 dark:border-rose-900/40 p-5 sm:p-6 hover:border-rose-300 dark:hover:border-rose-700 hover:shadow-md transition-all cursor-pointer flex flex-col justify-between overflow-hidden isolate"
+            className="group relative bg-white dark:bg-slate-900 rounded-xl sm:rounded-2xl border border-rose-200/80 dark:border-rose-900/40 p-4 sm:p-6 hover:border-rose-300 dark:hover:border-rose-700 hover:shadow-md transition-all cursor-pointer flex flex-col justify-between overflow-hidden isolate"
           >
             {/* Subtle Watermark Art: Caution Triangle Hazard */}
-            <div className="absolute right-0 top-0 w-32 h-32 opacity-[0.08] dark:opacity-[0.14] group-hover:opacity-[0.14] dark:group-hover:opacity-[0.22] group-hover:scale-105 transition-all pointer-events-none text-rose-600 dark:text-rose-400 overflow-hidden">
+            <div className="absolute right-0 top-0 w-24 h-24 sm:w-32 sm:h-32 opacity-[0.08] dark:opacity-[0.14] group-hover:opacity-[0.14] dark:group-hover:opacity-[0.22] group-hover:scale-105 transition-all pointer-events-none text-rose-600 dark:text-rose-400 overflow-hidden">
               <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4">
                 <path d="M50 14 L90 84 H10 Z" strokeLinejoin="round" />
                 <line x1="50" y1="36" x2="50" y2="60" strokeWidth="6" strokeLinecap="round" />
@@ -630,31 +642,31 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors">
+              <h2 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white mb-1 sm:mb-2 group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors">
                 {t('theory.criticalTitle', { count: currentConfig.criticalCount || 60 })}
               </h2>
-              <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+              <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-6">
                 {t('theory.criticalDesc', { count: currentConfig.criticalCount || 60 })}
               </p>
             </div>
 
-            <div className="flex items-center text-sm font-semibold text-rose-600 dark:text-rose-400 group-hover:text-rose-700 dark:group-hover:text-rose-300 transition-colors pt-3 border-t border-rose-50 dark:border-rose-900/30">
+            <div className="flex items-center text-xs sm:text-sm font-semibold text-rose-600 dark:text-rose-400 group-hover:text-rose-700 dark:group-hover:text-rose-300 transition-colors pt-2.5 sm:pt-3 border-t border-rose-50 dark:border-rose-900/30">
               <span>{t('theory.practiceCritical', { count: currentConfig.criticalCount || 60 })}</span>
-              <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+              <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-1 group-hover:translate-x-1 transition-transform" />
             </div>
           </div>
 
           {/* Card 3: Ôn lại câu sai */}
           <div
             onClick={startWrongPractice}
-            className={`group relative bg-white dark:bg-slate-900 rounded-2xl border p-5 sm:p-6 transition-all flex flex-col justify-between overflow-hidden isolate ${
+            className={`group relative bg-white dark:bg-slate-900 rounded-xl sm:rounded-2xl border p-4 sm:p-6 transition-all flex flex-col justify-between overflow-hidden isolate ${
               wrongQuestionIds.length > 0
                 ? 'border-amber-200/90 dark:border-amber-900/40 hover:border-amber-300 dark:hover:border-amber-700 hover:shadow-md cursor-pointer'
                 : 'border-slate-200 dark:border-slate-800 opacity-75 cursor-not-allowed'
             }`}
           >
             {/* Subtle Watermark Art: Revision Notebook / Checkmark Loop */}
-            <div className="absolute right-0 top-0 w-32 h-32 opacity-[0.08] dark:opacity-[0.14] group-hover:opacity-[0.14] dark:group-hover:opacity-[0.22] group-hover:scale-105 transition-all pointer-events-none text-amber-600 dark:text-amber-400 overflow-hidden">
+            <div className="absolute right-0 top-0 w-24 h-24 sm:w-32 sm:h-32 opacity-[0.08] dark:opacity-[0.14] group-hover:opacity-[0.14] dark:group-hover:opacity-[0.22] group-hover:scale-105 transition-all pointer-events-none text-amber-600 dark:text-amber-400 overflow-hidden">
               <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3">
                 <rect x="22" y="16" width="56" height="68" rx="8" />
                 <line x1="14" y1="30" x2="22" y2="30" strokeWidth="4" strokeLinecap="round" />
@@ -666,17 +678,17 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+              <h2 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white mb-1 sm:mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
                 {t('theory.wrongTitle')}
               </h2>
-              <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+              <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-6">
                 {t('theory.wrongDesc')}
               </p>
             </div>
 
-            <div className="flex items-center text-sm font-semibold text-amber-700 dark:text-amber-400 group-hover:text-amber-800 dark:group-hover:text-amber-300 transition-colors pt-3 border-t border-amber-50 dark:border-amber-900/30">
+            <div className="flex items-center text-xs sm:text-sm font-semibold text-amber-700 dark:text-amber-400 group-hover:text-amber-800 dark:group-hover:text-amber-300 transition-colors pt-2.5 sm:pt-3 border-t border-amber-50 dark:border-amber-900/30">
               <span>{wrongQuestionIds.length > 0 ? t('theory.reviewWrong') : t('theory.noWrong')}</span>
-              {wrongQuestionIds.length > 0 && <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />}
+              {wrongQuestionIds.length > 0 && <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-1 group-hover:translate-x-1 transition-transform" />}
             </div>
           </div>
         </div>
@@ -799,6 +811,27 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
             })}
           </div>
         </div>
+
+        {/* Toast thông báo lộ trình áp dụng đề thi lý thuyết mới từ 01/03/2027 */}
+        {showRoadmapToast && (
+          <div
+            role="status"
+            className="fixed bottom-24 sm:bottom-10 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-white/95 dark:bg-zinc-900/95 text-zinc-700 dark:text-zinc-300 border border-zinc-200/90 dark:border-zinc-800 shadow-md backdrop-blur-md text-xs sm:text-sm animate-in fade-in slide-in-from-bottom-2 duration-150 select-none max-w-[90vw]"
+          >
+            <Info className="w-4 h-4 text-zinc-400 dark:text-zinc-500 shrink-0 stroke-[1.75]" />
+            <span className="font-medium text-zinc-800 dark:text-zinc-200 truncate">
+              Từ 01/03/2027: Áp dụng đề thi lý thuyết mới
+            </span>
+            <button
+              type="button"
+              onClick={() => setShowRoadmapToast(false)}
+              aria-label="Đóng thông báo"
+              className="p-1 -mr-1 rounded-md text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80 transition-colors cursor-pointer"
+            >
+              <X className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        )}
       </div>
     );
   }
@@ -847,7 +880,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
                   {reviewExam
                     ? `Xem lại bài thi ${reviewExam.category} (${reviewExam.date})`
                     : mode === 'exam'
-                    ? `Đề thi sát hạch ${currentConfig.id}`
+                    ? ''
                     : mode === 'practice_critical'
                     ? `${currentConfig.criticalCount || 60} Câu hỏi điểm liệt`
                     : mode === 'practice_chapter'

@@ -157,7 +157,7 @@ export const RoadDrivingTipsView: React.FC<RoadDrivingTipsViewProps> = ({
               <div className="space-y-1.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
                 {step.instructions.map((inst, idx) => (
                   <div key={idx} className="flex items-start gap-2">
-                    <span className="text-slate-400 dark:text-slate-500 font-bold shrink-0 mt-0.5">•</span>
+                    <span className="text-slate-400 dark:text-slate-500 font-bold shrink-0 mt-0.5">-</span>
                     <span>{inst}</span>
                   </div>
                 ))}
@@ -248,7 +248,7 @@ export const RoadDrivingTipsView: React.FC<RoadDrivingTipsViewProps> = ({
               <div className="space-y-1 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                 {tip.content.map((point, pIdx) => (
                   <div key={pIdx} className="flex items-start gap-2">
-                    <span className="text-slate-400 dark:text-slate-500 shrink-0 font-bold">•</span>
+                    <span className="text-slate-400 dark:text-slate-500 shrink-0 font-bold">-</span>
                     <span>{point}</span>
                   </div>
                 ))}

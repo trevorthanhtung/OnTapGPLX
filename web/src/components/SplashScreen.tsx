@@ -177,9 +177,14 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
             {/* Main Logo Card */}
             <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 p-2.5 shadow-xl shadow-amber-500/10 flex items-center justify-center overflow-hidden">
               <img
-                src="/logo.jpg"
+                src="/logo-light.png"
                 alt="OnTap GPLX Logo"
-                className="w-full h-full object-contain rounded-xl"
+                className="w-full h-full object-contain rounded-xl dark:hidden"
+              />
+              <img
+                src="/logo-dark.png"
+                alt="OnTap GPLX Logo"
+                className="w-full h-full object-contain rounded-xl hidden dark:block"
               />
             </div>
           </div>

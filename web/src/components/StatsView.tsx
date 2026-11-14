@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, RotateCcw } from 'lucide-react';
-import type { ExamHistoryItem } from '../services/storage';
+import type { ExamHistoryItem, SimulationExamHistoryItem } from '../services/storage';
 import { StorageService } from '../services/storage';
 import { I18nService, type AppLanguage } from '../locales/i18n';
 
@@ -8,9 +8,15 @@ interface StatsViewProps {
   onGoToWrongQuestions: () => void;
   onRefresh: () => void;
   onReviewExam?: (item: ExamHistoryItem) => void;
+  onReviewSimExam?: (item: SimulationExamHistoryItem) => void;
 }
 
-export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRefresh, onReviewExam }) => {
+export const StatsView: React.FC<StatsViewProps> = ({
+  onGoToWrongQuestions,
+  onRefresh,
+  onReviewExam,
+  onReviewSimExam
+}) => {
   const [currentLang, setCurrentLang] = useState<AppLanguage>(I18nService.getLanguage());
 
   useEffect(() => {
@@ -32,6 +38,8 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRe
   };
 
   const [examHistory, setExamHistory] = useState<ExamHistoryItem[]>(StorageService.getExamHistory());
+  const [simHistory, setSimHistory] = useState<SimulationExamHistoryItem[]>(StorageService.getSimulationHistory());
+  const [historyTab, setHistoryTab] = useState<'theory' | 'simulation'>('theory');
   const [wrongCount, setWrongCount] = useState<number>(StorageService.getWrongQuestions().length);
   const [studiedCount, setStudiedCount] = useState<number>(StorageService.getStudiedQuestions().length);
   const [showConfirmClear, setShowConfirmClear] = useState(false);
@@ -50,13 +58,14 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRe
   const handleClearHistory = () => {
     StorageService.clearAllProgress();
     setExamHistory([]);
+    setSimHistory([]);
     setStudiedCount(0);
     setWrongCount(0);
     setShowConfirmClear(false);
     onRefresh?.();
   };
 
-  // Pass rate calculation
+  // Pass rate calculation (Theory)
   const totalExams = examHistory.length;
   const passedExams = examHistory.filter((e) => e.isPassed).length;
   const passRate = totalExams > 0 ? Math.round((passedExams / totalExams) * 100) : 0;
@@ -168,7 +177,9 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRe
                 <div className="text-2xl font-extrabold text-slate-900 dark:text-white mb-1">
                   {wrongCount} {t('theory.questionsShort')}
                 </div>
-                <p className="text-xs text-amber-700 dark:text-amber-400 font-medium">{t('stats.reviewNow')}</p>
+                <p className="text-xs text-amber-700 dark:text-amber-400 font-medium">
+                  {t('stats.reviewNow')}
+                </p>
               </div>
 
               {/* Slide 3: Bài thi đã làm */}
@@ -179,7 +190,9 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRe
                 <div className="text-2xl font-extrabold text-slate-900 dark:text-white mb-1">
                   {totalExams} {t('stats.examsUnit')}
                 </div>
-                <p className="text-xs text-slate-400 dark:text-slate-500 font-medium">{t('stats.passedUnit', { count: passedExams })}</p>
+                <p className="text-xs text-slate-400 dark:text-slate-500 font-medium">
+                  {t('stats.passedUnit', { count: passedExams })}
+                </p>
               </div>
 
               {/* Slide 4: Tỷ lệ đạt sát hạch */}
@@ -253,7 +266,9 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRe
           <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
             {t('stats.progressTitle')}
           </div>
-          <div className="text-2xl font-extrabold text-slate-900 dark:text-white">{studiedCount} / 600</div>
+          <div className="text-2xl font-extrabold text-slate-900 dark:text-white">
+            {studiedCount} / 600
+          </div>
           <div className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-1.5 mt-3 overflow-hidden">
             <div
               className="bg-slate-900 dark:bg-amber-400 h-full rounded-full transition-all"
@@ -270,8 +285,12 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRe
           <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
             {t('stats.wrongTitle')}
           </div>
-          <div className="text-2xl font-extrabold text-slate-900 dark:text-white">{wrongCount} {t('theory.questionsShort')}</div>
-          <p className="text-xs text-amber-700 dark:text-amber-400 mt-2 font-medium">{t('stats.reviewNow')}</p>
+          <div className="text-2xl font-extrabold text-slate-900 dark:text-white">
+            {wrongCount} {t('theory.questionsShort')}
+          </div>
+          <p className="text-xs text-amber-700 dark:text-amber-400 mt-2 font-medium">
+            {t('stats.reviewNow')}
+          </p>
         </div>
 
         {/* Card 3: Số đề đã thi */}
@@ -279,8 +298,12 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRe
           <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
             {t('stats.examsDone')}
           </div>
-          <div className="text-2xl font-extrabold text-slate-900 dark:text-white">{totalExams} {t('stats.examsUnit')}</div>
-          <p className="text-xs text-slate-400 dark:text-slate-500 mt-2 font-medium">{t('stats.passedUnit', { count: passedExams })}</p>
+          <div className="text-2xl font-extrabold text-slate-900 dark:text-white">
+            {totalExams} {t('stats.examsUnit')}
+          </div>
+          <p className="text-xs text-slate-400 dark:text-slate-500 mt-2 font-medium">
+            {t('stats.passedUnit', { count: passedExams })}
+          </p>
         </div>
 
         {/* Card 4: Tỷ lệ đạt sát hạch */}
@@ -299,74 +322,241 @@ export const StatsView: React.FC<StatsViewProps> = ({ onGoToWrongQuestions, onRe
 
       {/* Recent Exam History Card */}
       <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-4 sm:p-6 lg:p-8 shadow-xs">
-        <div className="flex items-center justify-between mb-3 sm:mb-4">
-          <h2 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
-            {t('stats.historyTitle')}
-          </h2>
-          {(examHistory.length > 0 || studiedCount > 0 || wrongCount > 0) && (
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 sm:mb-5">
+          <div className="flex items-center justify-between gap-3 w-full sm:w-auto">
+            <h2 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+              {t('stats.historyTitle')}
+            </h2>
+            {(examHistory.length > 0 || simHistory.length > 0 || studiedCount > 0 || wrongCount > 0) && (
+              <button
+                type="button"
+                onClick={() => setShowConfirmClear(true)}
+                className="p-1.5 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors cursor-pointer"
+                title={t('stats.resetTooltip')}
+              >
+                <RotateCcw className="w-4 h-4" />
+              </button>
+            )}
+          </div>
+
+          {/* Segmented Switcher giữa Lý thuyết và Mô phỏng */}
+          <div className="w-full sm:w-auto flex items-center bg-slate-100 dark:bg-slate-800/80 p-0.5 rounded-lg border border-slate-200/60 dark:border-slate-700/60 text-xs font-semibold">
             <button
               type="button"
-              onClick={() => setShowConfirmClear(true)}
-              className="p-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors cursor-pointer"
-              title={t('stats.resetTooltip')}
+              onClick={() => setHistoryTab('theory')}
+              className={`flex-1 sm:flex-initial px-3.5 py-1.5 rounded-md transition-all cursor-pointer text-center ${
+                historyTab === 'theory'
+                  ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-2xs font-bold'
+                  : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+              }`}
             >
-              <RotateCcw className="w-4 h-4" />
+              Lý thuyết
             </button>
-          )}
+            <button
+              type="button"
+              onClick={() => setHistoryTab('simulation')}
+              className={`flex-1 sm:flex-initial px-3.5 py-1.5 rounded-md transition-all cursor-pointer text-center ${
+                historyTab === 'simulation'
+                  ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-2xs font-bold'
+                  : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+              }`}
+            >
+              Mô phỏng
+            </button>
+          </div>
         </div>
 
-        {examHistory.length > 0 ? (
-          <div className="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
-            <table className="w-full min-w-[500px] text-left text-sm">
-              <thead>
-                <tr className="border-b border-slate-100 dark:border-slate-800 text-slate-400 dark:text-slate-500 text-xs uppercase font-semibold">
-                  <th className="py-3 px-3 sm:px-4 whitespace-nowrap">{t('stats.thDate')}</th>
-                  <th className="py-3 px-3 sm:px-4 whitespace-nowrap">{t('stats.thCategory')}</th>
-                  <th className="py-3 px-3 sm:px-4 whitespace-nowrap">{t('stats.thScore')}</th>
-                  <th className="py-3 px-3 sm:px-4 whitespace-nowrap">{t('stats.thDuration')}</th>
-                  <th className="py-3 px-3 sm:px-4 text-right whitespace-nowrap">{t('stats.thResult')}</th>
-                  <th className="py-3 pl-1 pr-3 sm:pr-4 w-6"></th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100 dark:divide-slate-800 font-medium">
+        {historyTab === 'theory' ? (
+          examHistory.length > 0 ? (
+            <>
+              {/* Mobile Card List View (Clean & No horizontal scroll) */}
+              <div className="block md:hidden divide-y divide-slate-100 dark:divide-slate-800/80">
                 {examHistory.map((item) => (
-                  <tr
+                  <div
                     key={item.id}
                     onClick={() => onReviewExam?.(item)}
-                    className="hover:bg-slate-50/80 dark:hover:bg-slate-800/60 transition-colors cursor-pointer group"
-                    title="Nhấn để xem lại chi tiết bài thi"
+                    className="py-3 flex items-center justify-between gap-3 active:bg-slate-50 dark:active:bg-slate-800/50 cursor-pointer select-none transition-colors"
                   >
-                    <td className="py-3.5 px-3 sm:px-4 text-slate-600 dark:text-slate-300 whitespace-nowrap">{item.date}</td>
-                    <td className="py-3.5 px-3 sm:px-4 text-slate-900 dark:text-white font-semibold whitespace-nowrap">{item.category}</td>
-                    <td className="py-3.5 px-3 sm:px-4 font-mono font-bold text-slate-900 dark:text-white whitespace-nowrap">
-                      {item.score} / {item.total}
-                    </td>
-                    <td className="py-3.5 px-3 sm:px-4 text-slate-500 dark:text-slate-400 font-mono whitespace-nowrap">
-                      {String(Math.floor(item.durationSeconds / 60)).padStart(2, '0')}:{String(item.durationSeconds % 60).padStart(2, '0')}
-                    </td>
-                    <td className="py-3.5 px-3 sm:px-4 text-right whitespace-nowrap">
-                      {item.isPassed ? (
-                        <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">
-                          {t('stats.pass')}
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2">
+                        <span className="font-bold text-sm text-slate-900 dark:text-white">
+                          Hạng {item.category}
                         </span>
-                      ) : (
-                        <span className="text-xs font-semibold text-rose-600 dark:text-rose-400">
-                          {item.failedCriticalId ? t('stats.failCritical') : t('stats.fail')}
+                        <span className="text-xs text-slate-400 dark:text-slate-500 font-mono">
+                          {item.date}
                         </span>
-                      )}
-                    </td>
-                    <td className="py-3.5 pl-1 pr-3 sm:pr-4 text-right">
-                      <ChevronRight className="w-4 h-4 text-slate-300 dark:text-slate-600 group-hover:text-slate-600 dark:group-hover:text-slate-300 group-hover:translate-x-0.5 transition-all inline-block" />
-                    </td>
-                  </tr>
+                      </div>
+                      <div className="flex items-center gap-2 mt-1 text-xs">
+                        {item.isPassed ? (
+                          <span className="font-semibold text-emerald-600 dark:text-emerald-400">
+                            {t('stats.pass')}
+                          </span>
+                        ) : (
+                          <span className="font-semibold text-rose-600 dark:text-rose-400">
+                            {item.failedCriticalId ? t('stats.failCritical') : t('stats.fail')}
+                          </span>
+                        )}
+                        <span className="text-slate-400 dark:text-slate-500 font-mono">
+                          - {String(Math.floor(item.durationSeconds / 60)).padStart(2, '0')}:{String(item.durationSeconds % 60).padStart(2, '0')}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-2 shrink-0">
+                      <span className="font-mono font-bold text-base text-slate-900 dark:text-white">
+                        {item.score}/{item.total}
+                      </span>
+                    </div>
+                  </div>
                 ))}
-              </tbody>
-            </table>
-          </div>
+              </div>
+
+              {/* Desktop Table View */}
+              <div className="hidden md:block overflow-x-auto">
+                <table className="w-full text-left text-sm">
+                  <thead>
+                    <tr className="border-b border-slate-100 dark:border-slate-800 text-slate-400 dark:text-slate-500 text-xs uppercase font-semibold">
+                      <th className="py-3 px-4 whitespace-nowrap">{t('stats.thDate')}</th>
+                      <th className="py-3 px-4 whitespace-nowrap">{t('stats.thCategory')}</th>
+                      <th className="py-3 px-4 whitespace-nowrap">{t('stats.thScore')}</th>
+                      <th className="py-3 px-4 whitespace-nowrap">{t('stats.thDuration')}</th>
+                      <th className="py-3 px-4 text-right whitespace-nowrap">{t('stats.thResult')}</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100 dark:divide-slate-800 font-medium">
+                    {examHistory.map((item) => (
+                      <tr
+                        key={item.id}
+                        onClick={() => onReviewExam?.(item)}
+                        className="hover:bg-slate-50/80 dark:hover:bg-slate-800/60 transition-colors cursor-pointer group"
+                        title="Nhấn để xem lại chi tiết bài thi"
+                      >
+                        <td className="py-3.5 px-4 text-slate-600 dark:text-slate-300 whitespace-nowrap">{item.date}</td>
+                        <td className="py-3.5 px-4 text-slate-900 dark:text-white font-semibold whitespace-nowrap">{item.category}</td>
+                        <td className="py-3.5 px-4 font-mono font-bold text-slate-900 dark:text-white whitespace-nowrap">
+                          {item.score} / {item.total}
+                        </td>
+                        <td className="py-3.5 px-4 text-slate-500 dark:text-slate-400 font-mono whitespace-nowrap">
+                          {String(Math.floor(item.durationSeconds / 60)).padStart(2, '0')}:{String(item.durationSeconds % 60).padStart(2, '0')}
+                        </td>
+                        <td className="py-3.5 px-4 text-right whitespace-nowrap">
+                          {item.isPassed ? (
+                            <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+                              {t('stats.pass')}
+                            </span>
+                          ) : (
+                            <span className="text-xs font-semibold text-rose-600 dark:text-rose-400">
+                              {item.failedCriticalId ? t('stats.failCritical') : t('stats.fail')}
+                            </span>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </>
+          ) : (
+            <div className="text-center py-10 text-slate-400 dark:text-slate-500 text-sm">
+              {t('stats.emptyHistory')}
+            </div>
+          )
         ) : (
-          <div className="text-center py-10 text-slate-400 dark:text-slate-500 text-sm">
-            {t('stats.emptyHistory')}
-          </div>
+          simHistory.length > 0 ? (
+            <>
+              {/* Mobile Card List View for Simulation */}
+              <div className="block md:hidden divide-y divide-slate-100 dark:divide-slate-800/80">
+                {simHistory.map((item) => (
+                  <div
+                    key={item.id}
+                    onClick={() => onReviewSimExam?.(item)}
+                    className="py-3 flex items-center justify-between gap-3 transition-colors cursor-pointer hover:bg-slate-50/60 dark:hover:bg-slate-800/40 rounded-lg px-2 -mx-2"
+                    title="Nhấn để xem lại chi tiết bài thi mô phỏng"
+                  >
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2">
+                        <span className="font-bold text-sm text-slate-900 dark:text-white">
+                          10 tình huống
+                        </span>
+                        <span className="text-xs text-slate-400 dark:text-slate-500 font-mono">
+                          {item.date}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2 mt-1 text-xs">
+                        {item.isPassed ? (
+                          <span className="font-semibold text-emerald-600 dark:text-emerald-400">
+                            {t('stats.pass')}
+                          </span>
+                        ) : (
+                          <span className="font-semibold text-rose-600 dark:text-rose-400">
+                            {t('stats.fail')}
+                          </span>
+                        )}
+                        <span className="text-slate-400 dark:text-slate-500 font-mono">
+                          - {String(Math.floor(item.durationSeconds / 60)).padStart(2, '0')}:{String(item.durationSeconds % 60).padStart(2, '0')}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-2 shrink-0">
+                      <span className="font-mono font-bold text-base text-slate-900 dark:text-white">
+                        {item.score}/{item.total} đ
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Desktop Table View for Simulation */}
+              <div className="hidden md:block overflow-x-auto">
+                <table className="w-full text-left text-sm">
+                  <thead>
+                    <tr className="border-b border-slate-100 dark:border-slate-800 text-slate-400 dark:text-slate-500 text-xs uppercase font-semibold">
+                      <th className="py-3 px-4 whitespace-nowrap">{t('stats.thDate')}</th>
+                      <th className="py-3 px-4 whitespace-nowrap">Nội dung thi</th>
+                      <th className="py-3 px-4 whitespace-nowrap">{t('stats.thScore')}</th>
+                      <th className="py-3 px-4 whitespace-nowrap">{t('stats.thDuration')}</th>
+                      <th className="py-3 px-4 text-right whitespace-nowrap">{t('stats.thResult')}</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100 dark:divide-slate-800 font-medium">
+                    {simHistory.map((item) => (
+                      <tr
+                        key={item.id}
+                        onClick={() => onReviewSimExam?.(item)}
+                        className="hover:bg-slate-50/80 dark:hover:bg-slate-800/60 transition-colors cursor-pointer group"
+                        title="Nhấn để xem lại chi tiết bài thi mô phỏng"
+                      >
+                        <td className="py-3.5 px-4 text-slate-600 dark:text-slate-300 whitespace-nowrap">{item.date}</td>
+                        <td className="py-3.5 px-4 text-slate-900 dark:text-white font-semibold whitespace-nowrap">10 tình huống mô phỏng</td>
+                        <td className="py-3.5 px-4 font-mono font-bold text-slate-900 dark:text-white whitespace-nowrap">
+                          {item.score} / {item.total} đ
+                        </td>
+                        <td className="py-3.5 px-4 text-slate-500 dark:text-slate-400 font-mono whitespace-nowrap">
+                          {String(Math.floor(item.durationSeconds / 60)).padStart(2, '0')}:{String(item.durationSeconds % 60).padStart(2, '0')}
+                        </td>
+                        <td className="py-3.5 px-4 text-right whitespace-nowrap">
+                          {item.isPassed ? (
+                            <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+                              {t('stats.pass')}
+                            </span>
+                          ) : (
+                            <span className="text-xs font-semibold text-rose-600 dark:text-rose-400">
+                              {t('stats.fail')}
+                            </span>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </>
+          ) : (
+            <div className="text-center py-10 text-slate-400 dark:text-slate-500 text-sm">
+              Chưa có bài thi mô phỏng nào được ghi nhận. Hãy vào mục "Mô phỏng" để bắt đầu bài thi thử đầu tiên.
+            </div>
+          )
         )}
       </div>
 

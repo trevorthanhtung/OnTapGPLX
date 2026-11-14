@@ -8,28 +8,20 @@ import {
   ArrowLeft,
   X,
   Eye,
-  AlertTriangle,
-  HardDrive,
-  CloudDownload
+  AlertTriangle
 } from 'lucide-react';
 import simulationsData from '../data/simulations.json';
 import type { SimulationScenario, LicenseCategory } from '../types';
-import { VideoCacheService } from '../services/videoCache';
+import { VideoCacheService, getVideoSrc } from '../services/videoCache';
+import { StorageService, type SimulationExamHistoryItem } from '../services/storage';
+import { I18nService, type AppLanguage } from '../locales/i18n';
 
 interface SimulationViewProps {
   onActiveStateChange?: (isActive: boolean) => void;
   currentCategory?: LicenseCategory;
+  reviewExam?: SimulationExamHistoryItem | null;
+  onExitReview?: () => void;
 }
-
-const DEFAULT_CDN = 'https://pub-c2abeb24380a45a987615e62ee85f7e8.r2.dev';
-const VIDEO_CDN = (import.meta.env.VITE_VIDEO_CDN_URL || (import.meta.env.PROD ? DEFAULT_CDN : '')).replace(/\/$/, '');
-const getVideoSrc = (url?: string) => {
-  if (!url) return undefined;
-  if (url.startsWith('http://') || url.startsWith('https://')) return `${url}?v=2026.2`;
-  if (!VIDEO_CDN) return `${url}?v=2026.2`;
-  const cleanUrl = VIDEO_CDN.endsWith('/videos') ? url.replace(/^\/videos/, '') : url;
-  return `${VIDEO_CDN}${cleanUrl}?v=2026.2`;
-};
 
 const SIMULATION_CHAPTERS = [
   { id: 1, title: 'Chương 1: Giao thông trên đường phố' },
@@ -40,7 +32,12 @@ const SIMULATION_CHAPTERS = [
   { id: 6, title: 'Chương 6: Các tình huống va chạm giao thông thực tế' }
 ];
 
-export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateChange, currentCategory }) => {
+export const SimulationView: React.FC<SimulationViewProps> = ({
+  onActiveStateChange,
+  currentCategory,
+  reviewExam,
+  onExitReview
+}) => {
   const allScenarios = simulationsData as SimulationScenario[];
 
   // App Navigation & Modes
@@ -53,6 +50,91 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
       onActiveStateChange?.(false);
     };
   }, [mode, onActiveStateChange]);
+
+  // Đa ngôn ngữ (i18n)
+  const [currentLang, setCurrentLang] = useState<AppLanguage>(I18nService.getLanguage());
+
+  useEffect(() => {
+    const handleLangChange = (e: any) => {
+      setCurrentLang(e.detail || I18nService.getLanguage());
+    };
+    window.addEventListener('ontapgplx:language_change', handleLangChange);
+    return () => window.removeEventListener('ontapgplx:language_change', handleLangChange);
+  }, []);
+
+  const t = useCallback(
+    (key: string, params?: Record<string, any>) => {
+      let str = I18nService.t(key, currentLang);
+      if (params) {
+        Object.entries(params).forEach(([k, v]) => {
+          str = str.replace(new RegExp(`\\{${k}\\}`, 'g'), String(v));
+        });
+      }
+      return str;
+    },
+    [currentLang]
+  );
+
+  // Quản lý tình huống làm sai
+  const getComputedWrongScenarioIds = useCallback(() => {
+    const directWrong = StorageService.getWrongScenarios();
+    const history = StorageService.getSimulationHistory();
+    const set = new Set<number>(directWrong);
+    history.forEach((h) => {
+      if (h.scenarioIds && h.userAnswers) {
+        h.scenarioIds.forEach((scId, scIdx) => {
+          const sc = allScenarios.find((s) => s.id === scId);
+          if (sc && sc.quiz) {
+            const userAns = h.userAnswers?.[scIdx] || {};
+            const hasWrong = sc.quiz.some((q, qIdx) => userAns[qIdx] !== q.correctIndex);
+            if (hasWrong) set.add(scId);
+          }
+        });
+      }
+    });
+    return Array.from(set);
+  }, [allScenarios]);
+
+  const [wrongScenarioIds, setWrongScenarioIds] = useState<number[]>(getComputedWrongScenarioIds);
+
+  useEffect(() => {
+    if (mode === 'hub') {
+      setWrongScenarioIds(getComputedWrongScenarioIds());
+    }
+  }, [mode, getComputedWrongScenarioIds]);
+
+  // Handle reviewing a specific simulation exam from history
+  useEffect(() => {
+    if (!reviewExam) return;
+
+    let scenarios: SimulationScenario[] = [];
+    if (reviewExam.scenarioIds && reviewExam.scenarioIds.length > 0) {
+      const sMap = new Map<number, SimulationScenario>();
+      allScenarios.forEach((s) => sMap.set(s.id, s));
+      scenarios = reviewExam.scenarioIds
+        .map((id) => sMap.get(id))
+        .filter((s): s is SimulationScenario => Boolean(s));
+    }
+
+    if (scenarios.length === 0) {
+      scenarios = allScenarios.slice(0, 10);
+    }
+
+    setActiveScenarios(scenarios);
+    setCurrentIndex(0);
+    setExamAnswers(reviewExam.userAnswers || {});
+    setIsExamSubmitted(true);
+    setShowResultModal(false);
+    setTimeLeftSeconds(0);
+    resetPlayback();
+    setMode('exam');
+  }, [reviewExam, allScenarios]);
+
+  const handleExitReview = useCallback(() => {
+    onActiveStateChange?.(false);
+    setMode('hub');
+    onExitReview?.();
+  }, [onActiveStateChange, onExitReview]);
 
   // Cảnh báo người dùng hạng xe máy (A1, A) khi vào phần thi mô phỏng ô tô
   const isMotorbike = currentCategory === 'A1' || currentCategory === 'A';
@@ -237,16 +319,12 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
 
   // Video Offline Caching (Cache-As-You-Play qua IndexedDB)
   const [cachedVideoUrl, setCachedVideoUrl] = useState<string | null>(null);
-  const [isCached, setIsCached] = useState<boolean>(false);
-  const [isCaching, setIsCaching] = useState<boolean>(false);
 
   useEffect(() => {
     let isMounted = true;
     const rawSrc = getVideoSrc(currentScenario?.videoUrl);
     if (!rawSrc) {
       setCachedVideoUrl(null);
-      setIsCached(false);
-      setIsCaching(false);
       return;
     }
 
@@ -254,19 +332,9 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
       if (!isMounted) return;
       if (cachedBlob) {
         setCachedVideoUrl(cachedBlob);
-        setIsCached(true);
-        setIsCaching(false);
       } else {
         setCachedVideoUrl(null);
-        setIsCached(false);
-        setIsCaching(true);
-        VideoCacheService.cacheVideo(rawSrc).then((savedBlob) => {
-          if (!isMounted) return;
-          setIsCaching(false);
-          if (savedBlob) {
-            setIsCached(true);
-          }
-        });
+        VideoCacheService.cacheVideo(rawSrc).catch(() => {});
       }
     });
 
@@ -309,9 +377,38 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
     setMode('practice');
   };
 
+  // 25 tình huống nguy hiểm, bẫy điểm 0 kinh điển (khuất tầm nhìn, xe vượt ẩu, xe phanh gấp, sạt lở, va chạm thực tế)
+  const TRICKY_SCENARIO_IDS = useMemo(
+    () => [1, 2, 8, 15, 19, 23, 24, 30, 31, 38, 44, 45, 54, 60, 64, 74, 85, 91, 95, 99, 100, 105, 108, 112, 115, 120],
+    []
+  );
+
   // Start All 120 Scenarios Practice Mode
   const startAllScenarios = () => {
     setActiveScenarios(allScenarios);
+    setCurrentIndex(0);
+    resetPlayback();
+    setPracticeAnswers({});
+    setShowPracticeQuiz(false);
+    setMode('practice');
+  };
+
+  // Start 25 Tricky/Hazard Scenarios Practice Mode
+  const startHazardPractice = () => {
+    const hazardList = allScenarios.filter((s) => TRICKY_SCENARIO_IDS.includes(s.id));
+    setActiveScenarios(hazardList.length > 0 ? hazardList : allScenarios.slice(90, 120));
+    setCurrentIndex(0);
+    resetPlayback();
+    setPracticeAnswers({});
+    setShowPracticeQuiz(false);
+    setMode('practice');
+  };
+
+  // Start Wrong Scenarios Practice Mode
+  const startWrongPractice = () => {
+    const wrongList = allScenarios.filter((s) => wrongScenarioIds.includes(s.id));
+    if (wrongList.length === 0) return;
+    setActiveScenarios(wrongList);
     setCurrentIndex(0);
     resetPlayback();
     setPracticeAnswers({});
@@ -337,6 +434,46 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
     setShowSubmitConfirm(false);
     setIsExamSubmitted(true);
     setShowResultModal(true);
+
+    // Lưu kết quả bài thi thử mô phỏng vào lịch sử & ghi nhận các câu làm sai
+    let totalScore = 0;
+    activeScenarios.forEach((sc, scIdx) => {
+      let scScore = 0;
+      let isScenarioWrong = false;
+      const userAnswersForSc = examAnswers[scIdx] || {};
+      if (sc.quiz) {
+        sc.quiz.forEach((q, qIdx) => {
+          if (userAnswersForSc[qIdx] === q.correctIndex) {
+            scScore += 0.25;
+          } else {
+            isScenarioWrong = true;
+          }
+        });
+      }
+      totalScore += scScore;
+      if (isScenarioWrong) {
+        StorageService.recordWrongScenario(sc.id);
+      }
+    });
+
+    const finalScore = Number(totalScore.toFixed(2));
+    const isPassed = finalScore >= 5.0;
+    const durationSeconds = Math.max(1, 600 - timeLeftSeconds);
+    const now = new Date();
+    const dateStr = `${String(now.getDate()).padStart(2, '0')}/${String(now.getMonth() + 1).padStart(2, '0')}/${now.getFullYear()}`;
+
+    const historyItem: SimulationExamHistoryItem = {
+      id: `sim_${Date.now()}`,
+      date: dateStr,
+      score: finalScore,
+      total: 10,
+      isPassed,
+      durationSeconds,
+      scenarioIds: activeScenarios.map((s) => s.id),
+      userAnswers: examAnswers
+    };
+
+    StorageService.addSimulationHistory(historyItem);
   };
 
   // Timer countdown for 10-minute simulation exam
@@ -432,6 +569,10 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
         videoRef.current.pause();
         setIsPlaying(false);
       }
+      if (reviewExam) {
+        handleExitReview();
+        return;
+      }
       setMode('hub');
     };
 
@@ -439,7 +580,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
     return () => {
       window.removeEventListener('popstate', handlePopState);
     };
-  }, [mode, isExamSubmitted, showQuestionSheet, showSubmitConfirm, showExitConfirm]);
+  }, [mode, isExamSubmitted, showQuestionSheet, showSubmitConfirm, showExitConfirm, reviewExam, handleExitReview]);
 
   // Jump video to specific time (e.g. indirect or direct milestone)
   const jumpToTime = (timeSec: number) => {
@@ -518,10 +659,24 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
 
   // Practice Quiz Answer select
   const handlePracticeSelectAnswer = (qIdx: number, optIdx: number) => {
-    setPracticeAnswers((prev) => ({
-      ...prev,
+    const updated = {
+      ...practiceAnswers,
       [qIdx]: optIdx
-    }));
+    };
+    setPracticeAnswers(updated);
+
+    if (currentScenario?.quiz) {
+      const isWrong = currentScenario.quiz[qIdx]?.correctIndex !== optIdx;
+      if (isWrong) {
+        StorageService.recordWrongScenario(currentScenario.id);
+      } else {
+        const allAnswered = currentScenario.quiz.every((_, idx) => updated[idx] !== undefined);
+        const allCorrect = currentScenario.quiz.every((q, idx) => updated[idx] === q.correctIndex);
+        if (allAnswered && allCorrect) {
+          StorageService.removeWrongScenario(currentScenario.id);
+        }
+      }
+    }
   };
 
   // Exam Answer select
@@ -668,22 +823,15 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 relative z-10">
             <div className="max-w-2xl">
               <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-white mb-4 sm:mb-5 leading-snug">
-                Bộ 120 Tình Huống Mô Phỏng Giao Thông
+                {t('simulation.bannerTitle')}
               </h1>
 
-              <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-                <button
-                  onClick={() => executeWithMotorbikeCheck(startExamMode)}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 active:scale-98 text-slate-950 font-extrabold text-sm shadow-md transition-all cursor-pointer border border-amber-400/40"
-                >
-                  <span>Thi thử tình huống</span>
-                </button>
-
+              <div>
                 <button
                   onClick={() => executeWithMotorbikeCheck(startAllScenarios)}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 active:scale-98 text-white font-bold text-sm border border-white/20 backdrop-blur-xs transition-all cursor-pointer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 active:scale-98 text-slate-950 font-extrabold text-sm shadow-md transition-all cursor-pointer border border-amber-400/40"
                 >
-                  <span>Ôn luyện toàn bộ 120 tình huống</span>
+                  <span>{t('simulation.practiceAll')}</span>
                 </button>
               </div>
             </div>
@@ -691,22 +839,123 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
             {/* Structured Telemetry Card for Simulation (Matches 600 theory banner) */}
             <div className="p-3.5 sm:p-4 rounded-xl bg-slate-900/80 backdrop-blur-md border border-purple-500/20 text-center lg:min-w-[340px] shadow-inner relative overflow-hidden">
               <div className="text-[11px] font-bold text-purple-200/90 uppercase tracking-wider mb-2.5 pb-2 border-b border-slate-700/60 text-center">
-                Tiêu chuẩn thi mô phỏng
+                {t('simulation.standards')}
               </div>
               <div className="grid grid-cols-3 gap-2 sm:gap-4">
                 <div className="flex flex-col justify-center">
-                  <span className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold mb-1 whitespace-nowrap">Thời gian</span>
-                  <span className="text-sm sm:text-base font-extrabold text-slate-100 whitespace-nowrap">10 phút</span>
+                  <span className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold mb-1 whitespace-nowrap">{t('simulation.time')}</span>
+                  <span className="text-sm sm:text-base font-extrabold text-slate-100 whitespace-nowrap">10 {t('simulation.minutes')}</span>
                 </div>
                 <div className="flex flex-col justify-center border-x border-slate-700/60 px-1 sm:px-2">
-                  <span className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold mb-1 whitespace-nowrap">Số câu thi</span>
-                  <span className="text-sm sm:text-base font-extrabold text-slate-100 whitespace-nowrap">10 câu (4 ý)</span>
+                  <span className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold mb-1 whitespace-nowrap">{t('simulation.questionCount')}</span>
+                  <span className="text-sm sm:text-base font-extrabold text-slate-100 whitespace-nowrap">{t('simulation.tenQuestions')}</span>
                 </div>
                 <div className="flex flex-col justify-center">
-                  <span className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold mb-1 whitespace-nowrap">Điểm đạt</span>
-                  <span className="text-sm sm:text-base font-extrabold text-emerald-400 whitespace-nowrap">5.0/10 đ</span>
+                  <span className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold mb-1 whitespace-nowrap">{t('simulation.passScore')}</span>
+                  <span className="text-sm sm:text-base font-extrabold text-emerald-400 whitespace-nowrap">{t('simulation.scoreStandard')}</span>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Feature Cards Grid: 3 balanced cards matching Theory layout */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-5 mb-8 sm:mb-10">
+          {/* Card 1: Thi Thử Theo Đề Chuẩn */}
+          <div
+            onClick={() => executeWithMotorbikeCheck(startExamMode)}
+            className="group relative bg-white dark:bg-slate-900 rounded-xl sm:rounded-2xl border border-slate-200/90 dark:border-slate-800 p-4 sm:p-6 hover:border-slate-300 dark:hover:border-slate-700 hover:shadow-md transition-all cursor-pointer flex flex-col justify-between overflow-hidden isolate"
+          >
+            {/* Subtle Watermark Art: Exam Timer & Checklist */}
+            <div className="absolute right-0 top-0 w-24 h-24 sm:w-32 sm:h-32 opacity-[0.06] dark:opacity-[0.12] group-hover:opacity-[0.11] dark:group-hover:opacity-[0.18] group-hover:scale-105 transition-all pointer-events-none text-slate-900 dark:text-slate-100 overflow-hidden">
+              <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3">
+                <circle cx="50" cy="50" r="40" strokeDasharray="180 80" />
+                <path d="M50 20 V50 L68 50" strokeLinecap="round" />
+                <path d="M26 72 L34 80 L48 64" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+
+            <div>
+              <h2 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white mb-1 sm:mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                {t('simulation.mockExamTitle')}
+              </h2>
+              <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-6">
+                {t('simulation.mockExamDesc')}
+              </p>
+            </div>
+
+            <div className="flex items-center text-xs sm:text-sm font-semibold text-slate-900 dark:text-slate-200 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors pt-2.5 sm:pt-3 border-t border-slate-100 dark:border-slate-800">
+              <span>{t('simulation.startMockExam')}</span>
+              <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+            </div>
+          </div>
+
+          {/* Card 2: 25 Tình Huống Hay Mất Điểm */}
+          <div
+            onClick={() => executeWithMotorbikeCheck(startHazardPractice)}
+            className="group relative bg-white dark:bg-slate-900 rounded-xl sm:rounded-2xl border border-rose-200/80 dark:border-rose-900/40 p-4 sm:p-6 hover:border-rose-300 dark:hover:border-rose-700 hover:shadow-md transition-all cursor-pointer flex flex-col justify-between overflow-hidden isolate"
+          >
+            {/* Subtle Watermark Art: Caution Triangle Hazard */}
+            <div className="absolute right-0 top-0 w-24 h-24 sm:w-32 sm:h-32 opacity-[0.08] dark:opacity-[0.14] group-hover:opacity-[0.14] dark:group-hover:opacity-[0.22] group-hover:scale-105 transition-all pointer-events-none text-rose-600 dark:text-rose-400 overflow-hidden">
+              <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4">
+                <path d="M50 14 L90 84 H10 Z" strokeLinejoin="round" />
+                <line x1="50" y1="36" x2="50" y2="60" strokeWidth="6" strokeLinecap="round" />
+                <circle cx="50" cy="72" r="3.5" fill="currentColor" />
+              </svg>
+            </div>
+
+            <div>
+              <h2 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white mb-1 sm:mb-2 group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors">
+                {t('simulation.hazardTitle')}
+              </h2>
+              <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-6">
+                {t('simulation.hazardDesc')}
+              </p>
+            </div>
+
+            <div className="flex items-center text-xs sm:text-sm font-semibold text-rose-600 dark:text-rose-400 group-hover:text-rose-700 dark:group-hover:text-rose-300 transition-colors pt-2.5 sm:pt-3 border-t border-rose-50 dark:border-rose-900/30">
+              <span>{t('simulation.practiceHazard')}</span>
+              <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+            </div>
+          </div>
+
+          {/* Card 3: Ôn Lại Tình Huống Sai */}
+          <div
+            onClick={wrongScenarioIds.length > 0 ? () => executeWithMotorbikeCheck(startWrongPractice) : undefined}
+            className={`group relative bg-white dark:bg-slate-900 rounded-xl sm:rounded-2xl border p-4 sm:p-6 transition-all flex flex-col justify-between overflow-hidden isolate ${
+              wrongScenarioIds.length > 0
+                ? 'border-amber-200/90 dark:border-amber-900/40 hover:border-amber-300 dark:hover:border-amber-700 hover:shadow-md cursor-pointer'
+                : 'border-slate-200 dark:border-slate-800 opacity-75 cursor-not-allowed'
+            }`}
+          >
+            {/* Subtle Watermark Art: Revision Notebook / Checkmark Loop */}
+            <div className="absolute right-0 top-0 w-24 h-24 sm:w-32 sm:h-32 opacity-[0.08] dark:opacity-[0.14] group-hover:opacity-[0.14] dark:group-hover:opacity-[0.22] group-hover:scale-105 transition-all pointer-events-none text-amber-600 dark:text-amber-400 overflow-hidden">
+              <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3">
+                <rect x="22" y="16" width="56" height="68" rx="8" />
+                <line x1="14" y1="30" x2="22" y2="30" strokeWidth="4" strokeLinecap="round" />
+                <line x1="14" y1="46" x2="22" y2="46" strokeWidth="4" strokeLinecap="round" />
+                <line x1="14" y1="62" x2="22" y2="62" strokeWidth="4" strokeLinecap="round" />
+                <path d="M34 40 L42 48 L58 30" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+                <line x1="36" y1="60" x2="62" y2="60" strokeLinecap="round" />
+              </svg>
+            </div>
+
+            <div>
+              <h2 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white mb-1 sm:mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                {t('simulation.wrongTitle')}
+              </h2>
+              <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-6">
+                {t('simulation.wrongDesc')}
+              </p>
+            </div>
+
+            <div className="flex items-center text-xs sm:text-sm font-semibold text-amber-700 dark:text-amber-400 group-hover:text-amber-800 dark:group-hover:text-amber-300 transition-colors pt-2.5 sm:pt-3 border-t border-amber-50 dark:border-amber-900/30">
+              <span>
+                {wrongScenarioIds.length > 0
+                  ? t('simulation.reviewWrong', { count: wrongScenarioIds.length })
+                  : t('simulation.noWrong')}
+              </span>
+              {wrongScenarioIds.length > 0 && <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-1 group-hover:translate-x-1 transition-transform" />}
             </div>
           </div>
         </div>
@@ -714,7 +963,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
         {/* Section: Ôn tập theo 6 chương */}
         <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 sm:p-8">
           <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-6">
-            Ôn luyện theo 6 chương mô phỏng
+            {t('simulation.chaptersTitle')}
           </h2>
 
           {/* Mobile Single Card Carousel with swipe */}
@@ -824,10 +1073,6 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
               className="bg-white dark:bg-slate-900 rounded-2xl max-w-sm w-full p-6 shadow-xl border border-slate-200 dark:border-slate-800 text-center animate-in zoom-in-95 duration-150"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="w-12 h-12 rounded-full bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 flex items-center justify-center mx-auto mb-4 text-amber-600 dark:text-amber-400">
-                <AlertTriangle className="w-6 h-6" />
-              </div>
-
               <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
                 Nội dung không bắt buộc
               </h4>
@@ -884,18 +1129,22 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                         setIsPlaying(false);
                       }
                       setShowExitConfirm(true);
+                    } else if (reviewExam) {
+                      handleExitReview();
                     } else {
                       setMode('hub');
                     }
                   }}
                   className="p-2 -ml-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition-colors cursor-pointer shrink-0 landscape-mobile:p-1.5"
-                  title="Thoát đề thi"
+                  title={reviewExam ? 'Quay lại thống kê' : 'Thoát đề thi'}
                 >
                   <ArrowLeft className="w-5 h-5 landscape-mobile:w-4 landscape-mobile:h-4" />
                 </button>
-                <span className="font-bold text-slate-900 dark:text-white text-base sm:text-lg landscape-mobile:text-sm">
-                  Thi thử tình huống
-                </span>
+                {reviewExam && (
+                  <span className="font-bold text-slate-900 dark:text-white text-xs sm:text-base truncate">
+                    Xem lại bài thi ({reviewExam.date})
+                  </span>
+                )}
               </div>
 
               <div className="flex items-center gap-2 sm:gap-3">
@@ -918,14 +1167,14 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                   >
                     Nộp bài
                   </button>
-                ) : (
+                ) : !reviewExam ? (
                   <button
                     onClick={startExamMode}
                     className="px-5 py-2 landscape-mobile:px-3 landscape-mobile:py-1 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-slate-950 font-semibold text-sm landscape-mobile:text-xs transition-colors shadow-xs cursor-pointer"
                   >
                     Làm đề khác
                   </button>
-                )}
+                ) : null}
               </div>
             </div>
           </div>
@@ -945,18 +1194,6 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                       Câu hỏi {currentIndex + 1}
                     </span>
                     <span className="text-xs text-slate-400 dark:text-slate-500 font-mono">/ {activeScenarios.length}</span>
-                    {isCached && (
-                      <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20" title="Clip đã lưu trên máy, phát offline không cần mạng">
-                        <HardDrive className="w-3 h-3" />
-                        Đã lưu máy
-                      </span>
-                    )}
-                    {isCaching && (
-                      <span className="inline-flex items-center gap-1 text-[10px] font-medium text-blue-600 dark:text-blue-400 bg-blue-500/10 px-1.5 py-0.5 rounded border border-blue-500/20" title="Đang tự động tải ngầm để lưu vào máy">
-                        <CloudDownload className="w-3 h-3 animate-pulse" />
-                        Đang lưu...
-                      </span>
-                    )}
                   </div>
 
                   <button
@@ -1134,7 +1371,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                         if (isOptCorrect) {
                           optClass = 'border-emerald-500 dark:border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-300 font-semibold';
                         } else if (isSelected && !isOptCorrect) {
-                          optClass = 'border-rose-400 dark:border-rose-500 bg-rose-50 dark:bg-rose-950/40 text-rose-900 dark:text-rose-300 line-through';
+                          optClass = 'border-rose-400 dark:border-rose-500 bg-rose-50 dark:bg-rose-950/40 text-rose-900 dark:text-rose-300 font-medium';
                         }
                       } else if (isSelected) {
                         optClass = 'border-amber-500 bg-amber-50/60 dark:bg-amber-950/40 text-amber-950 dark:text-amber-300 font-semibold';
@@ -1416,18 +1653,6 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                     Câu hỏi {currentIndex + 1}
                   </span>
                   <span className="text-xs text-slate-400 dark:text-slate-500 font-mono">/ {activeScenarios.length}</span>
-                  {isCached && (
-                    <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20" title="Clip đã lưu trên máy, phát offline không cần mạng">
-                      <HardDrive className="w-3 h-3" />
-                      Đã lưu máy
-                    </span>
-                  )}
-                  {isCaching && (
-                    <span className="inline-flex items-center gap-1 text-[10px] font-medium text-blue-600 dark:text-blue-400 bg-blue-500/10 px-1.5 py-0.5 rounded border border-blue-500/20" title="Đang tự động tải ngầm để lưu vào máy">
-                      <CloudDownload className="w-3 h-3 animate-pulse" />
-                      Đang lưu...
-                    </span>
-                  )}
                 </div>
 
                 <button
@@ -1719,7 +1944,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                         if (isCorrect) {
                           optClass = 'border-emerald-500 dark:border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-300 font-semibold';
                         } else if (isThisSelected && !isCorrect) {
-                          optClass = 'border-rose-400 dark:border-rose-500 bg-rose-50 dark:bg-rose-950/40 text-rose-900 dark:text-rose-300 line-through';
+                          optClass = 'border-rose-400 dark:border-rose-500 bg-rose-50 dark:bg-rose-950/40 text-rose-900 dark:text-rose-300 font-medium';
                         }
                       }
 

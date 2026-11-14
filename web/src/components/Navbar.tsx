@@ -140,9 +140,14 @@ export const Navbar: React.FC<NavbarProps> = ({
                 {/* Logo & Brand */}
                 <div className="flex items-center gap-2 sm:gap-3 cursor-pointer shrink-0" onClick={() => setActiveTab('theory')}>
                   <img
-                    src="/logo.jpg"
+                    src="/logo-light.png"
                     alt="OnTapGPLX Logo"
-                    className="h-8 sm:h-9 w-auto rounded-md shadow-xs object-contain"
+                    className="h-8 sm:h-9 w-auto object-contain dark:hidden"
+                  />
+                  <img
+                    src="/logo-dark.png"
+                    alt="OnTapGPLX Logo"
+                    className="h-8 sm:h-9 w-auto object-contain hidden dark:block"
                   />
                   <div className="flex items-center gap-1 font-bold text-slate-900 dark:text-white tracking-tight text-base sm:text-lg">
                     <span>OnTap</span>

@@ -1,10 +1,12 @@
-const CACHE_NAME = 'ontapgplx-v2.3.0';
+const CACHE_NAME = 'ontapgplx-v2.0.0';
 const QUESTIONS_CACHE = 'ontapgplx-questions-v2';
 const PRECACHE_ASSETS = [
   '/',
   '/index.html',
   '/manifest.json',
   '/logo.jpg',
+  '/logo-light.png',
+  '/logo-dark.png',
   '/pwa-192x192.png',
   '/pwa-512x512.png',
   '/apple-touch-icon.png'

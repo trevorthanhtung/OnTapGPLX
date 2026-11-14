@@ -97,11 +97,6 @@ export const MoreView: React.FC<MoreViewProps> = ({
         title: t('theme.title'),
         onBack: handleBackToMain
       });
-    } else if (subView === 'offline') {
-      onSubHeaderChange?.({
-        title: 'Dữ liệu Ngoại tuyến',
-        onBack: handleBackToMain
-      });
     }
   }, [subView, handleBackToMain, onSubViewChange, onSubHeaderChange]);
 
@@ -204,6 +199,7 @@ export const MoreView: React.FC<MoreViewProps> = ({
     return (
       <OfflineManagerView
         onBack={handleBackToMain}
+        onSubHeaderChange={onSubHeaderChange}
       />
     );
   }
@@ -281,7 +277,7 @@ export const MoreView: React.FC<MoreViewProps> = ({
             Quy chế sát hạch & Phân hạng mới
           </span>
 
-          <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-200 group-hover:translate-x-0.5 transition-transform" />
+          <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-200 group-hover:translate-x-0.5 transition-transform shrink-0" />
         </button>
 
         {/* Row 1: Biển báo đường bộ */}
@@ -323,20 +319,15 @@ export const MoreView: React.FC<MoreViewProps> = ({
           <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-200 group-hover:translate-x-0.5 transition-transform" />
         </button>
 
-        {/* Row 3: Dữ liệu Ngoại tuyến */}
+        {/* Row 3: Dữ liệu ngoại tuyến */}
         <button
           type="button"
           onClick={() => handleOpenSubView('offline')}
           className="w-full p-3.5 sm:p-4 flex items-center justify-between text-left hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors cursor-pointer group"
         >
-          <div className="flex items-center gap-2">
-            <span className="text-sm font-semibold text-slate-900 dark:text-white">
-              Dữ liệu Ngoại tuyến (Offline)
-            </span>
-            <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
-              Mới
-            </span>
-          </div>
+          <span className="text-sm font-semibold text-slate-900 dark:text-white">
+            Dữ liệu ngoại tuyến
+          </span>
 
           <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-200 group-hover:translate-x-0.5 transition-transform" />
         </button>
@@ -362,7 +353,7 @@ export const MoreView: React.FC<MoreViewProps> = ({
             {t('app.version')}
           </span>
           <span className="text-xs font-mono text-slate-400 dark:text-slate-500">
-            v2.3.0
+            v2.0.0
           </span>
         </div>
       </div>
