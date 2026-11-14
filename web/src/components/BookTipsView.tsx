@@ -742,7 +742,7 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
                 <div className="p-4 rounded-xl bg-slate-50/80 dark:bg-slate-800/40 border border-slate-200/60 dark:border-slate-700/50 flex flex-col items-center text-center space-y-3">
                   <div className="w-28 h-36 bg-white dark:bg-slate-900 rounded-lg p-1.5 border border-slate-200/80 dark:border-slate-700 flex items-center justify-center overflow-hidden">
                     <img
-                      src="/SachMeo/csgt_gio_2_tay.png"
+                      src="/SachMeo/csgt_gio_2_tay.webp"
                       alt="CSGT giang 2 tay"
                       className="max-h-full max-w-full object-contain"
                     />
@@ -765,7 +765,7 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
                 <div className="p-4 rounded-xl bg-slate-50/80 dark:bg-slate-800/40 border border-slate-200/60 dark:border-slate-700/50 flex flex-col items-center text-center space-y-3">
                   <div className="w-28 h-36 bg-white dark:bg-slate-900 rounded-lg p-1.5 border border-slate-200/80 dark:border-slate-700 flex items-center justify-center overflow-hidden">
                     <img
-                      src="/SachMeo/csgt_gio_1_tay.png"
+                      src="/SachMeo/csgt_gio_1_tay.webp"
                       alt="CSGT giơ 1 tay"
                       className="max-h-full max-w-full object-contain"
                     />
@@ -1505,11 +1505,11 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/342.png" alt="Câu 342 - từ móc" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/342.webp" alt="Câu 342 - từ móc" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium">Câu 342 (Đề có chữ &quot;móc&quot; → Chọn 1 &amp; 2)</span>
                   </div>
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/340.png" alt="Câu 340 - từ kéo" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/340.webp" alt="Câu 340 - từ kéo" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium">Câu 340 (Đề có chữ &quot;kéo&quot; → Chọn 2 &amp; 3)</span>
                   </div>
                 </div>
@@ -1528,11 +1528,11 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/304.png" alt="Câu 304 - cấm mô tô" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/304.webp" alt="Câu 304 - cấm mô tô" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium">Câu 304 (Đề hỏi &quot;cấm...&quot; → Chọn Đáp án 1)</span>
                   </div>
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/307.png" alt="Câu 307 - được đi vào" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/307.webp" alt="Câu 307 - được đi vào" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium">Câu 307 (Đề hỏi &quot;được phép...&quot; → Chọn Đáp án 3)</span>
                   </div>
                 </div>
@@ -1551,11 +1551,11 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/302.png" alt="Câu 302 - cấm xe tải" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/302.webp" alt="Câu 302 - cấm xe tải" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium">Câu 302 (Cấm xe tải → Chọn Đáp án 4 cuối)</span>
                   </div>
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/332.png" alt="Câu 332 - xe xích lô" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/332.webp" alt="Câu 332 - xe xích lô" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium">Câu 332 (Xe xích lô → Chọn Đáp án cuối)</span>
                   </div>
                 </div>
@@ -1574,11 +1574,11 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/320.png" alt="Câu 320 - có từ và" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/320.webp" alt="Câu 320 - có từ và" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium">Câu 320 (Đề có chữ &quot;rẽ trái VÀ quay đầu&quot; → Chọn 2)</span>
                   </div>
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/317.png" alt="Câu 317 - không có từ và" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/317.webp" alt="Câu 317 - không có từ và" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium">Câu 317 (Đề không có chữ &quot;và&quot; → Chọn 1)</span>
                   </div>
                 </div>
@@ -1608,11 +1608,11 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/322.png" alt="Câu 322 - rẽ trái" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/322.webp" alt="Câu 322 - rẽ trái" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium">Câu 322 (Không có đáp án CẢ → Chọn Đáp án 2)</span>
                   </div>
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/323.png" alt="Câu 323 - quay đầu" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/323.webp" alt="Câu 323 - quay đầu" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium">Câu 323 (Có đáp án &quot;Cả 2 biển&quot; → Chọn CẢ)</span>
                   </div>
                 </div>
@@ -1630,7 +1630,7 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
                 </div>
 
                 <div className="max-w-md mx-auto bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                  <img src="/questions/325.png" alt="Câu 325 - cấm đi ngược chiều" className="max-h-44 object-contain rounded" loading="lazy" />
+                  <img src="/questions/325.webp" alt="Câu 325 - cấm đi ngược chiều" className="max-h-44 object-contain rounded" loading="lazy" />
                   <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium">Câu 325 (Biển 2 có dấu trừ gạch trắng → Chọn Đáp án 2)</span>
                 </div>
               </div>
@@ -1648,11 +1648,11 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/327.png" alt="Câu 327 - ngày lẻ" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/327.webp" alt="Câu 327 - ngày lẻ" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium">Câu 327 (Hỏi đỗ xe ngày lẻ → Chọn Đáp án 1)</span>
                   </div>
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/328.png" alt="Câu 328 - ngày chẵn" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/328.webp" alt="Câu 328 - ngày chẵn" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium">Câu 328 (Hỏi đỗ xe ngày chẵn → Chọn Đáp án 2)</span>
                   </div>
                 </div>
@@ -1671,11 +1671,11 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/362.png" alt="Câu 362 - phân biệt tối đa và tối thiểu" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/362.webp" alt="Câu 362 - phân biệt tối đa và tối thiểu" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 362 (Biển đỏ 50: Tối đa | Biển xanh 60: Tối thiểu → Chọn Biển 2)</span>
                   </div>
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/360.png" alt="Câu 360 - tốc độ tối đa đêm" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/360.webp" alt="Câu 360 - tốc độ tối đa đêm" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 360 (Đề hỏi tối đa ban đêm → Chọn Biển 1 có chữ &quot;ĐÊM&quot;)</span>
                   </div>
                 </div>
@@ -1704,7 +1704,7 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
                 </div>
 
                 <div className="max-w-md mx-auto bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                  <img src="/questions/336.png" alt="Câu 336 - biển 7t" className="max-h-44 object-contain rounded" loading="lazy" />
+                  <img src="/questions/336.webp" alt="Câu 336 - biển 7t" className="max-h-44 object-contain rounded" loading="lazy" />
                   <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium">Câu 336 (Biển hạn chế tải trọng xe trục 7 tấn)</span>
                 </div>
               </div>
@@ -1721,7 +1721,7 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
                 </div>
 
                 <div className="max-w-md mx-auto bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                  <img src="/questions/347.png" alt="Câu 347 - biển phụ chiều dài" className="max-h-44 object-contain rounded" loading="lazy" />
+                  <img src="/questions/347.webp" alt="Câu 347 - biển phụ chiều dài" className="max-h-44 object-contain rounded" loading="lazy" />
                   <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium">Câu 347 (Biển phụ có 2 mũi tên đứng là Chiều dài tác dụng)</span>
                 </div>
               </div>
@@ -1738,7 +1738,7 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
                 </div>
 
                 <div className="max-w-md mx-auto bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                  <img src="/questions/367.png" alt="Câu 367 - người đi bộ" className="max-h-44 object-contain rounded" loading="lazy" />
+                  <img src="/questions/367.webp" alt="Câu 367 - người đi bộ" className="max-h-44 object-contain rounded" loading="lazy" />
                   <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium">Câu 367 (Nhường đường → Chọn Biển 1 tam giác vàng)</span>
                 </div>
               </div>
@@ -1755,7 +1755,7 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
                 </div>
 
                 <div className="max-w-md mx-auto bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                  <img src="/questions/411.png" alt="Câu 411 - 2 người đi chung" className="max-h-44 object-contain rounded" loading="lazy" />
+                  <img src="/questions/411.webp" alt="Câu 411 - 2 người đi chung" className="max-h-44 object-contain rounded" loading="lazy" />
                   <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium">Câu 411 (Có biển 2 người dắt tay trẻ em → Chọn Đáp án 2)</span>
                 </div>
               </div>
@@ -1806,7 +1806,7 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
                 </div>
 
                 <div className="max-w-md mx-auto bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                  <img src="/questions/415.png" alt="Câu 415 - dốc xuống 10%" className="max-h-44 object-contain rounded" loading="lazy" />
+                  <img src="/questions/415.webp" alt="Câu 415 - dốc xuống 10%" className="max-h-44 object-contain rounded" loading="lazy" />
                   <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium">Câu 415 (Biển dốc nguy hiểm 10% chúc xuống)</span>
                 </div>
               </div>
@@ -1823,7 +1823,7 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
                 </div>
 
                 <div className="max-w-md mx-auto bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                  <img src="/questions/308.png" alt="Câu 308 - cấm vượt" className="max-h-44 object-contain rounded" loading="lazy" />
+                  <img src="/questions/308.webp" alt="Câu 308 - cấm vượt" className="max-h-44 object-contain rounded" loading="lazy" />
                   <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium">Câu 308 (Biển cấm ô tô tải vượt không cấm ô tô con)</span>
                 </div>
               </div>
@@ -1840,7 +1840,7 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
                 </div>
 
                 <div className="max-w-md mx-auto bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                  <img src="/questions/457.png" alt="Câu 457 - cầu vượt liên thông" className="max-h-44 object-contain rounded" loading="lazy" />
+                  <img src="/questions/457.webp" alt="Câu 457 - cầu vượt liên thông" className="max-h-44 object-contain rounded" loading="lazy" />
                   <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium">Câu 457 (Biển chữ nhật có địa danh Quốc lộ là Cầu vượt liên thông)</span>
                 </div>
               </div>
@@ -1858,11 +1858,11 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/445.png" alt="Câu 445 - hỏi biển 1" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/445.webp" alt="Câu 445 - hỏi biển 1" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 445 (Đề hỏi Biển 1 → Chọn Đáp án 1)</span>
                   </div>
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/444.png" alt="Câu 444 - đường đối ngoại" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/444.webp" alt="Câu 444 - đường đối ngoại" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 444 (Đề hỏi đường đối ngoại → Chọn Biển 3 AH112)</span>
                   </div>
                 </div>
@@ -1881,11 +1881,11 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/462.png" alt="Câu 462 - thấy bóng đèn" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/462.webp" alt="Câu 462 - thấy bóng đèn" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 462 (Thấy bóng đèn phía trước → Chọn CÓ - Đáp án 1)</span>
                   </div>
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/463.png" alt="Câu 463 - không thấy bóng đèn" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/463.webp" alt="Câu 463 - không thấy bóng đèn" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 463 (Không thấy bóng đèn, nhìn ngang xe → Chọn KHÔNG - Đáp án 2)</span>
                   </div>
                 </div>
@@ -1919,7 +1919,7 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
                 </div>
 
                 <div className="max-w-md mx-auto bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                  <img src="/questions/473.png" alt="Câu 473 - mũi tên ngoặt vàng đen" className="max-h-44 object-contain rounded" loading="lazy" />
+                  <img src="/questions/473.webp" alt="Câu 473 - mũi tên ngoặt vàng đen" className="max-h-44 object-contain rounded" loading="lazy" />
                   <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 473 (Mũi tên ngoặt vàng đen nhắc hướng rẽ đường cong nguy hiểm → Chọn Đáp án 2)</span>
                 </div>
               </div>
@@ -1937,11 +1937,11 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/477.png" alt="Câu 477 - vạch kẻ đường" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/477.webp" alt="Câu 477 - vạch kẻ đường" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 477 (Hỏi vạch không được phép đè vạch → Vạch 2 &amp; Vạch 3: Chọn Đáp án 4)</span>
                   </div>
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/482.png" alt="Câu 482 - vạch phân chiều" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/482.webp" alt="Câu 482 - vạch phân chiều" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 482 (Hỏi phân chia 2 chiều xe chạy ngược chiều → Vạch 1 màu vàng: Chọn Đáp án 4)</span>
                   </div>
                 </div>
@@ -2001,11 +2001,11 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/488.png" alt="Câu 488 - xe công an" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/488.webp" alt="Câu 488 - xe công an" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 488 (Xe công an đi thẳng đường ưu tiên → Chọn Đáp án 1)</span>
                   </div>
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/489.png" alt="Câu 489 - xe công an" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/489.webp" alt="Câu 489 - xe công an" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 489 (Xe công an rẽ ngã tư → Chọn Đáp án 4)</span>
                   </div>
                 </div>
@@ -2024,11 +2024,11 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/522.png" alt="Câu 522 - xe tải" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/522.webp" alt="Câu 522 - xe tải" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 522 (Xe tải bị cấm rẽ phải hướng 1 → Chọn Đáp án 2: Hướng 2 &amp; 3)</span>
                   </div>
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/524.png" alt="Câu 524 - xe tải" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/524.webp" alt="Câu 524 - xe tải" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 524 (Hướng 2 có biển cấm xe tải → Chọn Đáp án 2: Hướng 1, 3, 4)</span>
                   </div>
                 </div>
@@ -2047,11 +2047,11 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/491.png" alt="Câu 491 - vòng xuyến" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/491.webp" alt="Câu 491 - vòng xuyến" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 491 (Trong vòng xuyến: Xe tải bên trái đã vào trước → Xe con phải nhường - Đáp án 1)</span>
                   </div>
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/576.png" alt="Câu 576 - chướng ngại vật" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/576.webp" alt="Câu 576 - chướng ngại vật" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 576 (Phía trước có chướng ngại vật → Xe của bạn phải nhường - Đáp án 2)</span>
                   </div>
                 </div>
@@ -2081,11 +2081,11 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/486.png" alt="Câu 486 - 6 đèn tín hiệu" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/486.webp" alt="Câu 486 - 6 đèn tín hiệu" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 486 (Hỏi xe chấp hành đúng tín hiệu → Chọn Đáp án 2: Chỉ xe con)</span>
                   </div>
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/503.png" alt="Câu 503 - xe vi phạm" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/503.webp" alt="Câu 503 - xe vi phạm" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 503 (Hỏi xe vi phạm tín hiệu đèn → Bỏ xe con → Chọn Đáp án 1: Xe khách, xe tải, mô tô)</span>
                   </div>
                 </div>
@@ -2104,11 +2104,11 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/525.png" alt="Câu 525 - xe đi trước" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/525.webp" alt="Câu 525 - xe đi trước" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 525 (Ngoại lệ: Xe mô tô trên đường ưu tiên rẽ vào đường ưu tiên → Chọn Đáp án 1)</span>
                   </div>
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/591.png" alt="Câu 591 - xe đi trước" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/591.webp" alt="Câu 591 - xe đi trước" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 591 (Ngoại lệ: Xe tải đi thẳng giao lộ → Chọn Đáp án 1)</span>
                   </div>
                 </div>
@@ -2127,11 +2127,11 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/543.png" alt="Câu 543 - mẹo đua xe" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/543.webp" alt="Câu 543 - mẹo đua xe" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 543 (Xe cuối là xe con (E) 4 bánh: 4 - 1 = 3, chọn xe E &amp; C → Chọn Đáp án 1)</span>
                   </div>
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/554.png" alt="Câu 554 - chấp hành đúng" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/554.webp" alt="Câu 554 - chấp hành đúng" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 554 (Hỏi xe chấp hành đúng quy tắc giao thông → Chọn Đáp án 2: Xe A, C, E, G)</span>
                   </div>
                 </div>
@@ -2161,11 +2161,11 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/556.png" alt="Câu 556 - mô tô cùng đường" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/556.webp" alt="Câu 556 - mô tô cùng đường" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 556 (Nơi có vạch người đi bộ: Xe của bạn không được vượt → Chọn Đáp án 2)</span>
                   </div>
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/534.png" alt="Câu 534 - 2 biển cùng cấp" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/534.webp" alt="Câu 534 - 2 biển cùng cấp" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 534 (2 biển cùng cấp: Có đáp án &quot;Xe khách VÀ xe tải&quot; → Chọn Đáp án 1)</span>
                   </div>
                 </div>
@@ -2184,11 +2184,11 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/588.png" alt="Câu 588 - xe bạn đi trước" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/588.webp" alt="Câu 588 - xe bạn đi trước" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 588 (Xe của bạn trên đường ưu tiên biển hình thoi → Chọn Đáp án 2)</span>
                   </div>
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/549.png" alt="Câu 549 - nhường xe tải" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/549.webp" alt="Câu 549 - nhường xe tải" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 549 (Trước mặt có biển W.208 giao nhau đường ưu tiên: Nhường xe tải → Chọn Đáp án 2)</span>
                   </div>
                 </div>
@@ -2207,11 +2207,11 @@ export const BookTipsView: React.FC<BookTipsViewProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/574.png" alt="Câu 574 - xe đạp" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/574.webp" alt="Câu 574 - xe đạp" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 574 (Trước mặt có biển STOP: Nhường xe đạp và xe khách → Chọn Đáp án 3)</span>
                   </div>
                   <div className="bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200/80 dark:border-slate-700/60 flex flex-col items-center">
-                    <img src="/questions/510.png" alt="Câu 510 - xe kéo xe" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
+                    <img src="/questions/510.webp" alt="Câu 510 - xe kéo xe" className="max-h-40 sm:max-h-44 object-contain rounded" loading="lazy" />
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 pt-1.5 font-medium text-center">Câu 510 (Xe tải kéo mô tô 3 bánh vào đường cấm kéo moóc → Chọn KHÔNG ĐÚNG - Đáp án 2)</span>
                   </div>
                 </div>

@@ -8,10 +8,13 @@ import {
   ArrowLeft,
   X,
   Eye,
-  AlertTriangle
+  AlertTriangle,
+  HardDrive,
+  CloudDownload
 } from 'lucide-react';
 import simulationsData from '../data/simulations.json';
 import type { SimulationScenario, LicenseCategory } from '../types';
+import { VideoCacheService } from '../services/videoCache';
 
 interface SimulationViewProps {
   onActiveStateChange?: (isActive: boolean) => void;
@@ -231,6 +234,46 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
   const examQuestionsRef = useRef<HTMLDivElement>(null);
   const practiceQuestionsRef = useRef<HTMLDivElement>(null);
   const currentScenario = activeScenarios[currentIndex];
+
+  // Video Offline Caching (Cache-As-You-Play qua IndexedDB)
+  const [cachedVideoUrl, setCachedVideoUrl] = useState<string | null>(null);
+  const [isCached, setIsCached] = useState<boolean>(false);
+  const [isCaching, setIsCaching] = useState<boolean>(false);
+
+  useEffect(() => {
+    let isMounted = true;
+    const rawSrc = getVideoSrc(currentScenario?.videoUrl);
+    if (!rawSrc) {
+      setCachedVideoUrl(null);
+      setIsCached(false);
+      setIsCaching(false);
+      return;
+    }
+
+    VideoCacheService.getCachedVideoUrl(rawSrc).then((cachedBlob) => {
+      if (!isMounted) return;
+      if (cachedBlob) {
+        setCachedVideoUrl(cachedBlob);
+        setIsCached(true);
+        setIsCaching(false);
+      } else {
+        setCachedVideoUrl(null);
+        setIsCached(false);
+        setIsCaching(true);
+        VideoCacheService.cacheVideo(rawSrc).then((savedBlob) => {
+          if (!isMounted) return;
+          setIsCaching(false);
+          if (savedBlob) {
+            setIsCached(true);
+          }
+        });
+      }
+    });
+
+    return () => {
+      isMounted = false;
+    };
+  }, [currentScenario?.videoUrl]);
 
   // Reset scroll to top when changing scenario
   useEffect(() => {
@@ -902,6 +945,18 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                       Câu hỏi {currentIndex + 1}
                     </span>
                     <span className="text-xs text-slate-400 dark:text-slate-500 font-mono">/ {activeScenarios.length}</span>
+                    {isCached && (
+                      <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20" title="Clip đã lưu trên máy, phát offline không cần mạng">
+                        <HardDrive className="w-3 h-3" />
+                        Đã lưu máy
+                      </span>
+                    )}
+                    {isCaching && (
+                      <span className="inline-flex items-center gap-1 text-[10px] font-medium text-blue-600 dark:text-blue-400 bg-blue-500/10 px-1.5 py-0.5 rounded border border-blue-500/20" title="Đang tự động tải ngầm để lưu vào máy">
+                        <CloudDownload className="w-3 h-3 animate-pulse" />
+                        Đang lưu...
+                      </span>
+                    )}
                   </div>
 
                   <button
@@ -925,7 +980,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                     <video
                       key={currentScenario?.id}
                       ref={videoRef}
-                      src={getVideoSrc(currentScenario?.videoUrl)}
+                      src={cachedVideoUrl || getVideoSrc(currentScenario?.videoUrl)}
                       className="w-full h-full object-contain cursor-pointer"
                       preload="auto"
                       onPlay={() => setIsPlaying(true)}
@@ -1361,6 +1416,18 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                     Câu hỏi {currentIndex + 1}
                   </span>
                   <span className="text-xs text-slate-400 dark:text-slate-500 font-mono">/ {activeScenarios.length}</span>
+                  {isCached && (
+                    <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20" title="Clip đã lưu trên máy, phát offline không cần mạng">
+                      <HardDrive className="w-3 h-3" />
+                      Đã lưu máy
+                    </span>
+                  )}
+                  {isCaching && (
+                    <span className="inline-flex items-center gap-1 text-[10px] font-medium text-blue-600 dark:text-blue-400 bg-blue-500/10 px-1.5 py-0.5 rounded border border-blue-500/20" title="Đang tự động tải ngầm để lưu vào máy">
+                      <CloudDownload className="w-3 h-3 animate-pulse" />
+                      Đang lưu...
+                    </span>
+                  )}
                 </div>
 
                 <button
@@ -1384,7 +1451,7 @@ export const SimulationView: React.FC<SimulationViewProps> = ({ onActiveStateCha
                   <video
                     key={currentScenario?.id}
                     ref={videoRef}
-                    src={getVideoSrc(currentScenario?.videoUrl)}
+                    src={cachedVideoUrl || getVideoSrc(currentScenario?.videoUrl)}
                     className="w-full h-full object-contain cursor-pointer"
                     preload="auto"
                     onPlay={() => setIsPlaying(true)}

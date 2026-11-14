@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "/questions/001.png",
+    "image": "/questions/001.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -11,7 +11,7 @@
   },
   {
     "id": 2,
-    "image": "/questions/002.png",
+    "image": "/questions/002.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -21,7 +21,7 @@
   },
   {
     "id": 3,
-    "image": "/questions/003.png",
+    "image": "/questions/003.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -31,7 +31,7 @@
   },
   {
     "id": 4,
-    "image": "/questions/004.png",
+    "image": "/questions/004.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -41,7 +41,7 @@
   },
   {
     "id": 5,
-    "image": "/questions/005.png",
+    "image": "/questions/005.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -51,7 +51,7 @@
   },
   {
     "id": 6,
-    "image": "/questions/006.png",
+    "image": "/questions/006.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -61,7 +61,7 @@
   },
   {
     "id": 7,
-    "image": "/questions/007.png",
+    "image": "/questions/007.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -71,7 +71,7 @@
   },
   {
     "id": 8,
-    "image": "/questions/008.png",
+    "image": "/questions/008.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -81,7 +81,7 @@
   },
   {
     "id": 9,
-    "image": "/questions/009.png",
+    "image": "/questions/009.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -91,7 +91,7 @@
   },
   {
     "id": 10,
-    "image": "/questions/010.png",
+    "image": "/questions/010.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -101,7 +101,7 @@
   },
   {
     "id": 11,
-    "image": "/questions/011.png",
+    "image": "/questions/011.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -111,7 +111,7 @@
   },
   {
     "id": 12,
-    "image": "/questions/012.png",
+    "image": "/questions/012.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -121,7 +121,7 @@
   },
   {
     "id": 13,
-    "image": "/questions/013.png",
+    "image": "/questions/013.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -131,7 +131,7 @@
   },
   {
     "id": 14,
-    "image": "/questions/014.png",
+    "image": "/questions/014.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -141,7 +141,7 @@
   },
   {
     "id": 15,
-    "image": "/questions/015.png",
+    "image": "/questions/015.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -151,7 +151,7 @@
   },
   {
     "id": 16,
-    "image": "/questions/016.png",
+    "image": "/questions/016.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -161,7 +161,7 @@
   },
   {
     "id": 17,
-    "image": "/questions/017.png",
+    "image": "/questions/017.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -171,7 +171,7 @@
   },
   {
     "id": 18,
-    "image": "/questions/018.png",
+    "image": "/questions/018.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -181,7 +181,7 @@
   },
   {
     "id": 19,
-    "image": "/questions/019.png",
+    "image": "/questions/019.webp",
     "correctAnswer": 2,
     "isCritical": true,
     "chapter": 1,
@@ -191,7 +191,7 @@
   },
   {
     "id": 20,
-    "image": "/questions/020.png",
+    "image": "/questions/020.webp",
     "correctAnswer": 3,
     "isCritical": true,
     "chapter": 1,
@@ -201,7 +201,7 @@
   },
   {
     "id": 21,
-    "image": "/questions/021.png",
+    "image": "/questions/021.webp",
     "correctAnswer": 3,
     "isCritical": true,
     "chapter": 1,
@@ -211,7 +211,7 @@
   },
   {
     "id": 22,
-    "image": "/questions/022.png",
+    "image": "/questions/022.webp",
     "correctAnswer": 2,
     "isCritical": true,
     "chapter": 1,
@@ -221,7 +221,7 @@
   },
   {
     "id": 23,
-    "image": "/questions/023.png",
+    "image": "/questions/023.webp",
     "correctAnswer": 3,
     "isCritical": true,
     "chapter": 1,
@@ -231,7 +231,7 @@
   },
   {
     "id": 24,
-    "image": "/questions/024.png",
+    "image": "/questions/024.webp",
     "correctAnswer": 1,
     "isCritical": true,
     "chapter": 1,
@@ -241,7 +241,7 @@
   },
   {
     "id": 25,
-    "image": "/questions/025.png",
+    "image": "/questions/025.webp",
     "correctAnswer": 3,
     "isCritical": true,
     "chapter": 1,
@@ -251,7 +251,7 @@
   },
   {
     "id": 26,
-    "image": "/questions/026.png",
+    "image": "/questions/026.webp",
     "correctAnswer": 1,
     "isCritical": true,
     "chapter": 1,
@@ -261,7 +261,7 @@
   },
   {
     "id": 27,
-    "image": "/questions/027.png",
+    "image": "/questions/027.webp",
     "correctAnswer": 4,
     "isCritical": true,
     "chapter": 1,
@@ -271,7 +271,7 @@
   },
   {
     "id": 28,
-    "image": "/questions/028.png",
+    "image": "/questions/028.webp",
     "correctAnswer": 3,
     "isCritical": true,
     "chapter": 1,
@@ -281,7 +281,7 @@
   },
   {
     "id": 29,
-    "image": "/questions/029.png",
+    "image": "/questions/029.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -291,7 +291,7 @@
   },
   {
     "id": 30,
-    "image": "/questions/030.png",
+    "image": "/questions/030.webp",
     "correctAnswer": 3,
     "isCritical": true,
     "chapter": 1,
@@ -301,7 +301,7 @@
   },
   {
     "id": 31,
-    "image": "/questions/031.png",
+    "image": "/questions/031.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -311,7 +311,7 @@
   },
   {
     "id": 32,
-    "image": "/questions/032.png",
+    "image": "/questions/032.webp",
     "correctAnswer": 3,
     "isCritical": true,
     "chapter": 1,
@@ -321,7 +321,7 @@
   },
   {
     "id": 33,
-    "image": "/questions/033.png",
+    "image": "/questions/033.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -331,7 +331,7 @@
   },
   {
     "id": 34,
-    "image": "/questions/034.png",
+    "image": "/questions/034.webp",
     "correctAnswer": 2,
     "isCritical": true,
     "chapter": 1,
@@ -341,7 +341,7 @@
   },
   {
     "id": 35,
-    "image": "/questions/035.png",
+    "image": "/questions/035.webp",
     "correctAnswer": 4,
     "isCritical": true,
     "chapter": 1,
@@ -351,7 +351,7 @@
   },
   {
     "id": 36,
-    "image": "/questions/036.png",
+    "image": "/questions/036.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 1,
@@ -361,7 +361,7 @@
   },
   {
     "id": 37,
-    "image": "/questions/037.png",
+    "image": "/questions/037.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -371,7 +371,7 @@
   },
   {
     "id": 38,
-    "image": "/questions/038.png",
+    "image": "/questions/038.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -381,7 +381,7 @@
   },
   {
     "id": 39,
-    "image": "/questions/039.png",
+    "image": "/questions/039.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -391,7 +391,7 @@
   },
   {
     "id": 40,
-    "image": "/questions/040.png",
+    "image": "/questions/040.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -401,7 +401,7 @@
   },
   {
     "id": 41,
-    "image": "/questions/041.png",
+    "image": "/questions/041.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -411,7 +411,7 @@
   },
   {
     "id": 42,
-    "image": "/questions/042.png",
+    "image": "/questions/042.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -421,7 +421,7 @@
   },
   {
     "id": 43,
-    "image": "/questions/043.png",
+    "image": "/questions/043.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -431,7 +431,7 @@
   },
   {
     "id": 44,
-    "image": "/questions/044.png",
+    "image": "/questions/044.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -441,7 +441,7 @@
   },
   {
     "id": 45,
-    "image": "/questions/045.png",
+    "image": "/questions/045.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -451,7 +451,7 @@
   },
   {
     "id": 46,
-    "image": "/questions/046.png",
+    "image": "/questions/046.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -461,7 +461,7 @@
   },
   {
     "id": 47,
-    "image": "/questions/047.png",
+    "image": "/questions/047.webp",
     "correctAnswer": 2,
     "isCritical": true,
     "chapter": 1,
@@ -471,7 +471,7 @@
   },
   {
     "id": 48,
-    "image": "/questions/048.png",
+    "image": "/questions/048.webp",
     "correctAnswer": 3,
     "isCritical": true,
     "chapter": 1,
@@ -481,7 +481,7 @@
   },
   {
     "id": 49,
-    "image": "/questions/049.png",
+    "image": "/questions/049.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -491,7 +491,7 @@
   },
   {
     "id": 50,
-    "image": "/questions/050.png",
+    "image": "/questions/050.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -501,7 +501,7 @@
   },
   {
     "id": 51,
-    "image": "/questions/051.png",
+    "image": "/questions/051.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -511,7 +511,7 @@
   },
   {
     "id": 52,
-    "image": "/questions/052.png",
+    "image": "/questions/052.webp",
     "correctAnswer": 1,
     "isCritical": true,
     "chapter": 1,
@@ -521,7 +521,7 @@
   },
   {
     "id": 53,
-    "image": "/questions/053.png",
+    "image": "/questions/053.webp",
     "correctAnswer": 1,
     "isCritical": true,
     "chapter": 1,
@@ -531,7 +531,7 @@
   },
   {
     "id": 54,
-    "image": "/questions/054.png",
+    "image": "/questions/054.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -541,7 +541,7 @@
   },
   {
     "id": 55,
-    "image": "/questions/055.png",
+    "image": "/questions/055.webp",
     "correctAnswer": 1,
     "isCritical": true,
     "chapter": 1,
@@ -551,7 +551,7 @@
   },
   {
     "id": 56,
-    "image": "/questions/056.png",
+    "image": "/questions/056.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 1,
@@ -561,7 +561,7 @@
   },
   {
     "id": 57,
-    "image": "/questions/057.png",
+    "image": "/questions/057.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -571,7 +571,7 @@
   },
   {
     "id": 58,
-    "image": "/questions/058.png",
+    "image": "/questions/058.webp",
     "correctAnswer": 4,
     "isCritical": true,
     "chapter": 1,
@@ -581,7 +581,7 @@
   },
   {
     "id": 59,
-    "image": "/questions/059.png",
+    "image": "/questions/059.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -591,7 +591,7 @@
   },
   {
     "id": 60,
-    "image": "/questions/060.png",
+    "image": "/questions/060.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -601,7 +601,7 @@
   },
   {
     "id": 61,
-    "image": "/questions/061.png",
+    "image": "/questions/061.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -611,7 +611,7 @@
   },
   {
     "id": 62,
-    "image": "/questions/062.png",
+    "image": "/questions/062.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -621,7 +621,7 @@
   },
   {
     "id": 63,
-    "image": "/questions/063.png",
+    "image": "/questions/063.webp",
     "correctAnswer": 4,
     "isCritical": true,
     "chapter": 1,
@@ -631,7 +631,7 @@
   },
   {
     "id": 64,
-    "image": "/questions/064.png",
+    "image": "/questions/064.webp",
     "correctAnswer": 1,
     "isCritical": true,
     "chapter": 1,
@@ -641,7 +641,7 @@
   },
   {
     "id": 65,
-    "image": "/questions/065.png",
+    "image": "/questions/065.webp",
     "correctAnswer": 1,
     "isCritical": true,
     "chapter": 1,
@@ -651,7 +651,7 @@
   },
   {
     "id": 66,
-    "image": "/questions/066.png",
+    "image": "/questions/066.webp",
     "correctAnswer": 4,
     "isCritical": true,
     "chapter": 1,
@@ -661,7 +661,7 @@
   },
   {
     "id": 67,
-    "image": "/questions/067.png",
+    "image": "/questions/067.webp",
     "correctAnswer": 4,
     "isCritical": true,
     "chapter": 1,
@@ -671,7 +671,7 @@
   },
   {
     "id": 68,
-    "image": "/questions/068.png",
+    "image": "/questions/068.webp",
     "correctAnswer": 1,
     "isCritical": true,
     "chapter": 1,
@@ -681,7 +681,7 @@
   },
   {
     "id": 69,
-    "image": "/questions/069.png",
+    "image": "/questions/069.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -691,7 +691,7 @@
   },
   {
     "id": 70,
-    "image": "/questions/070.png",
+    "image": "/questions/070.webp",
     "correctAnswer": 4,
     "isCritical": true,
     "chapter": 1,
@@ -701,7 +701,7 @@
   },
   {
     "id": 71,
-    "image": "/questions/071.png",
+    "image": "/questions/071.webp",
     "correctAnswer": 3,
     "isCritical": true,
     "chapter": 1,
@@ -711,7 +711,7 @@
   },
   {
     "id": 72,
-    "image": "/questions/072.png",
+    "image": "/questions/072.webp",
     "correctAnswer": 2,
     "isCritical": true,
     "chapter": 1,
@@ -721,7 +721,7 @@
   },
   {
     "id": 73,
-    "image": "/questions/073.png",
+    "image": "/questions/073.webp",
     "correctAnswer": 3,
     "isCritical": true,
     "chapter": 1,
@@ -731,7 +731,7 @@
   },
   {
     "id": 74,
-    "image": "/questions/074.png",
+    "image": "/questions/074.webp",
     "correctAnswer": 2,
     "isCritical": true,
     "chapter": 1,
@@ -741,7 +741,7 @@
   },
   {
     "id": 75,
-    "image": "/questions/075.png",
+    "image": "/questions/075.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 1,
@@ -751,7 +751,7 @@
   },
   {
     "id": 76,
-    "image": "/questions/076.png",
+    "image": "/questions/076.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -761,7 +761,7 @@
   },
   {
     "id": 77,
-    "image": "/questions/077.png",
+    "image": "/questions/077.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -771,7 +771,7 @@
   },
   {
     "id": 78,
-    "image": "/questions/078.png",
+    "image": "/questions/078.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -781,7 +781,7 @@
   },
   {
     "id": 79,
-    "image": "/questions/079.png",
+    "image": "/questions/079.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -791,7 +791,7 @@
   },
   {
     "id": 80,
-    "image": "/questions/080.png",
+    "image": "/questions/080.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -801,7 +801,7 @@
   },
   {
     "id": 81,
-    "image": "/questions/081.png",
+    "image": "/questions/081.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -811,7 +811,7 @@
   },
   {
     "id": 82,
-    "image": "/questions/082.png",
+    "image": "/questions/082.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -821,7 +821,7 @@
   },
   {
     "id": 83,
-    "image": "/questions/083.png",
+    "image": "/questions/083.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -831,7 +831,7 @@
   },
   {
     "id": 84,
-    "image": "/questions/084.png",
+    "image": "/questions/084.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -841,7 +841,7 @@
   },
   {
     "id": 85,
-    "image": "/questions/085.png",
+    "image": "/questions/085.webp",
     "correctAnswer": 3,
     "isCritical": true,
     "chapter": 1,
@@ -851,7 +851,7 @@
   },
   {
     "id": 86,
-    "image": "/questions/086.png",
+    "image": "/questions/086.webp",
     "correctAnswer": 3,
     "isCritical": true,
     "chapter": 1,
@@ -861,7 +861,7 @@
   },
   {
     "id": 87,
-    "image": "/questions/087.png",
+    "image": "/questions/087.webp",
     "correctAnswer": 1,
     "isCritical": true,
     "chapter": 1,
@@ -871,7 +871,7 @@
   },
   {
     "id": 88,
-    "image": "/questions/088.png",
+    "image": "/questions/088.webp",
     "correctAnswer": 4,
     "isCritical": true,
     "chapter": 1,
@@ -881,7 +881,7 @@
   },
   {
     "id": 89,
-    "image": "/questions/089.png",
+    "image": "/questions/089.webp",
     "correctAnswer": 2,
     "isCritical": true,
     "chapter": 1,
@@ -891,7 +891,7 @@
   },
   {
     "id": 90,
-    "image": "/questions/090.png",
+    "image": "/questions/090.webp",
     "correctAnswer": 1,
     "isCritical": true,
     "chapter": 1,
@@ -901,7 +901,7 @@
   },
   {
     "id": 91,
-    "image": "/questions/091.png",
+    "image": "/questions/091.webp",
     "correctAnswer": 3,
     "isCritical": true,
     "chapter": 1,
@@ -911,7 +911,7 @@
   },
   {
     "id": 92,
-    "image": "/questions/092.png",
+    "image": "/questions/092.webp",
     "correctAnswer": 2,
     "isCritical": true,
     "chapter": 1,
@@ -921,7 +921,7 @@
   },
   {
     "id": 93,
-    "image": "/questions/093.png",
+    "image": "/questions/093.webp",
     "correctAnswer": 1,
     "isCritical": true,
     "chapter": 1,
@@ -931,7 +931,7 @@
   },
   {
     "id": 94,
-    "image": "/questions/094.png",
+    "image": "/questions/094.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -941,7 +941,7 @@
   },
   {
     "id": 95,
-    "image": "/questions/095.png",
+    "image": "/questions/095.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 1,
@@ -951,7 +951,7 @@
   },
   {
     "id": 96,
-    "image": "/questions/096.png",
+    "image": "/questions/096.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -961,7 +961,7 @@
   },
   {
     "id": 97,
-    "image": "/questions/097.png",
+    "image": "/questions/097.webp",
     "correctAnswer": 3,
     "isCritical": true,
     "chapter": 1,
@@ -971,7 +971,7 @@
   },
   {
     "id": 98,
-    "image": "/questions/098.png",
+    "image": "/questions/098.webp",
     "correctAnswer": 1,
     "isCritical": true,
     "chapter": 1,
@@ -981,7 +981,7 @@
   },
   {
     "id": 99,
-    "image": "/questions/099.png",
+    "image": "/questions/099.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -991,7 +991,7 @@
   },
   {
     "id": 100,
-    "image": "/questions/100.png",
+    "image": "/questions/100.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -1001,7 +1001,7 @@
   },
   {
     "id": 101,
-    "image": "/questions/101.png",
+    "image": "/questions/101.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -1011,7 +1011,7 @@
   },
   {
     "id": 102,
-    "image": "/questions/102.png",
+    "image": "/questions/102.webp",
     "correctAnswer": 4,
     "isCritical": true,
     "chapter": 1,
@@ -1021,7 +1021,7 @@
   },
   {
     "id": 103,
-    "image": "/questions/103.png",
+    "image": "/questions/103.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -1031,7 +1031,7 @@
   },
   {
     "id": 104,
-    "image": "/questions/104.png",
+    "image": "/questions/104.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -1041,7 +1041,7 @@
   },
   {
     "id": 105,
-    "image": "/questions/105.png",
+    "image": "/questions/105.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -1051,7 +1051,7 @@
   },
   {
     "id": 106,
-    "image": "/questions/106.png",
+    "image": "/questions/106.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -1061,7 +1061,7 @@
   },
   {
     "id": 107,
-    "image": "/questions/107.png",
+    "image": "/questions/107.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 1,
@@ -1071,7 +1071,7 @@
   },
   {
     "id": 108,
-    "image": "/questions/108.png",
+    "image": "/questions/108.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -1081,7 +1081,7 @@
   },
   {
     "id": 109,
-    "image": "/questions/109.png",
+    "image": "/questions/109.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -1091,7 +1091,7 @@
   },
   {
     "id": 110,
-    "image": "/questions/110.png",
+    "image": "/questions/110.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -1101,7 +1101,7 @@
   },
   {
     "id": 111,
-    "image": "/questions/111.png",
+    "image": "/questions/111.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -1111,7 +1111,7 @@
   },
   {
     "id": 112,
-    "image": "/questions/112.png",
+    "image": "/questions/112.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -1121,7 +1121,7 @@
   },
   {
     "id": 113,
-    "image": "/questions/113.png",
+    "image": "/questions/113.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -1131,7 +1131,7 @@
   },
   {
     "id": 114,
-    "image": "/questions/114.png",
+    "image": "/questions/114.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -1141,7 +1141,7 @@
   },
   {
     "id": 115,
-    "image": "/questions/115.png",
+    "image": "/questions/115.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -1151,7 +1151,7 @@
   },
   {
     "id": 116,
-    "image": "/questions/116.png",
+    "image": "/questions/116.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -1161,7 +1161,7 @@
   },
   {
     "id": 117,
-    "image": "/questions/117.png",
+    "image": "/questions/117.webp",
     "correctAnswer": 4,
     "isCritical": true,
     "chapter": 1,
@@ -1171,7 +1171,7 @@
   },
   {
     "id": 118,
-    "image": "/questions/118.png",
+    "image": "/questions/118.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -1181,7 +1181,7 @@
   },
   {
     "id": 119,
-    "image": "/questions/119.png",
+    "image": "/questions/119.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -1191,7 +1191,7 @@
   },
   {
     "id": 120,
-    "image": "/questions/120.png",
+    "image": "/questions/120.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -1201,7 +1201,7 @@
   },
   {
     "id": 121,
-    "image": "/questions/121.png",
+    "image": "/questions/121.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -1211,7 +1211,7 @@
   },
   {
     "id": 122,
-    "image": "/questions/122.png",
+    "image": "/questions/122.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -1221,7 +1221,7 @@
   },
   {
     "id": 123,
-    "image": "/questions/123.png",
+    "image": "/questions/123.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -1231,7 +1231,7 @@
   },
   {
     "id": 124,
-    "image": "/questions/124.png",
+    "image": "/questions/124.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -1241,7 +1241,7 @@
   },
   {
     "id": 125,
-    "image": "/questions/125.png",
+    "image": "/questions/125.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -1251,7 +1251,7 @@
   },
   {
     "id": 126,
-    "image": "/questions/126.png",
+    "image": "/questions/126.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -1261,7 +1261,7 @@
   },
   {
     "id": 127,
-    "image": "/questions/127.png",
+    "image": "/questions/127.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -1271,7 +1271,7 @@
   },
   {
     "id": 128,
-    "image": "/questions/128.png",
+    "image": "/questions/128.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -1281,7 +1281,7 @@
   },
   {
     "id": 129,
-    "image": "/questions/129.png",
+    "image": "/questions/129.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -1291,7 +1291,7 @@
   },
   {
     "id": 130,
-    "image": "/questions/130.png",
+    "image": "/questions/130.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -1301,7 +1301,7 @@
   },
   {
     "id": 131,
-    "image": "/questions/131.png",
+    "image": "/questions/131.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -1311,7 +1311,7 @@
   },
   {
     "id": 132,
-    "image": "/questions/132.png",
+    "image": "/questions/132.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 1,
@@ -1321,7 +1321,7 @@
   },
   {
     "id": 133,
-    "image": "/questions/133.png",
+    "image": "/questions/133.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -1331,7 +1331,7 @@
   },
   {
     "id": 134,
-    "image": "/questions/134.png",
+    "image": "/questions/134.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -1341,7 +1341,7 @@
   },
   {
     "id": 135,
-    "image": "/questions/135.png",
+    "image": "/questions/135.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -1351,7 +1351,7 @@
   },
   {
     "id": 136,
-    "image": "/questions/136.png",
+    "image": "/questions/136.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -1361,7 +1361,7 @@
   },
   {
     "id": 137,
-    "image": "/questions/137.png",
+    "image": "/questions/137.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -1371,7 +1371,7 @@
   },
   {
     "id": 138,
-    "image": "/questions/138.png",
+    "image": "/questions/138.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 1,
@@ -1381,7 +1381,7 @@
   },
   {
     "id": 139,
-    "image": "/questions/139.png",
+    "image": "/questions/139.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 1,
@@ -1391,7 +1391,7 @@
   },
   {
     "id": 140,
-    "image": "/questions/140.png",
+    "image": "/questions/140.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -1401,7 +1401,7 @@
   },
   {
     "id": 141,
-    "image": "/questions/141.png",
+    "image": "/questions/141.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -1411,7 +1411,7 @@
   },
   {
     "id": 142,
-    "image": "/questions/142.png",
+    "image": "/questions/142.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -1421,7 +1421,7 @@
   },
   {
     "id": 143,
-    "image": "/questions/143.png",
+    "image": "/questions/143.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -1431,7 +1431,7 @@
   },
   {
     "id": 144,
-    "image": "/questions/144.png",
+    "image": "/questions/144.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -1441,7 +1441,7 @@
   },
   {
     "id": 145,
-    "image": "/questions/145.png",
+    "image": "/questions/145.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -1451,7 +1451,7 @@
   },
   {
     "id": 146,
-    "image": "/questions/146.png",
+    "image": "/questions/146.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -1461,7 +1461,7 @@
   },
   {
     "id": 147,
-    "image": "/questions/147.png",
+    "image": "/questions/147.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -1471,7 +1471,7 @@
   },
   {
     "id": 148,
-    "image": "/questions/148.png",
+    "image": "/questions/148.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -1481,7 +1481,7 @@
   },
   {
     "id": 149,
-    "image": "/questions/149.png",
+    "image": "/questions/149.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -1491,7 +1491,7 @@
   },
   {
     "id": 150,
-    "image": "/questions/150.png",
+    "image": "/questions/150.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -1501,7 +1501,7 @@
   },
   {
     "id": 151,
-    "image": "/questions/151.png",
+    "image": "/questions/151.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -1511,7 +1511,7 @@
   },
   {
     "id": 152,
-    "image": "/questions/152.png",
+    "image": "/questions/152.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 1,
@@ -1521,7 +1521,7 @@
   },
   {
     "id": 153,
-    "image": "/questions/153.png",
+    "image": "/questions/153.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -1531,7 +1531,7 @@
   },
   {
     "id": 154,
-    "image": "/questions/154.png",
+    "image": "/questions/154.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 1,
@@ -1541,7 +1541,7 @@
   },
   {
     "id": 155,
-    "image": "/questions/155.png",
+    "image": "/questions/155.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -1551,7 +1551,7 @@
   },
   {
     "id": 156,
-    "image": "/questions/156.png",
+    "image": "/questions/156.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 1,
@@ -1561,7 +1561,7 @@
   },
   {
     "id": 157,
-    "image": "/questions/157.png",
+    "image": "/questions/157.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -1571,7 +1571,7 @@
   },
   {
     "id": 158,
-    "image": "/questions/158.png",
+    "image": "/questions/158.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -1581,7 +1581,7 @@
   },
   {
     "id": 159,
-    "image": "/questions/159.png",
+    "image": "/questions/159.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -1591,7 +1591,7 @@
   },
   {
     "id": 160,
-    "image": "/questions/160.png",
+    "image": "/questions/160.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -1601,7 +1601,7 @@
   },
   {
     "id": 161,
-    "image": "/questions/161.png",
+    "image": "/questions/161.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -1611,7 +1611,7 @@
   },
   {
     "id": 162,
-    "image": "/questions/162.png",
+    "image": "/questions/162.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -1621,7 +1621,7 @@
   },
   {
     "id": 163,
-    "image": "/questions/163.png",
+    "image": "/questions/163.webp",
     "correctAnswer": 1,
     "isCritical": true,
     "chapter": 1,
@@ -1631,7 +1631,7 @@
   },
   {
     "id": 164,
-    "image": "/questions/164.png",
+    "image": "/questions/164.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 1,
@@ -1641,7 +1641,7 @@
   },
   {
     "id": 165,
-    "image": "/questions/165.png",
+    "image": "/questions/165.webp",
     "correctAnswer": 4,
     "isCritical": true,
     "chapter": 1,
@@ -1651,7 +1651,7 @@
   },
   {
     "id": 166,
-    "image": "/questions/166.png",
+    "image": "/questions/166.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 1,
@@ -1661,7 +1661,7 @@
   },
   {
     "id": 167,
-    "image": "/questions/167.png",
+    "image": "/questions/167.webp",
     "correctAnswer": 2,
     "isCritical": true,
     "chapter": 2,
@@ -1671,7 +1671,7 @@
   },
   {
     "id": 168,
-    "image": "/questions/168.png",
+    "image": "/questions/168.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 2,
@@ -1681,7 +1681,7 @@
   },
   {
     "id": 169,
-    "image": "/questions/169.png",
+    "image": "/questions/169.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 2,
@@ -1691,7 +1691,7 @@
   },
   {
     "id": 170,
-    "image": "/questions/170.png",
+    "image": "/questions/170.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 2,
@@ -1701,7 +1701,7 @@
   },
   {
     "id": 171,
-    "image": "/questions/171.png",
+    "image": "/questions/171.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 2,
@@ -1711,7 +1711,7 @@
   },
   {
     "id": 172,
-    "image": "/questions/172.png",
+    "image": "/questions/172.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 2,
@@ -1721,7 +1721,7 @@
   },
   {
     "id": 173,
-    "image": "/questions/173.png",
+    "image": "/questions/173.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 2,
@@ -1731,7 +1731,7 @@
   },
   {
     "id": 174,
-    "image": "/questions/174.png",
+    "image": "/questions/174.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 2,
@@ -1741,7 +1741,7 @@
   },
   {
     "id": 175,
-    "image": "/questions/175.png",
+    "image": "/questions/175.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 2,
@@ -1751,7 +1751,7 @@
   },
   {
     "id": 176,
-    "image": "/questions/176.png",
+    "image": "/questions/176.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 2,
@@ -1761,7 +1761,7 @@
   },
   {
     "id": 177,
-    "image": "/questions/177.png",
+    "image": "/questions/177.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 2,
@@ -1771,7 +1771,7 @@
   },
   {
     "id": 178,
-    "image": "/questions/178.png",
+    "image": "/questions/178.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 2,
@@ -1781,7 +1781,7 @@
   },
   {
     "id": 179,
-    "image": "/questions/179.png",
+    "image": "/questions/179.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 2,
@@ -1791,7 +1791,7 @@
   },
   {
     "id": 180,
-    "image": "/questions/180.png",
+    "image": "/questions/180.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 2,
@@ -1801,7 +1801,7 @@
   },
   {
     "id": 181,
-    "image": "/questions/181.png",
+    "image": "/questions/181.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 2,
@@ -1811,7 +1811,7 @@
   },
   {
     "id": 182,
-    "image": "/questions/182.png",
+    "image": "/questions/182.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 2,
@@ -1821,7 +1821,7 @@
   },
   {
     "id": 183,
-    "image": "/questions/183.png",
+    "image": "/questions/183.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 2,
@@ -1831,7 +1831,7 @@
   },
   {
     "id": 184,
-    "image": "/questions/184.png",
+    "image": "/questions/184.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 2,
@@ -1841,7 +1841,7 @@
   },
   {
     "id": 185,
-    "image": "/questions/185.png",
+    "image": "/questions/185.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 2,
@@ -1851,7 +1851,7 @@
   },
   {
     "id": 186,
-    "image": "/questions/186.png",
+    "image": "/questions/186.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 2,
@@ -1861,7 +1861,7 @@
   },
   {
     "id": 187,
-    "image": "/questions/187.png",
+    "image": "/questions/187.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 2,
@@ -1871,7 +1871,7 @@
   },
   {
     "id": 188,
-    "image": "/questions/188.png",
+    "image": "/questions/188.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 2,
@@ -1881,7 +1881,7 @@
   },
   {
     "id": 189,
-    "image": "/questions/189.png",
+    "image": "/questions/189.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 2,
@@ -1891,7 +1891,7 @@
   },
   {
     "id": 190,
-    "image": "/questions/190.png",
+    "image": "/questions/190.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 2,
@@ -1901,7 +1901,7 @@
   },
   {
     "id": 191,
-    "image": "/questions/191.png",
+    "image": "/questions/191.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 2,
@@ -1911,7 +1911,7 @@
   },
   {
     "id": 192,
-    "image": "/questions/192.png",
+    "image": "/questions/192.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 2,
@@ -1921,7 +1921,7 @@
   },
   {
     "id": 193,
-    "image": "/questions/193.png",
+    "image": "/questions/193.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 3,
@@ -1931,7 +1931,7 @@
   },
   {
     "id": 194,
-    "image": "/questions/194.png",
+    "image": "/questions/194.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 3,
@@ -1941,7 +1941,7 @@
   },
   {
     "id": 195,
-    "image": "/questions/195.png",
+    "image": "/questions/195.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 3,
@@ -1951,7 +1951,7 @@
   },
   {
     "id": 196,
-    "image": "/questions/196.png",
+    "image": "/questions/196.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 3,
@@ -1961,7 +1961,7 @@
   },
   {
     "id": 197,
-    "image": "/questions/197.png",
+    "image": "/questions/197.webp",
     "correctAnswer": 3,
     "isCritical": true,
     "chapter": 3,
@@ -1971,7 +1971,7 @@
   },
   {
     "id": 198,
-    "image": "/questions/198.png",
+    "image": "/questions/198.webp",
     "correctAnswer": 1,
     "isCritical": true,
     "chapter": 3,
@@ -1981,7 +1981,7 @@
   },
   {
     "id": 199,
-    "image": "/questions/199.png",
+    "image": "/questions/199.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 3,
@@ -1991,7 +1991,7 @@
   },
   {
     "id": 200,
-    "image": "/questions/200.png",
+    "image": "/questions/200.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 3,
@@ -2001,7 +2001,7 @@
   },
   {
     "id": 201,
-    "image": "/questions/201.png",
+    "image": "/questions/201.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 3,
@@ -2011,7 +2011,7 @@
   },
   {
     "id": 202,
-    "image": "/questions/202.png",
+    "image": "/questions/202.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 3,
@@ -2021,7 +2021,7 @@
   },
   {
     "id": 203,
-    "image": "/questions/203.png",
+    "image": "/questions/203.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 3,
@@ -2031,7 +2031,7 @@
   },
   {
     "id": 204,
-    "image": "/questions/204.png",
+    "image": "/questions/204.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 3,
@@ -2041,7 +2041,7 @@
   },
   {
     "id": 205,
-    "image": "/questions/205.png",
+    "image": "/questions/205.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 3,
@@ -2051,7 +2051,7 @@
   },
   {
     "id": 206,
-    "image": "/questions/206.png",
+    "image": "/questions/206.webp",
     "correctAnswer": 1,
     "isCritical": true,
     "chapter": 3,
@@ -2061,7 +2061,7 @@
   },
   {
     "id": 207,
-    "image": "/questions/207.png",
+    "image": "/questions/207.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 3,
@@ -2071,7 +2071,7 @@
   },
   {
     "id": 208,
-    "image": "/questions/208.png",
+    "image": "/questions/208.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 3,
@@ -2081,7 +2081,7 @@
   },
   {
     "id": 209,
-    "image": "/questions/209.png",
+    "image": "/questions/209.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 3,
@@ -2091,7 +2091,7 @@
   },
   {
     "id": 210,
-    "image": "/questions/210.png",
+    "image": "/questions/210.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 3,
@@ -2101,7 +2101,7 @@
   },
   {
     "id": 211,
-    "image": "/questions/211.png",
+    "image": "/questions/211.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 3,
@@ -2111,7 +2111,7 @@
   },
   {
     "id": 212,
-    "image": "/questions/212.png",
+    "image": "/questions/212.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 3,
@@ -2121,7 +2121,7 @@
   },
   {
     "id": 213,
-    "image": "/questions/213.png",
+    "image": "/questions/213.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 3,
@@ -2131,7 +2131,7 @@
   },
   {
     "id": 214,
-    "image": "/questions/214.png",
+    "image": "/questions/214.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 4,
@@ -2141,7 +2141,7 @@
   },
   {
     "id": 215,
-    "image": "/questions/215.png",
+    "image": "/questions/215.webp",
     "correctAnswer": 1,
     "isCritical": true,
     "chapter": 4,
@@ -2151,7 +2151,7 @@
   },
   {
     "id": 216,
-    "image": "/questions/216.png",
+    "image": "/questions/216.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 4,
@@ -2161,7 +2161,7 @@
   },
   {
     "id": 217,
-    "image": "/questions/217.png",
+    "image": "/questions/217.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 4,
@@ -2171,7 +2171,7 @@
   },
   {
     "id": 218,
-    "image": "/questions/218.png",
+    "image": "/questions/218.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 4,
@@ -2181,7 +2181,7 @@
   },
   {
     "id": 219,
-    "image": "/questions/219.png",
+    "image": "/questions/219.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 4,
@@ -2191,7 +2191,7 @@
   },
   {
     "id": 220,
-    "image": "/questions/220.png",
+    "image": "/questions/220.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 4,
@@ -2201,7 +2201,7 @@
   },
   {
     "id": 221,
-    "image": "/questions/221.png",
+    "image": "/questions/221.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 4,
@@ -2211,7 +2211,7 @@
   },
   {
     "id": 222,
-    "image": "/questions/222.png",
+    "image": "/questions/222.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 4,
@@ -2221,7 +2221,7 @@
   },
   {
     "id": 223,
-    "image": "/questions/223.png",
+    "image": "/questions/223.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 4,
@@ -2231,7 +2231,7 @@
   },
   {
     "id": 224,
-    "image": "/questions/224.png",
+    "image": "/questions/224.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 4,
@@ -2241,7 +2241,7 @@
   },
   {
     "id": 225,
-    "image": "/questions/225.png",
+    "image": "/questions/225.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 4,
@@ -2251,7 +2251,7 @@
   },
   {
     "id": 226,
-    "image": "/questions/226.png",
+    "image": "/questions/226.webp",
     "correctAnswer": 2,
     "isCritical": true,
     "chapter": 4,
@@ -2261,7 +2261,7 @@
   },
   {
     "id": 227,
-    "image": "/questions/227.png",
+    "image": "/questions/227.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 4,
@@ -2271,7 +2271,7 @@
   },
   {
     "id": 228,
-    "image": "/questions/228.png",
+    "image": "/questions/228.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 4,
@@ -2281,7 +2281,7 @@
   },
   {
     "id": 229,
-    "image": "/questions/229.png",
+    "image": "/questions/229.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 4,
@@ -2291,7 +2291,7 @@
   },
   {
     "id": 230,
-    "image": "/questions/230.png",
+    "image": "/questions/230.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 4,
@@ -2301,7 +2301,7 @@
   },
   {
     "id": 231,
-    "image": "/questions/231.png",
+    "image": "/questions/231.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 4,
@@ -2311,7 +2311,7 @@
   },
   {
     "id": 232,
-    "image": "/questions/232.png",
+    "image": "/questions/232.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 4,
@@ -2321,7 +2321,7 @@
   },
   {
     "id": 233,
-    "image": "/questions/233.png",
+    "image": "/questions/233.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 4,
@@ -2331,7 +2331,7 @@
   },
   {
     "id": 234,
-    "image": "/questions/234.png",
+    "image": "/questions/234.webp",
     "correctAnswer": 1,
     "isCritical": true,
     "chapter": 4,
@@ -2341,7 +2341,7 @@
   },
   {
     "id": 235,
-    "image": "/questions/235.png",
+    "image": "/questions/235.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 4,
@@ -2351,7 +2351,7 @@
   },
   {
     "id": 236,
-    "image": "/questions/236.png",
+    "image": "/questions/236.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 4,
@@ -2361,7 +2361,7 @@
   },
   {
     "id": 237,
-    "image": "/questions/237.png",
+    "image": "/questions/237.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 4,
@@ -2371,7 +2371,7 @@
   },
   {
     "id": 238,
-    "image": "/questions/238.png",
+    "image": "/questions/238.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 4,
@@ -2381,7 +2381,7 @@
   },
   {
     "id": 239,
-    "image": "/questions/239.png",
+    "image": "/questions/239.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 4,
@@ -2391,7 +2391,7 @@
   },
   {
     "id": 240,
-    "image": "/questions/240.png",
+    "image": "/questions/240.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 4,
@@ -2401,7 +2401,7 @@
   },
   {
     "id": 241,
-    "image": "/questions/241.png",
+    "image": "/questions/241.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 4,
@@ -2411,7 +2411,7 @@
   },
   {
     "id": 242,
-    "image": "/questions/242.png",
+    "image": "/questions/242.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 4,
@@ -2421,7 +2421,7 @@
   },
   {
     "id": 243,
-    "image": "/questions/243.png",
+    "image": "/questions/243.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 4,
@@ -2431,7 +2431,7 @@
   },
   {
     "id": 244,
-    "image": "/questions/244.png",
+    "image": "/questions/244.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 4,
@@ -2441,7 +2441,7 @@
   },
   {
     "id": 245,
-    "image": "/questions/245.png",
+    "image": "/questions/245.webp",
     "correctAnswer": 1,
     "isCritical": true,
     "chapter": 4,
@@ -2451,7 +2451,7 @@
   },
   {
     "id": 246,
-    "image": "/questions/246.png",
+    "image": "/questions/246.webp",
     "correctAnswer": 1,
     "isCritical": true,
     "chapter": 4,
@@ -2461,7 +2461,7 @@
   },
   {
     "id": 247,
-    "image": "/questions/247.png",
+    "image": "/questions/247.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 4,
@@ -2471,7 +2471,7 @@
   },
   {
     "id": 248,
-    "image": "/questions/248.png",
+    "image": "/questions/248.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 4,
@@ -2481,7 +2481,7 @@
   },
   {
     "id": 249,
-    "image": "/questions/249.png",
+    "image": "/questions/249.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 4,
@@ -2491,7 +2491,7 @@
   },
   {
     "id": 250,
-    "image": "/questions/250.png",
+    "image": "/questions/250.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 4,
@@ -2501,7 +2501,7 @@
   },
   {
     "id": 251,
-    "image": "/questions/251.png",
+    "image": "/questions/251.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 4,
@@ -2511,7 +2511,7 @@
   },
   {
     "id": 252,
-    "image": "/questions/252.png",
+    "image": "/questions/252.webp",
     "correctAnswer": 1,
     "isCritical": true,
     "chapter": 4,
@@ -2521,7 +2521,7 @@
   },
   {
     "id": 253,
-    "image": "/questions/253.png",
+    "image": "/questions/253.webp",
     "correctAnswer": 1,
     "isCritical": true,
     "chapter": 4,
@@ -2531,7 +2531,7 @@
   },
   {
     "id": 254,
-    "image": "/questions/254.png",
+    "image": "/questions/254.webp",
     "correctAnswer": 2,
     "isCritical": true,
     "chapter": 4,
@@ -2541,7 +2541,7 @@
   },
   {
     "id": 255,
-    "image": "/questions/255.png",
+    "image": "/questions/255.webp",
     "correctAnswer": 3,
     "isCritical": true,
     "chapter": 4,
@@ -2551,7 +2551,7 @@
   },
   {
     "id": 256,
-    "image": "/questions/256.png",
+    "image": "/questions/256.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 4,
@@ -2561,7 +2561,7 @@
   },
   {
     "id": 257,
-    "image": "/questions/257.png",
+    "image": "/questions/257.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 4,
@@ -2571,7 +2571,7 @@
   },
   {
     "id": 258,
-    "image": "/questions/258.png",
+    "image": "/questions/258.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 4,
@@ -2581,7 +2581,7 @@
   },
   {
     "id": 259,
-    "image": "/questions/259.png",
+    "image": "/questions/259.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 4,
@@ -2591,7 +2591,7 @@
   },
   {
     "id": 260,
-    "image": "/questions/260.png",
+    "image": "/questions/260.webp",
     "correctAnswer": 3,
     "isCritical": true,
     "chapter": 4,
@@ -2601,7 +2601,7 @@
   },
   {
     "id": 261,
-    "image": "/questions/261.png",
+    "image": "/questions/261.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 4,
@@ -2611,7 +2611,7 @@
   },
   {
     "id": 262,
-    "image": "/questions/262.png",
+    "image": "/questions/262.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 4,
@@ -2621,7 +2621,7 @@
   },
   {
     "id": 263,
-    "image": "/questions/263.png",
+    "image": "/questions/263.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 4,
@@ -2631,7 +2631,7 @@
   },
   {
     "id": 264,
-    "image": "/questions/264.png",
+    "image": "/questions/264.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 4,
@@ -2641,7 +2641,7 @@
   },
   {
     "id": 265,
-    "image": "/questions/265.png",
+    "image": "/questions/265.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 4,
@@ -2651,7 +2651,7 @@
   },
   {
     "id": 266,
-    "image": "/questions/266.png",
+    "image": "/questions/266.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 4,
@@ -2661,7 +2661,7 @@
   },
   {
     "id": 267,
-    "image": "/questions/267.png",
+    "image": "/questions/267.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 4,
@@ -2671,7 +2671,7 @@
   },
   {
     "id": 268,
-    "image": "/questions/268.png",
+    "image": "/questions/268.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 4,
@@ -2681,7 +2681,7 @@
   },
   {
     "id": 269,
-    "image": "/questions/269.png",
+    "image": "/questions/269.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 4,
@@ -2691,7 +2691,7 @@
   },
   {
     "id": 270,
-    "image": "/questions/270.png",
+    "image": "/questions/270.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 5,
@@ -2701,7 +2701,7 @@
   },
   {
     "id": 271,
-    "image": "/questions/271.png",
+    "image": "/questions/271.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 5,
@@ -2711,7 +2711,7 @@
   },
   {
     "id": 272,
-    "image": "/questions/272.png",
+    "image": "/questions/272.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 5,
@@ -2721,7 +2721,7 @@
   },
   {
     "id": 273,
-    "image": "/questions/273.png",
+    "image": "/questions/273.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 5,
@@ -2731,7 +2731,7 @@
   },
   {
     "id": 274,
-    "image": "/questions/274.png",
+    "image": "/questions/274.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 5,
@@ -2741,7 +2741,7 @@
   },
   {
     "id": 275,
-    "image": "/questions/275.png",
+    "image": "/questions/275.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 5,
@@ -2751,7 +2751,7 @@
   },
   {
     "id": 276,
-    "image": "/questions/276.png",
+    "image": "/questions/276.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 5,
@@ -2761,7 +2761,7 @@
   },
   {
     "id": 277,
-    "image": "/questions/277.png",
+    "image": "/questions/277.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 5,
@@ -2771,7 +2771,7 @@
   },
   {
     "id": 278,
-    "image": "/questions/278.png",
+    "image": "/questions/278.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 5,
@@ -2781,7 +2781,7 @@
   },
   {
     "id": 279,
-    "image": "/questions/279.png",
+    "image": "/questions/279.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 5,
@@ -2791,7 +2791,7 @@
   },
   {
     "id": 280,
-    "image": "/questions/280.png",
+    "image": "/questions/280.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 5,
@@ -2801,7 +2801,7 @@
   },
   {
     "id": 281,
-    "image": "/questions/281.png",
+    "image": "/questions/281.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 5,
@@ -2811,7 +2811,7 @@
   },
   {
     "id": 282,
-    "image": "/questions/282.png",
+    "image": "/questions/282.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 5,
@@ -2821,7 +2821,7 @@
   },
   {
     "id": 283,
-    "image": "/questions/283.png",
+    "image": "/questions/283.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 5,
@@ -2831,7 +2831,7 @@
   },
   {
     "id": 284,
-    "image": "/questions/284.png",
+    "image": "/questions/284.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 5,
@@ -2841,7 +2841,7 @@
   },
   {
     "id": 285,
-    "image": "/questions/285.png",
+    "image": "/questions/285.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 5,
@@ -2851,7 +2851,7 @@
   },
   {
     "id": 286,
-    "image": "/questions/286.png",
+    "image": "/questions/286.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 5,
@@ -2861,7 +2861,7 @@
   },
   {
     "id": 287,
-    "image": "/questions/287.png",
+    "image": "/questions/287.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 5,
@@ -2871,7 +2871,7 @@
   },
   {
     "id": 288,
-    "image": "/questions/288.png",
+    "image": "/questions/288.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 5,
@@ -2881,7 +2881,7 @@
   },
   {
     "id": 289,
-    "image": "/questions/289.png",
+    "image": "/questions/289.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 5,
@@ -2891,7 +2891,7 @@
   },
   {
     "id": 290,
-    "image": "/questions/290.png",
+    "image": "/questions/290.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 5,
@@ -2901,7 +2901,7 @@
   },
   {
     "id": 291,
-    "image": "/questions/291.png",
+    "image": "/questions/291.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 5,
@@ -2911,7 +2911,7 @@
   },
   {
     "id": 292,
-    "image": "/questions/292.png",
+    "image": "/questions/292.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 5,
@@ -2921,7 +2921,7 @@
   },
   {
     "id": 293,
-    "image": "/questions/293.png",
+    "image": "/questions/293.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 5,
@@ -2931,7 +2931,7 @@
   },
   {
     "id": 294,
-    "image": "/questions/294.png",
+    "image": "/questions/294.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 5,
@@ -2941,7 +2941,7 @@
   },
   {
     "id": 295,
-    "image": "/questions/295.png",
+    "image": "/questions/295.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 5,
@@ -2951,7 +2951,7 @@
   },
   {
     "id": 296,
-    "image": "/questions/296.png",
+    "image": "/questions/296.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 5,
@@ -2961,7 +2961,7 @@
   },
   {
     "id": 297,
-    "image": "/questions/297.png",
+    "image": "/questions/297.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 5,
@@ -2971,7 +2971,7 @@
   },
   {
     "id": 298,
-    "image": "/questions/298.png",
+    "image": "/questions/298.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 5,
@@ -2981,7 +2981,7 @@
   },
   {
     "id": 299,
-    "image": "/questions/299.png",
+    "image": "/questions/299.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 5,
@@ -2991,7 +2991,7 @@
   },
   {
     "id": 300,
-    "image": "/questions/300.png",
+    "image": "/questions/300.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 5,
@@ -3001,7 +3001,7 @@
   },
   {
     "id": 301,
-    "image": "/questions/301.png",
+    "image": "/questions/301.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 5,
@@ -3011,7 +3011,7 @@
   },
   {
     "id": 302,
-    "image": "/questions/302.png",
+    "image": "/questions/302.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 5,
@@ -3021,7 +3021,7 @@
   },
   {
     "id": 303,
-    "image": "/questions/303.png",
+    "image": "/questions/303.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 5,
@@ -3031,7 +3031,7 @@
   },
   {
     "id": 304,
-    "image": "/questions/304.png",
+    "image": "/questions/304.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 5,
@@ -3041,7 +3041,7 @@
   },
   {
     "id": 305,
-    "image": "/questions/305.png",
+    "image": "/questions/305.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -3051,7 +3051,7 @@
   },
   {
     "id": 306,
-    "image": "/questions/306.png",
+    "image": "/questions/306.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3061,7 +3061,7 @@
   },
   {
     "id": 307,
-    "image": "/questions/307.png",
+    "image": "/questions/307.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -3071,7 +3071,7 @@
   },
   {
     "id": 308,
-    "image": "/questions/308.png",
+    "image": "/questions/308.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -3081,7 +3081,7 @@
   },
   {
     "id": 309,
-    "image": "/questions/309.png",
+    "image": "/questions/309.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3091,7 +3091,7 @@
   },
   {
     "id": 310,
-    "image": "/questions/310.png",
+    "image": "/questions/310.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 6,
@@ -3101,7 +3101,7 @@
   },
   {
     "id": 311,
-    "image": "/questions/311.png",
+    "image": "/questions/311.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -3111,7 +3111,7 @@
   },
   {
     "id": 312,
-    "image": "/questions/312.png",
+    "image": "/questions/312.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3121,7 +3121,7 @@
   },
   {
     "id": 313,
-    "image": "/questions/313.png",
+    "image": "/questions/313.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3131,7 +3131,7 @@
   },
   {
     "id": 314,
-    "image": "/questions/314.png",
+    "image": "/questions/314.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3141,7 +3141,7 @@
   },
   {
     "id": 315,
-    "image": "/questions/315.png",
+    "image": "/questions/315.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3151,7 +3151,7 @@
   },
   {
     "id": 316,
-    "image": "/questions/316.png",
+    "image": "/questions/316.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -3161,7 +3161,7 @@
   },
   {
     "id": 317,
-    "image": "/questions/317.png",
+    "image": "/questions/317.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3171,7 +3171,7 @@
   },
   {
     "id": 318,
-    "image": "/questions/318.png",
+    "image": "/questions/318.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3181,7 +3181,7 @@
   },
   {
     "id": 319,
-    "image": "/questions/319.png",
+    "image": "/questions/319.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3191,7 +3191,7 @@
   },
   {
     "id": 320,
-    "image": "/questions/320.png",
+    "image": "/questions/320.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3201,7 +3201,7 @@
   },
   {
     "id": 321,
-    "image": "/questions/321.png",
+    "image": "/questions/321.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3211,7 +3211,7 @@
   },
   {
     "id": 322,
-    "image": "/questions/322.png",
+    "image": "/questions/322.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3221,7 +3221,7 @@
   },
   {
     "id": 323,
-    "image": "/questions/323.png",
+    "image": "/questions/323.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -3231,7 +3231,7 @@
   },
   {
     "id": 324,
-    "image": "/questions/324.png",
+    "image": "/questions/324.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3241,7 +3241,7 @@
   },
   {
     "id": 325,
-    "image": "/questions/325.png",
+    "image": "/questions/325.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3251,7 +3251,7 @@
   },
   {
     "id": 326,
-    "image": "/questions/326.png",
+    "image": "/questions/326.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -3261,7 +3261,7 @@
   },
   {
     "id": 327,
-    "image": "/questions/327.png",
+    "image": "/questions/327.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3271,7 +3271,7 @@
   },
   {
     "id": 328,
-    "image": "/questions/328.png",
+    "image": "/questions/328.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3281,7 +3281,7 @@
   },
   {
     "id": 329,
-    "image": "/questions/329.png",
+    "image": "/questions/329.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3291,7 +3291,7 @@
   },
   {
     "id": 330,
-    "image": "/questions/330.png",
+    "image": "/questions/330.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3301,7 +3301,7 @@
   },
   {
     "id": 331,
-    "image": "/questions/331.png",
+    "image": "/questions/331.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -3311,7 +3311,7 @@
   },
   {
     "id": 332,
-    "image": "/questions/332.png",
+    "image": "/questions/332.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 6,
@@ -3321,7 +3321,7 @@
   },
   {
     "id": 333,
-    "image": "/questions/333.png",
+    "image": "/questions/333.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -3331,7 +3331,7 @@
   },
   {
     "id": 334,
-    "image": "/questions/334.png",
+    "image": "/questions/334.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -3341,7 +3341,7 @@
   },
   {
     "id": 335,
-    "image": "/questions/335.png",
+    "image": "/questions/335.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3351,7 +3351,7 @@
   },
   {
     "id": 336,
-    "image": "/questions/336.png",
+    "image": "/questions/336.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3361,7 +3361,7 @@
   },
   {
     "id": 337,
-    "image": "/questions/337.png",
+    "image": "/questions/337.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3371,7 +3371,7 @@
   },
   {
     "id": 338,
-    "image": "/questions/338.png",
+    "image": "/questions/338.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3381,7 +3381,7 @@
   },
   {
     "id": 339,
-    "image": "/questions/339.png",
+    "image": "/questions/339.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3391,7 +3391,7 @@
   },
   {
     "id": 340,
-    "image": "/questions/340.png",
+    "image": "/questions/340.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -3401,7 +3401,7 @@
   },
   {
     "id": 341,
-    "image": "/questions/341.png",
+    "image": "/questions/341.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3411,7 +3411,7 @@
   },
   {
     "id": 342,
-    "image": "/questions/342.png",
+    "image": "/questions/342.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3421,7 +3421,7 @@
   },
   {
     "id": 343,
-    "image": "/questions/343.png",
+    "image": "/questions/343.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -3431,7 +3431,7 @@
   },
   {
     "id": 344,
-    "image": "/questions/344.png",
+    "image": "/questions/344.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3441,7 +3441,7 @@
   },
   {
     "id": 345,
-    "image": "/questions/345.png",
+    "image": "/questions/345.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3451,7 +3451,7 @@
   },
   {
     "id": 346,
-    "image": "/questions/346.png",
+    "image": "/questions/346.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3461,7 +3461,7 @@
   },
   {
     "id": 347,
-    "image": "/questions/347.png",
+    "image": "/questions/347.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3471,7 +3471,7 @@
   },
   {
     "id": 348,
-    "image": "/questions/348.png",
+    "image": "/questions/348.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3481,7 +3481,7 @@
   },
   {
     "id": 349,
-    "image": "/questions/349.png",
+    "image": "/questions/349.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3491,7 +3491,7 @@
   },
   {
     "id": 350,
-    "image": "/questions/350.png",
+    "image": "/questions/350.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3501,7 +3501,7 @@
   },
   {
     "id": 351,
-    "image": "/questions/351.png",
+    "image": "/questions/351.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3511,7 +3511,7 @@
   },
   {
     "id": 352,
-    "image": "/questions/352.png",
+    "image": "/questions/352.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3521,7 +3521,7 @@
   },
   {
     "id": 353,
-    "image": "/questions/353.png",
+    "image": "/questions/353.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3531,7 +3531,7 @@
   },
   {
     "id": 354,
-    "image": "/questions/354.png",
+    "image": "/questions/354.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3541,7 +3541,7 @@
   },
   {
     "id": 355,
-    "image": "/questions/355.png",
+    "image": "/questions/355.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3551,7 +3551,7 @@
   },
   {
     "id": 356,
-    "image": "/questions/356.png",
+    "image": "/questions/356.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3561,7 +3561,7 @@
   },
   {
     "id": 357,
-    "image": "/questions/357.png",
+    "image": "/questions/357.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3571,7 +3571,7 @@
   },
   {
     "id": 358,
-    "image": "/questions/358.png",
+    "image": "/questions/358.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3581,7 +3581,7 @@
   },
   {
     "id": 359,
-    "image": "/questions/359.png",
+    "image": "/questions/359.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3591,7 +3591,7 @@
   },
   {
     "id": 360,
-    "image": "/questions/360.png",
+    "image": "/questions/360.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3601,7 +3601,7 @@
   },
   {
     "id": 361,
-    "image": "/questions/361.png",
+    "image": "/questions/361.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3611,7 +3611,7 @@
   },
   {
     "id": 362,
-    "image": "/questions/362.png",
+    "image": "/questions/362.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3621,7 +3621,7 @@
   },
   {
     "id": 363,
-    "image": "/questions/363.png",
+    "image": "/questions/363.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3631,7 +3631,7 @@
   },
   {
     "id": 364,
-    "image": "/questions/364.png",
+    "image": "/questions/364.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3641,7 +3641,7 @@
   },
   {
     "id": 365,
-    "image": "/questions/365.png",
+    "image": "/questions/365.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3651,7 +3651,7 @@
   },
   {
     "id": 366,
-    "image": "/questions/366.png",
+    "image": "/questions/366.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3661,7 +3661,7 @@
   },
   {
     "id": 367,
-    "image": "/questions/367.png",
+    "image": "/questions/367.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3671,7 +3671,7 @@
   },
   {
     "id": 368,
-    "image": "/questions/368.png",
+    "image": "/questions/368.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -3681,7 +3681,7 @@
   },
   {
     "id": 369,
-    "image": "/questions/369.png",
+    "image": "/questions/369.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3691,7 +3691,7 @@
   },
   {
     "id": 370,
-    "image": "/questions/370.png",
+    "image": "/questions/370.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 6,
@@ -3701,7 +3701,7 @@
   },
   {
     "id": 371,
-    "image": "/questions/371.png",
+    "image": "/questions/371.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3711,7 +3711,7 @@
   },
   {
     "id": 372,
-    "image": "/questions/372.png",
+    "image": "/questions/372.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -3721,7 +3721,7 @@
   },
   {
     "id": 373,
-    "image": "/questions/373.png",
+    "image": "/questions/373.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3731,7 +3731,7 @@
   },
   {
     "id": 374,
-    "image": "/questions/374.png",
+    "image": "/questions/374.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -3741,7 +3741,7 @@
   },
   {
     "id": 375,
-    "image": "/questions/375.png",
+    "image": "/questions/375.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3751,7 +3751,7 @@
   },
   {
     "id": 376,
-    "image": "/questions/376.png",
+    "image": "/questions/376.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3761,7 +3761,7 @@
   },
   {
     "id": 377,
-    "image": "/questions/377.png",
+    "image": "/questions/377.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3771,7 +3771,7 @@
   },
   {
     "id": 378,
-    "image": "/questions/378.png",
+    "image": "/questions/378.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 6,
@@ -3781,7 +3781,7 @@
   },
   {
     "id": 379,
-    "image": "/questions/379.png",
+    "image": "/questions/379.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -3791,7 +3791,7 @@
   },
   {
     "id": 380,
-    "image": "/questions/380.png",
+    "image": "/questions/380.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -3801,7 +3801,7 @@
   },
   {
     "id": 381,
-    "image": "/questions/381.png",
+    "image": "/questions/381.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3811,7 +3811,7 @@
   },
   {
     "id": 382,
-    "image": "/questions/382.png",
+    "image": "/questions/382.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3821,7 +3821,7 @@
   },
   {
     "id": 383,
-    "image": "/questions/383.png",
+    "image": "/questions/383.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3831,7 +3831,7 @@
   },
   {
     "id": 384,
-    "image": "/questions/384.png",
+    "image": "/questions/384.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3841,7 +3841,7 @@
   },
   {
     "id": 385,
-    "image": "/questions/385.png",
+    "image": "/questions/385.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -3851,7 +3851,7 @@
   },
   {
     "id": 386,
-    "image": "/questions/386.png",
+    "image": "/questions/386.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -3861,7 +3861,7 @@
   },
   {
     "id": 387,
-    "image": "/questions/387.png",
+    "image": "/questions/387.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3871,7 +3871,7 @@
   },
   {
     "id": 388,
-    "image": "/questions/388.png",
+    "image": "/questions/388.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3881,7 +3881,7 @@
   },
   {
     "id": 389,
-    "image": "/questions/389.png",
+    "image": "/questions/389.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3891,7 +3891,7 @@
   },
   {
     "id": 390,
-    "image": "/questions/390.png",
+    "image": "/questions/390.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3901,7 +3901,7 @@
   },
   {
     "id": 391,
-    "image": "/questions/391.png",
+    "image": "/questions/391.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -3911,7 +3911,7 @@
   },
   {
     "id": 392,
-    "image": "/questions/392.png",
+    "image": "/questions/392.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3921,7 +3921,7 @@
   },
   {
     "id": 393,
-    "image": "/questions/393.png",
+    "image": "/questions/393.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -3931,7 +3931,7 @@
   },
   {
     "id": 394,
-    "image": "/questions/394.png",
+    "image": "/questions/394.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -3941,7 +3941,7 @@
   },
   {
     "id": 395,
-    "image": "/questions/395.png",
+    "image": "/questions/395.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -3951,7 +3951,7 @@
   },
   {
     "id": 396,
-    "image": "/questions/396.png",
+    "image": "/questions/396.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3961,7 +3961,7 @@
   },
   {
     "id": 397,
-    "image": "/questions/397.png",
+    "image": "/questions/397.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3971,7 +3971,7 @@
   },
   {
     "id": 398,
-    "image": "/questions/398.png",
+    "image": "/questions/398.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3981,7 +3981,7 @@
   },
   {
     "id": 399,
-    "image": "/questions/399.png",
+    "image": "/questions/399.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -3991,7 +3991,7 @@
   },
   {
     "id": 400,
-    "image": "/questions/400.png",
+    "image": "/questions/400.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4001,7 +4001,7 @@
   },
   {
     "id": 401,
-    "image": "/questions/401.png",
+    "image": "/questions/401.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4011,7 +4011,7 @@
   },
   {
     "id": 402,
-    "image": "/questions/402.png",
+    "image": "/questions/402.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -4021,7 +4021,7 @@
   },
   {
     "id": 403,
-    "image": "/questions/403.png",
+    "image": "/questions/403.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4031,7 +4031,7 @@
   },
   {
     "id": 404,
-    "image": "/questions/404.png",
+    "image": "/questions/404.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -4041,7 +4041,7 @@
   },
   {
     "id": 405,
-    "image": "/questions/405.png",
+    "image": "/questions/405.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4051,7 +4051,7 @@
   },
   {
     "id": 406,
-    "image": "/questions/406.png",
+    "image": "/questions/406.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4061,7 +4061,7 @@
   },
   {
     "id": 407,
-    "image": "/questions/407.png",
+    "image": "/questions/407.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4071,7 +4071,7 @@
   },
   {
     "id": 408,
-    "image": "/questions/408.png",
+    "image": "/questions/408.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4081,7 +4081,7 @@
   },
   {
     "id": 409,
-    "image": "/questions/409.png",
+    "image": "/questions/409.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4091,7 +4091,7 @@
   },
   {
     "id": 410,
-    "image": "/questions/410.png",
+    "image": "/questions/410.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4101,7 +4101,7 @@
   },
   {
     "id": 411,
-    "image": "/questions/411.png",
+    "image": "/questions/411.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4111,7 +4111,7 @@
   },
   {
     "id": 412,
-    "image": "/questions/412.png",
+    "image": "/questions/412.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4121,7 +4121,7 @@
   },
   {
     "id": 413,
-    "image": "/questions/413.png",
+    "image": "/questions/413.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4131,7 +4131,7 @@
   },
   {
     "id": 414,
-    "image": "/questions/414.png",
+    "image": "/questions/414.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4141,7 +4141,7 @@
   },
   {
     "id": 415,
-    "image": "/questions/415.png",
+    "image": "/questions/415.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4151,7 +4151,7 @@
   },
   {
     "id": 416,
-    "image": "/questions/416.png",
+    "image": "/questions/416.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4161,7 +4161,7 @@
   },
   {
     "id": 417,
-    "image": "/questions/417.png",
+    "image": "/questions/417.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4171,7 +4171,7 @@
   },
   {
     "id": 418,
-    "image": "/questions/418.png",
+    "image": "/questions/418.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -4181,7 +4181,7 @@
   },
   {
     "id": 419,
-    "image": "/questions/419.png",
+    "image": "/questions/419.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4191,7 +4191,7 @@
   },
   {
     "id": 420,
-    "image": "/questions/420.png",
+    "image": "/questions/420.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4201,7 +4201,7 @@
   },
   {
     "id": 421,
-    "image": "/questions/421.png",
+    "image": "/questions/421.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -4211,7 +4211,7 @@
   },
   {
     "id": 422,
-    "image": "/questions/422.png",
+    "image": "/questions/422.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4221,7 +4221,7 @@
   },
   {
     "id": 423,
-    "image": "/questions/423.png",
+    "image": "/questions/423.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4231,7 +4231,7 @@
   },
   {
     "id": 424,
-    "image": "/questions/424.png",
+    "image": "/questions/424.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4241,7 +4241,7 @@
   },
   {
     "id": 425,
-    "image": "/questions/425.png",
+    "image": "/questions/425.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4251,7 +4251,7 @@
   },
   {
     "id": 426,
-    "image": "/questions/426.png",
+    "image": "/questions/426.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4261,7 +4261,7 @@
   },
   {
     "id": 427,
-    "image": "/questions/427.png",
+    "image": "/questions/427.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -4271,7 +4271,7 @@
   },
   {
     "id": 428,
-    "image": "/questions/428.png",
+    "image": "/questions/428.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4281,7 +4281,7 @@
   },
   {
     "id": 429,
-    "image": "/questions/429.png",
+    "image": "/questions/429.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4291,7 +4291,7 @@
   },
   {
     "id": 430,
-    "image": "/questions/430.png",
+    "image": "/questions/430.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4301,7 +4301,7 @@
   },
   {
     "id": 431,
-    "image": "/questions/431.png",
+    "image": "/questions/431.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4311,7 +4311,7 @@
   },
   {
     "id": 432,
-    "image": "/questions/432.png",
+    "image": "/questions/432.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -4321,7 +4321,7 @@
   },
   {
     "id": 433,
-    "image": "/questions/433.png",
+    "image": "/questions/433.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4331,7 +4331,7 @@
   },
   {
     "id": 434,
-    "image": "/questions/434.png",
+    "image": "/questions/434.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4341,7 +4341,7 @@
   },
   {
     "id": 435,
-    "image": "/questions/435.png",
+    "image": "/questions/435.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4351,7 +4351,7 @@
   },
   {
     "id": 436,
-    "image": "/questions/436.png",
+    "image": "/questions/436.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 6,
@@ -4361,7 +4361,7 @@
   },
   {
     "id": 437,
-    "image": "/questions/437.png",
+    "image": "/questions/437.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -4371,7 +4371,7 @@
   },
   {
     "id": 438,
-    "image": "/questions/438.png",
+    "image": "/questions/438.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 6,
@@ -4381,7 +4381,7 @@
   },
   {
     "id": 439,
-    "image": "/questions/439.png",
+    "image": "/questions/439.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4391,7 +4391,7 @@
   },
   {
     "id": 440,
-    "image": "/questions/440.png",
+    "image": "/questions/440.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -4401,7 +4401,7 @@
   },
   {
     "id": 441,
-    "image": "/questions/441.png",
+    "image": "/questions/441.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4411,7 +4411,7 @@
   },
   {
     "id": 442,
-    "image": "/questions/442.png",
+    "image": "/questions/442.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4421,7 +4421,7 @@
   },
   {
     "id": 443,
-    "image": "/questions/443.png",
+    "image": "/questions/443.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -4431,7 +4431,7 @@
   },
   {
     "id": 444,
-    "image": "/questions/444.png",
+    "image": "/questions/444.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -4441,7 +4441,7 @@
   },
   {
     "id": 445,
-    "image": "/questions/445.png",
+    "image": "/questions/445.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4451,7 +4451,7 @@
   },
   {
     "id": 446,
-    "image": "/questions/446.png",
+    "image": "/questions/446.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -4461,7 +4461,7 @@
   },
   {
     "id": 447,
-    "image": "/questions/447.png",
+    "image": "/questions/447.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4471,7 +4471,7 @@
   },
   {
     "id": 448,
-    "image": "/questions/448.png",
+    "image": "/questions/448.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -4481,7 +4481,7 @@
   },
   {
     "id": 449,
-    "image": "/questions/449.png",
+    "image": "/questions/449.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4491,7 +4491,7 @@
   },
   {
     "id": 450,
-    "image": "/questions/450.png",
+    "image": "/questions/450.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4501,7 +4501,7 @@
   },
   {
     "id": 451,
-    "image": "/questions/451.png",
+    "image": "/questions/451.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4511,7 +4511,7 @@
   },
   {
     "id": 452,
-    "image": "/questions/452.png",
+    "image": "/questions/452.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4521,7 +4521,7 @@
   },
   {
     "id": 453,
-    "image": "/questions/453.png",
+    "image": "/questions/453.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -4531,7 +4531,7 @@
   },
   {
     "id": 454,
-    "image": "/questions/454.png",
+    "image": "/questions/454.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -4541,7 +4541,7 @@
   },
   {
     "id": 455,
-    "image": "/questions/455.png",
+    "image": "/questions/455.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4551,7 +4551,7 @@
   },
   {
     "id": 456,
-    "image": "/questions/456.png",
+    "image": "/questions/456.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4561,7 +4561,7 @@
   },
   {
     "id": 457,
-    "image": "/questions/457.png",
+    "image": "/questions/457.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -4571,7 +4571,7 @@
   },
   {
     "id": 458,
-    "image": "/questions/458.png",
+    "image": "/questions/458.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -4581,7 +4581,7 @@
   },
   {
     "id": 459,
-    "image": "/questions/459.png",
+    "image": "/questions/459.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4591,7 +4591,7 @@
   },
   {
     "id": 460,
-    "image": "/questions/460.png",
+    "image": "/questions/460.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4601,7 +4601,7 @@
   },
   {
     "id": 461,
-    "image": "/questions/461.png",
+    "image": "/questions/461.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4611,7 +4611,7 @@
   },
   {
     "id": 462,
-    "image": "/questions/462.png",
+    "image": "/questions/462.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4621,7 +4621,7 @@
   },
   {
     "id": 463,
-    "image": "/questions/463.png",
+    "image": "/questions/463.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4631,7 +4631,7 @@
   },
   {
     "id": 464,
-    "image": "/questions/464.png",
+    "image": "/questions/464.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4641,7 +4641,7 @@
   },
   {
     "id": 465,
-    "image": "/questions/465.png",
+    "image": "/questions/465.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4651,7 +4651,7 @@
   },
   {
     "id": 466,
-    "image": "/questions/466.png",
+    "image": "/questions/466.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -4661,7 +4661,7 @@
   },
   {
     "id": 467,
-    "image": "/questions/467.png",
+    "image": "/questions/467.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 6,
@@ -4671,7 +4671,7 @@
   },
   {
     "id": 468,
-    "image": "/questions/468.png",
+    "image": "/questions/468.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4681,7 +4681,7 @@
   },
   {
     "id": 469,
-    "image": "/questions/469.png",
+    "image": "/questions/469.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -4691,7 +4691,7 @@
   },
   {
     "id": 470,
-    "image": "/questions/470.png",
+    "image": "/questions/470.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4701,7 +4701,7 @@
   },
   {
     "id": 471,
-    "image": "/questions/471.png",
+    "image": "/questions/471.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -4711,7 +4711,7 @@
   },
   {
     "id": 472,
-    "image": "/questions/472.png",
+    "image": "/questions/472.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4721,7 +4721,7 @@
   },
   {
     "id": 473,
-    "image": "/questions/473.png",
+    "image": "/questions/473.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4731,7 +4731,7 @@
   },
   {
     "id": 474,
-    "image": "/questions/474.png",
+    "image": "/questions/474.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4741,7 +4741,7 @@
   },
   {
     "id": 475,
-    "image": "/questions/475.png",
+    "image": "/questions/475.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4751,7 +4751,7 @@
   },
   {
     "id": 476,
-    "image": "/questions/476.png",
+    "image": "/questions/476.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -4761,7 +4761,7 @@
   },
   {
     "id": 477,
-    "image": "/questions/477.png",
+    "image": "/questions/477.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 6,
@@ -4771,7 +4771,7 @@
   },
   {
     "id": 478,
-    "image": "/questions/478.png",
+    "image": "/questions/478.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4781,7 +4781,7 @@
   },
   {
     "id": 479,
-    "image": "/questions/479.png",
+    "image": "/questions/479.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 6,
@@ -4791,7 +4791,7 @@
   },
   {
     "id": 480,
-    "image": "/questions/480.png",
+    "image": "/questions/480.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4801,7 +4801,7 @@
   },
   {
     "id": 481,
-    "image": "/questions/481.png",
+    "image": "/questions/481.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4811,7 +4811,7 @@
   },
   {
     "id": 482,
-    "image": "/questions/482.png",
+    "image": "/questions/482.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 6,
@@ -4821,7 +4821,7 @@
   },
   {
     "id": 483,
-    "image": "/questions/483.png",
+    "image": "/questions/483.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -4831,7 +4831,7 @@
   },
   {
     "id": 484,
-    "image": "/questions/484.png",
+    "image": "/questions/484.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 6,
@@ -4841,7 +4841,7 @@
   },
   {
     "id": 485,
-    "image": "/questions/485.png",
+    "image": "/questions/485.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 6,
@@ -4851,7 +4851,7 @@
   },
   {
     "id": 486,
-    "image": "/questions/486.png",
+    "image": "/questions/486.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 6,
@@ -4861,7 +4861,7 @@
   },
   {
     "id": 487,
-    "image": "/questions/487.png",
+    "image": "/questions/487.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -4871,7 +4871,7 @@
   },
   {
     "id": 488,
-    "image": "/questions/488.png",
+    "image": "/questions/488.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -4881,7 +4881,7 @@
   },
   {
     "id": 489,
-    "image": "/questions/489.png",
+    "image": "/questions/489.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 7,
@@ -4891,7 +4891,7 @@
   },
   {
     "id": 490,
-    "image": "/questions/490.png",
+    "image": "/questions/490.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -4901,7 +4901,7 @@
   },
   {
     "id": 491,
-    "image": "/questions/491.png",
+    "image": "/questions/491.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -4911,7 +4911,7 @@
   },
   {
     "id": 492,
-    "image": "/questions/492.png",
+    "image": "/questions/492.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -4921,7 +4921,7 @@
   },
   {
     "id": 493,
-    "image": "/questions/493.png",
+    "image": "/questions/493.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -4931,7 +4931,7 @@
   },
   {
     "id": 494,
-    "image": "/questions/494.png",
+    "image": "/questions/494.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -4941,7 +4941,7 @@
   },
   {
     "id": 495,
-    "image": "/questions/495.png",
+    "image": "/questions/495.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -4951,7 +4951,7 @@
   },
   {
     "id": 496,
-    "image": "/questions/496.png",
+    "image": "/questions/496.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -4961,7 +4961,7 @@
   },
   {
     "id": 497,
-    "image": "/questions/497.png",
+    "image": "/questions/497.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -4971,7 +4971,7 @@
   },
   {
     "id": 498,
-    "image": "/questions/498.png",
+    "image": "/questions/498.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -4981,7 +4981,7 @@
   },
   {
     "id": 499,
-    "image": "/questions/499.png",
+    "image": "/questions/499.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -4991,7 +4991,7 @@
   },
   {
     "id": 500,
-    "image": "/questions/500.png",
+    "image": "/questions/500.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5001,7 +5001,7 @@
   },
   {
     "id": 501,
-    "image": "/questions/501.png",
+    "image": "/questions/501.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5011,7 +5011,7 @@
   },
   {
     "id": 502,
-    "image": "/questions/502.png",
+    "image": "/questions/502.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5021,7 +5021,7 @@
   },
   {
     "id": 503,
-    "image": "/questions/503.png",
+    "image": "/questions/503.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5031,7 +5031,7 @@
   },
   {
     "id": 504,
-    "image": "/questions/504.png",
+    "image": "/questions/504.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5041,7 +5041,7 @@
   },
   {
     "id": 505,
-    "image": "/questions/505.png",
+    "image": "/questions/505.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5051,7 +5051,7 @@
   },
   {
     "id": 506,
-    "image": "/questions/506.png",
+    "image": "/questions/506.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5061,7 +5061,7 @@
   },
   {
     "id": 507,
-    "image": "/questions/507.png",
+    "image": "/questions/507.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5071,7 +5071,7 @@
   },
   {
     "id": 508,
-    "image": "/questions/508.png",
+    "image": "/questions/508.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5081,7 +5081,7 @@
   },
   {
     "id": 509,
-    "image": "/questions/509.png",
+    "image": "/questions/509.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5091,7 +5091,7 @@
   },
   {
     "id": 510,
-    "image": "/questions/510.png",
+    "image": "/questions/510.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5101,7 +5101,7 @@
   },
   {
     "id": 511,
-    "image": "/questions/511.png",
+    "image": "/questions/511.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5111,7 +5111,7 @@
   },
   {
     "id": 512,
-    "image": "/questions/512.png",
+    "image": "/questions/512.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5121,7 +5121,7 @@
   },
   {
     "id": 513,
-    "image": "/questions/513.png",
+    "image": "/questions/513.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5131,7 +5131,7 @@
   },
   {
     "id": 514,
-    "image": "/questions/514.png",
+    "image": "/questions/514.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5141,7 +5141,7 @@
   },
   {
     "id": 515,
-    "image": "/questions/515.png",
+    "image": "/questions/515.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5151,7 +5151,7 @@
   },
   {
     "id": 516,
-    "image": "/questions/516.png",
+    "image": "/questions/516.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5161,7 +5161,7 @@
   },
   {
     "id": 517,
-    "image": "/questions/517.png",
+    "image": "/questions/517.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5171,7 +5171,7 @@
   },
   {
     "id": 518,
-    "image": "/questions/518.png",
+    "image": "/questions/518.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5181,7 +5181,7 @@
   },
   {
     "id": 519,
-    "image": "/questions/519.png",
+    "image": "/questions/519.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5191,7 +5191,7 @@
   },
   {
     "id": 520,
-    "image": "/questions/520.png",
+    "image": "/questions/520.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 7,
@@ -5201,7 +5201,7 @@
   },
   {
     "id": 521,
-    "image": "/questions/521.png",
+    "image": "/questions/521.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5211,7 +5211,7 @@
   },
   {
     "id": 522,
-    "image": "/questions/522.png",
+    "image": "/questions/522.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5221,7 +5221,7 @@
   },
   {
     "id": 523,
-    "image": "/questions/523.png",
+    "image": "/questions/523.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5231,7 +5231,7 @@
   },
   {
     "id": 524,
-    "image": "/questions/524.png",
+    "image": "/questions/524.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5241,7 +5241,7 @@
   },
   {
     "id": 525,
-    "image": "/questions/525.png",
+    "image": "/questions/525.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5251,7 +5251,7 @@
   },
   {
     "id": 526,
-    "image": "/questions/526.png",
+    "image": "/questions/526.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5261,7 +5261,7 @@
   },
   {
     "id": 527,
-    "image": "/questions/527.png",
+    "image": "/questions/527.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5271,7 +5271,7 @@
   },
   {
     "id": 528,
-    "image": "/questions/528.png",
+    "image": "/questions/528.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5281,7 +5281,7 @@
   },
   {
     "id": 529,
-    "image": "/questions/529.png",
+    "image": "/questions/529.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5291,7 +5291,7 @@
   },
   {
     "id": 530,
-    "image": "/questions/530.png",
+    "image": "/questions/530.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5301,7 +5301,7 @@
   },
   {
     "id": 531,
-    "image": "/questions/531.png",
+    "image": "/questions/531.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5311,7 +5311,7 @@
   },
   {
     "id": 532,
-    "image": "/questions/532.png",
+    "image": "/questions/532.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5321,7 +5321,7 @@
   },
   {
     "id": 533,
-    "image": "/questions/533.png",
+    "image": "/questions/533.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5331,7 +5331,7 @@
   },
   {
     "id": 534,
-    "image": "/questions/534.png",
+    "image": "/questions/534.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5341,7 +5341,7 @@
   },
   {
     "id": 535,
-    "image": "/questions/535.png",
+    "image": "/questions/535.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5351,7 +5351,7 @@
   },
   {
     "id": 536,
-    "image": "/questions/536.png",
+    "image": "/questions/536.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5361,7 +5361,7 @@
   },
   {
     "id": 537,
-    "image": "/questions/537.png",
+    "image": "/questions/537.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 7,
@@ -5371,7 +5371,7 @@
   },
   {
     "id": 538,
-    "image": "/questions/538.png",
+    "image": "/questions/538.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5381,7 +5381,7 @@
   },
   {
     "id": 539,
-    "image": "/questions/539.png",
+    "image": "/questions/539.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5391,7 +5391,7 @@
   },
   {
     "id": 540,
-    "image": "/questions/540.png",
+    "image": "/questions/540.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5401,7 +5401,7 @@
   },
   {
     "id": 541,
-    "image": "/questions/541.png",
+    "image": "/questions/541.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5411,7 +5411,7 @@
   },
   {
     "id": 542,
-    "image": "/questions/542.png",
+    "image": "/questions/542.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5421,7 +5421,7 @@
   },
   {
     "id": 543,
-    "image": "/questions/543.png",
+    "image": "/questions/543.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5431,7 +5431,7 @@
   },
   {
     "id": 544,
-    "image": "/questions/544.png",
+    "image": "/questions/544.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5441,7 +5441,7 @@
   },
   {
     "id": 545,
-    "image": "/questions/545.png",
+    "image": "/questions/545.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5451,7 +5451,7 @@
   },
   {
     "id": 546,
-    "image": "/questions/546.png",
+    "image": "/questions/546.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5461,7 +5461,7 @@
   },
   {
     "id": 547,
-    "image": "/questions/547.png",
+    "image": "/questions/547.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5471,7 +5471,7 @@
   },
   {
     "id": 548,
-    "image": "/questions/548.png",
+    "image": "/questions/548.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5481,7 +5481,7 @@
   },
   {
     "id": 549,
-    "image": "/questions/549.png",
+    "image": "/questions/549.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5491,7 +5491,7 @@
   },
   {
     "id": 550,
-    "image": "/questions/550.png",
+    "image": "/questions/550.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5501,7 +5501,7 @@
   },
   {
     "id": 551,
-    "image": "/questions/551.png",
+    "image": "/questions/551.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5511,7 +5511,7 @@
   },
   {
     "id": 552,
-    "image": "/questions/552.png",
+    "image": "/questions/552.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5521,7 +5521,7 @@
   },
   {
     "id": 553,
-    "image": "/questions/553.png",
+    "image": "/questions/553.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5531,7 +5531,7 @@
   },
   {
     "id": 554,
-    "image": "/questions/554.png",
+    "image": "/questions/554.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5541,7 +5541,7 @@
   },
   {
     "id": 555,
-    "image": "/questions/555.png",
+    "image": "/questions/555.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5551,7 +5551,7 @@
   },
   {
     "id": 556,
-    "image": "/questions/556.png",
+    "image": "/questions/556.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5561,7 +5561,7 @@
   },
   {
     "id": 557,
-    "image": "/questions/557.png",
+    "image": "/questions/557.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5571,7 +5571,7 @@
   },
   {
     "id": 558,
-    "image": "/questions/558.png",
+    "image": "/questions/558.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 7,
@@ -5581,7 +5581,7 @@
   },
   {
     "id": 559,
-    "image": "/questions/559.png",
+    "image": "/questions/559.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 7,
@@ -5591,7 +5591,7 @@
   },
   {
     "id": 560,
-    "image": "/questions/560.png",
+    "image": "/questions/560.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5601,7 +5601,7 @@
   },
   {
     "id": 561,
-    "image": "/questions/561.png",
+    "image": "/questions/561.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5611,7 +5611,7 @@
   },
   {
     "id": 562,
-    "image": "/questions/562.png",
+    "image": "/questions/562.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5621,7 +5621,7 @@
   },
   {
     "id": 563,
-    "image": "/questions/563.png",
+    "image": "/questions/563.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5631,7 +5631,7 @@
   },
   {
     "id": 564,
-    "image": "/questions/564.png",
+    "image": "/questions/564.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5641,7 +5641,7 @@
   },
   {
     "id": 565,
-    "image": "/questions/565.png",
+    "image": "/questions/565.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5651,7 +5651,7 @@
   },
   {
     "id": 566,
-    "image": "/questions/566.png",
+    "image": "/questions/566.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5661,7 +5661,7 @@
   },
   {
     "id": 567,
-    "image": "/questions/567.png",
+    "image": "/questions/567.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5671,7 +5671,7 @@
   },
   {
     "id": 568,
-    "image": "/questions/568.png",
+    "image": "/questions/568.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5681,7 +5681,7 @@
   },
   {
     "id": 569,
-    "image": "/questions/569.png",
+    "image": "/questions/569.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5691,7 +5691,7 @@
   },
   {
     "id": 570,
-    "image": "/questions/570.png",
+    "image": "/questions/570.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5701,7 +5701,7 @@
   },
   {
     "id": 571,
-    "image": "/questions/571.png",
+    "image": "/questions/571.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5711,7 +5711,7 @@
   },
   {
     "id": 572,
-    "image": "/questions/572.png",
+    "image": "/questions/572.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5721,7 +5721,7 @@
   },
   {
     "id": 573,
-    "image": "/questions/573.png",
+    "image": "/questions/573.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5731,7 +5731,7 @@
   },
   {
     "id": 574,
-    "image": "/questions/574.png",
+    "image": "/questions/574.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5741,7 +5741,7 @@
   },
   {
     "id": 575,
-    "image": "/questions/575.png",
+    "image": "/questions/575.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5751,7 +5751,7 @@
   },
   {
     "id": 576,
-    "image": "/questions/576.png",
+    "image": "/questions/576.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5761,7 +5761,7 @@
   },
   {
     "id": 577,
-    "image": "/questions/577.png",
+    "image": "/questions/577.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5771,7 +5771,7 @@
   },
   {
     "id": 578,
-    "image": "/questions/578.png",
+    "image": "/questions/578.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 7,
@@ -5781,7 +5781,7 @@
   },
   {
     "id": 579,
-    "image": "/questions/579.png",
+    "image": "/questions/579.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5791,7 +5791,7 @@
   },
   {
     "id": 580,
-    "image": "/questions/580.png",
+    "image": "/questions/580.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5801,7 +5801,7 @@
   },
   {
     "id": 581,
-    "image": "/questions/581.png",
+    "image": "/questions/581.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5811,7 +5811,7 @@
   },
   {
     "id": 582,
-    "image": "/questions/582.png",
+    "image": "/questions/582.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5821,7 +5821,7 @@
   },
   {
     "id": 583,
-    "image": "/questions/583.png",
+    "image": "/questions/583.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5831,7 +5831,7 @@
   },
   {
     "id": 584,
-    "image": "/questions/584.png",
+    "image": "/questions/584.webp",
     "correctAnswer": 4,
     "isCritical": false,
     "chapter": 7,
@@ -5841,7 +5841,7 @@
   },
   {
     "id": 585,
-    "image": "/questions/585.png",
+    "image": "/questions/585.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5851,7 +5851,7 @@
   },
   {
     "id": 586,
-    "image": "/questions/586.png",
+    "image": "/questions/586.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5861,7 +5861,7 @@
   },
   {
     "id": 587,
-    "image": "/questions/587.png",
+    "image": "/questions/587.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5871,7 +5871,7 @@
   },
   {
     "id": 588,
-    "image": "/questions/588.png",
+    "image": "/questions/588.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5881,7 +5881,7 @@
   },
   {
     "id": 589,
-    "image": "/questions/589.png",
+    "image": "/questions/589.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5891,7 +5891,7 @@
   },
   {
     "id": 590,
-    "image": "/questions/590.png",
+    "image": "/questions/590.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5901,7 +5901,7 @@
   },
   {
     "id": 591,
-    "image": "/questions/591.png",
+    "image": "/questions/591.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5911,7 +5911,7 @@
   },
   {
     "id": 592,
-    "image": "/questions/592.png",
+    "image": "/questions/592.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5921,7 +5921,7 @@
   },
   {
     "id": 593,
-    "image": "/questions/593.png",
+    "image": "/questions/593.webp",
     "correctAnswer": 3,
     "isCritical": false,
     "chapter": 7,
@@ -5931,7 +5931,7 @@
   },
   {
     "id": 594,
-    "image": "/questions/594.png",
+    "image": "/questions/594.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5941,7 +5941,7 @@
   },
   {
     "id": 595,
-    "image": "/questions/595.png",
+    "image": "/questions/595.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5951,7 +5951,7 @@
   },
   {
     "id": 596,
-    "image": "/questions/596.png",
+    "image": "/questions/596.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5961,7 +5961,7 @@
   },
   {
     "id": 597,
-    "image": "/questions/597.png",
+    "image": "/questions/597.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5971,7 +5971,7 @@
   },
   {
     "id": 598,
-    "image": "/questions/598.png",
+    "image": "/questions/598.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,
@@ -5981,7 +5981,7 @@
   },
   {
     "id": 599,
-    "image": "/questions/599.png",
+    "image": "/questions/599.webp",
     "correctAnswer": 1,
     "isCritical": false,
     "chapter": 7,
@@ -5991,7 +5991,7 @@
   },
   {
     "id": 600,
-    "image": "/questions/600.png",
+    "image": "/questions/600.webp",
     "correctAnswer": 2,
     "isCritical": false,
     "chapter": 7,

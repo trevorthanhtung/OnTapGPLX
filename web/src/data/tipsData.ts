@@ -314,8 +314,8 @@ export const EXAM_TIPS: ExamTip[] = [
       'Ý nghĩa: Tất cả các hướng đều phải dừng lại (trừ xe đã ở trong giao lộ).'
     ],
     illustrations: [
-      { url: '/questions/036.png', caption: 'CSGT giang 2 tay => Chọn đáp án 4' },
-      { url: '/questions/037.png', caption: 'CSGT giơ 1 tay => Chọn đáp án 3' }
+      { url: '/questions/036.webp', caption: 'CSGT giang 2 tay => Chọn đáp án 4' },
+      { url: '/questions/037.webp', caption: 'CSGT giơ 1 tay => Chọn đáp án 3' }
     ]
   },
   {
@@ -578,7 +578,7 @@ export const EXAM_TIPS: ExamTip[] = [
       'Xe 2 bánh và xe 4 bánh không cấm nhau: Biển cấm 2 bánh không cấm ô tô, biển cấm ô tô không cấm mô tô 2 bánh.'
     ],
     illustrations: [
-      { url: '/questions/302.png', caption: 'Câu 302: Thứ bậc cấm xe' }
+      { url: '/questions/302.webp', caption: 'Câu 302: Thứ bậc cấm xe' }
     ]
   },
   {
@@ -593,8 +593,8 @@ export const EXAM_TIPS: ExamTip[] = [
       'Nếu thấy có từ "kéo" (kéo theo rơ moóc) => Chọn đáp án 2 và 3.'
     ],
     illustrations: [
-      { url: '/questions/340.png', caption: 'Câu 340: Có từ "móc" -> Chọn 1 & 2' },
-      { url: '/questions/342.png', caption: 'Câu 342: Có từ "kéo" -> Chọn 2 & 3' }
+      { url: '/questions/340.webp', caption: 'Câu 340: Có từ "móc" -> Chọn 1 & 2' },
+      { url: '/questions/342.webp', caption: 'Câu 342: Có từ "kéo" -> Chọn 2 & 3' }
     ]
   },
   {
@@ -620,8 +620,8 @@ export const EXAM_TIPS: ExamTip[] = [
       'Ví dụ: "Biển nào cấm xe tải?" hoặc "Gặp biển nào xe xích lô được phép đi vào?" => Chọn đáp án cuối.'
     ],
     illustrations: [
-      { url: '/questions/302.png', caption: 'Câu 302: Biển cấm xe tải' },
-      { url: '/questions/332.png', caption: 'Câu 332: Biển xe xích lô' }
+      { url: '/questions/302.webp', caption: 'Câu 302: Biển cấm xe tải' },
+      { url: '/questions/332.webp', caption: 'Câu 332: Biển xe xích lô' }
     ]
   },
   {
@@ -636,8 +636,8 @@ export const EXAM_TIPS: ExamTip[] = [
       'Nếu câu hỏi không có chữ "và" => Chọn đáp án 1.'
     ],
     illustrations: [
-      { url: '/questions/317.png', caption: 'Câu 317: Không có "và" -> Chọn 1' },
-      { url: '/questions/320.png', caption: 'Câu 320: Có chữ "và" -> Chọn 2' }
+      { url: '/questions/317.webp', caption: 'Câu 317: Không có "và" -> Chọn 1' },
+      { url: '/questions/320.webp', caption: 'Câu 320: Có chữ "và" -> Chọn 2' }
     ]
   },
   {
@@ -664,8 +664,8 @@ export const EXAM_TIPS: ExamTip[] = [
       'Đọc các phương án: Có chữ "Biển 1 và..." => Chọn ngay; không có thì chọn đáp án 2.'
     ],
     illustrations: [
-      { url: '/questions/325.png', caption: 'Câu 325: Không có "VÀ" -> Chọn 2' },
-      { url: '/questions/326.png', caption: 'Câu 326: Có "VÀ" -> Chọn phương án có "VÀ"' }
+      { url: '/questions/325.webp', caption: 'Câu 325: Không có "VÀ" -> Chọn 2' },
+      { url: '/questions/326.webp', caption: 'Câu 326: Có "VÀ" -> Chọn phương án có "VÀ"' }
     ]
   },
   {
@@ -681,8 +681,8 @@ export const EXAM_TIPS: ExamTip[] = [
       'Mẹo nhanh: Đề hỏi "ngày lẻ" chọn 1; hỏi "ngày chẵn" chọn 2.'
     ],
     illustrations: [
-      { url: '/questions/327.png', caption: 'Câu 327: Ngày lẻ (1 vạch) -> Chọn 1' },
-      { url: '/questions/328.png', caption: 'Câu 328: Ngày chẵn (2 vạch) -> Chọn 2' }
+      { url: '/questions/327.webp', caption: 'Câu 327: Ngày lẻ (1 vạch) -> Chọn 1' },
+      { url: '/questions/328.webp', caption: 'Câu 328: Ngày chẵn (2 vạch) -> Chọn 2' }
     ]
   },
   {
@@ -697,8 +697,8 @@ export const EXAM_TIPS: ExamTip[] = [
       'Biển R.306 (hình tròn nền xanh lam, số màu trắng): Tốc độ tối thiểu cho phép.'
     ],
     illustrations: [
-      { url: '/questions/360.png', caption: 'Biển viền đỏ 50: Tối đa' },
-      { url: '/questions/362.png', caption: 'Biển nền xanh 60: Tối thiểu' }
+      { url: '/questions/360.webp', caption: 'Biển viền đỏ 50: Tối đa' },
+      { url: '/questions/362.webp', caption: 'Biển nền xanh 60: Tối thiểu' }
     ]
   },
   {
@@ -714,8 +714,8 @@ export const EXAM_TIPS: ExamTip[] = [
       'Nếu có 3 đáp án => Chọn đáp án số 1.'
     ],
     illustrations: [
-      { url: '/questions/336.png', caption: 'Câu 336: 2 đáp án -> Chọn 2' },
-      { url: '/questions/339.png', caption: 'Câu 339: 3 đáp án -> Chọn 1' }
+      { url: '/questions/336.webp', caption: 'Câu 336: 2 đáp án -> Chọn 2' },
+      { url: '/questions/339.webp', caption: 'Câu 339: 3 đáp án -> Chọn 1' }
     ]
   },
   {
@@ -730,8 +730,8 @@ export const EXAM_TIPS: ExamTip[] = [
       'Biển phụ chỉ ghi số mét đơn thuần (ví dụ 200m) => Biểu thị khoảng cách từ nơi đặt biển đến vị trí áp dụng.'
     ],
     illustrations: [
-      { url: '/questions/347.png', caption: 'Có 2 mũi tên: Chiều dài' },
-      { url: '/questions/352.png', caption: 'Không có mũi tên: Khoảng cách' }
+      { url: '/questions/347.webp', caption: 'Có 2 mũi tên: Chiều dài' },
+      { url: '/questions/352.webp', caption: 'Không có mũi tên: Khoảng cách' }
     ]
   },
   {
@@ -746,7 +746,7 @@ export const EXAM_TIPS: ExamTip[] = [
       'Nếu không thấy xuất hiện từ "hai bánh" => Chọn đáp án 1.'
     ],
     illustrations: [
-      { url: '/questions/349.png', caption: 'Câu 349: Biển cấm kèm biển phụ' }
+      { url: '/questions/349.webp', caption: 'Câu 349: Biển cấm kèm biển phụ' }
     ]
   },
   {
@@ -762,9 +762,9 @@ export const EXAM_TIPS: ExamTip[] = [
       'Hình tròn nền xanh (biển R.305): Đường dành riêng cho người đi bộ.'
     ],
     illustrations: [
-      { url: '/questions/367.png', caption: 'Tam giác vàng: Nhường đường' },
-      { url: '/questions/368.png', caption: 'Tròn đỏ: Cấm người đi bộ' },
-      { url: '/questions/369.png', caption: 'Tròn xanh: Dành cho người đi bộ' }
+      { url: '/questions/367.webp', caption: 'Tam giác vàng: Nhường đường' },
+      { url: '/questions/368.webp', caption: 'Tròn đỏ: Cấm người đi bộ' },
+      { url: '/questions/369.webp', caption: 'Tròn xanh: Dành cho người đi bộ' }
     ]
   },
   {
@@ -780,8 +780,8 @@ export const EXAM_TIPS: ExamTip[] = [
       'Nếu vệt đen đi lên (9%) => Chọn đáp án dốc lên.'
     ],
     illustrations: [
-      { url: '/questions/415.png', caption: '10% vẽ xuống: Dốc xuống nguy hiểm' },
-      { url: '/questions/416.png', caption: '9% vẽ lên: Dốc lên nguy hiểm' }
+      { url: '/questions/415.webp', caption: '10% vẽ xuống: Dốc xuống nguy hiểm' },
+      { url: '/questions/416.webp', caption: '9% vẽ lên: Dốc lên nguy hiểm' }
     ]
   },
   {
@@ -823,7 +823,7 @@ export const EXAM_TIPS: ExamTip[] = [
       'Nhớ nhanh các tình huống: Cửa chui, đường hầm, cầu hẹp, đường trơn, lề nguy hiểm, ùn tắc giao thông => Đều chọn đáp án 2.'
     ],
     illustrations: [
-      { url: '/questions/473.png', caption: 'Câu 473: Mũi tên ngoặt nguy hiểm -> Chọn 2' }
+      { url: '/questions/473.webp', caption: 'Câu 473: Mũi tên ngoặt nguy hiểm -> Chọn 2' }
     ]
   },
   {
@@ -840,8 +840,8 @@ export const EXAM_TIPS: ExamTip[] = [
       'Mẹo đáp án: Vạch vàng ở giữa chọn 2; Ba vạch vàng chọn 1; Còn lại chọn đáp án cuối.'
     ],
     illustrations: [
-      { url: '/questions/477.png', caption: 'Câu 477: Vàng giữa chọn 2' },
-      { url: '/questions/482.png', caption: 'Câu 482: Ba vàng chọn 1' }
+      { url: '/questions/477.webp', caption: 'Câu 477: Vàng giữa chọn 2' },
+      { url: '/questions/482.webp', caption: 'Câu 482: Ba vàng chọn 1' }
     ]
   },
 
@@ -863,7 +863,7 @@ export const EXAM_TIPS: ExamTip[] = [
       'Bước 5 - NGŨ PHẢI (Quyền bên phải không vướng): Tại ngã tư cùng cấp, bên phải xe nào không có chướng ngại vật/không có xe thì xe đó được đi trước.'
     ],
     illustrations: [
-      { url: '/questions/487.png', caption: 'Câu 487: 5 nguyên tắc giải sa hình' }
+      { url: '/questions/487.webp', caption: 'Câu 487: 5 nguyên tắc giải sa hình' }
     ]
   },
   {
@@ -880,8 +880,8 @@ export const EXAM_TIPS: ExamTip[] = [
       'Xe Công an rẽ hướng 4 => Chọn đáp án 4.'
     ],
     illustrations: [
-      { url: '/questions/488.png', caption: 'Câu 488: Công an ở ô nào chọn số đó' },
-      { url: '/questions/489.png', caption: 'Câu 489: Xe công an đi đầu tiên' }
+      { url: '/questions/488.webp', caption: 'Câu 488: Công an ở ô nào chọn số đó' },
+      { url: '/questions/489.webp', caption: 'Câu 489: Xe công an đi đầu tiên' }
     ]
   },
   {
@@ -896,7 +896,7 @@ export const EXAM_TIPS: ExamTip[] = [
       'Xem xe tải được phép đi vào hướng nào => Chọn đáp án chỉ đích danh hướng đó.'
     ],
     illustrations: [
-      { url: '/questions/522.png', caption: 'Câu 522: Hướng xe tải đi thẳng' }
+      { url: '/questions/522.webp', caption: 'Câu 522: Hướng xe tải đi thẳng' }
     ]
   },
   {
@@ -913,7 +913,7 @@ export const EXAM_TIPS: ExamTip[] = [
       'Bước 3: Nếu không có 2 xe trên => Chọn "Xe con".'
     ],
     illustrations: [
-      { url: '/questions/491.png', caption: 'Câu 491: Ưu tiên Xe khách > Xe bạn > Xe con' }
+      { url: '/questions/491.webp', caption: 'Câu 491: Ưu tiên Xe khách > Xe bạn > Xe con' }
     ]
   },
   {
@@ -929,8 +929,8 @@ export const EXAM_TIPS: ExamTip[] = [
       'Nếu không có mũi tên đỏ => Tìm đáp án có chữ "xe con" để chọn (Câu: 500, 553).'
     ],
     illustrations: [
-      { url: '/questions/503.png', caption: 'Câu 503: Mũi tên đỏ -> Bỏ xe con' },
-      { url: '/questions/500.png', caption: 'Câu 500: Không mũi tên đỏ -> Tìm xe con' }
+      { url: '/questions/503.webp', caption: 'Câu 503: Mũi tên đỏ -> Bỏ xe con' },
+      { url: '/questions/500.webp', caption: 'Câu 500: Không mũi tên đỏ -> Tìm xe con' }
     ]
   },
   {
@@ -945,8 +945,8 @@ export const EXAM_TIPS: ExamTip[] = [
     ],
     note: 'Lưu ý: Ngoại trừ 2 câu: Câu 525 và Câu 591 chọn đáp án 1.',
     illustrations: [
-      { url: '/questions/525.png', caption: 'Câu 525 (Ngoại lệ): Chọn đáp án 1' },
-      { url: '/questions/591.png', caption: 'Câu 591 (Ngoại lệ): Chọn đáp án 1' }
+      { url: '/questions/525.webp', caption: 'Câu 525 (Ngoại lệ): Chọn đáp án 1' },
+      { url: '/questions/591.webp', caption: 'Câu 591 (Ngoại lệ): Chọn đáp án 1' }
     ]
   },
   {
@@ -963,8 +963,8 @@ export const EXAM_TIPS: ExamTip[] = [
       'Hỏi xe nào "chấp hành đúng" => Luôn chọn đáp án 2 (Câu: 554).'
     ],
     illustrations: [
-      { url: '/questions/543.png', caption: 'Câu 543: Lấy xe cuối trừ 1 bánh xe' },
-      { url: '/questions/554.png', caption: 'Câu 554: Chấp hành -> Chọn 2' }
+      { url: '/questions/543.webp', caption: 'Câu 543: Lấy xe cuối trừ 1 bánh xe' },
+      { url: '/questions/554.webp', caption: 'Câu 554: Chấp hành -> Chọn 2' }
     ]
   },
   {
@@ -980,8 +980,8 @@ export const EXAM_TIPS: ExamTip[] = [
       'Nếu xe mô tô đang ở nhánh đường khác đâm tới => Chọn đáp án 3.'
     ],
     illustrations: [
-      { url: '/questions/556.png', caption: 'Câu 556: Mô tô cùng con đường -> Chọn 2' },
-      { url: '/questions/567.png', caption: 'Câu 567: Mô tô khác con đường -> Chọn 3' }
+      { url: '/questions/556.webp', caption: 'Câu 556: Mô tô cùng con đường -> Chọn 2' },
+      { url: '/questions/567.webp', caption: 'Câu 567: Mô tô khác con đường -> Chọn 3' }
     ]
   },
   {
@@ -1021,8 +1021,8 @@ export const EXAM_TIPS: ExamTip[] = [
       'Nếu không có đáp án gộp chữ "VÀ" => Chọn đáp án 3.'
     ],
     illustrations: [
-      { url: '/questions/533.png', caption: 'Câu 533: Đáp án có chữ "VÀ" -> Chọn' },
-      { url: '/questions/534.png', caption: 'Câu 534: Không có chữ "VÀ" -> Chọn 3' }
+      { url: '/questions/533.webp', caption: 'Câu 533: Đáp án có chữ "VÀ" -> Chọn' },
+      { url: '/questions/534.webp', caption: 'Câu 534: Không có chữ "VÀ" -> Chọn 3' }
     ]
   },
   {
@@ -1038,8 +1038,8 @@ export const EXAM_TIPS: ExamTip[] = [
       'Thấy xe tải bên trái và có ít nhất 1 biển báo trên đường => Chọn đáp án 2 (Câu: 549, 572, 575).'
     ],
     illustrations: [
-      { url: '/questions/552.png', caption: 'Câu 552: 2 bóng đèn sau xe tải -> Chọn 2' },
-      { url: '/questions/588.png', caption: 'Câu 588: Xe con vàng bên phải -> Chọn 2' }
+      { url: '/questions/552.webp', caption: 'Câu 552: 2 bóng đèn sau xe tải -> Chọn 2' },
+      { url: '/questions/588.webp', caption: 'Câu 588: Xe con vàng bên phải -> Chọn 2' }
     ]
   },
   {
@@ -1055,8 +1055,8 @@ export const EXAM_TIPS: ExamTip[] = [
       'Nếu xe đạp đi ngược chiều hoặc rẽ từ hướng khác => Chọn đáp án 3.'
     ],
     illustrations: [
-      { url: '/questions/572.png', caption: 'Câu 572: Xe đạp cùng chiều -> Chọn 2' },
-      { url: '/questions/574.png', caption: 'Câu 574: Xe đạp ngược chiều -> Chọn 3' }
+      { url: '/questions/572.webp', caption: 'Câu 572: Xe đạp cùng chiều -> Chọn 2' },
+      { url: '/questions/574.webp', caption: 'Câu 574: Xe đạp ngược chiều -> Chọn 3' }
     ]
   },
   {
@@ -1072,8 +1072,8 @@ export const EXAM_TIPS: ExamTip[] = [
       'Thấy hình vẽ xe kéo xe bằng dây lụa, hoặc xe kéo thêm rơ moóc mà còn kéo xe khác => Luôn chọn đáp án "Vi phạm" hoặc "Không đúng quy tắc giao thông".'
     ],
     illustrations: [
-      { url: '/questions/510.png', caption: 'Câu 510: Xe kéo xe vi phạm' },
-      { url: '/questions/515.png', caption: 'Câu 515: Xe kéo rơ moóc vi phạm' }
+      { url: '/questions/510.webp', caption: 'Câu 510: Xe kéo xe vi phạm' },
+      { url: '/questions/515.webp', caption: 'Câu 515: Xe kéo rơ moóc vi phạm' }
     ]
   },
 

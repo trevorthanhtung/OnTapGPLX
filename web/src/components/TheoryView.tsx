@@ -4,7 +4,8 @@ import {
   ChevronLeft,
   ChevronRight,
   ArrowLeft,
-  X
+  X,
+  Contrast
 } from 'lucide-react';
 import type { LicenseCategory, Question } from '../types';
 import { LICENSE_CATEGORIES } from '../data/licenseCategories';
@@ -102,6 +103,7 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
   const [showExitConfirm, setShowExitConfirm] = useState(false);
   const [showSubmitConfirm, setShowSubmitConfirm] = useState(false);
   const [showMobileQuestionSheet, setShowMobileQuestionSheet] = useState(false);
+  const [invertImage, setInvertImage] = useState<boolean>(true);
 
   // Handle reviewing a specific exam from history
   useEffect(() => {
@@ -201,6 +203,31 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
   };
 
   const currentQ = activeQuestions[currentIndex];
+
+  // Preload sliding window (tải đón đầu câu tiếp theo để chuyển câu tức thì, không giật lag)
+  useEffect(() => {
+    if (!activeQuestions || activeQuestions.length === 0) return;
+
+    if (mode === 'exam') {
+      // Khi thi, tải trước toàn bộ ~30-35 ảnh câu hỏi của đề (chỉ ~700KB)
+      activeQuestions.forEach((q) => {
+        if (q?.image) {
+          const img = new Image();
+          img.src = q.image;
+        }
+      });
+      return;
+    }
+
+    // Khi ôn tập bình thường, tải trước 3 câu tiếp theo
+    const nextQs = activeQuestions.slice(currentIndex + 1, currentIndex + 4);
+    nextQs.forEach((q) => {
+      if (q?.image) {
+        const img = new Image();
+        img.src = q.image;
+      }
+    });
+  }, [currentIndex, activeQuestions, mode]);
 
   // Start Exam
   const startExam = useCallback(() => {
@@ -1038,13 +1065,26 @@ export const TheoryView: React.FC<TheoryViewProps> = ({
                 {/* Card Inner Content: Column in Portrait/Desktop, 2-Col Row in Landscape Mobile */}
                 <div className="flex flex-col landscape-mobile:flex-row landscape-mobile:gap-3 flex-1 min-h-0 justify-between">
                   {/* Left Column in Landscape Mobile / Image Box in Portrait */}
-                  <div className="w-full mb-3 sm:mb-4 landscape-mobile:mb-0 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-950 flex items-center justify-center p-1 sm:p-2.5 landscape-mobile:p-1 flex-1 min-h-0 max-h-[42vh] sm:max-h-none landscape-mobile:max-h-none landscape-mobile:w-[58%]">
+                  <div className="relative w-full mb-3 sm:mb-4 landscape-mobile:mb-0 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-950 flex items-center justify-center p-1 sm:p-2.5 landscape-mobile:p-1 flex-1 min-h-0 max-h-[42vh] sm:max-h-none landscape-mobile:max-h-none landscape-mobile:w-[58%]">
                     <img
                       src={currentQ.image}
                       alt={`Câu hỏi ${currentIndex + 1}`}
-                      className="w-full h-full max-w-full max-h-full object-contain select-none"
+                      className={`w-full h-full max-w-full max-h-full object-contain select-none transition-[filter] duration-200 ${
+                        invertImage ? 'dark:invert dark:hue-rotate-180 dark:contrast-95 dark:brightness-95' : ''
+                      }`}
                       loading="eager"
                     />
+
+                    {/* Nút chuyển đổi nhanh Đảo màu nền / Ảnh màu gốc trong Dark Mode */}
+                    <button
+                      type="button"
+                      onClick={() => setInvertImage(!invertImage)}
+                      className="hidden dark:flex items-center gap-1 absolute top-2 right-2 px-2 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700/80 backdrop-blur-xs text-[11px] font-medium transition-all opacity-70 hover:opacity-100 cursor-pointer shadow-sm select-none"
+                      title={invertImage ? 'Chuyển về ảnh màu gốc' : 'Đảo màu nền tối dịu mắt'}
+                    >
+                      <Contrast className="w-3.5 h-3.5" />
+                      <span>{invertImage ? 'Ảnh gốc' : 'Nền tối'}</span>
+                    </button>
                   </div>
 
                   {/* Right Column in Landscape Mobile / Choices + Tip in Portrait */}

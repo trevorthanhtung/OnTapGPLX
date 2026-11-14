@@ -1,4 +1,5 @@
-const CACHE_NAME = 'ontapgplx-v2.0.0';
+const CACHE_NAME = 'ontapgplx-v2.3.0';
+const QUESTIONS_CACHE = 'ontapgplx-questions-v2';
 const PRECACHE_ASSETS = [
   '/',
   '/index.html',
@@ -18,13 +19,13 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Activate: Clean up old caches and take control of clients
+// Activate: Clean up old caches (preserving questions offline pack) and take control
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames
-          .filter((name) => name !== CACHE_NAME)
+          .filter((name) => name !== CACHE_NAME && name !== QUESTIONS_CACHE)
           .map((name) => caches.delete(name))
       );
     }).then(() => self.clients.claim())
@@ -41,8 +42,39 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Large video files should stream directly without full SW buffering
+  // Large video files are handled via IndexedDB Cache-As-You-Play to avoid Safari range-request issues
   if (url.pathname.includes('/videos/') || request.headers.get('range')) {
+    return;
+  }
+
+  // 600 Question Images: Dedicated Cache-First strategy with PNG-to-WebP transparent rewrite
+  if (url.pathname.includes('/questions/')) {
+    let targetPath = url.pathname;
+    if (targetPath.endsWith('.png')) {
+      targetPath = targetPath.replace(/\.png$/, '.webp');
+    }
+    const targetUrl = new URL(targetPath, url.origin).toString();
+
+    event.respondWith(
+      caches.open(QUESTIONS_CACHE).then(async (qCache) => {
+        const cached = (await qCache.match(targetUrl)) || (await qCache.match(request));
+        if (cached) {
+          return cached;
+        }
+
+        try {
+          const networkRes = await fetch(targetUrl);
+          if (networkRes && networkRes.status === 200) {
+            qCache.put(targetUrl, networkRes.clone());
+            return networkRes;
+          }
+          return networkRes;
+        } catch {
+          // If network failed, try matching original request
+          return (await qCache.match(request)) || Response.error();
+        }
+      })
+    );
     return;
   }
 
@@ -90,4 +122,3 @@ self.addEventListener('fetch', (event) => {
     })
   );
 });
-

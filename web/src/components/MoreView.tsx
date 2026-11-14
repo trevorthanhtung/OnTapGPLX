@@ -10,6 +10,7 @@ import { BookTipsView } from './BookTipsView';
 import { TrafficSignsView } from './TrafficSignsView';
 import { RoadDrivingTipsView } from './RoadDrivingTipsView';
 import { LawGuideView } from './LawGuideView';
+import { OfflineManagerView } from './OfflineManagerView';
 
 interface MoreViewProps {
   onGoToTab?: (tab: 'theory' | 'simulation' | 'stats' | 'more') => void;
@@ -24,7 +25,7 @@ export const MoreView: React.FC<MoreViewProps> = ({
   onSubHeaderChange
 }) => {
   const [currentTheme, setCurrentTheme] = useState<ThemeMode>(ThemeService.getTheme());
-  const [subView, setSubView] = useState<'main' | 'tips' | 'signs' | 'road' | 'law' | 'theme'>('main');
+  const [subView, setSubView] = useState<'main' | 'tips' | 'signs' | 'road' | 'law' | 'theme' | 'offline'>('main');
 
   // Modal for Exit Confirmation only
   const [showConfirmLanding, setShowConfirmLanding] = useState(false);
@@ -70,7 +71,7 @@ export const MoreView: React.FC<MoreViewProps> = ({
     return () => window.removeEventListener('popstate', handlePopState);
   }, [subView]);
 
-  const handleOpenSubView = (view: 'tips' | 'signs' | 'road' | 'law' | 'theme') => {
+  const handleOpenSubView = (view: 'tips' | 'signs' | 'road' | 'law' | 'theme' | 'offline') => {
     setSubView(view);
     window.history.pushState({ component: 'moreSubView', subView: view }, '');
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -94,6 +95,11 @@ export const MoreView: React.FC<MoreViewProps> = ({
     } else if (subView === 'theme') {
       onSubHeaderChange?.({
         title: t('theme.title'),
+        onBack: handleBackToMain
+      });
+    } else if (subView === 'offline') {
+      onSubHeaderChange?.({
+        title: 'Dữ liệu Ngoại tuyến',
         onBack: handleBackToMain
       });
     }
@@ -187,6 +193,17 @@ export const MoreView: React.FC<MoreViewProps> = ({
       <LawGuideView
         onBack={handleBackToMain}
         onSubHeaderChange={onSubHeaderChange}
+      />
+    );
+  }
+
+  // ==========================================
+  // SUB-VIEW: DỮ LIỆU NGOẠI TUYẾN (OFFLINE)
+  // ==========================================
+  if (subView === 'offline') {
+    return (
+      <OfflineManagerView
+        onBack={handleBackToMain}
       />
     );
   }
@@ -302,6 +319,24 @@ export const MoreView: React.FC<MoreViewProps> = ({
           <span className="text-sm font-semibold text-slate-900 dark:text-white">
             {t('theme.title')}
           </span>
+
+          <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-200 group-hover:translate-x-0.5 transition-transform" />
+        </button>
+
+        {/* Row 3: Dữ liệu Ngoại tuyến */}
+        <button
+          type="button"
+          onClick={() => handleOpenSubView('offline')}
+          className="w-full p-3.5 sm:p-4 flex items-center justify-between text-left hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors cursor-pointer group"
+        >
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-semibold text-slate-900 dark:text-white">
+              Dữ liệu Ngoại tuyến (Offline)
+            </span>
+            <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
+              Mới
+            </span>
+          </div>
 
           <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-200 group-hover:translate-x-0.5 transition-transform" />
         </button>
